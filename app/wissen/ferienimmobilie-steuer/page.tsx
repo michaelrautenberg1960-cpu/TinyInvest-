@@ -1,7 +1,8 @@
-import Navbar from "../../components/Navbar";
+﻿import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
@@ -107,8 +108,8 @@ export default function FerienimmobilieSteuerPage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
-            <img src="/images/outside/tiny-house-ferienimmobilie-aussen.webp" alt="Ferienimmobilie vs Tiny House – Steuervergleich" className="w-full h-full object-cover" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
+            <Image src="/images/outside/tiny-house-ferienimmobilie-aussen.webp" alt="Ferienimmobilie vs Tiny House – Steuervergleich" fill className="object-cover" priority />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -150,7 +151,7 @@ export default function FerienimmobilieSteuerPage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/outside/tiny-house-escape-hero.webp" alt="Tiny House Ferienunterkunft" className="w-full h-full object-cover" />
+            <Image src="/images/outside/tiny-house-escape-hero.webp" alt="Tiny House Ferienunterkunft" fill className="object-cover" priority />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Ferienimmobilie vs. Tiny House: Steuervergleich</h2>
@@ -191,7 +192,7 @@ export default function FerienimmobilieSteuerPage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-10" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/inside/tiny-house-innen-wohnzimmer.webp" alt="Tiny House Wohnbereich modern" className="w-full h-full object-cover" />
+            <Image src="/images/inside/tiny-house-innen-wohnzimmer.webp" alt="Tiny House Wohnbereich modern" fill className="object-cover" priority />
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">

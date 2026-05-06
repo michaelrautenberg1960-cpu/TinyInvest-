@@ -1,7 +1,8 @@
-import Navbar from "../../components/Navbar";
+﻿import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
@@ -121,8 +122,8 @@ export default function HostWerdenPage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
-            <img src="/images/outside/tiny-house-host-grundstueck.webp" alt="Tiny House Host – Grundstück mit Tiny House" className="w-full h-full object-cover" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
+            <Image src="/images/outside/tiny-house-host-grundstueck.webp" alt="Tiny House Host – Grundstück mit Tiny House" fill className="object-cover" priority />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -166,7 +167,7 @@ export default function HostWerdenPage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/outside/tiny-house-stellplatz-standort.webp" alt="Tiny House Standort – geeignetes Grundstück für Hosts" className="w-full h-full object-cover" />
+            <Image src="/images/outside/tiny-house-stellplatz-standort.webp" alt="Tiny House Standort – geeignetes Grundstück für Hosts" fill className="object-cover" priority />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Was kannst du als Host verdienen?</h2>

@@ -1,7 +1,8 @@
-import Navbar from "../../components/Navbar";
+﻿import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
@@ -96,8 +97,8 @@ export default function AfaAbschreibungPage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
-            <img src="/images/articles/7g AfA & Sonder-Abschreibung Tiny House Steuer-Guide 2026.png" alt="§7g AfA Tiny House Steuer-Guide 2026" className="w-full h-full object-cover" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
+            <Image src="/images/articles/7g AfA & Sonder-Abschreibung Tiny House Steuer-Guide 2026.png" alt="§7g AfA Tiny House Steuer-Guide 2026" fill className="object-cover" priority />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -162,7 +163,7 @@ export default function AfaAbschreibungPage() {
 
           {/* Image Break 1 */}
           <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/outside/tiny-house-renditeobjekt-aussen.webp" alt="Tiny House Außenansicht Standort" className="w-full h-full object-cover" />
+            <Image src="/images/outside/tiny-house-renditeobjekt-aussen.webp" alt="Tiny House Außenansicht Standort" fill className="object-cover" priority />
           </div>
 
           {/* Die 4 AfA-Varianten */}
@@ -239,7 +240,7 @@ export default function AfaAbschreibungPage() {
 
           {/* Image Break 2 */}
           <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/inside/tiny-house-innen-airbnb.webp" alt="Tiny House Innenausstattung" className="w-full h-full object-cover" />
+            <Image src="/images/inside/tiny-house-innen-airbnb.webp" alt="Tiny House Innenausstattung" fill className="object-cover" priority />
           </div>
 
           {/* IAB Erklärt */}

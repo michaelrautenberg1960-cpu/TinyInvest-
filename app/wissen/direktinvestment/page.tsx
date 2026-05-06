@@ -1,7 +1,8 @@
-import Navbar from "../../components/Navbar";
+﻿import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
@@ -129,8 +130,8 @@ export default function DirektinvestmentPage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
-            <img src="/images/outside/tiny-house-escape-sachwert.webp" alt="Tiny House Direktinvestment – physisches Sachwert-Asset" className="w-full h-full object-cover" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
+            <Image src="/images/outside/tiny-house-escape-sachwert.webp" alt="Tiny House Direktinvestment – physisches Sachwert-Asset" fill className="object-cover" priority />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -161,7 +162,7 @@ export default function DirektinvestmentPage() {
 
           {/* ── Image ── */}
           <div className="rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "21/9" }}>
-            <img src="/images/outside/tiny-house-wald-naturstandort.webp" alt="Tiny House Standort Wald Natur" className="w-full h-full object-cover" />
+            <Image src="/images/outside/tiny-house-wald-naturstandort.webp" alt="Tiny House Standort Wald Natur" fill className="object-cover" priority />
           </div>
 
           {/* ── 2. Sachwert statt Papierversprechen ── */}
@@ -247,7 +248,7 @@ export default function DirektinvestmentPage() {
 
           {/* ── Image ── */}
           <div className="rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/inside/tiny-house-innen-eigentumsuebergabe.webp" alt="Tiny House Eigentumsübergabe" className="w-full h-full object-cover" />
+            <Image src="/images/inside/tiny-house-innen-eigentumsuebergabe.webp" alt="Tiny House Eigentumsübergabe" fill className="object-cover" priority />
           </div>
 
           {/* ── 4. Vollautomatisch verwaltet ── */}
@@ -267,7 +268,7 @@ export default function DirektinvestmentPage() {
 
           {/* ── Image ── */}
           <div className="rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/outside/tiny-house-ferienimmobilie-aussen.webp" alt="Tiny House Ferienimmobilie Außenansicht" className="w-full h-full object-cover" />
+            <Image src="/images/outside/tiny-house-ferienimmobilie-aussen.webp" alt="Tiny House Ferienimmobilie Außenansicht" fill className="object-cover" priority />
           </div>
 
           {/* ── 5. Kaufprozess ── */}

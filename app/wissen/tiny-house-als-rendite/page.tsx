@@ -1,7 +1,8 @@
-import Navbar from "../../components/Navbar";
+﻿import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
@@ -114,8 +115,8 @@ export default function TinyHouseAlsRenditePage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
-            <img src="/images/outside/tiny-house-renditeobjekt-aussen.webp" alt="Tiny House Außenansicht – Renditeobjekt" className="w-full h-full object-cover" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
+            <Image src="/images/outside/tiny-house-renditeobjekt-aussen.webp" alt="Tiny House Außenansicht – Renditeobjekt" fill className="object-cover" priority />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -149,7 +150,7 @@ export default function TinyHouseAlsRenditePage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-10" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/outside/tiny-house-wald-naturstandort.webp" alt="Tiny House im Wald – naturnaher Glamping-Standort" className="w-full h-full object-cover" />
+            <Image src="/images/outside/tiny-house-wald-naturstandort.webp" alt="Tiny House im Wald – naturnaher Glamping-Standort" fill className="object-cover" priority />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Der Steuermotor: §7g trifft auf Sachwert</h2>
@@ -196,7 +197,7 @@ export default function TinyHouseAlsRenditePage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/outside/tiny-house-investor-aussen.webp" alt="Tiny House Standort Außenansicht" className="w-full h-full object-cover" />
+            <Image src="/images/outside/tiny-house-investor-aussen.webp" alt="Tiny House Standort Außenansicht" fill className="object-cover" priority />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Belegungsquote & Umsatz: Was ist realistisch?</h2>
@@ -263,7 +264,7 @@ export default function TinyHouseAlsRenditePage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/inside/tiny-house-innen-kueche.webp" alt="Tiny House Küche und Wohnbereich" className="w-full h-full object-cover" />
+            <Image src="/images/inside/tiny-house-innen-kueche.webp" alt="Tiny House Küche und Wohnbereich" fill className="object-cover" priority />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">5-Jahres-Cashflow: TinyInvest Escape 79.000 €</h2>

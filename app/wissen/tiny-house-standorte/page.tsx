@@ -1,7 +1,8 @@
-import Navbar from "../../components/Navbar";
+﻿import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
@@ -108,8 +109,8 @@ export default function TinyHouseStandortePage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
-            <img src="/images/outside/tiny-house-skandinavien-naturlage.webp" alt="Tiny House Standort Skandinavien – Naturlage" className="w-full h-full object-cover" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
+            <Image src="/images/outside/tiny-house-skandinavien-naturlage.webp" alt="Tiny House Standort Skandinavien – Naturlage" fill className="object-cover" priority />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -194,7 +195,7 @@ export default function TinyHouseStandortePage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/outside/tiny-house-winter-ganzjahresbetrieb.webp" alt="Tiny House im Winter – Ganzjahresbetrieb" className="w-full h-full object-cover" />
+            <Image src="/images/outside/tiny-house-winter-ganzjahresbetrieb.webp" alt="Tiny House im Winter – Ganzjahresbetrieb" fill className="object-cover" priority />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Was einen Standort wirklich profitabel macht</h2>

@@ -1,9 +1,10 @@
-import Navbar from "../components/Navbar";
+﻿import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SubPageHeader from "../components/SubPageHeader";
 import SteuerRechner from "../components/SteuerRechner";
 import ModalButton from "../components/ModalButton";
 import Link from "next/link";
+import Image from "next/image";
 import { steuerCards, vergleichRows } from "../components/data";
 
 export const metadata = {
@@ -274,7 +275,7 @@ export default function SteuerVorteilPage() {
             <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-4">Weiterführende Artikel</p>
             <Link href="/wissen/afa-abschreibung" className="group flex items-center gap-4 bg-white border border-gray-100 rounded-2xl p-4 hover:border-green-200 hover:shadow-sm transition-all text-left">
               <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
-                <img src="/images/outside/tiny-house-escape-wald.webp" alt="AfA Abschreibung" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <Image src="/images/outside/tiny-house-escape-wald.webp" alt="AfA Abschreibung" fill className="object-cover group-hover:scale-105 transition-transform duration-300" priority />
               </div>
               <div>
                 <span className="text-[10px] bg-amber-100 text-amber-700 font-bold px-2 py-0.5 rounded-full">Steuer-Deep-Dive</span>

@@ -1,7 +1,8 @@
-import Navbar from "../../components/Navbar";
+﻿import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
@@ -114,8 +115,8 @@ export default function ChecklistePage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
-            <img src="/images/outside/tiny-house-investor-aussen.webp" alt="Tiny House Kaufprozess – Investor-Checkliste" className="w-full h-full object-cover" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
+            <Image src="/images/outside/tiny-house-investor-aussen.webp" alt="Tiny House Kaufprozess – Investor-Checkliste" fill className="object-cover" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -160,7 +161,7 @@ export default function ChecklistePage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
-            <img src="/images/inside/tiny-house-innen-wohnbereich.webp" alt="Tiny House Innenraum modern" className="w-full h-full object-cover" />
+            <Image src="/images/inside/tiny-house-innen-wohnbereich.webp" alt="Tiny House Innenraum modern" fill className="object-cover" />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Phase 4 – Betrieb & Cashflow</h2>
