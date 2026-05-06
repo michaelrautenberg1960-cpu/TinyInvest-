@@ -192,7 +192,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/wissen/iab-tiny-house`,
-      lastModified: "2026-04-15",
+      lastModified: "2026-05-06",
       changeFrequency: "monthly",
       priority: 0.9,
     },
