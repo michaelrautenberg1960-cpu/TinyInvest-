@@ -69,6 +69,30 @@ export default function RootLayout({
           gtag('config', 'G-4K5B8T1ERL');
         `}
       </Script>
+      <Script id="schema-website" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TinyInvest",
+        "url": "https://tinyhouse.investments",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://tinyhouse.investments/wissen?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }) }} />
+      <Script id="schema-organization" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TinyInvest",
+        "url": "https://tinyhouse.investments",
+        "logo": "https://tinyhouse.investments/logo1.png",
+        "description": "Tiny House Investments mit §7g Steueroptimierung – bewegliche Wirtschaftsgüter als Kapitalanlage",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Frankfurt am Main",
+          "addressCountry": "DE"
+        }
+      }) }} />
       <body className={`${geistSans.variable} antialiased`}>
         <ModalProvider>
           {children}

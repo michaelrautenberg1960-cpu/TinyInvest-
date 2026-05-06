@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar";
+﻿import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -62,7 +62,7 @@ export default function TinyHouseKaufenPage() {
     "description": "Tiny House kaufen: Preise ab 65.000 €, Solido Modelle, Genehmigung, neu vs. gebraucht – und warum viele Käufer ihr Tiny House als Kapitalanlage nutzen.",
     "url": "https://tinyhouse.investments/wissen/tiny-house-kaufen",
     "datePublished": "2026-04-29",
-    "dateModified": "2026-04-29",
+    "dateModified": "2026-05-06",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
     "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-investor-aussen.webp" },

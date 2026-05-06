@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar";
+﻿import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -129,7 +129,7 @@ export default function PillarPage() {
     "description": "§7g EStG für Tiny Houses: IAB (50 %), Sonder-AfA (40 %), degressive AfA (30 %) — bis zu 33.000 € Steuerersparnis im Kaufjahr.",
     "url": "https://tinyhouse.investments/wissen/7g-tiny-house-investment",
     "datePublished": "2026-04-15",
-    "dateModified": "2026-04-15",
+    "dateModified": "2026-05-06",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
     "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-escape-wald.webp" },

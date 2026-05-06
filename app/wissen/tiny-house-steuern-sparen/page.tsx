@@ -55,7 +55,7 @@ export default function TinyHouseSteuernSparenPage() {
     "description": "Wie du mit einem Tiny House bis zu 34.000 € Steuern sparst: IAB, Sonder-AfA, degressive AfA – Schritt für Schritt erklärt.",
     "url": "https://tinyhouse.investments/wissen/tiny-house-steuern-sparen",
     "datePublished": "2026-04-15",
-    "dateModified": "2026-04-15",
+    "dateModified": "2026-05-06",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
     "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-escape-sachwert.webp" },
