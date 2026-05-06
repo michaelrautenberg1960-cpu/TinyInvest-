@@ -55,45 +55,51 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TinyInvest",
+    "url": "https://tinyhouse.investments",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tinyhouse.investments/wissen?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TinyInvest",
+    "url": "https://tinyhouse.investments",
+    "logo": "https://tinyhouse.investments/logo1.png",
+    "description": "Tiny House Investments mit §7g Steueroptimierung – bewegliche Wirtschaftsgüter als Kapitalanlage",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Frankfurt am Main",
+      "addressCountry": "DE",
+    },
+  };
+
   return (
     <html lang="de">
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-4K5B8T1ERL"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4K5B8T1ERL');
-        `}
-      </Script>
-      <Script id="schema-website" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "TinyInvest",
-        "url": "https://tinyhouse.investments",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://tinyhouse.investments/wissen?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }) }} />
-      <Script id="schema-organization" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "TinyInvest",
-        "url": "https://tinyhouse.investments",
-        "logo": "https://tinyhouse.investments/logo1.png",
-        "description": "Tiny House Investments mit §7g Steueroptimierung – bewegliche Wirtschaftsgüter als Kapitalanlage",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Frankfurt am Main",
-          "addressCountry": "DE"
-        }
-      }) }} />
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      </head>
       <body className={`${geistSans.variable} antialiased`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4K5B8T1ERL"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4K5B8T1ERL');
+          `}
+        </Script>
         <ModalProvider>
           {children}
           <MemorandumModal />

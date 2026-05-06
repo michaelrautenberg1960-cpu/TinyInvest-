@@ -214,14 +214,14 @@ export default function TinyHouseSteuerRisikenPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { risk: "90%-Regel", solution: "Ausschließlich gewerbliche Kurzzeitvermietung, kein Eigennutz vertraglich ausgeschlossen", icon: "✓" },
-                { risk: "Liebhaberei", solution: "Marktübliche Preise, aktives Marketing auf Airbnb & Booking.com, nachweisbare Belegung", icon: "✓" },
-                { risk: "Gebäude-Status", solution: "Vlemmix-Trailer mit VIN/FIN, keine Fundamentierung, jederzeit ortsveränderlich", icon: "✓" },
+                { risk: "90%-Regel: strukturell ausgeschlossen", solution: "Ausschließlich gewerbliche Kurzzeitvermietung, kein Eigennutz vertraglich ausgeschlossen", icon: "✓" },
+                { risk: "Liebhaberei: kein Risiko bei aktiver Vermietung", solution: "Marktübliche Preise, aktives Marketing auf Airbnb & Booking.com, nachweisbare Belegung", icon: "✓" },
+                { risk: "Gebäude-Status: durch Vlemmix-Trailer ausgeschlossen", solution: "Vlemmix-Trailer mit VIN/FIN, keine Fundamentierung, jederzeit ortsveränderlich", icon: "✓" },
               ].map((item) => (
                 <div key={item.risk} className="bg-green-50 border border-green-100 rounded-2xl p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-green-600 font-black">{item.icon}</span>
-                    <p className="font-black text-gray-900 text-[13px]">{item.risk} gelöst</p>
+                    <p className="font-black text-gray-900 text-[13px]">{item.risk}</p>
                   </div>
                   <p className="text-gray-500 text-[12px] leading-relaxed">{item.solution}</p>
                 </div>
