@@ -211,6 +211,15 @@ const articles = [
     tags: ["Mit Grundstück", "Bayern", "Ostsee", "Standorte"],
     img: "/images/outside/tiny-house-host-grundstueck.webp",
   },
+  {
+    href: "/wissen/tiny-house-steuer-risiken",
+    badge: "Steuer-Guide",
+    badgeColor: "bg-red-100 text-red-700",
+    title: "Tiny House Steuermodell: Was das Finanzamt prüft",
+    desc: "Die 3 Punkte an denen das §7g-Modell scheitert – und wie professionelles Investment sie von Anfang an ausschließt.",
+    tags: ["Betriebsprüfung", "Liebhaberei", "90%-Regel", "§7g"],
+    img: "/images/inside/tiny-house-innen-steuerberatung.webp",
+  },
 ];
 
 const glossarItems = [
