@@ -98,7 +98,7 @@ export default function AfaAbschreibungPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/articles/7g AfA & Sonder-Abschreibung Tiny House Steuer-Guide 2026.png" alt="§7g AfA Tiny House Steuer-Guide 2026" fill className="object-cover" priority />
+            <Image src="/images/articles/7g AfA & Sonder-Abschreibung Tiny House Steuer-Guide 2026.png" alt="§7g AfA Tiny House Steuer-Guide 2026" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -163,7 +163,7 @@ export default function AfaAbschreibungPage() {
 
           {/* Image Break 1 */}
           <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
-            <Image src="/images/outside/tiny-house-renditeobjekt-aussen.webp" alt="Tiny House Außenansicht Standort" fill className="object-cover" priority />
+            <Image src="/images/outside/tiny-house-renditeobjekt-aussen.webp" alt="Tiny House Außenansicht Standort" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
           {/* Die 4 AfA-Varianten */}
@@ -240,7 +240,7 @@ export default function AfaAbschreibungPage() {
 
           {/* Image Break 2 */}
           <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
-            <Image src="/images/inside/tiny-house-innen-airbnb.webp" alt="Tiny House Innenausstattung" fill className="object-cover" priority />
+            <Image src="/images/inside/tiny-house-innen-airbnb.webp" alt="Tiny House Innenausstattung" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
           {/* IAB Erklärt */}

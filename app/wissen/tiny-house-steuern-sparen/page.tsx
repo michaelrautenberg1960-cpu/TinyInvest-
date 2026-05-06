@@ -154,7 +154,7 @@ export default function TinyHouseSteuernSparenPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/tiny-house-escape-sachwert.webp" alt="Tiny House Kapitalanlage Sachwert Steuervorteil" fill className="object-cover" priority />
+            <Image src="/images/outside/tiny-house-escape-sachwert.webp" alt="Tiny House Kapitalanlage Sachwert Steuervorteil" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -230,7 +230,7 @@ export default function TinyHouseSteuernSparenPage() {
 
           {/* Image Break */}
           <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
-            <Image src="/images/inside/tiny-house-innen-wohnbereich.webp" alt="Tiny House Innenausstattung Wohnbereich" fill className="object-cover" priority />
+            <Image src="/images/inside/tiny-house-innen-wohnbereich.webp" alt="Tiny House Innenausstattung Wohnbereich" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
           {/* Die optimale Strategie */}

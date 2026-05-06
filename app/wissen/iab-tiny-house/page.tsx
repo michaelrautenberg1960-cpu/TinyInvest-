@@ -159,7 +159,7 @@ export default function IabTinyHousePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/inside/tiny-house-innen-steuerberatung.webp" alt="Tiny House Steuerberatung IAB" fill className="object-cover" priority />
+            <Image src="/images/inside/tiny-house-innen-steuerberatung.webp" alt="Tiny House Steuerberatung IAB" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -241,7 +241,7 @@ export default function IabTinyHousePage() {
 
           {/* Image Break */}
           <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
-            <Image src="/images/outside/tiny-house-escape-sachwert.webp" alt="Tiny House Kapitalanlage Sachwert" fill className="object-cover" priority />
+            <Image src="/images/outside/tiny-house-escape-sachwert.webp" alt="Tiny House Kapitalanlage Sachwert" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
           {/* Schritt für Schritt */}

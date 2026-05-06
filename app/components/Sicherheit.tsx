@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { sicherheitItems } from "./data";
 
 export default function Sicherheit() {
@@ -7,7 +7,7 @@ export default function Sicherheit() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative h-80 lg:h-[480px] rounded-3xl overflow-hidden shadow-xl">
-            <Image src="/images/Tinyhouseinside.webp" alt="Tiny House Innenraum" fill className="object-cover" />
+            <Image src="/images/Tinyhouseinside.webp" alt="Tiny House Innenraum" fill className="object-cover" sizes="(max-width: 768px) 100vw, 896px" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4">
               <div className="flex items-center gap-3">

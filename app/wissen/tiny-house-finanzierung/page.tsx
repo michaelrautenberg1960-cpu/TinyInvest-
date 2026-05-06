@@ -116,7 +116,7 @@ export default function TinyHouseFinanzierungPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/tiny-house-escape-wald.webp" alt="Tiny House im Wald – Kapitalanlage mit §7g" fill className="object-cover" priority />
+            <Image src="/images/outside/tiny-house-escape-wald.webp" alt="Tiny House im Wald – Kapitalanlage mit §7g" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -177,7 +177,7 @@ export default function TinyHouseFinanzierungPage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
-            <Image src="/images/outside/tiny-house-wald-naturstandort.webp" alt="Tiny House Standort Natur" fill className="object-cover" priority />
+            <Image src="/images/outside/tiny-house-wald-naturstandort.webp" alt="Tiny House Standort Natur" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Cash vs. Kredit vs. Leasing – Direktvergleich</h2>

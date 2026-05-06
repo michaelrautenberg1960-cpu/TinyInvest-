@@ -110,7 +110,7 @@ export default function TinyHouseStandortePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/tiny-house-skandinavien-naturlage.webp" alt="Tiny House Standort Skandinavien – Naturlage" fill className="object-cover" priority />
+            <Image src="/images/outside/tiny-house-skandinavien-naturlage.webp" alt="Tiny House Standort Skandinavien – Naturlage" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -195,7 +195,7 @@ export default function TinyHouseStandortePage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
-            <Image src="/images/outside/tiny-house-winter-ganzjahresbetrieb.webp" alt="Tiny House im Winter – Ganzjahresbetrieb" fill className="object-cover" priority />
+            <Image src="/images/outside/tiny-house-winter-ganzjahresbetrieb.webp" alt="Tiny House im Winter – Ganzjahresbetrieb" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Was einen Standort wirklich profitabel macht</h2>

@@ -128,7 +128,7 @@ export default function TinyHouseRenditeRechnerPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/tiny-house-renditeobjekt-aussen.webp" alt="Tiny House Renditeobjekt Außenansicht" fill className="object-cover" />
+            <Image src="/images/outside/tiny-house-renditeobjekt-aussen.webp" alt="Tiny House Renditeobjekt Außenansicht" fill className="object-cover" sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -228,7 +228,7 @@ export default function TinyHouseRenditeRechnerPage() {
 
           {/* Image Break */}
           <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
-            <Image src="/images/inside/tiny-house-innen-kueche.webp" alt="Tiny House Innenausstattung Küche" fill className="object-cover" />
+            <Image src="/images/inside/tiny-house-innen-kueche.webp" alt="Tiny House Innenausstattung Küche" fill className="object-cover" sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
           {/* Break-even Berechnung */}

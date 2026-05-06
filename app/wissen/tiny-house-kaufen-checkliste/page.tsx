@@ -116,7 +116,7 @@ export default function ChecklistePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/tiny-house-investor-aussen.webp" alt="Tiny House Kaufprozess – Investor-Checkliste" fill className="object-cover" />
+            <Image src="/images/outside/tiny-house-investor-aussen.webp" alt="Tiny House Kaufprozess – Investor-Checkliste" fill className="object-cover" sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -161,7 +161,7 @@ export default function ChecklistePage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
-            <Image src="/images/inside/tiny-house-innen-wohnbereich.webp" alt="Tiny House Innenraum modern" fill className="object-cover" />
+            <Image src="/images/inside/tiny-house-innen-wohnbereich.webp" alt="Tiny House Innenraum modern" fill className="object-cover" sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Phase 4 – Betrieb & Cashflow</h2>
