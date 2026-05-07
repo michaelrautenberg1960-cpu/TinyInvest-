@@ -94,6 +94,9 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <a href="mailto:info@tinyhouse.investments" className="hover:text-green-400 transition-colors">info@tinyhouse.investments</a>
               </li>
+              <li className="flex items-center gap-2">
+                <a href="tel:+4915679670322" className="hover:text-green-400 transition-colors">+49 156 7967 0322</a>
+              </li>
               <li>
                 <span>Marie-Curie-Straße 1, 63457 Hanau</span>
               </li>

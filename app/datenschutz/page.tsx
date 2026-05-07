@@ -39,6 +39,7 @@ export default function DatenschutzPage() {
                 Marie-Curie-Straße 1<br />
                 63457 Hanau<br />
                 Deutschland<br />
+                Telefon: +49 156 7967 0322<br />
                 E-Mail:{" "}
                 <a href="mailto:info@tinyhouse.investments" className="text-green-400 hover:text-green-300 transition-colors">
                   info@tinyhouse.investments
