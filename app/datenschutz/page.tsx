@@ -35,15 +35,14 @@ export default function DatenschutzPage() {
                 Verantwortlicher im Sinne der DSGVO ist:
               </p>
               <p className="mt-3">
-                TinyInvest GmbH<br />
-                Friedrichstraße 14<br />
-                60323 Frankfurt am Main<br />
+                Rautenberg Professional Solutions GmbH<br />
+                Marie-Curie-Straße 1<br />
+                63457 Hanau<br />
                 Deutschland<br />
                 E-Mail:{" "}
                 <a href="mailto:info@tinyhouse.investments" className="text-green-400 hover:text-green-300 transition-colors">
                   info@tinyhouse.investments
-                </a><br />
-                Telefon: +49 69 4321 8700
+                </a>
               </p>
             </section>
 

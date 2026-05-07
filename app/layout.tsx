@@ -76,7 +76,7 @@ export default function RootLayout({
     "description": "Tiny House Investments mit §7g Steueroptimierung – bewegliche Wirtschaftsgüter als Kapitalanlage",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Frankfurt am Main",
+      "addressLocality": "Hanau",
       "addressCountry": "DE",
     },
   };

@@ -46,9 +46,9 @@ const organizationSchema = {
   "description": "Tiny House §7g-Kapitalanlage ab 65.000 €. Sachwert-Investment mit bis zu 70 % Steuerabschreibung im Kaufjahr und 12–14 % IRR p.a.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Friedrichstraße 14",
-    "addressLocality": "Frankfurt am Main",
-    "postalCode": "60323",
+    "streetAddress": "Marie-Curie-Straße 1",
+    "addressLocality": "Hanau",
+    "postalCode": "63457",
     "addressCountry": "DE",
   },
   "contactPoint": {

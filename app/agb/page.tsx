@@ -24,7 +24,7 @@ export default function AGBPage() {
               ← Zurück zur Startseite
             </Link>
             <h1 className="text-4xl font-black text-white mt-4 mb-2">Allgemeine Geschäftsbedingungen</h1>
-            <p className="text-gray-400 text-sm">Stand: März 2026 · TinyInvest GmbH</p>
+            <p className="text-gray-400 text-sm">Stand: Mai 2026 · Rautenberg Professional Solutions GmbH</p>
           </div>
 
           <div className="space-y-10 text-gray-300 text-sm leading-relaxed">
@@ -33,7 +33,7 @@ export default function AGBPage() {
               <h2 className="text-lg font-bold text-white mb-3">§ 1 Geltungsbereich</h2>
               <p>
                 Diese Allgemeinen Geschäftsbedingungen (nachfolgend &bdquo;AGB&rdquo;) gelten für alle Verträge, die zwischen der
-                TinyInvest GmbH, Friedrichstraße 14, 60323 Frankfurt am Main (nachfolgend &bdquo;TinyInvest&rdquo;) und dem Kunden (nachfolgend
+                Rautenberg Professional Solutions GmbH, Marie-Curie-Straße 1, 63457 Hanau (nachfolgend &bdquo;TinyInvest&rdquo;) und dem Kunden (nachfolgend
                 &bdquo;Investor&rdquo;) über die Beteiligung an Tiny-House-Investitionsmodellen geschlossen werden. Abweichende
                 Bedingungen des Investors werden nicht anerkannt, es sei denn, TinyInvest stimmt ihrer Geltung
                 ausdrücklich schriftlich zu.
@@ -183,7 +183,7 @@ export default function AGBPage() {
               <p>
                 Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG). Gerichtsstand
                 für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist, soweit gesetzlich zulässig,
-                Frankfurt am Main. Für Verbraucher gilt der gesetzliche Gerichtsstand.
+                Hanau. Für Verbraucher gilt der gesetzliche Gerichtsstand.
               </p>
             </section>
 

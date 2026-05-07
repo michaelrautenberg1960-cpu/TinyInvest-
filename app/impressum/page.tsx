@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Impressum – TinyInvest",
-  description: "Impressum der TinyInvest GmbH gemäß § 5 TMG.",
+  description: "Impressum der Rautenberg Professional Solutions GmbH gemäß § 5 TMG.",
   alternates: {
     canonical: "https://tinyhouse.investments/impressum",
   },
@@ -32,22 +32,21 @@ export default function ImpressumPage() {
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Anbieter</h2>
               <p>
-                TinyInvest GmbH<br />
-                Friedrichstraße 14<br />
-                60323 Frankfurt am Main<br />
+                Rautenberg Professional Solutions GmbH<br />
+                Marie-Curie-Straße 1<br />
+                63457 Hanau<br />
                 Deutschland
               </p>
             </section>
 
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Vertreten durch</h2>
-              <p>Geschäftsführer: Maximilian Bauer</p>
+              <p>Geschäftsführer: Michael Rautenberg</p>
             </section>
 
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Kontakt</h2>
               <p>
-                Telefon: +49 69 4321 8700<br />
                 E-Mail:{" "}
                 <a
                   href="mailto:info@tinyhouse.investments"
@@ -61,25 +60,25 @@ export default function ImpressumPage() {
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Handelsregister</h2>
               <p>
-                Registergericht: Amtsgericht Frankfurt am Main<br />
-                Registernummer: HRB 127848
+                Registergericht: Amtsgericht Hanau<br />
+                Registernummer: HRB 99329
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-white mb-3">Umsatzsteuer-Identifikationsnummer</h2>
+              <h2 className="text-lg font-bold text-white mb-3">Steuernummer</h2>
               <p>
-                Gemäß § 27a Umsatzsteuergesetz:<br />
-                DE318742905
+                Gemäß § 139a Abgabenordnung:<br />
+                014 242 1096 2
               </p>
             </section>
 
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
               <p>
-                Maximilian Bauer<br />
-                Friedrichstraße 14<br />
-                60323 Frankfurt am Main
+                Michael Rautenberg<br />
+                Marie-Curie-Straße 1<br />
+                63457 Hanau
               </p>
             </section>
 
@@ -149,26 +148,26 @@ export default function ImpressumPage() {
               <ul className="space-y-2 list-none">
                 <li>
                   <span className="text-white font-medium">Außenaufnahmen der Tiny Houses</span><br />
-                  © TinyInvest GmbH / tiny Escapes GmbH – Alle Rechte vorbehalten.<br />
+                  © Rautenberg Professional Solutions GmbH / tiny Escapes GmbH – Alle Rechte vorbehalten.<br />
                   Fotografie: Markus Diehl, Frankfurt am Main
                 </li>
                 <li className="pt-2">
                   <span className="text-white font-medium">Innenaufnahmen der Tiny Houses</span><br />
-                  © TinyInvest GmbH / tiny Escapes GmbH – Alle Rechte vorbehalten.<br />
+                  © Rautenberg Professional Solutions GmbH / tiny Escapes GmbH – Alle Rechte vorbehalten.<br />
                   Fotografie: Markus Diehl, Frankfurt am Main
                 </li>
                 <li className="pt-2">
                   <span className="text-white font-medium">Titelbild / Open-Graph-Bild</span><br />
                   Erstellt mit Google Gemini (KI-generiertes Bild).<br />
-                  © TinyInvest GmbH – Alle Rechte vorbehalten.
+                  © Rautenberg Professional Solutions GmbH – Alle Rechte vorbehalten.
                 </li>
                 <li className="pt-2">
                   <span className="text-white font-medium">Standortbilder (Schweden, Winterlandschaft, u.a.)</span><br />
-                  © TinyInvest GmbH / tiny Escapes GmbH – Alle Rechte vorbehalten.
+                  © Rautenberg Professional Solutions GmbH / tiny Escapes GmbH – Alle Rechte vorbehalten.
                 </li>
                 <li className="pt-2">
                   <span className="text-white font-medium">Logos und Markenzeichen</span><br />
-                  © TinyInvest GmbH – Alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher schriftlicher Genehmigung.
+                  © Rautenberg Professional Solutions GmbH – Alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher schriftlicher Genehmigung.
                 </li>
               </ul>
               <p className="mt-4">
