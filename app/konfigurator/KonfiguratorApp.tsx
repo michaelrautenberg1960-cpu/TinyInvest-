@@ -353,7 +353,7 @@ function Step2({
   onNext: () => void;
   onBack: () => void;
 }) {
-  const [openCats, setOpenCats] = useState<Set<string>>(new Set(OPTION_CATEGORIES.map((c) => c.id)));
+  const [openCats, setOpenCats] = useState<Set<string>>(new Set());
   const includedItems = variant === "offgrid" ? OFF_GRID_INCLUDED_ITEMS : ON_GRID_INCLUDED_ITEMS;
 
   const toggleCat = (id: string) => {
@@ -523,7 +523,7 @@ function Step2({
           {openCats.has("transport") && (
             <div className="p-4 bg-white">
               <p className="text-sm text-gray-600 mb-3">
-                Transport ab Oradea, Rumänien: <strong>2,00 € / km</strong> (einfache Strecke) +
+                Transport von unserer Werkstatt: <strong>2,00 € / km</strong> (einfache Strecke) +
                 MwSt.
               </p>
               <div className="flex items-center gap-3">

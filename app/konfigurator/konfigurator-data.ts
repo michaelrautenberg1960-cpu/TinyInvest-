@@ -65,7 +65,7 @@ export const MODELS: ModelConfig[] = [
     dimensions: "660 × 255 × 325 (H) cm",
     trailerDimensions: "660 × 244 cm",
     trailer: "TH660 – 2 Achsen × 1.800 kg",
-    basePrice: { offgrid: 65289, ongrid: 59000 },
+    basePrice: { offgrid: 79000, ongrid: 69000 },
     image: "/images/outside/tiny-house-escape-sachwert.webp",
     loft: true,
     tag: "Bestseller",
@@ -624,11 +624,11 @@ export const OPTION_CATEGORIES: OptionCategory[] = [
     items: [
       {
         id: "transport_km",
-        label: "Transport ab Oradea, Rumänien",
+        label: "Transport von unserer Werkstatt",
         description: "2,00 € / km (einfache Strecke) + MwSt. Bitte Entfernung in km eingeben.",
         price: 2, // per km
         unit: "km",
-        note: "Entfernung von Oradea zu Ihrem Standort (einfache Strecke)",
+        note: "Entfernung von unserer Werkstatt zu Ihrem Standort (einfache Strecke)",
       },
     ],
   },
