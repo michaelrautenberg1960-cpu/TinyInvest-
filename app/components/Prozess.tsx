@@ -40,6 +40,7 @@ function StepCard({ num, title, desc }: { num: string; title: string; desc: stri
 
 export default function Prozess() {
   const [activeTab, setActiveTab] = useState(0);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
     <section id="prozess" className="py-20 bg-platform border-b border-gray-100">
@@ -95,13 +96,35 @@ export default function Prozess() {
             </h3>
           </div>
           <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/CTZJA2tUlZg?start=20&rel=0&modestbranding=1"
-              title="TinyInvest – Das Konzept"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-            />
+            {videoLoaded ? (
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/CTZJA2tUlZg?start=20&rel=0&modestbranding=1&autoplay=1"
+                title="TinyInvest – Das Konzept"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            ) : (
+              <button
+                onClick={() => setVideoLoaded(true)}
+                className="absolute inset-0 w-full h-full group"
+                aria-label="Video abspielen"
+              >
+                <img
+                  src="https://img.youtube.com/vi/CTZJA2tUlZg/maxresdefault.jpg"
+                  alt="TinyInvest Video Vorschau"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/35 transition-colors">
+                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-200">
+                    <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            )}
           </div>
         </div>
       </div>
