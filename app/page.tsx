@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import lazy from "next/dynamic";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustBar from "./components/TrustBar";
+import MarktplatzTeaser from "./components/MarktplatzTeaser";
 import Oekosystem from "./components/Oekosystem";
+import Prozess from "./components/Prozess";
 import Ueber from "./components/Ueber";
+import GalerieTeaser from "./components/GalerieTeaser";
+import Testimonials from "./components/Testimonials";
+import Presse from "./components/Presse";
+import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
-
-const MarktplatzTeaser = lazy(() => import("./components/MarktplatzTeaser"));
-const Prozess = lazy(() => import("./components/Prozess"));
-const GalerieTeaser = lazy(() => import("./components/GalerieTeaser"));
-const Testimonials = lazy(() => import("./components/Testimonials"));
-const Presse = lazy(() => import("./components/Presse"));
-const FAQ = lazy(() => import("./components/FAQ"));
 
 export const metadata: Metadata = {
   title: "Tiny House kaufen & vermieten | 22.000 € Steuern sparen | TinyInvest",
