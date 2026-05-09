@@ -44,7 +44,7 @@ export default function KonfiguratorPage() {
           {/* Trust badges */}
           <div className="flex flex-wrap gap-4 mt-6">
             {[
-              { icon: "🏗️", text: "Produktionsstandort Oradea, Rumänien" },
+              { icon: "🏗️", text: "Produktion in unserer Werkstatt" },
               { icon: "📄", text: "PDF-Angebot sofort per Download" },
               { icon: "🔒", text: "Keine Weitergabe Ihrer Daten" },
               { icon: "✅", text: "Lieferzeit ab 30 Tage" },

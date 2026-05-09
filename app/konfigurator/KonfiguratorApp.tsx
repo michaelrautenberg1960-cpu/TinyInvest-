@@ -86,9 +86,9 @@ function PriceBadge({
   optionsTotal: number;
   transportTotal: number;
 }) {
-  // All prices are GROSS (inkl. 21% MwSt.)
+  // All prices are GROSS (inkl. 19% MwSt.)
   const total = basePrice + optionsTotal + transportTotal;
-  const netto = Math.round(total / 1.21);
+  const netto = Math.round(total / 1.19);
   const vat = total - netto;
 
   return (
@@ -118,7 +118,7 @@ function PriceBadge({
           <span>{EUR(netto)}</span>
         </div>
         <div className="flex justify-between text-gray-400 text-xs">
-          <span>davon MwSt. 21%</span>
+          <span>davon MwSt. 19%</span>
           <span>{EUR(vat)}</span>
         </div>
         <div className="border-t pt-2 flex justify-between font-bold text-green-700 text-base">
@@ -692,9 +692,9 @@ function Step4({
 
   const optionsTotal = optionRows.reduce((s, r) => s + r.price, 0);
   const transportTotal = transportKm * 2;
-  // All prices are GROSS (inkl. 21% MwSt.)
+  // All prices are GROSS (inkl. 19% MwSt.)
   const total = model.basePrice[variant] + optionsTotal + transportTotal;
-  const netto = Math.round(total / 1.21);
+  const netto = Math.round(total / 1.19);
   const vat = total - netto;
 
   const handleDownload = async () => {
@@ -784,7 +784,7 @@ function Step4({
             {transportKm > 0 && (
               <div className="flex items-center justify-between px-4 py-2.5 text-sm">
                 <div>
-                  <span className="text-gray-800">Transport ab Oradea</span>
+                  <span className="text-gray-800">Transport von unserer Werkstatt</span>
                   <span className="ml-2 text-xs text-gray-400">{transportKm} km × 2,00 €</span>
                 </div>
                 <span className="font-semibold text-gray-700">+ {EUR(transportTotal)}</span>
@@ -821,7 +821,7 @@ function Step4({
             <span>{EUR(netto)}</span>
           </div>
           <div className="flex justify-between text-gray-400 text-xs">
-            <span>davon MwSt. 21%</span>
+            <span>davon MwSt. 19%</span>
             <span>{EUR(vat)}</span>
           </div>
           <div className="border-t pt-2 flex justify-between font-bold text-green-700 text-xl">

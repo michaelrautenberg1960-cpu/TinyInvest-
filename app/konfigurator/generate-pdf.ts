@@ -477,7 +477,7 @@ export async function generatePDF(config: PdfConfig): Promise<void> {
   doc.setTextColor(...GRAY);
   const noteLines = doc.splitTextToSize(
     OFFER_VALIDITY +
-      " Transport ab Oradea, Rumänien. Entfernung einfache Strecke. " +
+      " Transport von unserer Werkstatt. Entfernung einfache Strecke. " +
       COMPANY_INFO.bank,
     W - margin * 2
   );
