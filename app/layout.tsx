@@ -89,7 +89,7 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} antialiased`}>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-4K5B8T1ERL"
+          src="https://www.googletagmanager.com/gtag/js?id=G-1726HDFQK1"
           strategy="lazyOnload"
         />
         <Script id="google-analytics" strategy="lazyOnload">
@@ -97,7 +97,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-4K5B8T1ERL');
+            gtag('config', 'G-1726HDFQK1');
           `}
         </Script>
         <ModalProvider>
