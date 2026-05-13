@@ -111,7 +111,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
                 <p className="text-white/80 text-[12px] leading-snug italic">
                   „Im ersten Jahr 22.000 € Steuern gespart – und monatlich passiven Cashflow."
                 </p>
-                <p className="text-white/45 text-[10px] mt-1">Michael K. · Unternehmer, München</p>
+                <p className="text-white/45 text-[10px] mt-1">Michael B. · Unternehmer, München</p>
               </div>
             </div>
           </div>
