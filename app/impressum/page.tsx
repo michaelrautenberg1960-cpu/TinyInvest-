@@ -173,7 +173,7 @@ export default function ImpressumPage() {
               </ul>
               <p className="mt-4">
                 Sollten Sie der Meinung sein, dass auf dieser Website Inhalte Ihre Urheberrechte verletzen, bitten wir Sie,
-                uns umgehend zu kontaktieren. Wir werden die betreffenden Inhalte unverzüglich prüfen und gegebenenfalls entfernen.
+                uns umgehend zu kontaktieren. Wir werden die betreffenden Inhalte unverzüglich prüfen und gegebenenfalls entfernen.und
               </p>
             </section>
 
