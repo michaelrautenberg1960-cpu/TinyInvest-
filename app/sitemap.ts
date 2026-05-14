@@ -6,13 +6,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: BASE_URL,
-      lastModified: "2026-04-13",
+      lastModified: "2026-05-14",
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/marktplatz`,
-      lastModified: "2026-04-13",
+      lastModified: "2026-05-14",
       changeFrequency: "weekly",
       priority: 0.9,
     },

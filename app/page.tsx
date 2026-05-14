@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import Link from "next/link";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustBar from "./components/TrustBar";
@@ -61,22 +62,6 @@ const organizationSchema = {
   "sameAs": [],
 };
 
-const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Tiny House §7g Investment",
-  "description": "Tiny House als bewegliches Wirtschaftsgut: §7g IAB (50 %), Sonder-AfA (40 %) und degressive AfA (30 %) kombinierbar. Ab 65.000 €, 12–14 % IRR p.a.",
-  "brand": { "@type": "Brand", "name": "TinyInvest" },
-  "url": "https://tinyhouse.investments/marktplatz",
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "EUR",
-    "lowPrice": "65000",
-    "highPrice": "95000",
-    "availability": "https://schema.org/InStock",
-    "url": "https://tinyhouse.investments/marktplatz",
-  },
-};
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -98,11 +83,32 @@ export default function Home() {
     <main className="font-sans antialiased text-gray-800 bg-white">
       <Script id="org-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <Script id="website-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      <Script id="product-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <Navbar />
       <Hero heroImage={HERO_IMAGE} />
       <TrustBar />
       <MarktplatzTeaser />
+
+      {/* Internal pillar links — helps Google discover key product pages from the homepage */}
+      <section className="py-8 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-4">Mehr erfahren</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all bg-white">
+              Tiny House als Kapitalanlage →
+            </Link>
+            <Link href="/steuervorteil" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all bg-white">
+              §7g Steuervorteil →
+            </Link>
+            <Link href="/renditemodell" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all bg-white">
+              Renditemodell →
+            </Link>
+            <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all bg-white">
+              Kapitalanlage-Guide →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Oekosystem />
       <Prozess />
       <Ueber />
