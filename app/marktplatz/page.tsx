@@ -114,6 +114,7 @@ export default async function MarktplatzPage() {
     "@type": "Product",
     "name": "Tiny House Investment",
     "description": "Steueroptimierte Tiny House Kapitalanlage ab 65.000 €. Vollautomatisch verwaltet durch tiny Escapes. 12–14 % IRR p.a.",
+    "image": "https://tinyhouse.investments/images/outside/tiny-house-escape-hero.webp",
     "brand": { "@type": "Brand", "name": "TinyInvest" },
     "url": "https://tinyhouse.investments/marktplatz",
     "offers": {
@@ -146,7 +147,7 @@ export default async function MarktplatzPage() {
         badge="Marktplatz · Investment-Projekte 2026"
         title="Projekte, in die Sie investieren können"
         subtitle="§7g-fähige Tiny House Assets auf Vlemmix Trailer — direkt beim Hersteller gekauft, vollautomatisch bewirtschaftet durch tiny Escapes. Kein Kapital an TinyInvest."
-        img="marktplatz.png"
+        img="/marktplatz.png"
       />
 
       {/* KPI bar */}
