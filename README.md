@@ -36,7 +36,7 @@ TinyInvest ist eine Next.js-Plattform, über die Privatinvestoren mobile Tiny Ho
 app/
 ├── page.tsx                          # Startseite (Landing Page)
 ├── layout.tsx                        # Root Layout + globale Metadata
-├── sitemap.ts                        # Automatische XML-Sitemap (35+ Einträge)
+├── sitemap.ts                        # Automatische XML-Sitemap (40+ Einträge)
 │
 ├── marktplatz/                       # Listing-Marktplatz (Supabase-Live-Daten)
 ├── projekte/                         # Projektübersicht + Google Maps
@@ -64,18 +64,23 @@ app/
 │   ├── direktinvestment/             # Direktinvestment vs. Fonds
 │   ├── ferienimmobilie-steuer/       # Steuer bei Ferienimmobilien
 │   ├── host-werden/                  # Host werden bei tiny Escapes
-│   ├── iab-tiny-house/               # IAB Tiny House (neu)
-│   ├── kapitalanlage/                # Tiny House als Kapitalanlage
+│   ├── iab-tiny-house/               # IAB Tiny House
+│   ├── kapitalanlage/                # Tiny House vs. ETW Vergleich (educational)
 │   ├── passive-einnahmen-immobilien/ # Passive Einnahmen mit Immobilien
+│   ├── pv-anlage-als-kapitalanlage/  # PV vs. Tiny House Vergleich
+│   ├── solaranlage-alternative/      # Solaranlage als Kapitalanlage
 │   ├── steuerberater-finden/         # Steuerberater finden
 │   ├── tiny-house-airbnb/            # Tiny House auf Airbnb vermieten
 │   ├── tiny-house-als-rendite/       # Cashflow & Ertragsmodell
 │   ├── tiny-house-finanzierung/      # Finanzierungsoptionen
 │   ├── tiny-house-genehmigung/       # Baugenehmigung & Recht
+│   ├── tiny-house-kaufen/            # Tiny House kaufen Guide
 │   ├── tiny-house-kaufen-checkliste/ # Kaufcheckliste
-│   ├── tiny-house-rendite-rechner/   # Rendite berechnen (neu)
+│   ├── tiny-house-kaufen-mit-grundstueck/ # Kauf mit Grundstück
+│   ├── tiny-house-rendite-rechner/   # Rendite berechnen
 │   ├── tiny-house-standorte/         # Standortauswahl
-│   └── tiny-house-steuern-sparen/    # Steuern sparen Anleitung (neu)
+│   ├── tiny-house-steuer-risiken/    # Steuerrisiken & Fallstricke
+│   └── tiny-house-steuern-sparen/    # Steuern sparen Anleitung
 │
 ├── investor/                         # Investor-Dashboard (Auth required)
 │   ├── page.tsx                      # Dashboard (Assets, KPIs, Buchungen)
@@ -170,7 +175,7 @@ public/
 **Autor-Attribution (E-E-A-T):** Alle Artikel sind Noah Stein (`@type: Person`) mit LinkedIn-URL zugeordnet — sowohl im JSON-LD `author`-Feld als auch im sichtbaren Byline (Avatar, Name, Datum).
 
 ### Sitemap
-36+ Einträge in `app/sitemap.ts`, inkl. Priority-Gewichtung:
+40+ Einträge in `app/sitemap.ts`, inkl. Priority-Gewichtung:
 - Priority 1.0: `/`, `/tiny-house-als-kapitalanlage`, `/wissen/7g-tiny-house-investment`
 - Priority 0.9: alle /wissen Artikel, /senioren, /rechner/iab, /rechner/rendite
 - Priority 0.8–0.85: /marktplatz, /projekte, /hosts, /wissen Hub
@@ -189,7 +194,7 @@ public/
 | `/hosts` | Host-Programm | — |
 | `/partner` | Vertrieb-Programm | — |
 | `/konfigurator` | Konfigurator | — |
-| `/tiny-house-als-kapitalanlage` | SEO-Landingpage | — |
+| `/tiny-house-als-kapitalanlage` | SEO-Pillar-Landingpage (Priority 1.0) | Article + FAQPage + BreadcrumbList |
 | `/senioren` | Landingpage Senioren & Altersvorsorge | Article + FAQPage + BreadcrumbList |
 | `/rechner/iab` | IAB-Steuerrechner | — |
 | `/rechner/rendite` | Renditerechner | — |

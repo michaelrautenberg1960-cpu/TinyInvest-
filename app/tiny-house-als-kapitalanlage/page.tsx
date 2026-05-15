@@ -43,12 +43,12 @@ const faqItems = [
   {
     question: "Welche steuerlichen Vorteile gibt es?",
     answer:
-      "Da Tiny Houses auf Vlemmix Trailern als bewegliche Wirtschaftsgüter gelten, greift §7g EStG: IAB (50 % im Vorjahr), Sonder-AfA (40 %) + degressive AfA (30 %) im Kaufjahr. Bei 80.000 € Investment und 42 % Steuersatz: bis zu ~33.000 € Liquiditätsvorteil im Jahr 1.",
+      "Da Tiny Houses auf zertifizierten Trailern als bewegliche Wirtschaftsgüter gelten, greift §7g EStG: IAB (50 % im Vorjahr), Sonder-AfA (40 %) + degressive AfA (30 %) im Kaufjahr. Angestellte können über eine einfache Nebengewerbe-Anmeldung ebenfalls den IAB nutzen. Bei 80.000 € Investment und 42 % Steuersatz: bis zu ~33.000 € Liquiditätsvorteil im Jahr 1.",
   },
   {
     question: "Für wen lohnt sich das Investment am meisten?",
     answer:
-      "Am stärksten profitieren Freiberufler und Selbstständige, die den IAB im Vorjahr bilden können, sowie GmbH-Inhaber die das Objekt über Betriebsvermögen kaufen. Auch Angestellte mit hohem Grenzsteuersatz (42 %) profitieren stark von Sonder-AfA und degressiver AfA — ohne IAB. Wer keinen betrieblichen Hintergrund hat, kann trotzdem über Gewerbeanmeldung investieren.",
+      "Am stärksten profitieren Freiberufler, Selbstständige und GmbH-Inhaber, die den IAB im Vorjahr bilden können. Angestellte können durch eine einfache Nebengewerbe-Anmeldung ebenfalls den vollen §7g-Hebel nutzen — inklusive IAB. Die Anmeldung kostet 15–65 € und ist in den meisten Gemeinden online möglich. Mit Nebengewerbe stehen alle drei §7g-Instrumente offen: IAB, Sonder-AfA und degressive AfA.",
   },
   {
     question: "Kann ich mehrere Tiny Houses kaufen?",
@@ -171,7 +171,7 @@ export default function TinyHouseKapitalanlagePage() {
             Nicht jedes Investment passt zu jedem Investor. Ein Tiny House als Kapitalanlage ist besonders attraktiv für Steuerpflichtige, die aktiv Steuern optimieren wollen — Freiberufler, Selbstständige und GmbH-Inhaber, die den <strong className="text-gray-900">Investitionsabzugsbetrag (IAB)</strong> nutzen können, profitieren von bis zu 50 % Vorzieheffekt bereits im Jahr vor dem Kauf. Angestellte mit 42 % Grenzsteuersatz profitieren durch Sonder-AfA (40 %) und degressive AfA (30 %) noch im Kaufjahr erheblich — ohne Gewerbe.
           </p>
           <p className="text-gray-700 text-base leading-relaxed">
-            Der entscheidende Unterschied zu klassischen Immobilien: Tiny Houses auf Vlemmix Trailern sind <strong className="text-gray-900">bewegliche Wirtschaftsgüter</strong> — kein Grundbucheintrag, keine Grunderwerbsteuer, kein Notar. Das öffnet steuerliche Türen, die bei jeder Eigentumswohnung verschlossen bleiben. Die vollständige theoretische Analyse dieser Mechanismen findest du im{" "}
+            Der entscheidende Unterschied zu klassischen Immobilien: Tiny Houses auf zertifizierten Trailern sind <strong className="text-gray-900">bewegliche Wirtschaftsgüter</strong> — kein Grundbucheintrag, keine Grunderwerbsteuer, kein Notar. Das öffnet steuerliche Türen, die bei jeder Eigentumswohnung verschlossen bleiben. Die vollständige theoretische Analyse dieser Mechanismen findest du im{" "}
             <Link href="/wissen/kapitalanlage" className="text-green-700 font-semibold hover:underline">detaillierten Kapitalanlage-Guide →</Link>
           </p>
           <p className="text-gray-700 text-base leading-relaxed">
@@ -333,15 +333,15 @@ export default function TinyHouseKapitalanlagePage() {
               {
                 icon: "👔",
                 label: "Angestellte (42 % Grenzsteuersatz)",
-                badge: "Starker Hebel",
+                badge: "Voller Hebel mit Gewerbe",
                 badgeColor: "bg-blue-100 text-blue-700",
                 points: [
-                  "Kein IAB (kein Betrieb nötig)",
-                  "Sonder-AfA + deg. AfA nutzbar",
-                  "Einkünfte aus Vermietung & Verpachtung",
-                  "Gewerbe-Anmeldung als Alternative",
+                  "Nebengewerbe anmelden → IAB voll nutzbar",
+                  "Sonder-AfA 40 % + deg. AfA 30 % im Kaufjahr",
+                  "Einkünfte aus Gewerbebetrieb (nicht nur V+V)",
+                  "Kombination: Gehalt + Gewerbe = maximaler Effekt",
                 ],
-                note: "Ohne IAB. Steuereffekt geringer, aber bei 42 % trotzdem signifikant.",
+                note: "Mit Nebengewerbe (einfache Anmeldung beim Gewerbeamt) greift §7g vollständig — inklusive IAB im Vorjahr.",
               },
               {
                 icon: "🏢",
@@ -373,6 +373,15 @@ export default function TinyHouseKapitalanlagePage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-10 space-y-4 text-gray-700 text-[15px] leading-relaxed">
+            <p>
+              Ein wichtiger Hinweis für Angestellte: Der IAB (Investitionsabzugsbetrag nach §7g EStG) setzt einen <strong className="text-gray-900">Gewerbebetrieb oder eine selbstständige Tätigkeit</strong> voraus — aber das bedeutet nicht, dass Angestellte ausgeschlossen sind. Wer neben seinem Anstellungsverhältnis ein <strong className="text-gray-900">Nebengewerbe anmeldet</strong> (z.B. "Vermietung und Bewirtschaftung von beweglichen Wirtschaftsgütern"), kann den IAB bereits im Jahr vor dem Kauf bilden und so alle drei §7g-Hebel nutzen: IAB, Sonder-AfA und degressive AfA.
+            </p>
+            <p>
+              Die Gewerbe-Anmeldung kostet je nach Gemeinde zwischen 15 und 65 € und ist in den meisten Städten online in unter 20 Minuten erledigt. Wir empfehlen, diesen Schritt mit einem §7g-spezialisierten Steuerberater abzusprechen — denn der optimale Zeitpunkt der IAB-Bildung (Vorjahr vs. Kaufjahr) hängt von der persönlichen Einkommenssituation ab.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -398,13 +407,13 @@ export default function TinyHouseKapitalanlagePage() {
               },
               {
                 step: "03",
-                title: "Kauf beim Hersteller",
-                desc: "Der Kaufvertrag läuft direkt zwischen dir und dem Hersteller (Vlemmix). Kein Kapital fließt an TinyInvest. Kein Notar, kein Grundbuch.",
+                title: "Kauf über TinyInvest",
+                desc: "Du kaufst das Haus direkt bei TinyInvest. Gefertigt wird es von unseren zertifizierten Partner-Werkstätten. Kein Notar, kein Grundbuch, keine Kaufnebenkosten.",
               },
               {
                 step: "04",
                 title: "Auszahlung startet",
-                desc: "tiny Escapes übernimmt Betrieb, Buchungen, Gäste und Wartung. Du erhältst monatlich 40 % der Nettomieteinnahmen.",
+                desc: "tiny Escapes und/oder ein lokaler Partner übernimmt Betrieb, Buchungen, Gäste und Wartung. Du erhältst monatlich 40 % der Nettomieteinnahmen.",
               },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-5 bg-white">
@@ -419,7 +428,7 @@ export default function TinyHouseKapitalanlagePage() {
 
           <div className="mt-10 space-y-4 text-gray-700 text-[15px] leading-relaxed">
             <p>
-              Von der ersten Anfrage bis zur ersten Mietauszahlung vergehen in der Regel <strong className="text-gray-900">8–14 Wochen</strong>. Der Kaufvertrag wird direkt zwischen dir und dem Hersteller abgeschlossen — TinyInvest ist nicht Partei des Kaufvertrags und verwahrt kein Kapital. Das ist ein bewusstes Designprinzip: Du bleibst Eigentümer des Objekts, nicht Anteilsinhaber einer Gesellschaft.
+              Von der ersten Anfrage bis zur ersten Mietauszahlung vergehen in der Regel <strong className="text-gray-900">8–14 Wochen</strong>. Du kaufst das Haus bei TinyInvest — gefertigt von unseren zertifizierten Partner-Werkstätten. Du wirst Eigentümer eines physischen Objekts, kein Anteilsinhaber einer Gesellschaft.
             </p>
             <p>
               Das bedeutet auch: Du kannst das Haus im Notfall jederzeit abziehen und anderweitig nutzen oder verkaufen. Die Bindung an tiny Escapes ist vertraglich geregelt, aber du bist nicht auf Gedeih und Verderb an einen einzigen Betreiber gebunden — ein wesentlicher Unterschied zu geschlossenen Fondsprodukten.
