@@ -6,19 +6,19 @@ import Script from "next/script";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Tiny House als Kapitalanlage 2026: Lohnt es sich? | TinyInvest",
+  title: "Tiny House kaufen als Investment 2026: So funktioniert es | TinyInvest",
   description:
-    "Tiny House als Kapitalanlage: Rendite ab 12 % IRR p.a., §7g Steuervorteile, ab 65.000 € Einstieg. Für Freiberufler, GmbH-Inhaber & Angestellte. Investment-Guide 2026.",
+    "Tiny House als Investment kaufen: Schritt-für-Schritt-Anleitung, Investor-Profile, 4-Schritte-Prozess und Rechenbeispiel. Ab 65.000 €, §7g-optimiert, vollautomatisch bewirtschaftet.",
   keywords:
-    "tiny house als kapitalanlage, tiny house investieren, tiny house rendite, ferienhaus als kapitalanlage, tiny house investment, §7g kapitalanlage",
+    "tiny house kaufen investment, tiny house investieren 2026, tiny house als rendite objekt, ferienhaus investment kaufen, tiny house investor werden, §7g investment",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: {
     canonical: "https://tinyhouse.investments/tiny-house-als-kapitalanlage",
   },
   openGraph: {
-    title: "Tiny House als Kapitalanlage 2026 – Der vollständige Guide",
+    title: "Tiny House als Investment kaufen 2026 – Der Praxis-Guide",
     description:
-      "Lohnt sich ein Tiny House als Kapitalanlage? Rendite, Steuervorteile und Risiken transparent erklärt.",
+      "Wie kauft man ein Tiny House als Investment? Investor-Profile, 4-Schritte-Prozess und Rechenbeispiel. Vollautomatisch bewirtschaftet.",
     url: "https://tinyhouse.investments/tiny-house-als-kapitalanlage",
     type: "article",
   },
@@ -174,6 +174,9 @@ export default function TinyHouseKapitalanlagePage() {
             Der entscheidende Unterschied zu klassischen Immobilien: Tiny Houses auf Vlemmix Trailern sind <strong className="text-gray-900">bewegliche Wirtschaftsgüter</strong> — kein Grundbucheintrag, keine Grunderwerbsteuer, kein Notar. Das öffnet steuerliche Türen, die bei jeder Eigentumswohnung verschlossen bleiben. Die vollständige theoretische Analyse dieser Mechanismen findest du im{" "}
             <Link href="/wissen/kapitalanlage" className="text-green-700 font-semibold hover:underline">detaillierten Kapitalanlage-Guide →</Link>
           </p>
+          <p className="text-gray-700 text-base leading-relaxed">
+            Auf dieser Seite geht es um die praktische Seite: Wer kauft, wie läuft der Prozess ab, was passiert nach dem Kauf — und warum sind die laufenden Kosten für den Investor so niedrig? Das Modell funktioniert nur, weil drei Parteien klar definierte Interessen haben: Du als Eigentümer willst Rendite. Der Host will ein Haus mit Gästen. tiny Escapes will eine funktionierende Plattform. Wenn alle drei gewinnen, hält das System.
+          </p>
         </div>
       </section>
 
@@ -234,6 +237,15 @@ export default function TinyHouseKapitalanlagePage() {
               → Vollständige §7g-Steueranalyse mit interaktivem Rechner
             </Link>
           </div>
+
+          <div className="mt-10 space-y-4 text-gray-700 text-[15px] leading-relaxed">
+            <p>
+              Was die Tabelle nicht zeigt: Der echte Vorteil liegt nicht in der Brutto-Mietrendite, sondern im <strong className="text-gray-900">Zusammenspiel aus Sofortabschreibung und laufendem Cashflow</strong>. Bei einer Eigentumswohnung schreibst du das Gebäude mit 2 % über 50 Jahre ab — steuerlich kaum relevant für den aktiven Investor. Beim Tiny House werden im Kaufjahr bis zu 70 % des Kaufpreises steuerlich wirksam. Das bedeutet: Wer 80.000 € investiert und 42 % Einkommensteuer zahlt, bekommt im ersten Jahr rund 23.000 € vom Finanzamt zurück — zusätzlich zu den laufenden Mieteinnahmen.
+            </p>
+            <p>
+              Hinzu kommt ein Faktor, den klassische Immobilienkäufer oft vergessen: <strong className="text-gray-900">keine Kaufnebenkosten</strong>. Grunderwerbsteuer (3,5–6,5 %), Notargebühren (~1,5 %), Grundbucheintrag (~0,5 %) und oft Makler (~3,57 %) summieren sich bei einer 300.000 €-ETW auf 25.000–35.000 € — Kapital, das sofort verloren ist und nie Rendite bringt. Beim Tiny House entfällt das vollständig.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -275,7 +287,16 @@ export default function TinyHouseKapitalanlagePage() {
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="mt-10 space-y-4 text-gray-700 text-[15px] leading-relaxed">
+            <p>
+              Passive Einnahmen aus Immobilien klingen gut — in der Praxis bedeuten sie oft: Mieter anrufen, Handwerker koordinieren, Nebenkostenabrechnung erstellen, Leerstandsphasen überbrücken. Beim Tiny House Investment über tiny Escapes entfällt das vollständig. Der Betreiber übernimmt Buchungen, Gäste, Reinigung, Wartung und monatliche Abrechnung. Du erhältst jeden Monat eine Überweisung — ohne einen einzigen Anruf machen zu müssen.
+            </p>
+            <p>
+              Das ist strukturell anders als ein klassischer Vermieter-Job. Und es ist der Grund, warum das Modell besonders für viel beschäftigte Freiberufler, Unternehmer und Angestellte attraktiv ist: Es passt in jede Lebenssituation — ohne Zusatzaufwand.
+            </p>
+          </div>
+
+          <div className="text-center mt-6">
             <Link href="/renditemodell" className="text-green-700 font-semibold text-[13px] hover:underline">
               → Interaktiver Renditerechner: eigenen Cashflow berechnen
             </Link>
@@ -396,7 +417,16 @@ export default function TinyHouseKapitalanlagePage() {
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="mt-10 space-y-4 text-gray-700 text-[15px] leading-relaxed">
+            <p>
+              Von der ersten Anfrage bis zur ersten Mietauszahlung vergehen in der Regel <strong className="text-gray-900">8–14 Wochen</strong>. Der Kaufvertrag wird direkt zwischen dir und dem Hersteller abgeschlossen — TinyInvest ist nicht Partei des Kaufvertrags und verwahrt kein Kapital. Das ist ein bewusstes Designprinzip: Du bleibst Eigentümer des Objekts, nicht Anteilsinhaber einer Gesellschaft.
+            </p>
+            <p>
+              Das bedeutet auch: Du kannst das Haus im Notfall jederzeit abziehen und anderweitig nutzen oder verkaufen. Die Bindung an tiny Escapes ist vertraglich geregelt, aber du bist nicht auf Gedeih und Verderb an einen einzigen Betreiber gebunden — ein wesentlicher Unterschied zu geschlossenen Fondsprodukten.
+            </p>
+          </div>
+
+          <div className="text-center mt-6">
             <Link href="/marktplatz" className="text-green-700 font-semibold text-[13px] hover:underline">
               → Verfügbare Projekte auf dem Marktplatz ansehen
             </Link>

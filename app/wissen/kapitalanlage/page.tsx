@@ -6,11 +6,11 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House als Kapitalanlage: Rendite, Risiken & Chancen 2026 | TinyInvest",
+  title: "Tiny House vs. Eigentumswohnung: Kapitalanlage-Vergleich 2026 | TinyInvest",
   description:
-    "Lohnt sich ein Tiny House als Kapitalanlage? Vergleich Tiny House vs. Eigentumswohnung, 3 Renditesäulen, Risiken und Chancen. Kompletter Guide für Investoren 2026.",
+    "Lohnt sich ein Tiny House als Kapitalanlage wirklich? Detaillierter Vergleich Tiny House vs. ETW, 3 Renditesäulen, 5-Jahres-Modell und Risiken. Bildungsguide für Investoren 2026.",
   keywords:
-    "tiny house als kapitalanlage, tiny house investieren, tiny house rendite, ferienhaus als kapitalanlage, tiny house investment 2026",
+    "tiny house vs eigentumswohnung, tiny house kapitalanlage vergleich, lohnt sich tiny house, tiny house rendite berechnen, tiny house kapitalanlage erklärung 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: {
     canonical: "https://tinyhouse.investments/wissen/kapitalanlage",
@@ -116,6 +116,11 @@ export default function KapitalanlagePage() {
         id="article-schema-kapitalanlage"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema-kapitalanlage"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <section className="pt-32 pb-10 bg-white">

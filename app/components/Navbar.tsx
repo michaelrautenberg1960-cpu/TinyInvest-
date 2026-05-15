@@ -28,7 +28,7 @@ const NAV_GROUPS = [
     label: "Wissen",
     items: [
       { label: "Wissens-Hub", href: "/wissen", desc: "Alle Guides, Glossar & Artikel" },
-      { label: "Tiny House als Kapitalanlage", href: "/tiny-house-als-kapitalanlage", desc: "Der komplette SEO-Guide 2026" },
+      { label: "Tiny House als Kapitalanlage", href: "/tiny-house-als-kapitalanlage", desc: "Der komplette Guide 2026" },
       { label: "Partner werden", href: "/partner", desc: "Als Vertriebspartner provisionieren" },
     ],
   },
