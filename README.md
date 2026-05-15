@@ -9,10 +9,11 @@
 
 TinyInvest ist eine Next.js-Plattform, über die Privatinvestoren mobile Tiny Houses als steueroptimierte Kapitalanlage erwerben können. Die Häuser werden an Ferienstandorten in DE/AT/EU betrieben und vollständig durch [tiny Escapes](https://tiny.rentals) verwaltet. Investoren erhalten 40 % der Nettomieteinnahmen monatlich ausgezahlt, ohne selbst operativ tätig zu werden.
 
-**3 Investor-Profile:**
+**4 Zielgruppen:**
 - **Steuer-Investor** – §7g IAB + Sonder-AfA + degressive AfA (bis ~34.000 € Steuervorteil im Kaufjahr)
 - **Rendite-Investor** – 40 % der Mieteinnahmen monatlich, 12–18 % IRR p.a.
 - **Finanzierungs-Käufer** – Bankkredit + IAB als Eigenkapitalhebel, Mieteinnahmen tilgen die Rate
+- **Senioren & Rentner** – Sachwert als Altersvorsorge: Kapitalanlage mit monatlicher Auszahlung oder Selbstnutzung
 
 ---
 
@@ -47,6 +48,7 @@ app/
 ├── partner/                          # Vertriebspartner-Programm
 ├── konfigurator/                     # Tiny House Konfigurator
 ├── tiny-house-als-kapitalanlage/     # SEO-Landingpage (Priority 1.0)
+├── senioren/                         # Landingpage Senioren & Altersvorsorge
 ├── agb/                              # Allgemeine Geschäftsbedingungen
 ├── impressum/                        # Impressum
 ├── datenschutz/                      # Datenschutzerklärung
@@ -55,7 +57,7 @@ app/
 │   ├── iab/                          # IAB-Steuerrechner
 │   └── rendite/                      # Renditerechner (interaktiv)
 │
-├── wissen/                           # SEO-Wissens-Hub (17 Artikel)
+├── wissen/                           # SEO-Wissens-Hub (22 Artikel)
 │   ├── page.tsx                      # Hub-Übersichtsseite
 │   ├── 7g-tiny-house-investment/     # §7g Leitfaden (Priority 1.0)
 │   ├── afa-abschreibung/             # AfA-Abschreibung erklärt
@@ -161,16 +163,16 @@ public/
 
 | Schema | Seiten |
 |---|---|
-| `Article` + `FAQPage` + `BreadcrumbList` | Alle 17 /wissen Artikel |
+| `Article` + `FAQPage` + `BreadcrumbList` | Alle 22 /wissen Artikel + /senioren |
 | `Product` + `BreadcrumbList` | /marktplatz |
 | `Organization` | Startseite |
 
 **Autor-Attribution (E-E-A-T):** Alle Artikel sind Noah Stein (`@type: Person`) mit LinkedIn-URL zugeordnet — sowohl im JSON-LD `author`-Feld als auch im sichtbaren Byline (Avatar, Name, Datum).
 
 ### Sitemap
-35+ Einträge in `app/sitemap.ts`, inkl. Priority-Gewichtung:
+36+ Einträge in `app/sitemap.ts`, inkl. Priority-Gewichtung:
 - Priority 1.0: `/`, `/tiny-house-als-kapitalanlage`, `/wissen/7g-tiny-house-investment`
-- Priority 0.9: alle /wissen Artikel, /rechner/iab, /rechner/rendite
+- Priority 0.9: alle /wissen Artikel, /senioren, /rechner/iab, /rechner/rendite
 - Priority 0.8–0.85: /marktplatz, /projekte, /hosts, /wissen Hub
 
 ### Seiten & Routen
@@ -188,6 +190,7 @@ public/
 | `/partner` | Vertrieb-Programm | — |
 | `/konfigurator` | Konfigurator | — |
 | `/tiny-house-als-kapitalanlage` | SEO-Landingpage | — |
+| `/senioren` | Landingpage Senioren & Altersvorsorge | Article + FAQPage + BreadcrumbList |
 | `/rechner/iab` | IAB-Steuerrechner | — |
 | `/rechner/rendite` | Renditerechner | — |
 | `/wissen` | Wissens-Hub (17 Artikel) | CollectionPage |

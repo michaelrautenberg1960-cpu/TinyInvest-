@@ -238,5 +238,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
+    {
+      url: `${BASE_URL}/senioren`,
+      lastModified: "2026-05-15",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 }
