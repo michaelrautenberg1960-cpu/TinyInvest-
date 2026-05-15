@@ -14,6 +14,7 @@ const NAV_GROUPS = [
       { label: "So funktioniert's", href: "/so-funktioniert-es", desc: "Der vollständige Investor-Prozess" },
       { label: "Konfigurator", href: "/konfigurator", desc: "Haus konfigurieren & Angebot erhalten" },
       { label: "Für Hosts", href: "/hosts", desc: "Stellplatz vermieten & Einnahmen erzielen" },
+      { label: "Für Senioren", href: "/senioren", desc: "Altersvorsorge & Sachwert für Rentner" },
     ],
   },
   {

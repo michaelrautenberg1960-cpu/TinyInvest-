@@ -274,7 +274,7 @@ export default function SteuerVorteilPage() {
           <div className="mt-8 border-t border-gray-100 pt-8">
             <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-4">Weiterführende Artikel</p>
             <Link href="/wissen/afa-abschreibung" className="group flex items-center gap-4 bg-white border border-gray-100 rounded-2xl p-4 hover:border-green-200 hover:shadow-sm transition-all text-left">
-              <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
+              <div className="relative w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
                 <Image src="/images/outside/tiny-house-escape-wald.webp" alt="AfA Abschreibung" fill className="object-cover group-hover:scale-105 transition-transform duration-300" priority sizes="(max-width: 768px) 100vw, 896px" />
               </div>
               <div>

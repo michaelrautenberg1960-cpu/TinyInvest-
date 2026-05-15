@@ -18,7 +18,7 @@ export default function SubPageHeader({
   img = "/images/outside/tiny-house-escape-sachwert.webp",
 }: SubPageHeaderProps) {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-32 pb-20 overflow-hidden isolate transform-gpu">
       {/* BG image */}
       <img
         src={img}
