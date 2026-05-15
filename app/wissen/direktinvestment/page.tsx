@@ -161,7 +161,7 @@ export default function DirektinvestmentPage() {
           </div>
 
           {/* ── Image ── */}
-          <div className="rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "21/9" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "21/9" }}>
             <Image src="/images/outside/tiny-house-wald-naturstandort.webp" alt="Tiny House Standort Wald Natur" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
@@ -247,7 +247,7 @@ export default function DirektinvestmentPage() {
           </div>
 
           {/* ── Image ── */}
-          <div className="rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-eigentumsuebergabe.webp" alt="Tiny House Eigentumsübergabe" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
@@ -267,7 +267,7 @@ export default function DirektinvestmentPage() {
           </div>
 
           {/* ── Image ── */}
-          <div className="rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-ferienimmobilie-aussen.webp" alt="Tiny House Ferienimmobilie Außenansicht" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

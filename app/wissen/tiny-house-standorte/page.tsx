@@ -194,7 +194,7 @@ export default function TinyHouseStandortePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-winter-ganzjahresbetrieb.webp" alt="Tiny House im Winter – Ganzjahresbetrieb" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

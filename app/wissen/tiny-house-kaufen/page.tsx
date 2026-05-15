@@ -123,7 +123,7 @@ export default function TinyHouseKaufenPage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
+          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
             <img
               src="/images/outside/tiny-house-investor-aussen.webp"
               alt="Tiny House kaufen – modernes Solido Tiny House auf Vlemmix-Trailer in Naturlage"
@@ -278,7 +278,7 @@ export default function TinyHouseKaufenPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <img
               src="/images/outside/tiny-house-stellplatz-standort.webp"
               alt="Tiny House kaufen mit oder ohne Grundstück – Stellplatz in Naturlage"

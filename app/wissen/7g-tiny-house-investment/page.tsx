@@ -228,7 +228,7 @@ export default function PillarPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
+          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
             <img
               src="/images/outside/tiny-house-escape-wald.webp"
               alt="§7g Tiny House Investment – Steueroptimiertes Kapitalanlage-Modell 2026"
@@ -390,7 +390,7 @@ export default function PillarPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
             <img
               src="/images/outside/tiny-house-renditeobjekt-aussen.webp"
               alt="§7g Tiny House Investment – bewegliches Wirtschaftsgut als Kapitalanlage"

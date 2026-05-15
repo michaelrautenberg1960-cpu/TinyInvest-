@@ -149,7 +149,7 @@ export default function TinyHouseAlsRenditePage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-10" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-10" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-wald-naturstandort.webp" alt="Tiny House im Wald – naturnaher Glamping-Standort" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
@@ -196,7 +196,7 @@ export default function TinyHouseAlsRenditePage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-investor-aussen.webp" alt="Tiny House Standort Außenansicht" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
@@ -263,7 +263,7 @@ export default function TinyHouseAlsRenditePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-kueche.webp" alt="Tiny House Küche und Wohnbereich" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

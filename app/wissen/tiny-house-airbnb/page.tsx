@@ -161,7 +161,7 @@ export default function TinyHouseAirbnbPage() {
             <p className="text-[11px] text-gray-500">* Investor erhält 40 % der Netto-Einnahmen · Airbnb-Gebühren und Betriebskosten bereits abgezogen</p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-escape-sachwert.webp" alt="Tiny House im Freien – Ferienvermietung" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
@@ -216,7 +216,7 @@ export default function TinyHouseAirbnbPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-detail.webp" alt="Tiny House Innenraum Detailaufnahme" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

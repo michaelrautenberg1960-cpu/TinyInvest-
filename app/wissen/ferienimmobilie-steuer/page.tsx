@@ -150,7 +150,7 @@ export default function FerienimmobilieSteuerPage() {
             ))}
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-escape-hero.webp" alt="Tiny House Ferienunterkunft" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
@@ -191,7 +191,7 @@ export default function FerienimmobilieSteuerPage() {
             <p className="text-[12px] text-amber-800 leading-relaxed">Alle Steuerangaben sind allgemeiner Natur und keine Steuerberatung. Individuelle Steuereffekte hängen von der persönlichen Situation ab. Bitte konsultiere einen Steuerberater.</p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-10" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-10" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-wohnzimmer.webp" alt="Tiny House Wohnbereich modern" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

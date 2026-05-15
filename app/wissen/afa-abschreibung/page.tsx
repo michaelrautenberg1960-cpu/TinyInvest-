@@ -162,7 +162,7 @@ export default function AfaAbschreibungPage() {
           </div>
 
           {/* Image Break 1 */}
-          <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-renditeobjekt-aussen.webp" alt="Tiny House Außenansicht Standort" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
@@ -239,7 +239,7 @@ export default function AfaAbschreibungPage() {
           </div>
 
           {/* Image Break 2 */}
-          <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-airbnb.webp" alt="Tiny House Innenausstattung" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

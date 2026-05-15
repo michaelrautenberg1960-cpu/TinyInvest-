@@ -160,7 +160,7 @@ export default function ChecklistePage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-wohnbereich.webp" alt="Tiny House Innenraum modern" fill className="object-cover" sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

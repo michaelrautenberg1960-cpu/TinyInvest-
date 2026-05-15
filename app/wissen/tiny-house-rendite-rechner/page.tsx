@@ -227,7 +227,7 @@ export default function TinyHouseRenditeRechnerPage() {
           </div>
 
           {/* Image Break */}
-          <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-kueche.webp" alt="Tiny House Innenausstattung Küche" fill className="object-cover" sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

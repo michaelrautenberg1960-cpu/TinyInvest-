@@ -169,7 +169,7 @@ export default function GenehmigungPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-aussenbereich-natur.webp" alt="Tiny House Außenbereich Standort" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
@@ -232,7 +232,7 @@ export default function GenehmigungPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-10" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-10" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-genehmigung.webp" alt="Tiny House Innenausstattung" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

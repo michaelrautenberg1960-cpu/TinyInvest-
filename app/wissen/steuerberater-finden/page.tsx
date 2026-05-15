@@ -179,7 +179,7 @@ export default function SteuerberaterFindenPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-escape-wald.webp" alt="Tiny House Investment – Steueroptimierung" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

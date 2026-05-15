@@ -229,7 +229,7 @@ export default function TinyHouseSteuernSparenPage() {
           </div>
 
           {/* Image Break */}
-          <div className="rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden my-14" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-wohnbereich.webp" alt="Tiny House Innenausstattung Wohnbereich" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

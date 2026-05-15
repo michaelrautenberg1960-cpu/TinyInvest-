@@ -217,7 +217,7 @@ export default function KapitalanlagePage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-naturlage-gruen.webp" alt="Tiny House in Naturlage – Kapitalanlage mit Belegung" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
@@ -372,7 +372,7 @@ export default function KapitalanlagePage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/inside/tiny-house-innen-wohnzimmer.webp" alt="Tiny House Wohnbereich – Kapitalanlage Innenausstattung" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 

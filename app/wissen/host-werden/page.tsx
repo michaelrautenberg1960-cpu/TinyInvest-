@@ -166,7 +166,7 @@ export default function HostWerdenPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-stellplatz-standort.webp" alt="Tiny House Standort – geeignetes Grundstück für Hosts" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
