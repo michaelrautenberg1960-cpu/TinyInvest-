@@ -14,7 +14,14 @@ type Lead = {
   investment_volumen: string | null;
   kontakt_zeit: string | null;
   nachricht: string | null;
-  status: "neu" | "kontaktiert" | "abgeschlossen";
+  status: "neu" | "email_gesendet" | "kontaktiert" | "wiedervorlage" | "abgeschlossen";
+};
+
+type LeadNotiz = {
+  id: string;
+  lead_id: string;
+  notiz: string;
+  created_at: string;
 };
 
 type Listing = {
@@ -46,14 +53,18 @@ type NewListing = Omit<Listing, "id">;
 
 // ──────────── Constants ────────────
 const STATUS_COLORS = {
-  neu:           "bg-red-100 text-red-700 border-red-200",
-  kontaktiert:   "bg-yellow-100 text-yellow-700 border-yellow-200",
-  abgeschlossen: "bg-green-100 text-green-700 border-green-200",
+  neu:            "bg-green-100 text-green-700 border-green-200",
+  email_gesendet: "bg-blue-100 text-blue-700 border-blue-200",
+  kontaktiert:    "bg-yellow-100 text-yellow-700 border-yellow-200",
+  wiedervorlage:  "bg-orange-100 text-orange-700 border-orange-200",
+  abgeschlossen:  "bg-indigo-100 text-indigo-700 border-indigo-200",
 };
 const STATUS_LABELS = {
-  neu:           "🔴 Neu",
-  kontaktiert:   "🟡 Kontaktiert",
-  abgeschlossen: "🟢 Abgeschlossen",
+  neu:            "🟢 Neu",
+  email_gesendet: "📧 Email gesendet",
+  kontaktiert:    "🟡 Kontaktiert",
+  wiedervorlage:  "🔔 Wiedervorlage",
+  abgeschlossen:  "🔵 Abgeschlossen",
 };
 const LISTING_STATUS_OPTIONS = ["available", "reserved", "sold", "planning"] as const;
 const LISTING_STATUS_LABELS: Record<string, string> = {
@@ -344,6 +355,9 @@ export default function AdminPage() {
   const [filter, setFilter]                 = useState<"all" | Lead["status"]>("all");
   const [selected, setSelected]             = useState<Lead | null>(null);
   const [confirmDeleteLead, setConfirmDeleteLead] = useState<string | null>(null);
+  const [leadNotizen, setLeadNotizen]             = useState<Record<string, LeadNotiz[]>>({});
+  const [notizInput, setNotizInput]               = useState<Record<string, string>>({});
+  const [savingNotiz, setSavingNotiz]             = useState<string | null>(null);
   const [promotingLead, setPromotingLead]         = useState<string | null>(null);
   const [promotedLeads, setPromotedLeads]         = useState<Set<string>>(new Set());
   const [promoteError, setPromoteError]           = useState<string | null>(null);
@@ -486,6 +500,44 @@ export default function AdminPage() {
     if (selected?.id === id) setSelected((prev) => prev ? { ...prev, status: status as Lead["status"] } : null);
   };
 
+  const fetchNotizen = useCallback(async (lead_id: string) => {
+    const res = await fetch(`/api/admin/lead-notizen?lead_id=${lead_id}`, {
+      headers: { "x-admin-password": password },
+    });
+    if (res.ok) {
+      const data: LeadNotiz[] = await res.json();
+      setLeadNotizen((prev) => ({ ...prev, [lead_id]: data }));
+    }
+  }, [password]);
+
+  const addNotiz = async (lead_id: string) => {
+    const text = notizInput[lead_id]?.trim();
+    if (!text) return;
+    setSavingNotiz(lead_id);
+    const res = await fetch("/api/admin/lead-notizen", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-admin-password": password },
+      body: JSON.stringify({ lead_id, notiz: text }),
+    });
+    if (res.ok) {
+      const newNotiz: LeadNotiz = await res.json();
+      setLeadNotizen((prev) => ({ ...prev, [lead_id]: [newNotiz, ...(prev[lead_id] ?? [])] }));
+      setNotizInput((prev) => ({ ...prev, [lead_id]: "" }));
+    }
+    setSavingNotiz(null);
+  };
+
+  const deleteNotiz = async (lead_id: string, notiz_id: string) => {
+    await fetch(`/api/admin/lead-notizen?id=${notiz_id}`, {
+      method: "DELETE",
+      headers: { "x-admin-password": password },
+    });
+    setLeadNotizen((prev) => ({
+      ...prev,
+      [lead_id]: (prev[lead_id] ?? []).filter((n) => n.id !== notiz_id),
+    }));
+  };
+
   const deleteLead = async (id: string) => {
     const res = await fetch(`/api/admin/leads?id=${id}`, {
       method: "DELETE",
@@ -500,10 +552,12 @@ export default function AdminPage() {
 
   const filtered = filter === "all" ? leads : leads.filter((l) => l.status === filter);
   const counts = {
-    all:           leads.length,
-    neu:           leads.filter((l) => l.status === "neu").length,
-    kontaktiert:   leads.filter((l) => l.status === "kontaktiert").length,
-    abgeschlossen: leads.filter((l) => l.status === "abgeschlossen").length,
+    all:            leads.length,
+    neu:            leads.filter((l) => l.status === "neu").length,
+    email_gesendet: leads.filter((l) => l.status === "email_gesendet").length,
+    kontaktiert:    leads.filter((l) => l.status === "kontaktiert").length,
+    wiedervorlage:  leads.filter((l) => l.status === "wiedervorlage").length,
+    abgeschlossen:  leads.filter((l) => l.status === "abgeschlossen").length,
   };
 
   // ── Listings: field edit ──
@@ -660,12 +714,14 @@ export default function AdminPage() {
         {/* ════ LEADS TAB ════ */}
         {tab === "leads" && (
           <>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-6 gap-4 mb-8">
               {[
-                { key: "all",           label: "Gesamt",        color: "bg-white/5 border-white/10",           icon: "📋" },
-                { key: "neu",           label: "Neu",           color: "bg-red-900/30 border-red-500/30",       icon: "🔴" },
-                { key: "kontaktiert",   label: "Kontaktiert",   color: "bg-yellow-900/30 border-yellow-500/30", icon: "🟡" },
-                { key: "abgeschlossen", label: "Abgeschlossen", color: "bg-green-900/30 border-green-500/30",   icon: "🟢" },
+                { key: "all",            label: "Gesamt",         color: "bg-white/5 border-white/10",             icon: "📋" },
+                { key: "neu",            label: "Neu",            color: "bg-green-900/30 border-green-500/30",    icon: "🟢" },
+                { key: "email_gesendet", label: "Email gesendet", color: "bg-blue-900/30 border-blue-500/30",      icon: "📧" },
+                { key: "kontaktiert",    label: "Kontaktiert",    color: "bg-yellow-900/30 border-yellow-500/30",  icon: "🟡" },
+                { key: "wiedervorlage",  label: "Wiedervorlage",  color: "bg-orange-900/30 border-orange-500/30",  icon: "🔔" },
+                { key: "abgeschlossen",  label: "Abgeschlossen",  color: "bg-indigo-900/30 border-indigo-500/30",  icon: "🔵" },
               ].map((s) => (
                 <button key={s.key} onClick={() => setFilter(s.key as typeof filter)} className={`${s.color} border rounded-2xl p-5 text-left transition-all hover:scale-105 ${filter === s.key ? "ring-2 ring-green-400" : ""}`}>
                   <div className="text-2xl mb-1">{s.icon}</div>
@@ -682,7 +738,7 @@ export default function AdminPage() {
             ) : (
               <div className="grid grid-cols-1 gap-4">
                 {filtered.map((lead) => (
-                  <div key={lead.id} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-green-500/30 transition-all cursor-pointer" onClick={() => setSelected(selected?.id === lead.id ? null : lead)}>
+                  <div key={lead.id} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-green-500/30 transition-all cursor-pointer" onClick={() => { const opening = selected?.id !== lead.id; setSelected(opening ? lead : null); if (opening && !leadNotizen[lead.id]) fetchNotizen(lead.id); }}>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
                       <div className="w-11 h-11 rounded-full bg-green-700 flex items-center justify-center font-black text-sm flex-shrink-0">{lead.vorname[0]}{lead.nachname[0]}</div>
                       <div className="flex-grow min-w-0">
@@ -712,12 +768,54 @@ export default function AdminPage() {
                         <div className="mb-4">
                           <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Status ändern</p>
                           <div className="flex flex-wrap gap-2">
-                            {(["neu", "kontaktiert", "abgeschlossen"] as const).map((s) => (
+                            {(["neu", "email_gesendet", "kontaktiert", "wiedervorlage", "abgeschlossen"] as const).map((s) => (
                               <button key={s} onClick={() => updateStatus(lead.id, s)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${lead.status === s ? STATUS_COLORS[s] + " ring-2 ring-offset-1 ring-offset-gray-900 ring-green-400" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>
                                 {STATUS_LABELS[s]}
                               </button>
                             ))}
                           </div>
+                        </div>
+                        <div className="mb-4">
+                          <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">🔔 Gesprächsprotokoll</p>
+                          <div className="flex gap-2 mb-3">
+                            <textarea
+                              value={notizInput[lead.id] ?? ""}
+                              onChange={(e) => setNotizInput((prev) => ({ ...prev, [lead.id]: e.target.value }))}
+                              onKeyDown={(e) => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) addNotiz(lead.id); }}
+                              placeholder="Neue Notiz eingeben… (Strg+Enter zum Speichern)"
+                              rows={2}
+                              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none"
+                            />
+                            <button
+                              onClick={() => addNotiz(lead.id)}
+                              disabled={savingNotiz === lead.id || !notizInput[lead.id]?.trim()}
+                              className="self-end text-xs bg-orange-600 hover:bg-orange-700 disabled:opacity-40 text-white font-bold px-3 py-2 rounded-xl transition-colors"
+                            >
+                              {savingNotiz === lead.id ? "⏳" : "Speichern"}
+                            </button>
+                          </div>
+                          {leadNotizen[lead.id] === undefined ? (
+                            <p className="text-xs text-gray-500 italic">Lade Notizen…</p>
+                          ) : leadNotizen[lead.id].length === 0 ? (
+                            <p className="text-xs text-gray-500 italic">Noch keine Notizen.</p>
+                          ) : (
+                            <div className="space-y-2 max-h-64 overflow-y-auto pr-1">
+                              {leadNotizen[lead.id].map((n) => (
+                                <div key={n.id} className="bg-white/5 border border-white/10 rounded-xl p-3 group relative">
+                                  <p className="text-xs text-orange-400 font-semibold mb-1">
+                                    {new Date(n.created_at).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" })}
+                                    {" · "}
+                                    {new Date(n.created_at).toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })} Uhr
+                                  </p>
+                                  <p className="text-sm text-white whitespace-pre-wrap">{n.notiz}</p>
+                                  <button
+                                    onClick={() => deleteNotiz(lead.id, n.id)}
+                                    className="absolute top-2 right-2 text-gray-600 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
+                                  >✕</button>
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
                         <div className="flex flex-wrap gap-2">
                           <a href={`mailto:${lead.email}?subject=TinyInvest – Deine Beratungsanfrage&body=Hallo ${lead.vorname},%0A%0A`} className="text-xs bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2 rounded-full transition-colors">✉️ E-Mail schreiben</a>
