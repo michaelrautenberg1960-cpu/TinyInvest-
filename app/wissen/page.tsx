@@ -194,6 +194,15 @@ const articles = [
     img: "/images/outside/tiny-house-naturlage-gruen.webp",
   },
   {
+    href: "/wissen/pv-direktinvestment-alternative",
+    badge: "Steuer & Rendite",
+    badgeColor: "bg-green-100 text-green-700",
+    title: "PV-Direktinvestment Alternative: §7g IAB unter 100.000 €",
+    desc: "Seriöse PV-Direktinvestments starten oft ab 100.000 – 250.000 €. Das Tiny House bietet denselben §7g-Hebel – ab 79.000 €, ohne Netzanschluss-Bürokratie.",
+    tags: ["IAB §7g", "Direktinvestment", "Solar Alternative"],
+    img: "/images/outside/tiny-house-naturlage-gruen.webp",
+  },
+  {
     href: "/wissen/tiny-house-kaufen",
     badge: "Kaufguide",
     badgeColor: "bg-green-100 text-green-700",

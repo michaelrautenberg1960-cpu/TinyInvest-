@@ -221,6 +221,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/wissen/pv-direktinvestment-alternative`,
+      lastModified: "2026-05-20",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/wissen/tiny-house-kaufen`,
       lastModified: "2026-04-29",
       changeFrequency: "monthly",
