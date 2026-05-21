@@ -55,7 +55,7 @@ export default function TinyHouseSteuerRisikenPage() {
     "dateModified": "2026-05-06",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
-    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/inside/tiny-house-innen-steuerberatung.webp" },
+    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-steuermodell-finanzamt.webp" },
   };
 
   const breadcrumbSchema = {
@@ -115,7 +115,7 @@ export default function TinyHouseSteuerRisikenPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/inside/tiny-house-innen-steuerberatung.webp" alt="Tiny House Steuerberatung Finanzamt" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+            <Image src="/images/outside/tiny-house-steuermodell-finanzamt.webp" alt="Tiny House Steuerberatung Finanzamt" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">

@@ -85,7 +85,7 @@ export default function PvDirektinvestmentAlternativePage() {
       name: "TinyInvest",
       logo: { "@type": "ImageObject", url: "https://tinyhouse.investments/logo1.png" },
     },
-    image: { "@type": "ImageObject", url: "https://tinyhouse.investments/images/outside/tiny-house-naturlage-gruen.webp" },
+    image: { "@type": "ImageObject", url: "https://tinyhouse.investments/images/outside/pv-direktinvestment-alternative.webp" },
   };
 
   const breadcrumbSchema = {
@@ -146,7 +146,7 @@ export default function PvDirektinvestmentAlternativePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
             <img
-              src="/images/outside/tiny-house-naturlage-gruen.webp"
+              src="/images/outside/pv-direktinvestment-alternative.webp"
               alt="Tiny House in Naturlage – Alternative zum PV-Direktinvestment mit §7g IAB"
               className="w-full h-full object-cover"
             />

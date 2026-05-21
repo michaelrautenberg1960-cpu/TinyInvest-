@@ -182,7 +182,7 @@ const articles = [
     title: "PV-Anlage als Kapitalanlage: Vergleich mit Tiny House",
     desc: "Solaranlage oder Tiny House? Rendite, IAB, Technologierisiko und steuerlicher Hebel im direkten Vergleich.",
     tags: ["PV", "Solaranlage", "Vergleich", "Rendite"],
-    img: "/images/outside/tiny-house-naturlage-gruen.webp",
+    img: "/images/outside/PV-Anlage%20als%20Kapitalanlage.webp",
   },
   {
     href: "/wissen/solaranlage-alternative",
@@ -191,7 +191,7 @@ const articles = [
     title: "Solaranlage Alternative 2026: §7g IAB ohne Photovoltaik",
     desc: "PV lohnt sich nicht mehr? Welche Alternativen für den §7g IAB qualifizieren – und warum Tiny Houses doppelte Rendite bringen.",
     tags: ["PV", "Alternative", "IAB", "§7g"],
-    img: "/images/outside/tiny-house-naturlage-gruen.webp",
+    img: "/images/outside/Solaranlage-alternative.webp",
   },
   {
     href: "/wissen/pv-direktinvestment-alternative",
@@ -200,7 +200,7 @@ const articles = [
     title: "PV-Direktinvestment Alternative: §7g IAB unter 100.000 €",
     desc: "Seriöse PV-Direktinvestments starten oft ab 100.000 – 250.000 €. Das Tiny House bietet denselben §7g-Hebel – ab 79.000 €, ohne Netzanschluss-Bürokratie.",
     tags: ["IAB §7g", "Direktinvestment", "Solar Alternative"],
-    img: "/images/outside/tiny-house-naturlage-gruen.webp",
+    img: "/images/outside/pv-direktinvestment-alternative.webp",
   },
   {
     href: "/wissen/tiny-house-kaufen",
@@ -227,7 +227,7 @@ const articles = [
     title: "Tiny House Steuermodell: Was das Finanzamt prüft",
     desc: "Die 3 Punkte an denen das §7g-Modell scheitert – und wie professionelles Investment sie von Anfang an ausschließt.",
     tags: ["Betriebsprüfung", "Liebhaberei", "90%-Regel", "§7g"],
-    img: "/images/inside/tiny-house-innen-steuerberatung.webp",
+    img: "/images/outside/tiny-house-steuermodell-finanzamt.webp",
   },
 ];
 

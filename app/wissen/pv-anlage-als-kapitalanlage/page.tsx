@@ -85,7 +85,7 @@ export default function PvAnlageAlsKapitalanlagePage() {
       name: "TinyInvest",
       logo: { "@type": "ImageObject", url: "https://tinyhouse.investments/logo1.png" },
     },
-    image: { "@type": "ImageObject", url: "https://tinyhouse.investments/images/outside/tiny-house-naturlage-gruen.webp" },
+    image: { "@type": "ImageObject", url: "https://tinyhouse.investments/images/outside/PV-Anlage%20als%20Kapitalanlage.webp" },
   };
 
   const breadcrumbSchema = {
@@ -148,10 +148,10 @@ export default function PvAnlageAlsKapitalanlagePage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
+          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
             <img
-              src="/images/outside/tiny-house-naturlage-gruen.webp"
-              alt="Tiny House in Naturlage als Kapitalanlage – Alternative zur PV-Anlage"
+              src="/images/outside/PV-Anlage%20als%20Kapitalanlage.webp"
+              alt="PV-Anlage als Kapitalanlage im Vergleich mit Tiny House Investment"
               className="w-full h-full object-cover"
             />
           </div>
