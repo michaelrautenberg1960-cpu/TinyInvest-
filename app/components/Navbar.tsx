@@ -15,6 +15,7 @@ const NAV_GROUPS = [
       { label: "Konfigurator", href: "/konfigurator", desc: "Haus konfigurieren & Angebot erhalten" },
       { label: "Für Hosts", href: "/hosts", desc: "Stellplatz vermieten & Einnahmen erzielen" },
       { label: "Für Senioren", href: "/senioren", desc: "Altersvorsorge & Sachwert für Rentner" },
+      { label: "Für Ärzte", href: "/aerzte", desc: "§7g IAB & Steuern sparen als Arzt" },
     ],
   },
   {

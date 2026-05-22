@@ -144,7 +144,7 @@ export default function PvDirektinvestmentAlternativePage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
+          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
             <img
               src="/images/outside/pv-direktinvestment-alternative.webp"
               alt="Tiny House in Naturlage – Alternative zum PV-Direktinvestment mit §7g IAB"

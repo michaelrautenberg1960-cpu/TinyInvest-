@@ -41,7 +41,7 @@ export default function ImpressumPage() {
 
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Vertreten durch</h2>
-              <p>Geschäftsführer: Michael Rautenberg</p>
+              <p>Geschäftsführer: Shkelqim Jetishi</p>
             </section>
 
             <section>
@@ -77,7 +77,7 @@ export default function ImpressumPage() {
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
               <p>
-                Michael Rautenberg<br />
+                Shkelqim Jetishi<br />
                 Marie-Curie-Straße 1<br />
                 63457 Hanau
               </p>

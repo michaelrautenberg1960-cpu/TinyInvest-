@@ -172,7 +172,7 @@ export default function SolaranlageAlternativePage() {
 
           <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <img
-              src="/images/outside/Solaranlage-alternative.webp"
+              src="/images/outside/tiny-house-naturlage-gruen.webp"
               alt="Tiny House als §7g-Alternative zur Solaranlage"
               className="w-full h-full object-cover"
             />
