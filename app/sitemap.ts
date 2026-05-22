@@ -274,5 +274,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/zielgruppen`,
+      lastModified: "2026-05-22",
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
   ];
 }
