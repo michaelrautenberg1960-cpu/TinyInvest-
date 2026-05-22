@@ -16,6 +16,9 @@ const NAV_GROUPS = [
       { label: "Für Hosts", href: "/hosts", desc: "Stellplatz vermieten & Einnahmen erzielen" },
       { label: "Für Senioren", href: "/senioren", desc: "Altersvorsorge & Sachwert für Rentner" },
       { label: "Für Ärzte", href: "/aerzte", desc: "§7g IAB & Steuern sparen als Arzt" },
+      { label: "Für Freiberufler", href: "/freiberufler", desc: "§7g IAB für Anwälte, Berater & Co." },
+      { label: "Für IT-Freelancer", href: "/it-freelancer", desc: "§7g IAB für Entwickler & Tech-Selbstständige" },
+      { label: "Für Unternehmer", href: "/unternehmer", desc: "Gewinne steuergünstig investieren – §7g IAB" },
     ],
   },
   {

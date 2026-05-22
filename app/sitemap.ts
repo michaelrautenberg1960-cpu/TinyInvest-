@@ -256,5 +256,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/freiberufler`,
+      lastModified: "2026-05-22",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/it-freelancer`,
+      lastModified: "2026-05-22",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/unternehmer`,
+      lastModified: "2026-05-22",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 }
