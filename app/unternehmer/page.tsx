@@ -30,7 +30,7 @@ const faqItems = [
   {
     question: "Gilt §7g auch für GmbH-Inhaber?",
     answer:
-      "§7g gilt für natürliche Personen und Personengesellschaften — nicht direkt für Kapitalgesellschaften wie GmbHs. GmbH-Inhaber und Gesellschafter-Geschäftsführer können den IAB jedoch privat nutzen, wenn sie selbst Einkünfte aus Gewerbebetrieb oder selbstständiger Arbeit erzielen (z. B. über ein persönliches Einzelunternehmen oder Nebentätigkeit). Steuerliche Beratung ist hier besonders wichtig.",
+      "Ja — via §8 Abs. 1 KStG gelten die Vorschriften des EStG, einschließlich §7g, auch für GmbHs. Eine GmbH kann einen IAB für ein geplantes Tiny House als Betriebsvermögen bilden. Der Unterschied zur Privatperson: Die Steuerersparnis wirkt auf Körperschaftsteuer (15 %) + Gewerbesteuer (~15 %) = ~30 %, nicht auf den persönlichen Einkommensteuersatz von 42–45 %. Bei Ausschüttung der Gewinne an die Gesellschafter fällt zudem Abgeltungssteuer (25 %) an. Der persönliche IAB (wenn über Einzelunternehmen oder Nebeneinkünfte möglich) ist daher meist steuerlich effizienter. Steuerliche Beratung ist empfohlen.",
   },
   {
     question: "Wie hoch ist der Steuervorteil für Einzelunternehmer?",
@@ -168,7 +168,7 @@ export default function UnternehmerPage() {
               <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center mb-4 text-xl">🏢</div>
               <h3 className="font-black text-gray-900 text-lg mb-2">GmbH-Inhaber privat</h3>
               <p className="text-gray-500 text-[13px] leading-relaxed mb-4">
-                §7g gilt nicht direkt für Kapitalgesellschaften. GmbH-Gesellschafter können den IAB jedoch privat nutzen — über ein persönliches Einzelunternehmen, eine Nebentätigkeit oder selbstständige Einkünfte. Steuerliche Beratung ist hier besonders empfohlen.
+                Via §8 Abs. 1 KStG ist §7g auch für die GmbH direkt nutzbar — das Tiny House wird als Betriebsvermögen der GmbH gekauft. Die Steuerersparnis wirkt auf KSt + GewSt (~30 %), nicht auf den persönlichen ESt-Satz (42–45 %). Privatpersonen mit Gewerbebetrieb oder Nebeneinkünften nutzen den IAB daher oft effizienter. Steuerliche Beratung empfohlen.
               </p>
               <ul className="space-y-2 text-[13px] text-gray-600">
                 {["IAB über private Einkünfte", "Einzelunternehmen als Vehikel", "Steuerberater erforderlich", "GmbH-Ebene separat zu prüfen"].map((b) => (
@@ -298,7 +298,7 @@ export default function UnternehmerPage() {
           {/* Disclaimer */}
           <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-8">
             <p className="text-[10px] text-amber-700 font-bold uppercase tracking-widest mb-2">⚠ Hinweis</p>
-            <p className="text-[12px] text-amber-800 leading-relaxed">§7g gilt für natürliche Personen und Personengesellschaften — nicht direkt für Kapitalgesellschaften (GmbH, AG). Alle Rendite- und Steuerangaben sind Richtwerte. Die individuelle steuerliche Situation — insbesondere bei GmbH-Strukturen — ist zwingend mit einem Steuerberater zu klären. Gewinngrenze 200.000 € beachten.</p>
+            <p className="text-[12px] text-amber-800 leading-relaxed">§7g IAB ist via §8 Abs. 1 KStG auch für GmbHs direkt anwendbar. Die Steuerersparnis wirkt auf Körperschaftsteuer + Gewerbesteuer (~30 %), nicht auf den persönlichen Einkommensteuersatz. Alle Rendite- und Steuerangaben sind Richtwerte. Die individuelle steuerliche Situation ist zwingend mit einem Steuerberater zu klären. Gewinngrenze 200.000 € beachten.</p>
           </div>
 
           {/* Internal links */}

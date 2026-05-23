@@ -60,8 +60,8 @@ const profiles = [
     emoji: "🏢",
     label: "Für Unternehmer",
     headline: "Einzelunternehmer & Personengesellschaften",
-    desc: "Gewerbesteuer + ESt drücken auf echte Rendite. Einzelunternehmer und GbR/OHG/KG-Gesellschafter sind direkt §7g-berechtigt. GmbH-Inhaber handeln privat.",
-    tags: ["Einzelunternehmer", "GbR / KG", "GmbH-Gesellschafter privat"],
+    desc: "Gewerbesteuer + ESt drücken auf echte Rendite. Einzelunternehmer, GbR/OHG/KG und GmbHs sind §7g-berechtigt — GmbHs über §8 KStG, mit anderem Steuerhebel.",
+    tags: ["Einzelunternehmer", "GbR / KG", "GmbH via §8 KStG"],
     cta: "Für Unternehmer →",
     border: "border-amber-200",
     tagColor: "bg-amber-50 text-amber-700",
@@ -245,7 +245,7 @@ export default function ZielgruppenPage() {
                     ["💻 IT-Freelancer (Gewerbe)", "§15 EStG", "✅ Direkt", "Häufigste Form bei Entwicklern"],
                     ["💻 IT-Freelancer (freiberuflich)", "§18 EStG", "✅ Direkt", "FG-Urteile: Softwareentwicklung oft freiberuflich"],
                     ["🏢 Einzelunternehmer", "§15 EStG", "✅ Direkt", "Gewinngrenze 200.000 € beachten"],
-                    ["🏢 GmbH-Inhaber", "Kapitalgesellschaft", "⚠️ Eingeschränkt", "Privat über Nebeneinkünfte möglich"],
+                    ["🏢 GmbH (via §8 KStG)", "Körperschaftsteuer", "✅ Direkt möglich", "KSt/GewSt ~30 % statt ESt 42–45 % — persönlicher IAB oft effizienter"],
                     ["👔 Angestellter (ohne Nebengewerbe)", "§19 EStG", "❌ Nicht möglich", "Steuerberater für Alternativen"],
                   ].map(([gruppe, art, iab, hinweis]) => (
                     <tr key={gruppe} className="hover:bg-gray-50/50">
