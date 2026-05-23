@@ -9,11 +9,12 @@
 
 TinyInvest ist eine Next.js-Plattform, über die Privatinvestoren mobile Tiny Houses als steueroptimierte Kapitalanlage erwerben können. Die Häuser werden an Ferienstandorten in DE/AT/EU betrieben und vollständig durch [tiny Escapes](https://tiny.rentals) verwaltet. Investoren erhalten 40 % der Nettomieteinnahmen monatlich ausgezahlt, ohne selbst operativ tätig zu werden.
 
-**4 Zielgruppen:**
-- **Steuer-Investor** – §7g IAB + Sonder-AfA + degressive AfA (bis ~34.000 € Steuervorteil im Kaufjahr)
+**Zielgruppen:**
+- **Steuer-Investor** – §7g IAB + Sonder-AfA + degressive AfA (bis ~33.000 € Steuervorteil im Kaufjahr)
 - **Rendite-Investor** – 40 % der Mieteinnahmen monatlich, 12–18 % IRR p.a.
 - **Finanzierungs-Käufer** – Bankkredit + IAB als Eigenkapitalhebel, Mieteinnahmen tilgen die Rate
 - **Senioren & Rentner** – Sachwert als Altersvorsorge: Kapitalanlage mit monatlicher Auszahlung oder Selbstnutzung
+- **Ärzte, Freiberufler, IT-Freelancer, Unternehmer** – §7g IAB für Selbstständige mit hohem Grenzsteuersatz
 
 ---
 
@@ -36,7 +37,7 @@ TinyInvest ist eine Next.js-Plattform, über die Privatinvestoren mobile Tiny Ho
 app/
 ├── page.tsx                          # Startseite (Landing Page)
 ├── layout.tsx                        # Root Layout + globale Metadata
-├── sitemap.ts                        # Automatische XML-Sitemap (40+ Einträge)
+├── sitemap.ts                        # Automatische XML-Sitemap (50+ Einträge)
 │
 ├── marktplatz/                       # Listing-Marktplatz (Supabase-Live-Daten)
 ├── projekte/                         # Projektübersicht + Google Maps
@@ -47,40 +48,61 @@ app/
 ├── hosts/                            # Host-Partnerprogramm
 ├── partner/                          # Vertriebspartner-Programm
 ├── konfigurator/                     # Tiny House Konfigurator
-├── tiny-house-als-kapitalanlage/     # SEO-Landingpage (Priority 1.0)
+├── tiny-house-als-kapitalanlage/     # SEO-Pillar-Landingpage (Priority 1.0)
+│
 ├── senioren/                         # Landingpage Senioren & Altersvorsorge
+├── aerzte/                           # Landingpage Ärzte (§7g IAB)
+├── freiberufler/                     # Landingpage Freiberufler (§7g IAB)
+├── it-freelancer/                    # Landingpage IT-Freelancer (§7g IAB)
+├── unternehmer/                      # Landingpage Unternehmer (§7g IAB)
+├── zielgruppen/                      # Hub: Alle Selbstständigen-Zielgruppen
+│
 ├── agb/                              # Allgemeine Geschäftsbedingungen
 ├── impressum/                        # Impressum
 ├── datenschutz/                      # Datenschutzerklärung
 │
 ├── rechner/
-│   ├── iab/                          # IAB-Steuerrechner
-│   └── rendite/                      # Renditerechner (interaktiv)
+│   ├── iab/                          # IAB-Steuerrechner (WebApplication schema)
+│   └── rendite/                      # Renditerechner (WebApplication schema)
 │
-├── wissen/                           # SEO-Wissens-Hub (22 Artikel)
+├── wissen/                           # SEO-Wissens-Hub (26 Artikel)
 │   ├── page.tsx                      # Hub-Übersichtsseite
+│   │
+│   ├── — Steuer & §7g —
 │   ├── 7g-tiny-house-investment/     # §7g Leitfaden (Priority 1.0)
 │   ├── afa-abschreibung/             # AfA-Abschreibung erklärt
-│   ├── direktinvestment/             # Direktinvestment vs. Fonds
+│   ├── iab-tiny-house/               # IAB Tiny House Guide
+│   ├── tiny-house-steuern-sparen/    # Steuern sparen Anleitung
+│   ├── tiny-house-steuer-risiken/    # Steuerrisiken & Fallstricke
 │   ├── ferienimmobilie-steuer/       # Steuer bei Ferienimmobilien
-│   ├── host-werden/                  # Host werden bei tiny Escapes
-│   ├── iab-tiny-house/               # IAB Tiny House
-│   ├── kapitalanlage/                # Tiny House vs. ETW Vergleich (educational)
-│   ├── passive-einnahmen-immobilien/ # Passive Einnahmen mit Immobilien
-│   ├── pv-anlage-als-kapitalanlage/  # PV vs. Tiny House Vergleich
-│   ├── solaranlage-alternative/      # Solaranlage als Kapitalanlage
 │   ├── steuerberater-finden/         # Steuerberater finden
-│   ├── tiny-house-airbnb/            # Tiny House auf Airbnb vermieten
+│   │
+│   ├── — Rendite & Investment —
+│   ├── kapitalanlage/                # Tiny House vs. ETW Vergleich
 │   ├── tiny-house-als-rendite/       # Cashflow & Ertragsmodell
-│   ├── tiny-house-finanzierung/      # Finanzierungsoptionen
-│   ├── tiny-house-genehmigung/       # Baugenehmigung & Recht
+│   ├── tiny-house-rendite-rechner/   # Rendite berechnen
+│   ├── direktinvestment/             # Direktinvestment vs. Fonds
+│   ├── passive-einnahmen-immobilien/ # Passive Einnahmen mit Immobilien
+│   │
+│   ├── — Solar-Alternativen —
+│   ├── pv-anlage-als-kapitalanlage/  # Tiny House vs. PV-Anlage Vergleich
+│   ├── solaranlage-alternative/      # Solaranlage Alternative
+│   ├── pv-direktinvestment-alternative/ # PV-Direktinvestment Alternative
+│   │
+│   ├── — Kaufen & Standort —
 │   ├── tiny-house-kaufen/            # Tiny House kaufen Guide
 │   ├── tiny-house-kaufen-checkliste/ # Kaufcheckliste
 │   ├── tiny-house-kaufen-mit-grundstueck/ # Kauf mit Grundstück
-│   ├── tiny-house-rendite-rechner/   # Rendite berechnen
+│   ├── tiny-house-finanzierung/      # Finanzierungsoptionen
+│   ├── tiny-house-genehmigung/       # Baugenehmigung & Recht
 │   ├── tiny-house-standorte/         # Standortauswahl
-│   ├── tiny-house-steuer-risiken/    # Steuerrisiken & Fallstricke
-│   └── tiny-house-steuern-sparen/    # Steuern sparen Anleitung
+│   ├── tiny-house-airbnb/            # Tiny House auf Airbnb vermieten
+│   ├── host-werden/                  # Host werden bei tiny Escapes
+│   │
+│   └── — Altersvorsorge (Senioren-Cluster) —
+│       ├── tiny-house-altersvorsorge/     # Sachwert statt Riester
+│       ├── rentenlucke-schliessen/        # Rentenlücke mit Cashflow schließen
+│       └── tiny-house-vs-etf-altersvorsorge/ # Tiny House vs. ETF Vergleich
 │
 ├── investor/                         # Investor-Dashboard (Auth required)
 │   ├── page.tsx                      # Dashboard (Assets, KPIs, Buchungen)
@@ -164,27 +186,46 @@ public/
 
 ## SEO-Architektur
 
-### Schema.org JSON-LD (alle Seiten)
+### Hub-and-Spoke Struktur
+
+```
+/tiny-house-als-kapitalanlage  ← Pillar (Priority 1.0)
+         ↑
+  alle 26 /wissen Artikel verlinken zurück zum Pillar
+
+/senioren  ← Pillar für Altersvorsorge-Cluster
+         ↑
+  /wissen/tiny-house-altersvorsorge
+  /wissen/rentenlucke-schliessen
+  /wissen/tiny-house-vs-etf-altersvorsorge
+```
+
+### Schema.org JSON-LD
 
 | Schema | Seiten |
 |---|---|
-| `Article` + `FAQPage` + `BreadcrumbList` | Alle 22 /wissen Artikel + /senioren |
+| `Article` + `FAQPage` + `BreadcrumbList` | Alle 26 /wissen Artikel + /senioren + /aerzte + /freiberufler + /it-freelancer + /unternehmer |
+| `WebApplication` + `FAQPage` | /rechner/iab, /rechner/rendite |
 | `Product` + `BreadcrumbList` | /marktplatz |
-| `Organization` | Startseite |
+| `Organization` + `WebSite` | Startseite |
 
 **Autor-Attribution (E-E-A-T):** Alle Artikel sind Noah Stein (`@type: Person`) mit LinkedIn-URL zugeordnet — sowohl im JSON-LD `author`-Feld als auch im sichtbaren Byline (Avatar, Name, Datum).
 
 ### Sitemap
-40+ Einträge in `app/sitemap.ts`, inkl. Priority-Gewichtung:
-- Priority 1.0: `/`, `/tiny-house-als-kapitalanlage`, `/wissen/7g-tiny-house-investment`
-- Priority 0.9: alle /wissen Artikel, /senioren, /rechner/iab, /rechner/rendite
-- Priority 0.8–0.85: /marktplatz, /projekte, /hosts, /wissen Hub
 
-### Seiten & Routen
+50+ Einträge in `app/sitemap.ts`, inkl. Priority-Gewichtung:
+- Priority 1.0: `/`, `/tiny-house-als-kapitalanlage`, `/wissen/7g-tiny-house-investment`
+- Priority 0.9: alle /wissen Artikel, /senioren, /aerzte, /freiberufler, /it-freelancer, /unternehmer, /rechner/iab, /rechner/rendite
+- Priority 0.85: /wissen Hub, /zielgruppen, /hosts
+- Priority 0.6–0.8: /marktplatz, /projekte, /galerie, /konfigurator
+
+Private Seiten (`/admin`, `/investor`, `/investor/login`, `/investor/auth/callback`) sind bewusst **nicht** in der Sitemap.
+
+### Alle Seiten & Routen
 
 | Route | Beschreibung | Schema.org |
 |---|---|---|
-| `/` | Startseite | Organization |
+| `/` | Startseite | Organization + WebSite |
 | `/marktplatz` | Live-Marktplatz (Supabase) | Product + BreadcrumbList |
 | `/projekte` | Projekte + Google Maps | — |
 | `/renditemodell` | Renditerechner | — |
@@ -196,10 +237,15 @@ public/
 | `/konfigurator` | Konfigurator | — |
 | `/tiny-house-als-kapitalanlage` | SEO-Pillar-Landingpage (Priority 1.0) | Article + FAQPage + BreadcrumbList |
 | `/senioren` | Landingpage Senioren & Altersvorsorge | Article + FAQPage + BreadcrumbList |
-| `/rechner/iab` | IAB-Steuerrechner | — |
-| `/rechner/rendite` | Renditerechner | — |
-| `/wissen` | Wissens-Hub (17 Artikel) | CollectionPage |
-| `/wissen/*` | Einzelartikel | Article + FAQPage + BreadcrumbList |
+| `/aerzte` | Landingpage Ärzte (§7g IAB) | Article + FAQPage + BreadcrumbList |
+| `/freiberufler` | Landingpage Freiberufler (§7g IAB) | Article + FAQPage + BreadcrumbList |
+| `/it-freelancer` | Landingpage IT-Freelancer (§7g IAB) | Article + FAQPage + BreadcrumbList |
+| `/unternehmer` | Landingpage Unternehmer (§7g IAB) | Article + FAQPage + BreadcrumbList |
+| `/zielgruppen` | Hub: Alle Selbstständigen-Zielgruppen | Article + BreadcrumbList |
+| `/rechner/iab` | IAB-Steuerrechner | WebApplication + FAQPage |
+| `/rechner/rendite` | Renditerechner | WebApplication + FAQPage |
+| `/wissen` | Wissens-Hub (26 Artikel) | CollectionPage |
+| `/wissen/*` | Einzelartikel (26 Stück) | Article + FAQPage + BreadcrumbList |
 | `/investor` | Dashboard | Auth required |
 | `/investor/login` | Login | Auth required |
 | `/admin` | Admin-Panel | Passwortgeschützt |
