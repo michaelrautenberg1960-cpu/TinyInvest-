@@ -280,5 +280,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
+    {
+      url: `${BASE_URL}/wissen/tiny-house-altersvorsorge`,
+      lastModified: "2026-05-23",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/wissen/rentenlucke-schliessen`,
+      lastModified: "2026-05-23",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/wissen/tiny-house-vs-etf-altersvorsorge`,
+      lastModified: "2026-05-23",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }

@@ -65,6 +65,21 @@ export default function IABRechnerPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <Script
+        id="webapp-schema-iab-rechner"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "IAB-Rechner — §7g Steuerersparnis berechnen",
+          "url": "https://tinyhouse.investments/rechner/iab",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "description": "Kostenloser Rechner für den Investitionsabzugsbetrag (§7g IAB), Sonder-AfA (40 %) und degressive AfA (30 %) für Tiny House Investments.",
+          "provider": { "@type": "Organization", "name": "TinyInvest", "url": "https://tinyhouse.investments" }
+        }) }}
+      />
 
       {/* Hero */}
       <section className="pt-32 pb-12 bg-white border-b border-gray-100">

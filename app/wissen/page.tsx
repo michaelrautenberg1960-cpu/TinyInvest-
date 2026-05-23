@@ -229,6 +229,33 @@ const articles = [
     tags: ["Betriebsprüfung", "Liebhaberei", "90%-Regel", "§7g"],
     img: "/images/outside/tiny-house-steuermodell-finanzamt.webp",
   },
+  {
+    href: "/wissen/tiny-house-altersvorsorge",
+    badge: "Altersvorsorge",
+    badgeColor: "bg-blue-50 text-blue-700",
+    title: "Tiny House als Altersvorsorge: Sachwert statt Riester",
+    desc: "Riester, ETF oder Tiny House? Monatlicher Cashflow statt Rentenpunkte – vollautomatisch verwaltet, ab 65.000 €.",
+    tags: ["Altersvorsorge", "Sachwert", "Riester Alternative", "Monatliche Auszahlung"],
+    img: "/images/outside/tiny-house-naturlage-gruen.webp",
+  },
+  {
+    href: "/wissen/rentenlucke-schliessen",
+    badge: "Altersvorsorge",
+    badgeColor: "bg-blue-50 text-blue-700",
+    title: "Rentenlücke schließen: Cashflow mit Tiny House im Ruhestand",
+    desc: "Die Rentenlücke liegt bei 800–1.200 €/Monat. Wie ein einzelnes Tiny House sie mit monatlichem Cashflow schließt – kein Aufwand.",
+    tags: ["Rentenlücke", "Ruhestand", "Cashflow", "Passives Einkommen"],
+    img: "/images/outside/tiny-house-escape-sachwert.webp",
+  },
+  {
+    href: "/wissen/tiny-house-vs-etf-altersvorsorge",
+    badge: "Altersvorsorge",
+    badgeColor: "bg-blue-50 text-blue-700",
+    title: "Tiny House vs. ETF-Sparplan als Altersvorsorge: Vergleich 2026",
+    desc: "Rendite, Risiko, Cashflow und das Sequence-of-Returns-Risiko: Direkter Vergleich für Senioren & Rentner ab 55.",
+    tags: ["vs. ETF", "Altersvorsorge", "Sequence Risk", "Vergleich"],
+    img: "/images/outside/tiny-house-renditeobjekt-aussen.webp",
+  },
 ];
 
 const glossarItems = [

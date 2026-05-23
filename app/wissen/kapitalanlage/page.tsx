@@ -6,7 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House vs. Eigentumswohnung: Kapitalanlage-Vergleich 2026 | TinyInvest",
+  title: "Tiny House vs. Eigentumswohnung als Kapitalanlage 2026: Rendite, Steuer & Aufwand | TinyInvest",
   description:
     "Lohnt sich ein Tiny House als Kapitalanlage wirklich? Detaillierter Vergleich Tiny House vs. ETW, 3 Renditesäulen, 5-Jahres-Modell und Risiken. Bildungsguide für Investoren 2026.",
   keywords:
@@ -16,7 +16,7 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/kapitalanlage",
   },
   openGraph: {
-    title: "Tiny House als Kapitalanlage 2026 – Rendite, Risiken & Chancen",
+    title: "Tiny House vs. Eigentumswohnung als Kapitalanlage 2026: Rendite, Steuer & Aufwand",
     description:
       "Tiny House vs. ETW: Warum mobile Assets in 2026 die bessere Kapitalanlage sein könnten. Vergleich, Renditeanalyse und Investoren-Guide.",
     url: "https://tinyhouse.investments/wissen/kapitalanlage",
@@ -71,7 +71,7 @@ export default function KapitalanlagePage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Tiny House als Kapitalanlage: Rendite, Risiken & Chancen 2026",
+    "headline": "Tiny House vs. Eigentumswohnung als Kapitalanlage: Rendite, Steuer & Aufwand im Vergleich 2026",
     "description": "Lohnt sich ein Tiny House als Kapitalanlage? Vergleich Tiny House vs. Eigentumswohnung, 3 Renditesäulen, Risiken und Chancen. Kompletter Guide für Investoren 2026.",
     "url": "https://tinyhouse.investments/wissen/kapitalanlage",
     "datePublished": "2026-04-14",
@@ -134,7 +134,7 @@ export default function KapitalanlagePage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Investor-Guide · 2026</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            Tiny House als Kapitalanlage: Rendite, Risiken & Chancen 2026
+            Tiny House vs. Eigentumswohnung als Kapitalanlage: Rendite, Steuer & Aufwand im Vergleich 2026
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -419,6 +419,7 @@ export default function KapitalanlagePage() {
             <Link href="/wissen/ferienimmobilie-steuer" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Ferienimmobilien vs. Tiny House →</Link>
             <Link href="/wissen/passive-einnahmen-immobilien" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Passive Einnahmen im Vergleich →</Link>
             <Link href="/wissen/7g-tiny-house-investment" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Leitfaden →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

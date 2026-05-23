@@ -5,7 +5,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata = {
-  title: "PV-Anlage als Kapitalanlage: Ehrlicher Vergleich mit Tiny House Investment | TinyInvest",
+  title: "Tiny House vs. PV-Anlage als Kapitalanlage 2026: IAB, Rendite & Aufwand im Vergleich | TinyInvest",
   description:
     "PV-Anlage oder Tiny House als Kapitalanlage? Rendite-Vergleich, Steuervorteile, IAB und ehrliche Risikobewertung. Warum immer mehr Solar-Investoren auf Tiny Houses umsteigen.",
   keywords:
@@ -15,7 +15,7 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/pv-anlage-als-kapitalanlage",
   },
   openGraph: {
-    title: "PV-Anlage als Kapitalanlage vs. Tiny House: Der ehrliche Vergleich",
+    title: "Tiny House vs. PV-Anlage als Kapitalanlage 2026: IAB, Rendite & Aufwand im Vergleich",
     description:
       "Einspeisevergütung oder Mieteinnahmen? IAB-Vorteil oder Technologierisiko? Dieser Guide zeigt, warum Tiny Houses die überlegene Alternative zur Solar-Investition sind.",
     url: "https://tinyhouse.investments/wissen/pv-anlage-als-kapitalanlage",
@@ -131,7 +131,7 @@ export default function PvAnlageAlsKapitalanlagePage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Rendite-Vergleich · Steuer · 2026</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            PV-Anlage als Kapitalanlage: Der ehrliche Vergleich mit dem Tiny House Investment
+            Tiny House vs. PV-Anlage als Kapitalanlage: IAB, Rendite & Aufwand im Vergleich 2026
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -272,6 +272,7 @@ export default function PvAnlageAlsKapitalanlagePage() {
             <Link href="/wissen/iab-tiny-house" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">IAB Tiny House Guide →</Link>
             <Link href="/wissen/tiny-house-steuern-sparen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Steuern sparen Anleitung →</Link>
             <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage-Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

@@ -15,7 +15,7 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Tiny House kaufen & vermieten | 22.000 € Steuern sparen | TinyInvest",
+  title: "Tiny House kaufen & vermieten | 33.000 € Steuern sparen | TinyInvest",
   description:
     "Tiny House kaufen, vermieten und im ersten Jahr bis zu 33.000 € Steuern sparen. Ab 65.000 € · 12–14 % Rendite p.a. · vollautomatisch verwaltet durch tiny Escapes.",
   keywords:
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     canonical: "https://tinyhouse.investments",
   },
   openGraph: {
-    title: "Tiny House kaufen & vermieten | 22.000 € Steuern sparen | TinyInvest",
+    title: "Tiny House kaufen & vermieten | 33.000 € Steuern sparen | TinyInvest",
     description:
       "Tiny House kaufen, vermieten und im ersten Jahr bis zu 33.000 € Steuern sparen. Ab 65.000 € · 12–14 % Rendite p.a. · vollautomatisch verwaltet.",
     url: "https://tinyhouse.investments",

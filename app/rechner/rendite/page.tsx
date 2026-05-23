@@ -65,6 +65,21 @@ export default function RenditeRechnerPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <Script
+        id="webapp-schema-rendite-rechner"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Tiny House Rendite-Rechner — Cashflow & IRR berechnen",
+          "url": "https://tinyhouse.investments/rechner/rendite",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "description": "Kostenloser Rechner für monatlichen Cashflow und IRR eines Tiny House Investments. Kaufpreis, Auslastung und Steuersatz eingeben – 5-Jahres-Ergebnis sofort.",
+          "provider": { "@type": "Organization", "name": "TinyInvest", "url": "https://tinyhouse.investments" }
+        }) }}
+      />
 
       {/* Hero */}
       <section className="pt-32 pb-12 bg-white border-b border-gray-100">
