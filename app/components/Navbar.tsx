@@ -110,14 +110,21 @@ export default function Navbar({ variant = "hero" }: { variant?: "hero" | "sub" 
   const [mobileOpen, setMobileOpen] = useState<number | null>(null);
 
   useEffect(() => {
-    const supabase = getBrowserClient();
-    supabase.auth.getSession().then(({ data }) => {
-      setInvestorLoggedIn(!!data.session?.user);
-    });
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setInvestorLoggedIn(!!session?.user);
-    });
-    return () => listener.subscription.unsubscribe();
+    let unsubscribe: (() => void) | null = null;
+    const timer = setTimeout(() => {
+      const supabase = getBrowserClient();
+      supabase.auth.getSession().then(({ data }) => {
+        setInvestorLoggedIn(!!data.session?.user);
+      });
+      const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+        setInvestorLoggedIn(!!session?.user);
+      });
+      unsubscribe = () => listener.subscription.unsubscribe();
+    }, 0);
+    return () => {
+      clearTimeout(timer);
+      unsubscribe?.();
+    };
   }, []);
 
   const handleInvestorClick = useCallback(() => {
