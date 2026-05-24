@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import dynamic from "next/dynamic";
 import CookieBanner from "./components/CookieBanner";
 import { ModalProvider } from "./components/ModalContext";
+import MemorandumModalLazy from "./components/MemorandumModalLazy";
 import Script from "next/script";
-
-const MemorandumModal = dynamic(() => import("./components/MemorandumModal"), { ssr: false });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -104,7 +102,7 @@ export default function RootLayout({
         </Script>
         <ModalProvider>
           {children}
-          <MemorandumModal />
+          <MemorandumModalLazy />
           <CookieBanner />
         </ModalProvider>
       </body>
