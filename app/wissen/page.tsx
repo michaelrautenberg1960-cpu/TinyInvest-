@@ -38,7 +38,7 @@ const articles = [
     title: "§7g AfA & Sonder-Abschreibung erklärt",
     desc: "IAB, Sonder-AfA (40 %), degressive AfA (30 %): Warum Tiny Houses steuerlich keine Immobilien sind.",
     tags: ["§7g EStG", "IAB", "Sonder-AfA", "Steuer"],
-    img: "/images/articles/7g AfA & Sonder-Abschreibung Tiny House Steuer-Guide 2026.png",
+    img: "/images/outside/Tiny House abschreiben Bis zu 34.000 € Steuervorteil im ersten Jahr.webp",
   },
   {
     href: "/wissen/direktinvestment",
