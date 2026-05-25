@@ -27,7 +27,7 @@ const featured = {
   title: "Tiny House als Kapitalanlage 2026",
   desc: "Vergleich Tiny House vs. Eigentumswohnung, die 3 Renditesäulen, Risiken, steuerliche Vorteile und ein vollständiges 5-Jahres-Modell – der komplette Einstiegsguide für Investoren.",
   tags: ["Rendite", "ETW-Vergleich", "Risiken", "Cashflow", "§7g"],
-  img: "/images/outside/tiny-house-escape-hero.webp",
+  img: "/images/outside/Tiny House vs. Eigentumswohnung als Kapitalanlage Rendite, Steuer & Aufwand im Vergleich 2026.webp",
 };
 
 const articles = [

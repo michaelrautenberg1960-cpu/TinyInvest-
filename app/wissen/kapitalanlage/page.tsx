@@ -78,7 +78,7 @@ export default function KapitalanlagePage() {
     "dateModified": "2026-05-06",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
-    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-winter-ganzjahresbetrieb.webp" },
+    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/Tiny House vs. Eigentumswohnung als Kapitalanlage Rendite, Steuer & Aufwand im Vergleich 2026.webp" },
   };
 
   const breadcrumbSchema = {
@@ -151,8 +151,8 @@ export default function KapitalanlagePage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/tiny-house-winter-ganzjahresbetrieb.webp" alt="Tiny House als Kapitalanlage – Ganzjahresbetrieb im Winter" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "16/9" }}>
+            <Image src="/images/outside/Tiny House vs. Eigentumswohnung als Kapitalanlage Rendite, Steuer & Aufwand im Vergleich 2026.webp" alt="Tiny House vs. Eigentumswohnung als Kapitalanlage – Rendite, Steuer & Aufwand im Vergleich 2026" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
