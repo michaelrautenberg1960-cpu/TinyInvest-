@@ -381,6 +381,11 @@ export default function TinyHouseKapitalanlagePage() {
             <p>
               Die Gewerbe-Anmeldung kostet je nach Gemeinde zwischen 15 und 65 € und ist in den meisten Städten online in unter 20 Minuten erledigt. Wir empfehlen, diesen Schritt mit einem §7g-spezialisierten Steuerberater abzusprechen — denn der optimale Zeitpunkt der IAB-Bildung (Vorjahr vs. Kaufjahr) hängt von der persönlichen Einkommenssituation ab.
             </p>
+            <p>
+              <Link href="/wissen/iab-tiny-house" className="text-green-700 font-semibold hover:underline">
+                → Schritt-für-Schritt-Anleitung: IAB für Tiny Houses beantragen
+              </Link>
+            </p>
           </div>
         </div>
       </section>

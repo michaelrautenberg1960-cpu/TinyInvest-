@@ -6,7 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "IAB Tiny House 2026: Investitionsabzugsbetrag beantragen & 30.000 € sparen | TinyInvest",
+  title: "IAB Tiny House 2026: 30.000 € Steuern sparen | TinyInvest",
   description:
     "Bis zu 30.000 € Steuern sparen – noch VOR dem Kauf: So beantragst du den IAB nach §7g für dein Tiny House. Voraussetzungen, Rechenbeispiel & Schritt-für-Schritt-Anleitung.",
   keywords:
@@ -14,7 +14,7 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/iab-tiny-house" },
   openGraph: {
-    title: "IAB Tiny House 2026: Investitionsabzugsbetrag beantragen & 30.000 € sparen",
+    title: "IAB Tiny House 2026: 30.000 € Steuern sparen",
     description:
       "Bis zu 30.000 € Steuern sparen – noch VOR dem Kauf: IAB nach §7g für dein Tiny House beantragen. Voraussetzungen, Fristen & Rechenbeispiel.",
     url: "https://tinyhouse.investments/wissen/iab-tiny-house",

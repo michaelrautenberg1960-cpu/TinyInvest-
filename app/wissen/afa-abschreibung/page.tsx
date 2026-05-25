@@ -98,7 +98,7 @@ export default function AfaAbschreibungPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/articles/7g AfA & Sonder-Abschreibung Tiny House Steuer-Guide 2026.png" alt="§7g AfA Tiny House Steuer-Guide 2026" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+            <Image src="/images/outside/Tiny House abschreiben Bis zu 34.000 € Steuervorteil im ersten Jahr.webp" alt="Tiny House abschreiben – bis zu 34.000 € Steuervorteil im ersten Jahr" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -273,6 +273,11 @@ export default function AfaAbschreibungPage() {
               <p className="font-black text-base mb-2">Wann lohnt sich der IAB?</p>
               <p className="text-green-100 text-[13px] leading-relaxed">Der IAB lohnt sich besonders, wenn du im Vorjahr einen <strong className="text-white">ungewöhnlich hohen Gewinn</strong> hattest (Bonuszahlungen, Unternehmensverkauf, starkes Geschäftsjahr) und die Steuerprogression drücken möchtest. Ohne besondere Steuersituation im Vorjahr ist <strong className="text-white">Variante 2</strong> (Sonder-AfA + deg. AfA direkt im Kaufjahr) oft die einfachere Lösung.</p>
             </div>
+            <p className="mt-4 text-sm">
+              <Link href="/wissen/iab-tiny-house" className="text-green-700 font-semibold hover:underline">
+                → Schritt-für-Schritt-Anleitung: IAB für Tiny Houses beantragen und 30.000 € sparen
+              </Link>
+            </p>
           </div>
 
           {/* Beispielrechnung */}
