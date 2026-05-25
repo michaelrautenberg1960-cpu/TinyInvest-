@@ -132,7 +132,7 @@ export default function PillarPage() {
     "dateModified": "2026-05-06",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
-    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-escape-wald.webp" },
+    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/7g Tiny House Investment Der Vollständige Leitfaden 2026.webp" },
   };
 
   const breadcrumbSchema = {
@@ -228,10 +228,10 @@ export default function PillarPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
+          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
             <img
-              src="/images/outside/tiny-house-escape-wald.webp"
-              alt="§7g Tiny House Investment – Steueroptimiertes Kapitalanlage-Modell 2026"
+              src="/images/outside/7g Tiny House Investment Der Vollständige Leitfaden 2026.webp"
+              alt="§7g Tiny House Investment – Der vollständige Leitfaden 2026"
               className="w-full h-full object-cover"
               loading="eager"
             />
@@ -299,7 +299,7 @@ export default function PillarPage() {
                 titel: "Sonder-AfA — 40 % im Kaufjahr",
                 prozent: "40 %",
                 farbe: "bg-blue-500",
-                erklaerung: "Im Jahr der Anschaffung darf zusätzlich zur regulären linearen AfA eine Sonderabschreibung von 40 % des Kaufpreises (nach IAB-Korrektur) geltend gemacht werden. Dieses Instrument wurde durch das Wachstumschancengesetz 2024 von 20 % auf 40 % verdoppelt und ist bis 31.12.2027 befristet. Für Investoren, die 2025–2027 kaufen, ist das ein historisch günstiges Fenster.",
+                erklaerung: "Im Jahr der Anschaffung darf zusätzlich zur regulären linearen AfA eine Sonderabschreibung von 40 % des Kaufpreises (nach IAB-Korrektur) geltend gemacht werden. Dieses Instrument wurde durch das Wachstumschancengesetz 2024 von 20 % auf 40 % verdoppelt und ist bis 31.12.2027 befristet. Für Investoren, die 2026–2027 kaufen, ist das ein historisch günstiges Fenster.",
                 vorteil: "~13.440 € zusätzliche Steuerersparnis im Kaufjahr",
               },
               {

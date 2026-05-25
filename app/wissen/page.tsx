@@ -146,7 +146,7 @@ const articles = [
     title: "§7g Tiny House Investment: Der vollständige Leitfaden",
     desc: "IAB, Sonder-AfA und degressive AfA Schritt für Schritt erklärt – mit Rechenbeispielen und Checkliste für Investoren.",
     tags: ["§7g EStG", "IAB", "Sonder-AfA", "Leitfaden"],
-    img: "/images/articles/7g AfA & Sonder-Abschreibung Tiny House Steuer-Guide 2026.png",
+    img: "/images/outside/7g Tiny House Investment Der Vollständige Leitfaden 2026.webp",
   },
   {
     href: "/wissen/iab-tiny-house",
