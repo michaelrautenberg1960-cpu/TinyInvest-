@@ -47,7 +47,7 @@ const articles = [
     title: "Tiny House als Direktinvestment",
     desc: "Kein Fonds, kein Token: Du wirst echter Eigentümer. Vergleich Direktinvestment vs. Crowdinvesting, Kaufprozess und 3 Sachwert-USPs.",
     tags: ["Eigentum", "Sachwert", "Drittverwendung", "Insolvenzschutz"],
-    img: "/images/outside/tiny-house-renditeobjekt-aussen.webp",
+    img: "/images/outside/Tiny House als Direktinvestment Sachwert statt Finanzprodukt.jpg",
   },
   {
     href: "/wissen/tiny-house-als-rendite",
@@ -155,7 +155,7 @@ const articles = [
     title: "Investitionsabzugsbetrag (IAB) für Tiny Houses",
     desc: "Voraussetzungen, Schritt-für-Schritt-Anleitung, Rechenbeispiel und häufige Fehler beim IAB für Tiny House Investoren.",
     tags: ["IAB", "§7g", "Betriebsausgaben", "Vorjahr"],
-    img: "/images/outside/tiny-house-stellplatz-standort.webp",
+    img: "/images/outside/IAB Tiny House 2026 So sparst du bis zu 30.000 € vor dem Kauf.webp",
   },
   {
     href: "/wissen/tiny-house-steuern-sparen",

@@ -62,7 +62,7 @@ export default function DirektinvestmentPage() {
     "dateModified": "2026-04-14",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
-    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-escape-sachwert.webp" },
+    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/Tiny House als Direktinvestment Sachwert statt Finanzprodukt.jpg" },
   };
 
   const breadcrumbSchema = {
@@ -130,8 +130,8 @@ export default function DirektinvestmentPage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/tiny-house-escape-sachwert.webp" alt="Tiny House Direktinvestment – physisches Sachwert-Asset" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "16/9" }}>
+            <Image src="/images/outside/Tiny House als Direktinvestment Sachwert statt Finanzprodukt.jpg" alt="Tiny House als Direktinvestment – Sachwert statt Finanzprodukt" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
