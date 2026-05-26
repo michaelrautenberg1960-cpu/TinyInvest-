@@ -280,114 +280,59 @@ export default function PillarPage() {
             </p>
           </div>
 
-          {/* Die 3 Bausteine */}
-          <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Die 3 §7g-Bausteine im Detail</h2>
-          <div className="space-y-5 mb-14">
-            {[
-              {
-                nr: "01",
-                gesetz: "§7g Abs. 1 EStG",
-                titel: "Investitionsabzugsbetrag (IAB) — bis 3 Jahre vor dem Kauf",
-                prozent: "50 %",
-                farbe: "bg-amber-500",
-                erklaerung: "Der IAB erlaubt dir, bis zu 50 % des geplanten Kaufpreises bereits VOR dem Kauf als Betriebsausgabe abzuziehen. Bei einem 80.000 € Tiny House kannst du im Jahr vor dem Kauf 40.000 € gewinnmindernd ansetzen — das reduziert deine Steuerlast bei 42 % Grenzsteuersatz um ca. 16.800 €. Der Clou: Das Geld liegt noch auf deinem Konto.",
-                vorteil: "~16.800 € Steuerersparnis im Vorjahr",
-              },
-              {
-                nr: "02",
-                gesetz: "§7g Abs. 5 EStG (Wachstumschancengesetz 2024)",
-                titel: "Sonder-AfA — 40 % im Kaufjahr",
-                prozent: "40 %",
-                farbe: "bg-blue-500",
-                erklaerung: "Im Jahr der Anschaffung darf zusätzlich zur regulären linearen AfA eine Sonderabschreibung von 40 % des Kaufpreises (nach IAB-Korrektur) geltend gemacht werden. Dieses Instrument wurde durch das Wachstumschancengesetz 2024 von 20 % auf 40 % verdoppelt und ist bis 31.12.2027 befristet. Für Investoren, die 2026–2027 kaufen, ist das ein historisch günstiges Fenster.",
-                vorteil: "~13.440 € zusätzliche Steuerersparnis im Kaufjahr",
-              },
-              {
-                nr: "03",
-                gesetz: "§7 Abs. 2 EStG (ab 01.07.2025)",
-                titel: "Degressive AfA — 30 % vom Restwert",
-                prozent: "30 %",
-                farbe: "bg-purple-500",
-                erklaerung: "Seit dem 01.07.2025 gilt zusätzlich die degressive Abschreibung: 30 % des verbliebenen Buchwerts können im ersten Jahr abgeschrieben werden. Kombiniert mit der Sonder-AfA ergibt sich eine Gesamtabschreibung von bis zu 70 % im Kaufjahr. In keinem anderen gängigen Investment-Modell ist eine derartige Sofortabschreibung bei Anschaffungskosten unter 100.000 € möglich.",
-                vorteil: "Gesamt im Kaufjahr: bis zu 70 % abgeschrieben",
-              },
-            ].map((b) => (
-              <div key={b.nr} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-                <div className="flex items-start gap-5">
-                  <div className={`${b.farbe} text-white font-black text-sm px-3 py-1.5 rounded-xl shrink-0`}>{b.prozent}</div>
-                  <div className="grow">
-                    <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-widest mb-1">{b.gesetz}</p>
-                    <h3 className="font-black text-gray-900 text-base mb-3">{b.titel}</h3>
-                    <p className="text-gray-600 text-[13px] leading-relaxed mb-4">{b.erklaerung}</p>
-                    <div className="bg-green-50 border border-green-100 rounded-xl px-4 py-2 inline-block">
-                      <p className="text-green-700 font-bold text-[12px]">→ {b.vorteil}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Fließtext */}
+          <div className="max-w-3xl space-y-10 mb-14">
 
-          {/* Rechenbeispiel */}
-          <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Rechenbeispiel: 80.000 € Investment, 42 % Steuersatz</h2>
-          <div className="bg-gray-950 rounded-2xl overflow-hidden mb-14">
-            <div className="overflow-x-auto">
-              <table className="w-full text-[13px]">
-                <thead>
-                  <tr className="border-b border-gray-800">
-                    <th className="text-left px-5 py-3 text-gray-400 font-semibold">Maßnahme</th>
-                    <th className="text-right px-5 py-3 text-gray-400 font-semibold">Abzug</th>
-                    <th className="text-right px-5 py-3 text-gray-400 font-semibold">Steuerersparnis (42 %)</th>
-                    <th className="text-right px-5 py-3 text-gray-400 font-semibold">Zeitpunkt</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { name: "IAB (50 % von 80.000 €)", abzug: "40.000 €", ersparnis: "≈ 16.800 €", zeitpunkt: "Vorjahr" },
-                    { name: "Sonder-AfA (40 % von 40.000 € Restwert)", abzug: "16.000 €", ersparnis: "≈ 6.720 €", zeitpunkt: "Kaufjahr" },
-                    { name: "Deg. AfA (30 % von 24.000 € Restwert)", abzug: "7.200 €", ersparnis: "≈ 3.024 €", zeitpunkt: "Kaufjahr" },
-                    { name: "Lineare AfA Rest (8 Jahre)", abzug: "je ~2.100 €/J", ersparnis: "≈ 882 €/J", zeitpunkt: "Jahr 2–8" },
-                  ].map((r, i) => (
-                    <tr key={i} className="border-b border-gray-800/50">
-                      <td className="px-5 py-3 text-gray-300">{r.name}</td>
-                      <td className="px-5 py-3 text-right text-white font-semibold">{r.abzug}</td>
-                      <td className="px-5 py-3 text-right text-green-400 font-bold">{r.ersparnis}</td>
-                      <td className="px-5 py-3 text-right text-gray-400">{r.zeitpunkt}</td>
-                    </tr>
-                  ))}
-                  <tr className="bg-green-900/30">
-                    <td className="px-5 py-3 text-white font-black">Gesamt Jahr 0–1</td>
-                    <td className="px-5 py-3 text-right text-white font-black">63.200 €</td>
-                    <td className="px-5 py-3 text-right text-green-400 font-black">≈ 26.544 €</td>
-                    <td className="px-5 py-3 text-right text-gray-400">—</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Das Tiny House als steueroptimierte Kapitalanlage</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                In der modernen Investmentlandschaft gewinnt das Tiny House als innovative Sachwert-Anlageklasse zunehmend an Bedeutung. Anders als klassische Immobilien, die mit hohen Einstiegshürden, langen Finanzierungslaufzeiten und komplexen Verwaltungsaufwänden verbunden sind, kombiniert ein mobiles Tiny House die Beständigkeit von Sachwerten mit der Flexibilität beweglicher Wirtschaftsgüter. Das wesentliche Fundament für die wirtschaftliche Attraktivität bildet das deutsche Steuerrecht — insbesondere der Investitionsabzugsbetrag (IAB) sowie die Sonderabschreibungen gemäß § 7g des Einkommensteuergesetzes (EStG).
+              </p>
             </div>
-            <p className="px-5 py-3 text-[11px] text-gray-600">Alle Angaben sind Beispielrechnungen. Individuelle Steuereffekte können abweichen. Steuerberatung empfohlen.</p>
-          </div>
 
-          {/* Voraussetzungen */}
-          <div className="max-w-3xl mb-12">
-            <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Voraussetzungen für §7g im Überblick</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                { title: "Betriebliche Nutzung", desc: "Das Tiny House muss zu mindestens 90 % betrieblich (gewerblich) genutzt werden. Kurzzeitvermietung über tiny Escapes erfüllt diese Voraussetzung.", ok: true },
-                { title: "Gewerbeanmeldung", desc: "Du benötigst ein aktives Gewerbe. Ein Einzelunternehmen oder Einzelkaufmann genügt. TinyInvest unterstützt bei der Anmeldung.", ok: true },
-                { title: "Gewinngrenze IAB", desc: "Der Betriebsgewinn im Jahr der IAB-Bildung darf 200.000 € nicht überschreiten (§7g Abs. 1 Nr. 1 EStG).", ok: true },
-                { title: "Investitionsabsicht dokumentieren", desc: "Die geplante Investition muss konkret sein. Ein Angebot von TinyInvest genügt als Nachweis gegenüber dem Finanzamt.", ok: true },
-                { title: "Verbleib im Betrieb", desc: "Das Wirtschaftsgut muss mindestens 1 Jahr nach Anschaffung im Betrieb verbleiben, sonst droht IAB-Rückforderung.", ok: true },
-                { title: "Nur bewegliche Güter", desc: "§7g gilt nicht für Grundstücke oder fest eingebaute Gebäude. Tiny Houses auf Vlemmix Trailern erfüllen diese Bedingung.", ok: true },
-              ].map((v) => (
-                <div key={v.title} className="flex gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                  <span className="text-green-600 font-black text-base mt-0.5 shrink-0">✓</span>
-                  <div>
-                    <p className="font-bold text-gray-900 text-[13px]">{v.title}</p>
-                    <p className="text-gray-500 text-[12px] leading-relaxed mt-0.5">{v.desc}</p>
-                  </div>
-                </div>
-              ))}
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Der steuerliche Kern: Das bewegliche Wirtschaftsgut</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Der entscheidende rechtliche Vorteil eines Tiny Houses liegt in seiner Konstruktion: Sofern es auf einem straßenzugelassenen Trailer — wie dem Vlemmix-Trailer — errichtet wird, gilt es steuerlich nicht als Gebäude, sondern als <strong className="text-gray-900">bewegliches Wirtschaftsgut</strong>. Dieser Status eröffnet Investoren drei aufeinander aufbauende Abschreibungshebel, die im klassischen Immobilienbereich nicht existieren.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Über den <strong className="text-gray-900">Investitionsabzugsbetrag (IAB)</strong> können bis zu 50 Prozent der voraussichtlichen Anschaffungskosten steuerlich vorweggenommen werden — sogar schon im Jahr vor der eigentlichen Anschaffung. Das führt zu einer sofortigen, massiven Reduzierung der persönlichen Steuerlast, ohne dass das Kapital bereits gebunden ist.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Zusätzlich lässt sich nach der Anschaffung eine <strong className="text-gray-900">Sonderabschreibung (Sonder-AfA) von bis zu 40 Prozent</strong> geltend machen — durch das Wachstumschancengesetz 2024 auf diesen Höchstwert angehoben und bis 31.12.2027 befristet. Der verbleibende Restwert wird anschließend über die reguläre Nutzungsdauer von acht Jahren linear oder degressiv abgeschrieben.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Im direkten Vergleich zu einer klassischen Eigentumswohnung, deren Abschreibung sich über 50 Jahre erstreckt, ermöglicht das Tiny House eine extrem beschleunigte Aufzehrung der Anschaffungskosten. In den ersten Jahren fallen dadurch kaum steuerpflichtige Gewinne aus der Vermietung an.
+              </p>
             </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Konkreter Liquiditätseffekt und Zielgruppen</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Die steuerliche Hebelwirkung transformiert sich direkt in liquides Kapital. Bei einer Investitionssumme von 80.000 Euro und einem persönlichen Spitzensteuersatz von 42 Prozent führt der Steuerbonus im ersten Jahr zu einem <strong className="text-gray-900">Liquiditätsvorteil von bis zu 33.000 Euro</strong>. Der reale Netto-Kapitaleinsatz reduziert sich damit effektiv auf rund 47.000 Euro — während die Rendite auf Basis der vollen Einnahmen berechnet wird.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                <strong className="text-gray-900">Gutverdienende Angestellte</strong> können ab einem Grenzsteuersatz von etwa 35 Prozent erhebliche Summen einsparen — ganz ohne eigenes Gewerbe, allein über die Einkünfte aus Vermietung und Verpachtung. <strong className="text-gray-900">Selbstständige und Freiberufler</strong> nutzen den IAB primär, um stark schwankende Einnahmen oder außergewöhnliche Spitzenjahre steuerlich auszugleichen. Für <strong className="text-gray-900">GmbH-Gesellschafter und Unternehmer</strong> bietet die Aktivierung im Betriebsvermögen zusätzlich die Option, Körperschaft- und Gewerbesteueraufwand effektiv zu senken.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Rendite und das operative Ökosystem</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Wirtschaftlich betrachtet übertreffen Tiny House Investments viele traditionelle Anlagen. Während Photovoltaikanlagen meist Renditen von 3 bis 5 Prozent erzielen und fest mit einer Immobilie verbunden sind, erwirtschaften Tiny Houses im Tourismussektor über die Kurzzeitvermietung — etwa via Airbnb, Booking.com oder spezialisierte Portale — <strong className="text-gray-900">Nettorenditen zwischen 11 und 14 Prozent pro Jahr</strong>. Zudem bleibt das Asset hochgradig flexibel: Läuft ein Standort nicht wie erwartet, kann das Haus auf seinem Trailer unkompliziert versetzt werden. Ein Wiederverkauf ist frei von Notarkosten und Grunderwerbsteuer.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Damit das Investment echtes passives Einkommen generiert, baut TinyInvest auf ein vollautomatisches Betreibermodell durch spezialisierte Partner wie <a href="https://www.tiny.rentals" target="_blank" rel="noopener noreferrer" className="text-green-700 font-semibold hover:underline">tiny Escapes</a>. Der Investor erwirbt das physische Objekt, während der Betreiber das gesamte operative Geschäft übernimmt: Standortakquise auf geprüften Grundstücken in Deutschland und Europa, Transport, behördliche Genehmigungen, Marketing, Gästebetreuung sowie laufende Instandhaltung. Die Abrechnung erfolgt über einen fairen Aufteilungsschlüssel der Mieteinnahmen — der Investor profitiert von einem inflationsgeschützten Sachwert und kontinuierlichem Cashflow, ohne eigenen zeitlichen Aufwand.
+              </p>
+            </div>
+
+            <div className="bg-green-50 border border-green-100 rounded-2xl p-6">
+              <p className="text-green-700 font-bold text-sm mb-1">Steuerlicher Hinweis</p>
+              <p className="text-green-800 text-[13px] leading-relaxed">
+                Alle Steuereffekte sind Beispielrechnungen auf Basis eines 42 %-Grenzsteuersatzes. Die individuelle Steuerersparnis hängt von der persönlichen Einkommenssituation ab. Eine Beratung durch einen §7g-erfahrenen Steuerberater ist vor der Investition empfohlen. Gewinngrenze für den IAB: 200.000 € im Jahr der Bildung (§7g Abs. 1 Nr. 1 EStG).
+              </p>
+            </div>
+
           </div>
 
           <div className="relative rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
