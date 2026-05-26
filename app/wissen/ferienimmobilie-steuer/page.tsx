@@ -50,7 +50,7 @@ export default function FerienimmobilieSteuerPage() {
     "dateModified": "2026-04-14",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
-    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-ferienimmobilie-aussen.webp" },
+    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/ferienimmobilie-steuer.webp" },
   };
 
   const breadcrumbSchema = {
@@ -108,8 +108,8 @@ export default function FerienimmobilieSteuerPage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/tiny-house-ferienimmobilie-aussen.webp" alt="Ferienimmobilie vs Tiny House – Steuervergleich" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+          <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "16/9" }}>
+            <Image src="/images/outside/ferienimmobilie-steuer.webp" alt="Ferienimmobilie vs. Tiny House – Steuervergleich 2026" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -123,76 +123,83 @@ export default function FerienimmobilieSteuerPage() {
 
       <article className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Ferienimmobilien klingen nach dem perfekten Investment: hohe Nächtigungspreise in touristischen Lagen, steuerliche Absetzbarkeit, ein Objekt das man selbst nutzen kann. Die Realität sieht für viele Investoren ernüchternder aus. Der Schlüsselpunkt: Der Steuervorteil einer klassischen Ferienimmobilie ist ein Bruchteil dessen, was ein bewegliches Wirtschaftsgut wie ein Tiny House bietet.
-            </p>
-            <p className="text-gray-700 text-base leading-relaxed">
-              Die 2 %-Regelung der linearen AfA bedeutet: Wer ein Ferienhaus für 300.000 € kauft (Gebäudeanteil 200.000 €), darf 4.000 € pro Jahr abschreiben – über 50 Jahre. Ein Tiny House für 80.000 € schreibt im Kaufjahr durch IAB und Sonder-AfA bis zu 70 % ab. Das sind bis zu 56.000 € steuerlich anrechenbare Kosten in zwölf Monaten. Der Unterschied ist nicht marginal – er ist strukturell.
-            </p>
+
+          {/* Fließtext */}
+          <div className="max-w-3xl space-y-10 mb-14">
+
+            <div>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Der Traum vom eigenen Feriendomizil ist ungebrochen: Ein idyllisches Objekt am See oder in den Bergen, das durch glückliche Feriengäste finanziert wird und nebenbei fette Renditen abwirft. Doch wer sich im Jahr 2026 den harten steuerlichen Realitäten in Deutschland stellt, merkt schnell: Die klassische Ferienimmobilie ist oft ein Renditefresser.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Der Grund dafür liegt nicht an mangelnden Urlaubern, sondern an einer starren und veralteten Steuergesetzgebung für unbewegliche Wirtschaftsgüter. Hier kommt die Disruption des Immobilienmarktes: Das Tiny House als mobiles Investitionsobjekt. Warum Tiny Houses der klassischen Ferienwohnung steuerlich und strategisch haushoch überlegen sind, zeigt der direkte Vergleich.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Der Steuer-Turbo: Beweglich vs. Unbeweglich</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Der alles entscheidende Hebel im deutschen Steuerrecht ist die Unterscheidung zwischen beweglichen und unbeweglichen Wirtschaftsgütern.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                <strong className="text-gray-900">Klassische Ferienimmobilie:</strong> Ein Ferienhaus ist fest mit dem Erdboden verbunden und gilt als unbeweglich. Das bedeutet für Sie als Investor: Die lineare Abschreibung (AfA) beträgt magere 2 % pro Jahr. Kaufen Sie ein Objekt für 300.000 € (wobei der reine Gebäudeanteil bei 200.000 € liegt), können Sie gerade einmal 4.000 € im Jahr steuerlich geltend machen. Es dauert geschlagene 50 Jahre, bis das Objekt voll abgeschrieben ist.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                <strong className="text-gray-900">Tiny House (auf Trailern):</strong> Ein Tiny House auf einem Fahrgestell (z. B. einem Vlemmix Trailer) gilt steuerlich als bewegliches Wirtschaftsgut. Dies öffnet Tür und Tor für den Paragraphen § 7g EStG — ein Steuerwerkzeug, von dem Besitzer klassischer Immobilien nicht einmal träumen dürfen.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Durch den Investitionsabzugsbetrag (IAB) und Sonderabschreibungen können Sie bis zu 70 % der Anschaffungskosten direkt im Kaufjahr steuerlich anrechnen lassen. Bei einem 80.000 € teuren Tiny House generieren Sie so im Handumdrehen bis zu 56.000 € an absetzbaren Kosten in nur 12 Monaten. Ihr zu versteuerndes Einkommen sinkt massiv, und Sie holen sich Liquidität sofort vom Finanzamt zurück, statt 50 Jahre darauf zu warten.
+              </p>
+            </div>
+
           </div>
 
-          <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Ferienimmobilie: Die steuerliche Realität</h2>
-          <div className="space-y-4 mb-12">
-            {[
-              { icon: "🏗️", title: "AfA: 2 % über 50 Jahre", desc: "Bei einer 300.000 € Ferienimmobilie (Gebäudeanteil ~200.000 €) sind das 4.000 € AfA pro Jahr. Klingt viel, ist aber über 50 Jahre verteilt – kein Vergleich zu §7g mit 70 % Sofortabschreibung." },
-              { icon: "💸", title: "Kaufnebenkosten: 10–15 %", desc: "Grunderwerbsteuer (3,5–6,5 %), Notar (~1,5 %), Makler (~3,5 %) – bei 300.000 € sind das 30.000–45.000 € Kaufnebenkosten, die nicht sofort absetzbar sind." },
-              { icon: "⚖️", title: "§7g: Nicht anwendbar", desc: "Ferienimmobilien sind unbewegliche Wirtschaftsgüter. §7g EStG gilt nur für bewegliche – das schließt alle Grundstücke und Gebäude aus. Kein IAB, keine Sonder-AfA (40 %), keine degressive AfA (30 %)." },
-              { icon: "📋", title: "Liebhaberei-Risiko", desc: "Das Finanzamt kann die Verlustverrechnung verweigern, wenn die Vermietungsquote zu niedrig ist. Selbstnutzung reduziert die abzugsfähigen Kosten anteilig." },
-            ].map((item) => (
-              <div key={item.title} className="bg-gray-50 border border-gray-100 rounded-2xl p-5 flex gap-4">
-                <span className="text-2xl shrink-0">{item.icon}</span>
-                <div>
-                  <h3 className="font-black text-gray-900 text-[14px] mb-1">{item.title}</h3>
-                  <p className="text-gray-500 text-[13px] leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
+          <div className="relative rounded-2xl overflow-hidden mb-14" style={{ aspectRatio: "16/7" }}>
             <Image src="/images/outside/tiny-house-escape-hero.webp" alt="Tiny House Ferienunterkunft" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
-          <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Ferienimmobilie vs. Tiny House: Steuervergleich</h2>
-          <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm mb-8">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-gray-50 border-b border-gray-100">
-                    <th className="text-left p-4 text-[12px] text-gray-500 font-semibold">Steuermerkmal</th>
-                    <th className="p-4 text-[12px] text-gray-500 font-semibold text-center">Ferienimmobilie</th>
-                    <th className="p-4 text-[12px] font-black text-green-700 text-center bg-green-50">Tiny House</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-50 text-[13px]">
-                  {[
-                    ["§7g IAB (50 % Vorzieheffekt)", "❌ Nein", "✅ Ja"],
-                    ["Sonder-AfA 40 %", "❌ Nein", "✅ Ja"],
-                    ["Degressive AfA 30 %", "❌ Nein", "✅ Ja"],
-                    ["Standard AfA", "2 % / 50 Jahre", "20 % / 5 Jahre (linear)"],
-                    ["Sofortabschreibung Jahr 1", "2 %", "bis 70 % (mit IAB)"],
-                    ["Kaufnebenkosten", "10–15 %", "0 % (kein Grundbuch)"],
-                    ["Steuereffekt (42 %, 100k €)", "~840 € / Jahr", "~33.600 € im Kaufjahr"],
-                  ].map(([k, a, b]) => (
-                    <tr key={k} className="hover:bg-gray-50/50">
-                      <td className="p-4 font-medium text-gray-700">{k}</td>
-                      <td className="p-4 text-center text-gray-500">{a}</td>
-                      <td className="p-4 text-center font-bold text-green-700 bg-green-50/50">{b}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          <div className="max-w-3xl space-y-10 mb-14">
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Die Nebenkosten-Falle entlarvt</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Wer eine klassische Ferienimmobilie kauft, verbrennt vom Start weg enorm viel Eigenkapital, das keine Rendite abwirft.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Die Kaufnebenkosten bei Stein-auf-Stein-Immobilien fressen in Deutschland in der Regel 10 bis 15 % des Kaufpreises auf. Bei einem 300.000 € Objekt blättern Sie also 30.000 € bis 45.000 € bar für Grunderwerbsteuer, Notar und Makler hin. Das Schlimmste daran: Diese Kosten können Sie nicht einmal sofort steuerlich absetzen, sondern müssen sie mühsam über die Nutzungsdauer verteilen.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Beim Tiny House fallen diese klassischen Kaufnebenkosten für das Gebäude schlichtweg weg. Da es sich um ein bewegliches Gut handelt, zahlen Sie weder Grunderwerbsteuer noch Notargebühren auf das Haus selbst. Jeder investierte Euro fließt direkt in den Sachwert und die Renditeerzeugung.
+              </p>
             </div>
-          </div>
 
-          <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-8">
-            <p className="text-[10px] text-amber-700 font-bold uppercase tracking-widest mb-2">⚠ Steuerhinweis</p>
-            <p className="text-[12px] text-amber-800 leading-relaxed">Alle Steuerangaben sind allgemeiner Natur und keine Steuerberatung. Individuelle Steuereffekte hängen von der persönlichen Situation ab. Bitte konsultiere einen Steuerberater.</p>
-          </div>
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Flexibilität statt „Liebhaberei"-Risiko</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Das Finanzamt schaut bei Ferienwohnungen ganz genau hin. Wenn Sie Ihr klassisches Ferienhaus zu oft selbst nutzen oder die Buchungszahlen in einer schwachen Region einbrechen, droht das Schreckgespenst der Liebhaberei.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                <strong className="text-gray-900">Die harte 75-%-Regel:</strong> Wer mit seiner klassischen Ferienimmobilie weniger als 75 % der ortsüblichen Vermietungszeit erreicht, gerät unter Generalverdacht. Das Finanzamt geht dann davon aus, dass Sie keine echte Gewinnerzielungsabsicht haben, und streicht Ihnen rückwirkend die steuerliche Abzugsfähigkeit von Verlusten.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Tiny Houses hingegen bieten durch ihre Mobilität und das geringere Investitionsvolumen eine ganz andere Dynamik. Sollte sich ein Standort touristisch negativ entwickeln, zieht das Tiny House im Extremfall einfach um. Zudem ist die Haltefrist für den steuerfreien Verkauf bei beweglichen Wirtschaftsgütern deutlich kürzer als die starre 10-Jahres-Spekulationsfrist bei klassischen Immobilien.
+              </p>
+            </div>
 
-          <div className="relative rounded-2xl overflow-hidden mb-10" style={{ aspectRatio: "16/7" }}>
-            <Image src="/images/inside/tiny-house-innen-wohnzimmer.webp" alt="Tiny House Wohnbereich modern" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Fazit: Der strukturelle Vorsprung des Tiny Houses</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Eine klassische Ferienimmobilie bindet riesige Mengen Kapital, belastet Sie mit hohen, nicht direkt absetzbaren Nebenkosten und tröpfelt steuerliche Vorteile über ein halbes Jahrhundert ab.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-6">
+                Das Tiny House bricht diese Regeln auf. Es nutzt die gesetzlichen Privilegien für bewegliche Wirtschaftsgüter perfekt aus: Maximale Abschreibung im Hier und Jetzt (§ 7g EStG), minimale Einstiegshürden und maximale Flexibilität. Wer im Jahr 2026 klug investieren und seine Steuerlast aktiv drücken will, für den führt der Weg weg vom klassischen Betongold und hin zum smarten, mobilen Tiny House Investment.
+              </p>
+              <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5">
+                <p className="text-[10px] text-amber-700 font-bold uppercase tracking-widest mb-2">Steuerhinweis</p>
+                <p className="text-[12px] text-amber-800 leading-relaxed">Alle Steuerangaben sind allgemeiner Natur und keine Steuerberatung. Individuelle Steuereffekte hängen von der persönlichen Situation ab. Bitte konsultiere einen Steuerberater.</p>
+              </div>
+            </div>
+
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">

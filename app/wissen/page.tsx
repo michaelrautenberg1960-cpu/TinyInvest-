@@ -110,7 +110,7 @@ const articles = [
     title: "Ferienimmobilie vs. Tiny House",
     desc: "Steuern, AfA, Rendite und der Vergleich mit Tiny House Investments. Was sich 2026 wirklich lohnt.",
     tags: ["Ferienhaus", "Steuer", "Vergleich"],
-    img: "/images/outside/tiny-house-ferienimmobilie-aussen.webp",
+    img: "/images/outside/ferienimmobilie-steuer.webp",
   },
   {
     href: "/wissen/tiny-house-standorte",
