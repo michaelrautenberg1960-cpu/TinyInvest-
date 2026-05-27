@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ModalButton from "../components/ModalButton";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -12,12 +12,12 @@ export const metadata = {
   keywords:
     "steuern sparen arzt, kapitalanlage arzt, §7g arzt, iab arzt steuervorteil, arzt steuerlast reduzieren, niedergelassener arzt kapitalanlage, arzt investition steuern",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
-  alternates: { canonical: "https://tinyhouse.investments/aerzte" },
+  alternates: { canonical: "https://tinyhouse.investments/wissen/aerzte" },
   openGraph: {
     title: "Steuern sparen als Arzt 2026: §7g IAB für Ärzte | TinyInvest",
     description:
       "Bis zu 39.500 € Steuerlast senken – mit dem §7g IAB vor dem Kauf. Vollautomatisch verwaltetes Tiny House als Kapitalanlage. Kein Aufwand neben der Praxis.",
-    url: "https://tinyhouse.investments/aerzte",
+    url: "https://tinyhouse.investments/wissen/aerzte",
   },
 };
 
@@ -56,7 +56,7 @@ export default function AerztePage() {
     headline: "Steuern sparen als Arzt 2026: §7g IAB für Ärzte | TinyInvest",
     description:
       "Als Arzt bis zu 39.500 € Steuerlast reduzieren – mit dem §7g IAB vor dem Kauf. Vollautomatisch verwaltetes Tiny House als Kapitalanlage.",
-    url: "https://tinyhouse.investments/aerzte",
+    url: "https://tinyhouse.investments/wissen/aerzte",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
     author: {
@@ -80,7 +80,8 @@ export default function AerztePage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Startseite", item: "https://tinyhouse.investments" },
-      { "@type": "ListItem", position: 2, name: "Ärzte & Freiberufler", item: "https://tinyhouse.investments/aerzte" },
+      { "@type": "ListItem", position: 2, name: "Wissen", item: "https://tinyhouse.investments/wissen" },
+      { "@type": "ListItem", position: 3, name: "Ärzte & Freiberufler", item: "https://tinyhouse.investments/wissen/aerzte" },
     ],
   };
 
@@ -106,6 +107,8 @@ export default function AerztePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3 mb-5 text-[12px]">
             <Link href="/" className="text-gray-400 hover:text-green-700">Startseite</Link>
+            <span className="text-gray-300">/</span>
+            <Link href="/wissen" className="text-gray-400 hover:text-green-700">Wissen</Link>
             <span className="text-gray-300">/</span>
             <span className="text-green-700 font-semibold">Ärzte & Freiberufler</span>
           </div>

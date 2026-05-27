@@ -8,6 +8,36 @@ const nextConfig: NextConfig = {
         destination: "/marktplatz",
         permanent: true,
       },
+      {
+        source: "/senioren",
+        destination: "/wissen/senioren",
+        permanent: true,
+      },
+      {
+        source: "/aerzte",
+        destination: "/wissen/aerzte",
+        permanent: true,
+      },
+      {
+        source: "/freiberufler",
+        destination: "/wissen/freiberufler",
+        permanent: true,
+      },
+      {
+        source: "/it-freelancer",
+        destination: "/wissen/it-freelancer",
+        permanent: true,
+      },
+      {
+        source: "/unternehmer",
+        destination: "/wissen/unternehmer",
+        permanent: true,
+      },
+      {
+        source: "/zielgruppen",
+        destination: "/wissen/zielgruppen",
+        permanent: true,
+      },
     ];
   },
   images: {

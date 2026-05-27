@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ModalButton from "../components/ModalButton";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -12,12 +12,12 @@ export const metadata = {
   keywords:
     "steuern sparen unternehmer, kapitalanlage gmbh inhaber, §7g unternehmer, iab gewerbebetrieb, gmbh investition steuern, unternehmer kapitalanlage 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
-  alternates: { canonical: "https://tinyhouse.investments/unternehmer" },
+  alternates: { canonical: "https://tinyhouse.investments/wissen/unternehmer" },
   openGraph: {
     title: "Steuern sparen als Unternehmer 2026: §7g IAB | TinyInvest",
     description:
       "Gewinne steuergünstig investieren – §7g IAB nutzen. Tiny House als Betriebsvermögen kaufen: kein Aufwand, monatlicher Cashflow, vollautomatisch verwaltet.",
-    url: "https://tinyhouse.investments/unternehmer",
+    url: "https://tinyhouse.investments/wissen/unternehmer",
   },
 };
 
@@ -56,7 +56,7 @@ export default function UnternehmerPage() {
     headline: "Steuern sparen als Unternehmer 2026: §7g IAB | TinyInvest",
     description:
       "Als Unternehmer Gewinne steuergünstig investieren – §7g IAB nutzen. Tiny House als Kapitalanlage, vollautomatisch verwaltet.",
-    url: "https://tinyhouse.investments/unternehmer",
+    url: "https://tinyhouse.investments/wissen/unternehmer",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
     author: {
@@ -80,7 +80,8 @@ export default function UnternehmerPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Startseite", item: "https://tinyhouse.investments" },
-      { "@type": "ListItem", position: 2, name: "Unternehmer", item: "https://tinyhouse.investments/unternehmer" },
+      { "@type": "ListItem", position: 2, name: "Wissen", item: "https://tinyhouse.investments/wissen" },
+      { "@type": "ListItem", position: 3, name: "Unternehmer", item: "https://tinyhouse.investments/wissen/unternehmer" },
     ],
   };
 
@@ -106,6 +107,8 @@ export default function UnternehmerPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3 mb-5 text-[12px]">
             <Link href="/" className="text-gray-400 hover:text-green-700">Startseite</Link>
+            <span className="text-gray-300">/</span>
+            <Link href="/wissen" className="text-gray-400 hover:text-green-700">Wissen</Link>
             <span className="text-gray-300">/</span>
             <span className="text-green-700 font-semibold">Unternehmer</span>
           </div>

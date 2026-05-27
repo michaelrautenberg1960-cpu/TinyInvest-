@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ModalButton from "../components/ModalButton";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -12,12 +12,12 @@ export const metadata = {
   keywords:
     "steuern sparen freiberufler, kapitalanlage freiberufler, §7g freiberufler, iab freiberufler steuervorteil, anwalt steuern sparen, architekt kapitalanlage, berater investment",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
-  alternates: { canonical: "https://tinyhouse.investments/freiberufler" },
+  alternates: { canonical: "https://tinyhouse.investments/wissen/freiberufler" },
   openGraph: {
     title: "Steuern sparen als Freiberufler 2026: §7g IAB | TinyInvest",
     description:
       "Bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. Vollautomatisch verwaltetes Tiny House. Kein Zeitaufwand neben Mandanten & Projekten.",
-    url: "https://tinyhouse.investments/freiberufler",
+    url: "https://tinyhouse.investments/wissen/freiberufler",
   },
 };
 
@@ -56,7 +56,7 @@ export default function FreiberuflerPage() {
     headline: "Steuern sparen als Freiberufler 2026: §7g IAB | TinyInvest",
     description:
       "Als Freiberufler bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. Vollautomatisch verwaltetes Tiny House als Kapitalanlage.",
-    url: "https://tinyhouse.investments/freiberufler",
+    url: "https://tinyhouse.investments/wissen/freiberufler",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
     author: {
@@ -80,7 +80,8 @@ export default function FreiberuflerPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Startseite", item: "https://tinyhouse.investments" },
-      { "@type": "ListItem", position: 2, name: "Freiberufler", item: "https://tinyhouse.investments/freiberufler" },
+      { "@type": "ListItem", position: 2, name: "Wissen", item: "https://tinyhouse.investments/wissen" },
+      { "@type": "ListItem", position: 3, name: "Freiberufler", item: "https://tinyhouse.investments/wissen/freiberufler" },
     ],
   };
 
@@ -106,6 +107,8 @@ export default function FreiberuflerPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3 mb-5 text-[12px]">
             <Link href="/" className="text-gray-400 hover:text-green-700">Startseite</Link>
+            <span className="text-gray-300">/</span>
+            <Link href="/wissen" className="text-gray-400 hover:text-green-700">Wissen</Link>
             <span className="text-gray-300">/</span>
             <span className="text-green-700 font-semibold">Freiberufler</span>
           </div>

@@ -395,6 +395,26 @@ export default function WissenPage() {
         </div>
       </section>
 
+      {/* Für wen? */}
+      <section className="py-8 border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-gray-400">
+          <span className="font-semibold text-gray-500">Auch für:</span>
+          {[
+            { href: "/wissen/senioren", label: "Senioren" },
+            { href: "/wissen/aerzte", label: "Ärzte" },
+            { href: "/wissen/freiberufler", label: "Freiberufler" },
+            { href: "/wissen/it-freelancer", label: "IT-Freelancer" },
+            { href: "/wissen/unternehmer", label: "Unternehmer" },
+            { href: "/wissen/zielgruppen", label: "Alle Zielgruppen →" },
+          ].map((item, i, arr) => (
+            <span key={item.href} className="flex items-center gap-4">
+              <Link href={item.href} className="text-gray-500 hover:text-green-700 transition-colors">{item.label}</Link>
+              {i < arr.length - 1 && <span className="text-gray-200">·</span>}
+            </span>
+          ))}
+        </div>
+      </section>
+
       {/* Glossar */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

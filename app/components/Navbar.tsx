@@ -14,8 +14,8 @@ const NAV_GROUPS = [
       { label: "So funktioniert's", href: "/so-funktioniert-es", desc: "Der vollständige Investor-Prozess" },
       { label: "Konfigurator", href: "/konfigurator", desc: "Haus konfigurieren & Angebot erhalten" },
       { label: "Für Hosts", href: "/hosts", desc: "Stellplatz vermieten & Einnahmen erzielen" },
-      { label: "Für Selbstständige", href: "/zielgruppen", desc: "§7g IAB für Ärzte, Freelancer & Unternehmer" },
-      { label: "Für Senioren", href: "/senioren", desc: "Altersvorsorge & Sachwert für Rentner" },
+      { label: "Für Selbstständige", href: "/wissen/zielgruppen", desc: "§7g IAB für Ärzte, Freelancer & Unternehmer" },
+      { label: "Für Senioren", href: "/wissen/senioren", desc: "Altersvorsorge & Sachwert für Rentner" },
     ],
   },
   {

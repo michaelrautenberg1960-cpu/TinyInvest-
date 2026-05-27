@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ModalButton from "../components/ModalButton";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -12,18 +12,18 @@ export const metadata = {
   keywords:
     "§7g iab selbstständige, kapitalanlage freiberufler, steuern sparen arzt, it freelancer investment, unternehmer kapitalanlage, iab berufsgruppen, tiny house steuervorteil selbstständige",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
-  alternates: { canonical: "https://tinyhouse.investments/zielgruppen" },
+  alternates: { canonical: "https://tinyhouse.investments/wissen/zielgruppen" },
   openGraph: {
     title: "§7g IAB für Selbstständige: Ärzte, Freiberufler, IT, Unternehmer | TinyInvest",
     description:
       "Bis zu 39.500 € Steuervorteil im Vorjahr – für Ärzte, Freiberufler, IT-Freelancer und Unternehmer. Welches Profil passt zu dir?",
-    url: "https://tinyhouse.investments/zielgruppen",
+    url: "https://tinyhouse.investments/wissen/zielgruppen",
   },
 };
 
 const profiles = [
   {
-    href: "/aerzte",
+    href: "/wissen/aerzte",
     emoji: "🏥",
     label: "Für Ärzte",
     headline: "Niedergelassene Ärzte & Freiberufler",
@@ -34,7 +34,7 @@ const profiles = [
     tagColor: "bg-green-50 text-green-700",
   },
   {
-    href: "/freiberufler",
+    href: "/wissen/freiberufler",
     emoji: "⚖️",
     label: "Für Freiberufler",
     headline: "Anwälte, Architekten, Berater & Co.",
@@ -45,7 +45,7 @@ const profiles = [
     tagColor: "bg-blue-50 text-blue-700",
   },
   {
-    href: "/it-freelancer",
+    href: "/wissen/it-freelancer",
     emoji: "💻",
     label: "Für IT-Freelancer",
     headline: "Entwickler, DevOps & Tech-Consultants",
@@ -56,7 +56,7 @@ const profiles = [
     tagColor: "bg-purple-50 text-purple-700",
   },
   {
-    href: "/unternehmer",
+    href: "/wissen/unternehmer",
     emoji: "🏢",
     label: "Für Unternehmer",
     headline: "Einzelunternehmer & Personengesellschaften",
@@ -92,7 +92,8 @@ export default function ZielgruppenPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Startseite", item: "https://tinyhouse.investments" },
-      { "@type": "ListItem", position: 2, name: "Für Selbstständige", item: "https://tinyhouse.investments/zielgruppen" },
+      { "@type": "ListItem", position: 2, name: "Wissen", item: "https://tinyhouse.investments/wissen" },
+      { "@type": "ListItem", position: 3, name: "Für Selbstständige", item: "https://tinyhouse.investments/wissen/zielgruppen" },
     ],
   };
 
@@ -102,7 +103,7 @@ export default function ZielgruppenPage() {
     headline: "§7g IAB für Selbstständige: Welche Berufsgruppe profitiert vom Tiny House Investment?",
     description:
       "Ärzte, Freiberufler, IT-Freelancer und Unternehmer nutzen den §7g IAB für bis zu 39.500 € Steuervorteil. Übersicht aller Berufsgruppen.",
-    url: "https://tinyhouse.investments/zielgruppen",
+    url: "https://tinyhouse.investments/wissen/zielgruppen",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
     author: {
@@ -128,6 +129,8 @@ export default function ZielgruppenPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3 mb-5 text-[12px]">
             <Link href="/" className="text-gray-400 hover:text-green-700">Startseite</Link>
+            <span className="text-gray-300">/</span>
+            <Link href="/wissen" className="text-gray-400 hover:text-green-700">Wissen</Link>
             <span className="text-gray-300">/</span>
             <span className="text-green-700 font-semibold">Für Selbstständige</span>
           </div>

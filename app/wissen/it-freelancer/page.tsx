@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ModalButton from "../components/ModalButton";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -12,12 +12,12 @@ export const metadata = {
   keywords:
     "steuern sparen it freelancer, kapitalanlage entwickler, §7g software entwickler, it freelancer investment, freelancer steuern deutschland, entwickler kapitalanlage 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
-  alternates: { canonical: "https://tinyhouse.investments/it-freelancer" },
+  alternates: { canonical: "https://tinyhouse.investments/wissen/it-freelancer" },
   openGraph: {
     title: "Steuern sparen als IT-Freelancer 2026: §7g IAB | TinyInvest",
     description:
       "Bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage: vollautomatisch, monatlicher Cashflow, kein Aufwand neben dem Projekt.",
-    url: "https://tinyhouse.investments/it-freelancer",
+    url: "https://tinyhouse.investments/wissen/it-freelancer",
   },
 };
 
@@ -56,7 +56,7 @@ export default function ItFreelancerPage() {
     headline: "Steuern sparen als IT-Freelancer 2026: §7g IAB | TinyInvest",
     description:
       "Als IT-Freelancer bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage, vollautomatisch verwaltet.",
-    url: "https://tinyhouse.investments/it-freelancer",
+    url: "https://tinyhouse.investments/wissen/it-freelancer",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
     author: {
@@ -80,7 +80,8 @@ export default function ItFreelancerPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Startseite", item: "https://tinyhouse.investments" },
-      { "@type": "ListItem", position: 2, name: "IT-Freelancer", item: "https://tinyhouse.investments/it-freelancer" },
+      { "@type": "ListItem", position: 2, name: "Wissen", item: "https://tinyhouse.investments/wissen" },
+      { "@type": "ListItem", position: 3, name: "IT-Freelancer", item: "https://tinyhouse.investments/wissen/it-freelancer" },
     ],
   };
 
@@ -106,6 +107,8 @@ export default function ItFreelancerPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3 mb-5 text-[12px]">
             <Link href="/" className="text-gray-400 hover:text-green-700">Startseite</Link>
+            <span className="text-gray-300">/</span>
+            <Link href="/wissen" className="text-gray-400 hover:text-green-700">Wissen</Link>
             <span className="text-gray-300">/</span>
             <span className="text-green-700 font-semibold">IT-Freelancer</span>
           </div>

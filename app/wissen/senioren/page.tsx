@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ModalButton from "../components/ModalButton";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -12,12 +12,12 @@ export const metadata = {
   keywords:
     "tiny house altersvorsorge, tiny house senioren, tiny house rente, tiny house rentner, im alter tiny house wohnen, sachwert rentenlücke, passives einkommen senioren",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
-  alternates: { canonical: "https://tinyhouse.investments/senioren" },
+  alternates: { canonical: "https://tinyhouse.investments/wissen/senioren" },
   openGraph: {
     title: "Tiny House Altersvorsorge 2026: Senioren & Rentner | TinyInvest",
     description:
       "Sachwert statt Sparbuch: Tiny House kaufen, monatlich Einkommen erhalten oder selbst einziehen. Für Senioren & Rentner — vollautomatisch, kein Aufwand.",
-    url: "https://tinyhouse.investments/senioren",
+    url: "https://tinyhouse.investments/wissen/senioren",
   },
 };
 
@@ -56,7 +56,7 @@ export default function SeniorenPage() {
     headline: "Tiny House Altersvorsorge 2026: Für Senioren & Rentner",
     description:
       "Tiny House als Altersvorsorge: Sachwert kaufen, monatlich Einkommen kassieren oder selbst einziehen. Für Senioren & Rentner ab 55.",
-    url: "https://tinyhouse.investments/senioren",
+    url: "https://tinyhouse.investments/wissen/senioren",
     datePublished: "2026-05-15",
     dateModified: "2026-05-15",
     author: {
@@ -80,7 +80,8 @@ export default function SeniorenPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Startseite", item: "https://tinyhouse.investments" },
-      { "@type": "ListItem", position: 2, name: "Senioren & Rentner", item: "https://tinyhouse.investments/senioren" },
+      { "@type": "ListItem", position: 2, name: "Wissen", item: "https://tinyhouse.investments/wissen" },
+      { "@type": "ListItem", position: 3, name: "Senioren & Rentner", item: "https://tinyhouse.investments/wissen/senioren" },
     ],
   };
 
@@ -106,6 +107,8 @@ export default function SeniorenPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3 mb-5 text-[12px]">
             <Link href="/" className="text-gray-400 hover:text-green-700">Startseite</Link>
+            <span className="text-gray-300">/</span>
+            <Link href="/wissen" className="text-gray-400 hover:text-green-700">Wissen</Link>
             <span className="text-gray-300">/</span>
             <span className="text-green-700 font-semibold">Senioren & Rentner</span>
           </div>
