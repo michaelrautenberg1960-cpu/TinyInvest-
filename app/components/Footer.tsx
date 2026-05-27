@@ -53,6 +53,7 @@ export default function Footer() {
               <li><Link href="/so-funktioniert-es" className="text-gray-400 hover:text-green-400 text-sm transition-colors">So funktioniert es</Link></li>
               <li><Link href="/galerie" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Galerie</Link></li>
               <li><Link href="/senioren" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Für Senioren</Link></li>
+              <li><Link href="/zielgruppen" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Für Selbstständige</Link></li>
             </ul>
           </div>
 

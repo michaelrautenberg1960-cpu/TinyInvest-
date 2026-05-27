@@ -147,7 +147,7 @@ export default async function MarktplatzPage() {
         badge="Marktplatz · Investment-Projekte 2026"
         title="Projekte, in die Sie investieren können"
         subtitle="§7g-fähige Tiny House Assets auf Vlemmix Trailer — direkt beim Hersteller gekauft, vollautomatisch bewirtschaftet durch tiny Escapes. Kein Kapital an TinyInvest."
-        img="/marktplatz.png"
+        img="/marktplatz.webp"
       />
 
       {/* KPI bar */}
