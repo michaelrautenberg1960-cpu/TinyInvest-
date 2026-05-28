@@ -137,12 +137,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/wissen/tiny-house-finanzierung`,
-      lastModified: "2026-04-26",
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
       url: `${BASE_URL}/wissen/tiny-house-genehmigung`,
       lastModified: "2026-04-13",
       changeFrequency: "monthly",
@@ -187,6 +181,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${BASE_URL}/wissen/iab-tiny-house`,
       lastModified: "2026-05-06",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/wissen/investitionsabzugsbetrag-tiny-house`,
+      lastModified: "2026-05-28",
       changeFrequency: "monthly",
       priority: 0.9,
     },
