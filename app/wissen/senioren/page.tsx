@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Tiny House Altersvorsorge 2026: Senioren & Rentner | TinyInvest",
   description:
-    "Tiny House als Altersvorsorge: Sachwert kaufen, monatlich Einkommen kassieren — oder selbst einziehen. Für Senioren & Rentner ab 55. Vollautomatisch bewirtschaftet durch tiny Escapes.",
+    "Tiny House als Altersvorsorge: Sachwert kaufen, monatlich Einkommen kassieren — oder selbst einziehen. Für Senioren & Rentner ab 55. Vollautomatisch.",
   keywords:
     "tiny house altersvorsorge, tiny house senioren, tiny house rente, tiny house rentner, im alter tiny house wohnen, sachwert rentenlücke, passives einkommen senioren",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

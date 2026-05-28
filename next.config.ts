@@ -38,6 +38,11 @@ const nextConfig: NextConfig = {
         destination: "/wissen/zielgruppen",
         permanent: true,
       },
+      {
+        source: "/iab",
+        destination: "/wissen/investitionsabzugsbetrag-tiny-house",
+        permanent: true,
+      },
     ];
   },
   images: {

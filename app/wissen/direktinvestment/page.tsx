@@ -6,9 +6,9 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House als Direktinvestment: Sachwert statt Finanzprodukt | TinyInvest",
+  title: "Tiny House Direktinvestment: Sachwert statt Fonds | TinyInvest",
   description:
-    "Du kaufst ein physisches Tiny House – kein Fondsanteil, kein Token, kein abstraktes Finanzprodukt. Wie Direktinvestment in bewegliche Wirtschaftsgüter funktioniert und warum Sachwerte sicherer sind.",
+    "Du kaufst ein physisches Tiny House – kein Fondsanteil, kein Token. Wie Direktinvestment in bewegliche Wirtschaftsgüter funktioniert und warum Sachwerte sicherer sind.",
   keywords:
     "tiny house direktinvestment, tiny house sachwert, direktinvestment bewegliche wirtschaftsgüter, tiny house eigentum kaufen, sachwert investment 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

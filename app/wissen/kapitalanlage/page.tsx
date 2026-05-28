@@ -6,9 +6,9 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House vs. Eigentumswohnung als Kapitalanlage 2026: Rendite, Steuer & Aufwand | TinyInvest",
+  title: "Tiny House vs. ETW 2026: Rendite, Steuer & Aufwand | TinyInvest",
   description:
-    "Lohnt sich ein Tiny House als Kapitalanlage wirklich? Detaillierter Vergleich Tiny House vs. ETW, 3 Renditesäulen, 5-Jahres-Modell und Risiken. Bildungsguide für Investoren 2026.",
+    "Lohnt sich ein Tiny House als Kapitalanlage? Vergleich Tiny House vs. ETW, 3 Renditesäulen, 5-Jahres-Modell und Risiken. Guide für Investoren 2026.",
   keywords:
     "tiny house vs eigentumswohnung, tiny house kapitalanlage vergleich, lohnt sich tiny house, tiny house rendite berechnen, tiny house kapitalanlage erklärung 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -16,7 +16,7 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/kapitalanlage",
   },
   openGraph: {
-    title: "Tiny House vs. Eigentumswohnung als Kapitalanlage 2026: Rendite, Steuer & Aufwand",
+    title: "Tiny House vs. ETW 2026: Rendite, Steuer & Aufwand | TinyInvest",
     description:
       "Tiny House vs. ETW: Warum mobile Assets in 2026 die bessere Kapitalanlage sein könnten. Vergleich, Renditeanalyse und Investoren-Guide.",
     url: "https://tinyhouse.investments/wissen/kapitalanlage",

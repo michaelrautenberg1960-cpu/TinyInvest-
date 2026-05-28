@@ -5,9 +5,9 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House kaufen 2026: Preise, Modelle & Investment-Option | TinyInvest",
+  title: "Tiny House kaufen 2026: Preise & Modelle | TinyInvest",
   description:
-    "Tiny House kaufen: Preise ab 65.000 €, Solido Modelle (Escape A17, Cabin 8400), Genehmigung, neu vs. gebraucht – und warum immer mehr Käufer ihr Tiny House als Kapitalanlage nutzen.",
+    "Tiny House kaufen: Preise ab 65.000 €, Solido Modelle (Escape A17, Cabin 8400), Genehmigung, neu vs. gebraucht – und die Investment-Option für Käufer.",
   keywords:
     "tiny house kaufen, tiny house kaufen preise, tiny house kaufen 2026, tiny house preise, mobiles tiny house kaufen, tiny house ganzjährig bewohnbar kaufen, tiny house gebraucht kaufen, günstige tiny häuser kaufen, tiny house als kapitalanlage kaufen",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

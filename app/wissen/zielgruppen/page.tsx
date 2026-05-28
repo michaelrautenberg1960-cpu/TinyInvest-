@@ -6,9 +6,9 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "§7g IAB für Selbstständige 2026: Welche Berufsgruppe profitiert? | TinyInvest",
+  title: "§7g IAB: Welche Berufsgruppe profitiert? | TinyInvest",
   description:
-    "Ärzte, Freiberufler, IT-Freelancer oder Unternehmer: So nutzt du den §7g IAB für ein Tiny House als Kapitalanlage. Bis zu 39.500 € Steuervorteil – für jeden Berufsstand erklärt.",
+    "Ärzte, Freiberufler, IT-Freelancer oder Unternehmer: So nutzt du den §7g IAB für ein Tiny House. Bis zu 39.500 € Steuervorteil – für jeden Berufsstand erklärt.",
   keywords:
     "§7g iab selbstständige, kapitalanlage freiberufler, steuern sparen arzt, it freelancer investment, unternehmer kapitalanlage, iab berufsgruppen, tiny house steuervorteil selbstständige",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

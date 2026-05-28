@@ -6,9 +6,9 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House auf Airbnb vermieten: Wirklich profitabel? 2026 | TinyInvest",
+  title: "Tiny House auf Airbnb vermieten: Profitabel? | TinyInvest",
   description:
-    "Lohnt sich ein Tiny House auf Airbnb? Belegungsquoten, Preise, Steuereffekte – die echten Zahlen 2026. Und warum das Betreibermodell von tiny Escapes effizienter ist.",
+    "Lohnt sich ein Tiny House auf Airbnb? Belegungsquoten, Preise, Steuereffekte – die echten Zahlen 2026. Warum das tiny Escapes Betreibermodell effizienter ist.",
   keywords:
     "tiny house airbnb vermieten, tiny house airbnb verdienen, tiny house kurzzeitvermietung rendite, airbnb tiny house profitabel 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

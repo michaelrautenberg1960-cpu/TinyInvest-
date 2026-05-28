@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Tiny House Steuern sparen: Die vollständige Anleitung | TinyInvest",
   description:
-    "Wie du mit einem Tiny House als Kapitalanlage bis zu 34.000 € Steuern sparst: IAB, Sonder-AfA, degressive AfA – Schritt für Schritt erklärt für Selbstständige und Unternehmer.",
+    "Wie du mit einem Tiny House bis zu 34.000 € Steuern sparst: IAB, Sonder-AfA, degressive AfA – Schritt für Schritt erklärt für Selbstständige und Unternehmer.",
   keywords:
     "tiny house steuern sparen, tiny house steuervorteile anleitung, tiny house kapitalanlage steuern, steuern sparen selbstständige tiny house, tiny house steueroptimierung",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

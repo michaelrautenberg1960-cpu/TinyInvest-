@@ -6,7 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House als Altersvorsorge 2026: Sachwert statt Riester | TinyInvest",
+  title: "Tiny House Altersvorsorge: Sachwert statt Riester | TinyInvest",
   description:
     "Riester, ETF oder Tiny House? Warum ein vollautomatisch verwaltetes Tiny House als Altersvorsorge mehr bringt – monatlicher Cashflow statt Rentenpunkte.",
   keywords:
@@ -222,7 +222,7 @@ export default function TinyHouseAltersvorsorge() {
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
-            <Link href="/senioren" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Senioren & Rentner →</Link>
+            <Link href="/wissen/senioren" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Senioren & Rentner →</Link>
             <Link href="/wissen/rentenlucke-schliessen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Rentenlücke schließen →</Link>
             <Link href="/wissen/tiny-house-vs-etf-altersvorsorge" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House vs. ETF →</Link>
             <Link href="/wissen/tiny-house-als-rendite" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Renditemodell erklärt →</Link>

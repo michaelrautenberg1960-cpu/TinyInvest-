@@ -5,9 +5,9 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House vs. PV-Anlage als Kapitalanlage 2026: IAB, Rendite & Aufwand im Vergleich | TinyInvest",
+  title: "Tiny House vs. PV-Anlage als Kapitalanlage 2026 | TinyInvest",
   description:
-    "PV-Anlage oder Tiny House als Kapitalanlage? Rendite-Vergleich, Steuervorteile, IAB und ehrliche Risikobewertung. Warum immer mehr Solar-Investoren auf Tiny Houses umsteigen.",
+    "PV-Anlage oder Tiny House als Kapitalanlage? Rendite-Vergleich, IAB-Steuervorteile und ehrliche Risikobewertung beider Investment-Modelle.",
   keywords:
     "pv anlage als kapitalanlage, solaranlage rendite berechnen, photovoltaik investition alternative, kapitalanlage alternative photovoltaik, pv anlage lohnt sich, tiny house statt solaranlage, solaranlage vs immobilie rendite, iab photovoltaik alternative, solaranlage einspeisevergütung rendite 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

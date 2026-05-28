@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Beste Tiny House Standorte Deutschland 2026 | TinyInvest",
   description:
-    "Welche Regionen in Deutschland eignen sich am besten für ein Tiny House Investment? Bayern, Schwarzwald, Ostsee, Allgäu – Belegungsquoten und Rendite im Vergleich.",
+    "Welche Regionen eignen sich für ein Tiny House Investment? Bayern, Schwarzwald, Ostsee, Allgäu – Belegungsquoten und Rendite im Vergleich.",
   keywords:
     "tiny house standorte deutschland, tiny house stellplatz deutschland, beste tiny house standorte, tiny house urlaub deutschland, tiny house investition standort",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

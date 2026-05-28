@@ -8,6 +8,13 @@ export const metadata = {
   alternates: {
     canonical: "https://tinyhouse.investments/agb",
   },
+  openGraph: {
+    title: "AGB – TinyInvest",
+    description: "Allgemeine Geschäftsbedingungen der TinyInvest GmbH.",
+    url: "https://tinyhouse.investments/agb",
+    type: "website",
+    locale: "de_DE",
+  },
 };
 
 export default function AGBPage() {

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House Rendite berechnen: Formeln, Rechner & Beispiele | TinyInvest",
+  title: "Tiny House Rendite berechnen: Rechner & Formeln | TinyInvest",
   description:
     "Wie du die Rendite eines Tiny House Investments korrekt berechnest: IRR, NPV, Cashflow-Analyse mit konkreten Zahlen. Inkl. interaktivem Rendite-Rechner.",
   keywords:

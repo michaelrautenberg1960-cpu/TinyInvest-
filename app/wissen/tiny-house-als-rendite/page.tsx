@@ -6,9 +6,9 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House als Renditeobjekt: Cashflow & Ertragsmodell 2026 | TinyInvest",
+  title: "Tiny House als Renditeobjekt: Cashflow 2026 | TinyInvest",
   description:
-    "Wie funktioniert die Rendite eines Tiny Houses? Mieteinnahmen, Cashflow-Analyse, 40 % Investor-Anteil, Belegungsquote und vollständiges 5-Jahres-Modell erklärt.",
+    "Wie funktioniert die Rendite eines Tiny Houses? Mieteinnahmen, Cashflow-Analyse, 40 % Investor-Anteil, Belegungsquote und 5-Jahres-Modell erklärt.",
   keywords:
     "tiny house rendite, tiny house cashflow, tiny house mieteinnahmen, rendite ferienimmobilien 2026, tiny house investment rendite berechnen",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

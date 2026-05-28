@@ -5,7 +5,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata = {
-  title: "PV-Direktinvestment Alternative: §7g IAB nutzen unter 100.000 € | TinyInvest",
+  title: "PV-Direktinvestment Alternative: §7g IAB | TinyInvest",
   description:
     "Du suchst eine Alternative zum Photovoltaik-Direktinvestment? Wie du mit Tiny Houses den §7g IAB & Sonder-AfA mit kleinerem Budget optimal nutzt – ab 79.000 €.",
   keywords:

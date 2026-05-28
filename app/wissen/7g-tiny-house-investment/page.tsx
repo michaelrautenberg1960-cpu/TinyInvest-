@@ -5,9 +5,9 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata = {
-  title: "§7g Tiny House Investment: Der vollständige Leitfaden 2026 | TinyInvest",
+  title: "§7g Tiny House Investment: Leitfaden 2026 | TinyInvest",
   description:
-    "§7g EStG für Tiny Houses: IAB (50 %), Sonder-AfA (40 %), degressive AfA (30 %) — bis zu 22.000–33.000 € Steuerersparnis im Kaufjahr. Der komplette Guide für Investoren.",
+    "§7g EStG für Tiny Houses: IAB (50 %), Sonder-AfA (40 %), degressive AfA (30 %) — bis zu 33.000 € Steuerersparnis im Kaufjahr. Der komplette Guide für Investoren.",
   keywords:
     "§7g tiny house investment, IAB investitionsabzugsbetrag tiny house, sonder-afa tiny house, bewegliches wirtschaftsgut abschreiben, tiny house steuern sparen 2026",
   alternates: {
@@ -56,6 +56,13 @@ const faqItems = [
 ];
 
 const subGuides = [
+  {
+    href: "/wissen/investitionsabzugsbetrag-tiny-house",
+    title: "Investitionsabzugsbetrag Tiny House: Vollständiger Guide",
+    desc: "Voraussetzungen, Berechnung und optimale Kombination mit Sonder-AfA. Bis zu 39.500 € Steuerersparnis.",
+    badge: "IAB Deep-Dive",
+    color: "bg-green-100 text-green-700",
+  },
   {
     href: "/wissen/afa-abschreibung",
     title: "§7g AfA & Sonder-Abschreibung erklärt",

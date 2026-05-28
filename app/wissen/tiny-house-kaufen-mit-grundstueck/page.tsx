@@ -5,9 +5,9 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House mit Grundstück kaufen 2026: Paket, Preise & Standorte | TinyInvest",
+  title: "Tiny House mit Grundstück kaufen 2026: Preise | TinyInvest",
   description:
-    "Tiny House mit Grundstück kaufen: Paketangebote ab 65.000 €, Standorte Bayern, Ostsee & mehr. Mit Genehmigungsinfo, Finanzierung und der Investment-Alternative ohne eigenes Land.",
+    "Tiny House mit Grundstück kaufen: Paketangebote ab 65.000 €, Standorte Bayern & Ostsee. Mit Genehmigungsinfo und Investment-Alternative ohne eigenes Land.",
   keywords:
     "tiny house kaufen mit grundstück, tiny house mit grundstück kaufen, tiny house mit grundstück kaufen ostsee, tiny house bayern kaufen mit grundstück, tiny house mit grundstück kaufen preise, mobiles tiny house mit grundstück",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

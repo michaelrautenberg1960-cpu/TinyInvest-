@@ -6,7 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Rentenlücke schließen 2026: Monatlicher Cashflow mit Tiny House | TinyInvest",
+  title: "Rentenlücke schließen: Cashflow mit Tiny House | TinyInvest",
   description:
     "Rentenlücke von 800–1.200 €/Monat schließen – mit monatlichen Mieteinnahmen aus einem vollautomatisch verwalteten Tiny House. Kein Aufwand, echter Sachwert.",
   keywords:
@@ -241,7 +241,7 @@ export default function RentenluckeSchliessen() {
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
-            <Link href="/senioren" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Senioren & Rentner →</Link>
+            <Link href="/wissen/senioren" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Senioren & Rentner →</Link>
             <Link href="/wissen/tiny-house-altersvorsorge" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Altersvorsorge Vergleich →</Link>
             <Link href="/wissen/tiny-house-als-rendite" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Renditemodell erklärt →</Link>
             <Link href="/wissen/ferienimmobilie-steuer" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Ferienimmobilie Steuer →</Link>

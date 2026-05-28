@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Steuern sparen als Unternehmer 2026: §7g IAB | TinyInvest",
   description:
-    "Als Unternehmer oder GmbH-Inhaber Gewinne steuergünstig investieren – §7g IAB nutzen und Tiny House als Betriebsvermögen kaufen. Kein Aufwand, monatlicher Cashflow.",
+    "Als Unternehmer oder GmbH-Inhaber Gewinne steuergünstig investieren – §7g IAB nutzen. Tiny House als Betriebsvermögen kaufen. Kein Aufwand, monatlicher Cashflow.",
   keywords:
     "steuern sparen unternehmer, kapitalanlage gmbh inhaber, §7g unternehmer, iab gewerbebetrieb, gmbh investition steuern, unternehmer kapitalanlage 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

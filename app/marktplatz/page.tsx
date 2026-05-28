@@ -29,16 +29,16 @@ async function geocodeLocation(location: string): Promise<{ lat: number; lng: nu
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Marktplatz – Projekte in die Sie investieren können | TinyInvest",
+  title: "Marktplatz – Tiny House Investments kaufen | TinyInvest",
   description:
-    "Entdecken Sie verfügbare Tiny House Investment-Projekte in Deutschland und Europa. Ab 65.000 € investieren, 12–14 % IRR p.a., §7g-steueroptimiert, vollautomatisch bewirtschaftet von tiny Escapes.",
+    "Verfügbare Tiny House Investment-Projekte in Deutschland. Ab 65.000 €, 12–14 % IRR p.a., §7g-steueroptimiert, vollautomatisch bewirtschaftet.",
   keywords:
     "Tiny House investieren, Ferienimmobilie kaufen, passive Einnahmen, §7g Investment, Tiny House Rendite, Marktplatz",
   alternates: {
     canonical: "https://tinyhouse.investments/marktplatz",
   },
   openGraph: {
-    title: "Marktplatz – Projekte in die Sie investieren können | TinyInvest",
+    title: "Marktplatz – Tiny House Investments kaufen | TinyInvest",
     description:
       "Verfügbare Tiny House Investment-Projekte mit bis zu 18 % IRR p.a. Steueroptimiert nach §7g, vollautomatisch bewirtschaftet.",
     url: "https://tinyhouse.investments/marktplatz",

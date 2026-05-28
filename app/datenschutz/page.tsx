@@ -8,6 +8,13 @@ export const metadata = {
   alternates: {
     canonical: "https://tinyhouse.investments/datenschutz",
   },
+  openGraph: {
+    title: "Datenschutzerklärung – TinyInvest",
+    description: "Datenschutzerklärung der TinyInvest GmbH gemäß DSGVO.",
+    url: "https://tinyhouse.investments/datenschutz",
+    type: "website",
+    locale: "de_DE",
+  },
 };
 
 export default function DatenschutzPage() {

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Host werden: Tiny House auf deinem Grundstück betreiben 2026 | TinyInvest",
+  title: "Host werden: Tiny House auf eigenem Grundstück | TinyInvest",
   description:
     "Wie wirst du TinyInvest Host? Voraussetzungen, Verdienst (bis 45 %), Standortanforderungen und der komplette Bewerbungsprozess erklärt.",
   keywords:

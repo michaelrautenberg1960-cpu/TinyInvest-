@@ -6,7 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House vs. ETF-Sparplan als Altersvorsorge 2026: Vergleich | TinyInvest",
+  title: "Tiny House vs. ETF-Sparplan: Altersvorsorge 2026 | TinyInvest",
   description:
     "Tiny House oder ETF-Sparplan für die Altersvorsorge? Rendite, Risiko, Aufwand und Steuereffekte im direkten Vergleich – für Senioren & Rentner ab 55.",
   keywords:
@@ -213,7 +213,7 @@ export default function TinyHouseVsEtfAltersvorsorge() {
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
-            <Link href="/senioren" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Senioren & Rentner →</Link>
+            <Link href="/wissen/senioren" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Senioren & Rentner →</Link>
             <Link href="/wissen/tiny-house-altersvorsorge" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Altersvorsorge Guide →</Link>
             <Link href="/wissen/rentenlucke-schliessen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Rentenlücke schließen →</Link>
             <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage-Guide →</Link>

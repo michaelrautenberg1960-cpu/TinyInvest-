@@ -6,9 +6,9 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House Steuermodell: Was das Finanzamt prüft – und wie du sicher bist | TinyInvest",
+  title: "Tiny House Steuermodell: Was das Finanzamt prüft | TinyInvest",
   description:
-    "Das Tiny House Steuermodell ist legal – aber nur wenn es professionell aufgesetzt ist. Die 3 Punkte die Betriebsprüfer gezielt prüfen: 90%-Regel, Liebhaberei, Gebäude-Umwidmung.",
+    "Das Tiny House Steuermodell ist legal – wenn professionell aufgesetzt. Die 3 Punkte die Betriebsprüfer prüfen: 90%-Regel, Liebhaberei, Gebäude-Umwidmung.",
   keywords:
     "tiny house steuer risiken, tiny house finanzamt, iab tiny house betriebsprüfung, tiny house liebhaberei, tiny house 90 prozent regel",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

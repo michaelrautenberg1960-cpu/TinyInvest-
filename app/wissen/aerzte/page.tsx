@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Steuern sparen als Arzt 2026: §7g IAB für Ärzte | TinyInvest",
   description:
-    "Als Arzt bis zu 39.500 € Steuerlast reduzieren – mit dem §7g IAB vor dem Kauf. Vollautomatisch verwaltetes Tiny House als Kapitalanlage. Kein Zeitaufwand neben der Praxis.",
+    "Als Arzt bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen vor dem Kauf. Vollautomatisch verwaltetes Tiny House als Kapitalanlage. Kein Aufwand.",
   keywords:
     "steuern sparen arzt, kapitalanlage arzt, §7g arzt, iab arzt steuervorteil, arzt steuerlast reduzieren, niedergelassener arzt kapitalanlage, arzt investition steuern",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

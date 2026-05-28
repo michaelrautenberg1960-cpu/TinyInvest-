@@ -6,7 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Ferienimmobilie als Kapitalanlage 2026: Steuern & Rendite | TinyInvest",
+  title: "Ferienimmobilie als Kapitalanlage 2026 | TinyInvest",
   description:
     "Ferienimmobilie kaufen als Kapitalanlage: Steuern, AfA, Rendite und der Vergleich mit Tiny House Investments. Was sich 2026 wirklich lohnt.",
   keywords:
@@ -14,7 +14,7 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/ferienimmobilie-steuer" },
   openGraph: {
-    title: "Ferienimmobilie als Kapitalanlage 2026: Steuern & Rendite | TinyInvest",
+    title: "Ferienimmobilie als Kapitalanlage 2026 | TinyInvest",
     description: "Alles über Steuern, AfA und Rendite bei Ferienimmobilien – und warum Tiny Houses das bessere Modell sind.",
     url: "https://tinyhouse.investments/wissen/ferienimmobilie-steuer",
   },

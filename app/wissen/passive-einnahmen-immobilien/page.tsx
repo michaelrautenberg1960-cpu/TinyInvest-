@@ -5,7 +5,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Passive Einnahmen Immobilien: 5 Modelle im Vergleich 2026 | TinyInvest",
+  title: "Passive Einnahmen Immobilien: 5 Modelle 2026 | TinyInvest",
   description:
     "Welches Immobilien-Modell liefert wirklich passive Einnahmen? ETW, REITs, Ferienimmobilien, Crowdinvesting und Tiny House im direkten Vergleich 2026.",
   keywords:

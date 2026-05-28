@@ -14,16 +14,16 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tinyhouse.investments"),
-  title: "TinyInvest – Die Nr. 1 Plattform für Mobile Asset Investments",
+  title: "TinyInvest – Tiny House Investment Plattform",
   description:
-    "Tiny House kaufen, vermieten und Steuern sparen. Steueroptimierte Investments ab 65.000 €. 12–14 % Rendite p.a., vollautomatisch verwaltet durch tiny Escapes.",
+    "Tiny House kaufen, vermieten und Steuern sparen. Steueroptimierte Investments ab 65.000 €. 12–14 % Rendite p.a., vollautomatisch verwaltet.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "TinyInvest – Die Nr. 1 Plattform für Mobile Asset Investments",
+    title: "TinyInvest – Tiny House Investment Plattform",
     description:
       "Tiny House kaufen, vermieten und Steuern sparen. Steueroptimierte Investments ab 65.000 €. 12–14 % Rendite p.a.",
     url: "https://tinyhouse.investments",

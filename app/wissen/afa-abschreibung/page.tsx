@@ -6,7 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House abschreiben: Bis zu 34.000 € Steuervorteil im ersten Jahr | TinyInvest",
+  title: "Tiny House abschreiben: 34.000 € Steuervorteil | TinyInvest",
   description: "Wie du ein Tiny House in 8 Jahren vollständig abschreibst – statt 50 Jahre wie bei einer Wohnung. IAB, Sonder-AfA und degressive AfA kombiniert erklärt.",
   keywords: "tiny house abschreiben, tiny house steuern sparen, tiny house steuervorteile 2026, investitionsabzugsbetrag tiny house, tiny house kapitalanlage steuer",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -340,6 +340,7 @@ export default function AfaAbschreibungPage() {
           {/* Nav */}
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
             <Link href="/steuervorteil" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Interaktiver §7g-Rechner →</Link>
+            <Link href="/wissen/investitionsabzugsbetrag-tiny-house" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Investitionsabzugsbetrag Guide →</Link>
             <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen/steuerberater-finden" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Steuerberater finden →</Link>
             <Link href="/wissen/7g-tiny-house-investment" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Leitfaden →</Link>

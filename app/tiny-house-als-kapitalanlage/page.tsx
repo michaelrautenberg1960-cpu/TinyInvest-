@@ -574,7 +574,7 @@ export default function TinyHouseKapitalanlagePage() {
             <span className="text-gray-300">·</span>
             <Link href="/renditemodell" className="text-gray-500 hover:text-green-700 transition-colors">Renditemodell</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/senioren" className="text-gray-500 hover:text-green-700 transition-colors">Für Senioren</Link>
+            <Link href="/wissen/senioren" className="text-gray-500 hover:text-green-700 transition-colors">Für Senioren</Link>
           </div>
         </div>
       </section>

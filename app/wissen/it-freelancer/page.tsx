@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Steuern sparen als IT-Freelancer 2026: §7g IAB | TinyInvest",
   description:
-    "Als IT-Freelancer bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen und Tiny House als Kapitalanlage kaufen. Vollautomatisch. Kein Aufwand neben dem Projekt.",
+    "Als IT-Freelancer bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage: vollautomatisch, kein Aufwand neben dem Projekt.",
   keywords:
     "steuern sparen it freelancer, kapitalanlage entwickler, §7g software entwickler, it freelancer investment, freelancer steuern deutschland, entwickler kapitalanlage 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
