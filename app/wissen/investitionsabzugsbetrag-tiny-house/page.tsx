@@ -59,6 +59,11 @@ const faqItems = [
     answer:
       "Das Wirtschaftsgut muss im Jahr der Anschaffung und im darauffolgenden Jahr zu mindestens 90 % betrieblich genutzt werden (§7g Abs. 4 EStG). Bei Vermietung über tiny Escapes ist diese Voraussetzung erfüllt – der Standort in Deutschland gilt als inländische Betriebsstätte.",
   },
+  {
+    question: "Wie funktioniert der Investitionsabzugsbetrag Tiny House in der Praxis?",
+    answer:
+      "Der Investitionsabzugsbetrag Tiny House funktioniert in drei Schritten: Erstens trägst du den IAB (bis zu 50 % des Kaufpreises) in der Steuererklärung des Vorjahres ein – das Finanzamt erstattet den Steueranteil. Zweitens kaufst du das Tiny House innerhalb von 3 Jahren. Drittens löst du den Investitionsabzugsbetrag auf und kombinierst ihn mit Sonder-AfA (40 %) und degressiver AfA (30 %) im Kaufjahr. Der gesamte Investitionsabzugsbetrag Tiny House Effekt über Vorjahr und Kaufjahr liegt bei 42 % Steuersatz bei rund 28.000 €.",
+  },
 ];
 
 export default function InvestitionsabzugsbetragTinyHousePage() {

@@ -152,6 +152,19 @@ export default function RenditeModellPage() {
         </div>
       </section>
 
+      {/* Passives Einkommen */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Tiny House als Quelle für passives Einkommen</h2>
+          <p className="text-gray-700 text-base leading-relaxed mb-5">
+            Ein Tiny House ist eine der wenigen Sachwertanlagen, die echtes tiny house passive einkommen generieren – ohne operativen Aufwand. Durch das Full-Service-Modell von tiny Escapes übernimmt ein professioneller Betreiber alle Aufgaben: Standortvermittlung, Buchungsmanagement, Gästebetreuung und Instandhaltung. Der Investor erhält seine 40 % monatlich ausgezahlt.
+          </p>
+          <p className="text-gray-700 text-base leading-relaxed">
+            Wer ein Tiny House vermieten und Geld verdienen möchte, profitiert dabei von zwei Hebeln gleichzeitig: dem laufenden Cashflow aus der Vermietung und dem §7g-Steuereffekt, der in Jahr 1 den effektiven Kapitaleinsatz um bis zu 33.000 € reduziert. Das Ergebnis ist ein IRR von 12–15 % p.a. – deutlich über dem, was klassische Immobilien oder REITs realistisch erzielen.
+          </p>
+        </div>
+      </section>
+
       {/* Risk disclosure */}
       <section className="py-12 bg-white border-t border-gray-100">
         <div className="max-w-3xl mx-auto px-4">

@@ -24,6 +24,8 @@ const faqItems = [
   { question: "Muss ich zwingend einen IAB bilden, um von der Sonder-AfA zu profitieren?", answer: "Nein. IAB und Sonder-AfA sind unabhängig voneinander. Du kannst direkt im Kaufjahr Sonder-AfA (40 %) + degressive AfA (30 %) = 70 % Sofortabschreibung in Anspruch nehmen, ohne vorher einen IAB gebildet zu haben. Der IAB ist dann sinnvoll, wenn du im Vorjahr einen sehr hohen Gewinn hattest." },
   { question: "Gilt §7g nur für Unternehmer oder auch für Arbeitnehmer?", answer: "§7g EStG gilt für alle, die das Tiny House im Rahmen einer Einkunftsart (Vermietung und Verpachtung, Gewerbetrieb, Freiberufler) nutzen. Wer das Tiny House über tiny Escapes vermietet, erzielt Einkünfte aus Vermietung – und kann damit §7g anwenden, unabhängig vom Hauptberuf." },
   { question: "Kann ich die Abschreibung auch rückwirkend geltend machen?", answer: "Den IAB kann dein Steuerberater unter Umständen noch rückwirkend für das Vorjahr bilden, sofern der Steuerbescheid noch nicht bestandskräftig ist. Die Sonder-AfA und degressive AfA gelten ab dem Jahr der Anschaffung. Eine Beratung durch deinen Steuerberater ist hier unverzichtbar." },
+  { question: "Kann ich ein Tiny House steuerlich absetzen?", answer: "Ja – ein Tiny House auf Vlemmix Trailer lässt sich als bewegliches Wirtschaftsgut vollständig steuerlich absetzen. Die Abschreibung erfolgt über 8 Jahre (12,5 % p.a.). In Kombination mit IAB (50 % im Vorjahr) und Sonder-AfA (40 % im Kaufjahr) kannst du den Großteil des Kaufpreises in den ersten 1–2 Jahren steuerlich absetzen. Technisch spricht man von der Absetzung für Abnutzung (AfA) – bei einem Tiny House auf 8 statt 50 Jahre beschleunigt wie bei klassischen Gebäuden." },
+  { question: "Was ist die Tiny House Sonderabschreibung?", answer: "Die Tiny House Sonderabschreibung beträgt 40 % des Kaufpreises und greift im Jahr der Anschaffung – zusätzlich zur regulären Jahres-AfA. Sie ist in §7g Abs. 5 EStG geregelt und gilt für bewegliche Wirtschaftsgüter wie ein Tiny House auf Vlemmix Trailer. Kombiniert mit der degressiven AfA (30 %) ergibt sich im Kaufjahr eine Sofortabschreibung von bis zu 70 % des Kaufpreises." },
 ];
 
 export default function AfaAbschreibungPage() {
@@ -334,6 +336,19 @@ export default function AfaAbschreibungPage() {
             <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5">
               <p className="text-[10px] text-amber-700 font-bold uppercase tracking-widest mb-2">⚠ Wichtiger Hinweis</p>
               <p className="text-[12px] text-amber-800 leading-relaxed">Die genannten Steuerbeträge sind Beispielrechnungen und keine Steuerberatung. Die individuelle Steuerersparnis hängt von deinem persönlichen Grenzsteuersatz, der Einkunftsart und der konkreten steuerlichen Situation ab.</p>
+            </div>
+          </div>
+
+          {/* Steuerlich absetzen */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Tiny House steuerlich absetzen — was ist absetzbar?</h2>
+            <div className="max-w-3xl">
+              <p className="text-gray-700 text-base leading-relaxed mb-5">
+                Wer ein Tiny House als Investment kauft, kann es vollständig steuerlich absetzen – dank der Klassifikation als bewegliches Wirtschaftsgut. Absetzbar sind der gesamte Kaufpreis über die AfA-Laufzeit von 8 Jahren, die Sonderabschreibung nach §7g EStG im Kaufjahr sowie der Investitionsabzugsbetrag schon im Vorjahr. Hinzu kommen laufende Betriebskosten wie Versicherungen und Verwaltungsgebühren.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Im Gegensatz zu klassischen Immobilien, bei denen nur 2 % jährlich abgeschrieben werden dürfen, erlaubt das Tiny House als bewegliches Wirtschaftsgut die schnelle, steuerlich wirksame Geltendmachung des investierten Kapitals. Das Ergebnis: In den ersten zwei Jahren fließt ein erheblicher Teil des Kaufpreises als Steuerersparnis zurück.
+              </p>
             </div>
           </div>
 

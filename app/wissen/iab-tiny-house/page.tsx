@@ -50,6 +50,10 @@ const faqItems = [
     question: "Kann ich den IAB für ein Tiny House auch 2026 noch nutzen?",
     answer: "Ja, §7g EStG ist 2026 unverändert in Kraft. Das IAB Tiny House Modell ist sogar attraktiver als je zuvor: Seit 2024 kann die degressive AfA (30 %) erstmals mit IAB und Sonder-AfA (40 %) kombiniert werden – zusammen über 70 % Sofortabschreibung im Kaufjahr. Wer 2026 investiert, kann außerdem prüfen ob der IAB rückwirkend noch für 2025 möglich ist, sofern der Steuerbescheid 2025 noch nicht bestandskräftig ist.",
   },
+  {
+    question: "Was ist der Investitionsabzugsbetrag beim Tiny House genau?",
+    answer: "Der Investitionsabzugsbetrag Tiny House ist ein Steuerinstrument nach §7g EStG, das es Investoren erlaubt, bis zu 50 % des geplanten Kaufpreises bereits im Jahr vor dem Kauf vom zu versteuernden Einkommen abzuziehen. Bei einem Tiny House für 80.000 € bedeutet das maximal 40.000 € Investitionsabzugsbetrag – und bei 42 % Grenzsteuersatz sofort rund 16.800 € Steuererstattung. Der Investitionsabzugsbetrag wird im Kaufjahr aufgelöst und mit der Sonder-AfA (40 %) kombiniert.",
+  },
 ];
 
 export default function IabTinyHousePage() {

@@ -320,6 +320,9 @@ export default function PassiveEinnahmenPage() {
             <p className="text-gray-700 text-base leading-relaxed mb-5">
               Wer lediglich kleine Beträge diversifizieren will, bleibt bei REITs. Wer jedoch ernsthaft Vermögen aufbauen und dabei die Steuerlast massiv senken möchte, findet im Tiny House Investment das effizienteste Werkzeug. Es vereint die Sicherheit von Sachwerten mit der Rendite eines agilen Geschäftsmodells – und das bei einem Zeitaufwand, der gegen Null geht.
             </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Wer konkret tiny house passive einkommen anstrebt, profitiert dabei von einem entscheidenden Vorteil gegenüber allen anderen Modellen in diesem Vergleich: dem §7g-Steuereffekt. IAB, Sonder-AfA und degressive AfA kombiniert machen das Tiny House zum einzigen Sachwert-Investment, das gleichzeitig hohe laufende Einnahmen, echtes Eigentumsrecht und massive Steueroptimierung vereint.
+            </p>
           </div>
 
           {/* Navigation Links */}

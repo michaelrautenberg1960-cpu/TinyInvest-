@@ -53,6 +53,16 @@ const faqItems = [
     answer:
       "Ein bewegliches Wirtschaftsgut ist nicht dauerhaft fest mit dem Boden verbunden. Tiny Houses auf Vlemmix Trailern haben eine eigene Fahrgestellnummer, sind straßenzugelassen und transportierbar. Das Finanzamt klassifiziert sie wie Fahrzeuge oder Maschinen — mit einer Nutzungsdauer von 8 Jahren statt 50 Jahren bei Gebäuden. Das ist der Schlüssel zu den kurzen, effektiven Abschreibungszeiträumen.",
   },
+  {
+    question: "Was ist der Investitionsabzugsbetrag Tiny House?",
+    answer:
+      "Der Investitionsabzugsbetrag (IAB) für ein Tiny House ist eine steuerliche Begünstigung nach §7g Abs. 1 EStG: Du setzt bis zu 50 % des geplanten Kaufpreises gewinnmindernd ab – noch bevor du das Haus kaufst. Bei einem Tiny House für 80.000 € sind das bis zu 40.000 € IAB, was bei 42 % Grenzsteuersatz etwa 16.800 € sofortige Steuererstattung bedeutet. Der Investitionsabzugsbetrag Tiny House ist deshalb so wirkungsvoll, weil er mit Sonder-AfA und degressiver AfA im Kaufjahr kombiniert werden kann.",
+  },
+  {
+    question: "Wie hoch ist die Tiny House Sonderabschreibung?",
+    answer:
+      "Die Tiny House Sonderabschreibung beträgt 40 % des Kaufpreises (nach IAB-Auflösung) und greift im Kaufjahr zusätzlich zur regulären AfA. Sie ist in §7g Abs. 5 EStG geregelt und gilt bis 31.12.2027. Kombiniert mit der degressiven AfA (30 %) ergibt sich im Kaufjahr eine Sofortabschreibung von 70 % auf den Restwert nach IAB. Das ist bei keiner anderen vergleichbaren Assetklasse möglich.",
+  },
 ];
 
 const subGuides = [

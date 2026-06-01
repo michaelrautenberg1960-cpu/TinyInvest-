@@ -255,6 +255,19 @@ export default function SteuerVorteilPage() {
         </div>
       </section>
 
+      {/* Steuerlich absetzen Zusammenfassung */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Tiny House steuerlich absetzen — die Zusammenfassung</h2>
+          <p className="text-gray-700 text-base leading-relaxed mb-5">
+            Wer ein Tiny House steuerlich absetzen möchte, nutzt im Kern drei Instrumente: IAB (50 % im Vorjahr), Sonder-AfA (40 % im Kaufjahr) und degressive AfA (30 % auf den Restwert). Zusammen machen sie im ersten Jahr bis zu 70 % des Kaufpreises steuerlich wirksam – das ist der Tiny House Steuervorteil gegenüber jeder anderen Immobilienform.
+          </p>
+          <p className="text-gray-700 text-base leading-relaxed">
+            Die Tiny House Sonderabschreibung nach §7g Abs. 5 EStG ist dabei das Herzstück: Sie greift ausschließlich bei beweglichen Wirtschaftsgütern und ist bei klassischen Gebäuden schlicht nicht verfügbar. Ein Tiny House auf Vlemmix Trailer erfüllt diese Voraussetzung kraft seiner VIN/FIN und Mobilität. Das Ergebnis: Wer heute investiert, kann den Großteil des Kaufpreises in den ersten 24 Monaten steuerlich geltend machen.
+          </p>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="py-16 bg-gray-50 border-t border-gray-100">
         <div className="max-w-2xl mx-auto px-4 text-center">

@@ -271,6 +271,17 @@ export default function DirektinvestmentPage() {
             <Image src="/images/outside/tiny-house-ferienimmobilie-aussen.webp" alt="Tiny House Ferienimmobilie Außenansicht" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
+          {/* ── Wertanlage & Vermögensaufbau ── */}
+          <div className="max-w-3xl mb-14">
+            <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Tiny House als Wertanlage für den Vermögensaufbau</h2>
+            <p className="text-gray-700 text-base leading-relaxed mb-5">
+              Ein Tiny House ist nicht nur ein Renditeobjekt – es ist eine echte Wertanlage mit physischem Substanzwert. Als bewegliches Wirtschaftsgut mit VIN/FIN und Wiederverkaufswert behält das Objekt auch nach Jahren seinen Kern-Sachwert. Wer gezielt tiny house Vermögensaufbau betreiben möchte, nutzt dabei drei Hebel gleichzeitig: monatlichen Cashflow aus der Vermietung, erhebliche Steuerersparnisse durch §7g EStG und den Restwert des Hauses nach 5–8 Jahren.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Als tiny house als wertanlage überzeugt das Modell besonders im Vergleich zu Finanzprodukten: Kein Emittentenrisiko, keine Fondskosten, kein abstraktes Versprechen – sondern ein greifbares Objekt, das du jederzeit veräußern, umstellen oder selbst nutzen kannst. Das physische Eigentumsrecht ist damit ein zentraler Bestandteil der Wertanlage-Logik.
+            </p>
+          </div>
+
           {/* ── 5. Kaufprozess ── */}
           <h2 className="text-2xl font-black text-gray-900 mb-2 tracking-tight">Wie werde ich Eigentümer?</h2>
           <p className="text-gray-500 text-sm mb-10 leading-relaxed">Von der Erstberatung bis zur ersten Auszahlung – transparent und rechtssicher.</p>

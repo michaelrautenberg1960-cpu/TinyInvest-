@@ -44,6 +44,14 @@ const faqItems = [
     question: "Wie unterscheidet sich die Tiny House Rendite von klassischen Immobilien?",
     answer: "Klassische Immobilien erzielen 3–5 % Bruttomietrendite, vor AfA und Steuern. Ein Tiny House bringt 11 % Cash-on-Cash plus signifikante Steuervorteile durch §7g IAB und Sonder-AfA. Der entscheidende Unterschied: Das Tiny House ist als bewegliches Wirtschaftsgut vollständig absetzbar – eine Eigentumswohnung nicht.",
   },
+  {
+    question: "Wie viel kann ich mit einem Tiny House vermieten und verdienen?",
+    answer: "Bei 60 % Belegung und 100 €/Nacht erzielen Investoren rund 730 € monatlich aus der Tiny House Vermietung – das sind ca. 8.760 € Einnahmen pro Jahr. Mit tiny house vermieten geld verdienen ist also durchaus realistisch: Auf Basis der Tiny Escapes-Daten liegen viele Objekte bei 60–70 % Auslastung. Die Tiny House Vermietung Einnahmen fließen automatisch, ohne eigenen operativen Aufwand.",
+  },
+  {
+    question: "Ist ein Tiny House wirklich passives Einkommen?",
+    answer: "Ja – durch das Full-Service-Modell von tiny Escapes generiert ein Tiny House echtes passives Einkommen: Du kaufst das Haus, der Betreiber übernimmt Standort, Gästebetreuung, Buchungen und Reinigung. Das tiny house passive einkommen fließt monatlich als 40 % der Netto-Mieteinnahmen auf dein Konto – ohne Zeitaufwand. Im Vergleich zu einer klassischen Eigentumswohnung (50 Std./Jahr Aufwand) ist das ein grundlegend anderes Modell.",
+  },
 ];
 
 export default function TinyHouseAlsRenditePage() {
@@ -298,6 +306,19 @@ export default function TinyHouseAlsRenditePage() {
             <p className="text-green-100 text-[13px] leading-relaxed">
               Der IRR berücksichtigt den Zeitwert des Geldes und alle Cashflows über 5 Jahre. Durch den kombinierten Effekt aus Mieteinnahmen, Steuererstattungen und Restwert ergibt sich eine effektive Jahresrendite von 13–15 % – deutlich über klassischen Immobilien (3–4 %) oder Anleihen.
             </p>
+          </div>
+
+          {/* Vermieten & Geld verdienen */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Tiny House vermieten und Geld verdienen</h2>
+            <div className="max-w-3xl">
+              <p className="text-gray-700 text-base leading-relaxed mb-5">
+                Mit einem Tiny House vermieten und Geld verdienen funktioniert über das 40/45/15-Aufteilungsmodell: 40 % der Netto-Mieteinnahmen fließen monatlich an den Investor, 45 % an den Host vor Ort, 15 % an die Plattform. Bei realistischen 60 % Belegung bedeutet das rund 730 € monatliche Tiny House Vermietung Einnahmen – vollautomatisch, ohne eigenen Aufwand.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Das tiny house passive einkommen ist damit eines der wenigen echten Passiv-Einkommensmodelle im Sachwertbereich: Du besitzt das physische Objekt, trägst alle steuerlichen Vorteile nach §7g, und lässt den operativen Betrieb vollständig delegieren. Verglichen mit einer ETW, bei der Vermieter oft 20–50 Stunden Aufwand pro Jahr rechnen müssen, ist das ein fundamentaler Unterschied.
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
