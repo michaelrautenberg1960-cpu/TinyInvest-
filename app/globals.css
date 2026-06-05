@@ -14,6 +14,15 @@
 
 /* ─── Custom Utilities ─────────────────────────────────────────────────────── */
 
+/* Hide scrollbar cross-browser */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @layer utilities {
   .card-hover {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
