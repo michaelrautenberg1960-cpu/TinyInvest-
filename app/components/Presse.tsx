@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 function MediumLogo({ className = "" }: { className?: string }) {
   return (
@@ -53,6 +53,9 @@ const articles = [
   },
 ];
 
+// Triple the list so we can jump seamlessly at both ends
+const looped = [...articles, ...articles, ...articles];
+
 function ArticleLogo({ type }: { type: "medium" | "ib" | "am" }) {
   if (type === "medium") {
     return (
@@ -93,6 +96,29 @@ function ArticleLogo({ type }: { type: "medium" | "ib" | "am" }) {
 export default function Presse() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Start at the middle copy on mount (instant, no animation)
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollLeft = el.scrollWidth / 3;
+  }, []);
+
+  // When reaching either clone boundary, jump silently to the middle copy
+  function handleScroll() {
+    const el = scrollRef.current;
+    if (!el) return;
+    const third = el.scrollWidth / 3;
+    if (el.scrollLeft < third * 0.1) {
+      el.style.scrollBehavior = "auto";
+      el.scrollLeft += third;
+      requestAnimationFrame(() => { el.style.scrollBehavior = ""; });
+    } else if (el.scrollLeft > third * 2 - third * 0.1) {
+      el.style.scrollBehavior = "auto";
+      el.scrollLeft -= third;
+      requestAnimationFrame(() => { el.style.scrollBehavior = ""; });
+    }
+  }
+
   function scroll(direction: "left" | "right") {
     scrollRef.current?.scrollBy({ left: direction === "right" ? 360 : -360, behavior: "smooth" });
   }
@@ -125,14 +151,15 @@ export default function Presse() {
             ←
           </button>
 
-          {/* Scrollable track */}
+          {/* Scrollable track — snap removed to avoid fighting with infinite jump */}
           <div
             ref={scrollRef}
-            className="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 scrollbar-hide"
+            onScroll={handleScroll}
+            className="flex gap-5 overflow-x-auto scrollbar-hide"
           >
-            {articles.map((article) => (
+            {looped.map((article, i) => (
               <a
-                key={article.url}
+                key={`${article.url}-${i}`}
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -179,7 +206,7 @@ export default function Presse() {
           </button>
         </div>
 
-</div>
+      </div>
     </section>
   );
 }
