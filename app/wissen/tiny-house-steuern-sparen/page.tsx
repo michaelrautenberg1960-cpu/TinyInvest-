@@ -236,6 +236,96 @@ export default function TinyHouseSteuernSparenPage() {
             <Image src="/images/inside/tiny-house-innen-wohnbereich.webp" alt="Tiny House Innenausstattung Wohnbereich" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
+          {/* Fließtext: Steueroptimierung im Detail */}
+          <div className="max-w-3xl mb-14 space-y-10">
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Wie das Finanzamt ein Tiny House bewertet – und warum das entscheidend ist</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Die steuerliche Einordnung des Tiny Houses als <strong>bewegliches Wirtschaftsgut</strong> ist keine Interpretation, sondern eine Tatsache, die sich unmittelbar aus dem Fahrzeugbrief ergibt. Ein Tiny House auf einem Vlemmix-Trailer wird beim Kraftfahrtbundesamt zugelassen und erhält eine Fahrzeugidentifikationsnummer (FIN/VIN). Damit ist es für das Finanzamt eindeutig ein bewegliches, abnutzbares Wirtschaftsgut – und fällt nicht unter die Gebäude-Vorschriften des § 7 Abs. 4 EStG, sondern unter die regulären Abschreibungsregeln für bewegliche Anlagegüter.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Die amtliche AfA-Tabelle des Bundesfinanzministeriums setzt die betriebsgewöhnliche Nutzungsdauer für Tiny Houses auf acht Jahre fest. Ohne Sonderabschreibungen wäre das Tiny House linear mit 12,5 % pro Jahr absetzbar. Doch genau hier beginnt das eigentliche Steueroptimierungspotenzial – denn der Gesetzgeber hat für bewegliche Wirtschaftsgüter Instrumente geschaffen, die deutlich aggressiver wirken.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Der Unterschied zu einer Eigentumswohnung ist fundamental: Eine ETW schreibt man 50 Jahre mit 2 % ab. Kein IAB, keine Sonder-AfA, keine degressive Abschreibung. Der Steuereffekt tröpfelt über ein halbes Jahrhundert. Ein Tiny House auf Trailer konzentriert denselben steuerlichen Vorteil auf die ersten ein bis zwei Jahre – und kombiniert dabei drei Hebel gleichzeitig, die für sich allein schon wirkungsvoll sind, zusammen aber eine Sofortabschreibung von über 70 % ermöglichen.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Der Investitionsabzugsbetrag: Steuern sparen, bevor du kaufst</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Der Investitionsabzugsbetrag (IAB) nach § 7g EStG ist das mächtigste Instrument der kleinen und mittleren Steueroptimierung in Deutschland – und es ist für jeden zugänglich, der plant, ein abnutzbares Wirtschaftsgut anzuschaffen. Die Mechanik ist bestechend einfach: Du kannst bis zu 50 % der voraussichtlichen Anschaffungskosten <strong>bereits im Jahr vor dem Kauf</strong> als steuerlichen Abzug geltend machen. Du kaufst also noch nichts, reduzierst aber jetzt schon deinen zu versteuernden Gewinn oder deine zu versteuernden Einkünfte.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Bei einem geplanten Tiny-House-Kaufpreis von 80.000 € sind das bis zu 40.000 € IAB. Bei einem Grenzsteuersatz von 42 % ergibt das eine direkte Steuererstattung von rund 16.800 € – noch im Jahr vor dem eigentlichen Kauf. Wer einen außergewöhnlich hohen Gewinn in einem bestimmten Jahr erwartet (Unternehmensverkauf, starkes Geschäftsjahr, hohe Bonuszahlungen), kann den IAB gezielt in diesem Jahr einsetzen und so die Steuerlast auf den Spitzengewinn senken.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Die Voraussetzungen für den IAB sind überschaubar: Dein Gewinn (bei Gewerbetreibenden und Selbstständigen) darf 200.000 € nicht übersteigen, das Wirtschaftsgut muss zu mehr als 90 % betrieblich genutzt werden, und du musst die Investitionsabsicht glaubhaft machen. Für Investoren, die das Tiny House über Vermietungs- und Verpachtungseinkünfte (§ 21 EStG) abbilden – also ohne eigenes Gewerbe – ist die 200.000-€-Grenze in der Praxis kein reales Problem, da Vermietungseinkünfte selten diesen Bereich erreichen. Wichtig: Wer den IAB bildet, muss das Tiny House auch tatsächlich kaufen. Wird die Investition nicht umgesetzt, muss der IAB rückwirkend aufgelöst werden – inklusive Nachzahlungszinsen von derzeit 1,8 % pro Jahr.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Sonder-AfA nach § 7g EStG: Noch einmal 40 % im Kaufjahr</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Parallel zum IAB existiert die Sonderabschreibung nach § 7g Abs. 5 EStG. Sie erlaubt, zusätzlich zur regulären AfA eine Sonder-AfA von bis zu 40 % der Anschaffungskosten im Kaufjahr anzusetzen. Entscheidend: Die Sonder-AfA wird auf die um den IAB <strong>bereits geminderten</strong> Anschaffungskosten berechnet. Das klingt zunächst nach weniger – ist aber in der Gesamtrechnung deutlich mehr, weil der IAB bereits im Vorjahr die Steuerlast gesenkt hat.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Konkret am Beispiel: Du kaufst ein Tiny House für 80.000 €. Im Vorjahr hast du einen IAB von 40.000 € gebildet. Im Kaufjahr sind die steuerlichen Anschaffungskosten damit auf 40.000 € gemindert. Darauf setzt du die Sonder-AfA von 40 % an – also 16.000 €. Zusätzlich kannst du im Kaufjahr die degressive AfA von 30 % auf den um den IAB geminderten Buchwert (ebenfalls 40.000 €) geltend machen – das sind weitere 12.000 €. Im Kaufjahr allein machst du also 28.000 € an Abschreibungen geltend, was bei 42 % Grenzsteuersatz einer weiteren Steuerersparnis von rund 11.760 € entspricht.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                In der Summe über beide Jahre ergibt sich bei diesem Beispiel eine Gesamtsteuerersparnis von rund 28.500 € – ohne Solidaritätszuschlag und Kirchensteuer, die den Effekt weiter erhöhen. Und das bei einem Kaufpreis von 80.000 €, der nicht verloren ist, sondern in einem Sachwert steckt, der laufende Mieteinnahmen generiert.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Degressive AfA: Der dritte Hebel für die ersten Jahre</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Die degressive Abschreibung nach § 7 Abs. 2 EStG erlaubt die Abschreibung nach fallenden Jahresbeträgen – statt gleichmäßig 12,5 % pro Jahr werden im ersten Jahr 30 % des jeweiligen Buchwerts abgeschrieben, im zweiten Jahr wieder 30 % des dann verbliebenen Buchwerts, und so weiter. Der Buchwert sinkt dadurch in den ersten Jahren deutlich schneller als bei der linearen Methode.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Da die degressive AfA und die Sonder-AfA sich im Kaufjahr addieren, ist die Abschreibungsintensität in Jahr eins maximal. In den Folgejahren greift nur noch die degressive AfA auf den verbleibenden Restwert – die Abschreibungsbeträge werden kleiner, sind aber immer noch höher als bei linearer AfA. Irgendwann lohnt ein Wechsel zur linearen AfA; dein Steuerberater erkennt diesen Zeitpunkt anhand der Restlaufzeit und des verbliebenen Buchwerts.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Laufende Mieteinnahmen: Was steuerpflichtig ist</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Die Abschreibungen drücken den steuerlichen Gewinn in den ersten Jahren auf null oder sogar in negatives Terrain. Gleichzeitig fließen aus dem Tiny Escapes Vermietungskonzept laufend Mieteinnahmen – typisch rund 720 € netto pro Monat, also 8.640 € im Jahr. Diese Einnahmen sind steuerpflichtig und werden als Einkünfte aus Vermietung und Verpachtung (§ 21 EStG) behandelt.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Da die Abschreibungen im Kaufjahr die Mieteinnahmen deutlich übersteigen, entsteht ein steuerlicher Verlust aus Vermietung und Verpachtung. Dieser Verlust kann mit anderen positiven Einkünften – zum Beispiel aus selbstständiger Arbeit oder Gewerbebetrieb – verrechnet werden und senkt so die Gesamtsteuerlast. Das ist der eigentliche Steuereffekt: keine Steuervermeidung, sondern ein zeitliches Vorziehen von Betriebsausgaben, die ohnehin entstehen.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Ab dem Jahr, in dem das Tiny House vollständig abgeschrieben ist (Buchwert = 0), sind die Mieteinnahmen in voller Höhe steuerpflichtig – ohne dämpfende Abschreibung. Wer langfristig plant, kauft zu diesem Zeitpunkt ein weiteres Objekt und nutzt den IAB erneut. Portfolioinvestoren mit mehreren Tiny Houses können so jedes Jahr Steuerersparnisse generieren und das Prinzip dauerhaft skalieren.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Privatvermögen oder Betriebsvermögen – was passt besser?</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Für Selbstständige und Unternehmer stellt sich die Frage, ob das Tiny House ins Privat- oder Betriebsvermögen gehört. Beide Varianten sind steuerlich möglich und haben unterschiedliche Konsequenzen.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Im <strong>Privatvermögen</strong> (§ 21 EStG) gehört das Tiny House dir persönlich. Mieteinnahmen werden als Einkünfte aus Vermietung und Verpachtung behandelt. IAB und Sonder-AfA sind nach aktuellem Stand weiterhin anwendbar. Der Vorteil: kein Gewerbe erforderlich, keine Gewerbesteuer, einfachere steuerliche Struktur. Diese Variante ist für die meisten Privatinvestoren die attraktivste.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Im <strong>Betriebsvermögen</strong> wird das Tiny House als Betriebsanlage eingebucht. Abschreibungen mindern direkt den Betriebsgewinn. Bei GmbH-Strukturen greift Körperschaftsteuer und Gewerbesteuer statt des persönlichen Einkommensteuersatzes – was je nach Situation günstiger oder ungünstiger sein kann. Bei einem Verkauf nach vollständiger Abschreibung ist der Veräußerungsgewinn ebenfalls betrieblich zu versteuern. Welche Variante im Einzelfall besser passt, hängt von deinem persönlichen Einkommensteuersatz, der Unternehmensstruktur und der geplanten Haltedauer ab – das ist eine Frage für deinen Steuerberater.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Was du beim Verkauf wissen musst</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Wer ein Tiny House nach vollständiger Abschreibung verkauft, hat den steuerlichen Vorteil vollständig genossen – zahlt aber beim Exit auf den Verkaufserlös Einkommensteuer. Ist das Tiny House beispielsweise auf Buchwert null abgeschrieben und wird für 35.000 € verkauft, ist der gesamte Erlös steuerpflichtig. Das klingt hart, ist aber nur die logische Kehrseite der vorherigen Steuerersparnis: Du hast die Steuern nach vorne gezogen, und beim Verkauf zahlst du sie auf den tatsächlichen Restwert.
+              </p>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Wer den Exit steuerlich optimieren will, hat verschiedene Möglichkeiten: Das Tiny House kann nach der Abschreibungsphase weiterhin Mieteinnahmen generieren (der Cashflow steigt, da keine Abschreibung mehr anfällt), es kann in eine steuerlich günstigere Gesellschaftsform transferiert werden, oder der Verkauf kann zeitlich in ein einkommensschwächeres Jahr gelegt werden. Auch hier gilt: Plane den Exit-Zeitpunkt frühzeitig und gemeinsam mit einem auf Immobilien- und Sachwertinvestments spezialisierten Steuerberater.
+              </p>
+            </div>
+
+          </div>
+
           {/* Die optimale Strategie */}
           <div className="mb-14">
             <h2 className="text-2xl font-black text-gray-900 mb-8 tracking-tight">Die optimale Steuerstrategie in 4 Schritten</h2>
