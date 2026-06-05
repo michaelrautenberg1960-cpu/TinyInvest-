@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -14,6 +15,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/iab-tiny-house" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "IAB Tiny House 2026: 30.000 € Steuern sparen",
     description:
       "Bis zu 30.000 € Steuern sparen – noch VOR dem Kauf: IAB nach §7g für dein Tiny House beantragen. Voraussetzungen, Fristen & Rechenbeispiel.",

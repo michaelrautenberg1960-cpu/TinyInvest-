@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -14,12 +15,12 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/investitionsabzugsbetrag-tiny-house" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Investitionsabzugsbetrag Tiny House: Guide 2026 | TinyInvest",
     description:
       "Voraussetzungen, Berechnung und Kombination mit Sonder-AfA: Wie du bis zu 39.500 € Steuerersparnis mit dem Investitionsabzugsbetrag für ein Tiny House erzielst.",
     url: "https://tinyhouse.investments/wissen/investitionsabzugsbetrag-tiny-house",
-    type: "article",
-    locale: "de_DE",
   },
 };
 

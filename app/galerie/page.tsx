@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -12,6 +13,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/galerie",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "Tiny House Galerie – Fotos der TinyInvest Assets",
     description: "Innen & Außen: Hochwertige Fotogalerie unserer Tiny House Investments.",
     url: "https://tinyhouse.investments/galerie",

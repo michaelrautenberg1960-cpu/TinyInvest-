@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/tiny-house-als-rendite",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House als Renditeobjekt – Cashflow & Ertragsmodell 2026",
     description:
       "40 % der Mieteinnahmen für den Investor, 60 % Belegung, 12–18 % IRR: So funktioniert das Tiny House Renditemodell.",

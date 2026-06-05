@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -15,6 +16,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/solaranlage-alternative",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Solaranlage Alternative 2026: §7g IAB ohne Photovoltaik",
     description:
       "Solaranlage lohnt sich nicht mehr? Welche Alternativen für den §7g IAB – und warum Tiny Houses doppelte Rendite bringen.",

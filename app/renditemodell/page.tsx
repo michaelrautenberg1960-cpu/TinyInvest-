@@ -1,4 +1,5 @@
-﻿import Navbar from "../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SubPageHeader from "../components/SubPageHeader";
 import RenditeRechner from "../components/RenditeRechner";
@@ -15,6 +16,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/renditemodell",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "14 % IRR p.a. – Tiny House Renditemodell | TinyInvest",
     description: "Renditemodell für §7g-optimierte Tiny House Investments. NPV, Cashflow, Steuereffekt.",
     url: "https://tinyhouse.investments/renditemodell",

@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/tiny-house-kaufen-checkliste",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House kaufen: Die Investor-Checkliste 2026 | TinyInvest",
     description: "Von Steuerprüfung bis erstem Cashflow – die vollständige Checkliste für Tiny House Investoren.",
     url: "https://tinyhouse.investments/wissen/tiny-house-kaufen-checkliste",

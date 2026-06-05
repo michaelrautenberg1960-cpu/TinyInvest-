@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -14,6 +15,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/ferienimmobilie-steuer" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Ferienimmobilie als Kapitalanlage 2026 | TinyInvest",
     description: "Alles über Steuern, AfA und Rendite bei Ferienimmobilien – und warum Tiny Houses das bessere Modell sind.",
     url: "https://tinyhouse.investments/wissen/ferienimmobilie-steuer",

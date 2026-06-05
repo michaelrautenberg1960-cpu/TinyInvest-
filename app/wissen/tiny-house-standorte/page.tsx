@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -14,6 +15,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/tiny-house-standorte" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Beste Tiny House Standorte Deutschland 2026 | TinyInvest",
     description: "Bayern, Schwarzwald, Ostsee, Allgäu – die besten Regionen für ein Tiny House Investment mit höchster Belegungsquote.",
     url: "https://tinyhouse.investments/wissen/tiny-house-standorte",

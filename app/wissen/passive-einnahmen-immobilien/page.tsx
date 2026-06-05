@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -13,6 +14,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/passive-einnahmen-immobilien" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Passive Einnahmen Immobilien: 5 Modelle im Vergleich 2026",
     description: "ETW, REITs, Ferienimmobilien, Crowdinvesting und Tiny House: Welches Modell liefert wirklich passive Rendite?",
     url: "https://tinyhouse.investments/wissen/passive-einnahmen-immobilien",

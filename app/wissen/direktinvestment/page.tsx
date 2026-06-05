@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/direktinvestment",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House als Direktinvestment – Sachwert statt Finanzprodukt",
     description:
       "Kein Fonds, kein Token: Du wirst echter Eigentümer eines physischen Tiny Houses. Was das bedeutet und warum es besser ist.",

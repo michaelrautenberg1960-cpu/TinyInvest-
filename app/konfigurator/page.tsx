@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import KonfiguratorApp from "./KonfiguratorApp";
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
     canonical: "https://tinyhouse.investments/konfigurator",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "Tiny House Konfigurator | Preis & Angebot 2026 | TinyInvest",
     description:
       "Comfort ab 65.000 €, Premium ab 80.000 €. Kostenlose Kalkulation & PDF in 3 Minuten.",

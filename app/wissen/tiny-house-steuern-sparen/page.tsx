@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -14,6 +15,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/tiny-house-steuern-sparen" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House Steuern sparen: Die vollständige Anleitung",
     description: "IAB, Sonder-AfA, degressive AfA: So sparst du bis zu 34.000 € im ersten Jahr. Schritt-für-Schritt für Selbstständige und Unternehmer.",
     url: "https://tinyhouse.investments/wissen/tiny-house-steuern-sparen",

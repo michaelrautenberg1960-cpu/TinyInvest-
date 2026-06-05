@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -14,6 +15,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/senioren" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House Altersvorsorge 2026: Senioren & Rentner | TinyInvest",
     description:
       "Sachwert statt Sparbuch: Tiny House kaufen, monatlich Einkommen erhalten oder selbst einziehen. Für Senioren & Rentner — vollautomatisch, kein Aufwand.",

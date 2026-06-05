@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import { supabase } from "../lib/supabase";
 import Navbar from "../components/Navbar";
@@ -38,6 +39,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/marktplatz",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "Marktplatz – Tiny House Investments kaufen | TinyInvest",
     description:
       "Verfügbare Tiny House Investment-Projekte mit bis zu 18 % IRR p.a. Steueroptimiert nach §7g, vollautomatisch bewirtschaftet.",

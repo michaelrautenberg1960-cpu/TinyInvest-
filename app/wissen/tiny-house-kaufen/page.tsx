@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -15,6 +16,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/tiny-house-kaufen",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House kaufen 2026: Preise, Modelle & Investment-Option",
     description: "Preise ab 65.000 €, Solido Modellvergleich und die Frage: selbst einziehen oder als Kapitalanlage vermieten lassen?",
     url: "https://tinyhouse.investments/wissen/tiny-house-kaufen",

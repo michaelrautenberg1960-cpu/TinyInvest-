@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/tiny-house-finanzierung",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House finanzieren 2026: Kredit, Leasing oder Cash?",
     description:
       "§7g macht Cash zur besten Finanzierungsoption für Tiny House Investments. Vollständiger Vergleich 2026.",

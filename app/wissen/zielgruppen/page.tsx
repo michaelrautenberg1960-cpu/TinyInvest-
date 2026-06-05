@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -14,6 +15,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/zielgruppen" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "§7g IAB für Selbstständige: Ärzte, Freiberufler, IT, Unternehmer | TinyInvest",
     description:
       "Bis zu 39.500 € Steuervorteil im Vorjahr – für Ärzte, Freiberufler, IT-Freelancer und Unternehmer. Welches Profil passt zu dir?",

@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -12,6 +13,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/afa-abschreibung" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House abschreiben: Bis zu 34.000 € Steuervorteil im ersten Jahr",
     description: "Wie du ein Tiny House in 8 Jahren vollständig abschreibst – statt 50 Jahre wie bei einer Wohnung. IAB, Sonder-AfA und degressive AfA kombiniert erklärt.",
     url: "https://tinyhouse.investments/wissen/afa-abschreibung",

@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -15,6 +16,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/tiny-house-kaufen-mit-grundstueck",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House mit Grundstück kaufen 2026: Paket, Preise & Standorte",
     description: "Paketangebote ab 65.000 €, Standorte & Genehmigungsinfo – oder als Investment ohne eigenes Land.",
     url: "https://tinyhouse.investments/wissen/tiny-house-kaufen-mit-grundstueck",

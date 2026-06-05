@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -14,6 +15,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/tiny-house-steuer-risiken" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House Steuermodell: Was das Finanzamt prüft – und wie du sicher bist",
     description:
       "90%-Nutzungsregel, Liebhaberei, Gebäude-Umwidmung: Die 3 Punkte an denen das Tiny House Steuermodell scheitert – und wie du sie von Anfang an ausschließt.",

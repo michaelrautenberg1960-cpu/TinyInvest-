@@ -1,4 +1,5 @@
-﻿import Navbar from "../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SubPageHeader from "../components/SubPageHeader";
 import SteuerRechner from "../components/SteuerRechner";
@@ -15,6 +16,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/steuervorteil",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "§7g Steuervorteil – Bis zu 40 % Erstattung | TinyInvest",
     description: "IAB, Sonder-AfA, lineare AfA. Im Jahr 1 bis zu 40 % des Kaufpreises zurück.",
     url: "https://tinyhouse.investments/steuervorteil",

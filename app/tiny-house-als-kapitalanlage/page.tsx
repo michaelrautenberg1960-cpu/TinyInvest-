@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ModalButton from "../components/ModalButton";
@@ -16,11 +17,12 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/tiny-house-als-kapitalanlage",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House als Investment kaufen 2026 – Der Praxis-Guide",
     description:
       "Wie kauft man ein Tiny House als Investment? Investor-Profile, 4-Schritte-Prozess und Rechenbeispiel. Vollautomatisch bewirtschaftet.",
     url: "https://tinyhouse.investments/tiny-house-als-kapitalanlage",
-    type: "article",
   },
 };
 

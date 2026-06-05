@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -24,6 +25,8 @@ export const metadata: Metadata = {
     canonical: "https://tinyhouse.investments",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "Tiny House kaufen & vermieten | Steuern sparen | TinyInvest",
     description:
       "Tiny House kaufen, vermieten und im ersten Jahr bis zu 33.000 € Steuern sparen. Ab 65.000 € · 12–14 % Rendite p.a. · vollautomatisch verwaltet.",

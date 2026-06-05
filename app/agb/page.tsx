@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -9,11 +10,11 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/agb",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "AGB – TinyInvest",
     description: "Allgemeine Geschäftsbedingungen der TinyInvest GmbH.",
     url: "https://tinyhouse.investments/agb",
-    type: "website",
-    locale: "de_DE",
   },
 };
 

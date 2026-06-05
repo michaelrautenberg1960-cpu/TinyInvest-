@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/host-werden",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Host werden: Tiny House auf deinem Grundstück betreiben",
     description:
       "Kein Eigenkapital nötig: Stell dein Grundstück zur Verfügung und verdiene bis zu 45 % der Mieteinnahmen.",

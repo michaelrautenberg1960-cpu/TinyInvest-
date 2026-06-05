@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/steuerberater-finden",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "§7g-Steuerberater finden – Checkliste für Tiny House Investoren",
     description: "Nicht jeder Steuerberater kennt §7g EStG und IAB. So findest du den richtigen – mit Checkliste und konkreten Fragen.",
     url: "https://tinyhouse.investments/wissen/steuerberater-finden",

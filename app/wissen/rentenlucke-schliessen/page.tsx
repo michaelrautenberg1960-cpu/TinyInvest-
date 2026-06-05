@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/rentenlucke-schliessen",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Rentenlücke schließen 2026: Monatlicher Cashflow mit Tiny House",
     description:
       "Wie ein vollautomatisch verwaltetes Tiny House die Rentenlücke mit monatlichem Cashflow schließt — ab 65.000 €, kein aktiver Aufwand.",

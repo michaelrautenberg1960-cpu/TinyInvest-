@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -15,6 +16,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/pv-direktinvestment-alternative",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "PV-Direktinvestment Alternative: §7g IAB unter 100.000 € nutzen",
     description:
       "PV-Direktinvestments starten oft erst ab 100.000 – 250.000 €. Das Tiny House bietet denselben §7g-Steuerhebel – ab 79.000 €, ohne Netzanschluss-Bürokratie.",

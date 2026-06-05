@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/tiny-house-genehmigung",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House Genehmigung 2026: Was du wirklich brauchst",
     description: "Stellplatz, Baurecht, Bebauungsplan – klare Antworten für Tiny House Investoren in Deutschland.",
     url: "https://tinyhouse.investments/wissen/tiny-house-genehmigung",

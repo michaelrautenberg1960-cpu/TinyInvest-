@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/tiny-house-vs-etf-altersvorsorge",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House vs. ETF-Sparplan als Altersvorsorge 2026: Vergleich",
     description:
       "Rendite, Risiko, Cashflow und Steuereffekte: Direkter Vergleich Tiny House vs. ETF-Sparplan für die Altersvorsorge ab 55.",

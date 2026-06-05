@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -15,6 +16,8 @@ export const metadata = {
   },
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "§7g Tiny House Investment – Vollständiger Leitfaden 2026",
     description:
       "IAB, Sonder-AfA, degressive AfA: So sparst du 22.000–33.000 € Steuern im Kaufjahr. Der umfassendste §7g-Guide für Tiny House Investoren.",

@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../components/Navbar";
 import Hosts from "../components/Hosts";
 import Footer from "../components/Footer";
@@ -12,6 +13,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/hosts",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "Für Hosts – Dein Grundstück, unser Tiny House | TinyInvest",
     description:
       "Werde Host und verdiene bis zu 45 % der Einnahmen – ohne Eigenkapital. Kostenlose Standortprüfung innerhalb von 24h.",

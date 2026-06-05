@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/kapitalanlage",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House vs. ETW 2026: Rendite, Steuer & Aufwand | TinyInvest",
     description:
       "Tiny House vs. ETW: Warum mobile Assets in 2026 die bessere Kapitalanlage sein könnten. Vergleich, Renditeanalyse und Investoren-Guide.",

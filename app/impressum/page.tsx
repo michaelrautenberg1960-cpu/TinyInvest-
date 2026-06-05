@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -7,6 +8,13 @@ export const metadata = {
   description: "Impressum der Rautenberg Professional Solutions GmbH gemäß § 5 TMG.",
   alternates: {
     canonical: "https://tinyhouse.investments/impressum",
+  },
+  openGraph: {
+    ...BASE_OG,
+    type: "website",
+    title: "Impressum – TinyInvest",
+    description: "Impressum der Rautenberg Professional Solutions GmbH gemäß § 5 TMG.",
+    url: "https://tinyhouse.investments/impressum",
   },
 };
 

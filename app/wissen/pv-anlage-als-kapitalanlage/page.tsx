@@ -1,4 +1,5 @@
-﻿import Navbar from "../../components/Navbar";
+﻿import { BASE_OG } from "@/app/lib/og";
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
@@ -15,6 +16,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/pv-anlage-als-kapitalanlage",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House vs. PV-Anlage als Kapitalanlage 2026: IAB, Rendite & Aufwand im Vergleich",
     description:
       "Einspeisevergütung oder Mieteinnahmen? IAB-Vorteil oder Technologierisiko? Dieser Guide zeigt, warum Tiny Houses die überlegene Alternative zur Solar-Investition sind.",

@@ -22,8 +22,7 @@ export default function SubPageHeader({
       {/* BG image */}
       <img
         src={img}
-        alt=""
-        aria-hidden
+        alt={title}
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
       {/* Overlay */}

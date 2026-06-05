@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Link from "next/link";
@@ -14,6 +15,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "Wissen & Glossar – Tiny House Investment erklärt",
     description: "Investor-Guides, Steuer-Deep-Dives und ein vollständiges Glossar für Tiny House Investments.",
     url: "https://tinyhouse.investments/wissen",

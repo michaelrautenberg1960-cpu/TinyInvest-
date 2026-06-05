@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../components/Navbar";
 import Vertriebspartner from "../components/Vertriebspartner";
 import Footer from "../components/Footer";
@@ -10,6 +11,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/partner",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "Vertriebspartner werden – Provision & Kooperation | TinyInvest",
     description: "Attraktives Provisionsprogramm für Finanzberater, Makler und Netzwerker.",
     url: "https://tinyhouse.investments/partner",

@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -9,11 +10,11 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/datenschutz",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "Datenschutzerklärung – TinyInvest",
     description: "Datenschutzerklärung der TinyInvest GmbH gemäß DSGVO.",
     url: "https://tinyhouse.investments/datenschutz",
-    type: "website",
-    locale: "de_DE",
   },
 };
 

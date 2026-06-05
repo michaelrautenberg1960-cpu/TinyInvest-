@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import RenditeRechner from "../../components/RenditeRechner";
@@ -15,6 +16,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/rechner/rendite",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "Tiny House Rendite-Rechner 2026 | TinyInvest",
     description:
       "Cashflow, IRR und Steuereffekt für dein Tiny House Investment berechnen. Kostenloser Online-Rechner.",

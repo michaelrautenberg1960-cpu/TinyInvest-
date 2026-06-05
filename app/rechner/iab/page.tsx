@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import SteuerRechner from "../../components/SteuerRechner";
@@ -15,6 +16,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/rechner/iab",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "website",
     title: "IAB-Rechner 2026: §7g Steuerersparnis berechnen | TinyInvest",
     description:
       "Kostenloser §7g Rechner: IAB, Sonder-AfA (40 %), degressive AfA (30 %). Sofort-Ergebnis für dein Tiny House Investment.",

@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -16,6 +17,8 @@ export const metadata = {
     canonical: "https://tinyhouse.investments/wissen/tiny-house-altersvorsorge",
   },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Tiny House als Altersvorsorge 2026: Sachwert statt Riester",
     description:
       "Monatlicher Cashflow statt Rentenpunkte: Wie ein vollautomatisch verwaltetes Tiny House die Rentenlücke schließt – ab 65.000 €, kein Aufwand.",

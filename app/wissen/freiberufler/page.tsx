@@ -1,3 +1,4 @@
+import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -14,6 +15,8 @@ export const metadata = {
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/freiberufler" },
   openGraph: {
+    ...BASE_OG,
+    type: "article",
     title: "Steuern sparen als Freiberufler 2026: §7g IAB | TinyInvest",
     description:
       "Bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. Vollautomatisch verwaltetes Tiny House. Kein Zeitaufwand neben Mandanten & Projekten.",
