@@ -2,11 +2,15 @@
 import { useState, useEffect, useRef } from "react";
 import { useModal } from "./ModalContext";
 
+const MODELS = [
+  { key: "TinyInvest Comfort", preis: "65.000 €", tag: "On-Grid · Einstieg", badge: "Günstigster Einstieg" },
+  { key: "TinyInvest Escape",  preis: "79.000 €", tag: "Off-Grid · Standard", badge: "Bestseller" },
+  { key: "TinyInvest Elite",   preis: "95.000 €", tag: "Off-Grid · Premium",  badge: "Maximum IAB-Hebel" },
+];
+
 export default function MemorandumModal() {
   const { isOpen, closeModal } = useModal();
 
-  // Step 1 = minimal (Name, Email, Telefon)
-  // Step 2 = optional details
   const [step, setStep] = useState<1 | 2>(1);
 
   const [form, setForm] = useState({
@@ -14,7 +18,8 @@ export default function MemorandumModal() {
     email: "",
     telefon: "",
     interesse: "Investitionsunterlagen",
-    budget: "TinyInvest Escape (79.000 €)",
+    budget: "TinyInvest Escape",
+    location: "Deutschland",
     investmentVolumen: "60.000 – 80.000 € (1 Asset)",
     kontaktZeit: "Jederzeit / flexibel",
     nachricht: "",
@@ -34,14 +39,12 @@ export default function MemorandumModal() {
 
   const panelRef = useRef<HTMLDivElement>(null);
 
-  // Escape key handler
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeModal(); };
     if (isOpen) document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [isOpen, closeModal]);
 
-  // Reset form when modal closes
   useEffect(() => {
     if (!isOpen) {
       setTimeout(() => {
@@ -56,7 +59,6 @@ export default function MemorandumModal() {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  // Step 1: Quick capture – submit immediately with minimal data
   const handleStep1 = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.vorname || !form.email) {
@@ -69,7 +71,13 @@ export default function MemorandumModal() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, nachname: "", schritt: "Schnell-Anfrage (Schritt 1)" }),
+        body: JSON.stringify({
+            vorname: form.vorname,
+            email: form.email,
+            telefon: form.telefon,
+            nachname: "",
+            schritt: "Schnell-Anfrage (Schritt 1)",
+          }),
       });
       if (!res.ok) throw new Error();
       setStep(2);
@@ -80,7 +88,6 @@ export default function MemorandumModal() {
     }
   };
 
-  // Step 2: Optional details – submit full form
   const handleStep2 = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -103,19 +110,16 @@ export default function MemorandumModal() {
   if (!isOpen) return null;
 
   return (
-    /* Backdrop */
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm
                  animate-in fade-in duration-200"
       onClick={(e) => { if (e.target === e.currentTarget) closeModal(); }}
     >
-      {/* Modal panel */}
       <div
         ref={panelRef}
         className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white rounded-3xl shadow-2xl
-                   animate-in zoom-in-95 duration-200"
+                   animate-in zoom-in-95 duration-200 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
       >
-        {/* Close button */}
         <button
           onClick={closeModal}
           className="absolute top-4 right-4 z-10 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-500 transition-colors"
@@ -124,34 +128,36 @@ export default function MemorandumModal() {
           ✕
         </button>
 
-        <div className="p-8">
+        <div className="p-6">
 
           {/* ── SUCCESS STATE ──────────────────────────── */}
           {submitted ? (
             <div className="text-center py-10">
-              <div className="text-5xl mb-4">✅</div>
-              <h3 className="text-lg font-black text-gray-900 mb-2">Alles klar!</h3>
-              <p className="text-gray-500 text-sm max-w-sm mx-auto leading-relaxed mb-6">
-                  Wir melden uns innerhalb von <strong>24 Stunden</strong> persönlich bei Ihnen –
-                  mit dem Investor-Paket und allen relevanten Unterlagen.
+              <div className="text-6xl mb-5">✅</div>
+              <h3 className="text-2xl font-black text-gray-900 mb-3">Vielen Dank, {form.vorname}!</h3>
+              <p className="text-gray-600 text-sm max-w-sm mx-auto leading-relaxed mb-3">
+                Ihre Anfrage ist bei uns eingegangen – wir freuen uns wirklich über Ihr Interesse!
               </p>
-              <div className="flex items-center justify-center gap-6 mb-6 text-[11px] text-gray-400">
-                <span className="flex items-center gap-1"><span>🔒</span> DSGVO-konform</span>
-                <span className="flex items-center gap-1"><span>⏱</span> Antwort in 24h</span>
-                <span className="flex items-center gap-1"><span>📋</span> Keine Anlageberatung</span>
+              <p className="text-gray-500 text-sm max-w-sm mx-auto leading-relaxed mb-8">
+                Wir melden uns persönlich innerhalb von <strong className="text-gray-700">24 Stunden</strong> bei Ihnen –
+                mit dem vollständigen Investor-Paket und allen Unterlagen, die Sie brauchen.
+              </p>
+              <div className="flex items-center justify-center gap-6 mb-8 text-[11px] text-gray-400">
+                <span className="flex items-center gap-1.5"><span>🔒</span> DSGVO-konform</span>
+                <span className="flex items-center gap-1.5"><span>⏱</span> Antwort in 24h</span>
+                <span className="flex items-center gap-1.5"><span>📋</span> Keine Anlageberatung</span>
               </div>
               <button
                 onClick={closeModal}
-                className="bg-green-700 hover:bg-green-800 text-white font-bold px-8 py-3 rounded-full text-sm transition-all"
+                className="bg-green-700 hover:bg-green-800 text-white font-bold px-10 py-3.5 rounded-full text-sm transition-all shadow-md shadow-green-900/20"
               >
-                Schließen
+                Bis gleich! 👋
               </button>
             </div>
 
           /* ── STEP 1: MINIMAL FORM ────────────────────── */
           ) : step === 1 ? (
             <>
-              {/* Header */}
               <div className="mb-6 pr-8">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="inline-block text-[11px] text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full uppercase tracking-widest font-semibold">
@@ -168,9 +174,8 @@ export default function MemorandumModal() {
               </div>
 
               <form onSubmit={handleStep1} className="space-y-4">
-                {/* Name */}
                 <div>
-                  <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
+                  <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1.5">
                     Ihr Vorname *
                   </label>
                   <input
@@ -180,9 +185,8 @@ export default function MemorandumModal() {
                   />
                 </div>
 
-                {/* Email */}
                 <div>
-                  <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
+                  <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1.5">
                     E-Mail-Adresse *
                   </label>
                   <input
@@ -192,10 +196,9 @@ export default function MemorandumModal() {
                   />
                 </div>
 
-                {/* Phone (optional) */}
                 <div>
-                  <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
-                    Telefon <span className="text-gray-300 font-normal normal-case">(optional – für Rückruf)</span>
+                  <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1.5">
+                    Telefon <span className="text-gray-400 font-normal normal-case">(optional – für Rückruf)</span>
                   </label>
                   <input
                     type="tel" name="telefon" value={form.telefon} onChange={handleChange}
@@ -206,7 +209,6 @@ export default function MemorandumModal() {
 
                 {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
-                {/* Submit */}
                 <button
                   type="submit"
                   disabled={loading}
@@ -219,7 +221,6 @@ export default function MemorandumModal() {
                   🔒 Unverbindlich · Keine Anlageberatung · DSGVO-konform · Antwort in 24h
                 </p>
 
-                {/* Social proof */}
                 <div className="flex items-center gap-3 bg-gray-50 rounded-2xl px-4 py-3">
                   <div className="flex -space-x-2">
                     {["MK","SR","TH"].map((i) => (
@@ -236,32 +237,30 @@ export default function MemorandumModal() {
           /* ── STEP 2: OPTIONAL DETAILS ──────────────── */
           ) : (
             <>
-              {/* Header */}
-              <div className="mb-5 pr-8">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="inline-block text-[11px] text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full uppercase tracking-widest font-semibold">
+              <div className="mb-3 pr-8">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="inline-block text-[11px] text-green-700 bg-green-50 border border-green-200 px-3 py-0.5 rounded-full uppercase tracking-widest font-semibold">
                     ✅ Anfrage eingegangen
                   </span>
                   <span className="text-[10px] text-gray-400">Schritt 2 von 2</span>
                 </div>
-                <h2 className="text-xl font-black text-gray-900 tracking-tight mb-1">
+                <h2 className="text-lg font-black text-gray-900 tracking-tight mb-0.5">
                   Fast fertig, {form.vorname}!
                 </h2>
-                <p className="text-[13px] text-gray-500 leading-relaxed">
-                  Optional: Helfen Sie uns, Ihre Anfrage besser vorzubereiten.
-                  Sie können diesen Schritt auch <button type="button" onClick={() => setSubmitted(true)} className="text-green-700 font-semibold hover:underline">überspringen</button>.
+                <p className="text-[12px] text-gray-500">
+                  Optional: <button type="button" onClick={() => setSubmitted(true)} className="text-green-700 font-semibold hover:underline">Schritt überspringen</button>.
                 </p>
               </div>
 
-              <form onSubmit={handleStep2} className="space-y-4">
+              <form onSubmit={handleStep2} className="space-y-3">
                 {/* Anfrage-Typ */}
                 <div>
-                  <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
+                  <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">
                     Worum geht es?
                   </label>
                   <select
                     name="interesse" value={form.interesse} onChange={handleChange}
-                    className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all bg-white"
+                    className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all bg-white"
                   >
                     <option>Investitionsunterlagen anfordern</option>
                     <option>Projektunterlagen zu einem spezifischen Asset</option>
@@ -279,7 +278,7 @@ export default function MemorandumModal() {
                       <span>🏡</span> Angaben zum Grundstück / Standort
                     </p>
                     <div>
-                      <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Region / Standort *</label>
+                      <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1.5">Region / Standort *</label>
                       <input
                         type="text" name="hostRegion" value={form.hostRegion} onChange={handleChange}
                         placeholder="z.B. Bayern, Nähe München" required={isHost}
@@ -288,7 +287,7 @@ export default function MemorandumModal() {
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Grundstücksgröße</label>
+                        <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1.5">Grundstücksgröße</label>
                         <select name="hostFlaeche" value={form.hostFlaeche} onChange={handleChange}
                           className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
                           <option>{"< 500 m²"}</option>
@@ -298,7 +297,7 @@ export default function MemorandumModal() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Eigentum</label>
+                        <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1.5">Eigentum</label>
                         <select name="hostEigentum" value={form.hostEigentum} onChange={handleChange}
                           className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
                           <option>Eigentümer</option>
@@ -308,7 +307,7 @@ export default function MemorandumModal() {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Wie viele Tiny Houses?</label>
+                      <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1.5">Wie viele Tiny Houses?</label>
                       <select name="hostAnzahl" value={form.hostAnzahl} onChange={handleChange}
                         className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
                         <option>1</option>
@@ -320,38 +319,84 @@ export default function MemorandumModal() {
                   </div>
                 )}
 
-                {/* Asset + Volumen (nur bei Nicht-Host) */}
+                {/* Asset-Modell + Location (nur bei Nicht-Host) */}
                 {!isHost && (
-                  <div className="grid grid-cols-2 gap-3">
+                  <>
+                    {/* Modell-Karten */}
                     <div>
-                      <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Asset-Interesse</label>
-                      <select name="budget" value={form.budget} onChange={handleChange}
-                        className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
-                        <option>Asset #TE-2026-01 · Comfort (60.000 €)</option>
-                        <option>Asset #TE-2026-02 · Escape (79.000 €)</option>
-                        <option>Asset #TE-2026-03 · Elite (95.000 €)</option>
-                        <option>Individuell – bitte beraten</option>
-                      </select>
+                      <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">
+                        Asset-Modell
+                      </label>
+                      <div className="grid grid-cols-3 gap-2">
+                        {MODELS.map((m) => (
+                          <button
+                            key={m.key}
+                            type="button"
+                            onClick={() => setForm((prev) => ({ ...prev, budget: m.key }))}
+                            className={`relative flex flex-col items-center text-center rounded-xl border p-2 transition-all cursor-pointer
+                              ${form.budget === m.key
+                                ? "border-green-500 ring-2 ring-green-500 bg-green-50"
+                                : "border-gray-200 bg-white hover:border-green-300 hover:bg-green-50/40"
+                              }`}
+                          >
+                            {m.badge === "Bestseller" && (
+                              <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[9px] font-black bg-green-600 text-white px-2 py-0.5 rounded-full whitespace-nowrap">
+                                Bestseller
+                              </span>
+                            )}
+                            <span className="text-[11px] font-black text-gray-800 leading-tight mt-1">{m.key.replace("TinyInvest ", "")}</span>
+                            <span className="text-[10px] text-gray-400 leading-tight">{m.tag.split(" · ")[0]}</span>
+                            <span className="text-[11px] font-bold text-green-700">{m.preis}</span>
+                          </button>
+                        ))}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setForm((prev) => ({ ...prev, budget: "Individuell – bitte beraten" }))}
+                        className={`mt-1 w-full text-center text-[11px] py-1 rounded-lg transition-colors
+                          ${form.budget === "Individuell – bitte beraten"
+                            ? "text-green-700 font-bold bg-green-50 border border-green-300"
+                            : "text-gray-400 hover:text-green-700"
+                          }`}
+                      >
+                        Individuell – bitte beraten
+                      </button>
                     </div>
-                    <div>
-                      <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Investitionsvolumen</label>
-                      <select name="investmentVolumen" value={form.investmentVolumen} onChange={handleChange}
-                        className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
-                        <option>60.000 – 80.000 € (1 Asset)</option>
-                        <option>80.000 – 100.000 € (1 Premium)</option>
-                        <option>120.000 – 160.000 € (2 Assets)</option>
-                        <option>200.000 € + (Portfolio)</option>
-                        <option>Noch unklar</option>
-                      </select>
+
+                    {/* Location + Investitionsvolumen nebeneinander */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">
+                          Zielmarkt / Standort
+                        </label>
+                        <select name="location" value={form.location} onChange={handleChange}
+                          className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
+                          <option>Deutschland</option>
+                          <option>Italien</option>
+                          <option>Kroatien</option>
+                          <option>Noch offen</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">Investitionsvolumen</label>
+                        <select name="investmentVolumen" value={form.investmentVolumen} onChange={handleChange}
+                          className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
+                          <option>60.000 – 80.000 € (1 Asset)</option>
+                          <option>80.000 – 100.000 € (1 Premium)</option>
+                          <option>120.000 – 160.000 € (2 Assets)</option>
+                          <option>200.000 € + (Portfolio)</option>
+                          <option>Noch unklar</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
+                  </>
                 )}
 
                 {/* Kontaktzeit */}
                 <div>
-                  <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Wann am besten erreichbar?</label>
+                  <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">Wann am besten erreichbar?</label>
                   <select name="kontaktZeit" value={form.kontaktZeit} onChange={handleChange}
-                    className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
+                    className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
                     <option>Morgens (8–12 Uhr)</option>
                     <option>Mittags (12–15 Uhr)</option>
                     <option>Abends (17–20 Uhr)</option>
@@ -361,14 +406,14 @@ export default function MemorandumModal() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
-                    Nachricht <span className="text-gray-300 font-normal normal-case">(optional)</span>
+                  <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">
+                    Nachricht <span className="text-gray-400 font-normal normal-case">(optional)</span>
                   </label>
                   <textarea
                     name="nachricht" value={form.nachricht} onChange={handleChange}
-                    rows={2}
+                    rows={1}
                     placeholder="z.B. Ich habe bereits einen IAB gebildet…"
-                    className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all resize-none placeholder:text-gray-300"
+                    className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all resize-none placeholder:text-gray-300"
                   />
                 </div>
 

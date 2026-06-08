@@ -14,10 +14,10 @@ export async function POST(req: NextRequest) {
       telefon,
       interesse,
       budget,
+      location,
       investmentVolumen,
       kontaktZeit,
       nachricht,
-      // Host-Bewerbung fields
       hostRegion,
       hostFlaeche,
       hostEigentum,
@@ -28,7 +28,6 @@ export async function POST(req: NextRequest) {
 
     const isHost = interesse === "Host-Bewerbung (Standort / Grundstück)";
 
-    // Build host summary for DB (appended to nachricht field)
     const hostSummary = isHost
       ? `📍 Region: ${hostRegion || "–"} | 📐 Größe: ${hostFlaeche || "–"} | 📜 Eigentum: ${hostEigentum || "–"} | 🗺️ Bebauung: ${hostBebauung || "–"} | ⚡ Versorgung: ${hostVersorgung || "–"} | 🏠 Anzahl THs: ${hostAnzahl || "–"}`
       : null;
@@ -44,6 +43,7 @@ export async function POST(req: NextRequest) {
         telefon: telefon || null,
         interesse,
         budget: isHost ? null : budget,
+        location: isHost ? null : (location || null),
         investment_volumen: isHost ? null : (investmentVolumen || null),
         kontakt_zeit: kontaktZeit || null,
         nachricht: finalNachricht,
@@ -61,87 +61,138 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: process.env.RESEND_FROM!,
         to: process.env.RESEND_TO!,
-        subject: `🏡 Neue Beratungsanfrage: ${vorname} ${nachname}`,
+        subject: `🏡 Neue Investor-Anfrage – ${vorname} (${interesse})`,
         html: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; background: #f9fafb; border-radius: 12px;">
-            <div style="background: #15803d; color: white; padding: 20px 24px; border-radius: 8px 8px 0 0;">
-              <h1 style="margin: 0; font-size: 20px;">🏡 Neue TinyInvest Anfrage</h1>
+<!DOCTYPE html>
+<html lang="de">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:32px 16px;">
+    <tr><td align="center">
+      <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+
+        <!-- Header -->
+        <tr>
+          <td style="background:#15803d;padding:28px 32px;">
+            <p style="margin:0;font-size:11px;color:#bbf7d0;letter-spacing:2px;text-transform:uppercase;font-weight:600;">TinyInvest</p>
+            <h1 style="margin:8px 0 0;font-size:22px;font-weight:800;color:#ffffff;">Neue Investor-Anfrage</h1>
+            <p style="margin:6px 0 0;font-size:14px;color:#d1fae5;">${vorname} ${nachname || ""} · ${interesse}</p>
+          </td>
+        </tr>
+
+        <!-- Kontaktdaten -->
+        <tr>
+          <td style="padding:28px 32px 0;">
+            <p style="margin:0 0 14px;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:2px;text-transform:uppercase;">Kontaktdaten</p>
+            <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;width:160px;">Name</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;font-weight:700;">${vorname} ${nachname || ""}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">E-Mail</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;"><a href="mailto:${email}" style="color:#15803d;font-weight:700;text-decoration:none;">${email}</a></td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">Telefon</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;">${telefon || "–"}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;font-size:13px;color:#6b7280;font-weight:600;">Erreichbar</td>
+                <td style="padding:10px 0;font-size:14px;color:#15803d;font-weight:700;">${kontaktZeit || "–"}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        ${budget && !isHost ? `
+        <!-- Asset-Interesse -->
+        <tr>
+          <td style="padding:24px 32px 0;">
+            <p style="margin:0 0 14px;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:2px;text-transform:uppercase;">Asset-Interesse</p>
+            <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;width:160px;">Modell</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;font-weight:700;">${budget || "–"}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">Zielmarkt</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;">${location || "–"}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;font-size:13px;color:#6b7280;font-weight:600;">Investitionsvolumen</td>
+                <td style="padding:10px 0;font-size:14px;color:#111827;">${investmentVolumen || "–"}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        ` : ""}
+
+        ${isHost ? `
+        <!-- Host-Angaben -->
+        <tr>
+          <td style="padding:24px 32px 0;">
+            <p style="margin:0 0 14px;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:2px;text-transform:uppercase;">Grundstück / Standort</p>
+            <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;width:160px;">Region</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;">${hostRegion || "–"}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">Grundstücksgröße</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;">${hostFlaeche || "–"}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">Eigentum</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;">${hostEigentum || "–"}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">Bebauungsplan</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;">${hostBebauung || "–"}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">Versorgung</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;">${hostVersorgung || "–"}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;font-size:13px;color:#6b7280;font-weight:600;">Anzahl Tiny Houses</td>
+                <td style="padding:10px 0;font-size:14px;color:#111827;">${hostAnzahl || "–"}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        ` : ""}
+
+        ${nachricht ? `
+        <!-- Nachricht -->
+        <tr>
+          <td style="padding:24px 32px 0;">
+            <p style="margin:0 0 10px;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:2px;text-transform:uppercase;">Nachricht</p>
+            <p style="margin:0;font-size:14px;color:#374151;line-height:1.6;background:#f9fafb;border-radius:10px;padding:14px 16px;">${nachricht}</p>
+          </td>
+        </tr>
+        ` : ""}
+
+        <!-- CTA -->
+        <tr>
+          <td style="padding:28px 32px 32px;">
+            <div style="background:#f0fdf4;border-radius:12px;padding:20px 24px;border:1px solid #bbf7d0;">
+              <p style="margin:0 0 14px;font-size:13px;color:#166534;line-height:1.5;">
+                ✅ Lead wurde automatisch in deinem Admin Dashboard gespeichert.
+              </p>
+              <a href="https://tinyhouse.investments/admin"
+                style="display:inline-block;background:#15803d;color:#ffffff;font-size:13px;font-weight:700;text-decoration:none;padding:10px 22px;border-radius:8px;">
+                Admin Dashboard öffnen →
+              </a>
             </div>
-            <div style="background: white; padding: 24px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
-              <table style="width: 100%; border-collapse: collapse;">
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; width: 160px; font-weight: bold;">Name</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${vorname} ${nachname}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">E-Mail</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;"><a href="mailto:${email}" style="color: #15803d;">${email}</a></td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">Telefon</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${telefon || "–"}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">⏰ Erreichbar</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827; font-weight: bold; color: #15803d;">${kontaktZeit || "–"}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">Interesse</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${interesse}</td>
-                </tr>
-                ${isHost ? `
-                <tr>
-                  <td colspan="2" style="padding: 12px 0 4px 0; font-size: 13px; font-weight: bold; color: #15803d;">🏡 Angaben zum Grundstück / Standort</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">📍 Region / Standort</td>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${hostRegion || "–"}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">📐 Grundstücksgröße</td>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${hostFlaeche || "–"}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">📜 Eigentumsverhältnis</td>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${hostEigentum || "–"}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">🗺️ Bebauungsplan</td>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${hostBebauung || "–"}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">⚡ Versorgung</td>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${hostVersorgung || "–"}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">🏠 Anzahl Tiny Houses</td>
-                  <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${hostAnzahl || "–"}</td>
-                </tr>
-                ` : `
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">Asset-Interesse</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${budget}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px; font-weight: bold;">Investitionsvolumen</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; color: #111827;">${investmentVolumen || "–"}</td>
-                </tr>
-                `}
-                ${nachricht ? `
-                <tr>
-                  <td style="padding: 10px 0; color: #6b7280; font-size: 14px; font-weight: bold; vertical-align: top;">Nachricht</td>
-                  <td style="padding: 10px 0; font-size: 14px; color: #111827;">${nachricht}</td>
-                </tr>
-                ` : ""}
-              </table>
-              <div style="margin-top: 24px; padding: 16px; background: #f0fdf4; border-radius: 8px; border-left: 4px solid #15803d;">
-                <p style="margin: 0; font-size: 13px; color: #166534;">
-                  ✅ Lead wurde automatisch in deinem <strong>Admin Dashboard</strong> gespeichert.<br/>
-                  👉 <a href="https://tinyhouse.investments/admin" style="color: #15803d;">Admin Dashboard öffnen</a>
-                </p>
-              </div>
-            </div>
-          </div>
+          </td>
+        </tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>
         `,
       });
     } catch (emailErr) {
