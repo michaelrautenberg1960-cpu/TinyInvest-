@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: process.env.RESEND_FROM!,
         to: process.env.RESEND_TO!,
-        subject: `🏡 Neue Investor-Anfrage – ${vorname} (${interesse})`,
+        subject: `🏡 Neue TinyInvest Anfrage – ${vorname}`,
         html: `
 <!DOCTYPE html>
 <html lang="de">
@@ -73,10 +73,10 @@ export async function POST(req: NextRequest) {
 
         <!-- Header -->
         <tr>
-          <td style="background:linear-gradient(135deg,#0f3d2e 0%,#134e4a 100%);padding:28px 32px;">
-            <p style="margin:0;font-size:11px;color:#99f6e4;letter-spacing:2px;text-transform:uppercase;font-weight:600;">TinyInvest</p>
+          <td style="background:#1e3a5f;padding:28px 32px;">
+            <p style="margin:0;font-size:11px;color:#93c5fd;letter-spacing:2px;text-transform:uppercase;font-weight:600;">TinyInvest</p>
             <h1 style="margin:8px 0 0;font-size:22px;font-weight:800;color:#ffffff;">🏡 Neue TinyInvest Anfrage</h1>
-            <p style="margin:6px 0 0;font-size:14px;color:#ccfbf1;">${vorname} ${nachname || ""} · ${interesse}</p>
+            <p style="margin:6px 0 0;font-size:14px;color:#bfdbfe;">${vorname} ${nachname || ""} · ${interesse}</p>
           </td>
         </tr>
 
@@ -91,7 +91,7 @@ export async function POST(req: NextRequest) {
               </tr>
               <tr>
                 <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">E-Mail</td>
-                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;"><a href="mailto:${email}" style="color:#15803d;font-weight:700;text-decoration:none;">${email}</a></td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;"><a href="mailto:${email}" style="color:#1e3a5f;font-weight:700;text-decoration:none;">${email}</a></td>
               </tr>
               <tr>
                 <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">Telefon</td>
@@ -99,7 +99,7 @@ export async function POST(req: NextRequest) {
               </tr>
               <tr>
                 <td style="padding:10px 0;font-size:13px;color:#6b7280;font-weight:600;">Erreichbar</td>
-                <td style="padding:10px 0;font-size:14px;color:#15803d;font-weight:700;">${kontaktZeit || "–"}</td>
+                <td style="padding:10px 0;font-size:14px;color:#1e3a5f;font-weight:700;">${kontaktZeit || "–"}</td>
               </tr>
             </table>
           </td>
@@ -176,12 +176,12 @@ export async function POST(req: NextRequest) {
         <!-- CTA -->
         <tr>
           <td style="padding:28px 32px 32px;">
-            <div style="background:#f0fdf4;border-radius:12px;padding:20px 24px;border:1px solid #bbf7d0;">
-              <p style="margin:0 0 14px;font-size:13px;color:#166534;line-height:1.5;">
+            <div style="background:#eff6ff;border-radius:12px;padding:20px 24px;border:1px solid #bfdbfe;">
+              <p style="margin:0 0 14px;font-size:13px;color:#1e3a5f;line-height:1.5;">
                 ✅ Lead wurde automatisch in deinem Admin Dashboard gespeichert.
               </p>
               <a href="https://tinyhouse.investments/admin"
-                style="display:inline-block;background:#15803d;color:#ffffff;font-size:13px;font-weight:700;text-decoration:none;padding:10px 22px;border-radius:8px;">
+                style="display:inline-block;background:#1e3a5f;color:#ffffff;font-size:13px;font-weight:700;text-decoration:none;padding:10px 22px;border-radius:8px;">
                 Admin Dashboard öffnen →
               </a>
             </div>
