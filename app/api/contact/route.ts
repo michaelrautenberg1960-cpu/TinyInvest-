@@ -73,10 +73,10 @@ export async function POST(req: NextRequest) {
 
         <!-- Header -->
         <tr>
-          <td style="background:#15803d;padding:28px 32px;">
-            <p style="margin:0;font-size:11px;color:#bbf7d0;letter-spacing:2px;text-transform:uppercase;font-weight:600;">TinyInvest</p>
-            <h1 style="margin:8px 0 0;font-size:22px;font-weight:800;color:#ffffff;">Neue Investor-Anfrage</h1>
-            <p style="margin:6px 0 0;font-size:14px;color:#d1fae5;">${vorname} ${nachname || ""} · ${interesse}</p>
+          <td style="background:linear-gradient(135deg,#0f3d2e 0%,#134e4a 100%);padding:28px 32px;">
+            <p style="margin:0;font-size:11px;color:#99f6e4;letter-spacing:2px;text-transform:uppercase;font-weight:600;">TinyInvest</p>
+            <h1 style="margin:8px 0 0;font-size:22px;font-weight:800;color:#ffffff;">🏡 Neue TinyInvest Anfrage</h1>
+            <p style="margin:6px 0 0;font-size:14px;color:#ccfbf1;">${vorname} ${nachname || ""} · ${interesse}</p>
           </td>
         </tr>
 
