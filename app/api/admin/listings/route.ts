@@ -80,6 +80,9 @@ export async function PATCH(req: NextRequest) {
     "reserved","total","status","status_label",
     "badge","badge_color","sort_order","active",
     "lat","lng",
+    // Detail page fields
+    "address","extras","manager_note","document_url",
+    "iab_eligible","afa_eligible","sonder_afa_eligible",
     // Investor fields
     "owner_id","kaufvertrag_url","mgmt_fee_pct","host_pct",
     "escapes_escape_id",
@@ -96,6 +99,8 @@ export async function PATCH(req: NextRequest) {
         updates[key] = rest[key] === "" || rest[key] === null ? null : Number(rest[key]);
       } else if (key === "owner_id" || key === "escapes_escape_id") {
         updates[key] = rest[key] === "" ? null : rest[key];
+      } else if (key === "iab_eligible" || key === "afa_eligible" || key === "sonder_afa_eligible") {
+        updates[key] = Boolean(rest[key]);
       } else {
         updates[key] = rest[key];
       }

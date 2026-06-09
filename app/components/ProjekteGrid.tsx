@@ -3,6 +3,22 @@ import { useState } from "react";
 import Link from "next/link";
 import type { Listing } from "./ModelleCarousel";
 
+const MAP_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
+const MAP_BG = `https://maps.googleapis.com/maps/api/staticmap?center=51.0,10.5&zoom=5&size=400x80&maptype=roadmap&style=feature:all|element:labels|visibility:off&style=feature:water|color:0xc9e8f5&style=feature:landscape|color:0xf0f4f0&key=${MAP_KEY}`;
+
+function MapButton({ onOpenMap }: { onOpenMap: () => void }) {
+  return (
+    <button
+      onClick={onOpenMap}
+      className="ml-auto relative overflow-hidden rounded-full h-9 px-4 flex items-center gap-1.5 text-[12px] font-semibold text-white shadow-sm hover:shadow-md transition-all"
+      style={{ backgroundImage: `url('${MAP_BG}')`, backgroundSize: "cover", backgroundPosition: "center" }}
+    >
+      <span className="absolute inset-0 bg-black/40" />
+      <span className="relative flex items-center gap-1.5">🗺 Kartenansicht</span>
+    </button>
+  );
+}
+
 const statusCfg = {
   available: { bar: "bg-green-500",  track: "bg-green-100",  badge: "bg-emerald-100 text-emerald-700", dim: "" },
   reserved:  { bar: "bg-amber-400",  track: "bg-amber-100",  badge: "bg-amber-100 text-amber-800",    dim: "" },
@@ -45,60 +61,73 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
     return (
       <Link
         href={`/marktplatz/${item.id}`}
-        className={`group flex gap-0 rounded-xl border bg-white overflow-hidden transition-shadow ${
+        className={`group flex rounded-xl border bg-white overflow-hidden transition-shadow ${
           isHovered
             ? "border-green-400 shadow-lg ring-1 ring-green-400"
-            : "border-gray-200 hover:shadow-lg"
+            : "border-gray-200 hover:shadow-md"
         } ${cfg.dim}`}
         onMouseEnter={() => onHover?.(item.id)}
         onMouseLeave={() => onHover?.(null)}
       >
         {/* Image */}
-        <div className="relative w-40 shrink-0 overflow-hidden bg-gray-100">
-          <img
-            src={item.img}
-            alt={item.title}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute top-2 right-2 rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-semibold text-gray-800 shadow-sm">
-            {available}/{item.total} frei
+        <div className="relative w-28 shrink-0 overflow-hidden bg-gray-100">
+          <img src={item.img} alt={item.title} className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute bottom-1.5 left-1.5 rounded bg-black/55 px-1.5 py-0.5 text-[9px] font-semibold text-white">
+            #{item.asset_id}
           </div>
         </div>
 
         {/* Content */}
-        <div className="flex flex-1 min-w-0 flex-col px-3 py-2.5 gap-1.5">
-          <p className="text-[10px] font-medium uppercase tracking-wide text-gray-400 truncate">
-            📍 {item.location}
-          </p>
-          <p className="text-sm font-bold leading-snug text-[#003580] group-hover:underline line-clamp-2">
+        <div className="flex flex-1 min-w-0 flex-col px-2.5 py-2 gap-1">
+          {/* Location + units */}
+          <div className="flex items-center justify-between gap-1">
+            <p className="text-[9px] font-medium uppercase tracking-wide text-gray-400 truncate">
+              📍 {item.location}
+            </p>
+            <span className="shrink-0 rounded-full bg-white/90 border border-gray-200 px-1.5 py-0.5 text-[9px] font-semibold text-gray-700">
+              {available}/{item.total} frei
+            </span>
+          </div>
+
+          {/* Title */}
+          <p className="text-xs font-bold leading-snug text-[#003580] group-hover:underline line-clamp-2">
             {item.title}
           </p>
+
+          {/* Chips row */}
           <div className="flex flex-wrap gap-1">
-            <span className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${cfg.badge}`}>
+            <span className={`rounded px-1.5 py-0.5 text-[9px] font-semibold ${cfg.badge}`}>
               {item.status_label}
             </span>
-            <span className="rounded border border-teal-200 bg-teal-50 px-1.5 py-0.5 text-[10px] text-teal-700">
+            <span className="rounded border border-teal-200 bg-teal-50 px-1.5 py-0.5 text-[9px] text-teal-700">
               {item.category}
             </span>
+            {taxBadges.map(({ key, tip }) => (
+              <span key={key} title={tip} className="flex items-center gap-0.5 rounded border border-violet-200 bg-violet-50 px-1.5 py-0.5">
+                <span className="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-violet-600 text-white text-[8px] font-bold leading-none">✓</span>
+                <span className="text-[9px] font-semibold text-violet-700">{key}</span>
+              </span>
+            ))}
           </div>
-          {taxBadges.length > 0 && (
-            <div className="flex flex-wrap gap-1">
-              {taxBadges.map(({ key, tip }) => (
-                <span key={key} title={tip} className="flex items-center gap-0.5 rounded border border-violet-200 bg-violet-50 px-1.5 py-0.5">
-                  <span className="flex h-3 w-3 items-center justify-center rounded-full bg-violet-600 text-white text-[9px] font-bold leading-none">✓</span>
-                  <span className="text-[10px] font-semibold text-violet-700">{key}</span>
-                </span>
-              ))}
+
+          {/* Description excerpt */}
+          {excerpt && (
+            <p className="text-[10px] text-gray-400 leading-relaxed line-clamp-2">{excerpt}</p>
+          )}
+
+          {/* KPI row */}
+          <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-[10px] text-gray-500">
+            <span><b className="text-emerald-700">{item.irr}</b> IRR p.a.</span>
+            <span><b className="text-[#003580]">{item.preis}</b>/Einheit</span>
+            {item.npv && <span>NPV: <b>{item.npv}</b></span>}
+          </div>
+
+          {/* Availability bar */}
+          {!isPlanning && (
+            <div className={`w-full h-1 rounded-full ${cfg.track} mt-0.5`}>
+              <div className={`h-1 rounded-full ${cfg.bar}`} style={{ width: `${pct}%` }} />
             </div>
           )}
-          <div className="mt-auto flex items-end justify-between gap-1 pt-1 border-t border-gray-100">
-            <div>
-              <p className="font-data text-sm font-extrabold text-[#003580] leading-none">{item.preis}</p>
-              <p className="font-data text-xs font-bold text-emerald-600 mt-0.5">
-                {item.irr}<span className="text-[9px] font-normal text-gray-400"> p.a.</span>
-              </p>
-            </div>
-          </div>
         </div>
       </Link>
     );
@@ -136,6 +165,17 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
             <div className="absolute bottom-2.5 left-2.5 rounded-md bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
               #{item.asset_id}
             </div>
+            {/* Tax badges — mobile only, stacked top-right */}
+            {taxBadges.length > 0 && (
+              <div className="absolute top-2.5 right-2.5 flex flex-col items-end gap-1 sm:hidden">
+                {taxBadges.map(({ key, tip }) => (
+                  <span key={key} title={tip} className="flex items-center gap-1 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5">
+                    <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-violet-600 text-white text-xs font-bold leading-none">✓</span>
+                    <span className="text-xs font-semibold text-violet-700">{key}</span>
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* ── Middle: content ───────────────────────────────── */}
@@ -166,18 +206,6 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
                   </span>
                 )}
               </div>
-
-              {/* Tax badges */}
-              {taxBadges.length > 0 && (
-                <div className="flex flex-wrap items-center gap-1.5">
-                  {taxBadges.map(({ key, tip }) => (
-                    <span key={key} title={tip} className="flex items-center gap-1 rounded-lg border border-violet-200 bg-violet-50 px-2 py-1">
-                      <span className="text-xs font-semibold text-violet-700">{key}</span>
-                      <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-violet-600 text-white text-xs font-bold">✓</span>
-                    </span>
-                  ))}
-                </div>
-              )}
 
               {/* Description excerpt */}
               {excerpt && (
@@ -250,6 +278,16 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
           {/* ── Right panel: price + CTA (desktop only) ───────── */}
           <div className="hidden sm:flex w-44 shrink-0 flex-col items-end justify-between border-l border-gray-100 px-4 py-4 lg:w-48 lg:px-5">
 
+            {/* Tax badges — desktop, top-right */}
+            <div className="flex flex-row flex-wrap justify-end gap-1.5 w-full">
+              {taxBadges.length > 0 ? taxBadges.map(({ key, tip }) => (
+                <span key={key} title={tip} className="flex items-center gap-1 rounded-lg border border-violet-200 bg-violet-50 px-2 py-1">
+                  <span className="text-xs font-semibold text-violet-700">{key}</span>
+                  <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-violet-600 text-white text-xs font-bold">✓</span>
+                </span>
+              )) : <div className="h-6" />}
+            </div>
+
             {/* Price (primary) */}
             <div className="text-right w-full">
               <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">Kaufpreis</p>
@@ -286,7 +324,7 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
   );
 }
 
-export default function ProjekteGrid({ listings }: { listings: Listing[] }) {
+export default function ProjekteGrid({ listings, onOpenMap }: { listings: Listing[]; onOpenMap?: () => void }) {
   const [filter, setFilter] = useState<FilterKey>("all");
 
   const filtered =
@@ -326,6 +364,9 @@ export default function ProjekteGrid({ listings }: { listings: Listing[] }) {
             </button>
           );
         })}
+        {onOpenMap && (
+          <MapButton onOpenMap={onOpenMap} />
+        )}
       </div>
 
       {/* Card list */}

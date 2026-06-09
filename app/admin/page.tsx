@@ -47,6 +47,13 @@ type Listing = {
   active: boolean;
   lat: number | null;
   lng: number | null;
+  address: string | null;
+  extras: string | null;
+  manager_note: string | null;
+  document_url: string | null;
+  iab_eligible: boolean;
+  afa_eligible: boolean;
+  sonder_afa_eligible: boolean;
 };
 
 type NewListing = Omit<Listing, "id">;
@@ -90,6 +97,8 @@ const EMPTY_LISTING: NewListing = {
   status: "planning", status_label: "In Planung",
   badge: "Phase 2", badge_color: "bg-indigo-100 text-indigo-700",
   sort_order: 99, active: false, lat: null, lng: null,
+  address: null, extras: null, manager_note: null, document_url: null,
+  iab_eligible: false, afa_eligible: false, sonder_afa_eligible: false,
 };
 
 // ──────────── Input helpers ────────────
@@ -295,6 +304,48 @@ function ListingForm({
       <Field label="Beschreibung">
         <textarea className={ta} rows={3} value={v("description") as string} onChange={(e) => onChange("description", e.target.value)} placeholder="Kurzbeschreibung des Projekts…" />
       </Field>
+
+      {/* ── Detail-Page Felder (locked content) ── */}
+      <div className="sm:col-span-2 lg:col-span-3">
+        <div className="bg-gray-800/50 border border-white/10 rounded-xl p-4">
+          <p className="text-[10px] text-gray-400 uppercase tracking-wider font-semibold mb-3">🔒 Detail-Page Inhalte (nach Registrierung sichtbar)</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Field label="Vollständige Adresse (z.B. Musterstraße 1, 38640 Goslar)">
+              <input className={inp} value={(data.address as string) ?? ""} onChange={(e) => onChange("address", e.target.value || null)} placeholder="Musterstraße 1, 38640 Goslar" />
+            </Field>
+            <Field label="Betreiber-Hinweis (manager_note)">
+              <input className={inp} value={(data.manager_note as string) ?? ""} onChange={(e) => onChange("manager_note", e.target.value || null)} placeholder="Naturpark Harz, 95 % Auslastung 2024" />
+            </Field>
+            <Field label="Extras (Komma-getrennt)">
+              <input className={inp} value={(data.extras as string) ?? ""} onChange={(e) => onChange("extras", e.target.value || null)} placeholder="Whirlpool, Sauna, Smart Lock, Fahrräder" />
+            </Field>
+            <Field label="Exposé PDF URL (document_url)">
+              <input className={inp} value={(data.document_url as string) ?? ""} onChange={(e) => onChange("document_url", e.target.value || null)} placeholder="https://…/expose.pdf" />
+            </Field>
+          </div>
+          {/* §7g eligibility toggles */}
+          <div className="mt-4 grid grid-cols-3 gap-3">
+            {([
+              { key: "iab_eligible",        label: "IAB §7g" },
+              { key: "afa_eligible",        label: "AfA" },
+              { key: "sonder_afa_eligible", label: "Sonder-AfA" },
+            ] as const).map(({ key, label }) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => onChange(key, !data[key])}
+                className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all border ${
+                  data[key]
+                    ? "bg-violet-700/40 text-violet-300 border-violet-500/50"
+                    : "bg-gray-700 text-gray-400 border-gray-600"
+                }`}
+              >
+                {data[key] ? "✓" : "○"} {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* ── Kartenkoordinaten ── */}
       <div className="sm:col-span-2 lg:col-span-3">

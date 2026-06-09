@@ -110,6 +110,21 @@ export default async function ListingDetailPage({ params }: PageProps) {
               <p className="text-[11px] text-gray-400 mt-1">{listing.category}</p>
             </div>
 
+            {/* Rendite-Kennzahlen */}
+            <div className="rounded-xl border border-gray-200 bg-white p-4">
+              <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400 mb-2">Rendite-Kennzahlen</p>
+              <div className="flex justify-between items-end">
+                <div>
+                  <p className="text-[10px] text-gray-400">IRR p.a.</p>
+                  <p className="font-data text-lg font-black text-green-700">{listing.irr}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-[10px] text-gray-400">NPV</p>
+                  <p className="font-data text-lg font-black text-gray-800">{listing.npv}</p>
+                </div>
+              </div>
+            </div>
+
             {/* Availability */}
             <div className="rounded-xl border border-gray-200 bg-white p-4">
               <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400 mb-2">Verfügbarkeit</p>

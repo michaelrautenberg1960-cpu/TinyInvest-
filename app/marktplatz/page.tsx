@@ -80,6 +80,12 @@ export default async function MarktplatzPage() {
     iab_eligible:        row.iab_eligible        ?? false,
     afa_eligible:        row.afa_eligible        ?? false,
     sonder_afa_eligible: row.sonder_afa_eligible ?? false,
+    address:             row.address             ?? null,
+    gross_rent_annual:   row.gross_rent_annual   ?? null,
+    costs_annual:        row.costs_annual        ?? null,
+    extras:              row.extras              ?? null,
+    manager_note:        row.manager_note        ?? null,
+    document_url:        row.document_url        ?? null,
   }));
 
 

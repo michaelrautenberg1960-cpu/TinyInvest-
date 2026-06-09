@@ -25,6 +25,12 @@ export interface Listing {
   iab_eligible?: boolean;
   afa_eligible?: boolean;
   sonder_afa_eligible?: boolean;
+  address?: string | null;
+  gross_rent_annual?: string | null;
+  costs_annual?: string | null;
+  extras?: string | null;
+  manager_note?: string | null;
+  document_url?: string | null;
 }
 
 const statusCfg = {
