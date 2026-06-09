@@ -74,9 +74,12 @@ export default async function MarktplatzPage() {
     total:        row.total,
     status:       row.status,
     status_label: row.status_label,
-    badge:        row.badge,
-    badge_color:  row.badge_color,
-    sort_order:   row.sort_order,
+    badge:               row.badge,
+    badge_color:         row.badge_color,
+    sort_order:          row.sort_order,
+    iab_eligible:        row.iab_eligible        ?? false,
+    afa_eligible:        row.afa_eligible        ?? false,
+    sonder_afa_eligible: row.sonder_afa_eligible ?? false,
   }));
 
 

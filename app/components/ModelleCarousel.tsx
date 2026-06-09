@@ -22,6 +22,9 @@ export interface Listing {
   badge: string;
   badge_color: string;
   sort_order: number;
+  iab_eligible?: boolean;
+  afa_eligible?: boolean;
+  sonder_afa_eligible?: boolean;
 }
 
 const statusCfg = {

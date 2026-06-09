@@ -28,8 +28,8 @@ const loader = new Loader({
 })
 
 function makePill(listing: MapListing, hovered = false): HTMLElement {
-  const bg     = hovered ? '#d97706' : '#0d1b2e'
-  const border = hovered ? '#b45309' : '#0d1b2e'
+  const bg     = hovered ? '#4ade80' : '#0d1b2e'
+  const border = hovered ? '#22c55e' : '#0d1b2e'
   const shadow = hovered ? '0 4px 16px rgba(0,0,0,0.35)' : '0 2px 10px rgba(0,0,0,0.22)'
 
   const wrapper = document.createElement('div')

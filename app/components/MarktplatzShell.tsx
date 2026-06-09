@@ -37,6 +37,25 @@ export default function MarktplatzShell({ listings, mapListings }: Props) {
         </button>
       </div>
 
+      {/* ── Map preview banner ─────────────────────────────── */}
+      <div
+        className="relative mb-8 h-28 cursor-pointer overflow-hidden rounded-xl shadow-sm"
+        onClick={() => setMapOpen(true)}
+      >
+        <img
+          src={`https://maps.googleapis.com/maps/api/staticmap?center=51.0,10.5&zoom=5&size=1200x200&maptype=roadmap&style=feature:all|element:labels|visibility:simplified&style=feature:water|color:0xc9e8f5&style=feature:landscape|color:0xf5f5f5&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''}`}
+          alt="Karte"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "center 30%" }}
+        />
+        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 shadow-lg">
+            🗺 Alle Projekte auf der Karte anzeigen
+          </span>
+        </div>
+      </div>
+
       {/* ── Normal grid ────────────────────────────────────── */}
       <ProjekteGrid listings={listings} />
 
@@ -56,13 +75,12 @@ export default function MarktplatzShell({ listings, mapListings }: Props) {
               </button>
             </div>
 
-            {/* Compact card list */}
-            <div className="flex-1 overflow-y-auto px-3 py-3 space-y-2">
+            {/* Card list — full layout matching the marketplace */}
+            <div className="flex-1 overflow-y-auto px-3 py-3 space-y-3">
               {listings.map((item) => (
                 <ProjectCard
                   key={item.id}
                   item={item}
-                  compact
                   isHovered={hoveredId === item.id}
                   onHover={setHoveredId}
                 />

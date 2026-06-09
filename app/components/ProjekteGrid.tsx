@@ -34,6 +34,11 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
   const excerpt    = item.description
     ? item.description.slice(0, 110).trimEnd() + (item.description.length > 110 ? "…" : "")
     : null;
+  const taxBadges = [
+    item.iab_eligible        && { key: "IAB",        tip: "Investitionsabzugsbetrag" },
+    item.afa_eligible        && { key: "AfA",        tip: "Absetzung für Abnutzung" },
+    item.sonder_afa_eligible && { key: "Sonder-AfA", tip: "Sonderabschreibung §7g EStG" },
+  ].filter(Boolean) as { key: string; tip: string }[];
 
   /* ── Compact card (split-screen list) ──────────────────────────── */
   if (compact) {
@@ -76,12 +81,23 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
               {item.category}
             </span>
           </div>
+          {taxBadges.length > 0 && (
+            <div className="flex flex-wrap gap-1">
+              {taxBadges.map(({ key, tip }) => (
+                <span key={key} title={tip} className="flex items-center gap-0.5 rounded border border-violet-200 bg-violet-50 px-1.5 py-0.5">
+                  <span className="flex h-3 w-3 items-center justify-center rounded-full bg-violet-600 text-white text-[9px] font-bold leading-none">✓</span>
+                  <span className="text-[10px] font-semibold text-violet-700">{key}</span>
+                </span>
+              ))}
+            </div>
+          )}
           <div className="mt-auto flex items-end justify-between gap-1 pt-1 border-t border-gray-100">
-            <span className="font-data text-sm font-extrabold text-emerald-600">
-              {item.irr}
-              <span className="text-[10px] font-normal text-gray-400"> p.a.</span>
-            </span>
-            <span className="font-data text-xs font-bold text-[#003580]">{item.preis}</span>
+            <div>
+              <p className="font-data text-sm font-extrabold text-[#003580] leading-none">{item.preis}</p>
+              <p className="font-data text-xs font-bold text-emerald-600 mt-0.5">
+                {item.irr}<span className="text-[9px] font-normal text-gray-400"> p.a.</span>
+              </p>
+            </div>
           </div>
         </div>
       </Link>
@@ -151,6 +167,18 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
                 )}
               </div>
 
+              {/* Tax badges */}
+              {taxBadges.length > 0 && (
+                <div className="flex flex-wrap items-center gap-1.5">
+                  {taxBadges.map(({ key, tip }) => (
+                    <span key={key} title={tip} className="flex items-center gap-1 rounded-lg border border-violet-200 bg-violet-50 px-2 py-1">
+                      <span className="text-xs font-semibold text-violet-700">{key}</span>
+                      <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-violet-600 text-white text-xs font-bold">✓</span>
+                    </span>
+                  ))}
+                </div>
+              )}
+
               {/* Description excerpt */}
               {excerpt && (
                 <p className="text-xs text-gray-500 leading-relaxed line-clamp-2 sm:text-sm">
@@ -203,15 +231,15 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
 
             {/* Mobile: price + CTA */}
             <div className="mt-4 sm:hidden">
-              <div className="flex items-baseline gap-3 mb-2.5">
-                <span className="font-data text-xl font-extrabold text-emerald-600">
-                  {item.irr}
-                  <span className="text-xs font-normal text-gray-400"> p.a.</span>
-                </span>
-                <span className="font-data text-sm font-bold text-[#003580]">
+              <div className="mb-2.5">
+                <p className="font-data text-xl font-extrabold text-[#003580] leading-none">
                   {item.preis}
                   <span className="text-xs font-normal text-gray-400"> /Einheit</span>
-                </span>
+                </p>
+                <p className="font-data text-sm font-bold text-emerald-600 mt-0.5">
+                  {item.irr}
+                  <span className="text-xs font-normal text-gray-400"> p.a.</span>
+                </p>
               </div>
               <span className="block w-full rounded-lg bg-green-700 px-3 py-2.5 text-center text-sm font-bold text-white group-hover:bg-green-800 transition-colors">
                 Projektdetails →
@@ -222,22 +250,23 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
           {/* ── Right panel: price + CTA (desktop only) ───────── */}
           <div className="hidden sm:flex w-44 shrink-0 flex-col items-end justify-between border-l border-gray-100 px-4 py-4 lg:w-48 lg:px-5">
 
-            {/* IRR */}
+            {/* Price (primary) */}
             <div className="text-right w-full">
-              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">IRR p.a.</p>
-              <p className="font-data text-3xl font-extrabold text-emerald-600 leading-none">
-                {item.irr}
-              </p>
-            </div>
-
-            {/* Price */}
-            <div className="text-right w-full mt-3">
-              <p className="font-data text-xl font-extrabold text-[#003580] leading-none">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">Kaufpreis</p>
+              <p className="font-data text-2xl font-extrabold text-[#003580] leading-none">
                 {item.preis}
               </p>
-              <p className="text-[10px] text-gray-400 mt-1">pro Einheit</p>
+              <p className="text-[10px] text-gray-400 mt-0.5">pro Einheit</p>
+            </div>
+
+            {/* IRR (secondary) */}
+            <div className="text-right w-full mt-3">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">IRR p.a.</p>
+              <p className="font-data text-xl font-extrabold text-emerald-600 leading-none">
+                {item.irr}
+              </p>
               {item.npv && (
-                <p className="text-[10px] text-gray-400 mt-0.5">
+                <p className="text-[10px] text-gray-400 mt-1">
                   NPV: <span className="font-semibold text-gray-600">{item.npv}</span>
                 </p>
               )}
