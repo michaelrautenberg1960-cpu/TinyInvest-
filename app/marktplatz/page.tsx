@@ -4,8 +4,7 @@ import { supabase } from "../lib/supabase";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SubPageHeader from "../components/SubPageHeader";
-import ProjekteGrid from "../components/ProjekteGrid";
-import MarktplatzMap from "../components/MarktplatzMap";
+import MarktplatzShell from "../components/MarktplatzShell";
 import type { MapListing } from "../components/ProjekteGoogleMap";
 import type { Listing } from "../components/ModelleCarousel";
 import Script from "next/script";
@@ -98,6 +97,7 @@ export default async function MarktplatzPage() {
       return {
         id:           row.id,
         asset_id:     row.asset_id,
+        img:          row.img,
         title:        row.title,
         location:     row.location,
         status:       row.status,
@@ -173,49 +173,10 @@ export default async function MarktplatzPage() {
         </div>
       </section>
 
-      {/* Google Map */}
-      <section className="py-12 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-5">
-            <div>
-              <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-0.5">
-                Standortkarte
-              </p>
-              <h3 className="text-lg font-black text-gray-900 tracking-tight">
-                Asset-Standorte im Überblick
-              </h3>
-            </div>
-            <div className="flex items-center gap-4 text-[11px] text-gray-500">
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-green-600 inline-block" /> Verfügbar / Reserviert
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-gray-400 inline-block" /> In Planung
-              </span>
-            </div>
-          </div>
-          <MarktplatzMap listings={mapListings} />
-          <p className="text-[10px] text-gray-400 mt-3 text-center">
-            Klicken Sie auf einen Pin für Projektdetails · Karte zeigt Näherungsstandorte
-          </p>
-        </div>
-      </section>
-
-      {/* Grid with filter */}
+      {/* Grid with filter + split-screen */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">
-              Investment-Projekte
-            </p>
-            <h2 className="text-2xl font-black text-gray-900 tracking-tight">
-              Wählen Sie Ihr Projekt
-            </h2>
-            <p className="text-gray-500 text-sm mt-1">
-              Alle Projekte werden vollautomatisch durch tiny Escapes bewirtschaftet – Sie investieren, wir machen den Rest.
-            </p>
-          </div>
-          <ProjekteGrid listings={listings} />
+          <MarktplatzShell listings={listings} mapListings={mapListings} />
         </div>
       </section>
 

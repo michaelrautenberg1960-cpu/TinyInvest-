@@ -1,173 +1,247 @@
-"use client";
-import { useState, useCallback } from "react";
-import { GoogleMap, Marker, InfoWindow, useJsApiLoader } from "@react-google-maps/api";
+'use client'
 
-const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
-
-// SVG pin icons (data URI)
-const greenPin =
-  "data:image/svg+xml;charset=UTF-8," +
-  encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36">
-      <path d="M14 0C6.27 0 0 6.27 0 14c0 9.75 14 22 14 22S28 23.75 28 14C28 6.27 21.73 0 14 0z" fill="#15803d"/>
-      <circle cx="14" cy="14" r="6" fill="white"/>
-    </svg>`
-  );
-
-const amberPin =
-  "data:image/svg+xml;charset=UTF-8," +
-  encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36">
-      <path d="M14 0C6.27 0 0 6.27 0 14c0 9.75 14 22 14 22S28 23.75 28 14C28 6.27 21.73 0 14 0z" fill="#d97706"/>
-      <circle cx="14" cy="14" r="6" fill="white"/>
-    </svg>`
-  );
-
-const indigoPin =
-  "data:image/svg+xml;charset=UTF-8," +
-  encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="30" viewBox="0 0 28 36">
-      <path d="M14 0C6.27 0 0 6.27 0 14c0 9.75 14 22 14 22S28 23.75 28 14C28 6.27 21.73 0 14 0z" fill="#6366f1"/>
-      <circle cx="14" cy="14" r="6" fill="white"/>
-    </svg>`
-  );
-
-const redPin =
-  "data:image/svg+xml;charset=UTF-8," +
-  encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36">
-      <path d="M14 0C6.27 0 0 6.27 0 14c0 9.75 14 22 14 22S28 23.75 28 14C28 6.27 21.73 0 14 0z" fill="#dc2626"/>
-      <circle cx="14" cy="14" r="6" fill="white"/>
-    </svg>`
-  );
-
-function getPinIcon(status: string) {
-  if (status === "available") return greenPin;
-  if (status === "reserved")  return amberPin;
-  if (status === "planning")  return indigoPin;
-  return redPin; // sold / other
-}
-
-const MAP_STYLE: React.CSSProperties = { width: "100%", height: "460px" };
-
-const MAP_OPTIONS: google.maps.MapOptions = {
-  mapTypeId: "roadmap",
-  mapTypeControl: false,
-  streetViewControl: false,
-  fullscreenControl: true,
-  zoomControl: true,
-  styles: [
-    { featureType: "poi",        elementType: "labels", stylers: [{ visibility: "off" }] },
-    { featureType: "transit",    elementType: "labels", stylers: [{ visibility: "off" }] },
-    { featureType: "water",      elementType: "geometry", stylers: [{ color: "#c9e8f5" }] },
-    { featureType: "landscape",  elementType: "geometry", stylers: [{ color: "#f0f4f8" }] },
-    { featureType: "road",       elementType: "geometry", stylers: [{ color: "#ffffff" }] },
-    { featureType: "road.arterial", elementType: "geometry", stylers: [{ color: "#dee4ea" }] },
-    { featureType: "administrative.country", elementType: "geometry.stroke", stylers: [{ color: "#b0bec5" }] },
-  ],
-};
+import { useEffect, useRef, useState } from 'react'
+import { Loader } from '@googlemaps/js-api-loader'
 
 export interface MapListing {
-  id: number;
-  title: string;
-  location: string;
-  status: string;
-  status_label: string;
-  irr: string;
-  preis: string;
-  asset_id: string;
-  total: number;
-  reserved: number;
-  lat: number | null;
-  lng: number | null;
+  id: number
+  asset_id: string
+  img: string
+  title: string
+  location: string
+  status: string
+  status_label: string
+  irr: string
+  preis: string
+  total: number
+  reserved: number
+  lat: number | null
+  lng: number | null
+}
+
+const MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAP_ID ?? 'DEMO_MAP_ID'
+
+// Singleton loader — safe to call multiple times
+const loader = new Loader({
+  apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '',
+  version: 'weekly',
+})
+
+function makePill(listing: MapListing, hovered = false): HTMLElement {
+  const bg        = hovered ? '#f59e0b' : '#f0fdf4'
+  const border    = hovered ? '#d97706' : '#bbf7d0'
+  const textColor = hovered ? '#18181b' : '#166534'
+  const transform = hovered ? 'translateY(-6px) scale(1.08)' : 'translateY(0) scale(1)'
+  const shadow    = hovered ? '0 4px 14px rgba(0,0,0,0.25)' : '0 2px 8px rgba(0,0,0,0.12)'
+
+  const wrapper = document.createElement('div')
+  wrapper.style.cssText = `display:inline-flex;flex-direction:column;align-items:center;cursor:pointer;transition:transform 0.15s ease;transform:${transform};filter:drop-shadow(${shadow});`
+
+  const bubble = document.createElement('div')
+  bubble.textContent = listing.irr
+  bubble.style.cssText = `background:${bg};color:${textColor};border:2px solid ${border};padding:5px 11px;border-radius:10px;font-family:sans-serif;font-size:12px;font-weight:700;white-space:nowrap;line-height:1;`
+
+  const arrowOuter = document.createElement('div')
+  arrowOuter.style.cssText = `width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid ${border};`
+
+  const arrowInner = document.createElement('div')
+  arrowInner.style.cssText = `width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid ${bg};margin-top:-7px;`
+
+  wrapper.appendChild(bubble)
+  wrapper.appendChild(arrowOuter)
+  wrapper.appendChild(arrowInner)
+  return wrapper
 }
 
 interface Props {
-  listings: MapListing[];
+  listings: MapListing[]
+  hoveredId?: number | null
+  onHoverPin?: (id: number | null) => void
+  fullHeight?: boolean
 }
 
-export default function ProjekteGoogleMap({ listings }: Props) {
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: API_KEY,
-  });
+export default function ProjekteGoogleMap({ listings, hoveredId, onHoverPin, fullHeight }: Props) {
+  const mapRef            = useRef<HTMLDivElement>(null)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mapInstanceRef    = useRef<any>(null)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const markersRef        = useRef<Map<number, any>>(new Map())
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const infoWindowRef     = useRef<any>(null)
+  const openCardFnsRef    = useRef<Map<number, () => void>>(new Map())
+  const openIdRef         = useRef<number | null>(null)
+  const closeTimerRef     = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const scheduleCloseRef  = useRef<(() => void) | null>(null)
+  const [loaded, setLoaded] = useState(false)
 
-  const [selected, setSelected] = useState<MapListing | null>(null);
+  useEffect(() => {
+    loader.importLibrary('maps').then(() => loader.importLibrary('marker')).then(() => setLoaded(true))
+  }, [])
 
-  const onUnmount = useCallback(() => {}, []);
+  useEffect(() => {
+    if (!loaded || !mapRef.current || mapInstanceRef.current) return
 
-  // Only show listings that have been successfully geocoded
-  const pins = listings.filter(
-    (l): l is MapListing & { lat: number; lng: number } =>
-      l.lat !== null && l.lng !== null
-  );
+    async function initMap() {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { Map, InfoWindow }       = await loader.importLibrary('maps')   as any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { AdvancedMarkerElement } = await loader.importLibrary('marker') as any
 
-  // Center: average of all geocoded pins, or Europe fallback
-  const center =
-    pins.length > 0
-      ? {
-          lat: pins.reduce((s, l) => s + l.lat, 0) / pins.length,
-          lng: pins.reduce((s, l) => s + l.lng, 0) / pins.length,
+      const map = new Map(mapRef.current, {
+        center: { lat: 51.0, lng: 10.5 },
+        zoom: 5,
+        mapId: MAP_ID,
+        zoomControl: true,
+        streetViewControl: false,
+        mapTypeControl: false,
+        fullscreenControl: false,
+      })
+      mapInstanceRef.current = map
+      infoWindowRef.current = new InfoWindow()
+
+      const scheduleClose = () => {
+        closeTimerRef.current = setTimeout(() => {
+          infoWindowRef.current?.close()
+          openIdRef.current = null
+        }, 350)
+      }
+      scheduleCloseRef.current = scheduleClose
+
+      const cancelClose = () => {
+        if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null }
+      }
+
+      infoWindowRef.current.addListener('domready', () => {
+        const iw = document.querySelector('.gm-style-iw')
+        if (iw) {
+          iw.addEventListener('mouseenter', cancelClose)
+          iw.addEventListener('mouseleave', scheduleClose)
         }
-      : { lat: 48.0, lng: 15.0 };
+        const chr = document.querySelector<HTMLElement>('.gm-style-iw-chr')
+        if (chr) chr.style.display = 'none'
+        const iwc = document.querySelector<HTMLElement>('.gm-style-iw-c')
+        if (iwc) iwc.style.padding = '0'
+        const iwd = document.querySelector<HTMLElement>('.gm-style-iw-d')
+        if (iwd) { iwd.style.overflow = 'hidden'; iwd.style.padding = '0' }
+      })
+      infoWindowRef.current.addListener('closeclick', () => { openIdRef.current = null })
 
-  const zoom = pins.length <= 1 ? 6 : pins.length <= 4 ? 4 : 3;
+      const valid = listings.filter(l => l.lat !== null && l.lng !== null) as (MapListing & { lat: number; lng: number })[]
 
-  if (!isLoaded) {
-    return (
-      <div className="bg-gray-100 rounded-2xl flex items-center justify-center" style={MAP_STYLE}>
-        <p className="text-gray-400 text-sm">Karte wird geladen …</p>
-      </div>
-    );
-  }
+      for (const listing of valid) {
+        const pill   = makePill(listing)
+        const marker = new AdvancedMarkerElement({
+          map,
+          position: { lat: listing.lat, lng: listing.lng },
+          title: listing.title,
+          content: pill,
+        })
+        markersRef.current.set(listing.id, marker)
+
+        const statusStyle =
+          listing.status === 'available' ? 'background:#d1fae5;color:#065f46' :
+          listing.status === 'reserved'  ? 'background:#fef3c7;color:#92400e' :
+          listing.status === 'planning'  ? 'background:#e0e7ff;color:#3730a3' :
+                                           'background:#fee2e2;color:#991b1b'
+
+        const openCard = () => {
+          cancelClose()
+          const available = Math.max(0, listing.total - listing.reserved)
+          infoWindowRef.current?.setContent(`
+            <div style="width:260px;font-family:-apple-system,sans-serif;border-radius:12px;overflow:hidden;">
+              <div style="position:relative;">
+                <img src="${listing.img}" style="width:100%;height:150px;object-fit:cover;display:block;" alt="${listing.title}" />
+                <div style="position:absolute;top:8px;right:8px;background:rgba(255,255,255,0.92);color:#18181b;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;">${available}/${listing.total} frei</div>
+              </div>
+              <div style="padding:12px 14px 14px;">
+                <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:#71717a;">📍 ${listing.location}</p>
+                <a href="/marktplatz/${listing.id}" style="display:block;margin:0 0 6px;font-size:14px;font-weight:700;color:#003580;line-height:1.3;text-decoration:none;">${listing.title}</a>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;">
+                  <span style="${statusStyle};padding:2px 7px;border-radius:4px;font-size:11px;font-weight:600;">${listing.status_label}</span>
+                  <span style="background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700;">${listing.irr} p.a.</span>
+                </div>
+                <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:10px;">
+                  <span style="font-size:17px;font-weight:800;color:#003580;">${listing.preis}<span style="font-size:11px;font-weight:400;color:#a1a1aa;"> /Einheit</span></span>
+                </div>
+                <a href="/marktplatz/${listing.id}" style="display:block;background:#15803d;color:#fff;text-align:center;padding:9px 0;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Projektdetails →</a>
+              </div>
+            </div>
+          `)
+          openIdRef.current = listing.id
+          infoWindowRef.current?.open(map, marker)
+        }
+
+        openCardFnsRef.current.set(listing.id, openCard)
+        pill.addEventListener('mouseenter', () => { onHoverPin?.(listing.id); openCard() })
+        pill.addEventListener('mouseleave', () => { onHoverPin?.(null); scheduleClose() })
+        marker.addListener('click', openCard)
+      }
+
+      if (valid.length > 0) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const { LatLngBounds } = await loader.importLibrary('core') as any
+        const bounds = new LatLngBounds()
+        valid.forEach(l => bounds.extend({ lat: l.lat, lng: l.lng }))
+        map.fitBounds(bounds, 60)
+      }
+    }
+
+    initMap()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loaded])
+
+  // Bounce + amber highlight on hovered marker, restore all others
+  useEffect(() => {
+    if (!mapInstanceRef.current) return
+
+    markersRef.current.forEach((marker, id) => {
+      const listing = listings.find(l => l.id === id)
+      if (!listing) return
+      const pill = makePill(listing, false)
+      const fn = openCardFnsRef.current.get(id)
+      if (fn) pill.addEventListener('mouseenter', fn)
+      if (scheduleCloseRef.current) pill.addEventListener('mouseleave', scheduleCloseRef.current)
+      marker.content = pill
+    })
+
+    // Re-open info window if it was showing before pill replacement
+    if (openIdRef.current) {
+      const m = markersRef.current.get(openIdRef.current)
+      if (m) infoWindowRef.current?.open(mapInstanceRef.current, m)
+    }
+
+    if (hoveredId != null) {
+      const marker  = markersRef.current.get(hoveredId)
+      const listing = listings.find(l => l.id === hoveredId)
+      if (marker && listing) {
+        const pill = makePill(listing, true)
+        const fn = openCardFnsRef.current.get(hoveredId)
+        if (fn) pill.addEventListener('mouseenter', fn)
+        if (scheduleCloseRef.current) pill.addEventListener('mouseleave', scheduleCloseRef.current)
+        marker.content = pill
+        pill.animate(
+          [
+            { transform: 'translateY(-6px) scale(1.08)' },
+            { transform: 'translateY(-18px) scale(1.1)' },
+            { transform: 'translateY(-6px) scale(1.08)' },
+          ],
+          { duration: 900, easing: 'ease-in-out', iterations: Infinity }
+        )
+      }
+    }
+  }, [hoveredId, listings])
 
   return (
-    <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
-      <GoogleMap
-        mapContainerStyle={MAP_STYLE}
-        center={center}
-        zoom={zoom}
-        options={MAP_OPTIONS}
-        onUnmount={onUnmount}
-        onClick={() => setSelected(null)}
-      >
-        {pins.map((listing) => (
-          <Marker
-            key={listing.id}
-            position={{ lat: listing.lat, lng: listing.lng }}
-            icon={getPinIcon(listing.status)}
-            onClick={() => setSelected(listing)}
-          />
-        ))}
-
-        {selected && selected.lat !== null && selected.lng !== null && (
-          <InfoWindow
-            position={{ lat: selected.lat, lng: selected.lng }}
-            onCloseClick={() => setSelected(null)}
-          >
-            <div className="font-sans text-gray-800 min-w-[160px]">
-              <p className="text-[11px] text-gray-400 mb-0.5">#{selected.asset_id}</p>
-              <p className="font-bold text-[13px] leading-tight mb-1">{selected.title}</p>
-              <p className="text-[11px] text-gray-500 mb-2">{selected.location}</p>
-              <div className="flex gap-3 text-[11px]">
-                <span className="text-green-700 font-semibold">IRR: {selected.irr}</span>
-                <span className="text-gray-600">{selected.preis}/Einheit</span>
-              </div>
-              <p className="text-[11px] text-gray-700 font-semibold mt-1">
-                {Math.max(0, selected.total - selected.reserved)} Einheit(en) verfügbar
-              </p>
-              <p className={`mt-1 text-[10px] font-semibold ${
-                selected.status === "available" ? "text-green-600" :
-                selected.status === "reserved"  ? "text-amber-600" :
-                selected.status === "planning"  ? "text-indigo-500" :
-                "text-red-500"
-              }`}>
-                ● {selected.status_label}
-              </p>
-            </div>
-          </InfoWindow>
-        )}
-      </GoogleMap>
+    <div
+      className={fullHeight ? 'relative w-full h-full' : 'relative rounded-2xl overflow-hidden border border-gray-100 shadow-sm'}
+      style={{ height: fullHeight ? '100%' : '460px' }}
+    >
+      <div ref={mapRef} className="w-full h-full" />
+      {!loaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-gray-900 border-t-transparent" />
+        </div>
+      )}
     </div>
-  );
+  )
 }
