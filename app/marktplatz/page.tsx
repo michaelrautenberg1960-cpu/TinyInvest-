@@ -3,7 +3,6 @@ import Link from "next/link";
 import { supabase } from "../lib/supabase";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import SubPageHeader from "../components/SubPageHeader";
 import MarktplatzShell from "../components/MarktplatzShell";
 import type { MapListing } from "../components/ProjekteGoogleMap";
 import type { Listing } from "../components/ModelleCarousel";
@@ -80,10 +79,6 @@ export default async function MarktplatzPage() {
     sort_order:   row.sort_order,
   }));
 
-  const available = listings.filter((l) => l.status === "available").length;
-  const reserved  = listings.filter((l) => l.status === "reserved").length;
-  const planning  = listings.filter((l) => l.status === "planning").length;
-  const sold      = listings.filter((l) => l.status === "sold").length;
 
   const mapListings: MapListing[] = await Promise.all(
     rows.map(async (row) => {
@@ -126,7 +121,7 @@ export default async function MarktplatzPage() {
       "lowPrice": "65000",
       "highPrice": "95000",
       "offerCount": String(listings.length),
-      "availability": available > 0 ? "https://schema.org/InStock" : "https://schema.org/SoldOut",
+      "availability": listings.some(l => l.status === "available") ? "https://schema.org/InStock" : "https://schema.org/SoldOut",
       "url": "https://tinyhouse.investments/marktplatz",
     },
   };
@@ -146,32 +141,6 @@ export default async function MarktplatzPage() {
       <Script id="breadcrumb-schema-marktplatz" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar variant="sub" />
 
-      <SubPageHeader
-        badge="Marktplatz · Investment-Projekte 2026"
-        title="Projekte, in die Sie investieren können"
-        subtitle="§7g-fähige Tiny House Assets auf Vlemmix Trailer — direkt beim Hersteller gekauft, vollautomatisch bewirtschaftet durch tiny Escapes. Kein Kapital an TinyInvest."
-        img="/marktplatz.webp"
-      />
-
-      {/* KPI bar */}
-      <section className="bg-gray-950 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { value: String(listings.length), label: "Projekte gesamt",  sub: "Stand 2026" },
-              { value: String(available),        label: "Verfügbar",        sub: "Jetzt investierbar" },
-              { value: String(reserved),         label: "Reserviert",       sub: "In Abwicklung" },
-              { value: String(planning + sold),  label: "Sonstige",         sub: "Planung oder Sold" },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="font-data text-2xl font-black text-green-400">{s.value}</p>
-                <p className="text-[11px] font-bold text-white mt-1">{s.label}</p>
-                <p className="text-[10px] text-gray-500 mt-0.5">{s.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Grid with filter + split-screen */}
       <section className="py-16 bg-gray-50">

@@ -28,18 +28,33 @@ const loader = new Loader({
 })
 
 function makePill(listing: MapListing, hovered = false): HTMLElement {
-  const bg        = hovered ? '#f59e0b' : '#f0fdf4'
-  const border    = hovered ? '#d97706' : '#bbf7d0'
-  const textColor = hovered ? '#18181b' : '#166534'
-  const transform = hovered ? 'translateY(-6px) scale(1.08)' : 'translateY(0) scale(1)'
-  const shadow    = hovered ? '0 4px 14px rgba(0,0,0,0.25)' : '0 2px 8px rgba(0,0,0,0.12)'
+  const bg     = hovered ? '#d97706' : '#0d1b2e'
+  const border = hovered ? '#b45309' : '#0d1b2e'
+  const shadow = hovered ? '0 4px 16px rgba(0,0,0,0.35)' : '0 2px 10px rgba(0,0,0,0.22)'
 
   const wrapper = document.createElement('div')
-  wrapper.style.cssText = `display:inline-flex;flex-direction:column;align-items:center;cursor:pointer;transition:transform 0.15s ease;transform:${transform};filter:drop-shadow(${shadow});`
+  wrapper.style.cssText = `display:inline-flex;flex-direction:column;align-items:center;cursor:pointer;filter:drop-shadow(${shadow});`
 
   const bubble = document.createElement('div')
-  bubble.textContent = listing.irr
-  bubble.style.cssText = `background:${bg};color:${textColor};border:2px solid ${border};padding:5px 11px;border-radius:10px;font-family:sans-serif;font-size:12px;font-weight:700;white-space:nowrap;line-height:1;`
+  bubble.style.cssText = `background:${bg};color:#fff;border:2px solid ${border};padding:5px 10px 5px 7px;border-radius:10px;font-family:-apple-system,sans-serif;display:flex;align-items:center;gap:5px;white-space:nowrap;line-height:1;`
+
+  const icon = document.createElement('img')
+  icon.src = '/favicon.png'
+  icon.width = 18
+  icon.height = 18
+  icon.style.cssText = `border-radius:3px;flex-shrink:0;`
+
+  const irrText = document.createElement('span')
+  irrText.textContent = listing.irr
+  irrText.style.cssText = `font-size:12px;font-weight:800;letter-spacing:-0.2px;`
+
+  const irrUnit = document.createElement('span')
+  irrUnit.textContent = 'p.a.'
+  irrUnit.style.cssText = `font-size:9px;font-weight:400;opacity:0.65;margin-left:-1px;`
+
+  bubble.appendChild(icon)
+  bubble.appendChild(irrText)
+  bubble.appendChild(irrUnit)
 
   const arrowOuter = document.createElement('div')
   arrowOuter.style.cssText = `width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid ${border};`
