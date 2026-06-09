@@ -189,7 +189,13 @@ export default function ProjekteGoogleMap({ listings, hoveredId, onHoverPin, ful
         openCardFnsRef.current.set(listing.id, openCard)
         pill.addEventListener('mouseenter', () => { onHoverPin?.(listing.id); openCard() })
         pill.addEventListener('mouseleave', () => { onHoverPin?.(null); scheduleClose() })
-        marker.addListener('click', openCard)
+        marker.addListener('click', () => {
+          onHoverPin?.(listing.id)
+          openCard()
+          // scroll matching card into view
+          const card = document.getElementById(`map-card-${listing.id}`)
+          card?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+        })
       }
 
       if (valid.length > 0) {

@@ -60,6 +60,7 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
   if (compact) {
     return (
       <Link
+        id={`map-card-${item.id}`}
         href={`/marktplatz/${item.id}`}
         className={`group flex rounded-xl border bg-white overflow-hidden transition-shadow ${
           isHovered
@@ -142,7 +143,7 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
       onMouseLeave={() => onHover?.(null)}
     >
       <div
-        className={`relative overflow-hidden rounded-xl border bg-white transition-shadow duration-200 group-hover:shadow-xl ${
+        className={`relative overflow-hidden rounded-xl border bg-white transition-all duration-200 group-hover:shadow-xl group-hover:border-green-400 group-hover:ring-1 group-hover:ring-green-400 ${
           isHovered
             ? "border-green-400 shadow-xl ring-1 ring-green-400"
             : "border-gray-200"
