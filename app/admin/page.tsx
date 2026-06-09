@@ -791,7 +791,7 @@ export default function AdminPage() {
                 {filtered.map((lead) => (
                   <div key={lead.id} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-green-500/30 transition-all cursor-pointer" onClick={() => { const opening = selected?.id !== lead.id; setSelected(opening ? lead : null); if (opening && !leadNotizen[lead.id]) fetchNotizen(lead.id); }}>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
-                      <div className="w-11 h-11 rounded-full bg-green-700 flex items-center justify-center font-black text-sm flex-shrink-0">{lead.vorname[0]}{lead.nachname[0]}</div>
+                      <div className="w-11 h-11 rounded-full bg-green-700 flex items-center justify-center font-black text-sm flex-shrink-0">{lead.vorname?.[0]}{lead.nachname?.[0]}</div>
                       <div className="flex-grow min-w-0">
                         <div className="flex flex-wrap items-center gap-2 mb-1">
                           <span className="font-bold text-white">{lead.vorname} {lead.nachname}</span>

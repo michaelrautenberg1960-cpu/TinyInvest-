@@ -62,73 +62,70 @@ export function ProjectCard({ item, compact, onHover, isHovered }: ProjectCardPr
       <Link
         id={`map-card-${item.id}`}
         href={`/marktplatz/${item.id}`}
-        className={`group flex rounded-xl border bg-white overflow-hidden transition-shadow ${
+        className={`group flex rounded-xl border bg-white overflow-hidden transition-all ${
           isHovered
             ? "border-green-400 shadow-lg ring-1 ring-green-400"
-            : "border-gray-200 hover:shadow-md"
+            : "border-gray-200 hover:shadow-md hover:border-green-300"
         } ${cfg.dim}`}
         onMouseEnter={() => onHover?.(item.id)}
         onMouseLeave={() => onHover?.(null)}
       >
         {/* Image */}
-        <div className="relative w-28 shrink-0 overflow-hidden bg-gray-100">
+        <div className="relative w-36 shrink-0 overflow-hidden bg-gray-100">
           <img src={item.img} alt={item.title} className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute bottom-1.5 left-1.5 rounded bg-black/55 px-1.5 py-0.5 text-[9px] font-semibold text-white">
+          <div className="absolute bottom-2 left-2 rounded bg-black/55 px-1.5 py-0.5 text-[10px] font-semibold text-white">
             #{item.asset_id}
           </div>
         </div>
 
         {/* Content */}
-        <div className="flex flex-1 min-w-0 flex-col px-2.5 py-2 gap-1">
-          {/* Location + units */}
-          <div className="flex items-center justify-between gap-1">
-            <p className="text-[9px] font-medium uppercase tracking-wide text-gray-400 truncate">
-              📍 {item.location}
-            </p>
-            <span className="shrink-0 rounded-full bg-white/90 border border-gray-200 px-1.5 py-0.5 text-[9px] font-semibold text-gray-700">
-              {available}/{item.total} frei
+        <div className="flex flex-1 min-w-0 flex-col px-3 py-3 gap-2">
+
+          {/* Row 1: status left, tax badges right */}
+          <div className="flex items-start justify-between gap-1">
+            <span className={`shrink-0 rounded px-2 py-0.5 text-[10px] font-bold ${cfg.badge}`}>
+              {item.status_label}
             </span>
+            {taxBadges.length > 0 && (
+              <div className="flex flex-wrap justify-end gap-1">
+                {taxBadges.map(({ key, tip }) => (
+                  <span key={key} title={tip} className="flex items-center gap-0.5 rounded border border-violet-200 bg-violet-50 px-1.5 py-0.5">
+                    <span className="flex h-3 w-3 shrink-0 items-center justify-center rounded-full bg-violet-600 text-white text-[8px] font-bold leading-none">✓</span>
+                    <span className="text-[10px] font-semibold text-violet-700">{key}</span>
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
-          {/* Title */}
-          <p className="text-xs font-bold leading-snug text-[#003580] group-hover:underline line-clamp-2">
+          {/* Row 2: location */}
+          <p className="text-[11px] font-medium uppercase tracking-wide text-gray-400 truncate">
+            📍 {item.location}
+          </p>
+
+          {/* Row 3: title */}
+          <p className="text-sm font-bold leading-snug text-[#003580] group-hover:underline line-clamp-1">
             {item.title}
           </p>
 
-          {/* Chips row */}
-          <div className="flex flex-wrap gap-1">
-            <span className={`rounded px-1.5 py-0.5 text-[9px] font-semibold ${cfg.badge}`}>
-              {item.status_label}
-            </span>
-            <span className="rounded border border-teal-200 bg-teal-50 px-1.5 py-0.5 text-[9px] text-teal-700">
-              {item.category}
-            </span>
-            {taxBadges.map(({ key, tip }) => (
-              <span key={key} title={tip} className="flex items-center gap-0.5 rounded border border-violet-200 bg-violet-50 px-1.5 py-0.5">
-                <span className="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-violet-600 text-white text-[8px] font-bold leading-none">✓</span>
-                <span className="text-[9px] font-semibold text-violet-700">{key}</span>
-              </span>
-            ))}
+          {/* Row 4: category · availability */}
+          <div className="flex items-center gap-2 text-[10px] text-gray-500">
+            <span className="rounded border border-teal-200 bg-teal-50 px-1.5 py-0.5 text-teal-700 font-medium">{item.category}</span>
+            <span className="text-gray-300">·</span>
+            <span className="font-semibold text-gray-600">{available}/{item.total} frei</span>
           </div>
 
-          {/* Description excerpt */}
-          {excerpt && (
-            <p className="text-[10px] text-gray-400 leading-relaxed line-clamp-2">{excerpt}</p>
-          )}
-
-          {/* KPI row */}
-          <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-[10px] text-gray-500">
-            <span><b className="text-emerald-700">{item.irr}</b> IRR p.a.</span>
-            <span><b className="text-[#003580]">{item.preis}</b>/Einheit</span>
-            {item.npv && <span>NPV: <b>{item.npv}</b></span>}
-          </div>
-
-          {/* Availability bar */}
-          {!isPlanning && (
-            <div className={`w-full h-1 rounded-full ${cfg.track} mt-0.5`}>
-              <div className={`h-1 rounded-full ${cfg.bar}`} style={{ width: `${pct}%` }} />
+          {/* Row 5: price + IRR */}
+          <div className="mt-auto flex items-end justify-between pt-1.5 border-t border-gray-100">
+            <div>
+              <p className="text-[9px] text-gray-400 leading-none mb-0.5">Kaufpreis</p>
+              <p className="text-sm font-black text-gray-900">{item.preis}</p>
             </div>
-          )}
+            <div className="text-right">
+              <p className="text-[9px] text-gray-400 leading-none mb-0.5">IRR p.a.</p>
+              <p className="text-sm font-black text-emerald-600">{item.irr}</p>
+            </div>
+          </div>
         </div>
       </Link>
     );

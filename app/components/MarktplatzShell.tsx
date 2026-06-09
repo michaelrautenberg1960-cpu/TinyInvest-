@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import ProjekteGrid, { ProjectCard } from "./ProjekteGrid";
 import MarktplatzMap from "./MarktplatzMap";
 import type { Listing } from "./ModelleCarousel";
@@ -10,13 +11,31 @@ interface Props {
   mapListings: MapListing[];
 }
 
-export default function MarktplatzShell({ listings, mapListings }: Props) {
+function MarktplatzShellInner({ listings, mapListings }: Props) {
+  const router       = useRouter();
+  const searchParams = useSearchParams();
+
   const [mapOpen, setMapOpen]     = useState(false);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [tab, setTab]             = useState<"map" | "list">("map");
   const [listOpen, setListOpen]   = useState(true);
 
-  const close = () => { setMapOpen(false); setHoveredId(null); };
+  // Sync mapOpen from URL on mount
+  useEffect(() => {
+    if (searchParams.get("map") === "1") setMapOpen(true);
+  }, [searchParams]);
+
+  const openMap = () => {
+    setTab("map");
+    setMapOpen(true);
+    router.replace("/marktplatz?map=1", { scroll: false });
+  };
+
+  const close = () => {
+    setMapOpen(false);
+    setHoveredId(null);
+    router.replace("/marktplatz", { scroll: false });
+  };
 
   return (
     <>
@@ -36,7 +55,7 @@ export default function MarktplatzShell({ listings, mapListings }: Props) {
       </div>
 
       {/* ── Normal grid ────────────────────────────────────── */}
-      <ProjekteGrid listings={listings} onOpenMap={() => { setTab("map"); setMapOpen(true); }} />
+      <ProjekteGrid listings={listings} onOpenMap={openMap} />
 
       {/* ── Split-screen overlay ───────────────────────────── */}
       {mapOpen && (
@@ -126,5 +145,13 @@ export default function MarktplatzShell({ listings, mapListings }: Props) {
         </div>
       )}
     </>
+  );
+}
+
+export default function MarktplatzShell(props: Props) {
+  return (
+    <Suspense fallback={null}>
+      <MarktplatzShellInner {...props} />
+    </Suspense>
   );
 }

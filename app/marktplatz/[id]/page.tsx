@@ -5,7 +5,7 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { ListingAccessGate } from "@/app/components/listing/ListingAccessGate";
 import { ListingDetailSections } from "@/app/components/listing/ListingDetailSections";
-import { CollapsibleSidebar } from "@/app/components/listing/CollapsibleSidebar";
+import { BackButton } from "@/app/components/BackButton";
 import type { Listing } from "@/app/components/ModelleCarousel";
 import type { Metadata } from "next";
 
@@ -76,7 +76,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
   };
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className="bg-gray-100 min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
@@ -164,16 +164,11 @@ export default async function ListingDetailPage({ params }: PageProps) {
             </div>
 
             {/* Back */}
-            <Link
-              href="/marktplatz"
-              className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-700 transition-colors"
-            >
-              ← Alle Projekte
-            </Link>
+            <BackButton />
           </aside>
 
-          {/* ── Desktop collapsible sidebar ───────────────── */}
-          <CollapsibleSidebar>
+          {/* ── Desktop sidebar ───────────────────────────── */}
+          <div className="hidden lg:flex w-64 shrink-0 order-1 flex-col space-y-4">
             {/* Asset ID */}
             <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
               <p className="text-[10px] text-gray-400 uppercase tracking-wide">Asset-ID</p>
@@ -224,16 +219,14 @@ export default async function ListingDetailPage({ params }: PageProps) {
               <div className="flex items-center gap-1.5"><span className="text-green-600">✓</span> Direkt beim Hersteller</div>
               <div className="flex items-center gap-1.5"><span className="text-green-600">✓</span> Vollautomatisch bewirtschaftet</div>
             </div>
-            <Link href="/marktplatz" className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-700 transition-colors">
-              ← Alle Projekte
-            </Link>
-          </CollapsibleSidebar>
+            <BackButton />
+          </div>
 
           {/* ── Main Content ──────────────────────────────── */}
           <div className="flex-1 min-w-0 order-1 lg:order-2">
 
             {/* Hero */}
-            <div className="relative rounded-2xl overflow-hidden h-56 sm:h-72 mb-5">
+            <div className="relative rounded-2xl overflow-hidden h-72 sm:h-120 mb-5">
               <img
                 src={listing.img}
                 alt={listing.title}
