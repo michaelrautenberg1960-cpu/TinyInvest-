@@ -5,6 +5,7 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { ListingAccessGate } from "@/app/components/listing/ListingAccessGate";
 import { ListingDetailSections } from "@/app/components/listing/ListingDetailSections";
+import { CollapsibleSidebar } from "@/app/components/listing/CollapsibleSidebar";
 import type { Listing } from "@/app/components/ModelleCarousel";
 import type { Metadata } from "next";
 
@@ -94,8 +95,8 @@ export default async function ListingDetailPage({ params }: PageProps) {
 
         <div className="flex flex-col lg:flex-row gap-6">
 
-          {/* ── Left Sidebar ──────────────────────────────── */}
-          <aside className="w-full lg:w-64 shrink-0 space-y-4 order-2 lg:order-1">
+          {/* ── Mobile sidebar (no collapse toggle needed) ── */}
+          <aside className="w-full space-y-4 order-2 lg:hidden">
 
             {/* Asset ID */}
             <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
@@ -144,8 +145,8 @@ export default async function ListingDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Access gate — desktop, id for scroll target */}
-            <div id="unlock-section" className="transition-all duration-300">
+            {/* Access gate */}
+            <div id="unlock-section-mobile" className="transition-all duration-300">
               <ListingAccessGate listingId={listing.id} />
             </div>
 
@@ -171,6 +172,63 @@ export default async function ListingDetailPage({ params }: PageProps) {
             </Link>
           </aside>
 
+          {/* ── Desktop collapsible sidebar ───────────────── */}
+          <CollapsibleSidebar>
+            {/* Asset ID */}
+            <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide">Asset-ID</p>
+              <p className="font-data font-bold text-gray-700 mt-0.5">#{listing.asset_id}</p>
+            </div>
+            {/* Price */}
+            <div className="rounded-xl border border-gray-200 bg-white p-4">
+              <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400 mb-2">Preis / Einheit</p>
+              <p className="font-data text-2xl font-black text-gray-900">{listing.preis}</p>
+              <p className="text-[11px] text-gray-400 mt-1">{listing.category}</p>
+            </div>
+            {/* Rendite-Kennzahlen */}
+            <div className="rounded-xl border border-gray-200 bg-white p-4">
+              <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400 mb-2">Rendite-Kennzahlen</p>
+              <div className="flex justify-between items-end">
+                <div>
+                  <p className="text-[10px] text-gray-400">IRR p.a.</p>
+                  <p className="font-data text-lg font-black text-green-700">{listing.irr}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-[10px] text-gray-400">NPV</p>
+                  <p className="font-data text-lg font-black text-gray-800">{listing.npv}</p>
+                </div>
+              </div>
+            </div>
+            {/* Availability */}
+            <div className="rounded-xl border border-gray-200 bg-white p-4">
+              <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400 mb-2">Verfügbarkeit</p>
+              <div className="flex items-center justify-between mb-1.5">
+                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${cfg.badgeCls}`}>
+                  {listing.status_label}
+                </span>
+                <span className="text-[11px] text-gray-500 font-semibold">
+                  {Math.max(0, listing.total - listing.reserved)}/{listing.total} frei
+                </span>
+              </div>
+              <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                <div className="h-1.5 bg-green-600 rounded-full transition-all" style={{ width: `${pct}%` }} />
+              </div>
+            </div>
+            {/* Access gate */}
+            <div id="unlock-section" className="transition-all duration-300">
+              <ListingAccessGate listingId={listing.id} />
+            </div>
+            {/* Trust badges */}
+            <div className="rounded-xl border border-gray-200 bg-white p-4 text-xs text-gray-500 space-y-1.5">
+              <div className="flex items-center gap-1.5"><span className="text-green-600">✓</span> §7g-fähige Assets</div>
+              <div className="flex items-center gap-1.5"><span className="text-green-600">✓</span> Direkt beim Hersteller</div>
+              <div className="flex items-center gap-1.5"><span className="text-green-600">✓</span> Vollautomatisch bewirtschaftet</div>
+            </div>
+            <Link href="/marktplatz" className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-700 transition-colors">
+              ← Alle Projekte
+            </Link>
+          </CollapsibleSidebar>
+
           {/* ── Main Content ──────────────────────────────── */}
           <div className="flex-1 min-w-0 order-1 lg:order-2">
 
@@ -194,11 +252,6 @@ export default async function ListingDetailPage({ params }: PageProps) {
                 <p className="text-[10px] text-white/60 mb-1">{listing.category} · {listing.location}</p>
                 <h1 className="text-xl sm:text-2xl font-black text-white leading-tight">{listing.title}</h1>
               </div>
-            </div>
-
-            {/* Mobile access gate — id for scroll target */}
-            <div id="unlock-section-mobile" className="mb-5 block lg:hidden transition-all duration-300">
-              <ListingAccessGate listingId={listing.id} />
             </div>
 
             {/* Sections with 🔒 */}
