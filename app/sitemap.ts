@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/marktplatz`,
-      lastModified: "2026-05-14",
+      lastModified: "2026-06-09",
       changeFrequency: "weekly",
       priority: 0.9,
     },
@@ -291,6 +291,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: "2026-05-23",
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/wissen/tiny-house-finanzierung`,
+      lastModified: "2026-06-09",
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
   ];
 }

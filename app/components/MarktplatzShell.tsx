@@ -11,12 +11,15 @@ interface Props {
 }
 
 export default function MarktplatzShell({ listings, mapListings }: Props) {
-  const [mapOpen, setMapOpen] = useState(false);
+  const [mapOpen, setMapOpen]   = useState(false);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [tab, setTab]           = useState<"map" | "list">("map");
+
+  const close = () => { setMapOpen(false); setHoveredId(null); };
 
   return (
     <>
-      {/* ── Trigger button ─────────────────────────────────── */}
+      {/* ── Header ─────────────────────────────────────────── */}
       <div className="flex items-center justify-between mb-8">
         <div>
           <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">
@@ -32,18 +35,46 @@ export default function MarktplatzShell({ listings, mapListings }: Props) {
       </div>
 
       {/* ── Normal grid ────────────────────────────────────── */}
-      <ProjekteGrid listings={listings} onOpenMap={() => setMapOpen(true)} />
+      <ProjekteGrid listings={listings} onOpenMap={() => { setTab("map"); setMapOpen(true); }} />
 
       {/* ── Split-screen overlay ───────────────────────────── */}
       {mapOpen && (
-        <div className="fixed inset-0 z-50 flex bg-white">
-          {/* Card list */}
-          <div className="flex w-[42%] shrink-0 flex-col border-r border-gray-200 overflow-hidden">
-            {/* Header */}
-            <div className="flex items-center gap-3 border-b border-gray-200 bg-white px-4 py-3 shrink-0">
+        <div className="fixed inset-0 z-50 flex flex-col sm:flex-row bg-white">
+
+          {/* Mobile tab bar — hidden sm+ */}
+          <div className="flex sm:hidden shrink-0 border-b border-gray-200 bg-white">
+            <button
+              onClick={() => setTab("map")}
+              className={`flex-1 py-3 text-sm font-semibold transition-colors ${
+                tab === "map" ? "border-b-2 border-green-600 text-green-700" : "text-gray-400"
+              }`}
+            >
+              🗺 Karte
+            </button>
+            <button
+              onClick={() => setTab("list")}
+              className={`flex-1 py-3 text-sm font-semibold transition-colors ${
+                tab === "list" ? "border-b-2 border-green-600 text-green-700" : "text-gray-400"
+              }`}
+            >
+              ☰ Liste
+            </button>
+            <button
+              onClick={close}
+              className="px-4 text-gray-400 hover:text-gray-700 text-lg"
+              aria-label="Schließen"
+            >
+              ✕
+            </button>
+          </div>
+
+          {/* Card list panel */}
+          <div className={`${tab === "list" ? "flex" : "hidden"} sm:flex w-full sm:w-[42%] shrink-0 flex-col border-r border-gray-200 overflow-hidden`}>
+            {/* Desktop header */}
+            <div className="hidden sm:flex items-center gap-3 border-b border-gray-200 bg-white px-4 py-3 shrink-0">
               <span className="text-sm font-semibold text-gray-900">{listings.length} Projekte</span>
               <button
-                onClick={() => { setMapOpen(false); setHoveredId(null); }}
+                onClick={close}
                 className="ml-auto flex items-center gap-1.5 rounded-lg border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors"
               >
                 ✕ Schließen
@@ -64,8 +95,8 @@ export default function MarktplatzShell({ listings, mapListings }: Props) {
             </div>
           </div>
 
-          {/* Map */}
-          <div className="flex-1 min-w-0">
+          {/* Map panel */}
+          <div className={`${tab === "map" ? "flex" : "hidden"} sm:flex flex-1 min-w-0`}>
             <MarktplatzMap
               listings={mapListings}
               hoveredId={hoveredId}
