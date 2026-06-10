@@ -108,6 +108,9 @@ export default function Home() {
             <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all bg-white">
               Kapitalanlage-Guide →
             </Link>
+            <Link href="/wissen/iab-tiny-house" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all bg-white">
+              IAB Tiny House →
+            </Link>
           </div>
         </div>
       </section>

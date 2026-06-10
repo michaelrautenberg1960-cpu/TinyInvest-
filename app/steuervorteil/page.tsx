@@ -289,6 +289,16 @@ export default function SteuerVorteilPage() {
           </div>
           <div className="mt-8 border-t border-gray-100 pt-8">
             <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-4">Weiterführende Artikel</p>
+            <Link href="/wissen/iab-tiny-house" className="group flex items-center gap-4 bg-white border border-gray-100 rounded-2xl p-4 hover:border-green-200 hover:shadow-sm transition-all text-left mb-3">
+              <div className="relative w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
+                <Image src="/images/outside/tiny-house-escape-wald.webp" alt="IAB Tiny House" fill className="object-cover group-hover:scale-105 transition-transform duration-300" priority sizes="(max-width: 768px) 100vw, 896px" />
+              </div>
+              <div>
+                <span className="text-[10px] bg-amber-100 text-amber-700 font-bold px-2 py-0.5 rounded-full">Steuer-Deep-Dive</span>
+                <p className="font-black text-gray-900 text-[13px] mt-1 group-hover:text-green-700 transition-colors">IAB Tiny House Guide →</p>
+                <p className="text-gray-400 text-[11px]">Investitionsabzugsbetrag beantragen, Schritt für Schritt</p>
+              </div>
+            </Link>
             <Link href="/wissen/afa-abschreibung" className="group flex items-center gap-4 bg-white border border-gray-100 rounded-2xl p-4 hover:border-green-200 hover:shadow-sm transition-all text-left">
               <div className="relative w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
                 <Image src="/images/outside/tiny-house-escape-wald.webp" alt="AfA Abschreibung" fill className="object-cover group-hover:scale-105 transition-transform duration-300" priority sizes="(max-width: 768px) 100vw, 896px" />

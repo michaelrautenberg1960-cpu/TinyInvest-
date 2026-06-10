@@ -40,7 +40,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/iab",
-        destination: "/wissen/investitionsabzugsbetrag-tiny-house",
+        destination: "/wissen/iab-tiny-house",
+        permanent: true,
+      },
+      {
+        source: "/wissen/investitionsabzugsbetrag-tiny-house",
+        destination: "/wissen/iab-tiny-house",
         permanent: true,
       },
     ];

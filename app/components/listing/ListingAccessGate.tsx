@@ -95,7 +95,8 @@ export function ListingAccessGate({ listingId }: Props) {
           required
           placeholder="Telefonnummer"
           value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          pattern="[0-9+\s\-()]*"
+          onChange={(e) => setPhone(e.target.value.replace(/[^0-9+\s\-()]/g, ""))}
           className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
         />
         <input
