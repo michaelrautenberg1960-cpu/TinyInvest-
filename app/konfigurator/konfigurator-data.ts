@@ -77,7 +77,7 @@ export const MODELS: ModelConfig[] = [
     dimensions: "840 × 255 × 340 (H) cm",
     trailerDimensions: "840 × 244 cm",
     trailer: "TH840 – 3 Achsen × 1.800 kg",
-    basePrice: { offgrid: 81500, ongrid: 69000 },
+    basePrice: { offgrid: 98000, ongrid: 89000 },
     image: "/images/outside/Escape2.webp",
     loft: true,
     tag: "Größeres Modell",

@@ -7,9 +7,9 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "IAB Tiny House 2026: 30.000 € Steuern sparen | TinyInvest",
+  title: "IAB Tiny House: Bis zu 30.000 € Steuern sparen – noch VOR dem Kauf | TinyInvest",
   description:
-    "Der Investitionsabzugsbetrag (IAB) für Tiny Houses: So sparst du bis zu 30.000 € Steuern im Vorjahr des Kaufs. Schritt-für-Schritt für Investoren.",
+    "IAB Tiny House 2026: Mit §7g EStG bis zu 16.800 € Steuererstattung erhalten – bevor du auch nur einen Euro ausgibst. Voraussetzungen, Fristen & Rechenbeispiel.",
   keywords:
     "IAB tiny house, iab tiny house 2026, investitionsabzugsbetrag tiny house, IAB beantragen anleitung, IAB erfahrungen, tiny house steuer vorziehen",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -25,6 +25,10 @@ export const metadata = {
 };
 
 const faqItems = [
+  {
+    question: "Was ist der Investitionsabzugsbetrag beim Tiny House genau?",
+    answer: "Der Investitionsabzugsbetrag Tiny House ist ein Steuerinstrument nach §7g EStG, das es Investoren erlaubt, bis zu 50 % des geplanten Kaufpreises bereits im Jahr vor dem Kauf vom zu versteuernden Einkommen abzuziehen. Bei einem Tiny House für 80.000 € bedeutet das maximal 40.000 € Investitionsabzugsbetrag – und bei 42 % Grenzsteuersatz sofort rund 16.800 € Steuererstattung. Der Investitionsabzugsbetrag wird im Kaufjahr aufgelöst und mit der Sonder-AfA (40 %) kombiniert.",
+  },
   {
     question: "Wer darf den IAB für ein Tiny House bilden?",
     answer: "Jeder, der das Tiny House im Rahmen einer betrieblichen oder Vermietungseinkunftsart nutzt. Das schließt Selbstständige, Unternehmer, Freiberufler und Arbeitnehmer mit Vermietungseinkünften ein. Voraussetzung: Der Gewinn darf im Vorjahr 200.000 € (Einzelunternehmen/Freiberufler) nicht übersteigen.",
@@ -53,10 +57,6 @@ const faqItems = [
     question: "Kann ich den IAB für ein Tiny House auch 2026 noch nutzen?",
     answer: "Ja, §7g EStG ist 2026 unverändert in Kraft. Das IAB Tiny House Modell ist sogar attraktiver als je zuvor: Seit 2024 kann die degressive AfA (30 %) erstmals mit IAB und Sonder-AfA (40 %) kombiniert werden – zusammen über 70 % Sofortabschreibung im Kaufjahr. Wer 2026 investiert, kann außerdem prüfen ob der IAB rückwirkend noch für 2025 möglich ist, sofern der Steuerbescheid 2025 noch nicht bestandskräftig ist.",
   },
-  {
-    question: "Was ist der Investitionsabzugsbetrag beim Tiny House genau?",
-    answer: "Der Investitionsabzugsbetrag Tiny House ist ein Steuerinstrument nach §7g EStG, das es Investoren erlaubt, bis zu 50 % des geplanten Kaufpreises bereits im Jahr vor dem Kauf vom zu versteuernden Einkommen abzuziehen. Bei einem Tiny House für 80.000 € bedeutet das maximal 40.000 € Investitionsabzugsbetrag – und bei 42 % Grenzsteuersatz sofort rund 16.800 € Steuererstattung. Der Investitionsabzugsbetrag wird im Kaufjahr aufgelöst und mit der Sonder-AfA (40 %) kombiniert.",
-  },
 ];
 
 export default function IabTinyHousePage() {
@@ -67,7 +67,7 @@ export default function IabTinyHousePage() {
     "description": "Wie du den IAB für ein Tiny House nutzt: Voraussetzungen, Fristen, Beantragung beim Finanzamt und typische Erfahrungen.",
     "url": "https://tinyhouse.investments/wissen/iab-tiny-house",
     "datePublished": "2026-04-15",
-    "dateModified": "2026-05-06",
+    "dateModified": "2026-06-11",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
     "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/IAB Tiny House 2026 So sparst du bis zu 30.000 € vor dem Kauf.webp" },
@@ -159,10 +159,18 @@ export default function IabTinyHousePage() {
               <time dateTime="2026-04-15">15. April 2026</time>
             </div>
           </div>
-          <p className="text-gray-500 text-base leading-relaxed max-w-2xl mb-8">
+          <p className="text-gray-500 text-base leading-relaxed max-w-2xl mb-6">
             Das IAB Tiny House Modell ist das mächtigste Steuerinstrument im deutschen Steuerrecht für Investoren –
             du sparst Steuern, bevor du auch nur einen Euro ausgegeben hast. 2026 ist die Kombination aus IAB, Sonder-AfA und degressiver AfA so effektiv wie nie zuvor.
           </p>
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-8">
+            <p className="text-green-700 font-bold text-xs uppercase tracking-widest mb-2">IAB Tiny House – kurz erklärt</p>
+            <p className="text-gray-700 text-[14px] leading-relaxed">
+              Mit dem <strong>IAB Tiny House</strong>-Modell (§7g EStG) setzt du bis zu 50 % des geplanten Kaufpreises schon im Vorjahr steuerlich ab –
+              ohne das Haus bereits zu besitzen. Bei 80.000 € Kaufpreis und 42 % Steuersatz bedeutet das bis zu <strong>16.800 € Sofort-Erstattung</strong>.
+              Im Kaufjahr folgt die Sonder-AfA (40 %), seit 2024 kombinierbar mit degressiver AfA (30 %) – zusammen über 70 % Sofortabschreibung.
+            </p>
+          </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "16/9" }}>
@@ -210,9 +218,9 @@ export default function IabTinyHousePage() {
           <div className="max-w-3xl space-y-10 mb-14">
 
             <div>
-              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Der IAB als Steuerhebel für Tiny House Investments</h2>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Was ist der IAB beim Tiny House?</h2>
               <p className="text-gray-700 text-base leading-relaxed">
-                Der Investitionsabzugsbetrag (IAB) nach § 7g des Einkommensteuergesetzes (EStG) gehört zu den attraktivsten Steuergestaltungsinstrumenten im deutschen Recht. Ursprünglich zur Förderung kleiner und mittlerer Unternehmen gedacht, entfaltet dieses Werkzeug in Kombination mit mobilen Tiny Houses eine enorme Hebelwirkung für private und geschäftliche Investoren. Da ein Tiny House auf einem zertifizierten Trailer rechtlich als bewegliches Wirtschaftsgut eingestuft wird, können Anleger hiermit legal und hocheffizient Steuerzahlungen in privates Vermögen umwandeln.
+                Das IAB Tiny House ist ein Steuerinstrument nach § 7g des Einkommensteuergesetzes (EStG), das Investoren erlaubt, bis zu 50 % des geplanten Kaufpreises im Vorjahr des Kaufs steuerlich abzuziehen – bevor das Haus auch nur existiert. Ursprünglich zur Förderung kleiner und mittlerer Unternehmen gedacht, entfaltet dieses Werkzeug in Kombination mit mobilen Tiny Houses eine enorme Hebelwirkung für private und geschäftliche Investoren. Da ein Tiny House auf einem zertifizierten Trailer rechtlich als bewegliches Wirtschaftsgut eingestuft wird, können Anleger hiermit legal und hocheffizient Steuerzahlungen in privates Vermögen umwandeln.
               </p>
             </div>
 

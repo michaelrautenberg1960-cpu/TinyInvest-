@@ -22,11 +22,11 @@ TinyInvest ist eine Next.js-Plattform, über die Privatinvestoren mobile Tiny Ho
 
 | Technologie | Einsatz |
 |---|---|
-| **Next.js 15** (App Router) | Frontend + API Routes |
+| **Next.js 16** (App Router) | Frontend + API Routes |
 | **TypeScript** | Typsicherheit |
 | **Tailwind CSS** | Styling |
 | **Supabase** | PostgreSQL Datenbank + Magic Link & Google OAuth |
-| **Google Maps API** | Standortkarte (`/projekte`) |
+| **Resend** | E-Mail-Versand (Lead-Formular) |
 | **Vercel** | Hosting & Deployment |
 
 ---
@@ -39,8 +39,12 @@ app/
 ├── layout.tsx                        # Root Layout + globale Metadata
 ├── sitemap.ts                        # Automatische XML-Sitemap (50+ Einträge)
 │
+├── lib/
+│   ├── supabase.ts                   # Supabase Client
+│   └── og.ts                        # Open Graph Hilfsfunktionen
+│
 ├── marktplatz/                       # Listing-Marktplatz (Supabase-Live-Daten)
-├── projekte/                         # Projektübersicht + Google Maps
+│   └── [id]/                         # Einzelnes Listing (dynamische Route)
 ├── renditemodell/                    # Interaktiver Renditerechner
 ├── steuervorteil/                    # §7g IAB + AfA Erklärung
 ├── so-funktioniert-es/               # Investor-Prozess Schritt für Schritt
@@ -50,13 +54,6 @@ app/
 ├── konfigurator/                     # Tiny House Konfigurator
 ├── tiny-house-als-kapitalanlage/     # SEO-Pillar-Landingpage (Priority 1.0)
 │
-├── senioren/                         # Landingpage Senioren & Altersvorsorge
-├── aerzte/                           # Landingpage Ärzte (§7g IAB)
-├── freiberufler/                     # Landingpage Freiberufler (§7g IAB)
-├── it-freelancer/                    # Landingpage IT-Freelancer (§7g IAB)
-├── unternehmer/                      # Landingpage Unternehmer (§7g IAB)
-├── zielgruppen/                      # Hub: Alle Selbstständigen-Zielgruppen
-│
 ├── agb/                              # Allgemeine Geschäftsbedingungen
 ├── impressum/                        # Impressum
 ├── datenschutz/                      # Datenschutzerklärung
@@ -65,13 +62,14 @@ app/
 │   ├── iab/                          # IAB-Steuerrechner (WebApplication schema)
 │   └── rendite/                      # Renditerechner (WebApplication schema)
 │
-├── wissen/                           # SEO-Wissens-Hub (26 Artikel)
+├── wissen/                           # SEO-Wissens-Hub (33 Artikel)
 │   ├── page.tsx                      # Hub-Übersichtsseite
 │   │
 │   ├── — Steuer & §7g —
 │   ├── 7g-tiny-house-investment/     # §7g Leitfaden (Priority 1.0)
 │   ├── afa-abschreibung/             # AfA-Abschreibung erklärt
 │   ├── iab-tiny-house/               # IAB Tiny House Guide
+│   ├── investitionsabzugsbetrag-tiny-house/ # IAB Detailguide
 │   ├── tiny-house-steuern-sparen/    # Steuern sparen Anleitung
 │   ├── tiny-house-steuer-risiken/    # Steuerrisiken & Fallstricke
 │   ├── ferienimmobilie-steuer/       # Steuer bei Ferienimmobilien
@@ -99,10 +97,18 @@ app/
 │   ├── tiny-house-airbnb/            # Tiny House auf Airbnb vermieten
 │   ├── host-werden/                  # Host werden bei tiny Escapes
 │   │
-│   └── — Altersvorsorge (Senioren-Cluster) —
-│       ├── tiny-house-altersvorsorge/     # Sachwert statt Riester
-│       ├── rentenlucke-schliessen/        # Rentenlücke mit Cashflow schließen
-│       └── tiny-house-vs-etf-altersvorsorge/ # Tiny House vs. ETF Vergleich
+│   ├── — Altersvorsorge (Senioren-Cluster) —
+│   ├── tiny-house-altersvorsorge/    # Sachwert statt Riester
+│   ├── rentenlucke-schliessen/       # Rentenlücke mit Cashflow schließen
+│   ├── tiny-house-vs-etf-altersvorsorge/ # Tiny House vs. ETF Vergleich
+│   │
+│   └── — Zielgruppen-Landingpages —
+│       ├── senioren/                 # Senioren & Altersvorsorge
+│       ├── aerzte/                   # Ärzte (§7g IAB)
+│       ├── freiberufler/             # Freiberufler (§7g IAB)
+│       ├── it-freelancer/            # IT-Freelancer (§7g IAB)
+│       ├── unternehmer/              # Unternehmer (§7g IAB)
+│       └── zielgruppen/              # Hub: Alle Selbstständigen-Zielgruppen
 │
 ├── investor/                         # Investor-Dashboard (Auth required)
 │   ├── page.tsx                      # Dashboard (Assets, KPIs, Buchungen)
@@ -113,7 +119,7 @@ app/
 │   └── page.tsx
 │
 ├── api/
-│   ├── contact/route.ts              # Lead-Formular → Supabase
+│   ├── contact/route.ts              # Lead-Formular → Supabase + Resend
 │   ├── investor/data/route.ts        # Investor-Dashboard Daten
 │   └── admin/
 │       ├── leads/                    # Leads verwalten
@@ -191,9 +197,9 @@ public/
 ```
 /tiny-house-als-kapitalanlage  ← Pillar (Priority 1.0)
          ↑
-  alle 26 /wissen Artikel verlinken zurück zum Pillar
+  alle 33 /wissen Artikel verlinken zurück zum Pillar
 
-/senioren  ← Pillar für Altersvorsorge-Cluster
+/wissen/senioren  ← Pillar für Altersvorsorge-Cluster
          ↑
   /wissen/tiny-house-altersvorsorge
   /wissen/rentenlucke-schliessen
@@ -204,7 +210,7 @@ public/
 
 | Schema | Seiten |
 |---|---|
-| `Article` + `FAQPage` + `BreadcrumbList` | Alle 26 /wissen Artikel + /senioren + /aerzte + /freiberufler + /it-freelancer + /unternehmer |
+| `Article` + `FAQPage` + `BreadcrumbList` | Alle 33 /wissen Artikel (inkl. /wissen/senioren, /wissen/aerzte, /wissen/freiberufler, /wissen/it-freelancer, /wissen/unternehmer, /wissen/zielgruppen) |
 | `WebApplication` + `FAQPage` | /rechner/iab, /rechner/rendite |
 | `Product` + `BreadcrumbList` | /marktplatz |
 | `Organization` + `WebSite` | Startseite |
@@ -215,8 +221,8 @@ public/
 
 50+ Einträge in `app/sitemap.ts`, inkl. Priority-Gewichtung:
 - Priority 1.0: `/`, `/tiny-house-als-kapitalanlage`, `/wissen/7g-tiny-house-investment`
-- Priority 0.9: alle /wissen Artikel, /senioren, /aerzte, /freiberufler, /it-freelancer, /unternehmer, /rechner/iab, /rechner/rendite
-- Priority 0.85: /wissen Hub, /zielgruppen, /hosts
+- Priority 0.9: alle /wissen Artikel (inkl. /wissen/senioren, /wissen/aerzte, /wissen/freiberufler, /wissen/it-freelancer, /wissen/unternehmer, /wissen/zielgruppen), /rechner/iab, /rechner/rendite
+- Priority 0.85: /wissen Hub, /hosts
 - Priority 0.6–0.8: /marktplatz, /projekte, /galerie, /konfigurator
 
 Private Seiten (`/admin`, `/investor`, `/investor/login`, `/investor/auth/callback`) sind bewusst **nicht** in der Sitemap.
@@ -227,7 +233,7 @@ Private Seiten (`/admin`, `/investor`, `/investor/login`, `/investor/auth/callba
 |---|---|---|
 | `/` | Startseite | Organization + WebSite |
 | `/marktplatz` | Live-Marktplatz (Supabase) | Product + BreadcrumbList |
-| `/projekte` | Projekte + Google Maps | — |
+| `/marktplatz/[id]` | Einzelnes Listing (dynamisch) | Product + BreadcrumbList |
 | `/renditemodell` | Renditerechner | — |
 | `/steuervorteil` | §7g Steuer-Guide | — |
 | `/so-funktioniert-es` | Investor-Prozess | — |
@@ -236,16 +242,16 @@ Private Seiten (`/admin`, `/investor`, `/investor/login`, `/investor/auth/callba
 | `/partner` | Vertrieb-Programm | — |
 | `/konfigurator` | Konfigurator | — |
 | `/tiny-house-als-kapitalanlage` | SEO-Pillar-Landingpage (Priority 1.0) | Article + FAQPage + BreadcrumbList |
-| `/senioren` | Landingpage Senioren & Altersvorsorge | Article + FAQPage + BreadcrumbList |
-| `/aerzte` | Landingpage Ärzte (§7g IAB) | Article + FAQPage + BreadcrumbList |
-| `/freiberufler` | Landingpage Freiberufler (§7g IAB) | Article + FAQPage + BreadcrumbList |
-| `/it-freelancer` | Landingpage IT-Freelancer (§7g IAB) | Article + FAQPage + BreadcrumbList |
-| `/unternehmer` | Landingpage Unternehmer (§7g IAB) | Article + FAQPage + BreadcrumbList |
-| `/zielgruppen` | Hub: Alle Selbstständigen-Zielgruppen | Article + BreadcrumbList |
 | `/rechner/iab` | IAB-Steuerrechner | WebApplication + FAQPage |
 | `/rechner/rendite` | Renditerechner | WebApplication + FAQPage |
-| `/wissen` | Wissens-Hub (26 Artikel) | CollectionPage |
-| `/wissen/*` | Einzelartikel (26 Stück) | Article + FAQPage + BreadcrumbList |
+| `/wissen` | Wissens-Hub (33 Artikel) | CollectionPage |
+| `/wissen/*` | Einzelartikel (33 Stück) | Article + FAQPage + BreadcrumbList |
+| `/wissen/senioren` | Landingpage Senioren & Altersvorsorge | Article + FAQPage + BreadcrumbList |
+| `/wissen/aerzte` | Landingpage Ärzte (§7g IAB) | Article + FAQPage + BreadcrumbList |
+| `/wissen/freiberufler` | Landingpage Freiberufler (§7g IAB) | Article + FAQPage + BreadcrumbList |
+| `/wissen/it-freelancer` | Landingpage IT-Freelancer (§7g IAB) | Article + FAQPage + BreadcrumbList |
+| `/wissen/unternehmer` | Landingpage Unternehmer (§7g IAB) | Article + FAQPage + BreadcrumbList |
+| `/wissen/zielgruppen` | Hub: Alle Selbstständigen-Zielgruppen | Article + BreadcrumbList |
 | `/investor` | Dashboard | Auth required |
 | `/investor/login` | Login | Auth required |
 | `/admin` | Admin-Panel | Passwortgeschützt |
@@ -264,6 +270,9 @@ SUPABASE_SERVICE_ROLE_KEY=eyJ...
 
 # Google Maps
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=AIza...
+
+# Resend (E-Mail-Versand)
+RESEND_API_KEY=re_...
 
 # Admin-Panel
 ADMIN_PASSWORD=dein-geheimes-passwort
