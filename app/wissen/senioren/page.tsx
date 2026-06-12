@@ -50,6 +50,21 @@ const faqItems = [
     answer:
       "Nein. Es gibt keine vertragliche Mindestlaufzeit. Sie können den Bewirtschaftungsvertrag mit tiny Escapes kündigen oder das Objekt weiterverkaufen. Empfohlen wird jedoch ein Anlagehorizont von mindestens 5 Jahren für eine optimale Renditeentwicklung.",
   },
+  {
+    question: "Ab welchem Alter kann ich investieren oder selbst einziehen?",
+    answer:
+      "Es gibt keine Altersgrenze. Viele unserer Käufer sind zwischen 55 und 75 Jahren. Ob Sie das Tiny House als Kapitalanlage nutzen oder selbst einziehen möchten, hängt von Ihrer persönlichen Lebenssituation ab — nicht von Ihrem Alter. Eine kostenfreie Beratung hilft Ihnen, die passende Option zu wählen.",
+  },
+  {
+    question: "Ist ein Tiny House für Senioren barrierefrei?",
+    answer:
+      "Moderne Tiny Houses auf Vlemmix-Trailer können mit ebenem Eingang, bodengleicher Dusche und breiten Türöffnungen gebaut werden. Individuelle Anpassungen sind möglich. Sprechen Sie uns im Beratungsgespräch auf barrierefreie Ausstattungsoptionen an — wir koordinieren die Anforderungen direkt mit dem Hersteller.",
+  },
+  {
+    question: "Was passiert mit dem Tiny House, wenn ich pflegebedürftig werde?",
+    answer:
+      "Das Tiny House gehört Ihnen als physisches Eigentum. Sie können es jederzeit weiterverkaufen, an Angehörige übertragen oder in die Kapitalanlage-Variante wechseln und monatliche Einnahmen beziehen. Durch diese Flexibilität bleibt das investierte Kapital verfügbar — anders als bei Rentenversicherungen oder gebundenen Fonds.",
+  },
 ];
 
 export default function SeniorenPage() {
@@ -219,6 +234,34 @@ export default function SeniorenPage() {
             </p>
           </div>
 
+          {/* Rentenlücke Fließtext */}
+          <div className="max-w-3xl mb-14 space-y-5">
+            <h2 className="text-2xl font-black text-gray-900 tracking-tight pt-2">Die Rentenlücke: Was die Zahlen wirklich bedeuten</h2>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Die gesetzliche Rente ersetzt im Durchschnitt nur rund 48 % des letzten Nettoeinkommens. Konkret: Wer vor der Rente 3.000 € netto verdient hat, bekommt heute im Schnitt knapp 1.440 € monatlich ausgezahlt. Davon gehen noch Krankenkassenbeiträge und Steuern ab — übrig bleiben für viele weniger als 1.200 €. Wer zur Miete wohnt, zahlt davon allein schon 700–900 € für eine kleine Stadtwohnung. Was bleibt für Urlaub, Gesundheitskosten, Hobbys und die kleinen Freuden des Lebens?
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Klassische Vorsorgeinstrumente schließen diese Lücke kaum noch. Riester-Verträge galten einmal als Hoffnungsträger — heute kämpfen viele Anbieter mit strukturellen Problemen, und die Renditen enttäuschen. Sparbücher und Tagesgeldkonten bieten zwar Sicherheit, verlieren aber bei anhaltender Inflation real an Kaufkraft. ETFs und Aktien schwanken stark: Wer mit 65 einen Kurseinbruch erlebt, hat keine Zeit mehr zum Warten. Sachwertalternativen wie Betongold — also Immobilien — sind für viele schlicht zu teuer oder zu aufwändig in der Verwaltung.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Ein Tiny House schlägt eine neue Brücke: als echter, greifbarer Sachwert mit überschaubarem Kapitaleinsatz (ab 65.000 €), der entweder monatliche Einnahmen generiert oder die eigenen Wohnkosten drastisch senkt — und damit die Rentenlücke von zwei Seiten gleichzeitig angreift.
+            </p>
+          </div>
+
+          {/* Downsizing Fließtext */}
+          <div className="max-w-3xl mb-14 space-y-5">
+            <h2 className="text-2xl font-black text-gray-900 tracking-tight pt-2">Downsizing im Alter: Freiheit statt Ballast</h2>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Das Familienhaus, das einmal voller Leben war, kann im Alter zur Bürde werden. Fünf Zimmer für zwei Personen, eine Heizanlage, die ständig Aufmerksamkeit braucht, ein Garten, der nach Pflege ruft — und das alles mit einem Budget, das durch die gesetzliche Rente begrenzt ist. Laut Berechnungen des Deutschen Instituts für Wirtschaftsforschung kostet das Halten eines älteren Einfamilienhauses (Heizung, Instandhaltung, Versicherungen, Grundsteuer) im Schnitt 600–900 € im Monat — auch ohne laufende Kreditbelastung.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Ein Tiny House auf einem hochwertigen Vlemmix-Trailer bietet hingegen monatliche Betriebskosten zwischen 80 und 150 €: Strom, Wasser, Versicherung — fertig. Die Stellplatzmiete in einer ruhigen Naturlage kommt noch hinzu, liegt aber meist deutlich unter einer Stadtwohnung. Wer sein großes Haus verkauft und ins Tiny House zieht, kann mit dem freigewordenen Kapital entweder weitere Tiny Houses als Kapitalanlage erwerben — oder das Geld einfach als Puffer für die kommenden Jahre behalten.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Hinzu kommt der emotionale Gewinn: Natur statt Beton, Ruhe statt Stadtlärm, Übersichtlichkeit statt endlosem Aufräumen. Viele Senioren berichten, dass sie nach dem Downsizing das erste Mal seit Jahren wieder das Gefühl haben, wirklich zu Hause zu sein — nicht Gefangene eines zu großen Hauses, das sie verwalten müssen. Tiny Houses sind heute barriereich konzipierbar: ebener Eingang, bodengleiche Dusche, offene Grundrisse. Komfort und Reduktion schließen sich dabei nicht aus.
+            </p>
+          </div>
+
           {/* Pain points */}
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Warum klassische Wege im Ruhestand nicht mehr reichen</h2>
           <div className="space-y-4 mb-12">
@@ -252,6 +295,20 @@ export default function SeniorenPage() {
                 <p className="text-green-100 text-[13px] leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+
+          {/* Für wen Fließtext */}
+          <div className="max-w-3xl mb-14 space-y-5">
+            <h2 className="text-2xl font-black text-gray-900 tracking-tight pt-2">Für wen eignet sich ein Tiny House im Alter?</h2>
+            <p className="text-gray-700 text-base leading-relaxed">
+              <strong className="text-gray-900">Das Rentner-Paar mit zu großem Haus:</strong> Sie haben jahrzehntelang in Ihr Eigenheim investiert. Die Kinder sind längst ausgezogen, aber das Haus steht noch — groß, teuer und aufwändig. Der Verkauf würde Kapital freisetzen, das Sie bisher nicht wissen, wohin es soll. Statt es auf dem Tagesgeldkonto parken, kaufen Sie ein oder zwei Tiny Houses als Kapitalanlage: monatliche Einnahmen, keine Verwaltungsarbeit, ein echter Sachwert. Das freigesetzte Kapital arbeitet für Sie — nicht umgekehrt.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              <strong className="text-gray-900">Der oder die Alleinstehende mit Rentenlücke:</strong> Wer allein von der gesetzlichen Rente lebt, kennt die monatliche Rechnung. Eine zusätzliche Einnahmequelle — auch wenn sie überschaubar beginnt — kann den Unterschied machen. 40 % der Mieteinnahmen eines gut gebuchten Tiny Houses bedeuten je nach Auslastung 500–800 € monatlich zusätzlich. Das ist kein Luxus — das ist finanzielle Luft zum Atmen.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              <strong className="text-gray-900">Wer einen neuen Lebensabschnitt aktiv gestalten möchte:</strong> Manche Senioren wollen nicht nur Kapital anlegen — sie wollen auch wohnen. Raus aus der Stadt, rein in die Natur, runter mit den Fixkosten. Ein Tiny House kann beides sein: der eigene Rückzugsort heute und eine renditestarke Anlage morgen. Wer heute einzieht und das Objekt nach ein paar Jahren nicht mehr selbst nutzen möchte, kann jederzeit in die Vermietungsvariante wechseln oder das Tiny House verkaufen. Keine Entscheidung ist endgültig.
+            </p>
           </div>
 
           {/* Process */}
@@ -313,6 +370,20 @@ export default function SeniorenPage() {
                 </tbody>
               </table>
             </div>
+          </div>
+
+          {/* Betriebskosten Fließtext */}
+          <div className="max-w-3xl mb-14 space-y-5">
+            <h2 className="text-2xl font-black text-gray-900 tracking-tight pt-2">Was kostet ein Tiny House im laufenden Betrieb?</h2>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Transparenz ist uns wichtig — deshalb sprechen wir offen über Zahlen. Ein modernes Tiny House auf einem Vlemmix-Trailer ist im laufenden Betrieb ausgesprochen günstig. Für die Eigennutzung können Sie mit folgenden monatlichen Kosten rechnen: Strom ca. 30–50 €, Wasser ca. 15–25 €, Gebäudeversicherung ca. 15–30 €, Stellplatzmiete je nach Lage ca. 150–400 €. Summe: rund 200–500 € monatlich — je nach Standort und persönlichem Verbrauch. Zum Vergleich: Eine vergleichbar komfortable Mietwohnung auf dem Land kostet heute leicht 700–1.100 € warm.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Bei der Kapitalanlage-Variante trägt tiny Escapes sämtliche Betriebskosten für das laufende Geschäft (Reinigung, Plattformgebühren, Wartung). Aus Ihrer 40-%-Auszahlung sind keine Abzüge mehr für Verwaltung zu erwarten — das ist bereits im Auszahlungsmodell berücksichtigt. Die größten Kostenblöcke, die Sie kennen sollten: Bei Bedarf anfallende Reparaturen oder Instandhaltungen werden vorab kommuniziert und gemeinsam besprochen. Kein böses Erwachen nach einem Brief vom Verwalter.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed">
+              Wichtig: Der Kaufpreis des Tiny Houses (ab 65.000 €) ist keine laufende Ausgabe, sondern eine einmalige Investition in Ihr Eigentum — ein Vermögenswert, der Ihnen physisch gehört und jederzeit weiterverkauft werden kann. Anders als bei einer Rentenversicherung oder einem Sparplan bleibt Ihr Kapital greifbar.
+            </p>
           </div>
 
           {/* Disclaimer */}
