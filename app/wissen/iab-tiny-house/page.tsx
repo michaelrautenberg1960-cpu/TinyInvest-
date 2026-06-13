@@ -7,9 +7,9 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "IAB Tiny House: Bis zu 30.000 € Steuern sparen – noch VOR dem Kauf | TinyInvest",
+  title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – Voraussetzungen & Beispiel | TinyInvest",
   description:
-    "IAB Tiny House 2026: Mit §7g EStG bis zu 16.800 € Steuererstattung erhalten – bevor du auch nur einen Euro ausgibst. Voraussetzungen, Fristen & Rechenbeispiel.",
+    "IAB Tiny House: Mit §7g EStG bis zu 16.800 € Steuererstattung erhalten – bevor du auch nur einen Euro ausgibst. Voraussetzungen, Fristen & Rechenbeispiel.",
   keywords:
     "IAB tiny house, iab tiny house 2026, investitionsabzugsbetrag tiny house, IAB beantragen anleitung, IAB erfahrungen, tiny house steuer vorziehen",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     ...BASE_OG,
     type: "article",
-    title: "IAB Tiny House 2026: 30.000 € Steuern sparen",
+    title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – 30.000 € Steuern sparen",
     description:
       "Bis zu 30.000 € Steuern sparen – noch VOR dem Kauf: IAB nach §7g für dein Tiny House beantragen. Voraussetzungen, Fristen & Rechenbeispiel.",
     url: "https://tinyhouse.investments/wissen/iab-tiny-house",
@@ -63,11 +63,11 @@ export default function IabTinyHousePage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "IAB Tiny House 2026: Investitionsabzugsbetrag beantragen & 30.000 € sparen",
+    "headline": "IAB Tiny House: Investitionsabzugsbetrag §7g EStG beantragen & 30.000 € sparen",
     "description": "Wie du den IAB für ein Tiny House nutzt: Voraussetzungen, Fristen, Beantragung beim Finanzamt und typische Erfahrungen.",
     "url": "https://tinyhouse.investments/wissen/iab-tiny-house",
     "datePublished": "2026-04-15",
-    "dateModified": "2026-06-11",
+    "dateModified": "2026-06-13",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
     "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/IAB Tiny House 2026 So sparst du bis zu 30.000 € vor dem Kauf.webp" },
@@ -147,7 +147,7 @@ export default function IabTinyHousePage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Steuer-Guide · IAB · §7g EStG</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            IAB Tiny House 2026: So sparst du bis zu 30.000 € vor dem Kauf
+            IAB Tiny House: So sparst du bis zu 30.000 € vor dem Kauf
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
