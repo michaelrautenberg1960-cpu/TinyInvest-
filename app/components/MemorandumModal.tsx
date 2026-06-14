@@ -80,6 +80,8 @@ export default function MemorandumModal() {
           }),
       });
       if (!res.ok) throw new Error();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).gtag?.("event", "generate_lead", { form_type: "memorandum_step1" });
       setStep(2);
     } catch {
       setError("Fehler beim Senden. Bitte direkt per E-Mail kontaktieren.");
@@ -100,6 +102,8 @@ export default function MemorandumModal() {
       });
       if (!res.ok) throw new Error();
       setSubmitted(true);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).gtag?.("event", "generate_lead", { form_type: "memorandum_step2", interesse: form.interesse });
     } catch {
       setError("Fehler beim Senden.");
     } finally {

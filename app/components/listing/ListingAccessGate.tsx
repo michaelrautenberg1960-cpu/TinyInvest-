@@ -62,6 +62,8 @@ export function ListingAccessGate({ listingId }: Props) {
       if (!res.ok) throw new Error('Fehler beim Speichern')
       localStorage.setItem(LS_KEY, '1')
       window.dispatchEvent(new Event('tinyinvest_unlocked'))
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(window as any).gtag?.('event', 'generate_lead', { form_type: 'marktplatz_freischaltung', listing_id: listingId })
     } catch {
       setError('Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.')
     }

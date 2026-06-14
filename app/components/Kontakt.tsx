@@ -48,6 +48,8 @@ export default function Kontakt() {
       });
       if (!res.ok) throw new Error("Fehler beim Senden");
       setSubmitted(true);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).gtag?.("event", "generate_lead", { form_type: "kontakt", interesse: form.interesse });
     } catch {
       setError("Es gab einen Fehler. Bitte versuche es nochmal oder schreib uns direkt.");
     } finally {

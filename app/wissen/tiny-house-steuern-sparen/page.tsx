@@ -217,7 +217,7 @@ export default function TinyHouseSteuernSparenPage() {
                     { kriterium: "Sonder-AfA (40 %)", tiny: "Ja", etw: "Nein", pv: "Nein" },
                     { kriterium: "Sofortabschreibung", tiny: "Bis 70 %", etw: "Nein", pv: "Bis 50 %" },
                     { kriterium: "Passives Einkommen", tiny: "720 €/Monat", etw: "Miete − Kosten", pv: "Einspeisevergütung" },
-                    { kriterium: "Verwaltungsaufwand", tiny: "Vollautomatisch", etw: "Hoch", pv: "Gering" },
+                    { kriterium: "Verwaltungsaufwand", tiny: "Vollständig ausgelagert", etw: "Hoch", pv: "Gering" },
                   ].map((row) => (
                     <tr key={row.kriterium} className="hover:bg-gray-50">
                       <td className="p-4 font-semibold text-gray-700">{row.kriterium}</td>
@@ -411,10 +411,10 @@ export default function TinyHouseSteuernSparenPage() {
             ))}
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
-            <h3 className="text-xl font-black mb-3">Deine persönliche Steuerersparnis berechnen</h3>
-            <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">Unverbindliche Analyse deiner Steuersituation – wir zeigen dir, wie viel du im ersten Jahr konkret sparst.</p>
+            <h3 className="text-xl font-black mb-3">Tiny House Investment anfragen</h3>
+            <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">Unverbindliches Erstgespräch – wir zeigen dir das Konzept und wie du als Investor einsteigst.</p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">Steueranalyse anfragen →</ModalButton>
+              <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">Jetzt anfragen →</ModalButton>
               <Link href="/rechner/iab" className="border border-white/20 text-white hover:border-green-400 hover:text-green-400 font-semibold px-6 py-3.5 rounded-full text-sm transition-all">IAB-Rechner starten →</Link>
             </div>
           </div>
