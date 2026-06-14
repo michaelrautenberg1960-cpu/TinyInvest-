@@ -83,11 +83,9 @@ export default function RootLayout({
 
   return (
     <html lang="de">
-      <head>
+      <body className={`${geistSans.variable} antialiased`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      </head>
-      <body className={`${geistSans.variable} antialiased`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1726HDFQK1"
           strategy="lazyOnload"
