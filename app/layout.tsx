@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   description:
     "Tiny House kaufen, vermieten und Steuern sparen. Steueroptimierte Investments ab 65.000 €. 12–14 % Rendite p.a., vollautomatisch verwaltet.",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon1.png",
+    shortcut: "/favicon1.png",
+    apple: "/favicon1.png",
   },
   openGraph: {
     title: "TinyInvest – Tiny House Investment Plattform",
