@@ -144,16 +144,16 @@ export const faqs = [
     a: "Das ist der entscheidende Vorteil unseres Modells: Da das Haus rechtlich als mobile Ladung (Fracht) auf einem Trailer gilt, kann es jederzeit an einen anderen Standort transportiert werden. Ihr Investment ist nicht ortsgebunden – das Risiko durch schlechte Lage ist faktisch Null.",
   },
   {
-    q: "Wie funktioniert die Finanzierung über den IAB?",
-    a: "In der Praxis nutzt der Investor die Steuererstattung aus dem IAB (ca. 16.000–17.000 € bei 42% Steuersatz) als Eigenkapital bei der Bank. Der Restkredit (ca. 55.000 €) wird dann durch die monatlichen Mieteinnahmen (Ihre 40 %) gedeckt – in den meisten Fällen mit positivem Cashflow.",
+    q: "Brauche ich viel Eigenkapital für den Kauf?",
+    a: "Der Einstieg beginnt bei 65.000 € (Comfort-Modell). Durch die Steuererstattung im Vorjahr – ca. 16.000–17.000 € bei 42 % Steuersatz – reduziert sich die effektive Liquiditätsbelastung erheblich. Diesen Betrag nutzen viele Investoren als Eigenkapital bei der Bank; der Restkredit wird durch die monatlichen Mieteinnahmen gedeckt – oft mit positivem Cashflow.",
   },
   {
     q: "Muss die Vermietung gewerblich sein?",
     a: "Ja, das ist die Voraussetzung für IAB und Sonder-AfA. Die gute Nachricht: Durch unser Full-Service-Modell (Buchungsplattform, Reinigung, Gäste-Service) ist die gewerbliche Prägung automatisch erfüllt. Der Steuerberater sieht sofort, dass es sich um ein aktives Gewerbe handelt.",
   },
   {
-    q: "Welche Gewinngrenze gilt für den IAB?",
-    a: "Der Investor darf zum Zeitpunkt der IAB-Bildung einen Betriebsgewinn von maximal 200.000 € pro Jahr haben (§7g Abs. 1 Nr. 1 EStG). Für die meisten unserer Zielkunden – Gutverdiener, Freiberufler, Handwerker – ist diese Grenze problemlos erfüllbar.",
+    q: "Wie hoch ist die typische Belegungsrate und was beeinflusst sie?",
+    a: "Unsere Häuser erzielen im Durchschnitt 50–60 % Belegung pro Jahr. Entscheidend sind Standortqualität, Host-Bewertung und Listingqualität auf Airbnb und tiny Escapes. Da das Haus jederzeit an einen besseren Standort umziehen kann, ist eine schlechte Belegung korrigierbar – ein Risikopuffer, den klassische Immobilien nicht bieten.",
   },
 ];
 

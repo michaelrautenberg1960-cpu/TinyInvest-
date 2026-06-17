@@ -29,7 +29,8 @@ const faqItems = [
   {
     question: "Kann ich für eine PV-Anlage den Investitionsabzugsbetrag (IAB) nutzen?",
     answer:
-      "Technisch ja – wenn die PV-Anlage als eigenständiges, betriebliches Wirtschaftsgut geführt wird und du ein Gewerbe oder eine freiberufliche Tätigkeit hast. Seit der Einkommensteuerbefreiung für kleine PV-Anlagen (bis 30 kWp, ab 2022) entfällt für viele Privatanleger aber die steuerliche Einordnung als gewerbliches Gut – und damit auch der IAB. Beim Tiny House auf Vlemmix Trailer ist die Klassifizierung als bewegliches Wirtschaftsgut eindeutig gegeben, der IAB uneingeschränkt nutzbar.",
+      "Für kleine PV-Anlagen (bis 30 kWp) meist nein — seit der Einkommensteuerbefreiung 2022 entfällt die gewerbliche Einordnung und damit auch der IAB. Beim Tiny House auf Vlemmix Trailer ist der IAB hingegen uneingeschränkt nutzbar: als bewegliches Wirtschaftsgut lassen sich IAB (50 % im Vorjahr), Sonder-AfA (40 %) und degressive AfA (30 %) kombinieren — ein Steuerhebel, den keine PV-Investition bietet.",
+    link: { href: "/wissen/iab-tiny-house", label: "IAB Tiny House: vollständiger Guide →" },
   },
   {
     question: "Wie hoch ist die Rendite einer PV-Anlage im Vergleich zu einem Tiny House?",
@@ -42,9 +43,9 @@ const faqItems = [
       "Das politische Risiko ist das schwerwiegendste. Die Einspeisevergütung wird staatlich festgelegt und ist seit Jahren rückläufig. Anlagen, die heute installiert werden, erhalten für 20 Jahre eine fixe Vergütung – aber danach läuft die Förderung aus und der Erlös hängt am Spotmarktpreis, der oft unter 4 ct/kWh liegt. Hinzu kommen Degradation der Module (~0,5 %/Jahr), Wechselrichter-Tausch (~1.500 € alle 10–15 Jahre) und die Entsorgungskosten am Ende der Laufzeit.",
   },
   {
-    question: "Gibt es einen steuerlichen Vorteil, den PV-Anlagen nicht bieten, Tiny Houses aber schon?",
+    question: "Kann ich den Standort eines Tiny House nachträglich wechseln?",
     answer:
-      "Ja: die Kombination aus IAB (bis zu 50 % der Anschaffungskosten im Vorjahr), Sonder-AfA (40 % im Kaufjahr) und degressiver AfA (30 % im Kaufjahr). Das ist eine Mechanik, die für bewegliche Wirtschaftsgüter des betrieblichen Anlagevermögens gilt. Bei einem Tiny House auf Trailer ist diese Klassifizierung klar. Bei PV-Anlagen auf dem Eigenheim ist sie es oft nicht – und seit der Steuerbefreiung für kleine PV gibt es dort gar keine Abzugsmöglichkeit mehr.",
+      "Ja — das ist einer der Hauptvorteile gegenüber einer Dach-PV oder klassischen Immobilie. Da das Tiny House rechtlich als bewegliches Wirtschaftsgut auf einem Vlemmix Trailer steht, kann es jederzeit auf einen anderen Standort transportiert werden — innerhalb Deutschlands oder in die EU. Ein schlechter Standort lässt sich korrigieren, ohne das Investment abzuschreiben. Bei einer PV-Anlage auf einem Fremddach bist du hingegen dauerhaft an Dach und Vermieter gebunden.",
   },
   {
     question: "Brauche ich viel Eigenkapital für ein Tiny House Investment?",
@@ -289,6 +290,11 @@ export default function PvAnlageAlsKapitalanlagePage() {
               <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6">
                 <h3 className="font-black text-gray-900 text-[14px] mb-2">{item.question}</h3>
                 <p className="text-gray-500 text-[13px] leading-relaxed">{item.answer}</p>
+                {"link" in item && item.link && (
+                  <Link href={item.link.href} className="inline-block mt-2 text-green-700 font-semibold text-xs hover:underline">
+                    {item.link.label}
+                  </Link>
+                )}
               </div>
             ))}
           </div>

@@ -17,10 +17,15 @@ export const metadata = {
   openGraph: {
     ...BASE_OG,
     type: "article",
-    title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – 30.000 € Steuern sparen",
+    title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – bis zu 33.000 € Liquiditätsvorteil",
     description:
-      "Bis zu 30.000 € Steuern sparen – noch VOR dem Kauf: IAB nach §7g für dein Tiny House beantragen. Voraussetzungen, Fristen & Rechenbeispiel.",
+      "Bis zu 33.000 € Liquiditätsvorteil im ersten Jahr: IAB (50 % im Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %) für dein Tiny House. Voraussetzungen & Rechenbeispiel.",
     url: "https://tinyhouse.investments/wissen/iab-tiny-house",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IAB Tiny House: §7g EStG – bis zu 33.000 € Liquiditätsvorteil im ersten Jahr",
+    description: "IAB (50 % im Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %): So sparst du als Tiny House Investor legal bis zu 33.000 € im ersten Jahr.",
   },
 };
 
@@ -63,7 +68,7 @@ export default function IabTinyHousePage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "IAB Tiny House: Investitionsabzugsbetrag §7g EStG beantragen & 30.000 € sparen",
+    "headline": "IAB Tiny House: Investitionsabzugsbetrag §7g EStG beantragen & bis zu 33.000 € Liquiditätsvorteil",
     "description": "Wie du den IAB für ein Tiny House nutzt: Voraussetzungen, Fristen, Beantragung beim Finanzamt und typische Erfahrungen.",
     "url": "https://tinyhouse.investments/wissen/iab-tiny-house",
     "datePublished": "2026-04-15",
@@ -147,7 +152,7 @@ export default function IabTinyHousePage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Steuer-Guide · IAB · §7g EStG</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            IAB Tiny House: So sparst du bis zu 30.000 € vor dem Kauf
+            IAB Tiny House: bis zu 33.000 € Liquiditätsvorteil im ersten Jahr
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>

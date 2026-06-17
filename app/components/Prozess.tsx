@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const tabs = ["📋 Steuer-Investor", "📈 Rendite-Investor", "🏡 Finanzierungs-Käufer"];
 
 const steuerSteps = [
   { num: "01", title: "Steuerberater konsultieren", desc: "Sie nehmen unser Steuer-Factsheet mit und lassen prüfen, ob IAB und Sonder-AfA für Sie anwendbar sind. (Spoiler: Fast immer ja.)" },
-  { num: "02", title: "IAB bilden", desc: "Ihr Steuerberater bildet den Investitionsabzugsbetrag (50 %) – oft noch rückwirkend für das Vorjahr. Das Finanzamt überweist ca. 16.000–17.000 € zurück." },
+  { num: "02", title: "IAB bilden", desc: "Ihr Steuerberater bildet den Investitionsabzugsbetrag (50 %) – oft noch rückwirkend für das Vorjahr. Das Finanzamt überweist ca. 16.000–17.000 € zurück.", link: { href: "/wissen/iab-tiny-house", label: "IAB beantragen: Schritt-für-Schritt-Anleitung →" } },
   { num: "03", title: "Haus kaufen & liefern", desc: "Sie wählen Ihr TinyInvest-Modell, wir produzieren es und liefern es auf den vereinbarten Standort in Deutschland oder der EU." },
   { num: "04", title: "Vermietung & Steuer genießen", desc: "Ihr Haus geht sofort in den Betrieb. Sonder-AfA und AfA werden in der Steuererklärung geltend gemacht. Monatliche Mieteinnahmen fließen." },
 ];
@@ -18,12 +19,12 @@ const renditeSteps = [
 
 const finanzSteps = [
   { num: "01", title: "Beratungsgespräch", desc: "Wir klären gemeinsam Ihre Finanzierungsmöglichkeiten: Kredit, Ratenkauf oder Leasing. Ihr Budget bestimmt das passende Modell." },
-  { num: "02", title: "IAB als Eigenkapital", desc: "Ihr Steuerberater bildet den IAB, das Finanzamt zahlt Ihnen ca. 16.000–17.000 € zurück. Dieses Geld nutzen Sie als Eigenkapital für die Bank." },
+  { num: "02", title: "IAB als Eigenkapital", desc: "Ihr Steuerberater bildet den IAB, das Finanzamt zahlt Ihnen ca. 16.000–17.000 € zurück. Dieses Geld nutzen Sie als Eigenkapital für die Bank.", link: { href: "/wissen/iab-tiny-house", label: "IAB beantragen: Schritt-für-Schritt-Anleitung →" } },
   { num: "03", title: "Kredit & Lieferung", desc: "Mit echtem Eigenkapital aus der Steuer erhalten Sie günstige Konditionen. Das Haus wird geliefert und sofort vermietet." },
   { num: "04", title: "Miete tilgt den Kredit", desc: "Ihre 40 % Mieteinnahmen decken die monatliche Kreditrate – oft mit positivem Cashflow. Das Haus gehört nach der Laufzeit Ihnen." },
 ];
 
-function StepCard({ num, title, desc }: { num: string; title: string; desc: string }) {
+function StepCard({ num, title, desc, link }: { num: string; title: string; desc: string; link?: { href: string; label: string } }) {
   return (
     <div className="bg-white rounded-3xl p-7 shadow-sm border border-gray-100 text-center">
       <div
@@ -34,6 +35,11 @@ function StepCard({ num, title, desc }: { num: string; title: string; desc: stri
       </div>
       <h3 className="text-base font-bold text-gray-900 mb-2">{title}</h3>
       <p className="text-gray-500 leading-relaxed text-sm">{desc}</p>
+      {link && (
+        <Link href={link.href} className="inline-block mt-3 text-green-700 font-semibold text-xs hover:underline">
+          {link.label}
+        </Link>
+      )}
     </div>
   );
 }
