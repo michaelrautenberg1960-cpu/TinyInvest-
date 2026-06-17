@@ -6,25 +6,28 @@ export default function SteuerRechner() {
   const [steuersatz, setSteuersatz] = useState(42);
   const [mitIAB, setMitIAB] = useState(true);
 
-  // === NEUE KORREKTE RECHNUNG AB 2026 ===
+  // === KORREKTE RECHNUNG AB 2026 ===
   // IAB: 50 % des Kaufpreises im Vorjahr absetzbar
   const iabBasis = mitIAB ? kaufpreis * 0.5 : 0;
   const iabSteuer = iabBasis * (steuersatz / 100);
 
-  // Sonder-AfA: 40 % des VOLLEN Kaufpreises (§ 7g Abs. 5 EStG, Wachstumschancengesetz)
-  const sonderAfaBasis = kaufpreis * 0.4;
+  // §7g Abs.2: IAB-Bildung mindert die AfA-Bemessungsgrundlage im Kaufjahr
+  const afaBasis = mitIAB ? kaufpreis - iabBasis : kaufpreis;
+
+  // Sonder-AfA: 40 % der (ggf. IAB-reduzierten) AfA-Basis (§ 7g Abs. 5 EStG)
+  const sonderAfaBasis = afaBasis * 0.4;
   const sonderAfaSteuer = sonderAfaBasis * (steuersatz / 100);
 
-  // Degressive AfA: 30 % des VOLLEN Kaufpreises im Kaufjahr (§ 7 Abs. 2 EStG, ab 01.07.2025)
-  const degrAfaBasis = kaufpreis * 0.3;
+  // Degressive AfA: 30 % der (ggf. IAB-reduzierten) AfA-Basis (§ 7 Abs. 2 EStG, ab 01.07.2025)
+  const degrAfaBasis = afaBasis * 0.3;
   const degrAfaSteuer = degrAfaBasis * (steuersatz / 100);
 
-  // Gesamt Jahr 1 (Anschaffungsjahr): 70 % des Kaufpreises
+  // Gesamt Jahr 1 (Anschaffungsjahr): 70 % der AfA-Basis
   const gesamtAfaJahr1 = sonderAfaBasis + degrAfaBasis;
   const gesamtAfaSteuer = sonderAfaSteuer + degrAfaSteuer;
 
   // Restbuchwert nach Jahr 1
-  const restbuchwert = kaufpreis - gesamtAfaJahr1;
+  const restbuchwert = afaBasis - gesamtAfaJahr1;
 
   // Gesamtsteuerersparnis (inkl. IAB falls aktiviert)
   const gesamtSteuer = iabSteuer + gesamtAfaSteuer;
@@ -98,7 +101,7 @@ export default function SteuerRechner() {
         <div className="flex items-center justify-between bg-blue-50 rounded-2xl px-4 py-3 border border-blue-100">
           <div className="flex-1 min-w-0 mr-2">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-2 py-0.5 rounded mb-1">Sonder-AfA §7g</span>
-            <p className="text-gray-700 text-xs font-medium">40 % auf Kaufpreis</p>
+            <p className="text-gray-700 text-xs font-medium">{mitIAB ? "40 % auf AfA-Basis (§7g Abs.2)" : "40 % auf Kaufpreis"}</p>
           </div>
           <div className="text-right flex-shrink-0">
             <p className="text-xs text-gray-400">Minderung</p>
@@ -109,7 +112,7 @@ export default function SteuerRechner() {
         <div className="flex items-center justify-between bg-purple-50 rounded-2xl px-4 py-3 border border-purple-100">
           <div className="flex-1 min-w-0 mr-2">
             <span className="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-2 py-0.5 rounded mb-1">Degr. AfA §7</span>
-            <p className="text-gray-700 text-xs font-medium">30 % auf Kaufpreis</p>
+            <p className="text-gray-700 text-xs font-medium">{mitIAB ? "30 % auf AfA-Basis (§7g Abs.2)" : "30 % auf Kaufpreis"}</p>
           </div>
           <div className="text-right flex-shrink-0">
             <p className="text-xs text-gray-400">Minderung</p>

@@ -10,8 +10,10 @@ const steuersatzOptions = [
 
 function calcResults(kaufpreis: number, steuersatz: number) {
   const iab       = kaufpreis * 0.5 * steuersatz;
-  const sonderAfa = kaufpreis * 0.4 * steuersatz;
-  const degAfa    = kaufpreis * 0.3 * steuersatz;
+  // §7g Abs.2: IAB-Bildung mindert die AfA-Bemessungsgrundlage im Kaufjahr
+  const afaBasis  = kaufpreis * 0.5;
+  const sonderAfa = afaBasis * 0.4 * steuersatz;
+  const degAfa    = afaBasis * 0.3 * steuersatz;
   const total     = iab + sonderAfa + degAfa * 0.5;
   return { iab, sonderAfa, total };
 }

@@ -17,15 +17,15 @@ export const metadata = {
   openGraph: {
     ...BASE_OG,
     type: "article",
-    title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – bis zu 33.000 € Liquiditätsvorteil",
+    title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – bis zu 30.000 € Steuern sparen",
     description:
-      "Bis zu 33.000 € Liquiditätsvorteil im ersten Jahr: IAB (50 % im Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %) für dein Tiny House. Voraussetzungen & Rechenbeispiel.",
+      "Bis zu 30.000 € Steuern sparen: IAB (50 % im Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %). Voraussetzungen, Fristen & Rechenbeispiel für Tiny Houses.",
     url: "https://tinyhouse.investments/wissen/iab-tiny-house",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IAB Tiny House: §7g EStG – bis zu 33.000 € Liquiditätsvorteil im ersten Jahr",
-    description: "IAB (50 % im Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %): So sparst du als Tiny House Investor legal bis zu 33.000 € im ersten Jahr.",
+    title: "IAB Tiny House: §7g EStG – bis zu 30.000 € Steuern sparen",
+    description: "IAB (50 % im Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %): bis zu 30.000 € Steuervorteil. Voraussetzungen & Rechenbeispiel.",
   },
 };
 
@@ -68,7 +68,7 @@ export default function IabTinyHousePage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "IAB Tiny House: Investitionsabzugsbetrag §7g EStG beantragen & bis zu 33.000 € Liquiditätsvorteil",
+    "headline": "IAB Tiny House: Investitionsabzugsbetrag §7g EStG beantragen & bis zu 30.000 € sparen",
     "description": "Wie du den IAB für ein Tiny House nutzt: Voraussetzungen, Fristen, Beantragung beim Finanzamt und typische Erfahrungen.",
     "url": "https://tinyhouse.investments/wissen/iab-tiny-house",
     "datePublished": "2026-04-15",
@@ -152,7 +152,7 @@ export default function IabTinyHousePage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Steuer-Guide · IAB · §7g EStG</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            IAB Tiny House: bis zu 33.000 € Liquiditätsvorteil im ersten Jahr
+            IAB Tiny House: bis zu 30.000 € Steuern sparen – IAB, Sonder-AfA & degressive AfA
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -168,13 +168,48 @@ export default function IabTinyHousePage() {
             Das IAB Tiny House Modell ist das mächtigste Steuerinstrument im deutschen Steuerrecht für Investoren –
             du sparst Steuern, bevor du auch nur einen Euro ausgegeben hast. 2026 ist die Kombination aus IAB, Sonder-AfA und degressiver AfA so effektiv wie nie zuvor.
           </p>
-          <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-8">
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-5">
             <p className="text-green-700 font-bold text-xs uppercase tracking-widest mb-2">IAB Tiny House – kurz erklärt</p>
             <p className="text-gray-700 text-[14px] leading-relaxed">
               Mit dem <strong>IAB Tiny House</strong>-Modell (§7g EStG) setzt du bis zu 50 % des geplanten Kaufpreises schon im Vorjahr steuerlich ab –
               ohne das Haus bereits zu besitzen. Bei 80.000 € Kaufpreis und 42 % Steuersatz bedeutet das bis zu <strong>16.800 € Sofort-Erstattung</strong>.
               Im Kaufjahr folgt die Sonder-AfA (40 %), seit 2024 kombinierbar mit degressiver AfA (30 %) – zusammen über 70 % Sofortabschreibung.
             </p>
+          </div>
+          <div className="border border-gray-100 rounded-2xl overflow-hidden mb-8 text-[13px]">
+            <div className="bg-gray-50 px-4 py-2 border-b border-gray-100">
+              <p className="font-bold text-gray-500 text-[11px] uppercase tracking-widest">Rechenbeispiel: 80.000 € Kaufpreis · Spitzensteuersatz (45 %)</p>
+            </div>
+            <div className="divide-y divide-gray-100">
+              <div className="flex justify-between px-4 py-3">
+                <div>
+                  <span className="font-semibold text-gray-800">IAB §7g Abs.1</span>
+                  <span className="text-gray-400 ml-2">40.000 € Abzug im Vorjahr</span>
+                </div>
+                <span className="font-bold text-green-700">≈ 18.000 €</span>
+              </div>
+              <div className="flex justify-between px-4 py-3">
+                <div>
+                  <span className="font-semibold text-gray-800">Sonder-AfA (40 %)</span>
+                  <span className="text-gray-400 ml-2">16.000 € auf AfA-Basis 40k im Kaufjahr</span>
+                </div>
+                <span className="font-bold text-green-700">≈ 7.200 €</span>
+              </div>
+              <div className="flex justify-between px-4 py-3">
+                <div>
+                  <span className="font-semibold text-gray-800">Degressive AfA (30 %)</span>
+                  <span className="text-gray-400 ml-2">12.000 € auf AfA-Basis 40k im Kaufjahr</span>
+                </div>
+                <span className="font-bold text-green-700">≈ 5.400 €</span>
+              </div>
+              <div className="flex justify-between px-4 py-3 bg-green-50">
+                <span className="font-black text-gray-900">Gesamt Steuervorteil</span>
+                <span className="font-black text-green-700">≈ 30.600 €</span>
+              </div>
+            </div>
+            <div className="px-4 py-2 bg-gray-50 border-t border-gray-100">
+              <p className="text-gray-400 text-[11px]">§7g Abs.2 EStG: IAB mindert die AfA-Bemessungsgrundlage im Kaufjahr (80k − 40k = 40k). Individuelle Steuerersparnis abhängig vom persönlichen Grenzsteuersatz.</p>
+            </div>
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
