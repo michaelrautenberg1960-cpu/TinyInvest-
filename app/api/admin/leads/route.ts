@@ -25,11 +25,15 @@ export async function PATCH(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { id, status } = await req.json();
+  const { id, status, assigned_to } = await req.json();
+
+  const patch: Record<string, unknown> = {};
+  if (status !== undefined) patch.status = status;
+  if (assigned_to !== undefined) patch.assigned_to = assigned_to;
 
   const { error } = await getAdminClient()
     .from("leads")
-    .update({ status })
+    .update(patch)
     .eq("id", id);
 
   if (error) {

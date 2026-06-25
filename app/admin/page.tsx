@@ -15,7 +15,10 @@ type Lead = {
   kontakt_zeit: string | null;
   nachricht: string | null;
   status: "neu" | "email_gesendet" | "kontaktiert" | "wiedervorlage" | "abgeschlossen";
+  assigned_to: string | null;
 };
+
+type SalesMember = { id: string; name: string; created_at: string };
 
 type LeadNotiz = {
   id: string;
@@ -404,6 +407,7 @@ export default function AdminPage() {
   const [leads, setLeads]                   = useState<Lead[]>([]);
   const [loadingLeads, setLoadingLeads]     = useState(false);
   const [filter, setFilter]                 = useState<"all" | Lead["status"]>("all");
+  const [memberFilter, setMemberFilter]     = useState<string>("all");
   const [selected, setSelected]             = useState<Lead | null>(null);
   const [confirmDeleteLead, setConfirmDeleteLead] = useState<string | null>(null);
   const [leadNotizen, setLeadNotizen]             = useState<Record<string, LeadNotiz[]>>({});
@@ -448,6 +452,12 @@ export default function AdminPage() {
   const [migrationResult, setMigrationResult]       = useState<{ ok: boolean; message: string; sql?: string } | null>(null);
   const [runningMigration, setRunningMigration]     = useState(false);
 
+  // Sales Team
+  const [salesTeam, setSalesTeam]           = useState<SalesMember[]>([]);
+  const [newMemberName, setNewMemberName]   = useState("");
+  const [savingMember, setSavingMember]     = useState(false);
+  const [deletingMember, setDeletingMember] = useState<string | null>(null);
+
   // Settings
   const [heroImage, setHeroImage]           = useState("/images/outside/tiny-house-escape-hero.webp");
   const [savingHero, setSavingHero]         = useState(false);
@@ -489,6 +499,11 @@ export default function AdminPage() {
     setLoadingInvestors(false);
   }, []);
 
+  const fetchSalesTeam = useCallback(async (pw: string) => {
+    const res = await fetch("/api/admin/sales-team", { headers: { "x-admin-password": pw } });
+    if (res.ok) setSalesTeam(await res.json());
+  }, []);
+
   const fetchSettings = useCallback(async () => {
     setLoadingSettings(true);
     try {
@@ -507,12 +522,13 @@ export default function AdminPage() {
     fetchListings(pw);
     fetchSettings();
     fetchInvestors(pw);
-  }, [fetchLeads, fetchListings, fetchSettings, fetchInvestors]);
+    fetchSalesTeam(pw);
+  }, [fetchLeads, fetchListings, fetchSettings, fetchInvestors, fetchSalesTeam]);
 
   useEffect(() => {
     const saved = sessionStorage.getItem("admin_pw");
-    if (saved) { fetchLeads(saved); fetchListings(saved); fetchSettings(); fetchInvestors(saved); }
-  }, [fetchLeads, fetchListings, fetchSettings, fetchInvestors]);
+    if (saved) { fetchLeads(saved); fetchListings(saved); fetchSettings(); fetchInvestors(saved); fetchSalesTeam(saved); }
+  }, [fetchLeads, fetchListings, fetchSettings, fetchInvestors, fetchSalesTeam]);
 
   // ── Promote lead to investor ──
   const promoteToInvestor = async (lead: Lead) => {
@@ -540,7 +556,45 @@ export default function AdminPage() {
     setPromotingLead(null);
   };
 
+  // ── Sales team actions ──
+  const addSalesMember = async () => {
+    const name = newMemberName.trim();
+    if (!name) return;
+    setSavingMember(true);
+    const res = await fetch("/api/admin/sales-team", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-admin-password": password },
+      body: JSON.stringify({ name }),
+    });
+    if (res.ok) {
+      const member: SalesMember = await res.json();
+      setSalesTeam((prev) => [...prev, member]);
+      setNewMemberName("");
+    }
+    setSavingMember(false);
+  };
+
+  const deleteSalesMember = async (id: string) => {
+    setDeletingMember(id);
+    const res = await fetch(`/api/admin/sales-team?id=${id}`, {
+      method: "DELETE",
+      headers: { "x-admin-password": password },
+    });
+    if (res.ok) setSalesTeam((prev) => prev.filter((m) => m.id !== id));
+    setDeletingMember(null);
+  };
+
   // ── Leads actions ──
+  const updateAssignedTo = async (id: string, assigned_to: string | null) => {
+    await fetch("/api/admin/leads", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json", "x-admin-password": password },
+      body: JSON.stringify({ id, assigned_to }),
+    });
+    setLeads((prev) => prev.map((l) => l.id === id ? { ...l, assigned_to } : l));
+    if (selected?.id === id) setSelected((prev) => prev ? { ...prev, assigned_to } : null);
+  };
+
   const updateStatus = async (id: string, status: string) => {
     await fetch("/api/admin/leads", {
       method: "PATCH",
@@ -601,7 +655,13 @@ export default function AdminPage() {
     }
   };
 
-  const filtered = filter === "all" ? leads : leads.filter((l) => l.status === filter);
+  const filtered = leads
+    .filter((l) => filter === "all" || l.status === filter)
+    .filter((l) => {
+      if (memberFilter === "all") return true;
+      if (memberFilter === "__unassigned__") return !l.assigned_to;
+      return l.assigned_to === memberFilter;
+    });
   const counts = {
     all:            leads.length,
     neu:            leads.filter((l) => l.status === "neu").length,
@@ -765,6 +825,18 @@ export default function AdminPage() {
         {/* ════ LEADS TAB ════ */}
         {tab === "leads" && (
           <>
+            {salesTeam.length > 0 && (
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-xs text-gray-400 uppercase tracking-wider">Mitarbeiter:</span>
+                <div className="flex flex-wrap gap-2">
+                  <button onClick={() => setMemberFilter("all")} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${memberFilter === "all" ? "bg-white/20 text-white border-white/30" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>Alle</button>
+                  {salesTeam.map((m) => (
+                    <button key={m.id} onClick={() => setMemberFilter(memberFilter === m.name ? "all" : m.name)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${memberFilter === m.name ? "bg-purple-700 text-white border-purple-500" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>{m.name}</button>
+                  ))}
+                  <button onClick={() => setMemberFilter("__unassigned__")} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${memberFilter === "__unassigned__" ? "bg-gray-700 text-white border-gray-500" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>Nicht zugewiesen</button>
+                </div>
+              </div>
+            )}
             <div className="grid grid-cols-2 sm:grid-cols-6 gap-4 mb-8">
               {[
                 { key: "all",            label: "Gesamt",         color: "bg-white/5 border-white/10",             icon: "📋" },
@@ -796,6 +868,7 @@ export default function AdminPage() {
                         <div className="flex flex-wrap items-center gap-2 mb-1">
                           <span className="font-bold text-white">{lead.vorname} {lead.nachname}</span>
                           <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${STATUS_COLORS[lead.status]}`}>{STATUS_LABELS[lead.status]}</span>
+                          {lead.assigned_to && <span className="text-xs font-bold px-2.5 py-0.5 rounded-full border bg-purple-900/40 text-purple-300 border-purple-500/30">👤 {lead.assigned_to}</span>}
                         </div>
                         <div className="text-sm text-gray-400 flex flex-wrap gap-3">
                           <a href={`mailto:${lead.email}`} className="text-green-400 hover:text-green-300" onClick={(e) => e.stopPropagation()}>✉️ {lead.email}</a>
@@ -826,6 +899,17 @@ export default function AdminPage() {
                             ))}
                           </div>
                         </div>
+                        {salesTeam.length > 0 && (
+                          <div className="mb-4">
+                            <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">👤 Zugewiesen an</p>
+                            <div className="flex flex-wrap gap-2">
+                              <button onClick={() => updateAssignedTo(lead.id, null)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${!lead.assigned_to ? "bg-gray-700 text-white border-gray-500 ring-2 ring-offset-1 ring-offset-gray-900 ring-green-400" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>— Niemand</button>
+                              {salesTeam.map((m) => (
+                                <button key={m.id} onClick={() => updateAssignedTo(lead.id, m.name)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${lead.assigned_to === m.name ? "bg-purple-700 text-white border-purple-500 ring-2 ring-offset-1 ring-offset-gray-900 ring-green-400" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>{m.name}</button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                         <div className="mb-4">
                           <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">🔔 Gesprächsprotokoll</p>
                           <div className="flex gap-2 mb-3">
@@ -1517,6 +1601,49 @@ export default function AdminPage() {
                   </p>
                 </>
               )}
+            </div>
+
+            {/* Sales Team */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mt-6">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-2xl">👤</span>
+                <div>
+                  <h3 className="font-black text-white text-sm">Sales Team</h3>
+                  <p className="text-gray-400 text-xs mt-0.5">Mitarbeiter, denen Leads zugewiesen werden können.</p>
+                </div>
+              </div>
+              <div className="space-y-2 mb-4">
+                {salesTeam.length === 0 && <p className="text-xs text-gray-500 italic">Noch keine Mitglieder.</p>}
+                {salesTeam.map((m) => (
+                  <div key={m.id} className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">
+                    <span className="text-sm text-white font-semibold">{m.name}</span>
+                    <button
+                      onClick={() => deleteSalesMember(m.id)}
+                      disabled={deletingMember === m.id}
+                      className="text-xs text-red-400 hover:text-red-300 disabled:opacity-40 transition-colors"
+                    >
+                      {deletingMember === m.id ? "⏳" : "✕ Entfernen"}
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={newMemberName}
+                  onChange={(e) => setNewMemberName(e.target.value)}
+                  onKeyDown={(e) => { if (e.key === "Enter") addSalesMember(); }}
+                  placeholder="Name des Mitarbeiters…"
+                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+                <button
+                  onClick={addSalesMember}
+                  disabled={savingMember || !newMemberName.trim()}
+                  className="text-xs bg-purple-600 hover:bg-purple-700 disabled:opacity-40 text-white font-bold px-4 py-2 rounded-xl transition-colors"
+                >
+                  {savingMember ? "⏳" : "+ Hinzufügen"}
+                </button>
+              </div>
             </div>
           </div>
         )}
