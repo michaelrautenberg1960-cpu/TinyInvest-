@@ -55,7 +55,7 @@ export default function ImpressumPage() {
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Kontakt</h2>
               <p>
-                Telefon: +49 156 7967 0322<br />
+                Telefon: +49 151 68957104<br />
                 E-Mail:{" "}
                 <a
                   href="mailto:info@tinyhouse.investments"
