@@ -131,9 +131,6 @@ export const OFF_GRID_INCLUDED_ITEMS = [
   "2-Flammen Gas-Kochfeld (integriert in Küche)",
   "Spüle 460×460mm mit Armatur",
   "Oberschrank mit 3 Türen + integriertem LED-Licht (1660mm)",
-  // ── Möbel & Wohnen ──────────────────────────────────────────────────────
-  "Esstisch mit 4 Stühlen – Solido Extendable (Pappelsperrholz/Eiche, Naturlack)",
-  "Matratze Loft 1600×2000mm inkl. Kissen",
 ];
 
 export const ON_GRID_INCLUDED_ITEMS = [
@@ -658,9 +655,9 @@ export const DELIVERY_TERM = "Lieferzeit: 30 Tage";
 export const OFFER_VALIDITY = "Dieses Preisangebot ist 7 Tage gültig. Alle Beträge in EURO.";
 
 export const COMPANY_INFO = {
-  name: "TinyInvest GmbH",
-  address: "Friedrichstraße 14, 60323 Frankfurt am Main",
-  phone: "+49 69 4321 8700",
+  name: "Rautenberg Professional Solutions GmbH",
+  address: "Marie-Curie-Straße 1, 63457 Hanau",
+  phone: "+49 151 68957104",
   email: "info@tinyhouse.investments",
   vatId: "USt-IdNr.: DE318742905",
   bank: "Bank: Helaba Bank | IBAN: DE23432423523 | SWIFT: heladef",
