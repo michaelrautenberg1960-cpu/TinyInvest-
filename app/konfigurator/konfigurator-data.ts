@@ -660,5 +660,5 @@ export const COMPANY_INFO = {
   phone: "+49 151 68957104",
   email: "info@tinyhouse.investments",
   vatId: "USt-IdNr.: DE318742905",
-  bank: "Bank: Helaba Bank | IBAN: DE23432423523 | SWIFT: heladef",
+  bank: "Bank: tbd | IBAN: tbd | SWIFT: tbd",
 };
