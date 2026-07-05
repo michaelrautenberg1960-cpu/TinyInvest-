@@ -38,7 +38,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
         <div className="mb-8">
           <span className="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white text-[11px] font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest backdrop-blur-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Tiny House Investment · Direktkauf · Betrieb auf Wunsch über lokale Partner · Steuervorteil im Kaufjahr
+            Tiny House Investment · Direktkauf · §7g Steuervorteil im Kaufjahr
           </span>
         </div>
 
@@ -64,12 +64,11 @@ export default function Hero({ heroImage }: { heroImage: string }) {
             </h1>
 
             <p className="text-white/75 text-base leading-relaxed mb-7 max-w-lg">
-              Wir vermitteln Tiny Houses zum Direktkauf als steueroptimiertes Wirtschaftsgut. Auf Wunsch bringen wir Sie mit lokalen Betreiberpartnern in Kontakt, die Standort und Vermietung für Sie übernehmen können. Mieteinnahmen erzielen Sie als Eigentümer im eigenen gewerblichen Betrieb. Ab 65.000 €, 10–14 % p.a.*
+              Wir vermitteln Tiny Houses zum Direktkauf als steueroptimiertes Wirtschaftsgut. Auf Wunsch bringen wir Sie mit lokalen Betreiberpartnern in Kontakt, die Standort und Vermietung für Sie übernehmen können. Mieteinnahmen erzielen Sie als Eigentümer im eigenen gewerblichen Betrieb. Ab 65.000 €, 10–14 % p.a.* <span className="text-white/40 text-[11px]">*Erfahrungswerte lokaler Partner, standortabhängig, keine Garantie.</span>
             </p>
-            <p className="text-white/40 text-[11px] -mt-5 mb-7 max-w-lg">*Erfahrungswerte lokaler Partner, standortabhängig, keine garantierte Rendite.</p>
 
             {/* Platform stats grid */}
-            <div className="grid grid-cols-2 gap-3 mb-7">
+            <div className="grid grid-cols-3 gap-3 mb-7">
               {platformStats.map((s) => (
                 <div
                   key={s.label}
