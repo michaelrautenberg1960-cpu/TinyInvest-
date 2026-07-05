@@ -2,13 +2,13 @@ export default function TrustBar() {
   const items = [
     {
       icon: "⚖️",
-      title: "§7g EStG – seit 2009",
-      sub: "Erprobtes Steuerrecht",
+      title: "Direktkauf · Sachwert",
+      sub: "Eigentumsübertragung inklusive",
     },
     {
       icon: "🏅",
-      title: "Geprüfte Steuerstruktur",
-      sub: "Von deutschen Steuerberatern geprüft",
+      title: "§7g EStG – seit 2009",
+      sub: "Etabliertes Steuerrecht",
     },
     {
       icon: "🔒",

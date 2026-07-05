@@ -1,4 +1,4 @@
-// DataRoom.tsx — Institutional document vault
+﻿// DataRoom.tsx — Institutional document vault
 // "Financial terminal" aesthetic: dark background, mono font, gated docs
 import ModalButton from "./ModalButton";
 
@@ -13,7 +13,7 @@ const publicDocs = [
   {
     icon: "📊",
     name: "Win-Win-Win_Modellrechnung.xlsx",
-    desc: "10-Jahres-Cashflow-Projektion · Basis: 55 % Belegung @ tiny Escapes",
+    desc: "10-Jahres-Cashflow-Projektion · Basis: 55 % Belegung @ lokale Partner",
     tag: "Finanzen",
     tagColor: "bg-blue-500/20 text-blue-300",
   },
@@ -37,7 +37,7 @@ const restrictedDocs = [
   {
     icon: "📋",
     name: "Host-Mustervertrag_v3.pdf",
-    desc: "Bewirtschaftungsvertrag zwischen Investor & tiny Escapes",
+    desc: "Bewirtschaftungsvertrag zwischen Investor & lokale Partner",
     tag: "Vertragsrecht",
   },
   {
@@ -159,7 +159,7 @@ export default function DataRoom() {
         <div className="mt-8 text-center">
           <p className="text-[11px] text-gray-600 max-w-2xl mx-auto leading-relaxed">
             ⚠️ Alle Dokumente dienen zur Information und stellen keine Anlageberatung dar.
-            IRR, NPV und Belegungsannahmen sind Projektionen basierend auf historischen tiny Escapes Daten (50–60 % Ø Belegung).
+            IRR, NPV und Belegungsannahmen sind Projektionen basierend auf historischen lokale Partner Daten (50–60 % Ø Belegung).
             Tatsächliche Ergebnisse können abweichen. Bitte konsultieren Sie Ihren Steuerberater.
           </p>
         </div>

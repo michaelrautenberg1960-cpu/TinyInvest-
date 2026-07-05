@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Steuern sparen als Arzt 2026: §7g IAB für Ärzte | TinyInvest",
   description:
-    "Als Arzt bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen vor dem Kauf. Vollautomatisch verwaltetes Tiny House als Kapitalanlage. Kein Aufwand.",
+    "Als Arzt bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen vor dem Kauf. über lokale Partner betriebenes Tiny House als Kapitalanlage. Kein Aufwand.",
   keywords:
     "steuern sparen arzt, kapitalanlage arzt, §7g arzt, iab arzt steuervorteil, arzt steuerlast reduzieren, niedergelassener arzt kapitalanlage, arzt investition steuern",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
     type: "article",
     title: "Steuern sparen als Arzt 2026: §7g IAB für Ärzte | TinyInvest",
     description:
-      "Bis zu 39.500 € Steuerlast senken – mit dem §7g IAB vor dem Kauf. Vollautomatisch verwaltetes Tiny House als Kapitalanlage. Kein Aufwand neben der Praxis.",
+      "Bis zu 39.500 € Steuerlast senken – mit dem §7g IAB vor dem Kauf. über lokale Partner betriebenes Tiny House als Kapitalanlage. Kein Aufwand neben der Praxis.",
     url: "https://tinyhouse.investments/wissen/aerzte",
   },
 };
@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. tiny Escapes übernimmt die vollständige Bewirtschaftung: Buchungsmanagement, Gästebetreuung, Reinigung, Wartung und Abrechnung. Sie erhalten monatlich 40 % der Nettomieteinnahmen auf Ihr Konto. Der Aufwand neben einer vollen Arztpraxis ist damit gleich null.",
+      "Nein. lokale Partner übernehmen die vollständige Bewirtschaftung: Buchungsmanagement, Gästebetreuung, Reinigung, Wartung und Abrechnung. Sie erhalten monatlich 40 % der Nettomieteinnahmen auf Ihr Konto. Der Aufwand neben einer vollen Arztpraxis ist damit gleich null.",
   },
   {
     question: "Was passiert steuerlich, wenn ich das Tiny House nach 5 Jahren verkaufe?",
@@ -58,7 +58,7 @@ export default function AerztePage() {
     "@type": "Article",
     headline: "Steuern sparen als Arzt 2026: §7g IAB für Ärzte | TinyInvest",
     description:
-      "Als Arzt bis zu 39.500 € Steuerlast reduzieren – mit dem §7g IAB vor dem Kauf. Vollautomatisch verwaltetes Tiny House als Kapitalanlage.",
+      "Als Arzt bis zu 39.500 € Steuerlast reduzieren – mit dem §7g IAB vor dem Kauf. über lokale Partner betriebenes Tiny House als Kapitalanlage.",
     url: "https://tinyhouse.investments/wissen/aerzte",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
@@ -130,10 +130,10 @@ export default function AerztePage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Niedergelassene Ärzte und Freiberufler zahlen bis zu 45 % Einkommensteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzusetzen — ohne Bürokratie, ohne aktiven Aufwand. Das Tiny House generiert danach monatlichen Cashflow, vollautomatisch verwaltet.
+            Niedergelassene Ärzte und Freiberufler zahlen bis zu 45 % Einkommensteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzusetzen — ohne Bürokratie, ohne aktiven Aufwand. Das Tiny House generiert danach monatlichen Cashflow, über lokale Partner betrieben.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "Vollautomatisch", "Ab 79.000 €", "Kein Aufwand neben der Praxis"].map((tag) => (
+            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 79.000 €", "Kein Aufwand neben der Praxis"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -217,7 +217,7 @@ export default function AerztePage() {
               { icon: "💸", title: "Bis zu 45 % Steuersatz", desc: "Jeder zweite Euro des Gewinns geht ans Finanzamt. Ohne aktive Steuergestaltung bleibt nach Steuern und Versorgungswerk oft weniger übrig als erwartet." },
               { icon: "📊", title: "Festgeld & ETF helfen steuerlich kaum", desc: "Zinserträge und Kursgewinne werden versteuert, aber keine sofortige Absetzung ist möglich. Der Steuereffekt entsteht erst beim Verkauf — oft Jahre später." },
               { icon: "🏗️", title: "Klassische Immobilien: zu komplex", desc: "Eigentumswohnungen binden viel Kapital, erfordern aktives Management und bieten keine bewegliche Abschreibung nach §7g. Die Bürokratie passt nicht zu einer Vollzeit-Praxis." },
-              { icon: "⏱️", title: "Keine Zeit neben der Praxis", desc: "Ein Tiny House über TinyInvest erfordert null aktiven Aufwand — tiny Escapes übernimmt Buchungen, Reinigung, Wartung und Abrechnung vollständig." },
+              { icon: "⏱️", title: "Keine Zeit neben der Praxis", desc: "Ein Tiny House über TinyInvest erfordert null aktiven Aufwand — lokale Partner übernehmen Buchungen, Reinigung, Wartung und Abrechnung vollständig." },
             ].map((item) => (
               <div key={item.title} className="bg-amber-50 border border-amber-100 rounded-2xl p-5 flex gap-4">
                 <span className="text-2xl shrink-0">{item.icon}</span>
@@ -235,7 +235,7 @@ export default function AerztePage() {
             {[
               { step: "1", title: "IAB bilden", desc: "Bis zu 50 % des geplanten Kaufpreises im Jahr VOR dem Kauf steuerlich abziehen. Die Steuerrückerstattung kommt noch vor der Lieferung des Hauses." },
               { step: "2", title: "Tiny House kaufen", desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr on top. Maximaler Abschreibungshebel in Jahr 1 — vollständig legal nach §7g EStG." },
-              { step: "3", title: "Einnahmen kassieren", desc: "40 % der Nettomieteinnahmen monatlich, vollautomatisch verwaltet durch tiny Escapes. Kein Aufwand neben der Praxis — echter passiver Cashflow." },
+              { step: "3", title: "Einnahmen kassieren", desc: "40 % der Nettomieteinnahmen monatlich, über lokale Partner betrieben durch lokale Partner. Kein Aufwand neben der Praxis — echter Mieteinnahmen als Eigentümer." },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-6 bg-white">
                 <div className="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-black text-sm mb-4">{item.step}</div>
@@ -249,7 +249,7 @@ export default function AerztePage() {
           <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image
               src="/images/outside/tiny-house-renditeobjekt-aussen.webp"
-              alt="Tiny House als Renditeobjekt – vollautomatisch bewirtschaftet durch tiny Escapes"
+              alt="Tiny House als Renditeobjekt – über lokale Partner bewirtschaftet durch lokale Partner"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 896px"

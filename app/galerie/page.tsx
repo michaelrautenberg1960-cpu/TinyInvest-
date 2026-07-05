@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -56,7 +56,7 @@ export default function GaleriePage() {
           <p className="text-gray-500 text-sm max-w-2xl mb-6">
             Modern. Hochwertig. Nachhaltig. — Jedes TinyInvest-Haus ist ein vollwertiges, bewegliches Wirtschaftsgut auf Vlemmix Trailer.
             Unsere Tiny Houses verbinden skandinavisches Design mit smarter Investitionsstruktur: voll möbliert, schlüsselfertig
-            übergeben und sofort durch tiny Escapes bewirtschaftet. Hier findest du aktuelle Innen- und Außenaufnahmen
+            übergeben und sofort durch lokale Partner bewirtschaftet. Hier findest du aktuelle Innen- und Außenaufnahmen
             von echten TinyInvest Assets an verschiedenen Standorten in Deutschland, Österreich und Schweden.
           </p>
           <div className="flex flex-wrap gap-4 text-[12px] text-gray-500">

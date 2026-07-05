@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { Section, LockedRow } from './shared'
 import { useIsUnlocked } from './ListingAccessGate'
@@ -68,7 +68,7 @@ export function ListingDetailSections({ listing }: { listing: Listing }) {
 
       {/* 6 — Betreiber-Profil (locked) */}
       <Section title="🏢 Betreiber-Profil">
-        <LockedRow label="Betreiber"         value="tiny Escapes GmbH"                  locked={locked} />
+        <LockedRow label="Betreiber"         value="Lokaler Partner (optionaler Betreibervertrag direkt mit Käufer)" locked={locked} />
         <LockedRow label="Standort-Hinweis"  value={listing.manager_note ?? '—'}        locked={locked} />
         <LockedRow label="Buchungsplattform" value="Airbnb · Booking.com · Direkt"      locked={locked} />
       </Section>
@@ -94,7 +94,7 @@ export function ListingDetailSections({ listing }: { listing: Listing }) {
       <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 text-xs text-gray-500 leading-relaxed">
         <p className="font-semibold text-gray-700 mb-1.5">⚠️ Hinweis & Disclaimer</p>
         <p>
-          Alle IRR- und NPV-Angaben sind Projektionen auf Basis historischer Belegungsdaten von tiny Escapes.
+          Alle IRR- und NPV-Angaben sind Projektionen auf Basis historischer Belegungsdaten von lokale Partner.
           Sie stellen keine Garantie zukünftiger Renditen dar. TinyInvest agiert als Plattform und Vermittler,
           nicht als Kapitalsammelstelle.
         </p>

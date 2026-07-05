@@ -651,7 +651,7 @@ export const PAYMENT_TERMS = [
   "50 % wenn das Haus lieferbereit ist",
 ];
 
-export const DELIVERY_TERM = "Lieferzeit: 30 Tage";
+export const DELIVERY_TERM = "Lieferzeit: 60 Tage";
 export const OFFER_VALIDITY = "Dieses Preisangebot ist 7 Tage gültig. Alle Beträge in EURO.";
 
 export const COMPANY_INFO = {

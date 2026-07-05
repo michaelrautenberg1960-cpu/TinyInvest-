@@ -225,7 +225,7 @@ export default function ModelleCarousel({ listings }: { listings: Listing[] }) {
       <div className="mt-6 bg-white border border-gray-100 rounded-2xl p-5 text-center shadow-sm">
         <p className="text-[12px] text-gray-500">
           💡 <strong className="text-gray-700">Phase-2-Projekte</strong> sind bereits buchbar zur Vormerkliste.
-          Alle Assets werden nach Abnahme direkt in das tiny Escapes Netzwerk überführt.{" "}
+          Alle Assets können nach Abnahme über lokale Partner in Betrieb genommen werden.{" "}
           <ModalButton className="text-green-700 font-semibold hover:underline">
             Anfrage stellen →
           </ModalButton>

@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../components/Navbar";
 import Hosts from "../components/Hosts";
 import Footer from "../components/Footer";
@@ -8,7 +8,7 @@ export const metadata = {
   description:
     "Du hast einen Stellplatz? Werde TinyInvest Host und verdiene bis zu 45 % der Mieteinnahmen – ohne eigenes Kapital. Kostenlose Standortprüfung in 24h.",
   keywords:
-    "tiny house host werden, stellplatz vermieten tiny house, grundstück tiny house vermieten, tiny escapes host, airbnb tiny house host",
+    "tiny house host werden, stellplatz vermieten tiny house, grundstück tiny house vermieten, lokale Partner host, airbnb tiny house host",
   alternates: {
     canonical: "https://tinyhouse.investments/hosts",
   },

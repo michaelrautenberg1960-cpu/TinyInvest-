@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -157,12 +157,12 @@ export default function ImpressumPage() {
               <ul className="space-y-2 list-none">
                 <li>
                   <span className="text-white font-medium">Außenaufnahmen der Tiny Houses</span><br />
-                  © Rautenberg Professional Solutions GmbH / tiny Escapes GmbH – Alle Rechte vorbehalten.<br />
+                  © Rautenberg Professional Solutions GmbH / lokale Partner GmbH – Alle Rechte vorbehalten.<br />
                   Fotografie: Markus Diehl, Frankfurt am Main
                 </li>
                 <li className="pt-2">
                   <span className="text-white font-medium">Innenaufnahmen der Tiny Houses</span><br />
-                  © Rautenberg Professional Solutions GmbH / tiny Escapes GmbH – Alle Rechte vorbehalten.<br />
+                  © Rautenberg Professional Solutions GmbH / lokale Partner GmbH – Alle Rechte vorbehalten.<br />
                   Fotografie: Markus Diehl, Frankfurt am Main
                 </li>
                 <li className="pt-2">
@@ -172,7 +172,7 @@ export default function ImpressumPage() {
                 </li>
                 <li className="pt-2">
                   <span className="text-white font-medium">Standortbilder (Schweden, Winterlandschaft, u.a.)</span><br />
-                  © Rautenberg Professional Solutions GmbH / tiny Escapes GmbH – Alle Rechte vorbehalten.
+                  © Rautenberg Professional Solutions GmbH / lokale Partner GmbH – Alle Rechte vorbehalten.
                 </li>
                 <li className="pt-2">
                   <span className="text-white font-medium">Logos und Markenzeichen</span><br />

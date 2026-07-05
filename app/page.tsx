@@ -18,7 +18,7 @@ import Footer from "./components/Footer";
 export const metadata: Metadata = {
   title: "Tiny House kaufen & vermieten | Steuern sparen | TinyInvest",
   description:
-    "Tiny House kaufen, vermieten und im ersten Jahr bis zu 33.000 € Steuern sparen. Ab 65.000 € · 12–14 % Rendite p.a. · vollautomatisch verwaltet.",
+    "Tiny House zum Direktkauf als §7g-Wirtschaftsgut. Ab 65.000 € · Steuervorteil im Kaufjahr · Betrieb auf Wunsch über lokale Partner.",
   keywords:
     "tiny house kaufen vermieten, tiny house investment, tiny house steuern sparen, tiny house rendite, tiny house als kapitalanlage",
   alternates: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Tiny House kaufen & vermieten | Steuern sparen | TinyInvest",
     description:
-      "Tiny House kaufen, vermieten und im ersten Jahr bis zu 33.000 € Steuern sparen. Ab 65.000 € · 12–14 % Rendite p.a. · vollautomatisch verwaltet.",
+      "Tiny House zum Direktkauf als §7g-Wirtschaftsgut. Ab 65.000 € · Steuervorteil im Kaufjahr · Betrieb auf Wunsch über lokale Partner.",
     url: "https://tinyhouse.investments",
   },
 };
@@ -47,7 +47,7 @@ const organizationSchema = {
   "name": "TinyInvest",
   "url": "https://tinyhouse.investments",
   "logo": "https://tinyhouse.investments/logo1.png",
-  "description": "Tiny House §7g-Kapitalanlage ab 65.000 €. Sachwert-Investment mit bis zu 70 % Steuerabschreibung im Kaufjahr und 12–14 % IRR p.a.",
+  "description": "Tiny House Direktkauf als §7g-Wirtschaftsgut ab 65.000 €. Bis zu 70 % Steuerabschreibung im Kaufjahr. Betrieb auf Wunsch über lokale Partner.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Marie-Curie-Straße 1",

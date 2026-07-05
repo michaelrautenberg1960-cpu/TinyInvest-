@@ -50,7 +50,7 @@ export default function KonfiguratorPage() {
               { icon: "🏗️", text: "Produktion in unserer Werkstatt" },
               { icon: "📄", text: "PDF-Angebot sofort per Download" },
               { icon: "🔒", text: "Keine Weitergabe Ihrer Daten" },
-              { icon: "✅", text: "Lieferzeit ab 30 Tage" },
+              { icon: "✅", text: "Lieferzeit ab 60 Tage" },
             ].map((b) => (
               <div
                 key={b.text}

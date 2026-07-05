@@ -33,11 +33,11 @@ const faqItems = [
   },
   {
     question: "Was bekomme ich als Investor ausgezahlt?",
-    answer: "Du erhältst monatlich 40 % der Netto-Mieteinnahmen. Die übrigen 60 % gehen an den Host (Stellplatzinhaber) und tiny Escapes (Betrieb, Gästebetreuung, Reinigung). Die Auszahlung erfolgt automatisch – du hast keinen operativen Aufwand.",
+    answer: "Du erhältst monatlich 40 % der Netto-Mieteinnahmen. Die übrigen 60 % gehen an den Host (Stellplatzinhaber) und lokale Partner (Betrieb, Gästebetreuung, Reinigung). Die Auszahlung erfolgt automatisch – du hast keinen operativen Aufwand.",
   },
   {
     question: "Wie hoch muss die Belegungsquote sein damit sich das Investment lohnt?",
-    answer: "Ab ca. 40 % Belegung deckst du laufende Kosten und erzielst positiven Cashflow. Bei 60 % (realistischer Durchschnitt in der tiny Escapes Community) erreichst du die kalkulierten Renditen. Spitzenobjekte in touristischen Regionen liegen bei 70–80 % Belegung.",
+    answer: "Ab ca. 40 % Belegung deckst du laufende Kosten und erzielst positiven Cashflow. Bei 60 % (realistischer Durchschnitt in der lokale Partner Community) erreichst du die kalkulierten Renditen. Spitzenobjekte in touristischen Regionen liegen bei 70–80 % Belegung.",
   },
   {
     question: "Was passiert nach 5 Jahren mit dem Tiny House?",
@@ -49,11 +49,11 @@ const faqItems = [
   },
   {
     question: "Wie viel kann ich mit einem Tiny House vermieten und verdienen?",
-    answer: "Bei 60 % Belegung und 100 €/Nacht erzielen Investoren rund 730 € monatlich aus der Tiny House Vermietung – das sind ca. 8.760 € Einnahmen pro Jahr. Mit tiny house vermieten geld verdienen ist also durchaus realistisch: Auf Basis der Tiny Escapes-Daten liegen viele Objekte bei 60–70 % Auslastung. Die Tiny House Vermietung Einnahmen fließen automatisch, ohne eigenen operativen Aufwand.",
+    answer: "Bei 60 % Belegung und 100 €/Nacht erzielen Investoren rund 730 € monatlich aus der Tiny House Vermietung – das sind ca. 8.760 € Einnahmen pro Jahr. Mit tiny house vermieten geld verdienen ist also durchaus realistisch: Auf Basis der lokale Partner-Daten liegen viele Objekte bei 60–70 % Auslastung. Die Tiny House Vermietung Einnahmen fließen automatisch, ohne eigenen operativen Aufwand.",
   },
   {
     question: "Ist ein Tiny House wirklich passives Einkommen?",
-    answer: "Ja – durch das Full-Service-Modell von tiny Escapes generiert ein Tiny House echtes passives Einkommen: Du kaufst das Haus, der Betreiber übernimmt Standort, Gästebetreuung, Buchungen und Reinigung. Das tiny house passive einkommen fließt monatlich als 40 % der Netto-Mieteinnahmen auf dein Konto – ohne Zeitaufwand. Im Vergleich zu einer klassischen Eigentumswohnung (50 Std./Jahr Aufwand) ist das ein grundlegend anderes Modell.",
+    answer: "Ja – durch das Betreibermodell lokaler Partner generiert ein Tiny House echtes passives Einkommen: Du kaufst das Haus, der Betreiber übernimmt Standort, Gästebetreuung, Buchungen und Reinigung. Das tiny house passive einkommen fließt monatlich als 40 % der Netto-Mieteinnahmen auf dein Konto – ohne Zeitaufwand. Im Vergleich zu einer klassischen Eigentumswohnung (50 Std./Jahr Aufwand) ist das ein grundlegend anderes Modell.",
   },
 ];
 
@@ -143,7 +143,7 @@ export default function TinyHouseAlsRenditePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Das Modell ist einfach zu verstehen, aber erstaunlich leistungsfähig: Du kaufst ein Tiny House, tiny Escapes betreibt es als Ferienunterkunft, und du erhältst monatlich 40 Prozent der Netto-Einnahmen ausgezahlt – ohne selbst tätig werden zu müssen. Bei 60 Prozent Belegung und einem Durchschnittspreis von 100 Euro pro Nacht sind das rund 720 Euro monatlich für ein 79.000 Euro Objekt.
+              Das Modell ist einfach zu verstehen, aber erstaunlich leistungsfähig: Du kaufst ein Tiny House, lokale Partner betreibt es als Ferienunterkunft, und du erhältst monatlich 40 Prozent der Netto-Einnahmen ausgezahlt – ohne selbst tätig werden zu müssen. Bei 60 Prozent Belegung und einem Durchschnittspreis von 100 Euro pro Nacht sind das rund 720 Euro monatlich für ein 79.000 Euro Objekt.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Was das Modell gegenüber klassischen Mietimmobilien überlegen macht, ist nicht allein die Rendite der Mieteinnahmen. Es ist die Kombination: Die 40-Prozent-Auszahlung bildet die Basis. Der §7g-Steuereffekt – Investitionsabzugsbetrag, Sonder-AfA und degressive AfA – verdoppelt in den ersten zwei Jahren die Gesamtrendite. Und der Restwert des Hauses sichert die Investition gegen einen Totalverlust ab.
@@ -171,7 +171,7 @@ export default function TinyHouseAlsRenditePage() {
             </p>
           </div>
 
-          <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Vollständig verwaltet – echter passiver Cashflow</h2>
+          <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">über lokale Partner betrieben – echter Mieteinnahmen als Eigentümer</h2>
           <div className="max-w-3xl mb-10">
             <p className="text-gray-700 text-base leading-relaxed">
               Ein weiterer entscheidender Faktor für den Erfolg ist die Integration in ein professionelles Bewirtschaftungskonzept, wie es TinyInvest ermöglicht. Für den einzelnen Anleger wäre es operativ kaum zu bewältigen, sich um Standortsuche, Baugenehmigung, Marketing, Gästebetreuung und Instandhaltung eines einzelnen Hauses zu kümmern. Das Modell des Managed Marketplace löst dieses Problem, indem es die Rollen zwischen Investor, Host und Plattform klar verteilt: Der Investor stellt das Kapital und wird rechtmäßiger Eigentümer des Hauses, während spezialisierte Betreiber vor Ort für die maximale Auslastung sorgen. Diese Arbeitsteilung garantiert, dass das Investment ein echtes passives Einkommen generiert, bei dem der Anleger von der Skalierbarkeit und der Professionalität eines Netzwerks profitiert, ohne selbst operativ tätig werden zu müssen. Die Standorte werden dabei nach strengen Kriterien ausgewählt, die sowohl die touristische Attraktivität als auch die rechtliche Sicherheit der Aufstellung berücksichtigen. Da die Nachfrage nach solchen nachhaltigen Urlaubsformen stetig wächst und das Angebot durch begrenzte Stellflächen limitiert bleibt, ist mit einer langfristigen Wertstabilität der Objekte zu rechnen.
@@ -242,7 +242,7 @@ export default function TinyHouseAlsRenditePage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-[10px] text-gray-400 p-4 border-t border-gray-100">* Basis: 100 €/Nacht Durchschnittspreis. Tiny Escapes historisch: 60–70 % Belegung.</p>
+            <p className="text-[10px] text-gray-400 p-4 border-t border-gray-100">* Basis: 100 €/Nacht Durchschnittspreis. lokale Partner historisch: 60–70 % Belegung.</p>
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Monatlicher Cashflow: TinyInvest Escape (79.000 €)</h2>
@@ -316,7 +316,7 @@ export default function TinyHouseAlsRenditePage() {
             <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Tiny House vermieten und Geld verdienen</h2>
             <div className="max-w-3xl">
               <p className="text-gray-700 text-base leading-relaxed mb-5">
-                Mit einem Tiny House vermieten und Geld verdienen funktioniert über das 40/45/15-Aufteilungsmodell: 40 % der Netto-Mieteinnahmen fließen monatlich an den Investor, 45 % an den Host vor Ort, 15 % an die Plattform. Bei realistischen 60 % Belegung bedeutet das rund 730 € monatliche Tiny House Vermietung Einnahmen – vollautomatisch, ohne eigenen Aufwand.
+                Mit einem Tiny House vermieten und Geld verdienen funktioniert über das 40/45/15-Aufteilungsmodell: 40 % der Netto-Mieteinnahmen fließen monatlich an den Investor, 45 % an den Host vor Ort, 15 % an die Plattform. Bei realistischen 60 % Belegung bedeutet das rund 730 € monatliche Tiny House Vermietung Einnahmen – mit geringem Aufwand über lokale Partner, ohne eigenen Aufwand.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
                 Das tiny house passive einkommen ist damit eines der wenigen echten Passiv-Einkommensmodelle im Sachwertbereich: Du besitzt das physische Objekt, trägst alle steuerlichen Vorteile nach §7g, und lässt den operativen Betrieb vollständig delegieren. Verglichen mit einer ETW, bei der Vermieter oft 20–50 Stunden Aufwand pro Jahr rechnen müssen, ist das ein fundamentaler Unterschied.

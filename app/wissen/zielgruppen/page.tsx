@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -53,7 +53,7 @@ const profiles = [
     label: "Für IT-Freelancer",
     headline: "Entwickler, DevOps & Tech-Consultants",
     desc: "Effektivsteuersatz 40–45 %, Gewinne parken auf dem Konto, Projekte lassen kein aktives Investment zu. §7g IAB + Tiny House = passiver Sachwert ohne Aufwand.",
-    tags: ["§15 oder §18 EStG", "Rechenbeispiel: 100 €/h", "Vollautomatisch"],
+    tags: ["§15 oder §18 EStG", "Rechenbeispiel: 100 €/h", "mit geringem Aufwand über lokale Partner"],
     cta: "Für IT-Freelancer →",
     border: "border-purple-200",
     tagColor: "bg-purple-50 text-purple-700",
@@ -85,7 +85,7 @@ const commonSteps = [
   {
     step: "3",
     title: "Cashflow kassieren",
-    desc: "40 % der Nettomieteinnahmen monatlich. tiny Escapes übernimmt alles: Buchungen, Reinigung, Wartung, Abrechnung. Kein aktiver Aufwand.",
+    desc: "40 % der Nettomieteinnahmen monatlich. lokale Partner übernehmen alles: Buchungen, Reinigung, Wartung, Abrechnung. Kein aktiver Aufwand.",
   },
 ];
 
@@ -155,7 +155,7 @@ export default function ZielgruppenPage() {
             Ob Arzt, Rechtsanwalt, Softwareentwickler oder Einzelunternehmer — wer betriebliche Einkünfte hat, kann den §7g Investitionsabzugsbetrag nutzen. Das bedeutet: bis zu 39.500 € Steuerabzug im Jahr vor dem Kauf, Sonder-AfA 40 % im Kaufjahr, und monatlicher Cashflow ohne aktiven Aufwand. Welches Profil passt zu dir?
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "Vollautomatisch", "Ab 79.000 €", "4 Berufsgruppen"].map((tag) => (
+            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 79.000 €", "4 Berufsgruppen"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>

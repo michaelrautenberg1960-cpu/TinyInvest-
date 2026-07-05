@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -53,7 +53,7 @@ export default function AGBPage() {
               <p>
                 TinyInvest vermittelt und verwaltet Investitionen in mobile Tiny Houses. Der Investor erwirbt je nach
                 gewähltem Modell das wirtschaftliche Eigentum an einem oder mehreren Tiny Houses oder eine
-                wirtschaftliche Beteiligung daran. Die Tiny Houses werden über die Kooperationsplattform Tiny Escapes
+                wirtschaftliche Beteiligung daran. Die Tiny Houses werden über die Kooperationsplattform lokale Partner
                 touristisch vermietet. Details zum jeweiligen Investitionsmodell (Kaufpreis, Laufzeit, Renditeprognose,
                 Risikohinweise) sind dem individuellen Investitionsvertrag zu entnehmen.
               </p>

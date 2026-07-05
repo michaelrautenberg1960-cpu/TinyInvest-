@@ -13,12 +13,10 @@ export default function HeroCTAButton() {
         Kostenlose Beratung anfragen →
       </button>
       <a
-        href="https://www.tiny.rentals"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/marktplatz"
         className="bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold px-6 py-3.5 rounded-full text-sm transition-all backdrop-blur-sm"
       >
-        🏡 Tiny Escapes besuchen
+        🏡 Marktplatz ansehen
       </a>
     </div>
   );

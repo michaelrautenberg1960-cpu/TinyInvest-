@@ -34,7 +34,7 @@ const faqItems = [
   {
     question: "Was braucht der Stellplatz für ein Tiny House?",
     answer:
-      "Der Stellplatz muss im Bebauungsplan für die vorgesehene Nutzung zugelassen sein. Für Ferienvermietung reicht in vielen Fällen eine Nutzungsänderung oder eine gewerbliche Stellplatzduldung. Im tiny Escapes Netzwerk werden Stellplätze vorab rechtlich geprüft – du musst dich als Investor nicht um die Genehmigung kümmern.",
+      "Der Stellplatz muss im Bebauungsplan für die vorgesehene Nutzung zugelassen sein. Für Ferienvermietung reicht in vielen Fällen eine Nutzungsänderung oder eine gewerbliche Stellplatzduldung. Im lokale Partner Netzwerk werden Stellplätze vorab rechtlich geprüft – du musst dich als Investor nicht um die Genehmigung kümmern.",
   },
   {
     question: "Darf ich dauerhaft in einem Tiny House wohnen?",
@@ -44,7 +44,7 @@ const faqItems = [
   {
     question: "Was ist bei einem Tiny House Investment in Österreich oder der Schweiz anders?",
     answer:
-      "In Österreich und der Schweiz gelten grundsätzlich ähnliche Regelungen: mobile Häuser auf Trailern fallen nicht unter das klassische Baurecht, aber die Nutzung als Ferienunterkunft kann lokale Gewerbegenehmigungen erfordern. Das tiny Escapes Netzwerk hat Erfahrung mit Standorten in beiden Ländern und unterstützt bei der Genehmigungsplanung.",
+      "In Österreich und der Schweiz gelten grundsätzlich ähnliche Regelungen: mobile Häuser auf Trailern fallen nicht unter das klassische Baurecht, aber die Nutzung als Ferienunterkunft kann lokale Gewerbegenehmigungen erfordern. das lokale Partnernetzwerk hat Erfahrung mit Standorten in beiden Ländern und unterstützt bei der Genehmigungsplanung.",
   },
 ];
 
@@ -187,7 +187,7 @@ export default function GenehmigungPage() {
               {
                 step: "02",
                 title: "Nutzungsart anmelden",
-                desc: "Ferienvermietung gilt als gewerbliche Nutzung. In den meisten Gemeinden muss eine Nutzungsanmeldung oder eine Gewerbeanmeldung für den Beherbergungsbetrieb erfolgen – beim Betreiber (Host/tiny Escapes), nicht beim Investor.",
+                desc: "Ferienvermietung gilt als gewerbliche Nutzung. In den meisten Gemeinden muss eine Nutzungsanmeldung oder eine Gewerbeanmeldung für den Beherbergungsbetrieb erfolgen – beim Betreiber (Host/lokale Partner), nicht beim Investor.",
               },
               {
                 step: "03",
@@ -242,8 +242,8 @@ export default function GenehmigungPage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">So löst TinyInvest das Genehmigungsthema</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
             {[
-              { icon: "🔍", title: "Standort-Due-Diligence", desc: "Tiny Escapes prüft jeden Stellplatz vor Aufstellung auf Baurecht, Nutzungsart und Infrastruktur." },
-              { icon: "📋", title: "Genehmigungsmanagement", desc: "Notwendige Anmeldungen und Gewerbezulassungen werden durch den Host bzw. tiny Escapes abgewickelt." },
+              { icon: "🔍", title: "Standort-Due-Diligence", desc: "lokale Partner prüft jeden Stellplatz vor Aufstellung auf Baurecht, Nutzungsart und Infrastruktur." },
+              { icon: "📋", title: "Genehmigungsmanagement", desc: "Notwendige Anmeldungen und Gewerbezulassungen werden durch den Host bzw. lokale Partner abgewickelt." },
               { icon: "🔄", title: "Standortwechsel möglich", desc: "Falls ein Standort rechtliche Probleme bekommt: Das Tiny House wird auf den Trailer gesetzt und zieht um." },
             ].map((c) => (
               <div key={c.title} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">

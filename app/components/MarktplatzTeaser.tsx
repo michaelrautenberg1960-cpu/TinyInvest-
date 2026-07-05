@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import ModelleCarousel from "./ModelleCarousel";
@@ -41,7 +41,7 @@ export default function MarktplatzTeaser() {
               Aktuelle Tinyhaus Projekte auf unserem Marktplatz
             </h2>
             <p className="text-gray-500 text-sm mt-2 max-w-xl">
-              §7g-fähige Tiny House Assets – vollautomatisch bewirtschaftet durch tiny Escapes.
+              §7g-fähige Tiny House Assets – über lokale Partner bewirtschaftet durch lokale Partner.
               Sie investieren, wir machen den Rest.
             </p>
           </div>

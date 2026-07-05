@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Tiny House Altersvorsorge 2026: Senioren & Rentner | TinyInvest",
   description:
-    "Tiny House als Altersvorsorge: Sachwert kaufen, monatlich Einkommen kassieren — oder selbst einziehen. Für Senioren & Rentner ab 55. Vollautomatisch.",
+    "Tiny House als Altersvorsorge: Sachwert kaufen, monatlich Einkommen kassieren — oder selbst einziehen. Für Senioren & Rentner ab 55. mit geringem Aufwand über lokale Partner.",
   keywords:
     "tiny house altersvorsorge, tiny house senioren, tiny house rente, tiny house rentner, im alter tiny house wohnen, sachwert rentenlücke, passives einkommen senioren",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
     type: "article",
     title: "Tiny House Altersvorsorge 2026: Senioren & Rentner | TinyInvest",
     description:
-      "Sachwert statt Sparbuch: Tiny House kaufen, monatlich Einkommen erhalten oder selbst einziehen. Für Senioren & Rentner — vollautomatisch, kein Aufwand.",
+      "Sachwert statt Sparbuch: Tiny House kaufen, monatlich Einkommen erhalten oder selbst einziehen. Für Senioren & Rentner — mit geringem Aufwand über lokale Partner.",
     url: "https://tinyhouse.investments/wissen/senioren",
   },
 };
@@ -28,7 +28,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. Bei der Kapitalanlage-Variante übernimmt tiny Escapes die vollständige Bewirtschaftung: Buchungen, Reinigung, Gästebetreuung, Wartung. Sie erhalten monatlich 40 % der Mieteinnahmen auf Ihr Konto — ohne eigenen Aufwand.",
+      "Nein. Bei der Kapitalanlage-Variante übernimmt lokale Partner die vollständige Bewirtschaftung: Buchungen, Reinigung, Gästebetreuung, Wartung. Sie erhalten monatlich 40 % der Mieteinnahmen auf Ihr Konto — ohne eigenen Aufwand.",
   },
   {
     question: "Kann ich auch selbst darin wohnen?",
@@ -43,12 +43,12 @@ const faqItems = [
   {
     question: "Ist das Risiko gering?",
     answer:
-      "Sie kaufen einen realen Sachwert — kein Papier, keine Aktie. Das Objekt behält einen Restwert und ist nicht von Bankbilanzen abhängig. Die Hauptrisiken sind Belegungsschwankungen und Gesetzesänderungen bei Kurzzeitvermietung, weshalb tiny Escapes auf diversifizierte Standorte und langfristige Partnerschaften setzt.",
+      "Sie kaufen einen realen Sachwert — kein Papier, keine Aktie. Das Objekt behält einen Restwert und ist nicht von Bankbilanzen abhängig. Die Hauptrisiken sind Belegungsschwankungen und Gesetzesänderungen bei Kurzzeitvermietung, weshalb lokale Partner auf diversifizierte Standorte und langfristige Partnerschaften setzt.",
   },
   {
     question: "Gibt es eine Mindestlaufzeit?",
     answer:
-      "Nein. Es gibt keine vertragliche Mindestlaufzeit. Sie können den Bewirtschaftungsvertrag mit tiny Escapes kündigen oder das Objekt weiterverkaufen. Empfohlen wird jedoch ein Anlagehorizont von mindestens 5 Jahren für eine optimale Renditeentwicklung.",
+      "Nein. Es gibt keine vertragliche Mindestlaufzeit. Sie können den Bewirtschaftungsvertrag mit lokale Partner kündigen oder das Objekt weiterverkaufen. Empfohlen wird jedoch ein Anlagehorizont von mindestens 5 Jahren für eine optimale Renditeentwicklung.",
   },
   {
     question: "Ab welchem Alter kann ich investieren oder selbst einziehen?",
@@ -177,10 +177,10 @@ export default function SeniorenPage() {
               <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center mb-4 text-xl">💰</div>
               <h3 className="font-black text-gray-900 text-lg mb-2">Als Kapitalanlage</h3>
               <p className="text-gray-500 text-[13px] leading-relaxed mb-4">
-                Sie kaufen das Tiny House — tiny Escapes übernimmt alles. Buchungen, Gäste, Reinigung, Wartung. Sie erhalten monatlich 40 % der Mieteinnahmen auf Ihr Konto. Kein Aufwand, echtes Einkommen.
+                Sie kaufen das Tiny House — lokale Partner übernehmen alles. Buchungen, Gäste, Reinigung, Wartung. Sie erhalten monatlich 40 % der Mieteinnahmen auf Ihr Konto. Kein Aufwand, echtes Einkommen.
               </p>
               <ul className="space-y-2 text-[13px] text-gray-600">
-                {["12–14 % IRR p.a.", "Monatliche Auszahlung", "Vollautomatisch bewirtschaftet", "Kein Verwaltungsaufwand"].map((b) => (
+                {["12–14 % IRR p.a.", "Monatliche Auszahlung", "über lokale Partner bewirtschaftet", "Kein Verwaltungsaufwand"].map((b) => (
                   <li key={b} className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span>{b}</li>
                 ))}
               </ul>
@@ -216,7 +216,7 @@ export default function SeniorenPage() {
             <div className="bg-green-50 border-l-4 border-green-600 rounded-r-2xl p-5">
               <p className="font-black text-gray-900 text-[14px] mb-1">Als renditestarke Kapitalanlage</p>
               <p className="text-gray-600 text-[13px] leading-relaxed">
-                Sie erwerben das Tiny House als physisches Eigentum, während Profis den Rest erledigen. Über Partner wie tiny Escapes wird das Objekt vollautomatisch bewirtschaftet – von der Buchung über die Reinigung bis zur Wartung. Sie profitieren von einer prognostizierten Rendite von 12–14 % p.a. und erhalten monatlich 40 % der Mieteinnahmen direkt auf Ihr Konto. Es ist passives Einkommen im besten Sinne: kein Verwaltungsaufwand, kein Mieterstress, volle Transparenz.
+                Sie erwerben das Tiny House als physisches Eigentum, während Profis den Rest erledigen. Über Partner wie lokale Partner wird das Objekt über lokale Partner bewirtschaftet – von der Buchung über die Reinigung bis zur Wartung. Sie profitieren von einer prognostizierten Rendite von 12–14 % p.a. und erhalten monatlich 40 % der Mieteinnahmen direkt auf Ihr Konto. Es ist passives Einkommen im besten Sinne: kein Verwaltungsaufwand, kein Mieterstress, volle Transparenz.
               </p>
             </div>
             <div className="bg-gray-50 border-l-4 border-gray-300 rounded-r-2xl p-5">
@@ -287,7 +287,7 @@ export default function SeniorenPage() {
             {[
               { num: "01", title: "Echter Sachwert", desc: "Kein Papier, kein Versprechen. Das Tiny House gehört Ihnen physisch — mit einem Restwert, der nicht von Bankbilanzen abhängt." },
               { num: "02", title: "Einkommen oder niedrige Kosten", desc: "Als Kapitalanlage: 40 % der Mieteinnahmen monatlich. Als Wohnlösung: Heizung, Strom und Versicherung kosten einen Bruchteil eines normalen Hauses." },
-              { num: "03", title: "Kein Aufwand", desc: "Bei der Vermietung übernimmt tiny Escapes alles. Bei der Eigennutzung ist nichts zu verwalten — kein Mieter, kein Makler, kein Verwalter." },
+              { num: "03", title: "Kein Aufwand", desc: "Bei der Vermietung übernimmt lokale Partner alles. Bei der Eigennutzung ist nichts zu verwalten — kein Mieter, kein Makler, kein Verwalter." },
             ].map((item) => (
               <div key={item.num} className="bg-green-700 rounded-2xl p-6 text-white">
                 <p className="font-data text-3xl font-black text-green-300 mb-3">{item.num}</p>
@@ -316,7 +316,7 @@ export default function SeniorenPage() {
           <div className="grid sm:grid-cols-3 gap-5 mb-12">
             {[
               { step: "1", title: "Objekt auswählen", desc: "Wählen Sie ein verfügbares Projekt auf dem Marktplatz. Ab 65.000 €, direkt beim Hersteller gekauft." },
-              { step: "2", title: "Entscheidung treffen", desc: "Vermieten mit tiny Escapes (monatliche Auszahlung) — oder selbst einziehen mit Genehmigung am Wunschstandort." },
+              { step: "2", title: "Entscheidung treffen", desc: "Vermieten mit lokale Partner (monatliche Auszahlung) — oder selbst einziehen mit Genehmigung am Wunschstandort." },
               { step: "3", title: "Genießen", desc: "Ob Einnahmen auf dem Konto oder das Gefühl, in der Natur zu wohnen — Sie genießen, wir kümmern uns um den Rest." },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-6 bg-white">
@@ -379,7 +379,7 @@ export default function SeniorenPage() {
               Transparenz ist uns wichtig — deshalb sprechen wir offen über Zahlen. Ein modernes Tiny House auf einem Vlemmix-Trailer ist im laufenden Betrieb ausgesprochen günstig. Für die Eigennutzung können Sie mit folgenden monatlichen Kosten rechnen: Strom ca. 30–50 €, Wasser ca. 15–25 €, Gebäudeversicherung ca. 15–30 €, Stellplatzmiete je nach Lage ca. 150–400 €. Summe: rund 200–500 € monatlich — je nach Standort und persönlichem Verbrauch. Zum Vergleich: Eine vergleichbar komfortable Mietwohnung auf dem Land kostet heute leicht 700–1.100 € warm.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Bei der Kapitalanlage-Variante trägt tiny Escapes sämtliche Betriebskosten für das laufende Geschäft (Reinigung, Plattformgebühren, Wartung). Aus Ihrer 40-%-Auszahlung sind keine Abzüge mehr für Verwaltung zu erwarten — das ist bereits im Auszahlungsmodell berücksichtigt. Die größten Kostenblöcke, die Sie kennen sollten: Bei Bedarf anfallende Reparaturen oder Instandhaltungen werden vorab kommuniziert und gemeinsam besprochen. Kein böses Erwachen nach einem Brief vom Verwalter.
+              Bei der Kapitalanlage-Variante trägt lokale Partner sämtliche Betriebskosten für das laufende Geschäft (Reinigung, Plattformgebühren, Wartung). Aus Ihrer 40-%-Auszahlung sind keine Abzüge mehr für Verwaltung zu erwarten — das ist bereits im Auszahlungsmodell berücksichtigt. Die größten Kostenblöcke, die Sie kennen sollten: Bei Bedarf anfallende Reparaturen oder Instandhaltungen werden vorab kommuniziert und gemeinsam besprochen. Kein böses Erwachen nach einem Brief vom Verwalter.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Wichtig: Der Kaufpreis des Tiny Houses (ab 65.000 €) ist keine laufende Ausgabe, sondern eine einmalige Investition in Ihr Eigentum — ein Vermögenswert, der Ihnen physisch gehört und jederzeit weiterverkauft werden kann. Anders als bei einer Rentenversicherung oder einem Sparplan bleibt Ihr Kapital greifbar.
@@ -389,7 +389,7 @@ export default function SeniorenPage() {
           {/* Disclaimer */}
           <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-8">
             <p className="text-[10px] text-amber-700 font-bold uppercase tracking-widest mb-2">⚠ Hinweis</p>
-            <p className="text-[12px] text-amber-800 leading-relaxed">Alle Renditeangaben sind Projektionen auf Basis historischer Belegungsdaten von tiny Escapes. Keine Garantie zukünftiger Ergebnisse. Steuerliche und rechtliche Rahmenbedingungen (Selbstnutzung, Wohnsitzanmeldung) sind individuell zu prüfen.</p>
+            <p className="text-[12px] text-amber-800 leading-relaxed">Alle Renditeangaben sind Projektionen auf Basis historischer Belegungsdaten lokaler Partner. Keine Garantie zukünftiger Ergebnisse. Steuerliche und rechtliche Rahmenbedingungen (Selbstnutzung, Wohnsitzanmeldung) sind individuell zu prüfen.</p>
           </div>
 
           {/* Internal links */}

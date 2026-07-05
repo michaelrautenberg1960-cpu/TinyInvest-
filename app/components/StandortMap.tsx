@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 import {
   ComposableMap,
@@ -49,7 +49,7 @@ export default function StandortMap() {
             Unser Deployment-Netzwerk
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
-            Aktive und geplante Standorte des tiny Escapes Netzwerks.
+            Aktive und geplante Standorte des lokale Partner Netzwerks.
             Da die Häuser mobil sind, können sie jederzeit verlegt werden.
           </p>
         </div>

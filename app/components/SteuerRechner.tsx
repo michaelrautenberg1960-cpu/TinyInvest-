@@ -157,7 +157,8 @@ export default function SteuerRechner() {
       </div>
 
       <p className="text-center text-xs text-gray-400 mt-4">
-        * Stand 2026: § 7g EStG (IAB + Sonder-AfA 40 %) und § 7 Abs. 2 EStG (degressive AfA 30 %, ab 01.07.2025 gültig). Sonder-AfA und degressive AfA sind im Kaufjahr kombinierbar. Individuelle steuerliche Beratung erforderlich.
+        <strong className="text-gray-500">Unverbindliche Schätzung · ersetzt keine steuerliche Beratung · Steuerberater konsultieren</strong><br />
+        * Stand 2026: § 7g EStG (IAB + Sonder-AfA 40 %) und § 7 Abs. 2 EStG (degressive AfA 30 %, ab 01.07.2025 gültig). Sonder-AfA und degressive AfA sind im Kaufjahr kombinierbar.
       </p>
     </div>
   );

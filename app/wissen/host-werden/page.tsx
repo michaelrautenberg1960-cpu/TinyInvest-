@@ -11,7 +11,7 @@ export const metadata = {
   description:
     "Wie wirst du TinyInvest Host? Voraussetzungen, Verdienst (bis 45 %), Standortanforderungen und der komplette Bewerbungsprozess erklärt.",
   keywords:
-    "tiny house host werden, grundstück tiny house vermieten, airbnb host tiny house, tiny escapes host, tiny house betreiber werden",
+    "tiny house host werden, grundstück tiny house vermieten, airbnb host tiny house, lokale Partner host, tiny house betreiber werden",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: {
     canonical: "https://tinyhouse.investments/wissen/host-werden",
@@ -40,7 +40,7 @@ const faqItems = [
   {
     question: "Kann ich selbst entscheiden, welche Gäste ich aufnehme?",
     answer:
-      "Die Buchungsverwaltung läuft zentral über tiny Escapes und die Plattformen. Du kannst einzelne Buchungsanfragen in Abstimmung mit tiny Escapes ablehnen, wenn es konkrete Gründe gibt. Der Prozess ist darauf ausgelegt, dir möglichst wenig Koordinationsaufwand zu geben – die Plattform übernimmt das Gäste-Screening.",
+      "Die Buchungsverwaltung läuft zentral über lokale Partner und die Plattformen. Du kannst einzelne Buchungsanfragen in Abstimmung mit lokale Partner ablehnen, wenn es konkrete Gründe gibt. Der Prozess ist darauf ausgelegt, dir möglichst wenig Koordinationsaufwand zu geben – die Plattform übernimmt das Gäste-Screening.",
   },
   {
     question: "Kann ich aufhören, Host zu sein, wenn es mir nicht mehr passt?",
@@ -189,7 +189,7 @@ export default function HostWerdenPage() {
               Der Kern deiner Tätigkeit dreht sich um drei Bereiche: Check-in und Check-out, Reinigung sowie Grundstückspflege. Pro Buchung empfängst du die Gäste persönlich oder über einen Smart-Lock, gibst eine kurze Einweisung ins Haus – das dauert typisch 15 bis 30 Minuten. Nach jedem Aufenthalt reinigst du das Tiny House, was je nach Modell ein bis zwei Stunden in Anspruch nimmt. Wer das outsourcen möchte, kann einen lokalen Reinigungsservice beauftragen, was viele erfahrene Hosts mit mehreren Buchungen pro Monat tun.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Hinzu kommen Grundstückspflege – Terrasse, Außenbereich, Rasen mähen, Laub entfernen – sowie gelegentliche kleine Wartungsarbeiten: Glühbirnen wechseln, Solarpanel reinigen, kleinere Reparaturen. Größere Instandhaltungsmaßnahmen koordiniert TinyInvest; du trägst keine Kosten dafür. Die Kommunikation mit Gästen läuft großteils über die Plattform tiny Escapes, die auch Buchungsmanagement und Zahlungsabwicklung übernimmt.
+              Hinzu kommen Grundstückspflege – Terrasse, Außenbereich, Rasen mähen, Laub entfernen – sowie gelegentliche kleine Wartungsarbeiten: Glühbirnen wechseln, Solarpanel reinigen, kleinere Reparaturen. Größere Instandhaltungsmaßnahmen koordiniert TinyInvest; du trägst keine Kosten dafür. Die Kommunikation mit Gästen läuft großteils über die Plattform lokale Partner, die auch Buchungsmanagement und Zahlungsabwicklung übernimmt.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Realistisch betrachtet bedeutet das bei vier Buchungen pro Monat etwa acht Stunden für Check-ins und Reinigungen sowie zwei bis drei Stunden für Grundstückspflege – insgesamt rund zehn bis zwölf Stunden monatlich. Für diesen Aufwand erhältst du bis zu 821 € – ein Stundensatz, der sich sehen lässt.
@@ -205,7 +205,7 @@ export default function HostWerdenPage() {
               Wenn dein Standort geeignet ist, beginnt das Investor-Matching: TinyInvest sucht einen passenden Investor für dein Grundstück, du kannst das Modell und die Person kennenlernen. Das dauert in der Regel ein bis zwei Wochen. Danach folgt die Vertragsphase: Du unterschreibst den Betreibervertrag, TinyInvest hilft dir bei Gewerbeanmeldung und Genehmigungsfragen.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Im vorletzten Schritt wird das Tiny House geliefert, aufgebaut und buchungsbereit eingerichtet – du wirst in alle Abläufe eingewiesen: Check-in-Prozess, Reinigungsstandards, Dashboard-Nutzung. Anschließend wird das Haus auf tiny Escapes und Airbnb gelistet. Erste Buchungen gehen typischerweise nach zwei bis vier Wochen ein. Ab dann bekommst du monatlich deine Auszahlung.
+              Im vorletzten Schritt wird das Tiny House geliefert, aufgebaut und buchungsbereit eingerichtet – du wirst in alle Abläufe eingewiesen: Check-in-Prozess, Reinigungsstandards, Dashboard-Nutzung. Anschließend wird das Haus auf lokale Partner und Airbnb gelistet. Erste Buchungen gehen typischerweise nach zwei bis vier Wochen ein. Ab dann bekommst du monatlich deine Auszahlung.
             </p>
           </div>
 

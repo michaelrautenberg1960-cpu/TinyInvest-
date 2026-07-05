@@ -6,7 +6,7 @@ const tabs = ["📋 Steuer-Investor", "📈 Rendite-Investor", "🏡 Finanzierun
 
 const steuerSteps = [
   { num: "01", title: "Steuerberater konsultieren", desc: "Sie nehmen unser Steuer-Factsheet mit und lassen prüfen, ob IAB und Sonder-AfA für Sie anwendbar sind. (Spoiler: Fast immer ja.)" },
-  { num: "02", title: "IAB bilden", desc: "Ihr Steuerberater bildet den Investitionsabzugsbetrag (50 %) – oft noch rückwirkend für das Vorjahr. Das Finanzamt überweist ca. 16.000–17.000 € zurück.", link: { href: "/wissen/iab-tiny-house", label: "IAB beantragen: Schritt-für-Schritt-Anleitung →" } },
+  { num: "02", title: "IAB bilden", desc: "Ihr Steuerberater bildet den Investitionsabzugsbetrag (50 %) – oft noch rückwirkend für das Vorjahr. Das Finanzamt erstattet einen Teil der Steuer zurück (Einzelfall, abhängig von Steuersatz und Kaufpreis – Steuerberater konsultieren).", link: { href: "/wissen/iab-tiny-house", label: "IAB beantragen: Schritt-für-Schritt-Anleitung →" } },
   { num: "03", title: "Haus kaufen & liefern", desc: "Sie wählen Ihr TinyInvest-Modell, wir produzieren es und liefern es auf den vereinbarten Standort in Deutschland oder der EU." },
   { num: "04", title: "Vermietung & Steuer genießen", desc: "Ihr Haus geht sofort in den Betrieb. Sonder-AfA und AfA werden in der Steuererklärung geltend gemacht. Monatliche Mieteinnahmen fließen." },
 ];
@@ -14,14 +14,14 @@ const steuerSteps = [
 const renditeSteps = [
   { num: "01", title: "Modell & Standort wählen", desc: "Wählen Sie Ihr Modell und Ihren Wunschstandort – ob Deutschland, Österreich, Rumänien oder Kroatien. Wir beraten Sie bei der Standortwahl." },
   { num: "02", title: "Host & Lieferung", desc: "Wir vermitteln Ihnen einen verifizierten Host vor Ort, der Reinigung, Check-in und Pflege übernimmt. Ihr Haus wird geliefert und aufgestellt." },
-  { num: "03", title: "Monatliche Auszahlung", desc: "Los geht's: Ihr Haus ist buchbar. Sie erhalten 40 % der Einnahmen monatlich ausgezahlt – transparent und vollständig passiv." },
+  { num: "03", title: "Monatliche Auszahlung", desc: "Los geht's: Ihr Haus ist buchbar. Sie erzielen als Eigentümer Mieteinnahmen im eigenen gewerblichen Betrieb – transparent und mit geringem Aufwand über den lokalen Partner." },
 ];
 
 const finanzSteps = [
   { num: "01", title: "Beratungsgespräch", desc: "Wir klären gemeinsam Ihre Finanzierungsmöglichkeiten: Kredit, Ratenkauf oder Leasing. Ihr Budget bestimmt das passende Modell." },
-  { num: "02", title: "IAB als Eigenkapital", desc: "Ihr Steuerberater bildet den IAB, das Finanzamt zahlt Ihnen ca. 16.000–17.000 € zurück. Dieses Geld nutzen Sie als Eigenkapital für die Bank.", link: { href: "/wissen/iab-tiny-house", label: "IAB beantragen: Schritt-für-Schritt-Anleitung →" } },
+  { num: "02", title: "IAB als Eigenkapital", desc: "Ihr Steuerberater bildet den IAB, das Finanzamt erstattet einen Teil der Steuer zurück (Einzelfall, abhängig von Steuersatz und Kaufpreis). Dieses Geld nutzen Sie als Eigenkapital für die Bank.", link: { href: "/wissen/iab-tiny-house", label: "IAB beantragen: Schritt-für-Schritt-Anleitung →" } },
   { num: "03", title: "Kredit & Lieferung", desc: "Mit echtem Eigenkapital aus der Steuer erhalten Sie günstige Konditionen. Das Haus wird geliefert und sofort vermietet." },
-  { num: "04", title: "Miete tilgt den Kredit", desc: "Ihre 40 % Mieteinnahmen decken die monatliche Kreditrate – oft mit positivem Cashflow. Das Haus gehört nach der Laufzeit Ihnen." },
+  { num: "04", title: "Miete tilgt den Kredit", desc: "Ihre Mieteinnahmen können die monatliche Kreditrate decken – abhängig von Standort, Auslastung und Finanzierungskonditionen. Das Haus gehört nach der Laufzeit Ihnen." },
 ];
 
 function StepCard({ num, title, desc, link }: { num: string; title: string; desc: string; link?: { href: string; label: string } }) {

@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ModalButton from "../components/ModalButton";
@@ -9,7 +9,7 @@ import Image from "next/image";
 export const metadata = {
   title: "Tiny House kaufen als Investment 2026: So funktioniert es | TinyInvest",
   description:
-    "Tiny House als Investment kaufen: Schritt-für-Schritt-Anleitung, Investor-Profile, 4-Schritte-Prozess und Rechenbeispiel. Ab 65.000 €, §7g-optimiert, vollautomatisch bewirtschaftet.",
+    "Tiny House als Investment kaufen: Schritt-für-Schritt-Anleitung, Investor-Profile, 4-Schritte-Prozess und Rechenbeispiel. Ab 65.000 €, §7g-optimiert, über lokale Partner bewirtschaftet.",
   keywords:
     "tiny house kaufen investment, tiny house investieren 2026, tiny house als rendite objekt, ferienhaus investment kaufen, tiny house investor werden, §7g investment",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -21,7 +21,7 @@ export const metadata = {
     type: "article",
     title: "Tiny House als Investment kaufen 2026 – Der Praxis-Guide",
     description:
-      "Wie kauft man ein Tiny House als Investment? Investor-Profile, 4-Schritte-Prozess und Rechenbeispiel. Vollautomatisch bewirtschaftet.",
+      "Wie kauft man ein Tiny House als Investment? Investor-Profile, 4-Schritte-Prozess und Rechenbeispiel. über lokale Partner bewirtschaftet.",
     url: "https://tinyhouse.investments/tiny-house-als-kapitalanlage",
   },
 };
@@ -40,7 +40,7 @@ const faqItems = [
   {
     question: "Brauche ich ein Grundstück?",
     answer:
-      "Nein. TinyInvest vermittelt einen verifizierten Host und Standort über das tiny Escapes Netzwerk. Kein Grundstückskauf, keine Grunderwerbsteuer, keine Notarkosten.",
+      "Nein. TinyInvest vermittelt einen verifizierten Host und Standort über das lokale Partner Netzwerk. Kein Grundstückskauf, keine Grunderwerbsteuer, keine Notarkosten.",
   },
   {
     question: "Welche steuerlichen Vorteile gibt es?",
@@ -177,7 +177,7 @@ export default function TinyHouseKapitalanlagePage() {
             <Link href="/wissen/kapitalanlage" className="text-green-700 font-semibold hover:underline">detaillierten Kapitalanlage-Guide →</Link>
           </p>
           <p className="text-gray-700 text-base leading-relaxed">
-            Auf dieser Seite geht es um die praktische Seite: Wer kauft, wie läuft der Prozess ab, was passiert nach dem Kauf — und warum sind die laufenden Kosten für den Investor so niedrig? Das Modell funktioniert nur, weil drei Parteien klar definierte Interessen haben: Du als Eigentümer willst Rendite. Der Host will ein Haus mit Gästen. tiny Escapes will eine funktionierende Plattform. Wenn alle drei gewinnen, hält das System.
+            Auf dieser Seite geht es um die praktische Seite: Wer kauft, wie läuft der Prozess ab, was passiert nach dem Kauf — und warum sind die laufenden Kosten für den Investor so niedrig? Das Modell funktioniert nur, weil drei Parteien klar definierte Interessen haben: Du als Eigentümer willst Rendite. Der Host will ein Haus mit Gästen. lokale Partner will eine funktionierende Plattform. Wenn alle drei gewinnen, hält das System.
           </p>
         </div>
       </section>
@@ -220,7 +220,7 @@ export default function TinyHouseKapitalanlagePage() {
                     ["Kaufnebenkosten", "10–15 % (Notar, GrESt, Makler)", "Keine"],
                     ["Mietrendite brutto", "3–5 % p.a.", "12–14 % IRR p.a."],
                     ["Abschreibung", "2 % über 50 Jahre", "§7g: bis 70 % im Kaufjahr"],
-                    ["Bewirtschaftung", "Eigenregie / Hausverwaltung", "Full-Service (tiny Escapes)"],
+                    ["Bewirtschaftung", "Eigenregie / Hausverwaltung", "Betrieb über lokale Partner (lokale Partner)"],
                     ["Flexibilität", "Ortsgebunden", "EU-weit versetzbar"],
                   ].map(([m, etw, tiny]) => (
                     <tr key={m} className="hover:bg-gray-50/50">
@@ -277,7 +277,7 @@ export default function TinyHouseKapitalanlagePage() {
                 icon: "📈",
                 title: "Passiver Cashflow",
                 kpi: "~875 €/Monat",
-                desc: "Du erhältst 40 % aller Mieteinnahmen monatlich. tiny Escapes übernimmt alles: Buchung, Gäste, Reinigung, Check-in – du musst nichts tun.",
+                desc: "Du erhältst 40 % aller Mieteinnahmen monatlich. lokale Partner übernimmt alles: Buchung, Gäste, Reinigung, Check-in – du musst nichts tun.",
               },
             ].map((item) => (
               <div key={item.title} className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
@@ -291,7 +291,7 @@ export default function TinyHouseKapitalanlagePage() {
 
           <div className="mt-10 space-y-4 text-gray-700 text-[15px] leading-relaxed">
             <p>
-              Passive Einnahmen aus Immobilien klingen gut — in der Praxis bedeuten sie oft: Mieter anrufen, Handwerker koordinieren, Nebenkostenabrechnung erstellen, Leerstandsphasen überbrücken. Beim Tiny House Investment über tiny Escapes entfällt das vollständig. Der Betreiber übernimmt Buchungen, Gäste, Reinigung, Wartung und monatliche Abrechnung. Du erhältst jeden Monat eine Überweisung — ohne einen einzigen Anruf machen zu müssen.
+              Passive Einnahmen aus Immobilien klingen gut — in der Praxis bedeuten sie oft: Mieter anrufen, Handwerker koordinieren, Nebenkostenabrechnung erstellen, Leerstandsphasen überbrücken. Beim Tiny House Investment über lokale Partner entfällt das vollständig. Der Betreiber übernimmt Buchungen, Gäste, Reinigung, Wartung und monatliche Abrechnung. Du erhältst jeden Monat eine Überweisung — ohne einen einzigen Anruf machen zu müssen.
             </p>
             <p>
               Das ist strukturell anders als ein klassischer Vermieter-Job. Und es ist der Grund, warum das Modell besonders für viel beschäftigte Freiberufler, Unternehmer und Angestellte attraktiv ist: Es passt in jede Lebenssituation — ohne Zusatzaufwand.
@@ -420,7 +420,7 @@ export default function TinyHouseKapitalanlagePage() {
               {
                 step: "04",
                 title: "Auszahlung startet",
-                desc: "tiny Escapes und/oder ein lokaler Partner übernimmt Betrieb, Buchungen, Gäste und Wartung. Du erhältst monatlich 40 % der Nettomieteinnahmen.",
+                desc: "lokale Partner und/oder ein lokaler Partner übernimmt Betrieb, Buchungen, Gäste und Wartung. Du erhältst monatlich 40 % der Nettomieteinnahmen.",
               },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-5 bg-white">
@@ -438,7 +438,7 @@ export default function TinyHouseKapitalanlagePage() {
               Von der ersten Anfrage bis zur ersten Mietauszahlung vergehen in der Regel <strong className="text-gray-900">8–14 Wochen</strong>. Du kaufst das Haus bei TinyInvest — gefertigt von unseren zertifizierten Partner-Werkstätten. Du wirst Eigentümer eines physischen Objekts, kein Anteilsinhaber einer Gesellschaft.
             </p>
             <p>
-              Das bedeutet auch: Du kannst das Haus im Notfall jederzeit abziehen und anderweitig nutzen oder verkaufen. Die Bindung an tiny Escapes ist vertraglich geregelt, aber du bist nicht auf Gedeih und Verderb an einen einzigen Betreiber gebunden — ein wesentlicher Unterschied zu geschlossenen Fondsprodukten.
+              Das bedeutet auch: Du kannst das Haus im Notfall jederzeit abziehen und anderweitig nutzen oder verkaufen. Die Bindung an lokale Partner ist vertraglich geregelt, aber du bist nicht auf Gedeih und Verderb an einen einzigen Betreiber gebunden — ein wesentlicher Unterschied zu geschlossenen Fondsprodukten.
             </p>
           </div>
 
@@ -523,7 +523,7 @@ export default function TinyHouseKapitalanlagePage() {
             {[
               { icon: "📉", title: "Leerstand", desc: "Belegung kann schwanken. Wirtschaftliche Abschwünge oder Standortprobleme beeinflussen die Einnahmen." },
               { icon: "⚖️", title: "Steuerrechtsänderung", desc: "§7g EStG kann geändert werden. Die aktuelle Förderung gilt bis auf Weiteres – keine Garantie." },
-              { icon: "🚛", title: "Betreiberrisiko", desc: "Die Rendite hängt von tiny Escapes ab. Als Eigentümer kannst du das Haus im Notfall herausverlangen." },
+              { icon: "🚛", title: "Betreiberrisiko", desc: "Die Rendite hängt von lokale Partner ab. Als Eigentümer kannst du das Haus im Notfall herausverlangen." },
             ].map((r) => (
               <div key={r.title} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
                 <span className="text-2xl mb-3 block">{r.icon}</span>

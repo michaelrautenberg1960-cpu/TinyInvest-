@@ -30,7 +30,7 @@ const faqItems = [
   },
   {
     question: "Welche Belegungsquote wird beim Renditemodell angesetzt?",
-    answer: "Das Basismodell rechnet mit 60 % Belegung (ca. 219 Nächte/Jahr) bei einem Durchschnittspreis von 100 €/Nacht. Das ergibt Bruttomieteinnahmen von 21.900 €/Jahr. Der Investor erhält 40 % davon = 8.760 € netto/Jahr (730 €/Monat). tiny Escapes verwendet diese Zahlen auf Basis historischer Belegungsdaten.",
+    answer: "Das Basismodell rechnet mit 60 % Belegung (ca. 219 Nächte/Jahr) bei einem Durchschnittspreis von 100 €/Nacht. Das ergibt Bruttomieteinnahmen von 21.900 €/Jahr. Der Investor erhält 40 % davon = 8.760 € netto/Jahr (730 €/Monat). lokale Partner verwendet diese Zahlen auf Basis historischer Belegungsdaten.",
   },
   {
     question: "Wie wirkt sich die Steuerersparnis auf die Rendite aus?",

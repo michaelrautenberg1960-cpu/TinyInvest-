@@ -31,7 +31,7 @@ const faqItems = [
   },
   {
     question: "Muss ich als Investor den Standort selbst suchen?",
-    answer: "Nein. TinyInvest-Investoren kaufen ein Tiny House, das bereits einem geprüften Standort im tiny Escapes Netzwerk zugeordnet wird. Standort-Due-Diligence, Baugenehmigung und Host-Beziehung werden vollständig durch tiny Escapes gemanagt.",
+    answer: "Nein. TinyInvest-Investoren kaufen ein Tiny House, das bereits einem geprüften Standort im lokale Partner Netzwerk zugeordnet wird. Standort-Due-Diligence, Baugenehmigung und Host-Beziehung werden vollständig durch lokale Partner gemanagt.",
   },
   {
     question: "Kann ich meinen bevorzugten Standort wählen?",
@@ -39,7 +39,7 @@ const faqItems = [
   },
   {
     question: "Wie wichtig ist die Lage für die Rendite?",
-    answer: "Sehr wichtig – aber nicht allein entscheidend. Die Belegungsquote wird durch Lage, Listing-Qualität, Pricing und Saison beeinflusst. Ein gut gemanagter Standort in der Eifel kann einen schlecht betriebenen Alpen-Standort übertreffen. Das tiny Escapes Betreibermodell optimiert alle Faktoren gleichzeitig.",
+    answer: "Sehr wichtig – aber nicht allein entscheidend. Die Belegungsquote wird durch Lage, Listing-Qualität, Pricing und Saison beeinflusst. Ein gut gemanagter Standort in der Eifel kann einen schlecht betriebenen Alpen-Standort übertreffen. Das lokale Partner Betreibermodell optimiert alle Faktoren gleichzeitig.",
   },
 ];
 
@@ -132,7 +132,7 @@ export default function TinyHouseStandortePage() {
               In einem touristischen Markt, in dem gefühlt jeder ein Tiny House betreiben will, entscheidet am Ende eine einzige Variable: der Standort. Nicht das Design, nicht die Ausstattung, nicht der Preis – die Lage bestimmt zu 60 bis 70 Prozent, ob ein Asset profitabel ist oder nicht. Die gute Nachricht: Wer in das richtige Netzwerk investiert, bekommt den Standort mitgeliefert.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Das tiny Escapes Netzwerk betreibt Häuser an geprüften Standorten in Deutschland, Österreich und weiteren europäischen Ländern. Die Lageauswahl folgt einem klaren Kriterienkatalog: ganzjährige Nachfrage, Erreichbarkeit aus Ballungsräumen, natürliche Alleinlage, Infrastruktur. Für Investoren bedeutet das: kein Standort-Risiko durch eigene Fehlentscheidung.
+              das lokale Partnernetzwerk betreibt Häuser an geprüften Standorten in Deutschland, Österreich und weiteren europäischen Ländern. Die Lageauswahl folgt einem klaren Kriterienkatalog: ganzjährige Nachfrage, Erreichbarkeit aus Ballungsräumen, natürliche Alleinlage, Infrastruktur. Für Investoren bedeutet das: kein Standort-Risiko durch eigene Fehlentscheidung.
             </p>
           </div>
 
@@ -207,14 +207,14 @@ export default function TinyHouseStandortePage() {
               Vier Faktoren bestimmen, ob ein Standort langfristig rentabel ist. An erster Stelle steht ganzjährige Nachfrage: Standorte, die Winterwanderer genauso ansprechen wie Sommertouristen, erzielen gleichmäßigen Cashflow über alle zwölf Monate. Saisonstandorte wie die Ostseeküste können in der Hochphase höhere Nachtpreise abrufen, kämpfen aber in der Nebensaison mit deutlich niedrigerer Auslastung.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Erreichbarkeit ist der zweite Schlüsselfaktor: Standorte innerhalb von zwei Stunden Fahrzeit von Ballungsräumen wie München, Hamburg oder Berlin haben strukturell höhere Auslastungsquoten, weil sie auch für Kurzurlauber über ein verlängertes Wochenende attraktiv sind. Dazu kommt die Listing-Qualität: Dynamisches Pricing, professionelle Fotos und Präsenz auf mehreren Buchungsplattformen gleichzeitig – Airbnb, Booking.com und die tiny Escapes Eigenwebsite – maximieren die Belegung unabhängig von der Ausgangslage.
+              Erreichbarkeit ist der zweite Schlüsselfaktor: Standorte innerhalb von zwei Stunden Fahrzeit von Ballungsräumen wie München, Hamburg oder Berlin haben strukturell höhere Auslastungsquoten, weil sie auch für Kurzurlauber über ein verlängertes Wochenende attraktiv sind. Dazu kommt die Listing-Qualität: Dynamisches Pricing, professionelle Fotos und Präsenz auf mehreren Buchungsplattformen gleichzeitig – Airbnb, Booking.com und die lokale Partner Eigenwebsite – maximieren die Belegung unabhängig von der Ausgangslage.
             </p>
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Warum Standort-Risiko für TinyInvest-Investoren kein Thema ist</h2>
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed">
-              TinyInvest-Investoren kaufen kein Tiny House ohne geprüften Standort. Jedes Objekt im Marktplatz ist bereits einem validierten Standort im tiny Escapes Netzwerk zugeordnet – die Standort-Due-Diligence, Stellplatzgenehmigung und Host-Beziehung sind Teil des Pakets. Das bedeutet: Du triffst keine Standortentscheidung im Blindflug, sondern auf Basis geprüfter Belegungs- und Preisdaten. Wer dennoch Einfluss auf die Region nehmen möchte, kann je nach Verfügbarkeit zwischen verschiedenen Standorten wählen – alle aktuell verfügbaren Projekte mit Standortangabe und Renditeprognose sind im Marktplatz einsehbar.
+              TinyInvest-Investoren kaufen kein Tiny House ohne geprüften Standort. Jedes Objekt im Marktplatz ist bereits einem validierten Standort im lokale Partner Netzwerk zugeordnet – die Standort-Due-Diligence, Stellplatzgenehmigung und Host-Beziehung sind Teil des Pakets. Das bedeutet: Du triffst keine Standortentscheidung im Blindflug, sondern auf Basis geprüfter Belegungs- und Preisdaten. Wer dennoch Einfluss auf die Region nehmen möchte, kann je nach Verfügbarkeit zwischen verschiedenen Standorten wählen – alle aktuell verfügbaren Projekte mit Standortangabe und Renditeprognose sind im Marktplatz einsehbar.
             </p>
           </div>
 

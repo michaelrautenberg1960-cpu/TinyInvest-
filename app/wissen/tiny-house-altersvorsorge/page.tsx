@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Tiny House Altersvorsorge: Sachwert statt Riester | TinyInvest",
   description:
-    "Riester, ETF oder Tiny House? Warum ein vollautomatisch verwaltetes Tiny House als Altersvorsorge mehr bringt – monatlicher Cashflow statt Rentenpunkte.",
+    "Riester, ETF oder Tiny House? Warum ein über lokale Partner betriebenes Tiny House als Altersvorsorge mehr bringt – monatlicher Cashflow statt Rentenpunkte.",
   keywords:
     "tiny house altersvorsorge, altersvorsorge sachwert, riester alternative, tiny house rente, sachwert altersvorsorge 2026, tiny house senioren investment, passive einnahmen ruhestand",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -21,7 +21,7 @@ export const metadata = {
     type: "article",
     title: "Tiny House als Altersvorsorge 2026: Sachwert statt Riester",
     description:
-      "Monatlicher Cashflow statt Rentenpunkte: Wie ein vollautomatisch verwaltetes Tiny House die Rentenlücke schließt – ab 65.000 €, kein Aufwand.",
+      "Monatlicher Cashflow statt Rentenpunkte: Wie ein über lokale Partner betriebenes Tiny House die Rentenlücke schließt – ab 65.000 €, kein Aufwand.",
     url: "https://tinyhouse.investments/wissen/tiny-house-altersvorsorge",
   },
 };
@@ -59,7 +59,7 @@ export default function TinyHouseAltersvorsorge() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Tiny House als Altersvorsorge 2026: Sachwert statt Riester — was rechnet sich wirklich?",
-    "description": "Riester, ETF oder Tiny House? Warum ein vollautomatisch verwaltetes Tiny House als Altersvorsorge mehr bringt – monatlicher Cashflow statt Rentenpunkte.",
+    "description": "Riester, ETF oder Tiny House? Warum ein über lokale Partner betriebenes Tiny House als Altersvorsorge mehr bringt – monatlicher Cashflow statt Rentenpunkte.",
     "url": "https://tinyhouse.investments/wissen/tiny-house-altersvorsorge",
     "datePublished": "2026-05-23",
     "dateModified": "2026-05-23",
@@ -138,7 +138,7 @@ export default function TinyHouseAltersvorsorge() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["Monatlicher Cashflow", "Echter Sachwert", "Ab 65.000 €", "Vollautomatisch", "Vererbbar"].map((tag) => (
+            {["Monatlicher Cashflow", "Echter Sachwert", "Ab 65.000 €", "mit geringem Aufwand über lokale Partner", "Vererbbar"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -152,7 +152,7 @@ export default function TinyHouseAltersvorsorge() {
               Die Realität der deutschen Altersvorsorge ist ernüchternd: Wer heute 3.000 € netto verdient, bekommt im Ruhestand nach 45 Beitragsjahren im Schnitt 1.450 € Rente — ein Ersatz von unter 50 %. Die monatliche Lücke von 800 bis 1.200 € soll Riester schließen. Doch der staatliche Zuschuss von 175 € pro Jahr und die bescheidenen Renditen klassischer Riester-Produkte reichen dafür kaum aus.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Ein Tiny House bietet einen anderen Ansatz: Anstatt Kapital über Jahrzehnte anzusparen und auf eine Versicherungsleistung zu warten, kaufen Sie einen physischen Sachwert, der vom ersten Monat an Einnahmen generiert — vollautomatisch bewirtschaftet durch das tiny Escapes Netzwerk.
+              Ein Tiny House bietet einen anderen Ansatz: Anstatt Kapital über Jahrzehnte anzusparen und auf eine Versicherungsleistung zu warten, kaufen Sie einen physischen Sachwert, der vom ersten Monat an Einnahmen generiert — über lokale Partner bewirtschaftet durch das lokale Partnernetzwerknetzwerk.
             </p>
           </div>
 
@@ -173,7 +173,7 @@ export default function TinyHouseAltersvorsorge() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
             {[
               { step: "01", title: "Objekt auswählen", desc: "Wählen Sie aus verfügbaren Tiny Houses ab 65.000 €. TinyInvest vermittelt Stellplatz, Genehmigung und Betrieb." },
-              { step: "02", title: "tiny Escapes übernimmt", desc: "Buchungen, Gästebetreuung, Reinigung, Wartung — alles wird vollautomatisch durch das tiny Escapes Netzwerk abgewickelt." },
+              { step: "02", title: "lokale Partner übernehmen", desc: "Buchungen, Gästebetreuung, Reinigung, Wartung — alles wird mit geringem Aufwand über lokale Partner durch das lokale Partnernetzwerknetzwerk abgewickelt." },
               { step: "03", title: "Monatlich kassieren", desc: "40 % der Netto-Mieteinnahmen werden automatisch ausgezahlt. Bei 60 % Belegung sind das rund 720 € pro Monat." },
             ].map((item) => (
               <div key={item.step} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
@@ -220,7 +220,7 @@ export default function TinyHouseAltersvorsorge() {
             </p>
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-[13px] text-amber-900">
               <p className="font-black mb-1">Hinweis</p>
-              <p>Die genannten Renditen basieren auf historischen Auslastungsdaten des tiny Escapes Netzwerks. Individuelle Ergebnisse können abweichen. Wir empfehlen eine persönliche steuerliche Beratung vor der Investitionsentscheidung.</p>
+              <p>Die genannten Renditen basieren auf historischen Auslastungsdaten des lokale Partner Netzwerks. Individuelle Ergebnisse können abweichen. Wir empfehlen eine persönliche steuerliche Beratung vor der Investitionsentscheidung.</p>
             </div>
           </div>
 

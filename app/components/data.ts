@@ -15,8 +15,8 @@ export const navLinks = [
 
 export const stats = [
   { value: "70 %", label: "Im Kaufjahr absetzbar" },
-  { value: "bis 18 %", label: "Rendite p.a." },
-  { value: "50–60 %", label: "Ø Belegung (tiny Escapes)" },
+  { value: "10–14 %*", label: "Rendite p.a." },
+  { value: "50–60 %", label: "Ø Belegung (Erfahrungswerte)" },
   { value: "100 %", label: "Mobiles Wirtschaftsgut" },
 ];
 
@@ -34,9 +34,9 @@ export const investorPaths = [
   {
     icon: "📈",
     tag: "Rendite-Investor",
-    title: "Passives Einkommen ohne Arbeit",
-    desc: "Sie kaufen ein TinyInvest-Haus und lehnen sich zurück. Unser Host-Netzwerk vermietet es für Sie, Sie erhalten 40 % der Einnahmen monatlich – ohne einen Finger zu rühren.",
-    highlights: ["40 % der Mieteinnahmen", "Full-Service Management", "Motivierter Host vor Ort"],
+    title: "Mieteinnahmen mit geringem Aufwand",
+    desc: "Sie kaufen ein TinyInvest-Haus und erzielen als Eigentümer Mieteinnahmen im eigenen gewerblichen Betrieb. Auf Wunsch übernimmt ein lokaler Betreiberpartner Vermietung, Reinigung und Gästebetreuung.",
+    highlights: ["Mieteinnahmen als Eigentümer", "Betrieb über lokale Partner auf Wunsch", "Motivierter Host vor Ort"],
     cta: "Rendite berechnen",
     href: "#rendite",
     color: "blue",
@@ -108,8 +108,8 @@ export const winWinModel = [
     percent: "40 %",
     color: "bg-green-50 border-green-200",
     textColor: "text-green-700",
-    role: "Stellt das Kapital (Kauf des Hauses). Erhält monatlich 40 % der Mieteinnahmen passiv.",
-    motivation: "Kombiniert mit IAB & Sonder-AfA: effektiv die höchste Rendite auf dem Markt.",
+    role: "Stellt das Kapital (Kauf des Hauses). Erzielt als Eigentümer Mieteinnahmen im eigenen gewerblichen Betrieb.",
+    motivation: "Kombiniert mit IAB & Sonder-AfA: attraktive Rendite – je nach Standort und Auslastung.",
   },
   {
     icon: "⚙️",
@@ -149,11 +149,11 @@ export const faqs = [
   },
   {
     q: "Muss die Vermietung gewerblich sein?",
-    a: "Ja, das ist die Voraussetzung für IAB und Sonder-AfA. Die gute Nachricht: Durch unser Full-Service-Modell (Buchungsplattform, Reinigung, Gäste-Service) ist die gewerbliche Prägung automatisch erfüllt. Der Steuerberater sieht sofort, dass es sich um ein aktives Gewerbe handelt.",
+    a: "Ja, das ist die Voraussetzung für IAB und Sonder-AfA. Die gute Nachricht: Durch die Vermietung über lokale Partner (Reinigung, Gäste-Service, Buchungsmanagement) ist die gewerbliche Prägung in der Regel erfüllt. Den Betreibervertrag schließen Sie direkt mit dem Partner ab; Ihr Steuerberater prüft die gewerbliche Qualifikation im Einzelfall.",
   },
   {
     q: "Wie hoch ist die typische Belegungsrate und was beeinflusst sie?",
-    a: "Unsere Häuser erzielen im Durchschnitt 50–60 % Belegung pro Jahr. Entscheidend sind Standortqualität, Host-Bewertung und Listingqualität auf Airbnb und tiny Escapes. Da das Haus jederzeit an einen besseren Standort umziehen kann, ist eine schlechte Belegung korrigierbar – ein Risikopuffer, den klassische Immobilien nicht bieten.",
+    a: "Erfahrungswerte lokaler Partner zeigen 50–60 % Belegung im Jahr, je nach Standort und Saison. Entscheidend sind Standortqualität, Host-Bewertung und Listingqualität auf Airbnb und weiteren Buchungsplattformen. Da das Haus jederzeit an einen besseren Standort umziehen kann, ist eine schlechte Belegung korrigierbar – ein Risikopuffer, den klassische Immobilien nicht bieten.",
   },
 ];
 
@@ -197,8 +197,8 @@ export const vergleichRows = [
   ["IAB nutzbar", "❌ Nein", "✅ Ja (50 % vorab)"],
   ["Sonder-AfA (40 %)", "❌ Nein", "✅ Ja (2024)"],
   ["Standortflexibilität", "Fest (Immobil)", "Mobil – EU-weit 🚛"],
-  ["Management", "Eigenregie / Hausverwaltung", "Full-Service (Host + Plattform)"],
-  ["Rendite p.a.", "3–4 % (nach Kosten)", "10–18 % (effektiv) 🚀"],
+  ["Management", "Eigenregie / Hausverwaltung", "Betrieb über lokale Partner möglich"],
+  ["Rendite p.a.", "3–4 % (nach Kosten)", "10–14 %* (standortabhängig) 🚀"],
 ];
 
 export const testimonials = [
@@ -207,44 +207,42 @@ export const testimonials = [
     name: "Michael K.",
     role: "Selbstständiger Unternehmer, München",
     quote:
-      "Ich war zunächst skeptisch, ob das wirklich alles legal ist. Nach einem Gespräch mit meinem Steuerberater war klar: IAB und Sonder-AfA sind hier zu 100 % legitim. Im ersten Jahr habe ich über 22.000 € Steuern gespart – und bekomme jetzt monatlich passiven Cashflow. TinyInvest ist die beste Investment-Entscheidung, die ich je getroffen habe.",
+      "Ich war zunächst skeptisch, ob das wirklich alles legal ist. Nach einem Gespräch mit meinem Steuerberater war klar: IAB und Sonder-AfA sind hier zu 100 % legitim. Bereits im ersten Jahr konnte ich eine spürbare Steuerentlastung erzielen (Einzelfall, abhängig von der individuellen Steuersituation). TinyInvest ist eine der besten Kaufentscheidungen, die ich je getroffen habe.",
   },
   {
     initials: "SR",
     name: "Sandra R.",
     role: "Ärztin, Hamburg",
     quote:
-      "Als Ärztin zahle ich regelmäßig enorme Steuerbeträge. TinyInvest hat mir gezeigt, wie ich das Finanzamt auf meine Seite bringen kann. Der Full-Service nimmt mir komplett die Arbeit ab – ich muss mich um nichts kümmern. Die monatlichen Auszahlungen kommen zuverlässig, und mein Steuerberater ist begeistert vom Konzept.",
+      "Als Ärztin zahle ich regelmäßig enorme Steuerbeträge. TinyInvest hat mir gezeigt, wie ich das Finanzamt auf meine Seite bringen kann. Lokale Partner nehmen mir den operativen Aufwand weitgehend ab. Die Mieteinnahmen aus meinem gewerblichen Betrieb kommen regelmäßig, und mein Steuerberater ist begeistert vom Konzept.",
   },
   {
     initials: "TH",
     name: "Thomas H.",
     role: "Handwerker & Gewerbetreibender, Köln",
     quote:
-      "Als Handwerker wollte ich mein Geld nicht in irgendwelchen Aktienfonds verschwinden sehen. Ein echtes, anfassbares Tiny House – das leuchtet mir ein. Der IAB hat mir direkt im ersten Jahr über 16.000 € zurückgebracht. Und die Rendite von über 12 % p.a. sucht ihresgleichen. Klare Empfehlung!",
+      "Als Handwerker wollte ich mein Geld nicht in irgendwelchen Aktienfonds verschwinden sehen. Ein echtes, anfassbares Tiny House – das leuchtet mir ein. Der IAB hat mir im ersten Jahr eine deutliche Steuererstattung gebracht (Einzelfall, abhängig von Steuersatz und Kaufpreis). Und die Rendite von rund 12 % p.a. (standortabhängig) überzeugt mich. Klare Empfehlung!",
   },
 ];
 
 export const oekosystemItems = [
   {
     icon: "📣",
-    title: "Maximale Reichweite",
-    desc: "Ihr Haus wird gleichzeitig auf Airbnb UND auf unserer eigenen Buchungsplattform Tiny Escapes (tiny.rentals) gelistet – doppelte Sichtbarkeit, maximale Auslastung.",
-    highlight: "tiny Escapes",
-    link: "https://www.tiny.rentals",
-    linkLabel: "→ tiny Escapes besuchen",
+    title: "Reichweite über Partner",
+    desc: "Lokale Partner listen Ihr Haus auf Airbnb und weiteren Buchungsplattformen – hohe Sichtbarkeit und maximale Auslastung für Ihr Wirtschaftsgut.",
+    highlight: "Buchungsplattformen",
   },
   {
     icon: "🗺️",
-    title: "Standort & Placement",
-    desc: "Wir suchen und organisieren den optimalen Standort für Ihr Tiny House – ob Ferienpark, Naturgrundstück oder Campingplatz. Sie müssen sich um nichts kümmern.",
-    highlight: "Komplettvermittlung",
+    title: "Standortvermittlung",
+    desc: "Wir vermitteln Kontakt zu Partnern, die einen passenden Standort für Ihr Tiny House finden – ob Ferienpark, Naturgrundstück oder Campingplatz.",
+    highlight: "Standortvermittlung",
   },
   {
     icon: "🛎️",
-    title: "Full-Service wie ein Hotelkonzern",
-    desc: "Ein motivierter Host vor Ort übernimmt Reinigung, Check-in, Gäste-Kommunikation und Pflege. Sie lehnen sich zurück – wir liefern den passiven Cashflow.",
-    highlight: "100 % passiv",
+    title: "Betrieb über lokale Partner",
+    desc: "Auf Wunsch übernimmt ein lokaler Partner Reinigung, Check-in, Gäste-Kommunikation und Pflege. Den Betreibervertrag schließen Sie direkt mit dem Partner; die Mieteinnahmen fließen in Ihren gewerblichen Betrieb.",
+    highlight: "Betrieb auf Wunsch",
   },
   {
     icon: "§",

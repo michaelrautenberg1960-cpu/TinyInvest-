@@ -30,7 +30,7 @@ const faqItems = [
   },
   {
     question: "Brauche ich zwingend ein Gewerbe, um Steuern zu sparen?",
-    answer: "Nein. Du kannst das Tiny House auch im Rahmen von Einkünften aus Vermietung und Verpachtung (§ 21 EStG) abschreiben. Ein Gewerbe ist nicht erforderlich. Wichtig ist, dass du das Tiny House entgeltlich vermietest – was über tiny Escapes automatisch gewährleistet ist.",
+    answer: "Nein. Du kannst das Tiny House auch im Rahmen von Einkünften aus Vermietung und Verpachtung (§ 21 EStG) abschreiben. Ein Gewerbe ist nicht erforderlich. Wichtig ist, dass du das Tiny House entgeltlich vermietest – was über lokale Partner automatisch gewährleistet ist.",
   },
   {
     question: "Ab welchem Steuersatz lohnt sich das Investment besonders?",
@@ -291,7 +291,7 @@ export default function TinyHouseSteuernSparenPage() {
             <div>
               <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Laufende Mieteinnahmen: Was steuerpflichtig ist</h2>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Die Abschreibungen drücken den steuerlichen Gewinn in den ersten Jahren auf null oder sogar in negatives Terrain. Gleichzeitig fließen aus dem Tiny Escapes Vermietungskonzept laufend Mieteinnahmen – typisch rund 720 € netto pro Monat, also 8.640 € im Jahr. Diese Einnahmen sind steuerpflichtig und werden als Einkünfte aus Vermietung und Verpachtung (§ 21 EStG) behandelt.
+                Die Abschreibungen drücken den steuerlichen Gewinn in den ersten Jahren auf null oder sogar in negatives Terrain. Gleichzeitig fließen aus dem lokale Partner Vermietungskonzept laufend Mieteinnahmen – typisch rund 720 € netto pro Monat, also 8.640 € im Jahr. Diese Einnahmen sind steuerpflichtig und werden als Einkünfte aus Vermietung und Verpachtung (§ 21 EStG) behandelt.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
                 Da die Abschreibungen im Kaufjahr die Mieteinnahmen deutlich übersteigen, entsteht ein steuerlicher Verlust aus Vermietung und Verpachtung. Dieser Verlust kann mit anderen positiven Einkünften – zum Beispiel aus selbstständiger Arbeit oder Gewerbebetrieb – verrechnet werden und senkt so die Gesamtsteuerlast. Das ist der eigentliche Steuereffekt: keine Steuervermeidung, sondern ein zeitliches Vorziehen von Betriebsausgaben, die ohnehin entstehen.

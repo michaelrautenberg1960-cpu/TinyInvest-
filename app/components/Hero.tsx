@@ -17,7 +17,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImage}
-          alt="TinyInvest Escape – tiny Escapes Netzwerk"
+          alt="TinyInvest Escape – Tiny House als Direktkauf"
           fill
           className="object-cover object-center"
           priority
@@ -38,7 +38,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
         <div className="mb-8">
           <span className="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white text-[11px] font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest backdrop-blur-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Tiny House Investment · Betrieben mit tiny Escapes · Steuervorteil im Kaufjahr
+            Tiny House Investment · Direktkauf · Betrieb auf Wunsch über lokale Partner · Steuervorteil im Kaufjahr
           </span>
         </div>
 
@@ -50,7 +50,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
             <div className="flex items-center gap-2 mb-5">
               <span className="bg-white/15 backdrop-blur-sm text-white/90 text-[11px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 border border-white/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                @ tiny Escapes · Schwarzwald
+                @ Schwarzwald · lokale Partner
               </span>
               <span className="font-data bg-black/40 backdrop-blur-sm text-white text-[9px] font-semibold px-2 py-0.5 rounded-md border border-white/10">
                 #TE-2026-02
@@ -64,16 +64,9 @@ export default function Hero({ heroImage }: { heroImage: string }) {
             </h1>
 
             <p className="text-white/75 text-base leading-relaxed mb-7 max-w-lg">
-              Wir vermitteln Tiny Houses als steueroptimierte Kapitalanlage – fertig aufgestellt, vollständig verwaltet durch tiny Escapes, mit monatlichem Cashflow ab dem ersten Monat. Ab 65.000 €, 12–14 % Rendite p.a. Alles aus einer Hand über das{" "}
-              <a
-                href="https://www.tiny.rentals"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-400 font-semibold hover:text-green-300 transition-colors"
-              >
-                TinyInvest-Ökosystem
-              </a>.
+              Wir vermitteln Tiny Houses zum Direktkauf als steueroptimiertes Wirtschaftsgut. Auf Wunsch bringen wir Sie mit lokalen Betreiberpartnern in Kontakt, die Standort und Vermietung für Sie übernehmen können. Mieteinnahmen erzielen Sie als Eigentümer im eigenen gewerblichen Betrieb. Ab 65.000 €, 10–14 % p.a.*
             </p>
+            <p className="text-white/40 text-[11px] -mt-5 mb-7 max-w-lg">*Erfahrungswerte lokaler Partner, standortabhängig, keine garantierte Rendite.</p>
 
             {/* Platform stats grid */}
             <div className="grid grid-cols-2 gap-3 mb-7">
@@ -96,7 +89,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
 
             {/* Trust micro-line */}
             <p className="mt-3 text-[11px] text-white/45">
-              Unverbindlich · Keine Anlageberatung · DSGVO-konform
+              Unverbindlich · Keine Anlageberatung · DSGVO-konform · Direktkauf, kein Fonds
             </p>
 
             {/* Mini-Testimonial */}
@@ -109,7 +102,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
                   {[...Array(5)].map((_, i) => <span key={i} className="text-amber-400 text-xs">★</span>)}
                 </div>
                 <p className="text-white/80 text-[12px] leading-snug italic">
-                  „Im ersten Jahr 22.000 € Steuern gespart – und monatlich passiven Cashflow."
+                  „Bereits im ersten Jahr eine spürbare Steuerentlastung – und regelmäßige Mieteinnahmen."
                 </p>
                 <p className="text-white/45 text-[10px] mt-1">Michael B. · Unternehmer, München</p>
               </div>
@@ -127,22 +120,15 @@ export default function Hero({ heroImage }: { heroImage: string }) {
             {[
               { label: "Vlemmix Trailer", sub: "Zertifizierter Hersteller" },
               { label: "Clansana", sub: "Off-Grid Systeme" },
-              { label: "tiny Escapes", sub: "Betriebspartner", href: "https://www.tiny.rentals" },
+              { label: "Lokale Partner", sub: "Betrieb auf Wunsch" },
               { label: "§7g EStG", sub: "Steuerkonform" },
               { label: "EU-weit", sub: "Mobiles Wirtschaftsgut" },
-            ].map((b) =>
-              b.href ? (
-                <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
-                  <span className="text-[12px] font-bold text-white/70 group-hover:text-green-400 transition-colors">{b.label}</span>
-                  <span className="text-[10px] text-white/35">{b.sub}</span>
-                </a>
-              ) : (
-                <div key={b.label} className="flex flex-col items-center">
-                  <span className="text-[12px] font-bold text-white/70">{b.label}</span>
-                  <span className="text-[10px] text-white/35">{b.sub}</span>
-                </div>
-              )
-            )}
+            ].map((b) => (
+              <div key={b.label} className="flex flex-col items-center">
+                <span className="text-[12px] font-bold text-white/70">{b.label}</span>
+                <span className="text-[10px] text-white/35">{b.sub}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

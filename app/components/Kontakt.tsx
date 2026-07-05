@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 
 export default function Kontakt() {
@@ -94,7 +94,7 @@ export default function Kontakt() {
             Investitionsunterlagen anfordern
           </h2>
           <p className="text-white/55 text-base max-w-xl mx-auto leading-relaxed">
-            Sie erhalten das vollständige Investor-Paket: §7g-Steueranalyse, tiny Escapes Betreiberkonzept,
+            Sie erhalten das vollständige Investor-Paket: §7g-Steueranalyse, lokale Partner Betreiberkonzept,
             Asset-Kennzahlen und individuelle Beratung – kostenfrei und unverbindlich.
           </p>
         </div>
@@ -433,7 +433,7 @@ export default function Kontakt() {
               <ul className="space-y-2.5">
                 {[
                   "§7g-Steueranalyse (Steuerberater-geprüft)",
-                  "tiny Escapes Betreiberkonzept + Belegungsdaten",
+                  "lokale Partner Betreiberkonzept + Belegungsdaten",
                   "Asset-Kennzahlen: IRR, NPV, Cashflow-Plan",
                   "Vlemmix Trailer Technisches Datenblatt",
                   "Individuelle Beratung (ohne Kaufzwang)",
@@ -461,7 +461,7 @@ export default function Kontakt() {
               <p className="text-[12px] text-gray-400 leading-relaxed">
                 TinyInvest hält zu keinem Zeitpunkt Investorengelder.
                 Der Investor kauft das Wirtschaftsgut direkt beim Hersteller.
-                tiny Escapes übernimmt den Betrieb auf Basis eines Bewirtschaftungsvertrags.
+                lokale Partner übernimmt den Betrieb auf Basis eines Bewirtschaftungsvertrags.
                 Dies ist kein Finanzprodukt i.S.d. KAGB.
               </p>
             </div>

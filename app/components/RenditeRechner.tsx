@@ -138,7 +138,8 @@ export default function RenditeRechner() {
       </div>
 
       <p className="text-center text-xs text-gray-400 mt-4">
-        * Rendite auf Netto-Investition nach IAB (50 %), Sonder-AfA (40 %) und degressiver AfA (30 %) bei {steuersatz} % Grenzsteuersatz. Mietpreis {preisNacht} €/Nacht, {auslastung} % Auslastung ({naechteJahr} Nächte). Ohne Garantie – individuelle Ergebnisse hängen von Standort, Steuersatz und Auslastung ab. Stand: § 7g EStG, § 7 Abs. 2 EStG (2026).
+        <strong className="text-gray-500">Unverbindliche Schätzung · Erfahrungswerte lokaler Partner · keine Garantie</strong><br />
+        * Rendite auf Netto-Investition nach IAB (50 %), Sonder-AfA (40 %) und degressiver AfA (30 %) bei {steuersatz} % Grenzsteuersatz. Mietpreis {preisNacht} €/Nacht, {auslastung} % Auslastung ({naechteJahr} Nächte). Individuelle Ergebnisse hängen von Standort, Steuersatz und Auslastung ab. Stand: § 7g EStG, § 7 Abs. 2 EStG (2026).
       </p>
     </div>
   );

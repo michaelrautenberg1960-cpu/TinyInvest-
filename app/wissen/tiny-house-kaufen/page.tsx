@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Kann ich ein Tiny House als Kapitalanlage kaufen statt selbst einzuziehen?",
     answer:
-      "Ja – und das ist für viele Käufer die wirtschaftlich bessere Option. Als Kapitalanlage wird das Tiny House von tiny Escapes als Ferienunterkunft betrieben. Du erhältst 40 % der Mieteinnahmen monatlich und kannst über §7g EStG bis zu 33.000 € Steuern im ersten Jahr sparen. Der Kauf als Investitionsobjekt ist steuerlich deutlich vorteilhafter als Eigennutzung.",
+      "Ja – und das ist für viele Käufer die wirtschaftlich bessere Option. Als Kapitalanlage wird das Tiny House lokaler Partner als Ferienunterkunft betrieben. Du erhältst 40 % der Mieteinnahmen monatlich und kannst über §7g EStG bis zu 33.000 € Steuern im ersten Jahr sparen. Der Kauf als Investitionsobjekt ist steuerlich deutlich vorteilhafter als Eigennutzung.",
   },
   {
     question: "Tiny House kaufen: neu oder gebraucht?",
@@ -53,7 +53,7 @@ const faqItems = [
   {
     question: "Wie läuft der Kaufprozess ab?",
     answer:
-      "Nach einem kostenlosen Beratungsgespräch wählst du Modell und Standort. Kaufvertrag direkt mit dem Hersteller Solido. Lieferung und Aufstellung auf Vlemmix-Trailer innerhalb von 4–8 Wochen. Bei Investitionsmodell: Listing auf tiny Escapes und Buchungsplattformen, erste Mietauszahlung im Folgemonat.",
+      "Nach einem kostenlosen Beratungsgespräch wählst du Modell und Standort. Kaufvertrag direkt mit dem Hersteller Solido. Lieferung und Aufstellung auf Vlemmix-Trailer innerhalb von 4–8 Wochen. Bei Investitionsmodell: Listing auf lokale Partner und Buchungsplattformen, erste Mietauszahlung im Folgemonat.",
   },
 ];
 
@@ -209,7 +209,7 @@ export default function TinyHouseKaufenPage() {
               Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf die Dämmstärke achten. Die Solido-Modelle verwenden Mineralwolle mit entsprechender Stärke für den Einsatz bei Temperaturen bis -20 °C. Die Fußbodenheizung sorgt für gleichmäßige Wärmeverteilung auf kleiner Fläche. Gäste buchen diese Häuser ebenso im Winter wie im Sommer – die Auslastung ist das ganze Jahr über stabil.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Im Premium-Modell des Cabin 8400 sind zusätzlich eine vollausgestattete Küche, ein Bad mit Dusche und Komposttoilette sowie Designmöbel aus Naturholz enthalten. Die Innenausstattung entspricht einem gehobenen Ferienstudio und ist auf die Erwartungen von Airbnb- und tiny Escapes-Gästen ausgerichtet.
+              Im Premium-Modell des Cabin 8400 sind zusätzlich eine vollausgestattete Küche, ein Bad mit Dusche und Komposttoilette sowie Designmöbel aus Naturholz enthalten. Die Innenausstattung entspricht einem gehobenen Ferienstudio und ist auf die Erwartungen von Airbnb- und lokale Partner-Gästen ausgerichtet.
             </p>
           </div>
 
@@ -247,7 +247,7 @@ export default function TinyHouseKaufenPage() {
               Bei Eigennutzung sparst du Mietkosten und hast maximale Freiheit über den Standort. Steuerlich bringt das jedoch wenig: Da keine betriebliche Nutzung mit Gewinnerzielungsabsicht vorliegt, entfällt der §7g-Steuerhebel komplett. Das Haus ist ein Konsumgut, keine Kapitalanlage.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Wer ein Tiny House als Kapitalanlage kaufen möchte, kauft ein betriebliches Wirtschaftsgut. tiny Escapes betreibt es als Ferienunterkunft, du erhältst 40 % der Nettomieteinnahmen monatlich – ca. 720 € bei 60 % Belegung. Dazu kommt der §7g-Steuervorteil: Im ersten Jahr lassen sich bis zu 33.000 € Steuern sparen. Das macht die effektive Einstiegsrendite deutlich attraktiver als Eigennutzung oder klassische Immobilien.
+              Wer ein Tiny House als Kapitalanlage kaufen möchte, kauft ein betriebliches Wirtschaftsgut. lokale Partner betreibt es als Ferienunterkunft, du erhältst 40 % der Nettomieteinnahmen monatlich – ca. 720 € bei 60 % Belegung. Dazu kommt der §7g-Steuervorteil: Im ersten Jahr lassen sich bis zu 33.000 € Steuern sparen. Das macht die effektive Einstiegsrendite deutlich attraktiver als Eigennutzung oder klassische Immobilien.
             </p>
           </div>
 
@@ -277,7 +277,7 @@ export default function TinyHouseKaufenPage() {
               Im Paketmodell erhältst du Tiny House und Grundstück aus einer Hand. Ideal wenn du einen festen, attraktiv gelegenen Standort bevorzugst und nicht selbst nach einem Stellplatz suchen möchtest. TinyInvest übernimmt die Standortprüfung, Genehmigungsbegleitung und Aufstellung.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Im Investorenmodell ohne Grundstück wird dein Tiny House auf dem Grundstück eines geprüften Hosts im tiny Escapes Netzwerk aufgestellt. Du hast keine Grundstückskosten, keine Standortsuche und profitierst trotzdem von der vollen §7g-Abschreibung – denn der Steuerhebel gilt für das mobile Wirtschaftsgut, nicht für das Grundstück.
+              Im Investorenmodell ohne Grundstück wird dein Tiny House auf dem Grundstück eines geprüften Hosts im lokale Partner Netzwerk aufgestellt. Du hast keine Grundstückskosten, keine Standortsuche und profitierst trotzdem von der vollen §7g-Abschreibung – denn der Steuerhebel gilt für das mobile Wirtschaftsgut, nicht für das Grundstück.
             </p>
           </div>
 
@@ -296,7 +296,7 @@ export default function TinyHouseKaufenPage() {
                 { nr: "01", title: "COC-Homologation & Fahrzeugbrief", desc: "Ein Tiny House kaufen ohne COC ist ein rechtliches Risiko. Nur mit gültigem Fahrzeugbrief (VIN/FIN) ist legaler Straßentransport, Kfz-Versicherung und §7g-Nutzung möglich. Solido-Häuser auf Vlemmix verfügen standardmäßig über EU-weite COC-Homologation." },
                 { nr: "02", title: "Winterfestigkeit & Ganzjahresbetrieb", desc: "Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf Mineralwolldämmung, Fußbodenheizung und Wärmerückgewinnung bestehen. Die Solido-Modelle sind für -20 °C ausgelegt und ganzjährig als Ferienunterkunft betreibbar." },
                 { nr: "03", title: "Genehmigung am Standort", desc: "Die Genehmigungspflicht hängt vom Bundesland und Nutzungszweck ab. Als mobiles Fahrzeug auf privatem Grund sind Tiny Houses auf Trailer oft genehmigungsfrei. Für gewerbliche Feriennutzung ist in den meisten Bundesländern eine Nutzungsänderung erforderlich. TinyInvest begleitet diesen Prozess." },
-                { nr: "04", title: "Betriebskonzept bei Investment", desc: "Wer das Tiny House kaufen und vermieten möchte, braucht ein professionelles Betriebskonzept: Buchungsplattform, Gästebetreuung, Reinigung, Check-in-Prozess. TinyInvest vermittelt das vollständig über tiny Escapes – du hast nach dem Kauf keinen operativen Aufwand." },
+                { nr: "04", title: "Betriebskonzept bei Investment", desc: "Wer das Tiny House kaufen und vermieten möchte, braucht ein professionelles Betriebskonzept: Buchungsplattform, Gästebetreuung, Reinigung, Check-in-Prozess. TinyInvest vermittelt das vollständig über lokale Partner – du hast nach dem Kauf keinen operativen Aufwand." },
               ].map((step) => (
                 <div key={step.nr} className="flex gap-5 bg-gray-50 border border-gray-100 rounded-2xl p-6">
                   <div className="shrink-0 w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-sm">{step.nr}</div>

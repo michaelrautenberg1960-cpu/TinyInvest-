@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: "Muss ich ein Gewerbe anmelden, um §7g nutzen zu können?",
     answer:
-      "Ja. §7g EStG ist ausschließlich für betriebliche Zwecke nutzbar. Du musst ein Einzelgewerbe oder Einzelunternehmen betreiben. Die gute Nachricht: TinyInvest unterstützt dich bei der Gewerbeanmeldung und das Full-Service-Modell von tiny Escapes erfüllt automatisch die Voraussetzung der gewerblichen Nutzung.",
+      "Ja. §7g EStG ist ausschließlich für betriebliche Zwecke nutzbar. Du musst ein Einzelgewerbe oder Einzelunternehmen betreiben. Die gute Nachricht: TinyInvest unterstützt dich bei der Gewerbeanmeldung und das Betreibermodell lokaler Partner erfüllt automatisch die Voraussetzung der gewerblichen Nutzung.",
   },
   {
     question: "Was ist der Unterschied zwischen IAB und Sonder-AfA?",
@@ -204,7 +204,7 @@ export default function PillarPage() {
         "@type": "HowToStep",
         "position": 4,
         "name": "Betriebliche Nutzung sicherstellen",
-        "text": "Das Tiny House muss in den ersten 3 Jahren nach Investition ausschließlich oder fast ausschließlich betrieblich genutzt werden. Die Vermietung über tiny Escapes erfüllt diese Voraussetzung automatisch.",
+        "text": "Das Tiny House muss in den ersten 3 Jahren nach Investition ausschließlich oder fast ausschließlich betrieblich genutzt werden. Die Vermietung über lokale Partner erfüllt diese Voraussetzung automatisch.",
       },
     ],
   };
@@ -342,7 +342,7 @@ export default function PillarPage() {
                 Wirtschaftlich betrachtet übertreffen Tiny House Investments viele traditionelle Anlagen. Während Photovoltaikanlagen meist Renditen von 3 bis 5 Prozent erzielen und fest mit einer Immobilie verbunden sind, erwirtschaften Tiny Houses im Tourismussektor über die Kurzzeitvermietung — etwa via Airbnb, Booking.com oder spezialisierte Portale — <strong className="text-gray-900">Nettorenditen zwischen 11 und 14 Prozent pro Jahr</strong>. Zudem bleibt das Asset hochgradig flexibel: Läuft ein Standort nicht wie erwartet, kann das Haus auf seinem Trailer unkompliziert versetzt werden. Ein Wiederverkauf ist frei von Notarkosten und Grunderwerbsteuer.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
-                Damit das Investment echtes passives Einkommen generiert, baut TinyInvest auf ein vollautomatisches Betreibermodell durch spezialisierte Partner wie <a href="https://www.tiny.rentals" target="_blank" rel="noopener noreferrer" className="text-green-700 font-semibold hover:underline">tiny Escapes</a>. Der Investor erwirbt das physische Objekt, während der Betreiber das gesamte operative Geschäft übernimmt: Standortakquise auf geprüften Grundstücken in Deutschland und Europa, Transport, behördliche Genehmigungen, Marketing, Gästebetreuung sowie laufende Instandhaltung. Die Abrechnung erfolgt über einen fairen Aufteilungsschlüssel der Mieteinnahmen — der Investor profitiert von einem inflationsgeschützten Sachwert und kontinuierlichem Cashflow, ohne eigenen zeitlichen Aufwand.
+                Damit das Investment echtes passives Einkommen generiert, baut TinyInvest auf ein mit geringem Aufwand über lokale Partneres Betreibermodell durch spezialisierte Partner wie <a href="https://www.tinyhouse.investments" target="_blank" rel="noopener noreferrer" className="text-green-700 font-semibold hover:underline">lokale Partner</a>. Der Investor erwirbt das physische Objekt, während der Betreiber das gesamte operative Geschäft übernimmt: Standortakquise auf geprüften Grundstücken in Deutschland und Europa, Transport, behördliche Genehmigungen, Marketing, Gästebetreuung sowie laufende Instandhaltung. Die Abrechnung erfolgt über einen fairen Aufteilungsschlüssel der Mieteinnahmen — der Investor profitiert von einem inflationsgeschützten Sachwert und kontinuierlichem Cashflow, ohne eigenen zeitlichen Aufwand.
               </p>
             </div>
 

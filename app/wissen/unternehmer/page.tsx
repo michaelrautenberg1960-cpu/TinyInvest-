@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -19,7 +19,7 @@ export const metadata = {
     type: "article",
     title: "Steuern sparen als Unternehmer 2026: §7g IAB | TinyInvest",
     description:
-      "Gewinne steuergünstig investieren – §7g IAB nutzen. Tiny House als Betriebsvermögen kaufen: kein Aufwand, monatlicher Cashflow, vollautomatisch verwaltet.",
+      "Gewinne steuergünstig investieren – §7g IAB nutzen. Tiny House als Betriebsvermögen kaufen: kein Aufwand, monatlicher Cashflow, über lokale Partner betrieben.",
     url: "https://tinyhouse.investments/wissen/unternehmer",
   },
 };
@@ -48,7 +48,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. tiny Escapes übernimmt Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Nettomieteinnahmen. Kein Aufwand neben dem Unternehmen — das Tiny House läuft als vollautomatische Einkommensquelle.",
+      "Nein. lokale Partner übernehmen Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Nettomieteinnahmen. Kein Aufwand neben dem Unternehmen — das Tiny House läuft als Einnahmequelle mit geringem Aufwand über lokale Partner.",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function UnternehmerPage() {
     "@type": "Article",
     headline: "Steuern sparen als Unternehmer 2026: §7g IAB | TinyInvest",
     description:
-      "Als Unternehmer Gewinne steuergünstig investieren – §7g IAB nutzen. Tiny House als Kapitalanlage, vollautomatisch verwaltet.",
+      "Als Unternehmer Gewinne steuergünstig investieren – §7g IAB nutzen. Tiny House als Kapitalanlage, über lokale Partner betrieben.",
     url: "https://tinyhouse.investments/wissen/unternehmer",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
@@ -130,10 +130,10 @@ export default function UnternehmerPage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Einzelunternehmer und Gewerbetreibende mit hohen Jahresgewinnen zahlen bis zu 45 % Einkommensteuer plus Gewerbesteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzuziehen — und schafft gleichzeitig eine vollautomatische Einkommensquelle neben dem Betrieb.
+            Einzelunternehmer und Gewerbetreibende mit hohen Jahresgewinnen zahlen bis zu 45 % Einkommensteuer plus Gewerbesteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzuziehen — und schafft gleichzeitig eine Einnahmequelle mit geringem Aufwand über lokale Partner neben dem Betrieb.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "Vollautomatisch", "Ab 79.000 €", "Kein Aufwand neben dem Betrieb"].map((tag) => (
+            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 79.000 €", "Kein Aufwand neben dem Betrieb"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -202,7 +202,7 @@ export default function UnternehmerPage() {
             </div>
             <h2 className="text-2xl font-black text-gray-900 tracking-tight pt-2">Warum das Tiny House §7g-qualifiziert ist</h2>
             <p className="text-gray-700 text-base leading-relaxed">
-              §7g gilt für <strong>bewegliche Wirtschaftsgüter des Anlagevermögens</strong>. Ein Tiny House auf einem Vlemmix-Trailer ist straßenzugelassen, trägt eine Fahrzeugidentifikationsnummer und ist klar als bewegliches Wirtschaftsgut klassifiziert — im Gegensatz zu Grundstücken oder fest eingebauten Gebäuden. Die betriebliche Nutzung (Kurzzeitvermietung über tiny Escapes) erfüllt die Voraussetzungen von §7g eindeutig.
+              §7g gilt für <strong>bewegliche Wirtschaftsgüter des Anlagevermögens</strong>. Ein Tiny House auf einem Vlemmix-Trailer ist straßenzugelassen, trägt eine Fahrzeugidentifikationsnummer und ist klar als bewegliches Wirtschaftsgut klassifiziert — im Gegensatz zu Grundstücken oder fest eingebauten Gebäuden. Die betriebliche Nutzung (Kurzzeitvermietung über lokale Partner) erfüllt die Voraussetzungen von §7g eindeutig.
             </p>
           </div>
 
@@ -213,7 +213,7 @@ export default function UnternehmerPage() {
               { icon: "💸", title: "Hohe Gewinne = hohe Steuerlast", desc: "Einkommensteuer bis 45 % plus Gewerbesteuer. Ohne Gestaltung verbleiben netto oft weniger als 50 % des Gewinns — trotz guter Auftragslage." },
               { icon: "🏦", title: "Kapital steckt im Betrieb", desc: "Maschinen, Lager, Forderungen — Betriebskapital ist oft gebunden. Ein Tiny House baut Privatvermögen auf, ohne die betriebliche Liquidität zu belasten." },
               { icon: "🏗️", title: "Klassische Immobilien passen nicht", desc: "Eigentumswohnungen oder Mehrfamilienhäuser binden viel Kapital und erfordern aktives Management — neben einem laufenden Betrieb kaum darstellbar." },
-              { icon: "⏱️", title: "Keine Zeit für aktives Investment", desc: "Kunden, Mitarbeiter, Lieferanten — ein Betrieb fordert volle Aufmerksamkeit. tiny Escapes übernimmt die gesamte Bewirtschaftung des Tiny Houses." },
+              { icon: "⏱️", title: "Keine Zeit für aktives Investment", desc: "Kunden, Mitarbeiter, Lieferanten — ein Betrieb fordert volle Aufmerksamkeit. lokale Partner übernehmen die gesamte Bewirtschaftung des Tiny Houses." },
             ].map((item) => (
               <div key={item.title} className="bg-amber-50 border border-amber-100 rounded-2xl p-5 flex gap-4">
                 <span className="text-2xl shrink-0">{item.icon}</span>
@@ -231,7 +231,7 @@ export default function UnternehmerPage() {
             {[
               { step: "1", title: "IAB bilden", desc: "Bis zu 50 % des geplanten Kaufpreises im Jahr VOR dem Kauf steuerlich abziehen. Steuererstattung vor der Lieferung des Hauses." },
               { step: "2", title: "Tiny House kaufen", desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr. Maximaler Abschreibungshebel in zwei aufeinanderfolgenden Steuerjahren." },
-              { step: "3", title: "Cashflow kassieren", desc: "40 % der Nettomieteinnahmen monatlich. tiny Escapes verwaltet alles — kein Aufwand neben dem laufenden Betrieb." },
+              { step: "3", title: "Cashflow kassieren", desc: "40 % der Nettomieteinnahmen monatlich. lokale Partner verwaltet alles — kein Aufwand neben dem laufenden Betrieb." },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-6 bg-white">
                 <div className="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-black text-sm mb-4">{item.step}</div>
@@ -245,7 +245,7 @@ export default function UnternehmerPage() {
           <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image
               src="/images/outside/tiny-house-aussenbereich-natur.webp"
-              alt="Tiny House als Renditeobjekt für Unternehmer – vollautomatisch bewirtschaftet"
+              alt="Tiny House als Renditeobjekt für Unternehmer – über lokale Partner bewirtschaftet"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 896px"

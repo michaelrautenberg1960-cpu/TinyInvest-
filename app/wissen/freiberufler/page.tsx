@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Steuern sparen als Freiberufler 2026: §7g IAB | TinyInvest",
   description:
-    "Als Freiberufler bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. Vollautomatisch verwaltetes Tiny House als Kapitalanlage. Kein Zeitaufwand.",
+    "Als Freiberufler bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. über lokale Partner betriebenes Tiny House als Kapitalanlage. Kein Zeitaufwand.",
   keywords:
     "steuern sparen freiberufler, kapitalanlage freiberufler, §7g freiberufler, iab freiberufler steuervorteil, anwalt steuern sparen, architekt kapitalanlage, berater investment",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
     type: "article",
     title: "Steuern sparen als Freiberufler 2026: §7g IAB | TinyInvest",
     description:
-      "Bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. Vollautomatisch verwaltetes Tiny House. Kein Zeitaufwand neben Mandanten & Projekten.",
+      "Bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. über lokale Partner betriebenes Tiny House. Kein Zeitaufwand neben Mandanten & Projekten.",
     url: "https://tinyhouse.investments/wissen/freiberufler",
   },
 };
@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. tiny Escapes übernimmt Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Nettomieteinnahmen — ohne eigenen Aufwand. Neben einem vollen Auftragsbuch bleibt Ihnen damit keinerlei Verwaltungslast.",
+      "Nein. lokale Partner übernehmen Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Nettomieteinnahmen — ohne eigenen Aufwand. Neben einem vollen Auftragsbuch bleibt Ihnen damit keinerlei Verwaltungslast.",
   },
   {
     question: "Was ist der Unterschied zum Kauf einer Eigentumswohnung?",
@@ -58,7 +58,7 @@ export default function FreiberuflerPage() {
     "@type": "Article",
     headline: "Steuern sparen als Freiberufler 2026: §7g IAB | TinyInvest",
     description:
-      "Als Freiberufler bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. Vollautomatisch verwaltetes Tiny House als Kapitalanlage.",
+      "Als Freiberufler bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. über lokale Partner betriebenes Tiny House als Kapitalanlage.",
     url: "https://tinyhouse.investments/wissen/freiberufler",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
@@ -130,10 +130,10 @@ export default function FreiberuflerPage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Rechtsanwälte, Architekten, Berater, Steuerberater — wer freiberuflich tätig ist, zahlt bis zu 45 % Einkommensteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzuziehen. Kein Aufwand neben dem Mandantenbetrieb — tiny Escapes verwaltet vollständig.
+            Rechtsanwälte, Architekten, Berater, Steuerberater — wer freiberuflich tätig ist, zahlt bis zu 45 % Einkommensteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzuziehen. Kein Aufwand neben dem Mandantenbetrieb — lokale Partner verwaltet vollständig.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "Vollautomatisch", "Ab 79.000 €", "Kein Verwaltungsaufwand"].map((tag) => (
+            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 79.000 €", "Kein Verwaltungsaufwand"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -216,7 +216,7 @@ export default function FreiberuflerPage() {
               { icon: "💸", title: "Bis zu 45 % Spitzensteuersatz", desc: "Bei einem Jahresgewinn von 150.000 € und mehr fließt fast jeder zweite Euro ans Finanzamt. Ohne aktive Steuergestaltung bleibt netto deutlich weniger als erwartet." },
               { icon: "🏦", title: "Keine betriebliche Altersvorsorge", desc: "Versorgungswerke decken oft nur einen Bruchteil der gewohnten Lebenshaltungskosten. Wer privat nicht vorsorgt, spürt die Lücke ab dem ersten Rentenbescheid." },
               { icon: "🏗️", title: "Klassische Immobilien: zu komplex", desc: "Maklerprovision, Notarkosten, Verwaltung, Instandhaltung — neben einem vollen Auftragsbuch fehlt die Zeit für aktives Immobilienmanagement." },
-              { icon: "⏱️", title: "Mandanten & Klienten haben Vorrang", desc: "Ein Tiny House über TinyInvest erfordert null Eigenaufwand. tiny Escapes übernimmt alles — Sie genießen den Cashflow ohne eine einzige Stunde Managementarbeit." },
+              { icon: "⏱️", title: "Mandanten & Klienten haben Vorrang", desc: "Ein Tiny House über TinyInvest erfordert null Eigenaufwand. lokale Partner übernehmen alles — Sie genießen den Cashflow ohne eine einzige Stunde Managementarbeit." },
             ].map((item) => (
               <div key={item.title} className="bg-amber-50 border border-amber-100 rounded-2xl p-5 flex gap-4">
                 <span className="text-2xl shrink-0">{item.icon}</span>
@@ -234,7 +234,7 @@ export default function FreiberuflerPage() {
             {[
               { step: "1", title: "IAB bilden", desc: "Bis zu 50 % des Kaufpreises im Jahr VOR dem Kauf in der Steuererklärung abziehen. Steuererstattung noch vor Lieferung des Hauses." },
               { step: "2", title: "Tiny House kaufen", desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr. Maximaler Abschreibungshebel — vollständig legal nach §7g EStG." },
-              { step: "3", title: "Einnahmen kassieren", desc: "40 % der Nettomieteinnahmen monatlich. tiny Escapes verwaltet vollständig — kein Aufwand neben Ihrer Haupttätigkeit." },
+              { step: "3", title: "Einnahmen kassieren", desc: "40 % der Nettomieteinnahmen monatlich. lokale Partner verwaltet vollständig — kein Aufwand neben Ihrer Haupttätigkeit." },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-6 bg-white">
                 <div className="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-black text-sm mb-4">{item.step}</div>
@@ -248,7 +248,7 @@ export default function FreiberuflerPage() {
           <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image
               src="/images/outside/tiny-house-renditeobjekt-aussen.webp"
-              alt="Tiny House als Renditeobjekt – vollautomatisch bewirtschaftet"
+              alt="Tiny House als Renditeobjekt – über lokale Partner bewirtschaftet"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 896px"
@@ -260,7 +260,7 @@ export default function FreiberuflerPage() {
           <div className="grid sm:grid-cols-3 gap-5 mb-12">
             {[
               { num: "01", title: "Steuervorteil im Vorjahr", desc: "Der IAB senkt die Steuerlast schon vor dem Kauf. Keine andere Anlageform bietet diesen Vorzieheffekt — legal, klar geregelt in §7g EStG." },
-              { num: "02", title: "Passiver Cashflow", desc: "40 % der Nettomieteinnahmen monatlich — unabhängig von Auftragslage, Mandantenzahl oder Urlaubszeiten." },
+              { num: "02", title: "Mieteinnahmen als Eigentümer", desc: "40 % der Nettomieteinnahmen monatlich — unabhängig von Auftragslage, Mandantenzahl oder Urlaubszeiten." },
               { num: "03", title: "Sachwert mit Restwert", desc: "Kein Papierwert. Das Tiny House ist physisches Eigentum mit Fahrzeugidentifikationsnummer — mobil, verkaufbar, inflationsresistent." },
             ].map((item) => (
               <div key={item.num} className="bg-green-700 rounded-2xl p-6 text-white">

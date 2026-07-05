@@ -38,11 +38,11 @@ export default function Ueber() {
         <div className="text-center mb-14">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Über TinyInvest</span>
           <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2 mb-3 tracking-tight">
-            Deutschlands führender Marktplatz für §7g-Investments in mobile Assets
+            Marktplatz für §7g-fähige mobile Wirtschaftsgüter
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
-            TinyInvest verbindet Investoren mit §7g-optimierten, mobilen Sachwerten —
-            bewirtschaftet durch tiny Escapes auf geprüften Standorten in ganz Europa.
+            TinyInvest verbindet Käufer mit §7g-optimierten, mobilen Sachwerten —
+            auf Wunsch vermitteln wir Kontakt zu lokalen Betreiberpartnern auf geprüften Standorten in ganz Europa.
           </p>
         </div>
 
@@ -68,11 +68,7 @@ export default function Ueber() {
               <p className="text-[11px] text-green-700 font-semibold uppercase tracking-widest mb-3">Unsere weltweiten Referenzen</p>
               <p className="text-[13px] text-gray-600 leading-relaxed mb-4">
                 Von Deutschland über Österreich bis Kroatien – wir vermitteln §7g-konforme Mobile Assets auf
-                zertifizierten Standorten. Unser Betriebspartner{" "}
-                <a href="https://www.tiny.rentals" target="_blank" rel="noopener noreferrer" className="text-green-700 font-semibold hover:underline">
-                  tiny Escapes
-                </a>{" "}
-                übernimmt Hosting, Gäste und Abrechnung.
+                zertifizierten Standorten. Auf Wunsch übernehmen lokale Partner Hosting, Gäste und Abrechnung.
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[

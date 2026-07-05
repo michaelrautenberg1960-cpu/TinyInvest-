@@ -52,7 +52,7 @@ const faqItems = [
   },
   {
     question: "Muss das Tiny House nach dem IAB-Kauf sofort vermietet werden?",
-    answer: "Das Wirtschaftsgut muss im Jahr der Anschaffung und im Folgejahr in einer inländischen Betriebsstätte genutzt werden (§7g Abs. 4 EStG). Bei Vermietung über tiny Escapes ist diese Voraussetzung erfüllt – der Standort in Deutschland gilt als Betriebsstätte.",
+    answer: "Das Wirtschaftsgut muss im Jahr der Anschaffung und im Folgejahr in einer inländischen Betriebsstätte genutzt werden (§7g Abs. 4 EStG). Bei Vermietung über lokale Partner ist diese Voraussetzung erfüllt – der Standort in Deutschland gilt als Betriebsstätte.",
   },
   {
     question: "Wie hoch ist die maximale IAB-Summe?",
@@ -304,7 +304,7 @@ export default function IabTinyHousePage() {
               Der IAB für Tiny Houses ist ein ideales Instrument, um außergewöhnliche steuerliche Belastungen gezielt abzufedern. Typische Anwendungsszenarien sind Jahre, in denen Investoren durch Sonderzahlungen, Abfindungen, Boni, erfolgreiche Krypto-Gewinne oder den Verkauf von Unternehmensanteilen und Immobilien in eine extrem hohe Steuerprogression rutschen. Durch den gezielten Einsatz des IAB lässt sich das zu versteuernde Einkommen in genau diesen Spitzenjahren drastisch senken.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-6">
-              Gepaart mit einem professionellen Betreibermodell, das die touristische Vermietung vollautomatisch übernimmt, wandeln Anleger so eine drohende Steuerlast in einen renditestarken, inflationsgeschützten Sachwert um.
+              Gepaart mit einem professionellen Betreibermodell, das die touristische Vermietung mit geringem Aufwand über lokale Partner übernehmen, wandeln Anleger so eine drohende Steuerlast in einen renditestarken, inflationsgeschützten Sachwert um.
             </p>
             <div className="bg-green-50 border border-green-100 rounded-2xl p-6">
               <p className="text-green-700 font-bold text-sm mb-1">Steuerlicher Hinweis</p>

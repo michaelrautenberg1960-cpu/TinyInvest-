@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Steuern sparen als IT-Freelancer 2026: §7g IAB | TinyInvest",
   description:
-    "Als IT-Freelancer bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage: vollautomatisch, kein Aufwand neben dem Projekt.",
+    "Als IT-Freelancer bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage: mit geringem Aufwand über lokale Partner neben dem Projekt.",
   keywords:
     "steuern sparen it freelancer, kapitalanlage entwickler, §7g software entwickler, it freelancer investment, freelancer steuern deutschland, entwickler kapitalanlage 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
     type: "article",
     title: "Steuern sparen als IT-Freelancer 2026: §7g IAB | TinyInvest",
     description:
-      "Bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage: vollautomatisch, monatlicher Cashflow, kein Aufwand neben dem Projekt.",
+      "Bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage: Mieteinnahmen als Eigentümer – mit geringem Aufwand, kein Aufwand neben dem Projekt.",
     url: "https://tinyhouse.investments/wissen/it-freelancer",
   },
 };
@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. tiny Escapes übernimmt Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Nettomieteinnahmen — remote, ohne Aufwand, egal ob Sie gerade im Sprint sind oder auf Workation.",
+      "Nein. lokale Partner übernehmen Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Nettomieteinnahmen — remote, ohne Aufwand, egal ob Sie gerade im Sprint sind oder auf Workation.",
   },
   {
     question: "Kann ich das Tiny House nach ein paar Jahren verkaufen?",
@@ -58,7 +58,7 @@ export default function ItFreelancerPage() {
     "@type": "Article",
     headline: "Steuern sparen als IT-Freelancer 2026: §7g IAB | TinyInvest",
     description:
-      "Als IT-Freelancer bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage, vollautomatisch verwaltet.",
+      "Als IT-Freelancer bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage, über lokale Partner betrieben.",
     url: "https://tinyhouse.investments/wissen/it-freelancer",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
@@ -130,10 +130,10 @@ export default function ItFreelancerPage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            IT-Freelancer mit 800–1.500 € Tagessatz zahlen effektiv 40–45 % Steuern auf ihren Gewinn. Der §7g IAB erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf abzuziehen — Steuererstattung vor Lieferung. Das Tiny House läuft danach vollautomatisch: kein Aufwand neben dem Projekt.
+            IT-Freelancer mit 800–1.500 € Tagessatz zahlen effektiv 40–45 % Steuern auf ihren Gewinn. Der §7g IAB erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf abzuziehen — Steuererstattung vor Lieferung. Das Tiny House läuft danach mit geringem Aufwand über lokale Partner: kein Aufwand neben dem Projekt.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "Vollautomatisch", "Ab 79.000 €", "Remote-kompatibel"].map((tag) => (
+            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 79.000 €", "Remote-kompatibel"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -204,7 +204,7 @@ export default function ItFreelancerPage() {
               </ul>
             </div>
             <p className="text-gray-700 text-base leading-relaxed">
-              Dazu monatliche Mieteinnahmen von 40 % der Nettomiete — vollautomatisch, ohne Aufwand, egal ob du gerade im Sprint bist, auf Workation oder zwischen Projekten. Das Tiny House arbeitet für dich, während du arbeitest.
+              Dazu monatliche Mieteinnahmen von 40 % der Nettomiete — mit geringem Aufwand über lokale Partner, ohne Aufwand, egal ob du gerade im Sprint bist, auf Workation oder zwischen Projekten. Das Tiny House arbeitet für dich, während du arbeitest.
             </p>
           </div>
 
@@ -215,7 +215,7 @@ export default function ItFreelancerPage() {
               { icon: "💸", title: "40–45 % Effektivsteuersatz", desc: "Bei 100k+ Jahresgewinn fließt fast die Hälfte ans Finanzamt. ETF-Renditen von 7 % brutto schrumpfen nach Steuern auf 4–5 % — kaum mehr als Inflation." },
               { icon: "🏦", title: "Altersvorsorge komplett selbst", desc: "Kein Arbeitgeber, kein Betriebsrentenangebot. Wer nicht aktiv privat vorsorgt, steht im Alter mit der gesetzlichen Mindestrente da." },
               { icon: "💰", title: "Gewinne parken unverzinst", desc: "Zwischen Projekten oder am Jahresende liegt Kapital auf dem Geschäftskonto — ohne Rendite. §7g wandelt dieses Kapital in einen aktiven Steuerhebel um." },
-              { icon: "⏱️", title: "Kein Aufwand neben dem Projekt", desc: "tiny Escapes verwaltet vollständig. Buchungen, Gäste, Reinigung — alles remote erledigt. Du bekommst monatlich Geld überwiesen, mehr nicht." },
+              { icon: "⏱️", title: "Kein Aufwand neben dem Projekt", desc: "lokale Partner verwaltet vollständig. Buchungen, Gäste, Reinigung — alles remote erledigt. Du bekommst monatlich Geld überwiesen, mehr nicht." },
             ].map((item) => (
               <div key={item.title} className="bg-amber-50 border border-amber-100 rounded-2xl p-5 flex gap-4">
                 <span className="text-2xl shrink-0">{item.icon}</span>
@@ -233,7 +233,7 @@ export default function ItFreelancerPage() {
             {[
               { step: "1", title: "IAB bilden", desc: "50 % des Kaufpreises im Vorjahr in der Steuererklärung abziehen. Steuererstattung vor der Lieferung — Kapital kommt zurück, bevor das Haus ankommt." },
               { step: "2", title: "Kaufen & abschreiben", desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr. Maximaler Steuerhebel in zwei aufeinanderfolgenden Jahren." },
-              { step: "3", title: "Cashflow kassieren", desc: "40 % der Nettomieteinnahmen monatlich. Alles verwaltet von tiny Escapes — du kriegst eine Überweisung, sonst nichts." },
+              { step: "3", title: "Cashflow kassieren", desc: "40 % der Nettomieteinnahmen monatlich. Alles verwaltet lokaler Partner — du kriegst eine Überweisung, sonst nichts." },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-6 bg-white">
                 <div className="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-black text-sm mb-4">{item.step}</div>
@@ -247,7 +247,7 @@ export default function ItFreelancerPage() {
           <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
             <Image
               src="/images/outside/tiny-house-wald-naturstandort.webp"
-              alt="Tiny House in Naturlage – passiver Cashflow für IT-Freelancer"
+              alt="Tiny House in Naturlage – Mieteinnahmen als Eigentümer für IT-Freelancer"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 896px"

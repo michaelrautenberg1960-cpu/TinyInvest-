@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import ModalButton from "./ModalButton";
 
 const hostBenefits = [
@@ -15,7 +15,7 @@ const hostBenefits = [
   {
     icon: "🛎️",
     title: "Plattform übernimmt Marketing",
-    desc: "TinyInvest und tiny Escapes kümmern sich um Buchungen auf Airbnb und eigenen Kanälen. Du musst nicht selbst inserieren oder werben.",
+    desc: "TinyInvest und lokale Partner kümmern sich um Buchungen auf Airbnb und eigenen Kanälen. Du musst nicht selbst inserieren oder werben.",
   },
   {
     icon: "📊",
@@ -53,7 +53,7 @@ const hostSteps = [
   {
     num: "4",
     title: "Vermietung starten",
-    desc: "tiny Escapes listet das Haus auf Airbnb und eigenen Kanälen. Erste Buchungen kommen typisch nach 2–4 Wochen.",
+    desc: "lokale Partner listet das Haus auf Airbnb und eigenen Kanälen. Erste Buchungen kommen typisch nach 2–4 Wochen.",
   },
   {
     num: "5",

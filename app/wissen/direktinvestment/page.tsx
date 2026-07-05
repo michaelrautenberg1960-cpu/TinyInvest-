@@ -33,14 +33,14 @@ const faqItems = [
       "Der Kauf erfolgt über einen Kaufvertrag. Das Tiny House wird auf deinen Namen übergeeignet, du erhältst die Fahrzeugbriefe (Übereignungsurkunde) und bist rechtlicher Eigentümer des Trailers samt Aufbauten. Der Kaufvertrag wird in deinen Unterlagen hinterlegt. Es gibt keinen Zwischenhändler, keinen Fonds und kein Token dazwischen.",
   },
   {
-    question: "Was passiert mit meinem Eigentum, wenn tiny Escapes insolvent wird?",
+    question: "Was passiert mit meinem Eigentum, wenn lokale Partner insolvent wird?",
     answer:
-      "Da das Tiny House dein Eigentum ist, ist es nicht Teil der Insolvenzmasse von tiny Escapes. Du kannst das Haus herausverlangen, an einen anderen Standort stellen und mit einem anderen Betreiber weiterführen. Das ist einer der wesentlichen Unterschiede zu fondsbasierten Investments, bei denen du im Insolvenzfall auf die Insolvenztabelle gesetzt wirst.",
+      "Da das Tiny House dein Eigentum ist, ist es nicht Teil der Insolvenzmasse lokaler Partner. Du kannst das Haus herausverlangen, an einen anderen Standort stellen und mit einem anderen Betreiber weiterführen. Das ist einer der wesentlichen Unterschiede zu fondsbasierten Investments, bei denen du im Insolvenzfall auf die Insolvenztabelle gesetzt wirst.",
   },
   {
     question: "Kann ich das Tiny House auch selbst nutzen oder verkaufen?",
     answer:
-      "Ja. Als Eigentümer kannst du das Haus jederzeit selbst nutzen (z.B. Urlaub), verkaufen oder an einem neuen Standort neu vermieten. Es gibt eine Vereinbarung mit tiny Escapes über den Betrieb – aber das Eigentumsrecht bleibt jederzeit bestehen und schränkt deine grundsätzliche Verfügungsgewalt nicht ein.",
+      "Ja. Als Eigentümer kannst du das Haus jederzeit selbst nutzen (z.B. Urlaub), verkaufen oder an einem neuen Standort neu vermieten. Es gibt eine Vereinbarung mit lokale Partner über den Betrieb – aber das Eigentumsrecht bleibt jederzeit bestehen und schränkt deine grundsätzliche Verfügungsgewalt nicht ein.",
   },
   {
     question: "Worin unterscheidet sich das von Crowdinvesting in Immobilien?",
@@ -254,11 +254,11 @@ export default function DirektinvestmentPage() {
             <Image src="/images/inside/tiny-house-innen-eigentumsuebergabe.webp" alt="Tiny House Eigentumsübergabe" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
-          {/* ── 4. Vollautomatisch verwaltet ── */}
+          {/* ── 4. über lokale Partner betrieben ── */}
           <div className="max-w-3xl mb-12">
-            <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Vollautomatisch verwaltet: Glamping als Renditemotor</h2>
+            <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">über lokale Partner betrieben: Glamping als Renditemotor</h2>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              In der Vergangenheit war der Besitz einer Ferienimmobilie mit erheblichem Aufwand verbunden – von der Gästekommunikation bis zur Endreinigung. Das moderne Direktinvestment löst dieses Problem durch ein konsequentes Full-Service-Management: tiny Escapes übernimmt die gesamte Wertschöpfungskette und transformiert das Investment in echtes passives Einkommen. Die Häuser werden in strategisch erstklassigen Lagen platziert und über globale Buchungsplattformen vermarktet.
+              In der Vergangenheit war der Besitz einer Ferienimmobilie mit erheblichem Aufwand verbunden – von der Gästekommunikation bis zur Endreinigung. Das moderne Direktinvestment löst dieses Problem durch ein konsequentes Betrieb über lokale Partner: lokale Partner übernehmen die gesamte Wertschöpfungskette und transformiert das Investment in echtes passives Einkommen. Die Häuser werden in strategisch erstklassigen Lagen platziert und über globale Buchungsplattformen vermarktet.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
               Die ökonomische Logik folgt dem Glamping-Trend: einer Mischung aus Glamour und Camping, die die Sehnsucht nach Natur mit dem Wunsch nach Komfort verbindet. In einer immer digitaleren Welt suchen Menschen nach Rückzugsorten, die reduziert aber hochwertig sind. Für den Investor bedeutet das Quadratmeterpreise, die weit über normalen Mietwohnungen liegen – bei deutlich geringeren Baukosten.
@@ -295,7 +295,7 @@ export default function DirektinvestmentPage() {
                 { step: "1", title: "Erstgespräch & Auswahl", desc: "Du wählst ein Modell und besichtigst optional einen bestehenden Standort. Wir erstellen deine persönliche Steueranalyse.", detail: "1–2 Wochen" },
                 { step: "2", title: "Kaufvertrag & Zahlungsplan", desc: "Unterzeichnung des Kaufvertrags. Das Tiny House wird auf deinen Namen übergeeignet. Einmalzahlung oder Ratenzahlung möglich.", detail: "Rechtssicher & dokumentiert" },
                 { step: "3", title: "Übergabe & Dokumentation", desc: "Du erhältst: Kaufvertrag, Fahrzeugbrief, CE-Zertifikat, Versicherungsunterlagen und die vollständige §7g-Dokumentation für deinen Steuerberater.", detail: "Tax-Compliance-Paket" },
-                { step: "4", title: "Aufstellung durch tiny Escapes", desc: "tiny Escapes vermittelt Host und Stellplatz. Das Haus wird aufgebaut, angeschlossen und buchungsbereit gemacht.", detail: "Full-Service ab Übergabe" },
+                { step: "4", title: "Aufstellung durch lokale Partner", desc: "lokale Partner vermittelt Host und Stellplatz. Das Haus wird aufgebaut, angeschlossen und buchungsbereit gemacht.", detail: "Betrieb über lokale Partner ab Übergabe" },
                 { step: "5", title: "Monatliche Auszahlung", desc: "Ab dem ersten Buchungsmonat erhältst du 40 % der Netto-Einnahmen. Quartalsweises Belegungs- und Umsatzreporting inklusive.", detail: "Investor-Dashboard" },
               ].map((step, i) => (
                 <div key={i} className="relative flex gap-6 items-start">

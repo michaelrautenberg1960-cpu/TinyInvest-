@@ -130,7 +130,7 @@ export default function HeroCalculator() {
         onClick={openModal}
         className="block w-full text-center bg-gray-900 hover:bg-gray-800 text-white font-bold py-2.5 rounded-2xl text-sm transition-all cursor-pointer"
       >
-        Investment-Details & Beispielrechnung anfordern →
+        Unverbindliches Erstgespräch anfragen →
       </button>
       <p className="text-center text-[10px] text-gray-400 mt-1.5">
         * Schätzung · Abhängig von Steuersituation · Steuerberater konsultieren

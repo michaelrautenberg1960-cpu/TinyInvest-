@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -93,7 +93,7 @@ export default function TinyHouseVsEtfAltersvorsorge() {
     ["Monatlicher Cashflow", "Nein (Entnahmeplan nötig)", "Ja – ab Monat 1 (40 % der Mieteinnahmen)"],
     ["Marktabhängigkeit", "Hoch (Kursrisiko kurz vor Rente)", "Gering (Mietmarkt, nicht Börse)"],
     ["Sachwert / Inflationsschutz", "Nein (Papiervermögen)", "Ja (physisches Gut mit Restwert)"],
-    ["Aufwand", "Gering (rebalancing)", "Keiner (vollverwaltet durch tiny Escapes)"],
+    ["Aufwand", "Gering (rebalancing)", "Keiner (vollverwaltet durch lokale Partner)"],
     ["Einstieg", "Ab 50 €/Monat (Sparplan)", "Ab 65.000 € (einmalig)"],
     ["§7g IAB nutzbar", "Nein", "Ja (bei gewerblichen Einkünften)"],
   ];

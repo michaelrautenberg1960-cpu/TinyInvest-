@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -58,7 +58,7 @@ const faqItems = [
   {
     question: "Muss das Tiny House nach dem IAB-Kauf sofort vermietet werden?",
     answer:
-      "Das Wirtschaftsgut muss im Jahr der Anschaffung und im darauffolgenden Jahr zu mindestens 90 % betrieblich genutzt werden (§7g Abs. 4 EStG). Bei Vermietung über tiny Escapes ist diese Voraussetzung erfüllt – der Standort in Deutschland gilt als inländische Betriebsstätte.",
+      "Das Wirtschaftsgut muss im Jahr der Anschaffung und im darauffolgenden Jahr zu mindestens 90 % betrieblich genutzt werden (§7g Abs. 4 EStG). Bei Vermietung über lokale Partner ist diese Voraussetzung erfüllt – der Standort in Deutschland gilt als inländische Betriebsstätte.",
   },
   {
     question: "Wie funktioniert der Investitionsabzugsbetrag Tiny House in der Praxis?",
@@ -252,7 +252,7 @@ export default function InvestitionsabzugsbetragTinyHousePage() {
                 {
                   nr: "02",
                   title: "Betriebliche Nutzung ≥ 90 %",
-                  desc: "Das Tiny House muss im Jahr der Anschaffung und im Folgejahr zu mindestens 90 % betrieblich genutzt werden (§7g Abs. 4 EStG). Vollständige Vermietung über tiny Escapes erfüllt diese Bedingung automatisch.",
+                  desc: "Das Tiny House muss im Jahr der Anschaffung und im Folgejahr zu mindestens 90 % betrieblich genutzt werden (§7g Abs. 4 EStG). Vollständige Vermietung über lokale Partner erfüllt diese Bedingung automatisch.",
                 },
                 {
                   nr: "03",

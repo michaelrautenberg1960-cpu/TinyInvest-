@@ -38,7 +38,7 @@ const faqItems = [
   {
     question: "Kann ich ein Tiny House mit Grundstück auch als Kapitalanlage kaufen?",
     answer:
-      "Ja – das Paketmodell von TinyInvest ist explizit für Investoren konzipiert. Du kaufst Tiny House und Grundstück, tiny Escapes betreibt das Haus als Ferienunterkunft. Du erhältst 40 % der Nettomieteinnahmen monatlich. Das Tiny House auf Trailer ist als bewegliches Wirtschaftsgut §7g-fähig – das Grundstück selbst nicht, aber es ergänzt das Investment als Sachanlage.",
+      "Ja – das Paketmodell von TinyInvest ist explizit für Investoren konzipiert. Du kaufst Tiny House und Grundstück, lokale Partner betreibt das Haus als Ferienunterkunft. Du erhältst 40 % der Nettomieteinnahmen monatlich. Das Tiny House auf Trailer ist als bewegliches Wirtschaftsgut §7g-fähig – das Grundstück selbst nicht, aber es ergänzt das Investment als Sachanlage.",
   },
   {
     question: "Welche Standorte gibt es für Tiny Houses mit Grundstück?",

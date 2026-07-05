@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import RenditeRechner from "../../components/RenditeRechner";
@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: "Wie realistisch ist eine Belegungsquote von 60 %?",
     answer:
-      "Eine Belegungsquote von 60 % entspricht ~18 Nächten pro Monat. Das ist ein konservativer Mittelwert für Standorte im tiny Escapes Netzwerk. In touristisch starken Lagen können 70–80 % erreicht werden, in schwachen Lagen liegt die Quote bei 40–50 %. Der Rechner lässt dir die Quote frei anpassen.",
+      "Eine Belegungsquote von 60 % entspricht ~18 Nächten pro Monat. Das ist ein konservativer Mittelwert für Standorte im lokale Partner Netzwerk. In touristisch starken Lagen können 70–80 % erreicht werden, in schwachen Lagen liegt die Quote bei 40–50 %. Der Rechner lässt dir die Quote frei anpassen.",
   },
   {
     question: "Ist die Rendite garantiert?",
@@ -164,7 +164,7 @@ export default function RenditeRechnerPage() {
                     ["Monatlicher Cashflow", "800–1.500 €", "≈ 720 € (bei 60 % Auslastung)"],
                     ["Steuerabschreibung", "2 % / 50 Jahre", "§7g: bis 70 % im Kaufjahr"],
                     ["Break-even", "12–15 Jahre", "3–5 Jahre (inkl. §7g)"],
-                    ["Zeitaufwand", "20–50 Std./Jahr", "~0 Std. (vollautomatisch)"],
+                    ["Zeitaufwand", "20–50 Std./Jahr", "~0 Std. (mit geringem Aufwand über lokale Partner)"],
                   ].map(([merkmal, etw, tiny]) => (
                     <tr key={merkmal} className="hover:bg-gray-50/50 transition-colors">
                       <td className="p-4 font-medium text-gray-700 text-[13px]">{merkmal}</td>

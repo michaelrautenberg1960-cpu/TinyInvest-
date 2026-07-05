@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://tinyhouse.investments"),
   title: "TinyInvest – Tiny House Investment Plattform",
   description:
-    "Tiny House kaufen, vermieten und Steuern sparen. Steueroptimierte Investments ab 65.000 €. 12–14 % Rendite p.a., vollautomatisch verwaltet.",
+    "Tiny House kaufen und vermieten. Steueroptimierte Direktkäufe ab 65.000 €. §7g EStG · Betrieb auf Wunsch über lokale Partner.",
   icons: {
     icon: "/favicon1.png",
     shortcut: "/favicon1.png",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TinyInvest – Tiny House Investment Plattform",
     description:
-      "Tiny House kaufen, vermieten und Steuern sparen. Steueroptimierte Investments ab 65.000 €. 12–14 % Rendite p.a.",
+      "Tiny House kaufen und vermieten. Steueroptimierte Direktkäufe ab 65.000 €. §7g EStG · Betrieb auf Wunsch über lokale Partner.",
     url: "https://tinyhouse.investments",
     siteName: "TinyInvest",
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TinyInvest – Mobile Asset Investment",
     description:
-      "Tiny House kaufen, vermieten und Steuern sparen. Steueroptimierte Investments ab 65.000 €. 12–14 % Rendite p.a.",
+      "Tiny House kaufen und vermieten. Steueroptimierte Direktkäufe ab 65.000 €. §7g EStG · Betrieb auf Wunsch über lokale Partner.",
     images: [
       "https://tinyhouse.investments/images/Gemini_Generated_Image_e2327ae2327ae232.png",
     ],

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 
 // ──────────── Types ────────────
@@ -252,7 +252,7 @@ function ListingForm({
         <input className={inp} value={v("occ") as string} onChange={(e) => onChange("occ", e.target.value)} placeholder="55 %" />
       </Field>
       <Field label="Auslastungs-Hinweis">
-        <input className={inp} value={v("occ_note") as string} onChange={(e) => onChange("occ_note", e.target.value)} placeholder="Basis: tiny Escapes Ø 2024" />
+        <input className={inp} value={v("occ_note") as string} onChange={(e) => onChange("occ_note", e.target.value)} placeholder="Basis: lokale Partner Ø 2024" />
       </Field>
 
       {/* ── Image upload ── */}

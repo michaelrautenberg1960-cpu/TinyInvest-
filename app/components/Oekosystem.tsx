@@ -14,9 +14,8 @@ export default function Oekosystem() {
             <span className="text-green-400">haben wir gelöst.</span>
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            TinyInvest ist das einzige Angebot am Markt mit einem <strong className="text-white">vollständigen Ökosystem</strong> –
-            vom Kauf über Standort, Vermietung und Buchungsplattform bis zur Steueroptimierung und Finanzierung.
-            Sie investieren. Wir machen den Rest.
+            TinyInvest vermittelt den Direktkauf und verbindet Sie auf Wunsch mit lokalen Betreiberpartnern, die Standort, Vermietung und Buchungsmanagement übernehmen können – sowie mit Steuerberatern und Finanzierungspartnern.
+            Sie kaufen. Lokale Partner können den Betrieb übernehmen.
           </p>
         </div>
 
@@ -60,26 +59,17 @@ export default function Oekosystem() {
           <div className="relative">
             <p className="text-4xl mb-4">🚀</p>
             <h3 className="text-2xl sm:text-3xl font-black text-white mb-3">
-              Sie investieren. Wir machen den Rest.
+              Sie kaufen. Lokale Partner können den Betrieb übernehmen.
             </h3>
             <p className="text-green-100 text-lg max-w-2xl mx-auto mb-8">
-              Kein Aufwand. Keine versteckten Probleme. Nur monatlicher passiver Cashflow –
-              von Tag 1 an unterstützt durch das komplette TinyInvest-Ökosystem.
+              Geringer Aufwand: Auf Wunsch übernehmen lokale Partner den Betrieb. Mieteinnahmen erzielen Sie als Eigentümer – abhängig von Standort und Auslastung.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#kontakt"
                 className="bg-white text-green-800 font-bold px-8 py-4 rounded-full text-base hover:bg-green-50 transition-colors shadow-lg"
               >
-                Kostenlose Beratung anfragen →
-              </a>
-              <a
-                href="https://www.tiny.rentals"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-full text-base border border-white/30 transition-colors"
-              >
-                🏡 tiny Escapes besuchen
+                Unverbindliches Erstgespräch anfragen →
               </a>
             </div>
           </div>

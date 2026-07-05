@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Link from "next/link";
@@ -237,7 +237,7 @@ const articles = [
     badge: "Altersvorsorge",
     badgeColor: "bg-blue-50 text-blue-700",
     title: "Tiny House als Altersvorsorge: Sachwert statt Riester",
-    desc: "Riester, ETF oder Tiny House? Monatlicher Cashflow statt Rentenpunkte – vollautomatisch verwaltet, ab 65.000 €.",
+    desc: "Riester, ETF oder Tiny House? Monatlicher Cashflow statt Rentenpunkte – über lokale Partner betrieben, ab 65.000 €.",
     tags: ["Altersvorsorge", "Sachwert", "Riester Alternative", "Monatliche Auszahlung"],
     img: "/images/outside/tiny-house-naturlage-gruen.webp",
   },
@@ -272,7 +272,7 @@ const glossarItems = [
   { term: "Drittverwendungsfähigkeit", def: "Eigenschaft eines mobilen Assets, an einem anderen Standort oder von einem anderen Betreiber eingesetzt werden zu können. Tiny Houses auf Vlemmix Trailern können legal abgekoppelt und neu positioniert werden." },
   { term: "FIN", def: "Fahrzeug-Identifikationsnummer. Individueller Code, der den Vlemmix Trailer als straßenzugelassenes Fahrzeug kennzeichnet und dem Tiny House seinen Status als bewegliches Wirtschaftsgut sichert." },
   { term: "Grauwasser-Recycling", def: "System zur Wiederverwendung von Waschwasser (aus Dusche, Waschbecken) z.B. für Toilettenspülung. Erhöht die Autarkie des Tiny Houses." },
-  { term: "Host", def: "Betreiber vor Ort, der Reinigung, Check-in, Gästebetreuung und Instandhaltung des Tiny Houses übernimmt. Wird über tiny Escapes vermittelt und erhält bis zu 45 % der Einnahmen." },
+  { term: "Host", def: "Betreiber vor Ort, der Reinigung, Check-in, Gästebetreuung und Instandhaltung des Tiny Houses übernimmt. Wird über lokale Partner vermittelt und erhält bis zu 45 % der Einnahmen." },
   { term: "IAB", def: "Investitionsabzugsbetrag (§7g Abs. 1 EStG). Ermöglicht es, 50 % des geplanten Kaufpreises bereits im Jahr VOR der Investition als Betriebsausgabe abzuziehen." },
   { term: "IRR", def: "Internal Rate of Return (Interner Zinsfuß). Renditekennziffer, die den durchschnittlichen jährlichen Ertrag einer Investition unter Berücksichtigung des Zeitwerts des Geldes angibt. TinyInvest-Projektion: 12–15 % p.a." },
   { term: "Lineare AfA", def: "Klassische Abschreibungsmethode: gleichmäßige Verteilung des Kaufpreises auf die Nutzungsdauer. Bei Tiny Houses: 12,5 % p.a. über 8 Jahre." },
@@ -283,7 +283,7 @@ const glossarItems = [
   { term: "Sonder-AfA (§7g)", def: "Sonderabschreibung von 40 % des Kaufpreises im Anschaffungsjahr, zusätzlich zur regulären AfA. Gilt für kleine und mittlere Unternehmen für bewegliche Wirtschaftsgüter." },
   { term: "Stellplatzverordnung", def: "Landesrechtliche Vorschriften, die regeln, wo und unter welchen Bedingungen Tiny Houses auf Trailern aufgestellt werden dürfen." },
   { term: "Substanzwert", def: "Der Wert eines Wirtschaftsguts, der auf seiner physischen Substanz basiert – unabhängig von Ertragserwartungen. Bei gebrauchten TinyInvest-Häusern: ca. 60–75 % des Neuwerts." },
-  { term: "tiny Escapes", def: "Betreibergesellschaft, die TinyInvest-Assets bewirtschaftet. Übernimmt Marketing, Buchungsmanagement, Hosting und Abrechnung. Erhält bis zu 45 % der Einnahmen." },
+  { term: "lokale Partner", def: "Betreibergesellschaft, die TinyInvest-Assets bewirtschaftet. Übernimmt Marketing, Buchungsmanagement, Hosting und Abrechnung. Erhält bis zu 45 % der Einnahmen." },
   { term: "TinyInvest", def: "Plattform für §7g-optimierte Tiny House Investments in Deutschland und der EU. Strukturiert den Kauf, vermittelt Hosts und Standorte, betreut Investoren." },
   { term: "Übereignung", def: "Rechtlicher Vorgang der Eigentumsübertragung eines beweglichen Wirtschaftsguts. Bei TinyInvest: Übergabe des Fahrzeugbriefs (Vlemmix Trailer) an den Investor als Nachweis des vollständigen Eigentumsübergangs." },
   { term: "VIN", def: "Vehicle Identification Number. Einzelne Seriennummer jedes Vlemmix Trailers. Fundamental für die steuerrechtliche Einordnung als bewegliches Wirtschaftsgut (statt Immobilie)." },

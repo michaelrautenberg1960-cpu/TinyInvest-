@@ -9,16 +9,16 @@ import Image from "next/image";
 import { winWinModel } from "../components/data";
 
 export const metadata = {
-  title: "Tiny House Rendite 2026: 12–14 % IRR erklärt | TinyInvest",
-  description: "Wie funktioniert die Tiny House Rendite? 40 % Mietauszahlung + §7g Steuereffekt = 12–14 % IRR p.a. Rechner & 5-Jahres-Cashflow-Modell.",
-  keywords: "tiny house rendite, tiny house IRR, §7g rendite berechnen, passive einnahmen tiny house, ferienhausrendite 2026",
+  title: "Tiny House Renditemodell 2026: §7g Steuereffekt erklärt | TinyInvest",
+  description: "Wie funktioniert die Tiny House Rendite? §7g Steuereffekt + Mieteinnahmen als Eigentümer. Rechner & 5-Jahres-Modell. Erfahrungswerte, keine Garantie.",
+  keywords: "tiny house rendite, tiny house IRR, §7g rendite berechnen, tiny house mieteinnahmen, ferienhausrendite 2026",
   alternates: {
     canonical: "https://tinyhouse.investments/renditemodell",
   },
   openGraph: {
     ...BASE_OG,
     type: "website",
-    title: "14 % IRR p.a. – Tiny House Renditemodell | TinyInvest",
+    title: "Tiny House Renditemodell – §7g Steuereffekt & Mieteinnahmen | TinyInvest",
     description: "Renditemodell für §7g-optimierte Tiny House Investments. NPV, Cashflow, Steuereffekt.",
     url: "https://tinyhouse.investments/renditemodell",
   },
@@ -32,7 +32,7 @@ export default function RenditeModellPage() {
       <SubPageHeader
         badge="Renditemodell · Win-Win-Win"
         title="Wie Ihr Kapital arbeitet. Vollständig transparent."
-        subtitle="40 % der Einnahmen fließen monatlich an den Investor. 45 % sichern den Host-Betrieb. 15 % decken die Plattform. Jeder hat einen klaren Anreiz."
+        subtitle="Als Eigentümer erzielen Sie Mieteinnahmen im eigenen gewerblichen Betrieb. Lokale Partner übernehmen auf Wunsch den Betrieb. Jeder hat einen klaren Anreiz."
         img="/images/outside/tiny-house-escape-hero.webp"
       />
 
@@ -42,9 +42,9 @@ export default function RenditeModellPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { value: "40 %", label: "Investor-Anteil", sub: "Netto-Einnahmen monatlich" },
-              { value: "12–15 %", label: "IRR p.a.", sub: "Projiziert · Escape-Modell" },
-              { value: "≈ 720 €", label: "Monatlicher Cashflow", sub: "Bei 60 % Belegung · 100 €/Nacht" },
-              { value: "≈ 33 K€", label: "Liquidität Jahr 1", sub: "inkl. Steuererstattungen" },
+              { value: "12–15 %", label: "IRR p.a.*", sub: "*Erfahrungswerte, standortabhängig, keine Garantie" },
+              { value: "≈ 720 €", label: "Monatl. Mieteinnahmen", sub: "Bei 60 % Belegung · 100 €/Nacht (Erfahrungswert)" },
+              { value: "≈ 33 K€", label: "Liquidität Jahr 1", sub: "Inkl. Steuererstattung (Einzelfall, abhängig von Steuersatz)" },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <p className="font-data text-2xl font-black text-green-400">{s.value}</p>
@@ -160,7 +160,7 @@ export default function RenditeModellPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Tiny House als Quelle für passives Einkommen</h2>
           <p className="text-gray-700 text-base leading-relaxed mb-5">
-            Ein Tiny House ist eine der wenigen Sachwertanlagen, die echtes tiny house passive einkommen generieren – ohne operativen Aufwand. Durch das Full-Service-Modell von tiny Escapes übernimmt ein professioneller Betreiber alle Aufgaben: Standortvermittlung, Buchungsmanagement, Gästebetreuung und Instandhaltung. Der Investor erhält seine 40 % monatlich ausgezahlt.
+            Ein Tiny House ist eine der wenigen Sachwertanlagen, die echtes tiny house passive einkommen generieren – ohne operativen Aufwand. Durch das Betreibermodell lokaler Partner von lokale Partner übernimmt ein professioneller Betreiber alle Aufgaben: Standortvermittlung, Buchungsmanagement, Gästebetreuung und Instandhaltung. Der Investor erhält seine 40 % monatlich ausgezahlt.
           </p>
           <p className="text-gray-700 text-base leading-relaxed">
             Wer ein Tiny House vermieten und Geld verdienen möchte, profitiert dabei von zwei Hebeln gleichzeitig: dem laufenden Cashflow aus der Vermietung und dem §7g-Steuereffekt, der in Jahr 1 den effektiven Kapitaleinsatz um bis zu 33.000 € reduziert. Das Ergebnis ist ein IRR von 12–15 % p.a. – deutlich über dem, was klassische Immobilien oder REITs realistisch erzielen.

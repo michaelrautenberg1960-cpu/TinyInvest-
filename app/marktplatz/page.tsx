@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import { supabase } from "../lib/supabase";
 import Navbar from "../components/Navbar";
@@ -30,9 +30,9 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Marktplatz – Tiny House Investments kaufen | TinyInvest",
   description:
-    "Verfügbare Tiny House Investment-Projekte in Deutschland. Ab 65.000 €, 12–14 % IRR p.a., §7g-steueroptimiert, vollautomatisch bewirtschaftet.",
+    "Verfügbare Tiny House Direktkäufe als §7g-Wirtschaftsgut in Deutschland. Ab 65.000 €, Steuervorteil im Kaufjahr, Betrieb auf Wunsch über lokale Partner.",
   keywords:
-    "Tiny House investieren, Ferienimmobilie kaufen, passive Einnahmen, §7g Investment, Tiny House Rendite, Marktplatz",
+    "Tiny House kaufen, Ferienimmobilie kaufen, §7g Investment, Tiny House Rendite, Marktplatz, bewegliches Wirtschaftsgut",
   alternates: {
     canonical: "https://tinyhouse.investments/marktplatz",
   },
@@ -41,7 +41,7 @@ export const metadata = {
     type: "website",
     title: "Marktplatz – Tiny House Investments kaufen | TinyInvest",
     description:
-      "Verfügbare Tiny House Investment-Projekte mit bis zu 18 % IRR p.a. Steueroptimiert nach §7g, vollautomatisch bewirtschaftet.",
+      "Verfügbare Tiny House Direktkäufe als §7g-Wirtschaftsgut. Steuervorteil im Kaufjahr. Betrieb auf Wunsch über lokale Partner.",
     url: "https://tinyhouse.investments/marktplatz",
   },
 };
@@ -120,7 +120,7 @@ export default async function MarktplatzPage() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Tiny House Investment",
-    "description": "Steueroptimierte Tiny House Kapitalanlage ab 65.000 €. Vollautomatisch verwaltet durch tiny Escapes. 12–14 % IRR p.a.",
+    "description": "Tiny House Direktkauf als §7g-Wirtschaftsgut ab 65.000 €. Betrieb auf Wunsch über lokale Partner. 10–14 % p.a. (standortabhängig, keine Garantie).",
     "image": "https://tinyhouse.investments/images/outside/tiny-house-escape-hero.webp",
     "brand": { "@type": "Brand", "name": "TinyInvest" },
     "url": "https://tinyhouse.investments/marktplatz",
@@ -192,7 +192,7 @@ export default async function MarktplatzPage() {
       <section className="py-10 bg-white border-t border-gray-100">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-[11px] text-gray-400 leading-relaxed">
-            * Alle IRR- und NPV-Angaben sind Projektionen auf Basis historischer Belegungsdaten von tiny Escapes.
+            * Alle IRR- und NPV-Angaben sind Projektionen auf Basis historischer Belegungsdaten von lokale Partner.
             Sie stellen keine Garantie zukünftiger Renditen dar. Der Kauf erfolgt direkt beim Hersteller —
             TinyInvest agiert als Plattform und Vermittler, nicht als Kapitalsammelstelle.
           </p>

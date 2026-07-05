@@ -1,5 +1,4 @@
-// Betreiber.tsx — TinyEscapes operator section
-// Shows the "Group" structure: TinyInvest (Finance) + TinyEscapes (Ops)
+﻿// Betreiber.tsx — Lokale Partner / Betreiberstruktur
 
 const locations = [
   { name: "Harz", region: "Niedersachsen", status: "Aktiv", units: 2, occ: "55 %" },
@@ -15,13 +14,13 @@ export default function Betreiber() {
 
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Ecosystem · Gruppenstruktur</span>
+          <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Struktur · Direktkauf & Betrieb</span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight">
-            Zwei Unternehmen. Eine Gruppe.
+            Ihr Kauf. Optionaler Betrieb über lokale Partner.
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
-            TinyInvest strukturiert den Kauf &amp; die Steueroptimierung.{" "}
-            <strong className="text-gray-700">tiny Escapes</strong> bewirtschaftet das Asset.
+            TinyInvest vermittelt den Direktkauf und die Steueroptimierung.
+            Lokale Partner können das Asset auf Wunsch bewirtschaften.
             Sie bleiben 100&nbsp;% Eigentümer des physischen Wirtschaftsguts.
           </p>
         </div>
@@ -73,21 +72,14 @@ export default function Betreiber() {
               <div className="w-px h-8 bg-gray-200" />
             </div>
 
-            {/* tiny Escapes box */}
+            {/* Lokaler Partner box */}
             <div className="flex-1 bg-white border border-green-200 rounded-2xl p-6 text-center shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-green-600 text-white text-[9px] font-bold px-2 py-1 rounded-bl-xl">
-                Betriebspartner
+                Auf Wunsch
               </div>
               <div className="text-2xl mb-2">🏕️</div>
-              <a
-                href="https://www.tiny.rentals"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-black text-green-700 text-sm hover:text-green-600 transition-colors"
-              >
-                tiny Escapes ↗
-              </a>
-              <p className="text-[12px] text-gray-400 mt-1 mb-3">Operations-Partner</p>
+              <p className="font-black text-green-700 text-sm">Lokaler Partner</p>
+              <p className="text-[12px] text-gray-400 mt-1 mb-3">Operations-Partner (optional)</p>
               <div className="space-y-1.5">
                 {["Standort & Placement", "Gäste & Buchungen", "Cleaning & Check-in", "Monatliche Abrechnung"].map((f) => (
                   <p key={f} className="text-[11px] text-gray-500 bg-green-50 rounded-lg px-2 py-1">{f}</p>
@@ -98,22 +90,22 @@ export default function Betreiber() {
 
           {/* Legal note */}
           <p className="text-center text-[11px] text-gray-400 mt-5 max-w-2xl mx-auto">
-            * Der Investor schließt zwei separate Verträge ab: (1) Kaufvertrag mit dem Hersteller für das bewegliche Wirtschaftsgut, (2) Bewirtschaftungsvertrag mit tiny Escapes. TinyInvest hält zu keinem Zeitpunkt Investorengelder.
+            * Der Käufer schließt zwei separate Verträge ab: (1) Kaufvertrag mit dem Hersteller für das bewegliche Wirtschaftsgut, (2) Betreibervertrag direkt mit dem lokalen Partner (nicht mit TinyInvest). TinyInvest hält zu keinem Zeitpunkt Käufergelder.
           </p>
         </div>
 
-        {/* tiny Escapes stats + locations */}
+        {/* lokale Partner stats + locations */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
 
           {/* Left: Stats */}
           <div className="lg:col-span-2 bg-gray-900 rounded-2xl p-7 text-white">
             <div className="flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold">tiny Escapes · Kennzahlen</span>
+              <span className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold">Lokale Partner · Erfahrungswerte</span>
             </div>
             <div className="space-y-5">
               {[
-                { label: "Ø Belegung", value: "50–60 %", note: "Verifiziert über tiny.rentals" },
+                { label: "Ø Belegung", value: "50–60 %", note: "Erfahrungswerte, standortabhängig" },
                 { label: "Ø Nachtrate", value: "120–180 €", note: "Je nach Standort & Saison" },
                 { label: "Investor-Anteil", value: "40 %", note: "Der Brutto-Einnahmen monatlich" },
                 { label: "Host-Anteil", value: "bis 45 %", note: "Performance-basiert (Anreizmodell)" },
@@ -127,17 +119,9 @@ export default function Betreiber() {
                 </div>
               ))}
             </div>
-            <a
-              href="https://www.tiny.rentals"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 flex items-center gap-2 text-green-400 text-[12px] font-semibold hover:text-green-300 transition-colors"
-            >
-              Buchungsplattform besuchen
-              <svg className="w-3.5 h-3.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M2 2h8v8M10 2 2 10" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
+            <p className="mt-6 text-[11px] text-gray-500">
+              Erfahrungswerte lokaler Partner · standortabhängig · keine garantierte Rendite
+            </p>
           </div>
 
           {/* Right: Location table */}

@@ -35,12 +35,12 @@ const faqItems = [
   {
     question: "Muss ich als Investor persönlich anwesend sein?",
     answer:
-      "Nein. Der gesamte Prozess läuft volldigital: Kaufvertrag per DocuSign, Übergabe ohne physische Anwesenheit, Betrieb durch tiny Escapes. Du erhältst monatliche Abrechnungen und Auszahlungen per Überweisung.",
+      "Nein. Der gesamte Prozess läuft volldigital: Kaufvertrag per DocuSign, Übergabe ohne physische Anwesenheit, Betrieb durch lokale Partner. Du erhältst monatliche Abrechnungen und Auszahlungen per Überweisung.",
   },
   {
     question: "Welche laufenden Kosten habe ich als Investor?",
     answer:
-      "Die laufenden Kosten sind minimal: tiny Escapes übernimmt Betrieb, Reinigung und Kommunikation im Rahmen des Betreibermodells (60 % der Einnahmen). Als Investor trägst du Versicherungskosten (ca. 300–500 €/Jahr) und eventuelle Rücklagenbildung für Wartung. Es gibt keine Hausverwaltungsgebühren.",
+      "Die laufenden Kosten sind minimal: lokale Partner übernehmen Betrieb, Reinigung und Kommunikation im Rahmen des Betreibermodells (60 % der Einnahmen). Als Investor trägst du Versicherungskosten (ca. 300–500 €/Jahr) und eventuelle Rücklagenbildung für Wartung. Es gibt keine Hausverwaltungsgebühren.",
   },
   {
     question: "Was passiert, wenn ich das Tiny House wieder verkaufen möchte?",
@@ -159,7 +159,7 @@ export default function ChecklistePage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Phase 3 – Kauf & Übereignung</h2>
           <div className="max-w-3xl mb-8">
             <p className="text-gray-700 text-base leading-relaxed">
-              Beim Kaufvertrag ist ein Punkt entscheidend: Der Eigentumsübergang muss auf deinen Namen erfolgen – das ist die Voraussetzung für §7g. Dokumentiere die VIN bzw. FIN des Vlemmix-Trailers, die das bewegliche Wirtschaftsgut eindeutig identifiziert. Unterzeichne den Betreibervertrag mit tiny Escapes, bestätige den Host-Standort und vereinbare den Aufstelltermin. Informiere deinen Steuerberater unmittelbar über das Kaufdatum, da es den Start der AfA-Abschreibung bestimmt.
+              Beim Kaufvertrag ist ein Punkt entscheidend: Der Eigentumsübergang muss auf deinen Namen erfolgen – das ist die Voraussetzung für §7g. Dokumentiere die VIN bzw. FIN des Vlemmix-Trailers, die das bewegliche Wirtschaftsgut eindeutig identifiziert. Unterzeichne den Betreibervertrag mit lokale Partner, bestätige den Host-Standort und vereinbare den Aufstelltermin. Informiere deinen Steuerberater unmittelbar über das Kaufdatum, da es den Start der AfA-Abschreibung bestimmt.
             </p>
           </div>
 

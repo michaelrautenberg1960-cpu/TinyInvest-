@@ -268,7 +268,7 @@ export default function MemorandumModal() {
                   >
                     <option>Investitionsunterlagen anfordern</option>
                     <option>Projektunterlagen zu einem spezifischen Asset</option>
-                    <option>Rendite-Beratung (passives Einkommen)</option>
+                    <option>Rendite-Beratung (Mieteinnahmen als Eigentümer)</option>
                     <option>Kauf auf Raten / Finanzierungsberatung</option>
                     <option>Host-Bewerbung (Standort / Grundstück)</option>
                     <option>Allgemeine Erstinformation</option>

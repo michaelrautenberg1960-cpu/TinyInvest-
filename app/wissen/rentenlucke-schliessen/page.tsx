@@ -1,4 +1,4 @@
-import { BASE_OG } from "@/app/lib/og";
+﻿import { BASE_OG } from "@/app/lib/og";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Rentenlücke schließen: Cashflow mit Tiny House | TinyInvest",
   description:
-    "Rentenlücke von 800–1.200 €/Monat schließen – mit monatlichen Mieteinnahmen aus einem vollautomatisch verwalteten Tiny House. Kein Aufwand, echter Sachwert.",
+    "Rentenlücke von 800–1.200 €/Monat schließen – mit monatlichen Mieteinnahmen aus einem über lokale Partner betriebenen Tiny House. Kein Aufwand, echter Sachwert.",
   keywords:
     "rentenlücke schließen, rentenlücke 2026, rentenluecke schliessen, passives einkommen ruhestand, rente aufbessern, tiny house rentner, monatliche einnahmen im alter",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -21,7 +21,7 @@ export const metadata = {
     type: "article",
     title: "Rentenlücke schließen 2026: Monatlicher Cashflow mit Tiny House",
     description:
-      "Wie ein vollautomatisch verwaltetes Tiny House die Rentenlücke mit monatlichem Cashflow schließt — ab 65.000 €, kein aktiver Aufwand.",
+      "Wie ein über lokale Partner betriebenes Tiny House die Rentenlücke mit monatlichem Cashflow schließt — ab 65.000 €, kein aktiver Aufwand.",
     url: "https://tinyhouse.investments/wissen/rentenlucke-schliessen",
   },
 };
@@ -30,7 +30,7 @@ const faqItems = [
   {
     question: "Wie verlässlich ist der monatliche Cashflow aus einem Tiny House?",
     answer:
-      "Der Cashflow basiert auf der Belegungsquote des Tiny Houses im tiny Escapes Netzwerk. Historisch lag die durchschnittliche Belegung bei 60–70 %. Bei 60 % Belegung und 100 €/Nacht ergibt das rund 720 € monatlich für den Investor. Standort, Saison und Ausstattung beeinflussen die Auslastung. Eine Garantie kann nicht gegeben werden — wir empfehlen die konservative Kalkulation mit 50 % Belegung für die Planung.",
+      "Der Cashflow basiert auf der Belegungsquote des Tiny Houses im lokale Partner Netzwerk. Historisch lag die durchschnittliche Belegung bei 60–70 %. Bei 60 % Belegung und 100 €/Nacht ergibt das rund 720 € monatlich für den Investor. Standort, Saison und Ausstattung beeinflussen die Auslastung. Eine Garantie kann nicht gegeben werden — wir empfehlen die konservative Kalkulation mit 50 % Belegung für die Planung.",
   },
   {
     question: "Wie viel muss ich investieren, um 800 € monatlich zu erhalten?",
@@ -59,7 +59,7 @@ export default function RentenluckeSchliessen() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Rentenlücke schließen: Wie ein Tiny House monatlichen Cashflow im Ruhestand liefert",
-    "description": "Rentenlücke von 800–1.200 €/Monat schließen – mit monatlichen Mieteinnahmen aus einem vollautomatisch verwalteten Tiny House. Kein Aufwand, echter Sachwert.",
+    "description": "Rentenlücke von 800–1.200 €/Monat schließen – mit monatlichen Mieteinnahmen aus einem über lokale Partner betriebenen Tiny House. Kein Aufwand, echter Sachwert.",
     "url": "https://tinyhouse.investments/wissen/rentenlucke-schliessen",
     "datePublished": "2026-05-23",
     "dateModified": "2026-05-23",
@@ -126,7 +126,7 @@ export default function RentenluckeSchliessen() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Die durchschnittliche Rentenlücke in Deutschland liegt bei 800 bis 1.200 € pro Monat. Klassische Produkte — Riester, Sparbuch, Lebensversicherung — decken sie kaum. Dieser Guide zeigt, wie ein einzelnes Tiny House die Lücke mit monatlichem Cashflow schließt — vollautomatisch, ohne aktiven Aufwand.
+            Die durchschnittliche Rentenlücke in Deutschland liegt bei 800 bis 1.200 € pro Monat. Klassische Produkte — Riester, Sparbuch, Lebensversicherung — decken sie kaum. Dieser Guide zeigt, wie ein einzelnes Tiny House die Lücke mit monatlichem Cashflow schließt — mit geringem Aufwand über lokale Partner.
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
@@ -136,7 +136,7 @@ export default function RentenluckeSchliessen() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["Ab 65.000 €", "~720 €/Monat", "40 % Investor-Anteil", "Vollautomatisch", "Kein Aufwand"].map((tag) => (
+            {["Ab 65.000 €", "~720 €/Monat", "40 % Investor-Anteil", "mit geringem Aufwand über lokale Partner", "Kein Aufwand"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -150,7 +150,7 @@ export default function RentenluckeSchliessen() {
               Laut Deutschem Institut für Wirtschaftsforschung (DIW) beträgt die durchschnittliche Versorgungslücke im Ruhestand rund 700 bis 1.200 € pro Monat — die Differenz zwischen dem letzten Nettolohn und dem, was Rente, Riester und Betriebsrente zusammen ausschütten. Diese Lücke wächst: Durch sinkende Rentenniveaus, steigende Lebenshaltungskosten und lange Rentenbezugsdauern wird das Problem größer, nicht kleiner.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Ein Tiny House über TinyInvest bietet einen strukturell anderen Ansatz: Statt Jahrzehnte zu sparen und auf eine Versicherungsleistung zu warten, kaufen Sie einen physischen Sachwert, der Ihnen ab dem ersten Monat 40 % der Mieteinnahmen auszahlt — vollautomatisch bewirtschaftet durch das tiny Escapes Netzwerk.
+              Ein Tiny House über TinyInvest bietet einen strukturell anderen Ansatz: Statt Jahrzehnte zu sparen und auf eine Versicherungsleistung zu warten, kaufen Sie einen physischen Sachwert, der Ihnen ab dem ersten Monat 40 % der Mieteinnahmen auszahlt — über lokale Partner bewirtschaftet durch das lokale Partnernetzwerknetzwerk.
             </p>
           </div>
 
@@ -181,7 +181,7 @@ export default function RentenluckeSchliessen() {
           <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Tiny House als Baustein: 40 % der Mieteinnahmen monatlich</h2>
           <div className="max-w-3xl mb-5">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Das Grundprinzip ist einfach: Sie kaufen ein Tiny House, tiny Escapes betreibt es als Ferienunterkunft auf einem verifizierten Stellplatz, und Sie erhalten 40 % der Netto-Mieteinnahmen monatlich ausgezahlt. Kein Gäste-Check-in, keine Reinigung, keine Kommunikation mit Vermietern — alles läuft ohne Ihr Zutun.
+              Das Grundprinzip ist einfach: Sie kaufen ein Tiny House, lokale Partner betreibt es als Ferienunterkunft auf einem verifizierten Stellplatz, und Sie erhalten 40 % der Netto-Mieteinnahmen monatlich ausgezahlt. Kein Gäste-Check-in, keine Reinigung, keine Kommunikation mit Vermietern — alles läuft ohne Ihr Zutun.
             </p>
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white mb-10">

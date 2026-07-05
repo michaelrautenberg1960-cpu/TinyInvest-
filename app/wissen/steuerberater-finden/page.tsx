@@ -192,7 +192,7 @@ export default function SteuerberaterFindenPage() {
               Ein Steuerberater kann nur so gut beraten wie die Unterlagen, die er von dir bekommt. Bring zum Erstgespräch den Steuerbescheid des Vorjahres mit – er zeigt deinen Grenzsteuersatz und die aktuelle Steuerbelastung, beides ist die Basis für die IAB-Berechnung. Dazu kommen die Asset-Daten des Tiny Houses: Kaufpreis, Modell, und der Nachweis des Vlemmix Trailers mit VIN/FIN-Nummer, der die steuerrechtliche Klassifizierung als bewegliches Wirtschaftsgut belegt.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Außerdem brauchst du oder zumindest die Absicht zur Anmeldung eines Gewerbes – ohne gewerbliche Tätigkeit greift §7g nicht. Den Betreibervertrag mit tiny Escapes kannst du ebenfalls mitbringen: Er belegt die gewerbliche Nutzungsabsicht und die Einkommensstruktur (40 % Mietanteil an den Investor). TinyInvest stellt auf Wunsch ein kostenloses §7g-Factsheet zur Verfügung, das alle relevanten Kennzahlen so aufbereitet, dass dein Steuerberater sofort arbeiten kann.
+              Außerdem brauchst du oder zumindest die Absicht zur Anmeldung eines Gewerbes – ohne gewerbliche Tätigkeit greift §7g nicht. Den Betreibervertrag mit lokale Partner kannst du ebenfalls mitbringen: Er belegt die gewerbliche Nutzungsabsicht und die Einkommensstruktur (40 % Mietanteil an den Investor). TinyInvest stellt auf Wunsch ein kostenloses §7g-Factsheet zur Verfügung, das alle relevanten Kennzahlen so aufbereitet, dass dein Steuerberater sofort arbeiten kann.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Informiere deinen Berater außerdem über den geplanten Investitionszeitraum. Das ist relevant für die IAB-Timing-Optimierung: Soll der IAB noch im laufenden Jahr gebildet werden oder bereits im nächsten? Je nach Gewinnhöhe und Steuersatz kann das einen Unterschied von mehreren tausend Euro ausmachen.
@@ -202,7 +202,7 @@ export default function SteuerberaterFindenPage() {
           <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Das TinyInvest Steuerberater-Netzwerk</h2>
           <div className="max-w-3xl mb-10">
             <p className="text-gray-700 text-base leading-relaxed mb-6">
-              TinyInvest arbeitet mit einem Netzwerk geprüfter Steuerberater zusammen, die das Modell kennen: IAB und Sonder-AfA bei beweglichen Wirtschaftsgütern, den Betreibervertrag mit tiny Escapes, die gewerbliche Dokumentation und die Begleitung bei Betriebsprüfungen. Alle Berater sind bundesweit tätig und führen Erstgespräche auch digital. Auf Wunsch stellen wir dir eine persönliche Empfehlung – kostenlos und unverbindlich.
+              TinyInvest arbeitet mit einem Netzwerk geprüfter Steuerberater zusammen, die das Modell kennen: IAB und Sonder-AfA bei beweglichen Wirtschaftsgütern, den Betreibervertrag mit lokale Partner, die gewerbliche Dokumentation und die Begleitung bei Betriebsprüfungen. Alle Berater sind bundesweit tätig und führen Erstgespräche auch digital. Auf Wunsch stellen wir dir eine persönliche Empfehlung – kostenlos und unverbindlich.
             </p>
             <div className="text-center">
               <ModalButton className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">

@@ -35,7 +35,7 @@ const faqItems = [
   {
     question: "Wie hoch ist die durchschnittliche Rendite bei einem Tiny House Investment?",
     answer:
-      "Bei einem §7g-optimierten Tiny House über TinyInvest projizieren wir eine IRR (Internal Rate of Return) von 12–15 % p.a. über 5 Jahre. Der Investor erhält 40 % der Kurzzeitvermietungs-Einnahmen von tiny Escapes – bei 60 % Belegung und 100 €/Nacht sind das ca. 720 € netto pro Monat. Hinzu kommen Steuererstattungen im Jahr 1 von bis zu ~33.000 € (bei 80.000 € Investment und 42 % Grenzsteuersatz).",
+      "Bei einem §7g-optimierten Tiny House über TinyInvest projizieren wir eine IRR (Internal Rate of Return) von 12–15 % p.a. über 5 Jahre. Der Investor erhält 40 % der Kurzzeitvermietungs-Einnahmen lokaler Partner – bei 60 % Belegung und 100 €/Nacht sind das ca. 720 € netto pro Monat. Hinzu kommen Steuererstattungen im Jahr 1 von bis zu ~33.000 € (bei 80.000 € Investment und 42 % Grenzsteuersatz).",
   },
   {
     question: "Ab welchem Budget kann ich in ein Tiny House investieren?",
@@ -45,12 +45,12 @@ const faqItems = [
   {
     question: "Brauche ich ein Grundstück für das Investment?",
     answer:
-      "Nein. TinyInvest vermittelt dir einen verifizierten Host und Standort über das tiny Escapes Netzwerk. Du kaufst das Haus – der Stellplatz wird durch den Host bereitgestellt. Das ist einer der größten Vorteile gegenüber klassischen Ferienimmobilien: kein Grundstückskauf, keine Grunderwerbsteuer, keine Notarkosten.",
+      "Nein. TinyInvest vermittelt dir einen verifizierten Host und Standort über das lokale Partnernetzwerk. Du kaufst das Haus – der Stellplatz wird durch den Host bereitgestellt. Das ist einer der größten Vorteile gegenüber klassischen Ferienimmobilien: kein Grundstückskauf, keine Grunderwerbsteuer, keine Notarkosten.",
   },
   {
     question: "Was passiert, wenn das Tiny House nicht vermietet ist?",
     answer:
-      "Leerstands-Risiko ist ein echter Faktor. tiny Escapes bewirtschaftet die Objekte aktiv über Airbnb, Booking.com und eigene Kanäle und erreicht historisch 60–70 % Belegung. Sollte die Belegung dauerhaft unter 50 % fallen, wird tiny Escapes das Objekt an einem besser frequentierten Standort neu aufstellen – auf Kosten des Betreibers, nicht des Investors. Das Haus bleibt jederzeit dein Eigentum.",
+      "Leerstands-Risiko ist ein echter Faktor. lokale Partner bewirtschaftet die Objekte aktiv über Airbnb, Booking.com und eigene Kanäle und erreicht historisch 60–70 % Belegung. Sollte die Belegung dauerhaft unter 50 % fallen, wird lokale Partner das Objekt an einem besser frequentierten Standort neu aufstellen – auf Kosten des Betreibers, nicht des Investors. Das Haus bleibt jederzeit dein Eigentum.",
   },
 ];
 
@@ -61,10 +61,10 @@ const vergleichRows = [
   ["Abschreibung", "2 % lineare Gebäude-AfA / 50 J.", "§7g: bis 70 % im Kaufjahr"],
   ["Flexibilität", "Keine – ortsgebunden", "Hoch – Standort wechselbar"],
   ["Instandhaltungsaufwand", "Mittel–Hoch", "Gering (Trailer, wartungsarm)"],
-  ["Bewirtschaftung", "Selbst oder Hausverwaltung", "Vollautomatisch (tiny Escapes)"],
+  ["Bewirtschaftung", "Selbst oder Hausverwaltung", "mit geringem Aufwand über lokale Partner (lokale Partner)"],
   ["Liquidierbarkeit", "Schwer (Monate–Jahre)", "Leichter (Wiederverkauf oder Standortwechsel)"],
   ["Netto-Kapitaleinsatz", "60.000–100.000 € EK + Kredit nötig", "ab ~51.000 € (nach IAB-Erstattung)"],
-  ["Zeitaufwand für Investor", "20–50 Std./Jahr (Mieter, Verwaltung)", "~0 Std. – vollautomatisch"],
+  ["Zeitaufwand für Investor", "20–50 Std./Jahr (Mieter, Verwaltung)", "~0 Std. – mit geringem Aufwand über lokale Partner"],
   ["Diversifikation", "Eine konzentrierte Investition", "Mehrere Assets ab 65.000 € möglich"],
   ["Mietrecht", "Volles Mieterschutzrecht (Kündigungsschutz)", "Kein Mietrecht – Kurzzeitvermietung"],
   ["Break-even", "~12–15 Jahre", "~3–5 Jahre (inkl. Steuereffekte)"],
@@ -160,7 +160,7 @@ export default function KapitalanlagePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["§7g-optimiert", "Vollvermietet durch tiny Escapes", "Ab 65.000 €", "12–14 % IRR p.a."].map((tag) => (
+            {["§7g-optimiert", "Vollvermietet durch lokale Partner", "Ab 65.000 €", "12–14 % IRR p.a."].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -247,11 +247,11 @@ export default function KapitalanlagePage() {
             {[
               {
                 num: "01",
-                title: "Kurzzeitvermietung über tiny Escapes",
+                title: "Kurzzeitvermietung über lokale Partner",
                 icon: "🏕️",
                 color: "border-green-200 bg-white",
                 content: [
-                  "Das Tiny House wird über das tiny Escapes Netzwerk auf Airbnb, Booking.com und eigenen Kanälen vermietet.",
+                  "Das Tiny House wird über das lokale Partnernetzwerk auf Airbnb, Booking.com und eigenen Kanälen vermietet.",
                   "Der Investor erhält 40 % der Netto-Einnahmen monatlich ausgezahlt.",
                   "Bei 60 % Belegung und 100 €/Nacht: 1.800 € Umsatz/Monat → 720 € Netto an den Investor.",
                   "Kein eigener Aufwand: Host übernimmt Reinigung, Check-in, Kommunikation.",
@@ -406,7 +406,7 @@ export default function KapitalanlagePage() {
               <strong className="text-gray-900">Ja – für den richtigen Investor-Typ.</strong> Ein Tiny House als Kapitalanlage eignet sich besonders für Steuerpflichtige mit mittlerem bis hohem Einkommen, die von §7g profitieren können, und die passives Einkommen ohne operativen Aufwand suchen.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Der kombinierte Effekt aus 40 % Mietauszahlung, hoher AfA-Abschreibung und niedrigem Einstiegspreis macht das Modell gegenüber klassischen Ferienimmobilien strukturell überlegen – wenn der Betreiber tiny Escapes zuverlässig hohe Belegungsquoten liefert.
+              Der kombinierte Effekt aus 40 % Mietauszahlung, hoher AfA-Abschreibung und niedrigem Einstiegspreis macht das Modell gegenüber klassischen Ferienimmobilien strukturell überlegen – wenn der Betreiber lokale Partner zuverlässig hohe Belegungsquoten liefert.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
               <strong className="text-gray-900">Nicht geeignet für:</strong> Anleger die maximale Sicherheit suchen, keine steuerliche Optimierungsmöglichkeit haben oder das Kapital kurzfristig benötigen.

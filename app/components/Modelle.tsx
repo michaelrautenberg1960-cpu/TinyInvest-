@@ -1,4 +1,4 @@
-import { supabase } from "../lib/supabase";
+﻿import { supabase } from "../lib/supabase";
 import ModelleCarousel, { Listing } from "./ModelleCarousel";
 
 export default async function Modelle() {
@@ -48,12 +48,12 @@ export default async function Modelle() {
           <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
             Projekte, in die du investieren kannst – mit Status, verfügbaren Einheiten und IRR. Jedes Asset ist §7g-fähig und wird durch{" "}
             <a
-              href="https://www.tiny.rentals"
+              href="https://www.tinyhouse.investments"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-700 font-semibold hover:underline"
             >
-              tiny Escapes
+              lokale Partner
             </a>{" "}
             bewirtschaftet.
           </p>

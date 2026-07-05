@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import ProjekteGrid, { ProjectCard } from "./ProjekteGrid";
@@ -49,7 +49,7 @@ function MarktplatzShellInner({ listings, mapListings }: Props) {
             Wählen Sie Ihr Projekt
           </h2>
           <p className="text-gray-500 text-sm mt-1">
-            Alle Projekte werden vollautomatisch durch tiny Escapes bewirtschaftet – Sie investieren, wir machen den Rest.
+            Alle Projekte werden mit geringem Aufwand über lokale Partner durch lokale Partner bewirtschaftet – Sie investieren, wir machen den Rest.
           </p>
         </div>
       </div>

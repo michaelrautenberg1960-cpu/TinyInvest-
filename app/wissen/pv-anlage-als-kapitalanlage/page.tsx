@@ -55,7 +55,7 @@ const faqItems = [
   {
     question: "Kann ich ein Tiny House auch als Alternative zur Photovoltaik auf Fremdgrundstück betreiben?",
     answer:
-      "Ja. TinyInvest vermittelt Stellplätze über das tiny Escapes Netzwerk – du brauchst kein eigenes Grundstück. Das Tiny House wird von einem verifizierten Host betrieben, der Stellplatz und Gästebetreuung übernimmt. Du bekommst monatlich 40 % der Netto-Mieteinnahmen ausgezahlt, ohne selbst operativ tätig zu werden.",
+      "Ja. TinyInvest vermittelt Stellplätze über das lokale Partnernetzwerk – du brauchst kein eigenes Grundstück. Das Tiny House wird von einem verifizierten Host betrieben, der Stellplatz und Gästebetreuung übernimmt. Du bekommst monatlich 40 % der Netto-Mieteinnahmen ausgezahlt, ohne selbst operativ tätig zu werden.",
   },
 ];
 

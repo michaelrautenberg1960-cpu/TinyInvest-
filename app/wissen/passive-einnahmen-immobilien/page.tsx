@@ -66,7 +66,7 @@ const modelle = [
     rendite: "12–14 % IRR p.a.",
     zeitaufwand: "~0 Std.",
     eigentuemer: "âœ… Ja",
-    fazit: "Niedrigster Einstieg, höchste Rendite, vollautomatischer Betrieb.",
+    fazit: "Niedrigster Einstieg, höchste Rendite, mit geringem Aufwand über lokale Partnerer Betrieb.",
     highlight: true,
   },
 ];

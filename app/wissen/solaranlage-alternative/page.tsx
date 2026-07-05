@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: "Brauche ich ein eigenes Dach oder Grundstück für ein Tiny House Investment?",
     answer:
-      "Nein. Das Tiny House wird auf dem Grundstück eines Hosts aufgestellt – du brauchst weder eigenes Land noch ein Dach. Das ist einer der entscheidenden strukturellen Unterschiede zur PV-Anlage, die an eine Immobilie gebunden ist. Tiny Escapes vermittelt geprüfte Hosts und Standorte; der Investor kauft nur das mobile Wirtschaftsgut.",
+      "Nein. Das Tiny House wird auf dem Grundstück eines Hosts aufgestellt – du brauchst weder eigenes Land noch ein Dach. Das ist einer der entscheidenden strukturellen Unterschiede zur PV-Anlage, die an eine Immobilie gebunden ist. lokale Partner vermittelt geprüfte Hosts und Standorte; der Investor kauft nur das mobile Wirtschaftsgut.",
   },
   {
     question: "Wie hoch ist die AfA-Laufzeit beim Tiny House im Vergleich zur PV-Anlage?",
@@ -169,7 +169,7 @@ export default function SolaranlageAlternativePage() {
               Der §7g EStG definiert drei Kernvoraussetzungen für den Investitionsabzugsbetrag: Das Wirtschaftsgut muss abnutzbar und beweglich sein, es muss zum Anlagevermögen eines Betriebs gehören, und es muss in den ersten drei Jahren nach dem Investitionsjahr ausschließlich oder fast ausschließlich betrieblich genutzt werden. PV-Anlagen erfüllen diese Kriterien – aber sie sind nicht die einzige Assetklasse, die das tut.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Fahrzeuge, die betrieblich genutzt werden, qualifizieren ebenso. Maschinen und Spezialgeräte qualifizieren. Und ein Tiny House auf einem Vlemmix-Trailer – einem zugelassenen Fahrzeuganhänger – qualifiziert ebenfalls, weil es als bewegliches Wirtschaftsgut gilt und nicht im Grundbuch eingetragen wird. Entscheidend ist, dass der Investor das wirtschaftliche Eigentum am Tiny House hält und das Haus im Rahmen eines Gewerbebetriebs oder einer Vermietungstätigkeit mit Gewinnerzielungsabsicht betrieben wird. Beides ist beim TinyInvest-Modell gegeben: Der Kaufvertrag überträgt das Eigentum auf den Investor, die Vermietung als Ferienunterkunft über tiny Escapes stellt die betriebliche Nutzung sicher.
+              Fahrzeuge, die betrieblich genutzt werden, qualifizieren ebenso. Maschinen und Spezialgeräte qualifizieren. Und ein Tiny House auf einem Vlemmix-Trailer – einem zugelassenen Fahrzeuganhänger – qualifiziert ebenfalls, weil es als bewegliches Wirtschaftsgut gilt und nicht im Grundbuch eingetragen wird. Entscheidend ist, dass der Investor das wirtschaftliche Eigentum am Tiny House hält und das Haus im Rahmen eines Gewerbebetriebs oder einer Vermietungstätigkeit mit Gewinnerzielungsabsicht betrieben wird. Beides ist beim TinyInvest-Modell gegeben: Der Kaufvertrag überträgt das Eigentum auf den Investor, die Vermietung als Ferienunterkunft über lokale Partner stellt die betriebliche Nutzung sicher.
             </p>
           </div>
 
@@ -206,7 +206,7 @@ export default function SolaranlageAlternativePage() {
                     ["Technologierisiko", "âš  Degradation, Wechselrichter", "âœ… Niedrig"],
                     ["Politisches Risiko", "âš  Einspeisevergütung gesetzlich", "âœ… Niedrig"],
                     ["Eigenes Dach/Grundstück nötig", "âš  Ja", "âœ… Nein"],
-                    ["Passives Einkommen", "âœ… Ja", "âœ… Ja (vollständig verwaltet)"],
+                    ["Passives Einkommen", "âœ… Ja", "âœ… Ja (über lokale Partner betrieben)"],
                     ["Break-even", "12–18 Jahre", "6–8 Jahre"],
                   ].map(([k, a, b]) => (
                     <tr key={k} className="hover:bg-gray-50/50">
@@ -236,7 +236,7 @@ export default function SolaranlageAlternativePage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Für wen ist ein Tiny House die bessere PV-Alternative?</h2>
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Das Tiny House als §7g-Investment eignet sich besonders für Investoren mit einem Grenzsteuersatz von mindestens 35 Prozent, da ab diesem Niveau der Steuerhebel seine volle Wirkung entfaltet. Wer keinen eigenen Dachbesitz hat – und damit keine Grundlage für eine PV-Anlage –, findet im Tiny House eine Kapitalanlage, die kein eigenes Grundstück erfordert. Das Haus wird auf dem Stellplatz eines geprüften Hosts aufgebaut; Standort-Due-Diligence und Betrieb übernimmt tiny Escapes vollständig.
+              Das Tiny House als §7g-Investment eignet sich besonders für Investoren mit einem Grenzsteuersatz von mindestens 35 Prozent, da ab diesem Niveau der Steuerhebel seine volle Wirkung entfaltet. Wer keinen eigenen Dachbesitz hat – und damit keine Grundlage für eine PV-Anlage –, findet im Tiny House eine Kapitalanlage, die kein eigenes Grundstück erfordert. Das Haus wird auf dem Stellplatz eines geprüften Hosts aufgebaut; Standort-Due-Diligence und Betrieb übernimmt lokale Partner vollständig.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Für Investoren, die bereits eine PV-Anlage besitzen und den §7g-Rahmen noch nicht ausgeschöpft haben, kann das Tiny House eine sinnvolle Ergänzung sein: Beide Wirtschaftsgüter qualifizieren gleichzeitig, solange der IAB-Gesamtbetrag 200.000 € nicht übersteigt. Wer hingegen technisches Engagement scheut und ein vollständig passives Einkommensmodell bevorzugt, ist mit dem verwalteten Tiny House ebenfalls gut bedient – das Investment erfordert nach dem Kauf keinen weiteren Aufwand auf Investorenseite.

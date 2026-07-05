@@ -10,7 +10,7 @@ export default function DreiWege() {
             Drei Wege zu Ihrem TinyInvest
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-            Ob Steuern sparen, passiv Geld verdienen oder Wunschhaus finanzieren – TinyInvest hat das passende Modell für Sie.
+            Ob Steuern sparen, Mieteinnahmen erzielen oder das Wunschhaus finanzieren – TinyInvest hat das passende Modell für Sie.
           </p>
         </div>
 

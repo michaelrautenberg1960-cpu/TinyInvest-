@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Tiny House auf Airbnb vermieten: Profitabel? | TinyInvest",
   description:
-    "Lohnt sich ein Tiny House auf Airbnb? Belegungsquoten, Preise, Steuereffekte – die echten Zahlen 2026. Warum das tiny Escapes Betreibermodell effizienter ist.",
+    "Lohnt sich ein Tiny House auf Airbnb? Belegungsquoten, Preise, Steuereffekte – die echten Zahlen 2026. Warum das lokale Partner Betreibermodell effizienter ist.",
   keywords:
     "tiny house airbnb vermieten, tiny house airbnb verdienen, tiny house kurzzeitvermietung rendite, airbnb tiny house profitabel 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -30,15 +30,15 @@ const faqItems = [
   },
   {
     question: "Brauche ich eine Gewerbeanmeldung für Airbnb mit einem Tiny House?",
-    answer: "In Deutschland gilt: Wer regelmäßig Einkünfte aus Vermietung erzielt, muss diese in der Steuererklärung angeben. Bei gewerbsmäßiger Vermietung (Einkünfte über 24.500 €/Jahr) ist eine Gewerbeanmeldung nötig. Im TinyInvest-Modell wickelt tiny Escapes die gewerbliche Seite als Betreiber ab – du erzielst Einkünfte aus V&V.",
+    answer: "In Deutschland gilt: Wer regelmäßig Einkünfte aus Vermietung erzielt, muss diese in der Steuererklärung angeben. Bei gewerbsmäßiger Vermietung (Einkünfte über 24.500 €/Jahr) ist eine Gewerbeanmeldung nötig. Im TinyInvest-Modell wickelt lokale Partner die gewerbliche Seite als Betreiber ab – du erzielst Einkünfte aus V&V.",
   },
   {
-    question: "Kann ich mein Tiny House selbst auf Airbnb stellen oder brauche ich tiny Escapes?",
-    answer: "Du kannst ein Tiny House theoretisch selbst auf Airbnb listen. TinyInvest-Assets laufen jedoch über das tiny Escapes Betreibermodell: professionelles Listing, dynamisches Pricing, Reinigungsmanagement und Gästebetreuung. Das kostet 60 % der Einnahmen – macht aber für die meisten Investoren mehr Sinn als selbst zu betreiben.",
+    question: "Kann ich mein Tiny House selbst auf Airbnb stellen oder brauche ich lokale Partner?",
+    answer: "Du kannst ein Tiny House theoretisch selbst auf Airbnb listen. TinyInvest-Assets laufen jedoch über das lokale Partner Betreibermodell: professionelles Listing, dynamisches Pricing, Reinigungsmanagement und Gästebetreuung. Das kostet 60 % der Einnahmen – macht aber für die meisten Investoren mehr Sinn als selbst zu betreiben.",
   },
   {
     question: "Welche Airbnb-Preise sind für Tiny Houses realistisch?",
-    answer: "In Deutschland liegen erfolgreiche Tiny House Listings zwischen 70 € und 160 € pro Nacht, je nach Lage und Ausstattung. Waldlagen, Seenähe oder besondere Architektur erzielen Premium-Preise. Die tiny Escapes-Standorte sind auf maximale Belegung und Premium-Preise ausgelegt.",
+    answer: "In Deutschland liegen erfolgreiche Tiny House Listings zwischen 70 € und 160 € pro Nacht, je nach Lage und Ausstattung. Waldlagen, Seenähe oder besondere Architektur erzielen Premium-Preise. Die lokale Partner-Standorte sind auf maximale Belegung und Premium-Preise ausgelegt.",
   },
 ];
 
@@ -131,7 +131,7 @@ export default function TinyHouseAirbnbPage() {
               Wer einen Urlaub auf Airbnb bucht, stößt immer häufiger auf Tiny Houses. Das Konzept funktioniert für Gäste: ungewöhnliche Architektur, Naturnähe, ein Erlebnis statt eines Hotelzimmers. Für Investoren stellt sich die Frage nüchterner: Wie viel bleibt am Ende des Monats wirklich übrig – nach Airbnb-Gebühren, Reinigung, Betreiberkosten und Steuern?
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Die Antwort hängt weniger von der Plattform ab als vom Betriebsmodell. Wer selbst auf Airbnb vermietet, behält 70 bis 80 Prozent der Einnahmen – trägt aber auch selbst Zeitaufwand, Preisoptimierung, Gästebetreuung und das Leerstandsrisiko. Das tiny Escapes Betreibermodell gibt dem Investor nur 40 Prozent – holt durch professionelles Management aber in der Regel deutlich höhere Belegungsquoten heraus.
+              Die Antwort hängt weniger von der Plattform ab als vom Betriebsmodell. Wer selbst auf Airbnb vermietet, behält 70 bis 80 Prozent der Einnahmen – trägt aber auch selbst Zeitaufwand, Preisoptimierung, Gästebetreuung und das Leerstandsrisiko. Das lokale Partner Betreibermodell gibt dem Investor nur 40 Prozent – holt durch professionelles Management aber in der Regel deutlich höhere Belegungsquoten heraus.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               In den letzten Jahren hat sich der Trend zum Tiny House von einer rein minimalistischen Lebensphilosophie zu einer der lukrativsten Nischen auf dem Ferienimmobilienmarkt entwickelt. Wer heute nach einer rentablen Investition sucht, die gleichzeitig nachhaltig und modern ist, kommt an diesem Konzept kaum noch vorbei. Doch was macht das Tiny House auf Airbnb so erfolgreich – und worauf müssen Investoren wirklich achten?
@@ -186,7 +186,7 @@ export default function TinyHouseAirbnbPage() {
                   <tr className="bg-gray-50 border-b border-gray-100">
                     <th className="text-left p-4 text-[12px] text-gray-500 font-semibold">Kriterium</th>
                     <th className="p-4 text-[12px] text-gray-500 font-semibold text-center">Selbst auf Airbnb</th>
-                    <th className="p-4 text-[12px] font-black text-green-700 text-center bg-green-50">tiny Escapes Betreiber</th>
+                    <th className="p-4 text-[12px] font-black text-green-700 text-center bg-green-50">lokale Partner Betreiber</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50 text-[13px]">
@@ -195,7 +195,7 @@ export default function TinyHouseAirbnbPage() {
                     ["Zeitaufwand", "15–30 Std./Mo.", "~0 Std."],
                     ["Listing-Qualität", "Selbst", "Professionell"],
                     ["Dynamisches Pricing", "Manuell", "Automatisch"],
-                    ["Gästebetreuung", "Du", "tiny Escapes"],
+                    ["Gästebetreuung", "Du", "lokale Partner"],
                     ["Belegungsquote", "40–55 %", "60–75 %"],
                     ["Netto-Ergebnis Investor", "Höherer % · niedrigere Quote", "Niedrigerer % · höhere Quote"],
                   ].map(([k, a, b]) => (
@@ -214,7 +214,7 @@ export default function TinyHouseAirbnbPage() {
             <p className="font-black text-base mb-2">💡 Die Mathematik dahinter:</p>
             <p className="text-green-100 text-[13px] leading-relaxed">
               Bei Selbstvermietung mit 75 % Einnahmenanteil aber nur 50 % Belegung: <strong className="text-white">15 Nächte × 100 € × 75 % = 1.125 €/Monat</strong>.
-              Mit tiny Escapes: 40 % Anteil aber 65 % Belegung: <strong className="text-white">19,5 Nächte × 100 € × 40 % = 780 €/Monat</strong>.
+              Mit lokale Partner: 40 % Anteil aber 65 % Belegung: <strong className="text-white">19,5 Nächte × 100 € × 40 % = 780 €/Monat</strong>.
               Dafür: null Aufwand, professionelles Management, skalierbar auf mehrere Assets.
             </p>
           </div>
@@ -229,7 +229,7 @@ export default function TinyHouseAirbnbPage() {
               Trotz der Attraktivität des Modells darf die rechtliche Komplexität nicht unterschätzt werden. In Deutschland ist ein Tiny House baurechtlich kein Wohnwagen, sondern in vielen Fällen ein Gebäude. Wer es gewerblich über Airbnb vermieten möchte, muss sicherstellen, dass das Grundstück für Feriennutzung zugelassen ist. Die Erschließung mit Wasser, Strom und Abwasser ist Voraussetzung, ebenso die Einhaltung von Brandschutz- und Stellplatzverordnungen. Tiny Houses auf einem Vlemmix Trailer mit eigener Fahrzeug-Identifikationsnummer werden jedoch steuerrechtlich als bewegliche Wirtschaftsgüter behandelt – was den entscheidenden steuerlichen Hebel durch §7g EStG ermöglicht.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Strategisch gesehen ist die Lage das wichtigste Kriterium. Ein Tiny House profitiert massiv von einer Alleinlage oder einem besonderen Ausblick. Investoren sollten zudem die Zielgruppe im Blick behalten: Soll das Haus ein Rückzugsort für Paare sein, ein funktionaler Stopp für Wanderer oder ein komfortabler Workspace für digitale Nomaden? Jede Zielgruppe stellt andere Anforderungen an die Ausstattung – von der Qualität der Kaffeemaschine bis zur Stabilität des WLANs. Im TinyInvest-Modell übernimmt tiny Escapes diese strategische Standort- und Positionierungsarbeit vollständig.
+              Strategisch gesehen ist die Lage das wichtigste Kriterium. Ein Tiny House profitiert massiv von einer Alleinlage oder einem besonderen Ausblick. Investoren sollten zudem die Zielgruppe im Blick behalten: Soll das Haus ein Rückzugsort für Paare sein, ein funktionaler Stopp für Wanderer oder ein komfortabler Workspace für digitale Nomaden? Jede Zielgruppe stellt andere Anforderungen an die Ausstattung – von der Qualität der Kaffeemaschine bis zur Stabilität des WLANs. Im TinyInvest-Modell übernimmt lokale Partner diese strategische Standort- und Positionierungsarbeit vollständig.
             </p>
           </div>
 
