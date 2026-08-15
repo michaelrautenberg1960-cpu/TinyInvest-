@@ -20,16 +20,16 @@ function buildWelcomeHtml(vorname: string) {
           <tr>
             <td style="font-size:14px;line-height:1.7;color:#222222;">
               <p style="margin:0 0 16px;">Hallo ${vorname},</p>
-              <p style="margin:0 0 16px;">vielen Dank für dein Interesse an TinyInvest!</p>
-              <p style="margin:0 0 16px;">Damit du direkt alle wichtigen Details zur Hand hast, haben wir dir unsere Erstinformation sowie ein Rechenbeispiel unserer Partnerbank, der EthikBank eG (ab 623 €/Monat bei 79.000 € Investition), als PDF an diese E-Mail angehängt.</p>
-              <p style="margin:0 0 8px;">In der Erstinformation erfährst du auf einen Blick:</p>
+              <p style="margin:0 0 16px;">vielen Dank für Ihr Interesse an TinyInvest!</p>
+              <p style="margin:0 0 16px;">Damit Sie direkt alle wichtigen Details zur Hand haben, haben wir Ihnen unsere Erstinformation sowie ein Rechenbeispiel unserer Partnerbank, der EthikBank eG (ab 623 €/Monat bei 79.000 € Investition), als PDF an diese E-Mail angehängt.</p>
+              <p style="margin:0 0 8px;">In der Erstinformation erfahren Sie auf einen Blick:</p>
               <ul style="margin:0 0 16px;padding-left:20px;">
-                <li style="margin-bottom:6px;"><strong>Konzept:</strong> Wie das Direktinvestment durch den Kauf deines eigenen Assets in 3 Sätzen funktioniert</li>
+                <li style="margin-bottom:6px;"><strong>Konzept:</strong> Wie das Direktinvestment durch den Kauf Ihres eigenen Assets in 3 Sätzen funktioniert</li>
                 <li style="margin-bottom:6px;"><strong>Rendite &amp; Standorte:</strong> Welches Ertragspotenzial realistisch ist</li>
-                <li>📸 <strong>So wird dein Haus aussehen:</strong> Wirf gerne schon vorab einen Blick in unsere <a href="https://tinyhouse.investments/galerie" style="color:#222222;">Bildergalerie</a> und mache dir ein Bild von der Ausstattung und dem Design.</li>
+                <li>📸 <strong>So wird Ihr Haus aussehen:</strong> Werfen Sie gerne schon vorab einen Blick in unsere <a href="https://tinyhouse.investments/galerie" style="color:#222222;">Bildergalerie</a> und machen Sie sich ein Bild von der Ausstattung und dem Design.</li>
               </ul>
               <p style="margin:0 0 16px;">Da jeder Investor ganz unterschiedliche Voraussetzungen und Zielsetzungen mitbringt, gibt es bei uns keine Standardlösungen.</p>
-              <p style="margin:0 0 16px;">Schreib mir einfach kurz zurück, was für dich wichtig ist – oder wenn es schneller gehen soll, können wir auch gerne einen kurzen Telefontermin vereinbaren.</p>
+              <p style="margin:0 0 16px;">Schreiben Sie mir einfach kurz zurück, was für Sie wichtig ist – oder wenn es schneller gehen soll, können wir auch gerne einen kurzen Telefontermin vereinbaren.</p>
               <p style="margin:0 0 4px;">Mit freundlichen Grüßen,</p>
               <p style="margin:0 0 16px;">Michael Rautenberg</p>
               <img src="https://tinyhouse.investments/logo8.png" alt="TinyInvest" width="120" style="display:block;width:120px;max-width:120px;height:auto;margin:0 0 12px;" />
@@ -63,7 +63,7 @@ export async function sendWelcomeEmail(vorname: string, email: string) {
   await resend.emails.send({
     from: "Michael Rautenberg <info@tinyhouse.investments>",
     to: email,
-    subject: `Deine Erstinformationen zu TinyInvest 🏡`,
+    subject: `Ihre Erstinformationen zu TinyInvest 🏡`,
     html: buildWelcomeHtml(vorname),
     attachments: [
       { filename: "TinyInvest-Erstinformation.pdf", content: erstinfoBuffer },
