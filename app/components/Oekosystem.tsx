@@ -34,16 +34,6 @@ export default function Oekosystem() {
               </div>
               <h3 className="text-lg font-black text-white">{item.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed flex-grow">{item.desc}</p>
-              {item.link && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-400 hover:text-green-300 text-sm font-semibold transition-colors"
-                >
-                  {item.linkLabel}
-                </a>
-              )}
             </div>
           ))}
         </div>
