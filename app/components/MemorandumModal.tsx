@@ -36,6 +36,7 @@ export default function MemorandumModal() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [leadId, setLeadId] = useState<string | null>(null);
 
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -51,6 +52,7 @@ export default function MemorandumModal() {
         setSubmitted(false);
         setStep(1);
         setError("");
+        setLeadId(null);
       }, 300);
     }
   }, [isOpen]);
@@ -80,6 +82,8 @@ export default function MemorandumModal() {
           }),
       });
       if (!res.ok) throw new Error();
+      const data = await res.json();
+      setLeadId(data.leadId ?? null);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).gtag?.("event", "generate_lead", { form_type: "memorandum_step1" });
       setStep(2);
@@ -98,7 +102,7 @@ export default function MemorandumModal() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, nachname: "", schritt: "Details (Schritt 2)" }),
+        body: JSON.stringify({ ...form, nachname: "", schritt: "Details (Schritt 2)", leadId }),
       });
       if (!res.ok) throw new Error();
       setSubmitted(true);

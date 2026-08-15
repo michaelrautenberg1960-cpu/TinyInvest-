@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminClient } from "@/app/lib/supabase";
+import { sendWelcomeEmail } from "@/app/lib/sendWelcomeEmail";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -24,6 +25,8 @@ export async function POST(req: NextRequest) {
       hostBebauung,
       hostVersorgung,
       hostAnzahl,
+      schritt,
+      leadId,
     } = body;
 
     const isHost = interesse === "Host-Bewerbung (Standort / Grundstück)";
@@ -34,26 +37,44 @@ export async function POST(req: NextRequest) {
 
     const finalNachricht = [nachricht, hostSummary].filter(Boolean).join("\n\n") || null;
 
-    // 1. Save to Supabase
-    const { error: dbError } = await getAdminClient().from("leads").insert([
-      {
-        vorname,
-        nachname,
-        email,
-        telefon: telefon || null,
-        interesse,
-        budget: isHost ? null : budget,
-        location: isHost ? null : (location || null),
-        investment_volumen: isHost ? null : (investmentVolumen || null),
-        kontakt_zeit: kontaktZeit || null,
-        nachricht: finalNachricht,
-        status: "neu",
-      },
-    ]);
+    // 1. Save to Supabase — update the existing lead (Schritt 2) instead of creating a second row
+    const leadFields = {
+      vorname,
+      nachname,
+      email,
+      telefon: telefon || null,
+      interesse,
+      budget: isHost ? null : budget,
+      location: isHost ? null : (location || null),
+      investment_volumen: isHost ? null : (investmentVolumen || null),
+      kontakt_zeit: kontaktZeit || null,
+      nachricht: finalNachricht,
+      status: "neu",
+    };
 
-    if (dbError) {
-      console.error("Supabase error:", dbError);
-      return NextResponse.json({ error: "Datenbankfehler" }, { status: 500 });
+    let resultLeadId: string | undefined = leadId;
+
+    if (leadId) {
+      const { error: dbError } = await getAdminClient()
+        .from("leads")
+        .update(leadFields)
+        .eq("id", leadId);
+
+      if (dbError) {
+        console.error("Supabase error:", dbError);
+        return NextResponse.json({ error: "Datenbankfehler" }, { status: 500 });
+      }
+    } else {
+      const { data: inserted, error: dbError } = await getAdminClient()
+        .from("leads")
+        .insert([leadFields])
+        .select("id");
+
+      if (dbError) {
+        console.error("Supabase error:", dbError);
+        return NextResponse.json({ error: "Datenbankfehler" }, { status: 500 });
+      }
+      resultLeadId = inserted?.[0]?.id;
     }
 
     // 2. Send email notification via Resend (non-blocking)
@@ -199,7 +220,16 @@ export async function POST(req: NextRequest) {
       console.error("Resend error (non-fatal):", emailErr);
     }
 
-    return NextResponse.json({ success: true });
+    // 3. Send welcome email to the lead themselves once the full form (step 2) is submitted
+    if (schritt === "Details (Schritt 2)") {
+      try {
+        await sendWelcomeEmail(vorname, email);
+      } catch (welcomeErr) {
+        console.error("Welcome email error (non-fatal):", welcomeErr);
+      }
+    }
+
+    return NextResponse.json({ success: true, leadId: resultLeadId });
   } catch (err) {
     console.error("Contact API error:", err);
     return NextResponse.json({ error: "Serverfehler" }, { status: 500 });
