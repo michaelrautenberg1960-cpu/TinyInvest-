@@ -51,9 +51,8 @@ export default function Testimonials() {
           <p className="text-center text-white/60 text-sm uppercase tracking-widest mb-8 font-semibold">
             Unsere Bilanz – Zahlen die sprechen
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             {[
-              { value: "3+", label: "Aktive Assets (wachsend)" },
               { value: "2021", label: "Gegründet · wachsendes Volumen" },
               { value: "12–14 %*", label: "p.a. (Erfahrungswerte, standortabh.)" },
               { value: "100 %", label: "Eigentumsübertragung" },

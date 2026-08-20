@@ -72,10 +72,9 @@ export default function Ueber() {
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Aktive Assets", value: "3", icon: "🏡" },
-                  { label: "Assets in Planung", value: "4", icon: "🗺️" },
+                  { label: "Locations in Planung", value: "8", icon: "🗺️" },
                   { label: "Ø Nachtrate", value: "120–180 €", icon: "💶" },
-                  { label: "Ø Belegung", value: "50–60 %", icon: "📅" },
+                  { label: "Ø Belegung", value: "47–58 %", icon: "📅" },
                 ].map((s) => (
                   <div key={s.label} className="flex items-center gap-2">
                     <span className="text-base">{s.icon}</span>

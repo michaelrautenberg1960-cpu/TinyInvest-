@@ -38,7 +38,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
         <div className="mb-8">
           <span className="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white text-[11px] font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest backdrop-blur-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Tiny House Investment · Direktkauf · §7g Steuervorteil im Kaufjahr
+            Tiny House Investment · Direktkauf · Betrieb aus einer Hand über unser Partner-Netzwerk · Steuervorteil im Kaufjahr
           </span>
         </div>
 
@@ -64,7 +64,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
             </h1>
 
             <p className="text-white/75 text-base leading-relaxed mb-7 max-w-lg">
-              Wir vermitteln Tiny Houses zum Direktkauf als steueroptimiertes Wirtschaftsgut. Auf Wunsch bringen wir Sie mit lokalen Betreiberpartnern in Kontakt, die Standort und Vermietung für Sie übernehmen können. Mieteinnahmen erzielen Sie als Eigentümer im eigenen gewerblichen Betrieb. Ab 65.000 €, 10–14 % p.a.* <span className="text-white/40 text-[11px]">*Erfahrungswerte lokaler Partner, standortabhängig, keine Garantie.</span>
+              Wir vermitteln Tiny Houses zum Direktkauf als steueroptimiertes Wirtschaftsgut – auf Wunsch fertig aufgestellt und vollständig verwaltet durch unser Netzwerk erfahrener lokaler Partner, mit monatlichem Cashflow ab dem ersten Monat. Ab 65.000 €, 10–14 % p.a. Alles aus einer Hand.
             </p>
 
             {/* Platform stats grid */}
@@ -101,7 +101,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
                   {[...Array(5)].map((_, i) => <span key={i} className="text-amber-400 text-xs">★</span>)}
                 </div>
                 <p className="text-white/80 text-[12px] leading-snug italic">
-                  „Bereits im ersten Jahr eine spürbare Steuerentlastung – und regelmäßige Mieteinnahmen."
+                  „Im ersten Jahr 22.000 € Steuern gespart – und monatlich passiven Cashflow."
                 </p>
                 <p className="text-white/45 text-[10px] mt-1">Michael B. · Unternehmer, München</p>
               </div>
@@ -119,7 +119,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
             {[
               { label: "Vlemmix Trailer", sub: "Zertifizierter Hersteller" },
               { label: "Clansana", sub: "Off-Grid Systeme" },
-              { label: "Lokale Partner", sub: "Betrieb auf Wunsch" },
+              { label: "Lokale Partner", sub: "Betrieb aus einer Hand" },
               { label: "§7g EStG", sub: "Steuerkonform" },
               { label: "EU-weit", sub: "Mobiles Wirtschaftsgut" },
             ].map((b) => (

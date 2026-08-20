@@ -365,10 +365,10 @@ export async function generatePDF(config: PdfConfig): Promise<void> {
   checkPage(55);
 
   // ── PRICE SUMMARY ─────────────────────────────────────────────────────────
-  // All prices are GROSS (inkl. 21% MwSt.)
+  // All prices are GROSS (inkl. 19% MwSt.)
   const basePrice = model.basePrice[variant];
   const total = basePrice + optionsSubtotal + transportTotal; // GROSS total
-  const netto = Math.round(total / 1.21);
+  const netto = Math.round(total / 1.19);
   const vat = total - netto;
 
   doc.setFillColor(...GREEN);
@@ -385,7 +385,7 @@ export async function generatePDF(config: PdfConfig): Promise<void> {
   if (optionsSubtotal > 0) summaryRows.push(["Zusätzliche Optionen", EUR(optionsSubtotal)]);
   if (transportTotal > 0) summaryRows.push([`Transport (${transportKm} km × 2,00 €)`, EUR(transportTotal)]);
   summaryRows.push(["davon Netto", EUR(netto)]);
-  summaryRows.push(["davon MwSt. 21%", EUR(vat)]);
+  summaryRows.push(["davon MwSt. 19%", EUR(vat)]);
   summaryRows.push(["GESAMTBETRAG (inkl. MwSt.)", EUR(total)]);
 
   autoTable(doc, {

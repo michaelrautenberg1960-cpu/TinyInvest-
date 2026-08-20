@@ -16,11 +16,11 @@ export default function Betreiber() {
         <div className="text-center mb-14">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Struktur · Direktkauf & Betrieb</span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight">
-            Ihr Kauf. Optionaler Betrieb über lokale Partner.
+            Ihr Kauf. Betrieb aus einer Hand über unsere Partner.
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
             TinyInvest vermittelt den Direktkauf und die Steueroptimierung.
-            Lokale Partner können das Asset auf Wunsch bewirtschaften.
+            Unser Netzwerk erfahrener lokaler Partner übernimmt auf Wunsch Standort, Vermietung und Verwaltung.
             Sie bleiben 100&nbsp;% Eigentümer des physischen Wirtschaftsguts.
           </p>
         </div>
@@ -78,8 +78,8 @@ export default function Betreiber() {
                 Auf Wunsch
               </div>
               <div className="text-2xl mb-2">🏕️</div>
-              <p className="font-black text-green-700 text-sm">Lokaler Partner</p>
-              <p className="text-[12px] text-gray-400 mt-1 mb-3">Operations-Partner (optional)</p>
+              <p className="font-black text-green-700 text-sm">Unsere Partner</p>
+              <p className="text-[12px] text-gray-400 mt-1 mb-3">Operations-Partner-Netzwerk</p>
               <div className="space-y-1.5">
                 {["Standort & Placement", "Gäste & Buchungen", "Cleaning & Check-in", "Monatliche Abrechnung"].map((f) => (
                   <p key={f} className="text-[11px] text-gray-500 bg-green-50 rounded-lg px-2 py-1">{f}</p>
@@ -105,7 +105,7 @@ export default function Betreiber() {
             </div>
             <div className="space-y-5">
               {[
-                { label: "Ø Belegung", value: "50–60 %", note: "Erfahrungswerte, standortabhängig" },
+                { label: "Ø Belegung", value: "47–58 %", note: "Erfahrungswerte, standortabhängig" },
                 { label: "Ø Nachtrate", value: "120–180 €", note: "Je nach Standort & Saison" },
                 { label: "Investor-Anteil", value: "40 %", note: "Der Brutto-Einnahmen monatlich" },
                 { label: "Host-Anteil", value: "bis 45 %", note: "Performance-basiert (Anreizmodell)" },

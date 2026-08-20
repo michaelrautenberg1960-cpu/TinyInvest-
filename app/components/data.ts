@@ -16,7 +16,7 @@ export const navLinks = [
 export const stats = [
   { value: "70 %", label: "Im Kaufjahr absetzbar" },
   { value: "10–14 %*", label: "Rendite p.a." },
-  { value: "50–60 %", label: "Ø Belegung (Erfahrungswerte)" },
+  { value: "47–58 %", label: "Ø Belegung (Erfahrungswerte)" },
   { value: "100 %", label: "Mobiles Wirtschaftsgut" },
 ];
 
@@ -228,21 +228,21 @@ export const testimonials = [
 export const oekosystemItems = [
   {
     icon: "📣",
-    title: "Reichweite über Partner",
-    desc: "Lokale Partner listen Ihr Haus auf Airbnb und weiteren Buchungsplattformen – hohe Sichtbarkeit und maximale Auslastung für Ihr Wirtschaftsgut.",
-    highlight: "Buchungsplattformen",
+    title: "Maximale Reichweite",
+    desc: "Unsere Partner listen Ihr Haus auf Airbnb und weiteren Buchungsplattformen – hohe Sichtbarkeit und maximale Auslastung für Ihr Wirtschaftsgut.",
+    highlight: "Maximale Reichweite",
   },
   {
     icon: "🗺️",
-    title: "Standortvermittlung",
-    desc: "Wir vermitteln Kontakt zu Partnern, die einen passenden Standort für Ihr Tiny House finden – ob Ferienpark, Naturgrundstück oder Campingplatz.",
-    highlight: "Standortvermittlung",
+    title: "Standort & Placement",
+    desc: "Unsere Partner suchen und organisieren den optimalen Standort für Ihr Tiny House – ob Ferienpark, Naturgrundstück oder Campingplatz.",
+    highlight: "Komplettvermittlung",
   },
   {
     icon: "🛎️",
-    title: "Betrieb über lokale Partner",
-    desc: "Auf Wunsch übernimmt ein lokaler Partner Reinigung, Check-in, Gäste-Kommunikation und Pflege. Den Betreibervertrag schließen Sie direkt mit dem Partner; die Mieteinnahmen fließen in Ihren gewerblichen Betrieb.",
-    highlight: "Betrieb auf Wunsch",
+    title: "Full-Service über unsere Partner",
+    desc: "Auf Wunsch übernimmt ein lokaler Partner Reinigung, Check-in, Gäste-Kommunikation und Pflege – Sie lehnen sich zurück, die Mieteinnahmen fließen in Ihren gewerblichen Betrieb.",
+    highlight: "Full-Service auf Wunsch",
   },
   {
     icon: "§",

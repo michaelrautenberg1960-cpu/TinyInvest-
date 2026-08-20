@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { oekosystemItems } from "./data";
 
 export default function Oekosystem() {
@@ -14,8 +15,8 @@ export default function Oekosystem() {
             <span className="text-green-400">haben wir gelöst.</span>
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            TinyInvest vermittelt den Direktkauf und verbindet Sie auf Wunsch mit lokalen Betreiberpartnern, die Standort, Vermietung und Buchungsmanagement übernehmen können – sowie mit Steuerberatern und Finanzierungspartnern.
-            Sie kaufen. Lokale Partner können den Betrieb übernehmen.
+            TinyInvest ist der einzige Anbieter am Markt mit einem kompletten Partner-Ökosystem – vom Kauf über Standort, Vermietung und Buchungsplattformen bis zur Steueroptimierung und Finanzierung, alles aus einer Hand über unser Partner-Netzwerk.
+            Sie kaufen. Unsere Partner übernehmen den Rest.
           </p>
         </div>
 
@@ -49,10 +50,10 @@ export default function Oekosystem() {
           <div className="relative">
             <p className="text-4xl mb-4">🚀</p>
             <h3 className="text-2xl sm:text-3xl font-black text-white mb-3">
-              Sie kaufen. Lokale Partner können den Betrieb übernehmen.
+              Sie kaufen. Unsere Partner übernehmen den Rest.
             </h3>
             <p className="text-green-100 text-lg max-w-2xl mx-auto mb-8">
-              Geringer Aufwand: Auf Wunsch übernehmen lokale Partner den Betrieb. Mieteinnahmen erzielen Sie als Eigentümer – abhängig von Standort und Auslastung.
+              Minimaler Aufwand: Unser Partner-Netzwerk übernimmt auf Wunsch den kompletten Betrieb. Sie erzielen als Eigentümer monatliche Mieteinnahmen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -61,6 +62,12 @@ export default function Oekosystem() {
               >
                 Unverbindliches Erstgespräch anfragen →
               </a>
+              <Link
+                href="/marktplatz"
+                className="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-full text-base border border-white/30 transition-colors"
+              >
+                🏡 Marktplatz entdecken →
+              </Link>
             </div>
           </div>
         </div>

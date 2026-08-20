@@ -51,10 +51,10 @@ export interface OptionCategory {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // MODELLE
-// All basePrice values are GROSS (inkl. 21% MwSt.)
-// Netto = basePrice / 1.21
+// All basePrice values are GROSS (inkl. 19% MwSt.)
+// Netto = basePrice / 1.19
 // On-Grid minimum price: €59.000 (ESCAPE 660)
-// Off-Grid ESCAPE 660: €65.289 gross (≈ €53.958 netto)
+// Off-Grid ESCAPE 660: €65.289 gross (≈ €54.864 netto)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const MODELS: ModelConfig[] = [
