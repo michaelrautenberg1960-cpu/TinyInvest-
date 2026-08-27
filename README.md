@@ -41,7 +41,8 @@ app/
 │
 ├── lib/
 │   ├── supabase.ts                   # Supabase Client
-│   └── og.ts                        # Open Graph Hilfsfunktionen
+│   ├── og.ts                        # Open Graph Hilfsfunktionen
+│   └── sendWelcomeEmail.ts          # Willkommens-E-Mail für neue Investoren
 │
 ├── marktplatz/                       # Listing-Marktplatz (Supabase-Live-Daten)
 │   └── [id]/                         # Einzelnes Listing (dynamische Route)
@@ -52,6 +53,9 @@ app/
 ├── hosts/                            # Host-Partnerprogramm
 ├── partner/                          # Vertriebspartner-Programm
 ├── konfigurator/                     # Tiny House Konfigurator
+│   ├── KonfiguratorApp.tsx           # Konfigurator-Logik & UI
+│   ├── konfigurator-data.ts          # Modell-/Ausstattungsoptionen & Preise
+│   └── generate-pdf.ts               # PDF-Angebotsgenerator
 ├── tiny-house-als-kapitalanlage/     # SEO-Pillar-Landingpage (Priority 1.0)
 │
 ├── agb/                              # Allgemeine Geschäftsbedingungen
@@ -120,26 +124,35 @@ app/
 │
 ├── api/
 │   ├── contact/route.ts              # Lead-Formular → Supabase + Resend
+│   ├── listings/route.ts             # Öffentliche Listings (read-only, CDN-gecacht)
+│   ├── gate-register/route.ts        # Partner-Zugangsanfrage → Lead + Resend
 │   ├── investor/data/route.ts        # Investor-Dashboard Daten
 │   └── admin/
 │       ├── leads/                    # Leads verwalten
+│       ├── lead-notizen/             # Notizen zu einzelnen Leads
 │       ├── listings/                 # Listings CRUD
 │       ├── investor-users/           # Investor-User Management
 │       ├── investor-assets/          # Asset-Zuordnung
 │       ├── promote-to-investor/      # User → Investor hochstufen
+│       ├── sales-team/               # Vertriebsteam verwalten
 │       ├── settings/                 # Plattform-Einstellungen
+│       ├── migrate-db/               # DB-Migrationsschritte (Supabase JS Client)
 │       └── upload/                   # Bild-Upload
 │
 └── components/
     ├── Hero.tsx                      # Startseite Hero (H1, CTA, Badge)
+    ├── HeroCTAButton.tsx             # CTA-Button im Hero
     ├── HeroCalculator.tsx            # Mini-Renditerechner im Hero
     ├── RenditeRechner.tsx            # Interaktiver Rendite-Rechner
     ├── SteuerRechner.tsx             # §7g Steuer-Rechner
     ├── ProjekteGrid.tsx              # Projekt-Kacheln
     ├── ProjekteGoogleMap.tsx         # Google Maps Standortkarte
+    ├── MarktplatzShell.tsx           # Marktplatz-Layout (Filter, Liste, Karte)
     ├── MarktplatzMap.tsx             # Marktplatz-Karte
     ├── MarktplatzTeaser.tsx          # Marktplatz-Teaser Startseite
     ├── StandortMap.tsx               # Einzelstandort-Karte
+    ├── StandortMapWidget.tsx         # Standortkarte-Widget (Einzelseite)
+    ├── StandortMapLazy.tsx           # Lazy-geladene Standortkarte
     ├── GalerieTeaser.tsx             # Galerie-Teaser Startseite
     ├── Galerie.tsx                   # Vollbild-Galerie
     ├── Modelle.tsx                   # Haus-Modelle Übersicht
@@ -169,8 +182,10 @@ app/
     ├── Footer.tsx                    # Footer
     ├── CookieBanner.tsx              # DSGVO Cookie-Banner
     ├── SubPageHeader.tsx             # Unterseiten-Header
+    ├── BackButton.tsx                # Zurück-Button (Unterseiten)
     ├── ModalContext.tsx              # Globaler Lead-Modal State
     ├── MemorandumModal.tsx           # Unterlagen-Anfrage Modal
+    ├── MemorandumModalLazy.tsx       # Lazy-geladenes Unterlagen-Modal
     ├── ModalButton.tsx               # CTA-Button mit Modal-Trigger
     └── data.ts                       # Statische Daten (Listings, etc.)
 
@@ -312,6 +327,8 @@ npm run lint
 | `investor_assets` | Verknüpfung Investor ↔ Asset |
 | `bookings` | Buchungsdaten von tiny Escapes |
 | `settings` | Plattform-Konfiguration |
+| `sales_team` | Vertriebspartner/Sales-Team-Mitglieder |
+| `lead_notizen` | Notizen der Vertriebs-/Admin-Seite zu einzelnen Leads |
 
 ```bash
 # DB einrichten

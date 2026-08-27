@@ -49,7 +49,7 @@ export default function ImpressumPage() {
 
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Vertreten durch</h2>
-              <p>Geschäftsführer: Shkelqim Jetishi</p>
+              <p>Geschäftsführer: Ante Ilicic</p>
             </section>
 
             <section>
@@ -85,7 +85,7 @@ export default function ImpressumPage() {
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
               <p>
-                Shkelqim Jetishi<br />
+                Ante Ilicic<br />
                 Marie-Curie-Straße 1<br />
                 63457 Hanau
               </p>
