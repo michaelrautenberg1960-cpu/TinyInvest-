@@ -100,7 +100,7 @@ export default function Footer() {
                 <a href="tel:+4915168957104" className="hover:text-green-400 transition-colors">+49 151 68957104</a>
               </li>
               <li>
-                <span>Marie-Curie-Straße 1, 63457 Hanau</span>
+                <span>Baslerstraße 3, 61325 Bad Homburg von der Höhe</span>
               </li>
             </ul>
           </div>

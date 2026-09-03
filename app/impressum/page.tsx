@@ -41,8 +41,8 @@ export default function ImpressumPage() {
               <h2 className="text-lg font-bold text-white mb-3">Anbieter</h2>
               <p>
                 Rautenberg Professional Solutions GmbH<br />
-                Marie-Curie-Straße 1<br />
-                63457 Hanau<br />
+                Baslerstraße 3<br />
+                61325 Bad Homburg von der Höhe<br />
                 Deutschland
               </p>
             </section>
@@ -69,7 +69,7 @@ export default function ImpressumPage() {
             <section>
               <h2 className="text-lg font-bold text-white mb-3">Handelsregister</h2>
               <p>
-                Registergericht: Amtsgericht Hanau<br />
+                Registergericht: Amtsgericht Bad Homburg v.d.Höhe<br />
                 Registernummer: HRB 99329
               </p>
             </section>
@@ -86,8 +86,8 @@ export default function ImpressumPage() {
               <h2 className="text-lg font-bold text-white mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
               <p>
                 Ante Ilicic<br />
-                Marie-Curie-Straße 1<br />
-                63457 Hanau
+                Baslerstraße 3<br />
+                61325 Bad Homburg von der Höhe
               </p>
             </section>
 
