@@ -5,20 +5,20 @@ import Footer from "@/app/components/Footer";
 import KonfiguratorApp from "./KonfiguratorApp";
 
 export const metadata: Metadata = {
-  title: "Tiny House Konfigurator | Preis & Angebot 2026 | TinyInvest",
+  title: "Tiny House Konfigurator | Komplettpaket & Angebot 2026 | TinyInvest",
   description:
-    "Konfiguriere dein Tiny House Investment. Comfort ab 65.000 €, Premium ab 80.000 €. On-Grid oder Off-Grid. Kostenlose Kalkulation & PDF-Angebot in 3 Minuten.",
+    "Escape 660 als Komplettpaket ab 74.700 € netto je Einheit – schlüsselfertig bis zum Aufstellungsort. On-Grid oder Off-Grid, Stückzahl frei wählbar, PDF-Angebot sofort.",
   keywords:
-    "tiny house konfigurator, tiny house preis berechnen, tiny house angebot, tiny house kaufen preis 2026",
+    "tiny house konfigurator, tiny house komplettpaket, tiny house preis berechnen, tiny house angebot, tiny house kaufen preis 2026",
   alternates: {
     canonical: "https://tinyhouse.investments/konfigurator",
   },
   openGraph: {
     ...BASE_OG,
     type: "website",
-    title: "Tiny House Konfigurator | Preis & Angebot 2026 | TinyInvest",
+    title: "Tiny House Konfigurator | Komplettpaket & Angebot 2026 | TinyInvest",
     description:
-      "Comfort ab 65.000 €, Premium ab 80.000 €. Kostenlose Kalkulation & PDF in 3 Minuten.",
+      "Komplettpaket ab 74.700 € netto je Einheit, schlüsselfertig bis zum Aufstellungsort. PDF-Angebot in 3 Minuten.",
     url: "https://tinyhouse.investments/konfigurator",
   },
 };
@@ -40,16 +40,17 @@ export default function KonfiguratorPage() {
             Tiny House Konfigurator
           </h1>
           <p className="text-gray-500 text-base max-w-2xl">
-            Stellen Sie Ihr Wunsch-Tiny-House Schritt für Schritt zusammen – wählen Sie Variante,
-            Modell und Ausstattung. Am Ende erhalten Sie ein professionelles Preisangebot als PDF.
+            Wir verkaufen ausschließlich Komplettpakete – alles von der Produktion über die
+            Lieferung bis zur Vermietungsbereitschaft am Aufstellungsort. Wählen Sie Variante und
+            Stückzahl, am Ende erhalten Sie ein Preisangebot als PDF.
           </p>
 
           {/* Trust badges */}
           <div className="flex flex-wrap gap-4 mt-6">
             {[
-              { icon: "🏗️", text: "Produktion in unserer Werkstatt" },
+              { icon: "📦", text: "Komplettpaket bis zum Aufstellungsort" },
+              { icon: "🔢", text: "Stückzahl frei wählbar" },
               { icon: "📄", text: "PDF-Angebot sofort per Download" },
-              { icon: "🔒", text: "Keine Weitergabe Ihrer Daten" },
               { icon: "✅", text: "Lieferzeit ab 60 Tage" },
             ].map((b) => (
               <div
