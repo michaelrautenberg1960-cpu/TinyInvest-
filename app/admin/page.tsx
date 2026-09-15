@@ -16,7 +16,13 @@ type Lead = {
   nachricht: string | null;
   status: "neu" | "email_gesendet" | "kontaktiert" | "wiedervorlage" | "abgeschlossen";
   assigned_to: string | null;
+  blocked_on_owner: BlockedOwner | null;
+  blocked_on_note: string | null;
+  next_followup_at: string | null;   // YYYY-MM-DD
+  last_contacted_at: string | null;  // ISO
 };
+
+type BlockedOwner = "us" | "customer" | "none";
 
 type SalesMember = { id: string; name: string; created_at: string };
 
@@ -76,6 +82,19 @@ const STATUS_LABELS = {
   wiedervorlage:  "🔔 Wiedervorlage",
   abgeschlossen:  "🔵 Abgeschlossen",
 };
+const BLOCKED_OWNERS: BlockedOwner[] = ["us", "customer", "none"];
+const BLOCKED_LABELS: Record<BlockedOwner, string> = {
+  us:       "🙋 Wir sind dran",
+  customer: "⏸️ Kunde ist dran",
+  none:     "— Niemand wartet",
+};
+const BLOCKED_COLORS: Record<BlockedOwner, string> = {
+  us:       "bg-red-900/40 text-red-300 border-red-500/30",
+  customer: "bg-sky-900/40 text-sky-300 border-sky-500/30",
+  none:     "bg-gray-800 text-gray-400 border-white/10",
+};
+const FOLLOWUP_PRESETS = [3, 7, 14, 30];
+
 const LISTING_STATUS_OPTIONS = ["available", "reserved", "sold", "planning"] as const;
 const LISTING_STATUS_LABELS: Record<string, string> = {
   available: "✅ Verfügbar",
@@ -103,6 +122,63 @@ const EMPTY_LISTING: NewListing = {
   address: null, extras: null, manager_note: null, document_url: null,
   iab_eligible: false, afa_eligible: false, sonder_afa_eligible: false,
 };
+
+// ──────────── Follow-up helpers ────────────
+/** Lokales YYYY-MM-DD (toISOString() wäre UTC und verschiebt den Tag). */
+function todayISO(offsetDays = 0): string {
+  const d = new Date();
+  d.setHours(12, 0, 0, 0); // Mittag: immun gegen Sommerzeit-Sprünge
+  d.setDate(d.getDate() + offsetDays);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+/** Tage bis zum Termin: negativ = überfällig, 0 = heute, null = kein Termin. */
+function daysUntil(date: string | null): number | null {
+  if (!date) return null;
+  const today = new Date(todayISO() + "T12:00:00");
+  const target = new Date(date + "T12:00:00");
+  if (isNaN(target.getTime())) return null;
+  return Math.round((target.getTime() - today.getTime()) / 86400000);
+}
+
+type FollowupState = "overdue" | "today" | "upcoming" | "none";
+
+function followupState(date: string | null): FollowupState {
+  const d = daysUntil(date);
+  if (d === null) return "none";
+  if (d < 0) return "overdue";
+  if (d === 0) return "today";
+  return "upcoming";
+}
+
+function followupText(date: string | null): string {
+  const d = daysUntil(date);
+  if (d === null) return "kein Termin";
+  if (d < 0) return `${-d} ${-d === 1 ? "Tag" : "Tage"} überfällig`;
+  if (d === 0) return "heute fällig";
+  if (d === 1) return "morgen fällig";
+  return `in ${d} Tagen`;
+}
+
+const FOLLOWUP_STYLES: Record<FollowupState, { border: string; text: string }> = {
+  overdue:  { border: "border-l-4 border-l-red-500",    text: "text-red-400" },
+  today:    { border: "border-l-4 border-l-yellow-500", text: "text-yellow-400" },
+  upcoming: { border: "border-l-4 border-l-white/10",   text: "text-gray-400" },
+  none:     { border: "border-l-4 border-l-white/10",   text: "text-gray-500" },
+};
+
+const FOLLOWUP_RANK: Record<FollowupState, number> = { overdue: 0, today: 1, upcoming: 2, none: 3 };
+
+/** Dringlichste zuerst; innerhalb einer Gruppe nach Datum aufsteigend. */
+function byUrgency(a: Lead, b: Lead): number {
+  const ra = FOLLOWUP_RANK[followupState(a.next_followup_at)];
+  const rb = FOLLOWUP_RANK[followupState(b.next_followup_at)];
+  if (ra !== rb) return ra - rb;
+  if (!a.next_followup_at || !b.next_followup_at) {
+    return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+  }
+  return a.next_followup_at.localeCompare(b.next_followup_at);
+}
 
 // ──────────── Input helpers ────────────
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
@@ -401,7 +477,7 @@ export default function AdminPage() {
     typeof window !== "undefined" ? (sessionStorage.getItem("admin_pw") ?? "") : ""
   );
   const [authed, setAuthed]     = useState(false);
-  const [tab, setTab]           = useState<"leads" | "listings" | "investors" | "settings">("leads");
+  const [tab, setTab]           = useState<"leads" | "followups" | "listings" | "investors" | "settings">("leads");
 
   // Leads
   const [leads, setLeads]                   = useState<Lead[]>([]);
@@ -416,6 +492,13 @@ export default function AdminPage() {
   const [promotingLead, setPromotingLead]         = useState<string | null>(null);
   const [promotedLeads, setPromotedLeads]         = useState<Set<string>>(new Set());
   const [promoteError, setPromoteError]           = useState<string | null>(null);
+
+  // Follow-ups ("Wer wartet auf wen?")
+  const [noteDraft, setNoteDraft]         = useState<Record<string, string>>({});
+  const [contactOpen, setContactOpen]     = useState<string | null>(null);
+  const [contactDays, setContactDays]     = useState(7);
+  const [contactNote, setContactNote]     = useState("");
+  const [contactAsNotiz, setContactAsNotiz] = useState(true);
 
   // Listings
   const [listings, setListings]                 = useState<Listing[]>([]);
@@ -585,24 +668,56 @@ export default function AdminPage() {
   };
 
   // ── Leads actions ──
-  const updateAssignedTo = async (id: string, assigned_to: string | null) => {
-    await fetch("/api/admin/leads", {
+  const patchLead = async (id: string, patch: Partial<Lead>) => {
+    setLeads((prev) => prev.map((l) => (l.id === id ? { ...l, ...patch } : l)));
+    if (selected?.id === id) setSelected((prev) => (prev ? { ...prev, ...patch } : null));
+    const res = await fetch("/api/admin/leads", {
       method: "PATCH",
       headers: { "Content-Type": "application/json", "x-admin-password": password },
-      body: JSON.stringify({ id, assigned_to }),
+      body: JSON.stringify({ id, ...patch }),
     });
-    setLeads((prev) => prev.map((l) => l.id === id ? { ...l, assigned_to } : l));
-    if (selected?.id === id) setSelected((prev) => prev ? { ...prev, assigned_to } : null);
+    if (!res.ok) {
+      setError("Speichern fehlgeschlagen – bitte neu laden.");
+      fetchLeads(password);
+    }
   };
 
-  const updateStatus = async (id: string, status: string) => {
-    await fetch("/api/admin/leads", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json", "x-admin-password": password },
-      body: JSON.stringify({ id, status }),
+  const updateAssignedTo = (id: string, assigned_to: string | null) => patchLead(id, { assigned_to });
+
+  const updateStatus = (id: string, status: string) => patchLead(id, { status: status as Lead["status"] });
+
+  // ── Follow-up actions ──
+  const setBlockedOwner = (id: string, blocked_on_owner: BlockedOwner) => patchLead(id, { blocked_on_owner });
+
+  const setFollowupDate = (id: string, next_followup_at: string | null) => patchLead(id, { next_followup_at });
+
+  const saveBlockedNote = (lead: Lead) => {
+    const draft = (noteDraft[lead.id] ?? "").trim();
+    if (draft === (lead.blocked_on_note ?? "")) return;
+    patchLead(lead.id, { blocked_on_note: draft || null });
+  };
+
+  /** „Als kontaktiert markieren": Termin setzen, Ball an den Kunden, Status bleibt. */
+  const markContacted = async (lead: Lead) => {
+    const days = Number.isFinite(contactDays) && contactDays >= 0 ? Math.floor(contactDays) : 7;
+    const note = contactNote.trim();
+    await patchLead(lead.id, {
+      last_contacted_at: new Date().toISOString(),
+      next_followup_at: todayISO(days),
+      blocked_on_owner: "customer",
+      ...(note ? { blocked_on_note: note } : {}),
     });
-    setLeads((prev) => prev.map((l) => (l.id === id ? { ...l, status: status as Lead["status"] } : l)));
-    if (selected?.id === id) setSelected((prev) => prev ? { ...prev, status: status as Lead["status"] } : null);
+    if (note && contactAsNotiz) {
+      await fetch("/api/admin/lead-notizen", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": password },
+        body: JSON.stringify({ lead_id: lead.id, notiz: `Kontaktiert · ${note}` }),
+      });
+      if (leadNotizen[lead.id]) fetchNotizen(lead.id);
+    }
+    setContactOpen(null);
+    setContactNote("");
+    setContactDays(7);
   };
 
   const fetchNotizen = useCallback(async (lead_id: string) => {
@@ -670,6 +785,18 @@ export default function AdminPage() {
     wiedervorlage:  leads.filter((l) => l.status === "wiedervorlage").length,
     abgeschlossen:  leads.filter((l) => l.status === "abgeschlossen").length,
   };
+
+  // ── Follow-up Board ──
+  const followupPool = leads.filter(
+    (l) => l.status !== "abgeschlossen" && l.blocked_on_owner !== "none"
+  );
+  const waitingOnUs       = followupPool.filter((l) => l.blocked_on_owner !== "customer").sort(byUrgency);
+  const waitingOnCustomer = followupPool.filter((l) => l.blocked_on_owner === "customer").sort(byUrgency);
+  /** Zahl im Tab-Label: was heute Handeln verlangt. */
+  const dueCount = [...waitingOnUs, ...waitingOnCustomer].filter((l) => {
+    const s = followupState(l.next_followup_at);
+    return s === "overdue" || s === "today";
+  }).length;
 
   // ── Listings: field edit ──
   const editListing = (id: number, field: keyof Listing, value: unknown) => {
@@ -759,6 +886,49 @@ export default function AdminPage() {
       return inv.email.toLowerCase().includes(q) || (inv.full_name ?? "").toLowerCase().includes(q);
     });
 
+  // ──────────── „Als kontaktiert markieren" (Button + Inline-Auswahl) ────────────
+  const renderContactControl = (lead: Lead) =>
+    contactOpen === lead.id ? (
+      <div className="w-full bg-white/5 border border-white/10 rounded-xl p-3 mt-2">
+        <p className="text-xs text-gray-400 mb-2">In wie vielen Tagen wieder melden?</p>
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          {FOLLOWUP_PRESETS.map((d) => (
+            <button key={d} onClick={() => setContactDays(d)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${contactDays === d ? "bg-green-700 text-white border-green-500" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>{d} Tage</button>
+          ))}
+          <input
+            type="number"
+            min={0}
+            value={contactDays}
+            onChange={(e) => setContactDays(Number(e.target.value))}
+            className={inp + " w-20"}
+          />
+          <span className="text-xs text-gray-500">→ {todayISO(contactDays)}</span>
+        </div>
+        <input
+          type="text"
+          value={contactNote}
+          onChange={(e) => setContactNote(e.target.value)}
+          placeholder="Worauf warten wir jetzt? (optional)"
+          className={inp + " mb-2"}
+        />
+        <label className="flex items-center gap-2 text-xs text-gray-400 mb-3 cursor-pointer">
+          <input type="checkbox" checked={contactAsNotiz} onChange={(e) => setContactAsNotiz(e.target.checked)} className="accent-green-500" />
+          Als Notiz im Gesprächsprotokoll speichern
+        </label>
+        <div className="flex gap-2">
+          <button onClick={() => markContacted(lead)} className="text-xs bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2 rounded-full transition-colors">✓ Speichern</button>
+          <button onClick={() => { setContactOpen(null); setContactNote(""); }} className="text-xs bg-gray-700 text-gray-300 hover:bg-gray-600 font-bold px-4 py-2 rounded-full transition-colors">✕ Abbrechen</button>
+        </div>
+      </div>
+    ) : (
+      <button
+        onClick={() => { setContactOpen(lead.id); setContactDays(7); setContactNote(""); }}
+        className="text-xs bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold px-4 py-2 rounded-full transition-colors"
+      >
+        ✅ Als kontaktiert markieren
+      </button>
+    );
+
   // ──────────── Login screen ────────────
   if (!authed) {
     return (
@@ -812,9 +982,13 @@ export default function AdminPage() {
       {/* Tabs */}
       <div className="border-b border-white/10 bg-gray-900/50 px-6">
         <div className="flex gap-1">
-          {(["leads", "listings", "investors", "settings"] as const).map((t) => (
+          {(["leads", "followups", "listings", "investors", "settings"] as const).map((t) => (
             <button key={t} onClick={() => setTab(t)} className={`px-5 py-3 text-sm font-semibold border-b-2 transition-all ${tab === t ? "border-green-400 text-green-400" : "border-transparent text-gray-400 hover:text-white"}`}>
-              {t === "leads" ? `📋 Leads (${leads.length})` : t === "listings" ? `🏷️ Projekte (${listings.length})` : t === "investors" ? `👥 Investoren (${investorPending.length})` : "⚙️ Einstellungen"}
+              {t === "leads" ? `📋 Leads (${leads.length})`
+                : t === "followups" ? <>⏳ Wiedervorlage {dueCount > 0 && <span className="ml-1 bg-red-600 text-white rounded-full px-2 py-0.5 text-xs">{dueCount}</span>}</>
+                : t === "listings" ? `🏷️ Projekte (${listings.length})`
+                : t === "investors" ? `👥 Investoren (${investorPending.length})`
+                : "⚙️ Einstellungen"}
             </button>
           ))}
         </div>
@@ -869,6 +1043,11 @@ export default function AdminPage() {
                           <span className="font-bold text-white">{lead.vorname} {lead.nachname}</span>
                           <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${STATUS_COLORS[lead.status]}`}>{STATUS_LABELS[lead.status]}</span>
                           {lead.assigned_to && <span className="text-xs font-bold px-2.5 py-0.5 rounded-full border bg-purple-900/40 text-purple-300 border-purple-500/30">👤 {lead.assigned_to}</span>}
+                          {lead.next_followup_at && followupState(lead.next_followup_at) !== "upcoming" && (
+                            <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${followupState(lead.next_followup_at) === "overdue" ? "bg-red-900/40 text-red-300 border-red-500/30" : "bg-yellow-900/40 text-yellow-300 border-yellow-500/30"}`}>
+                              ⏳ {followupText(lead.next_followup_at)}
+                            </span>
+                          )}
                         </div>
                         <div className="text-sm text-gray-400 flex flex-wrap gap-3">
                           <a href={`mailto:${lead.email}`} className="text-green-400 hover:text-green-300" onClick={(e) => e.stopPropagation()}>✉️ {lead.email}</a>
@@ -910,6 +1089,51 @@ export default function AdminPage() {
                             </div>
                           </div>
                         )}
+                        {/* ── Wiedervorlage ── */}
+                        <div className="mb-4 bg-white/5 border border-white/10 rounded-xl p-4">
+                          <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">⏳ Wer ist gerade dran?</p>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {BLOCKED_OWNERS.map((o) => (
+                              <button key={o} onClick={() => setBlockedOwner(lead.id, o)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${(lead.blocked_on_owner ?? "us") === o ? BLOCKED_COLORS[o] + " ring-2 ring-offset-1 ring-offset-gray-900 ring-green-400" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>
+                                {BLOCKED_LABELS[o]}
+                              </button>
+                            ))}
+                          </div>
+
+                          <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Worauf wird gewartet?</p>
+                          <textarea
+                            value={noteDraft[lead.id] ?? lead.blocked_on_note ?? ""}
+                            onChange={(e) => setNoteDraft((prev) => ({ ...prev, [lead.id]: e.target.value }))}
+                            onBlur={() => saveBlockedNote(lead)}
+                            onKeyDown={(e) => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); saveBlockedNote(lead); } }}
+                            placeholder="z.B. wartet auf Kaufvertrag-Unterschrift"
+                            rows={2}
+                            className={ta + " mb-4"}
+                          />
+
+                          <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Nächster Kontakt</p>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <input
+                              type="date"
+                              value={lead.next_followup_at ?? ""}
+                              onChange={(e) => setFollowupDate(lead.id, e.target.value || null)}
+                              className={inp + " w-auto"}
+                            />
+                            {FOLLOWUP_PRESETS.map((d) => (
+                              <button key={d} onClick={() => setFollowupDate(lead.id, todayISO(d))} className="text-xs font-bold px-3 py-1.5 rounded-full border bg-white/5 text-gray-400 border-white/10 hover:border-white/30 transition-all">+{d}T</button>
+                            ))}
+                            {lead.next_followup_at && (
+                              <>
+                                <button onClick={() => setFollowupDate(lead.id, null)} className="text-xs font-bold px-3 py-1.5 rounded-full border border-red-500/30 text-red-400 hover:bg-red-900/20 transition-all">✕ kein Termin</button>
+                                <span className={`text-xs font-semibold ${FOLLOWUP_STYLES[followupState(lead.next_followup_at)].text}`}>{followupText(lead.next_followup_at)}</span>
+                              </>
+                            )}
+                          </div>
+                          {lead.last_contacted_at && (
+                            <p className="text-xs text-gray-500 mt-3">Zuletzt kontaktiert: {new Date(lead.last_contacted_at).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" })}</p>
+                          )}
+                        </div>
+
                         <div className="mb-4">
                           <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">🔔 Gesprächsprotokoll</p>
                           <div className="flex gap-2 mb-3">
@@ -955,6 +1179,7 @@ export default function AdminPage() {
                         <div className="flex flex-wrap gap-2">
                           <a href={`mailto:${lead.email}?subject=TinyInvest – Deine Beratungsanfrage&body=Hallo ${lead.vorname},%0A%0A`} className="text-xs bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2 rounded-full transition-colors">✉️ E-Mail schreiben</a>
                           {lead.telefon && <a href={`tel:${lead.telefon}`} className="text-xs bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-full transition-colors">📞 Anrufen</a>}
+                          {renderContactControl(lead)}
 
                           {/* ── Zu Investor machen ── */}
                           {promotedLeads.has(lead.id) ? (
@@ -990,6 +1215,70 @@ export default function AdminPage() {
               </div>
             )}
           </>
+        )}
+
+        {/* ════ WIEDERVORLAGE TAB ════ */}
+        {tab === "followups" && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {([
+              { key: "us",       title: "🔴 Wartet auf dich",       hint: "Deine To-do-Liste – hier musst du aktiv werden.", list: waitingOnUs },
+              { key: "customer", title: "⏸️ Wartet auf den Kunden", hint: "Ball abgegeben – nur den Termin im Blick behalten.", list: waitingOnCustomer },
+            ] as const).map((col) => (
+              <div key={col.key}>
+                <div className="mb-4">
+                  <h2 className="text-lg font-black flex items-center gap-2">
+                    {col.title}
+                    <span className="text-sm font-bold text-gray-400">({col.list.length})</span>
+                  </h2>
+                  <p className="text-xs text-gray-500 mt-1">{col.hint}</p>
+                </div>
+                {col.list.length === 0 ? (
+                  <div className="text-center py-16 text-gray-500 bg-white/5 border border-white/10 rounded-2xl">
+                    <div className="text-4xl mb-3">📭</div><p className="text-sm">Nichts offen.</p>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 gap-3">
+                    {col.list.map((lead) => {
+                      const state = followupState(lead.next_followup_at);
+                      return (
+                        <div key={lead.id} className={`bg-white/5 border border-white/10 ${FOLLOWUP_STYLES[state].border} rounded-2xl p-4`}>
+                          <div className="flex items-start justify-between gap-3 mb-2">
+                            <button
+                              onClick={() => { setTab("leads"); setFilter("all"); setMemberFilter("all"); setSelected(lead); if (!leadNotizen[lead.id]) fetchNotizen(lead.id); }}
+                              className="font-bold text-white hover:text-green-400 transition-colors text-left"
+                            >
+                              {lead.vorname} {lead.nachname} →
+                            </button>
+                            <span className={`text-xs font-bold whitespace-nowrap ${FOLLOWUP_STYLES[state].text}`}>
+                              {followupText(lead.next_followup_at)}
+                            </span>
+                          </div>
+                          <p className="text-sm text-gray-300 mb-2">
+                            {lead.blocked_on_note || <span className="text-gray-600 italic">Kein Hinweis hinterlegt</span>}
+                          </p>
+                          <div className="flex flex-wrap items-center gap-2 mb-3">
+                            <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${STATUS_COLORS[lead.status]}`}>{STATUS_LABELS[lead.status]}</span>
+                            {lead.assigned_to && <span className="text-xs font-bold px-2.5 py-0.5 rounded-full border bg-purple-900/40 text-purple-300 border-purple-500/30">👤 {lead.assigned_to}</span>}
+                            {lead.telefon && <a href={`tel:${lead.telefon}`} className="text-xs text-blue-400 hover:text-blue-300">📞 {lead.telefon}</a>}
+                            <a href={`mailto:${lead.email}`} className="text-xs text-green-400 hover:text-green-300">✉️ {lead.email}</a>
+                          </div>
+                          <div className="flex flex-wrap gap-2">
+                            {renderContactControl(lead)}
+                            {col.key === "customer" ? (
+                              <button onClick={() => setBlockedOwner(lead.id, "us")} className="text-xs font-bold px-4 py-2 rounded-full border bg-white/5 text-gray-400 border-white/10 hover:border-white/30 transition-all">🙋 Wir sind dran</button>
+                            ) : (
+                              <button onClick={() => setBlockedOwner(lead.id, "customer")} className="text-xs font-bold px-4 py-2 rounded-full border bg-white/5 text-gray-400 border-white/10 hover:border-white/30 transition-all">⏸️ Kunde ist dran</button>
+                            )}
+                            <button onClick={() => setBlockedOwner(lead.id, "none")} className="text-xs font-bold px-4 py-2 rounded-full border bg-white/5 text-gray-500 border-white/10 hover:border-white/30 transition-all">— Erledigt</button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         )}
 
         {/* ════ LISTINGS TAB ════ */}
