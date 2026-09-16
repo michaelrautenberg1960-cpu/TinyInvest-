@@ -301,7 +301,7 @@ export const LOCATION_NOTE =
 
 export const COMPANY_INFO = {
   name: "Rautenberg Professional Solutions GmbH",
-  address: "Marie-Curie-Straße 1, 63457 Hanau",
+  address: "Baslerstraße 3, 61325 Bad Homburg v.d.Höhe",
   phone: "+49 151 68957104",
   email: "info@tinyhouse.investments",
   vatId: "USt-IdNr.: DE318742905",

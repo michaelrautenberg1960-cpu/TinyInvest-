@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import fs from "fs";
 import path from "path";
+import { getAdminClient } from "@/app/lib/supabase";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -70,4 +71,18 @@ export async function sendWelcomeEmail(vorname: string, email: string) {
       { filename: "EB_Plakat_Finanzierungsbeispiel_tinyEscape660.pdf", content: ethikbankBuffer },
     ],
   });
+}
+
+// Nach erfolgreichem Versand der Welcome-Mail den Lead auf "Email gesendet" setzen.
+// Der status-Guard verhindert, dass ein manuell weitergesetzter Lead zurückfällt.
+export async function markWelcomeEmailSent(leadId?: string) {
+  if (!leadId) return;
+
+  const { error } = await getAdminClient()
+    .from("leads")
+    .update({ status: "email_gesendet" })
+    .eq("id", leadId)
+    .eq("status", "neu");
+
+  if (error) console.error("Status-Update (non-fatal):", error);
 }

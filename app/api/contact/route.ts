@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminClient } from "@/app/lib/supabase";
-import { sendWelcomeEmail } from "@/app/lib/sendWelcomeEmail";
+import { sendWelcomeEmail, markWelcomeEmailSent } from "@/app/lib/sendWelcomeEmail";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -224,6 +224,7 @@ export async function POST(req: NextRequest) {
     if (schritt === "Details (Schritt 2)") {
       try {
         await sendWelcomeEmail(vorname, email);
+        await markWelcomeEmailSent(resultLeadId);
       } catch (welcomeErr) {
         console.error("Welcome email error (non-fatal):", welcomeErr);
       }

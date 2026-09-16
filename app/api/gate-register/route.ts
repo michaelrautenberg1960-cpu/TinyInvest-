@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminClient } from "@/app/lib/supabase";
-import { sendWelcomeEmail } from "@/app/lib/sendWelcomeEmail";
+import { sendWelcomeEmail, markWelcomeEmailSent } from "@/app/lib/sendWelcomeEmail";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
 
     const admin = getAdminClient();
 
-    await admin.from("leads").insert([{
+    const { data: inserted } = await admin.from("leads").insert([{
       vorname:   name,
       nachname:  null,
       email,
@@ -22,7 +22,9 @@ export async function POST(req: NextRequest) {
       interesse: `Projekt-Detail Freischaltung${listing_id ? ` #${listing_id}` : ""}`,
       budget:    null,
       status:    "neu",
-    }]);
+    }]).select("id");
+
+    const newLeadId: string | undefined = inserted?.[0]?.id;
 
     // Fetch listing title for the email
     let listingTitle = "–";
@@ -141,6 +143,7 @@ export async function POST(req: NextRequest) {
     // Send welcome email to the lead themselves
     try {
       await sendWelcomeEmail(name, email);
+      await markWelcomeEmailSent(newLeadId);
     } catch (welcomeErr) {
       console.error("Welcome email error (non-fatal):", welcomeErr);
     }
