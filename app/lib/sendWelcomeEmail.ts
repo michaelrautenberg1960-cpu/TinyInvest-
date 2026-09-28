@@ -22,7 +22,7 @@ function buildWelcomeHtml(vorname: string) {
             <td style="font-size:14px;line-height:1.7;color:#222222;">
               <p style="margin:0 0 16px;">Hallo ${vorname},</p>
               <p style="margin:0 0 16px;">vielen Dank für Ihr Interesse an TinyInvest!</p>
-              <p style="margin:0 0 16px;">Damit Sie direkt alle wichtigen Details zur Hand haben, haben wir Ihnen unsere Erstinformation sowie ein Rechenbeispiel unserer Partnerbank, der EthikBank eG (ab 623 €/Monat bei 79.000 € Investition), als PDF an diese E-Mail angehängt.</p>
+              <p style="margin:0 0 16px;">Damit Sie direkt alle wichtigen Details zur Hand haben, haben wir Ihnen unsere Erstinformation sowie ein Finanzierungsbeispiel unserer Partnerbank, der EthikBank eG, als PDF an diese E-Mail angehängt.</p>
               <p style="margin:0 0 8px;">In der Erstinformation erfahren Sie auf einen Blick:</p>
               <ul style="margin:0 0 16px;padding-left:20px;">
                 <li style="margin-bottom:6px;"><strong>Konzept:</strong> Wie das Direktinvestment durch den Kauf Ihres eigenen Assets in 3 Sätzen funktioniert</li>
