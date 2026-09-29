@@ -50,7 +50,57 @@ const WHITE: [number, number, number] = [255, 255, 255];
 
 type DocWithTable = jsPDF & { lastAutoTable: { finalY: number } };
 
+// Lädt ein Bild aus /public als Data-URL – im Browser per Canvas, auf dem Server per fs
+export type ImageLoader = (
+  src: string,
+  mime: "image/png" | "image/jpeg"
+) => Promise<{ base64: string; ratio: number }>;
+
+// ── HELPER: Bild laden im Browser (Seitenverhältnis erhalten) ───────────────
+const browserLoadImage: ImageLoader = async (src, mime) => {
+  const response = await fetch(src);
+  if (!response.ok) throw new Error("fetch failed");
+  const blob = await response.blob();
+  return new Promise((resolve, reject) => {
+    const img = new window.Image();
+    const url = URL.createObjectURL(blob);
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        ctx.drawImage(img, 0, 0);
+        resolve({
+          base64: canvas.toDataURL(mime, 0.85),
+          ratio: img.naturalWidth / img.naturalHeight,
+        });
+      } else {
+        reject(new Error("canvas ctx null"));
+      }
+      URL.revokeObjectURL(url);
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error("img load"));
+    };
+    img.src = url;
+  });
+};
+
+export function offerFileName(config: PdfConfig): string {
+  const { units } = calcOffer(config.variant, config.units, config.extraIds);
+  return `TinyInvest_Angebot_Escape660_${VARIANT_SHORT[config.variant]}_${units}Einheiten_${config.clientInfo.date.replace(/\./g, "-")}.pdf`;
+}
+
+// Browser: Angebot erzeugen und herunterladen
 export async function generatePDF(config: PdfConfig): Promise<void> {
+  const doc = await buildOfferDoc(config, browserLoadImage);
+  doc.save(offerFileName(config));
+}
+
+// Baut das Angebots-Dokument – gemeinsam für Konfigurator (Browser) und Erstmail (Server)
+export async function buildOfferDoc(config: PdfConfig, loadImage: ImageLoader): Promise<jsPDF> {
   const { variant, units, extraIds, clientInfo } = config;
   const calc = calcOffer(variant, units, extraIds);
   const unitWord = calc.units === 1 ? "Einheit" : "Einheiten";
@@ -87,41 +137,6 @@ export async function generatePDF(config: PdfConfig): Promise<void> {
     doc.text(COMPANY_INFO.name, margin, footerY + 2);
     doc.text(COMPANY_INFO.vatId, W / 2, footerY + 2, { align: "center" });
     doc.text(`Seite ${pageNum} / ${totalPages}`, W - margin, footerY + 2, { align: "right" });
-  };
-
-  // ── HELPER: Bild laden (Seitenverhältnis erhalten) ────────────────────────
-  const loadImage = async (
-    src: string,
-    mime: "image/png" | "image/jpeg"
-  ): Promise<{ base64: string; ratio: number }> => {
-    const response = await fetch(src);
-    if (!response.ok) throw new Error("fetch failed");
-    const blob = await response.blob();
-    return new Promise((resolve, reject) => {
-      const img = new window.Image();
-      const url = URL.createObjectURL(blob);
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
-        const ctx = canvas.getContext("2d");
-        if (ctx) {
-          ctx.drawImage(img, 0, 0);
-          resolve({
-            base64: canvas.toDataURL(mime, 0.85),
-            ratio: img.naturalWidth / img.naturalHeight,
-          });
-        } else {
-          reject(new Error("canvas ctx null"));
-        }
-        URL.revokeObjectURL(url);
-      };
-      img.onerror = () => {
-        URL.revokeObjectURL(url);
-        reject(new Error("img load"));
-      };
-      img.src = url;
-    });
   };
 
   // ── START: First page ─────────────────────────────────────────────────────
@@ -235,7 +250,7 @@ export async function generatePDF(config: PdfConfig): Promise<void> {
 
   // ── MODELL-BILD ───────────────────────────────────────────────────────────
   try {
-    const { base64, ratio } = await loadImage(ESCAPE_660.image, "image/jpeg");
+    const { base64, ratio } = await loadImage(ESCAPE_660.pdfImage, "image/jpeg");
     const imgW = W - margin * 2;
     const maxH = 60;
     const finalH = Math.min(imgW / ratio, maxH);
@@ -417,6 +432,7 @@ export async function generatePDF(config: PdfConfig): Promise<void> {
     ["Hinweis zur Mehrwertsteuer", VAT_NOTE],
     ["Hinweis zur Standortwahl", LOCATION_NOTE],
     ["Gültigkeit des Angebots", OFFER_VALIDITY],
+    ["Bankverbindung", `${COMPANY_INFO.name} · ${COMPANY_INFO.bank}`],
   ];
 
   for (const [title, body] of notes) {
@@ -455,7 +471,5 @@ export async function generatePDF(config: PdfConfig): Promise<void> {
     drawFooter(i, totalPages);
   }
 
-  // ── SAVE ──────────────────────────────────────────────────────────────────
-  const fileName = `TinyInvest_Angebot_Escape660_${VARIANT_SHORT[variant]}_${calc.units}Einheiten_${clientInfo.date.replace(/\./g, "-")}.pdf`;
-  doc.save(fileName);
+  return doc;
 }

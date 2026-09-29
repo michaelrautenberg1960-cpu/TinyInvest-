@@ -22,6 +22,7 @@ export interface ModelInfo {
   trailerDimensions: string;
   trailer: string;
   image: string;
+  pdfImage: string;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -36,6 +37,8 @@ export const ESCAPE_660: ModelInfo = {
   trailerDimensions: "660 × 244 cm",
   trailer: "TH660 – 2 Achsen × 1.800 kg",
   image: "/images/outside/tiny-house-escape-sachwert.webp",
+  // JPEG-Kopie fürs Angebots-PDF (jsPDF kann kein WebP, auch nicht serverseitig)
+  pdfImage: "/images/pdf/escape-660.jpg",
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -304,6 +307,6 @@ export const COMPANY_INFO = {
   address: "Baslerstraße 3, 61325 Bad Homburg v.d.Höhe",
   phone: "+49 151 68957104",
   email: "info@tinyhouse.investments",
-  vatId: "USt-IdNr.: DE318742905",
-  bank: "Bank: tbd | IBAN: tbd | SWIFT: tbd",
+  vatId: "USt-IdNr.: DE324447673",
+  bank: "Frankfurter Sparkasse · IBAN DE03 5005 0201 0200 7832 97 · BIC HELADEF1822",
 };

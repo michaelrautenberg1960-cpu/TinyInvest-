@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminClient } from "@/app/lib/supabase";
-import { sendWelcomeEmail, markWelcomeEmailSent } from "@/app/lib/sendWelcomeEmail";
+import { sendWelcomeEmail, sendHostWelcomeEmail, markWelcomeEmailSent } from "@/app/lib/sendWelcomeEmail";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -18,6 +18,7 @@ export async function POST(req: NextRequest) {
       location,
       investmentVolumen,
       kontaktZeit,
+      iab,
       nachricht,
       hostRegion,
       hostFlaeche,
@@ -29,13 +30,48 @@ export async function POST(req: NextRequest) {
       leadId,
     } = body;
 
+    // Schritt 2 übersprungen: Lead aus Schritt 1 bleibt unverändert, nur die Erstmail wird verschickt
+    if (schritt === "Schritt 2 übersprungen") {
+      if (!leadId) return NextResponse.json({ error: "Fehlende leadId" }, { status: 400 });
+
+      const { data: lead, error: dbError } = await getAdminClient()
+        .from("leads")
+        .select("vorname, email, telefon, budget, status")
+        .eq("id", leadId)
+        .single();
+
+      if (dbError || !lead) {
+        console.error("Supabase error:", dbError);
+        return NextResponse.json({ error: "Lead nicht gefunden" }, { status: 404 });
+      }
+
+      if (lead.status === "neu") {
+        try {
+          await sendWelcomeEmail(lead.vorname, lead.email, lead.telefon, lead.budget);
+          await markWelcomeEmailSent(leadId);
+        } catch (welcomeErr) {
+          console.error("Welcome email error (non-fatal):", welcomeErr);
+        }
+      }
+
+      return NextResponse.json({ success: true, leadId });
+    }
+
     const isHost = interesse === "Host-Bewerbung (Standort / Grundstück)";
 
     const hostSummary = isHost
       ? `📍 Region: ${hostRegion || "–"} | 📐 Größe: ${hostFlaeche || "–"} | 📜 Eigentum: ${hostEigentum || "–"} | 🗺️ Bebauung: ${hostBebauung || "–"} | ⚡ Versorgung: ${hostVersorgung || "–"} | 🏠 Anzahl THs: ${hostAnzahl || "–"}`
       : null;
 
-    const finalNachricht = [nachricht, hostSummary].filter(Boolean).join("\n\n") || null;
+    // IAB (§ 7g): muss bis Ende des dritten Folgejahres durch eine Investition verbraucht werden
+    const iabJahr = !isHost && typeof iab === "string" ? iab.match(/\d{4}/)?.[0] : undefined;
+    const iabFrist = iabJahr ? Number(iabJahr) + 3 : null;
+    const iabDringend = iabFrist !== null && iabFrist <= new Date().getFullYear();
+    const iabSummary = !isHost && iab
+      ? `🧾 IAB § 7g: ${iab}${iabFrist ? ` (Investitionsfrist 31.12.${iabFrist})` : ""}`
+      : null;
+
+    const finalNachricht = [nachricht, hostSummary, iabSummary].filter(Boolean).join("\n\n") || null;
 
     // 1. Save to Supabase — update the existing lead (Schritt 2) instead of creating a second row
     const leadFields = {
@@ -101,6 +137,17 @@ export async function POST(req: NextRequest) {
           </td>
         </tr>
 
+        ${iabDringend ? `
+        <!-- IAB-Frist -->
+        <tr>
+          <td style="padding:20px 32px 0;">
+            <p style="margin:0;font-size:14px;font-weight:700;color:#92400e;background:#fef3c7;border:1px solid #fcd34d;border-radius:10px;padding:12px 16px;">
+              ⚠️ IAB ${iabJahr}: Investitionsfrist endet 31.12.${iabFrist} – zuerst anrufen
+            </p>
+          </td>
+        </tr>
+        ` : ""}
+
         <!-- Kontaktdaten -->
         <tr>
           <td style="padding:28px 32px 0;">
@@ -141,8 +188,12 @@ export async function POST(req: NextRequest) {
                 <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;">${location || "–"}</td>
               </tr>
               <tr>
-                <td style="padding:10px 0;font-size:13px;color:#6b7280;font-weight:600;">Investitionsvolumen</td>
-                <td style="padding:10px 0;font-size:14px;color:#111827;">${investmentVolumen || "–"}</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:#6b7280;font-weight:600;">Anzahl Häuser</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#111827;">${investmentVolumen || "–"}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;font-size:13px;color:#6b7280;font-weight:600;">IAB § 7g</td>
+                <td style="padding:10px 0;font-size:14px;color:#111827;">${iab ? `${iab}${iabFrist ? ` (Frist 31.12.${iabFrist})` : ""}` : "–"}</td>
               </tr>
             </table>
           </td>
@@ -220,10 +271,15 @@ export async function POST(req: NextRequest) {
       console.error("Resend error (non-fatal):", emailErr);
     }
 
-    // 3. Send welcome email to the lead themselves once the full form (step 2) is submitted
-    if (schritt === "Details (Schritt 2)") {
+    // 3. Send welcome email to the lead themselves once the full form is submitted
+    //    (Memorandum Schritt 2 or the Kontakt form, which sends no schritt)
+    if (schritt !== "Schnell-Anfrage (Schritt 1)") {
       try {
-        await sendWelcomeEmail(vorname, email);
+        if (isHost) {
+          await sendHostWelcomeEmail(vorname, email);
+        } else {
+          await sendWelcomeEmail(vorname, email, telefon, isHost ? null : budget);
+        }
         await markWelcomeEmailSent(resultLeadId);
       } catch (welcomeErr) {
         console.error("Welcome email error (non-fatal):", welcomeErr);

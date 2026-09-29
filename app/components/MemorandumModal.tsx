@@ -3,9 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import { useModal } from "./ModalContext";
 
 const MODELS = [
-  { key: "TinyInvest Comfort", preis: "65.000 €", tag: "On-Grid · Einstieg", badge: "Günstigster Einstieg" },
-  { key: "TinyInvest Escape",  preis: "79.000 €", tag: "Off-Grid · Standard", badge: "Bestseller" },
-  { key: "TinyInvest Elite",   preis: "95.000 €", tag: "Off-Grid · Premium",  badge: "Maximum IAB-Hebel" },
+  { key: "Escape 660 On-Grid",  label: "On-Grid",  preis: "74.700 € netto" },
+  { key: "Escape 660 Off-Grid", label: "Off-Grid", preis: "83.400 € netto" },
 ];
 
 export default function MemorandumModal() {
@@ -18,10 +17,11 @@ export default function MemorandumModal() {
     email: "",
     telefon: "",
     interesse: "Investitionsunterlagen",
-    budget: "TinyInvest Escape",
+    budget: "Escape 660 On-Grid",
     location: "Deutschland",
-    investmentVolumen: "60.000 – 80.000 € (1 Asset)",
+    investmentVolumen: "1 Haus",
     kontaktZeit: "Jederzeit / flexibel",
+    iab: "Nein / noch nicht",
     nachricht: "",
     // Host-Bewerbung fields
     hostRegion: "",
@@ -39,6 +39,21 @@ export default function MemorandumModal() {
   const [leadId, setLeadId] = useState<string | null>(null);
 
   const panelRef = useRef<HTMLDivElement>(null);
+  // leadId aus Schritt 1, solange Schritt 2 weder abgeschickt noch übersprungen wurde
+  const pendingStep2LeadRef = useRef<string | null>(null);
+
+  // Schritt 2 übersprungen oder Popup geschlossen: Erstmail trotzdem auslösen
+  const skipStep2 = () => {
+    const pendingLeadId = pendingStep2LeadRef.current;
+    if (!pendingLeadId) return;
+    pendingStep2LeadRef.current = null;
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ schritt: "Schritt 2 übersprungen", leadId: pendingLeadId }),
+      keepalive: true,
+    }).catch(() => {});
+  };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeModal(); };
@@ -48,6 +63,7 @@ export default function MemorandumModal() {
 
   useEffect(() => {
     if (!isOpen) {
+      skipStep2();
       setTimeout(() => {
         setSubmitted(false);
         setStep(1);
@@ -84,6 +100,7 @@ export default function MemorandumModal() {
       if (!res.ok) throw new Error();
       const data = await res.json();
       setLeadId(data.leadId ?? null);
+      pendingStep2LeadRef.current = data.leadId ?? null;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).gtag?.("event", "generate_lead", { form_type: "memorandum_step1" });
       setStep(2);
@@ -105,6 +122,7 @@ export default function MemorandumModal() {
         body: JSON.stringify({ ...form, nachname: "", schritt: "Details (Schritt 2)", leadId }),
       });
       if (!res.ok) throw new Error();
+      pendingStep2LeadRef.current = null;
       setSubmitted(true);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).gtag?.("event", "generate_lead", { form_type: "memorandum_step2", interesse: form.interesse });
@@ -256,7 +274,7 @@ export default function MemorandumModal() {
                   Fast fertig, {form.vorname}!
                 </h2>
                 <p className="text-[12px] text-gray-500">
-                  Optional: <button type="button" onClick={() => setSubmitted(true)} className="text-green-700 font-semibold hover:underline">Schritt überspringen</button>.
+                  Damit wir Ihnen die passenden Unterlagen schicken können.
                 </p>
               </div>
 
@@ -333,9 +351,9 @@ export default function MemorandumModal() {
                     {/* Modell-Karten */}
                     <div>
                       <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">
-                        Asset-Modell
+                        Modell
                       </label>
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="grid grid-cols-2 gap-2">
                         {MODELS.map((m) => (
                           <button
                             key={m.key}
@@ -347,13 +365,8 @@ export default function MemorandumModal() {
                                 : "border-gray-200 bg-white hover:border-green-300 hover:bg-green-50/40"
                               }`}
                           >
-                            {m.badge === "Bestseller" && (
-                              <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[9px] font-black bg-green-600 text-white px-2 py-0.5 rounded-full whitespace-nowrap">
-                                Bestseller
-                              </span>
-                            )}
-                            <span className="text-[11px] font-black text-gray-800 leading-tight mt-1">{m.key.replace("TinyInvest ", "")}</span>
-                            <span className="text-[10px] text-gray-400 leading-tight">{m.tag.split(" · ")[0]}</span>
+                            <span className="text-[11px] font-black text-gray-800 leading-tight mt-1">{m.label}</span>
+                            <span className="text-[10px] text-gray-400 leading-tight">Escape 660</span>
                             <span className="text-[11px] font-bold text-green-700">{m.preis}</span>
                           </button>
                         ))}
@@ -386,16 +399,30 @@ export default function MemorandumModal() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">Investitionsvolumen</label>
+                        <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">Anzahl Häuser</label>
                         <select name="investmentVolumen" value={form.investmentVolumen} onChange={handleChange}
                           className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
-                          <option>60.000 – 80.000 € (1 Asset)</option>
-                          <option>80.000 – 100.000 € (1 Premium)</option>
-                          <option>120.000 – 160.000 € (2 Assets)</option>
-                          <option>200.000 € + (Portfolio)</option>
+                          <option>1 Haus</option>
+                          <option>2–3 Häuser</option>
+                          <option>4+ Häuser</option>
                           <option>Noch unklar</option>
                         </select>
                       </div>
+                    </div>
+
+                    {/* IAB § 7g */}
+                    <div>
+                      <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">
+                        Investitionsabzugsbetrag (§ 7g) bereits gebildet?
+                      </label>
+                      <select name="iab" value={form.iab} onChange={handleChange}
+                        className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
+                        <option>Nein / noch nicht</option>
+                        <option>Ja, für 2023</option>
+                        <option>Ja, für 2024</option>
+                        <option>Ja, für 2025</option>
+                        <option>Weiß ich nicht / mit Steuerberater klären</option>
+                      </select>
                     </div>
                   </>
                 )}
