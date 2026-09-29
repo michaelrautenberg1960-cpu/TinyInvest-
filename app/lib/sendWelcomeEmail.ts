@@ -69,7 +69,7 @@ function buildEmailHtml(vorname: string, bodyHtml: string) {
   `;
 }
 
-export function buildWelcomeHtml(vorname: string, hasPhone: boolean, variant: Variant = "ongrid", withOffer = true) {
+export function buildWelcomeHtml(vorname: string, hasPhone: boolean, variant: Variant = "ongrid", personalized = true) {
   const naechsterSchritt = hasPhone
     ? "Ich rufe Sie innerhalb der nächsten 24 Stunden (werktags) kurz an, um Ihre Fragen zu klären. Wenn Ihnen ein bestimmter Zeitpunkt lieber ist, antworten Sie einfach auf diese Mail."
     : "Schreiben Sie mir einfach kurz zurück, was für Sie wichtig ist, oder, wenn es schneller gehen soll, gerne auch Ihre Nummer, dann sprechen wir kurz.";
@@ -78,9 +78,9 @@ export function buildWelcomeHtml(vorname: string, hasPhone: boolean, variant: Va
     vorname,
     `
               <p ${P}>vielen Dank für Ihr Interesse an TinyInvest!</p>
-              <p ${P}>${withOffer
+              <p ${P}>${personalized
                 ? `Anbei finden Sie unsere Erstinformation sowie Ihr persönliches Angebot für das Escape 660 (${OFFER_TEXT[variant]}).`
-                : "Anbei finden Sie unsere Erstinformation. Das Escape 660 gibt es ab 74.700 € netto (On-Grid)."}</p>
+                : "Anbei finden Sie unsere Erstinformation sowie ein Beispielangebot für das Escape 660 (On-Grid)."}</p>
               <p style="margin:0 0 8px;">Kurz zusammengefasst:</p>
               <ul style="margin:0 0 16px;padding-left:20px;">
                 <li style="margin-bottom:6px;"><strong>Das Haus:</strong> Komplettpreis inkl. Ausstattung, Transport zum Standort und Aufstellung vor Ort.</li>
@@ -117,20 +117,24 @@ export async function sendWelcomeEmail(
     content: fs.readFileSync(path.join(process.cwd(), file)),
   }));
 
-  // Angebot mit dem eingetragenen Namen erzeugen; schlägt das fehl, geht die Mail ohne Angebot raus
-  let withOffer = true;
+  // Angebot mit dem eingetragenen Namen erzeugen; schlägt das fehl, das statische Beispielangebot anhängen
+  let personalized = true;
   try {
     attachments.push(await buildOfferPdf(variant, vorname));
   } catch (offerErr) {
-    withOffer = false;
-    console.error("Angebots-PDF error (non-fatal):", offerErr);
+    personalized = false;
+    console.error("Angebots-PDF error (non-fatal), sende Beispielangebot:", offerErr);
+    attachments.push({
+      filename: "TinyInvest-Angebot-Escape660-On-Grid.pdf",
+      content: fs.readFileSync(path.join(process.cwd(), "public/TinyInvest-Angebot-Escape660-On-Grid.pdf")),
+    });
   }
 
   await resend.emails.send({
     from: "Michael Rautenberg <info@tinyhouse.investments>",
     to: email,
     subject: "Ihre Unterlagen zu TinyInvest: Erstinformation & Angebot",
-    html: buildWelcomeHtml(vorname, Boolean(telefon?.trim()), variant, withOffer),
+    html: buildWelcomeHtml(vorname, Boolean(telefon?.trim()), variant, personalized),
     attachments,
   });
 }

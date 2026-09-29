@@ -431,7 +431,7 @@ export async function buildOfferDoc(config: PdfConfig, loadImage: ImageLoader): 
   const notes: Array<[string, string]> = [
     ["Hinweis zur Mehrwertsteuer", VAT_NOTE],
     ["Hinweis zur Standortwahl", LOCATION_NOTE],
-    ["Gültigkeit des Angebots", OFFER_VALIDITY],
+    ["Hinweis zum Angebot", OFFER_VALIDITY],
     ["Bankverbindung", `${COMPANY_INFO.name} · ${COMPANY_INFO.bank}`],
   ];
 

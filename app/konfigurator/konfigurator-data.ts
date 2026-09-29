@@ -288,7 +288,7 @@ export const PAYMENT_TERMS = [
 export const DELIVERY_TERM = "Lieferzeit: 60 Tage";
 
 export const OFFER_VALIDITY =
-  "Dieses Preisangebot ist 14 Tage gültig. Alle Beträge in EURO.";
+  "Dieses Angebot ist freibleibend und unverbindlich. Ein Vertrag kommt erst mit unserer schriftlichen Auftragsbestätigung zustande. Alle Beträge in EURO.";
 
 export const PACKAGE_NOTE =
   "Diese Preise enthalten alles von der Produktion über die Lieferung bis zur Vermietungsbereitschaft der jeweiligen Einheit.";
