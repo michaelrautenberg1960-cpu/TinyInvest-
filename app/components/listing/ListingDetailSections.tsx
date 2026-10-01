@@ -73,10 +73,12 @@ export function ListingDetailSections({ listing }: { listing: Listing }) {
         <LockedRow label="Buchungsplattform" value="Airbnb · Booking.com · Direkt"      locked={locked} />
       </Section>
 
-      {/* 7 — Unterlagen & Exposé (locked) */}
-      <Section title="📄 Unterlagen & Exposé">
-        <LockedRow label="Investment-Exposé" value="PDF Download" locked={locked} />
-      </Section>
+      {/* 7 — Unterlagen & Exposé (locked) – nur wenn im CRM ein PDF hinterlegt ist */}
+      {listing.document_url && (
+        <Section title="📄 Unterlagen & Exposé">
+          <LockedRow label="Exposé" value="PDF Download" locked={locked} />
+        </Section>
+      )}
       {!locked && listing.document_url && (
         <div className="mb-5">
           <a

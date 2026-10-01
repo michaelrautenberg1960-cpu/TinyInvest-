@@ -30,7 +30,7 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Marktplatz – Tiny House Investments kaufen | TinyInvest",
   description:
-    "Verfügbare Tiny House Direktkäufe als §7g-Wirtschaftsgut in Deutschland. Ab 65.000 €, Steuervorteil im Kaufjahr, Betrieb auf Wunsch über lokale Partner.",
+    "Verfügbare Tiny House Direktkäufe als §7g-Wirtschaftsgut in Deutschland. Ab 74.700 € netto, Steuervorteil im Kaufjahr, Betrieb auf Wunsch über lokale Partner.",
   keywords:
     "Tiny House kaufen, Ferienimmobilie kaufen, §7g Investment, Tiny House Rendite, Marktplatz, bewegliches Wirtschaftsgut",
   alternates: {
@@ -120,15 +120,15 @@ export default async function MarktplatzPage() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Tiny House Investment",
-    "description": "Tiny House Direktkauf als §7g-Wirtschaftsgut ab 65.000 €. Betrieb auf Wunsch über lokale Partner. 10–14 % p.a. (standortabhängig, keine Garantie).",
+    "description": "Tiny House Direktkauf als §7g-Wirtschaftsgut ab 74.700 € netto. Betrieb auf Wunsch über lokale Partner. 10–14 % p.a. (standortabhängig, keine Garantie).",
     "image": "https://tinyhouse.investments/images/outside/tiny-house-escape-hero.webp",
     "brand": { "@type": "Brand", "name": "TinyInvest" },
     "url": "https://tinyhouse.investments/marktplatz",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "EUR",
-      "lowPrice": "65000",
-      "highPrice": "95000",
+      "lowPrice": "74700",
+      "highPrice": "83400",
       "offerCount": String(listings.length),
       "availability": listings.some(l => l.status === "available") ? "https://schema.org/InStock" : "https://schema.org/SoldOut",
       "url": "https://tinyhouse.investments/marktplatz",

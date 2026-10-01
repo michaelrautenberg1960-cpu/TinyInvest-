@@ -28,7 +28,7 @@ TinyInvest ist eine Next.js-Plattform, über die Privatinvestoren mobile Tiny Ho
 | **Supabase** | PostgreSQL Datenbank + Magic Link & Google OAuth |
 | **Resend** | E-Mail-Versand (Admin-Benachrichtigung, Erstmail an Leads) |
 | **jsPDF** + jspdf-autotable | Angebots-PDF (Konfigurator & Erstmail) |
-| **Vercel** | Hosting & Deployment |
+| **Netlify** | Hosting & Deployment |
 
 ---
 
@@ -233,6 +233,10 @@ Nach dem Versand wird der Lead von `neu` auf `email_gesendet` gesetzt (`markWelc
 
 `abgeschlossen`, `nicht_weiter` und `abgeben` erscheinen nicht im Follow-up-Board.
 
+### Exposé-PDF pro Projekt
+
+Im CRM (`/admin` → Listings → Projekt bearbeiten) unter „📄 Exposé-PDF“ hochladen und speichern. Das PDF wird über eine signierte URL (`PUT /api/admin/upload`) direkt in Supabase Storage (Bucket `listing-images`) geladen und in `listings.document_url` gespeichert. „🗑 Löschen“ entfernt die Datei nach Rückfrage endgültig aus dem Storage (`DELETE /api/admin/upload`); danach das Projekt speichern. Auf der Projektseite erscheint „📄 Exposé herunterladen“, sobald der Kunde das Projekt mit Name, Telefon und E-Mail freigeschaltet hat. Ohne PDF wird der Abschnitt „Unterlagen & Exposé“ ausgeblendet.
+
 ### Käufer-Erstmail (`app/lib/sendWelcomeEmail.ts`)
 
 - **Mit Telefonnummer:** kündigt einen Rückruf innerhalb von 24 Stunden (werktags) an.
@@ -403,13 +407,9 @@ scripts/setup-investor-assets.sql
 
 ---
 
-## Deployment (Vercel)
+## Deployment (Netlify)
 
-```bash
-vercel --prod
-```
-
-Oder GitHub-Repo im [Vercel Dashboard](https://vercel.com) verbinden. Alle `.env.local` Variablen müssen unter *Project Settings → Environment Variables* hinterlegt werden.
+Die Seite läuft auf Netlify. API-Routen laufen dort als Netlify Functions (Request-Body max. ~6 MB – große Dateien deshalb direkt zu Supabase hochladen, siehe Exposé-Upload). Alle `.env.local` Variablen müssen unter *Site configuration → Environment variables* hinterlegt werden.
 
 ---
 

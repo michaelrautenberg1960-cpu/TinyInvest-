@@ -291,6 +291,117 @@ function ImageUploadField({
   );
 }
 
+// ──────────── PDF Upload Field ────────────
+// Lädt direkt zu Supabase hoch (signierte URL), damit auch große Exposés am Netlify-Body-Limit vorbeikommen
+function DocumentUploadField({
+  value,
+  onChange,
+  uploadPath,
+  password,
+}: {
+  value: string;
+  onChange: (url: string | null) => void;
+  uploadPath: string;
+  password: string;
+}) {
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+  const [removed, setRemoved] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const handleRemove = async () => {
+    if (!confirm("Exposé-PDF wirklich löschen? Die Datei wird endgültig entfernt.")) return;
+    setUploadError("");
+    try {
+      const res = await fetch(`/api/admin/upload?url=${encodeURIComponent(value)}`, {
+        method: "DELETE",
+        headers: { "x-admin-password": password },
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setUploadError(data.error ?? "Löschen fehlgeschlagen");
+        return;
+      }
+      onChange(null);
+      setRemoved(true);
+    } catch {
+      setUploadError("Netzwerkfehler beim Löschen");
+    }
+  };
+
+  const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploadError("");
+    setRemoved(false);
+    if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
+      setUploadError("Bitte eine PDF-Datei wählen");
+      if (fileRef.current) fileRef.current.value = "";
+      return;
+    }
+    setUploading(true);
+    try {
+      const signRes = await fetch("/api/admin/upload", {
+        method: "PUT",
+        headers: { "x-admin-password": password, "Content-Type": "application/json" },
+        body: JSON.stringify({ path: `${uploadPath}-expose.pdf` }),
+      });
+      const signData = await signRes.json();
+      if (!signRes.ok || !signData.signedUrl) {
+        setUploadError(signData.error ?? "Upload fehlgeschlagen");
+      } else {
+        const putRes = await fetch(signData.signedUrl, {
+          method: "PUT",
+          headers: { "Content-Type": "application/pdf" },
+          body: file,
+        });
+        if (putRes.ok) {
+          onChange(signData.publicUrl);
+        } else {
+          const text = await putRes.text().catch(() => "");
+          setUploadError(`Upload fehlgeschlagen (${putRes.status}) ${text.slice(0, 120)}`);
+        }
+      }
+    } catch {
+      setUploadError("Netzwerkfehler beim Upload");
+    }
+    setUploading(false);
+    if (fileRef.current) fileRef.current.value = "";
+  };
+
+  return (
+    <div className="space-y-2">
+      {value && (
+        <div className="flex items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2">
+          <a href={value} target="_blank" rel="noopener noreferrer" className="text-sm text-green-400 hover:text-green-300 truncate">
+            📄 Aktuelles Exposé ansehen
+          </a>
+          <button type="button" onClick={handleRemove} className="text-xs text-red-400 hover:text-red-300 shrink-0">
+            🗑 Löschen
+          </button>
+        </div>
+      )}
+      <input
+        className={inp}
+        value={value}
+        onChange={(e) => onChange(e.target.value || null)}
+        placeholder="https://…/expose.pdf"
+      />
+      <input ref={fileRef} type="file" accept="application/pdf,.pdf" className="hidden" onChange={handleFile} />
+      <button
+        type="button"
+        onClick={() => fileRef.current?.click()}
+        disabled={uploading}
+        className="w-full px-3 py-2 rounded-lg text-sm font-semibold bg-blue-700/30 border border-blue-500/30 text-blue-300 hover:bg-blue-700/50 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+      >
+        {uploading ? <>⏳ Lädt hoch…</> : value ? <>📁 Exposé-PDF ersetzen</> : <>📁 Exposé-PDF hochladen</>}
+      </button>
+      {removed && !value && <p className="text-amber-400 text-[11px]">PDF gelöscht – jetzt das Projekt speichern.</p>}
+      {uploadError && <p className="text-red-400 text-[11px]">{uploadError}</p>}
+    </div>
+  );
+}
+
 // ──────────── Create/Edit Form ────────────
 function ListingForm({
   data,
@@ -403,8 +514,13 @@ function ListingForm({
             <Field label="Extras (Komma-getrennt)">
               <input className={inp} value={(data.extras as string) ?? ""} onChange={(e) => onChange("extras", e.target.value || null)} placeholder="Whirlpool, Sauna, Smart Lock, Fahrräder" />
             </Field>
-            <Field label="Exposé PDF URL (document_url)">
-              <input className={inp} value={(data.document_url as string) ?? ""} onChange={(e) => onChange("document_url", e.target.value || null)} placeholder="https://…/expose.pdf" />
+            <Field label="📄 Exposé-PDF (sichtbar nach Freischaltung)">
+              <DocumentUploadField
+                value={(data.document_url as string) ?? ""}
+                onChange={(url) => onChange("document_url", url)}
+                uploadPath={uploadPath}
+                password={password}
+              />
             </Field>
           </div>
           {/* §7g eligibility toggles */}
