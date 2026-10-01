@@ -14,7 +14,7 @@ type Lead = {
   investment_volumen: string | null;
   kontakt_zeit: string | null;
   nachricht: string | null;
-  status: "neu" | "email_gesendet" | "kontaktiert" | "wiedervorlage" | "abgeschlossen";
+  status: "neu" | "email_gesendet" | "kontaktiert" | "wiedervorlage" | "abgeschlossen" | "nicht_weiter" | "abgeben";
   assigned_to: string | null;
   blocked_on_owner: BlockedOwner | null;
   blocked_on_note: string | null;
@@ -74,6 +74,8 @@ const STATUS_COLORS = {
   kontaktiert:    "bg-yellow-100 text-yellow-700 border-yellow-200",
   wiedervorlage:  "bg-orange-100 text-orange-700 border-orange-200",
   abgeschlossen:  "bg-indigo-100 text-indigo-700 border-indigo-200",
+  nicht_weiter:   "bg-gray-100 text-gray-600 border-gray-200",
+  abgeben:        "bg-pink-100 text-pink-700 border-pink-200",
 };
 const STATUS_LABELS = {
   neu:            "🟢 Neu",
@@ -81,7 +83,10 @@ const STATUS_LABELS = {
   kontaktiert:    "🟡 Kontaktiert",
   wiedervorlage:  "🔔 Wiedervorlage",
   abgeschlossen:  "🔵 Abgeschlossen",
+  nicht_weiter:   "⚪ Geht nicht weiter",
+  abgeben:        "🤝 Abgeben",
 };
+const hasPhone = (l: Lead) => Boolean(l.telefon?.trim());
 const BLOCKED_OWNERS: BlockedOwner[] = ["us", "customer", "none"];
 const BLOCKED_LABELS: Record<BlockedOwner, string> = {
   us:       "🙋 Wir sind dran",
@@ -484,6 +489,7 @@ export default function AdminPage() {
   const [loadingLeads, setLoadingLeads]     = useState(false);
   const [filter, setFilter]                 = useState<"all" | Lead["status"]>("all");
   const [memberFilter, setMemberFilter]     = useState<string>("all");
+  const [phoneFilter, setPhoneFilter]       = useState<"all" | "mit" | "ohne">("all");
   const [selected, setSelected]             = useState<Lead | null>(null);
   const [confirmDeleteLead, setConfirmDeleteLead] = useState<string | null>(null);
   const [leadNotizen, setLeadNotizen]             = useState<Record<string, LeadNotiz[]>>({});
@@ -776,7 +782,8 @@ export default function AdminPage() {
       if (memberFilter === "all") return true;
       if (memberFilter === "__unassigned__") return !l.assigned_to;
       return l.assigned_to === memberFilter;
-    });
+    })
+    .filter((l) => phoneFilter === "all" || (phoneFilter === "mit") === hasPhone(l));
   const counts = {
     all:            leads.length,
     neu:            leads.filter((l) => l.status === "neu").length,
@@ -784,11 +791,13 @@ export default function AdminPage() {
     kontaktiert:    leads.filter((l) => l.status === "kontaktiert").length,
     wiedervorlage:  leads.filter((l) => l.status === "wiedervorlage").length,
     abgeschlossen:  leads.filter((l) => l.status === "abgeschlossen").length,
+    nicht_weiter:   leads.filter((l) => l.status === "nicht_weiter").length,
+    abgeben:        leads.filter((l) => l.status === "abgeben").length,
   };
 
-  // ── Follow-up Board ──
+  // ── Follow-up Board ── (erledigte, ausgestiegene und abzugebende Leads brauchen kein Nachfassen)
   const followupPool = leads.filter(
-    (l) => l.status !== "abgeschlossen" && l.blocked_on_owner !== "none"
+    (l) => !["abgeschlossen", "nicht_weiter", "abgeben"].includes(l.status) && l.blocked_on_owner !== "none"
   );
   const waitingOnUs       = followupPool.filter((l) => l.blocked_on_owner !== "customer").sort(byUrgency);
   const waitingOnCustomer = followupPool.filter((l) => l.blocked_on_owner === "customer").sort(byUrgency);
@@ -1011,7 +1020,19 @@ export default function AdminPage() {
                 </div>
               </div>
             )}
-            <div className="grid grid-cols-2 sm:grid-cols-6 gap-4 mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-xs text-gray-400 uppercase tracking-wider">Telefon:</span>
+              <div className="flex flex-wrap gap-2">
+                {([
+                  { key: "all",  label: "Alle" },
+                  { key: "mit",  label: `📞 Mit Nummer (${leads.filter(hasPhone).length})` },
+                  { key: "ohne", label: `✉️ Ohne Nummer (${leads.filter((l) => !hasPhone(l)).length})` },
+                ] as const).map((p) => (
+                  <button key={p.key} onClick={() => setPhoneFilter(p.key)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${phoneFilter === p.key ? "bg-blue-700 text-white border-blue-500" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>{p.label}</button>
+                ))}
+              </div>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 mb-8">
               {[
                 { key: "all",            label: "Gesamt",         color: "bg-white/5 border-white/10",             icon: "📋" },
                 { key: "neu",            label: "Neu",            color: "bg-green-900/30 border-green-500/30",    icon: "🟢" },
@@ -1019,6 +1040,8 @@ export default function AdminPage() {
                 { key: "kontaktiert",    label: "Kontaktiert",    color: "bg-yellow-900/30 border-yellow-500/30",  icon: "🟡" },
                 { key: "wiedervorlage",  label: "Wiedervorlage",  color: "bg-orange-900/30 border-orange-500/30",  icon: "🔔" },
                 { key: "abgeschlossen",  label: "Abgeschlossen",  color: "bg-indigo-900/30 border-indigo-500/30",  icon: "🔵" },
+                { key: "nicht_weiter",   label: "Geht nicht weiter", color: "bg-gray-800/40 border-gray-500/30",   icon: "⚪" },
+                { key: "abgeben",        label: "Abgeben",        color: "bg-pink-900/30 border-pink-500/30",      icon: "🤝" },
               ].map((s) => (
                 <button key={s.key} onClick={() => setFilter(s.key as typeof filter)} className={`${s.color} border rounded-2xl p-5 text-left transition-all hover:scale-105 ${filter === s.key ? "ring-2 ring-green-400" : ""}`}>
                   <div className="text-2xl mb-1">{s.icon}</div>
@@ -1071,7 +1094,7 @@ export default function AdminPage() {
                         <div className="mb-4">
                           <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Status ändern</p>
                           <div className="flex flex-wrap gap-2">
-                            {(["neu", "email_gesendet", "kontaktiert", "wiedervorlage", "abgeschlossen"] as const).map((s) => (
+                            {(["neu", "email_gesendet", "kontaktiert", "wiedervorlage", "abgeschlossen", "nicht_weiter", "abgeben"] as const).map((s) => (
                               <button key={s} onClick={() => updateStatus(lead.id, s)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${lead.status === s ? STATUS_COLORS[s] + " ring-2 ring-offset-1 ring-offset-gray-900 ring-green-400" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>
                                 {STATUS_LABELS[s]}
                               </button>

@@ -26,7 +26,8 @@ TinyInvest ist eine Next.js-Plattform, über die Privatinvestoren mobile Tiny Ho
 | **TypeScript** | Typsicherheit |
 | **Tailwind CSS** | Styling |
 | **Supabase** | PostgreSQL Datenbank + Magic Link & Google OAuth |
-| **Resend** | E-Mail-Versand (Lead-Formular) |
+| **Resend** | E-Mail-Versand (Admin-Benachrichtigung, Erstmail an Leads) |
+| **jsPDF** + jspdf-autotable | Angebots-PDF (Konfigurator & Erstmail) |
 | **Vercel** | Hosting & Deployment |
 
 ---
@@ -42,7 +43,8 @@ app/
 ├── lib/
 │   ├── supabase.ts                   # Supabase Client
 │   ├── og.ts                        # Open Graph Hilfsfunktionen
-│   └── sendWelcomeEmail.ts          # Willkommens-E-Mail für neue Investoren
+│   ├── sendWelcomeEmail.ts          # Erstmail an Leads (mit/ohne Telefon) + Host-Mail
+│   └── offerPdfServer.ts            # Persönliches Angebots-PDF serverseitig erzeugen
 │
 ├── marktplatz/                       # Listing-Marktplatz (Supabase-Live-Daten)
 │   └── [id]/                         # Einzelnes Listing (dynamische Route)
@@ -54,8 +56,8 @@ app/
 ├── partner/                          # Vertriebspartner-Programm
 ├── konfigurator/                     # Tiny House Konfigurator
 │   ├── KonfiguratorApp.tsx           # Konfigurator-Logik & UI
-│   ├── konfigurator-data.ts          # Modell-/Ausstattungsoptionen & Preise
-│   └── generate-pdf.ts               # PDF-Angebotsgenerator
+│   ├── konfigurator-data.ts          # Paketpreise, Extras, Angebotstexte, Firmendaten (einzige Preisquelle)
+│   └── generate-pdf.ts               # PDF-Angebotsgenerator (Browser + Server)
 ├── tiny-house-als-kapitalanlage/     # SEO-Pillar-Landingpage (Priority 1.0)
 │
 ├── agb/                              # Allgemeine Geschäftsbedingungen
@@ -198,10 +200,68 @@ public/
 ├── logo1.png
 ├── favicon.png
 ├── robots.txt
+├── TinyInvest-Erstinformation.pdf            # Anhang der Erstmail
+├── TinyInvest-Angebot-Escape660-On-Grid.pdf  # Ersatz-Angebot, falls die PDF-Erzeugung fehlschlägt
+├── EB_Plakat_Finanzierungsbeispiel_tinyEscape660.pdf  # EthikBank-Beispiel (veraltet, aktuell nicht angehängt)
 └── images/
     ├── inside/                       # Innenansichten der Häuser
-    └── outside/                      # Außenansichten der Häuser
+    ├── outside/                      # Außenansichten der Häuser
+    └── pdf/escape-660.jpg            # JPEG-Hausbild fürs Angebots-PDF (jsPDF kann kein WebP)
 ```
+
+---
+
+## Lead-Flow & automatische E-Mails
+
+### Formulare → Erstmail
+
+| Einstieg | Wann geht die Erstmail raus? | Variante |
+|---|---|---|
+| Unterlagen-Popup (`MemorandumModal`) | nach Schritt 2 – oder wenn das Popup in Schritt 2 geschlossen wird | Käufer bzw. Host |
+| Kontaktformular (`Kontakt`) | direkt nach dem Absenden | Käufer bzw. Host |
+| Projekt-Freischaltung (`gate-register`) | direkt nach dem Absenden | Käufer (Telefon ist Pflicht) |
+
+Nach Popup-Schritt 1 allein geht noch keine Mail an den Kunden, erst in Schritt 2 steht fest, ob Käufer oder Host-Bewerber. Wer den Browser-Tab nach Schritt 1 schließt, bleibt im Admin auf Status `neu` und muss manuell nachgefasst werden.
+
+Nach dem Versand wird der Lead von `neu` auf `email_gesendet` gesetzt (`markWelcomeEmailSent`). Beim Schließen des Popups wird nur gesendet, solange der Status noch `neu` ist – so gibt es keine doppelten Mails.
+
+### Lead-Status im CRM (`/admin`)
+
+`neu` → `email_gesendet` → `kontaktiert` → `wiedervorlage` → `abgeschlossen`, außerdem:
+- `nicht_weiter` (⚪ Geht nicht weiter) – Lead ist ausgestiegen / kein Interesse mehr
+- `abgeben` (🤝 Abgeben) – Lead soll an einen Partner oder Kollegen abgegeben werden
+
+`abgeschlossen`, `nicht_weiter` und `abgeben` erscheinen nicht im Follow-up-Board.
+
+### Käufer-Erstmail (`app/lib/sendWelcomeEmail.ts`)
+
+- **Mit Telefonnummer:** kündigt einen Rückruf innerhalb von 24 Stunden (werktags) an.
+- **Ohne Telefonnummer:** bittet um eine kurze Antwort oder die Telefonnummer.
+- **Anhänge:** Erstinformation + persönliches Angebots-PDF.
+- Anrede mit dem eingetragenen Vornamen; Finanzierung über die EthikBank eG wird nur erwähnt, deren PDF ist bis zu einem neuen Rechenbeispiel deaktiviert (`WELCOME_ATTACHMENTS`).
+
+### Persönliches Angebots-PDF
+
+- Wird beim Versand mit `buildOfferDoc` aus `app/konfigurator/generate-pdf.ts` erzeugt – derselbe Generator wie im Konfigurator, auf dem Server über `app/lib/offerPdfServer.ts`.
+- Kundenname = eingetragener Name, Datum = heute, 1 Einheit, ohne Extras.
+- Modell nach Auswahl im Popup: **Off-Grid** (83.400 € netto) wenn gewählt, sonst **On-Grid** (74.700 € netto).
+- Das Angebot ist freibleibend („Ein Vertrag kommt erst mit unserer schriftlichen Auftragsbestätigung zustande“).
+- Schlägt die Erzeugung fehl, wird `public/TinyInvest-Angebot-Escape660-On-Grid.pdf` angehängt und im Mailtext als Beispielangebot bezeichnet.
+
+### Host-Bewerber
+
+Wer im Formular „Host-Bewerbung (Standort / Grundstück)“ wählt, bekommt statt der Käufer-Mail eine kurze Bestätigung ohne Anhänge (`sendHostWelcomeEmail`).
+
+### Admin-Benachrichtigung
+
+Jede Anfrage schickt eine Mail an `RESEND_TO` (Popup: nach Schritt 1 und nach Schritt 2). Sie enthält Kontaktdaten, Modell, Standort, Anzahl Häuser und die IAB-Angabe.
+
+**IAB-Frage (§ 7g):** Popup-Schritt 2 fragt, ob und für welches Jahr bereits ein Investitionsabzugsbetrag gebildet wurde. Die Investitionsfrist (31.12. des dritten Folgejahres) wird berechnet und in Admin-Mail und Lead-Nachricht gespeichert. Läuft die Frist im aktuellen Jahr ab, zeigt die Admin-Mail einen gelben Hinweis „zuerst anrufen“. Die Jahresauswahl (aktuell 2023–2025) muss jährlich nachgezogen werden.
+
+### Preise & Texte pflegen
+
+- Preise, Extras, Zahlungs-/Garantiebedingungen und Firmendaten (Adresse, USt-IdNr., Bankverbindung): nur in `app/konfigurator/konfigurator-data.ts`.
+- Modellkacheln im Popup (`MODELS` in `MemorandumModal.tsx`) und Preise im Mailtext (`OFFER_TEXT` in `sendWelcomeEmail.ts`) bei Preisänderungen mit anpassen.
 
 ---
 
@@ -288,6 +348,8 @@ NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=AIza...
 
 # Resend (E-Mail-Versand)
 RESEND_API_KEY=re_...
+RESEND_FROM=noreply@tinyhouse.investments   # Absender der Admin-Benachrichtigung
+RESEND_TO=info@tinyhouse.investments        # Empfänger der Admin-Benachrichtigung
 
 # Admin-Panel
 ADMIN_PASSWORD=dein-geheimes-passwort
