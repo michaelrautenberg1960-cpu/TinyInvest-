@@ -36,8 +36,8 @@ export default function Betreiber() {
               <p className="font-black text-gray-900 text-sm mb-1">Der Investor</p>
               <p className="text-[12px] text-gray-400 mb-3">100&nbsp;% Eigentümer</p>
               <div className="bg-green-50 rounded-xl p-3 text-center">
-                <p className="text-[11px] font-semibold text-green-700">Kaufvertrag mit Hersteller</p>
-                <p className="text-[11px] text-green-600">Kein Kapital an TinyInvest</p>
+                <p className="text-[11px] font-semibold text-green-700">Direktkauf bei TinyInvest</p>
+                <p className="text-[11px] text-green-600">Kaufpreis = Ihr Haus</p>
               </div>
             </div>
 
@@ -90,7 +90,7 @@ export default function Betreiber() {
 
           {/* Legal note */}
           <p className="text-center text-[11px] text-gray-400 mt-5 max-w-2xl mx-auto">
-            * Der Käufer schließt zwei separate Verträge ab: (1) Kaufvertrag mit dem Hersteller für das bewegliche Wirtschaftsgut, (2) Betreibervertrag direkt mit dem lokalen Partner (nicht mit TinyInvest). TinyInvest hält zu keinem Zeitpunkt Käufergelder.
+            * Der Käufer schließt zwei separate Verträge ab: (1) Kaufvertrag mit TinyInvest (Rautenberg Professional Solutions GmbH) für das bewegliche Wirtschaftsgut, (2) Betreibervertrag direkt mit dem lokalen Partner (nicht mit TinyInvest). Der Kaufpreis wird an TinyInvest gezahlt und ausschließlich für Ihr Haus verwendet – es werden keine Anlegergelder gebündelt oder verwaltet.
           </p>
         </div>
 

@@ -107,7 +107,7 @@ export default function TinyHouseSteuernSparenPage() {
         "@type": "HowToStep",
         "position": 3,
         "name": "Tiny House im Kaufjahr erwerben",
-        "text": "Du kaufst direkt beim Hersteller (Vlemmix Trailer). Das Tiny House wird per Kaufvertrag und Fahrzeugbrief (VIN/FIN) als bewegliches Wirtschaftsgut dokumentiert. TinyInvest begleitet diesen Prozess vollständig.",
+        "text": "Du kaufst direkt bei TinyInvest (Tiny House auf Vlemmix-Trailer). Das Tiny House wird per Kaufvertrag und Fahrzeugbrief (VIN/FIN) als bewegliches Wirtschaftsgut dokumentiert. TinyInvest begleitet diesen Prozess vollständig.",
       },
       {
         "@type": "HowToStep",
@@ -343,7 +343,7 @@ export default function TinyHouseSteuernSparenPage() {
                 },
                 {
                   nr: "03", title: "Tiny House im Kaufjahr erwerben",
-                  desc: "Du kaufst direkt beim Hersteller (Vlemmix Trailer). Das Tiny House wird per Kaufvertrag und Fahrzeugbrief (VIN/FIN) als bewegliches Wirtschaftsgut dokumentiert. TinyInvest begleitet diesen Prozess vollständig.",
+                  desc: "Du kaufst direkt bei TinyInvest (Tiny House auf Vlemmix-Trailer). Das Tiny House wird per Kaufvertrag und Fahrzeugbrief (VIN/FIN) als bewegliches Wirtschaftsgut dokumentiert. TinyInvest begleitet diesen Prozess vollständig.",
                   tip: "Belege sichern: Kaufvertrag, Übergabeprotokoll, Fahrzeugbrief, Aufstellgenehmigung",
                 },
                 {

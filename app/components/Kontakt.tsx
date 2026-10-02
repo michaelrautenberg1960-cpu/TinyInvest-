@@ -459,8 +459,8 @@ export default function Kontakt() {
             <div className="bg-white/8 backdrop-blur-sm border border-white/15 rounded-2xl p-5">
               <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Rechtlicher Hinweis</p>
               <p className="text-[12px] text-gray-400 leading-relaxed">
-                TinyInvest hält zu keinem Zeitpunkt Investorengelder.
-                Der Investor kauft das Wirtschaftsgut direkt beim Hersteller.
+                Der Käufer erwirbt das Wirtschaftsgut im Direktkauf bei TinyInvest. Der Kaufpreis wird ausschließlich für sein Haus verwendet –
+                es werden keine Anlegergelder gebündelt oder verwaltet.
                 lokale Partner übernimmt den Betrieb auf Basis eines Bewirtschaftungsvertrags.
                 Dies ist kein Finanzprodukt i.S.d. KAGB.
               </p>

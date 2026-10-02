@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Tiny House kaufen 2026: Preise & Modelle | TinyInvest",
   description:
-    "Tiny House kaufen: Preise ab 65.000 €, Solido Modelle (Escape A17, Cabin 8400), Genehmigung, neu vs. gebraucht – und die Investment-Option für Käufer.",
+    "Tiny House kaufen: Preise ab 74.700 € netto, Escape 660 On-/Off-Grid, Genehmigung, neu vs. gebraucht – und die Investment-Option für Käufer.",
   keywords:
     "tiny house kaufen, tiny house kaufen preise, tiny house kaufen 2026, tiny house preise, mobiles tiny house kaufen, tiny house ganzjährig bewohnbar kaufen, tiny house gebraucht kaufen, günstige tiny häuser kaufen, tiny house als kapitalanlage kaufen",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
     ...BASE_OG,
     type: "article",
     title: "Tiny House kaufen 2026: Preise, Modelle & Investment-Option",
-    description: "Preise ab 65.000 €, Solido Modellvergleich und die Frage: selbst einziehen oder als Kapitalanlage vermieten lassen?",
+    description: "Preise ab 74.700 € netto, Modellvergleich und die Frage: selbst einziehen oder als Kapitalanlage vermieten lassen?",
     url: "https://tinyhouse.investments/wissen/tiny-house-kaufen",
   },
 };
@@ -28,12 +28,12 @@ const faqItems = [
   {
     question: "Was kostet ein Tiny House kaufen 2026?",
     answer:
-      "Hochwertige Tiny Houses auf zugelassenem Vlemmix-Trailer kosten bei TinyInvest zwischen 65.000 € (Solido Escape A17, ca. 17–20 m²) und 95.000 € (Solido Cabin 8400 Premium, ca. 25–30 m²). Günstigere Angebote am Markt unter 30.000 € sind meist Eigenbauten ohne COC-Zulassung, ohne winterfeste Dämmung und ohne Fahrzeugbrief – steuerlich nicht §7g-fähig. Der Preis bei TinyInvest beinhaltet Lieferung, Aufstellung und Ersteinrichtung.",
+      "Hochwertige Tiny Houses auf zugelassenem Vlemmix-Trailer kosten bei TinyInvest 74.700 € netto (Escape 660 On-Grid) bzw. 83.400 € netto (Escape 660 Off-Grid). Günstigere Angebote am Markt unter 30.000 € sind meist Eigenbauten ohne COC-Zulassung, ohne winterfeste Dämmung und ohne Fahrzeugbrief – steuerlich nicht §7g-fähig. Der Preis bei TinyInvest beinhaltet Lieferung, Aufstellung und Ersteinrichtung.",
   },
   {
     question: "Ist ein Tiny House ganzjährig bewohnbar kaufen sinnvoll?",
     answer:
-      "Ja – die Solido Tiny Houses von TinyInvest sind vollständig winterfest gebaut. Holzständerwerk mit Mineralwolldämmung, Fußbodenheizung, Wärmerückgewinnung und optional Solar- und Off-Grid-Ausstattung ermöglichen einen Betrieb bei Temperaturen bis -20 °C. Sie werden ganzjährig als Ferienunterkunft gebucht, auch im Winter.",
+      "Ja – die Tiny Houses von TinyInvest sind vollständig winterfest gebaut. Holzständerwerk mit Mineralwolldämmung, Fußbodenheizung, Wärmerückgewinnung und optional Solar- und Off-Grid-Ausstattung ermöglichen einen Betrieb bei Temperaturen bis -20 °C. Sie werden ganzjährig als Ferienunterkunft gebucht, auch im Winter.",
   },
   {
     question: "Brauche ich ein eigenes Grundstück um ein Tiny House zu kaufen?",
@@ -53,7 +53,7 @@ const faqItems = [
   {
     question: "Wie läuft der Kaufprozess ab?",
     answer:
-      "Nach einem kostenlosen Beratungsgespräch wählst du Modell und Standort. Kaufvertrag direkt mit dem Hersteller Solido. Lieferung und Aufstellung auf Vlemmix-Trailer innerhalb von 4–8 Wochen. Bei Investitionsmodell: Listing auf lokale Partner und Buchungsplattformen, erste Mietauszahlung im Folgemonat.",
+      "Nach einem kostenlosen Beratungsgespräch wählst du Modell und Standort. Direktkauf bei TinyInvest. Lieferung und Aufstellung auf Vlemmix-Trailer innerhalb von 4–8 Wochen. Bei Investitionsmodell: Listing auf lokale Partner und Buchungsplattformen, erste Mietauszahlung im Folgemonat.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function TinyHouseKaufenPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Tiny House kaufen 2026: Preise, Modelle & Investment-Option",
-    "description": "Tiny House kaufen: Preise ab 65.000 €, Solido Modelle, Genehmigung, neu vs. gebraucht – und warum viele Käufer ihr Tiny House als Kapitalanlage nutzen.",
+    "description": "Tiny House kaufen: Preise ab 74.700 € netto, Escape 660, Genehmigung, neu vs. gebraucht – und warum viele Käufer ihr Tiny House als Kapitalanlage nutzen.",
     "url": "https://tinyhouse.investments/wissen/tiny-house-kaufen",
     "datePublished": "2026-04-29",
     "dateModified": "2026-05-06",
@@ -122,21 +122,21 @@ export default function TinyHouseKaufenPage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Wer ein Tiny House kaufen möchte, steht vor zwei grundlegend verschiedenen Wegen: selbst einziehen oder als Kapitalanlage vermieten lassen. Dieser Guide erklärt Tiny House kaufen Preise, die Solido Modelle auf Vlemmix-Trailer, Genehmigungsfragen, den Unterschied zwischen neu und gebraucht – und warum immer mehr Käufer sich für die Investment-Option entscheiden.
+            Wer ein Tiny House kaufen möchte, steht vor zwei grundlegend verschiedenen Wegen: selbst einziehen oder als Kapitalanlage vermieten lassen. Dieser Guide erklärt Tiny House kaufen Preise, das Escape 660 auf Vlemmix-Trailer, Genehmigungsfragen, den Unterschied zwischen neu und gebraucht – und warum immer mehr Käufer sich für die Investment-Option entscheiden.
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "21/9" }}>
             <img
               src="/images/outside/tiny-house-investor-aussen.webp"
-              alt="Tiny House kaufen – modernes Solido Tiny House auf Vlemmix-Trailer in Naturlage"
+              alt="Tiny House kaufen – modernes Tiny House auf Vlemmix-Trailer in Naturlage"
               className="w-full h-full object-cover"
             />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["Ab 65.000 €", "Ganzjährig bewohnbar", "Mit oder ohne Grundstück", "§7g-fähig", "COC-Homologation", "Solido auf Vlemmix"].map((tag) => (
+            {["Ab 74.700 € netto", "Ganzjährig bewohnbar", "Mit oder ohne Grundstück", "§7g-fähig", "COC-Homologation", "Direktkauf bei TinyInvest"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -152,17 +152,17 @@ export default function TinyHouseKaufenPage() {
               Der Markt für Tiny Houses ist unübersichtlich. Wer ein Tiny House kaufen möchte, findet auf Online-Plattformen Angebote zwischen 15.000 € und über 200.000 €. Der Preisunterschied liegt nicht nur in der Größe, sondern vor allem in Qualität, Zulassung und Langlebigkeit. Günstige Tiny Häuser unter 30.000 € sind häufig Eigenbauten ohne COC-Zulassung, ohne winterfeste Dämmung und ohne amtlichen Fahrzeugbrief. Das bedeutet: kein legaler Straßentransport, keine Kfz-Versicherung als Fahrzeug und keine Möglichkeit den §7g Investitionsabzugsbetrag zu nutzen.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Wer ein mobiles Tiny House kaufen möchte das rechtlich als Fahrzeug gilt, dauerhaft versichert werden kann und steuerlich als bewegliches Wirtschaftsgut absetzbar ist, braucht ein Modell mit europäischer COC-Homologation auf einem zugelassenen Trailer. TinyInvest setzt auf Tiny Houses des rumänischen Herstellers Solido, aufgebaut auf Vlemmix-Trailern. Diese Kombination ist seit Jahren im deutschen und europäischen Markt erprobt und gilt als Standard für qualitativ hochwertige, zertifizierte Tiny Houses.
+              Wer ein mobiles Tiny House kaufen möchte das rechtlich als Fahrzeug gilt, dauerhaft versichert werden kann und steuerlich als bewegliches Wirtschaftsgut absetzbar ist, braucht ein Modell mit europäischer COC-Homologation auf einem zugelassenen Trailer. TinyInvest verkauft das Escape 660 im Direktkauf, aufgebaut auf Vlemmix-Trailern. Diese Kombination ist seit Jahren im deutschen und europäischen Markt erprobt und gilt als Standard für qualitativ hochwertige, zertifizierte Tiny Houses.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Die Tiny House kaufen Preise bei TinyInvest beginnen bei 65.000 € für das Einstiegsmodell und reichen bis ca. 95.000 € für das vollausgestattete Premium-Modell. Das klingt nach viel – ist aber im Vergleich zu einer Eigentumswohnung (Einstieg oft ab 200.000 €, dazu Kaufnebenkosten von 10–15 %) ein erheblich niedrigerer Kapitaleinsatz mit vergleichbaren oder besseren Renditechancen.
+              Die Tiny House kaufen Preise bei TinyInvest liegen bei 74.700 € netto (On-Grid) bzw. 83.400 € netto (Off-Grid) – komplett ausgestattet inkl. Transport und Aufstellung. Das klingt nach viel – ist aber im Vergleich zu einer Eigentumswohnung (Einstieg oft ab 200.000 €, dazu Kaufnebenkosten von 10–15 %) ein erheblich niedrigerer Kapitaleinsatz mit vergleichbaren oder besseren Renditechancen.
             </p>
           </div>
 
-          <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Solido Modelle im Vergleich: Escape A17 & Cabin 8400</h2>
+          <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Escape 660 im Vergleich: On-Grid & Off-Grid</h2>
           <div className="max-w-3xl mb-6">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Solido Tiny House bietet zwei Hauptmodelle an, die auf Vlemmix-Trailern aufgebaut und in ganz Europa zugelassen sind. Beide Modelle verfügen über eine COC-Homologation (Certificate of Conformity), die den rechtlichen Betrieb als Kraftfahrzeuganhänger in Deutschland und der gesamten EU sicherstellt. Die Außenverkleidung besteht je nach Konfiguration aus ThermoWood oder Aluminium, das Tragwerk aus Holzständerwerk mit Mineralwolldämmung.
+              Das Escape 660 gibt es in zwei Varianten, beide auf Vlemmix-Trailern aufgebaut und in ganz Europa zugelassen. Beide Varianten verfügen über eine COC-Homologation (Certificate of Conformity), die den rechtlichen Betrieb als Kraftfahrzeuganhänger in Deutschland und der gesamten EU sicherstellt. Die Außenverkleidung besteht je nach Konfiguration aus ThermoWood oder Aluminium, das Tragwerk aus Holzständerwerk mit Mineralwolldämmung.
             </p>
           </div>
 
@@ -180,9 +180,8 @@ export default function TinyHouseKaufenPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
-                    ["Escape A17 (Compact)", "6,60 × 2,55 m", "17–20 m² inkl. Loft", "ab 65.000 €", "✅ Ja"],
-                    ["Cabin 8400 (Standard)", "8,40 × 2,55 m", "ca. 25–30 m²", "ab 79.000 €", "✅ Ja"],
-                    ["Cabin 8400 (Premium)", "8,40 × 2,55 m", "ca. 25–30 m²", "ab 95.000 €", "✅ Ja"],
+                    ["Escape 660 On-Grid", "6,60 × 2,55 m", "inkl. Loft", "74.700 € netto", "✅ Ja"],
+                    ["Escape 660 Off-Grid", "6,60 × 2,55 m", "inkl. Loft", "83.400 € netto", "✅ Ja"],
                   ].map(([m, ab, fl, p, s]) => (
                     <tr key={m} className="hover:bg-gray-50/50">
                       <td className="p-4 font-bold text-gray-900">{m}</td>
@@ -203,10 +202,10 @@ export default function TinyHouseKaufenPage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Ausstattung & Off-Grid: Was beim Tiny House kaufen enthalten ist</h2>
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Ein zentrales Kaufargument für ein mobiles Tiny House ist die Möglichkeit zur vollständigen Autarkie. Die Solido Escape-Serie ist besonders für ihre Off-Grid-Optionen bekannt: Photovoltaik-Anlage auf dem Dach, Wassertank mit Filtersystem, Holzofen als Primärheizung und Wärmerückgewinnung für die Belüftung. Damit ist das Tiny House auch auf Grundstücken ohne Netzanschluss betreibbar – ein erheblicher Vorteil für abgelegene Ferienstandorte.
+              Ein zentrales Kaufargument für ein mobiles Tiny House ist die flexible Standortwahl. Off-Grid-Modelle sind flexibler in der Standortwahl: Photovoltaik-Anlage auf dem Dach, Wassertank mit Filtersystem, Holzofen als Primärheizung und Wärmerückgewinnung für die Belüftung. Damit ist das Tiny House auch auf Grundstücken ohne Netzanschluss betreibbar – ein erheblicher Vorteil für abgelegene Ferienstandorte.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf die Dämmstärke achten. Die Solido-Modelle verwenden Mineralwolle mit entsprechender Stärke für den Einsatz bei Temperaturen bis -20 °C. Die Fußbodenheizung sorgt für gleichmäßige Wärmeverteilung auf kleiner Fläche. Gäste buchen diese Häuser ebenso im Winter wie im Sommer – die Auslastung ist das ganze Jahr über stabil.
+              Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf die Dämmstärke achten. Unsere Modelle verwenden Mineralwolle mit entsprechender Stärke für den Einsatz bei Temperaturen bis -20 °C. Die Fußbodenheizung sorgt für gleichmäßige Wärmeverteilung auf kleiner Fläche. Gäste buchen diese Häuser ebenso im Winter wie im Sommer – die Auslastung ist das ganze Jahr über stabil.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Im Premium-Modell des Cabin 8400 sind zusätzlich eine vollausgestattete Küche, ein Bad mit Dusche und Komposttoilette sowie Designmöbel aus Naturholz enthalten. Die Innenausstattung entspricht einem gehobenen Ferienstudio und ist auf die Erwartungen von Airbnb- und lokale Partner-Gästen ausgerichtet.
@@ -293,8 +292,8 @@ export default function TinyHouseKaufenPage() {
           <div className="max-w-3xl mb-12">
             <div className="space-y-4">
               {[
-                { nr: "01", title: "COC-Homologation & Fahrzeugbrief", desc: "Ein Tiny House kaufen ohne COC ist ein rechtliches Risiko. Nur mit gültigem Fahrzeugbrief (VIN/FIN) ist legaler Straßentransport, Kfz-Versicherung und §7g-Nutzung möglich. Solido-Häuser auf Vlemmix verfügen standardmäßig über EU-weite COC-Homologation." },
-                { nr: "02", title: "Winterfestigkeit & Ganzjahresbetrieb", desc: "Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf Mineralwolldämmung, Fußbodenheizung und Wärmerückgewinnung bestehen. Die Solido-Modelle sind für -20 °C ausgelegt und ganzjährig als Ferienunterkunft betreibbar." },
+                { nr: "01", title: "COC-Homologation & Fahrzeugbrief", desc: "Ein Tiny House kaufen ohne COC ist ein rechtliches Risiko. Nur mit gültigem Fahrzeugbrief (VIN/FIN) ist legaler Straßentransport, Kfz-Versicherung und §7g-Nutzung möglich. Unsere Häuser auf Vlemmix verfügen standardmäßig über EU-weite COC-Homologation." },
+                { nr: "02", title: "Winterfestigkeit & Ganzjahresbetrieb", desc: "Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf Mineralwolldämmung, Fußbodenheizung und Wärmerückgewinnung bestehen. Unsere Modelle sind für -20 °C ausgelegt und ganzjährig als Ferienunterkunft betreibbar." },
                 { nr: "03", title: "Genehmigung am Standort", desc: "Die Genehmigungspflicht hängt vom Bundesland und Nutzungszweck ab. Als mobiles Fahrzeug auf privatem Grund sind Tiny Houses auf Trailer oft genehmigungsfrei. Für gewerbliche Feriennutzung ist in den meisten Bundesländern eine Nutzungsänderung erforderlich. TinyInvest begleitet diesen Prozess." },
                 { nr: "04", title: "Betriebskonzept bei Investment", desc: "Wer das Tiny House kaufen und vermieten möchte, braucht ein professionelles Betriebskonzept: Buchungsplattform, Gästebetreuung, Reinigung, Check-in-Prozess. TinyInvest vermittelt das vollständig über lokale Partner – du hast nach dem Kauf keinen operativen Aufwand." },
               ].map((step) => (

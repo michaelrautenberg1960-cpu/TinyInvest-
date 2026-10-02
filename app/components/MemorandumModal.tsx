@@ -472,8 +472,8 @@ export default function MemorandumModal() {
                 </div>
 
                 <p className="text-[10px] text-gray-400 leading-relaxed">
-                  TinyInvest hält zu keinem Zeitpunkt Investorengelder. Der Investor kauft das Wirtschaftsgut
-                  direkt beim Hersteller. Dies ist kein Finanzprodukt i.S.d. KAGB.
+                  Direktkauf des Wirtschaftsguts bei TinyInvest. Der Kaufpreis wird ausschließlich für Ihr Haus verwendet –
+                  es werden keine Anlegergelder gebündelt oder verwaltet. Dies ist kein Finanzprodukt i.S.d. KAGB.
                 </p>
               </form>
             </>

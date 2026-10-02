@@ -193,8 +193,8 @@ export default async function MarktplatzPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-[11px] text-gray-400 leading-relaxed">
             * Alle IRR- und NPV-Angaben sind Projektionen auf Basis historischer Belegungsdaten von lokale Partner.
-            Sie stellen keine Garantie zukünftiger Renditen dar. Der Kauf erfolgt direkt beim Hersteller —
-            TinyInvest agiert als Plattform und Vermittler, nicht als Kapitalsammelstelle.
+            Sie stellen keine Garantie zukünftiger Renditen dar. Der Kauf erfolgt als Direktkauf bei TinyInvest —
+            der Kaufpreis fließt in Ihr Haus, TinyInvest ist keine Kapitalsammelstelle.
           </p>
         </div>
       </section>

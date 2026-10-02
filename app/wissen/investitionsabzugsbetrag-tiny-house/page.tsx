@@ -126,7 +126,7 @@ export default function InvestitionsabzugsbetragTinyHousePage() {
         "@type": "HowToStep",
         position: 3,
         name: "Tiny House innerhalb von 3 Jahren kaufen",
-        text: "Kaufe das Tiny House innerhalb von 3 Jahren nach IAB-Bildung. Im Kaufjahr wird der IAB gewinnerhöhend aufgelöst und mit dem Kaufpreis verrechnet. Der Kaufvertrag erfolgt direkt mit dem Hersteller (Solido auf Vlemmix Trailer mit VIN/FIN).",
+        text: "Kaufe das Tiny House innerhalb von 3 Jahren nach IAB-Bildung. Im Kaufjahr wird der IAB gewinnerhöhend aufgelöst und mit dem Kaufpreis verrechnet. Der Kaufvertrag erfolgt im Direktkauf bei TinyInvest (Tiny House auf Vlemmix-Trailer mit VIN/FIN).",
       },
       {
         "@type": "HowToStep",

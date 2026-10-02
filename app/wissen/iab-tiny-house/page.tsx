@@ -121,7 +121,7 @@ export default function IabTinyHousePage() {
         "@type": "HowToStep",
         "position": 3,
         "name": "Tiny House kaufen (innerhalb 3 Jahre)",
-        "text": "Du kaufst das Tiny House innerhalb von 3 Jahren nach IAB-Bildung. Im Kaufjahr wird der IAB aufgelöst und mit dem Kaufpreis verrechnet. Belege: Kaufvertrag direkt mit Hersteller (Vlemmix Trailer).",
+        "text": "Du kaufst das Tiny House innerhalb von 3 Jahren nach IAB-Bildung. Im Kaufjahr wird der IAB aufgelöst und mit dem Kaufpreis verrechnet. Belege: Kaufvertrag im Direktkauf bei TinyInvest (Tiny House auf Vlemmix-Trailer).",
       },
       {
         "@type": "HowToStep",
@@ -237,7 +237,7 @@ export default function IabTinyHousePage() {
               Das IAB Tiny House Modell ist 2026 attraktiver als je zuvor. Seit 2024 gilt die wiedereingeführte degressive AfA (30 %) – in Kombination mit IAB (50 % vorab) und Sonder-AfA (40 % im Kaufjahr) ergibt sich erstmals eine dreigliedrige Abschreibungsstruktur, die im Kaufjahr über 70 % des Kaufpreises steuerlich wirksam macht. Diese Kombination war vor 2024 nicht möglich.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-6">
-              Für Investoren, die 2026 planen: Die Lieferverfügbarkeit der Solido-Modelle auf Vlemmix-Trailer liegt aktuell bei 8–12 Wochen, was eine planbare Investition ermöglicht. Wer außerdem noch keinen IAB für 2025 gebildet hat, kann prüfen lassen ob das rückwirkend noch möglich ist – solange der Steuerbescheid 2025 noch nicht bestandskräftig ist.
+              Für Investoren, die 2026 planen: Die Lieferverfügbarkeit unserer Modelle auf Vlemmix-Trailer liegt aktuell bei 8–12 Wochen, was eine planbare Investition ermöglicht. Wer außerdem noch keinen IAB für 2025 gebildet hat, kann prüfen lassen ob das rückwirkend noch möglich ist – solange der Steuerbescheid 2025 noch nicht bestandskräftig ist.
             </p>
             <div className="grid grid-cols-3 gap-4">
               {[

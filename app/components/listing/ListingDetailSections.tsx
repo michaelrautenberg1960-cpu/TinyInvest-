@@ -97,8 +97,8 @@ export function ListingDetailSections({ listing }: { listing: Listing }) {
         <p className="font-semibold text-gray-700 mb-1.5">⚠️ Hinweis & Disclaimer</p>
         <p>
           Alle IRR- und NPV-Angaben sind Projektionen auf Basis historischer Belegungsdaten von lokale Partner.
-          Sie stellen keine Garantie zukünftiger Renditen dar. TinyInvest agiert als Plattform und Vermittler,
-          nicht als Kapitalsammelstelle.
+          Sie stellen keine Garantie zukünftiger Renditen dar. Der Kauf erfolgt als Direktkauf bei TinyInvest;
+          TinyInvest ist keine Kapitalsammelstelle.
         </p>
       </div>
     </>

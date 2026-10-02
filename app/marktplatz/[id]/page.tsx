@@ -156,7 +156,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
                 <span className="text-green-600">✓</span> §7g-fähige Assets
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="text-green-600">✓</span> Direkt beim Hersteller
+                <span className="text-green-600">✓</span> Direktkauf bei TinyInvest
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="text-green-600">✓</span> Vollautomatisch bewirtschaftet
@@ -216,7 +216,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
             {/* Trust badges */}
             <div className="rounded-xl border border-gray-200 bg-white p-4 text-xs text-gray-500 space-y-1.5">
               <div className="flex items-center gap-1.5"><span className="text-green-600">✓</span> §7g-fähige Assets</div>
-              <div className="flex items-center gap-1.5"><span className="text-green-600">✓</span> Direkt beim Hersteller</div>
+              <div className="flex items-center gap-1.5"><span className="text-green-600">✓</span> Direktkauf bei TinyInvest</div>
               <div className="flex items-center gap-1.5"><span className="text-green-600">✓</span> Vollautomatisch bewirtschaftet</div>
             </div>
             <BackButton />

@@ -58,7 +58,7 @@ const faqItems = [
   {
     question: "Ist ein Tiny House für Senioren barrierefrei?",
     answer:
-      "Moderne Tiny Houses auf Vlemmix-Trailer können mit ebenem Eingang, bodengleicher Dusche und breiten Türöffnungen gebaut werden. Individuelle Anpassungen sind möglich. Sprechen Sie uns im Beratungsgespräch auf barrierefreie Ausstattungsoptionen an — wir koordinieren die Anforderungen direkt mit dem Hersteller.",
+      "Moderne Tiny Houses auf Vlemmix-Trailer können mit ebenem Eingang, bodengleicher Dusche und breiten Türöffnungen gebaut werden. Individuelle Anpassungen sind möglich. Sprechen Sie uns im Beratungsgespräch auf barrierefreie Ausstattungsoptionen an — wir setzen die Anforderungen für Sie um.",
   },
   {
     question: "Was passiert mit dem Tiny House, wenn ich pflegebedürftig werde?",
@@ -315,7 +315,7 @@ export default function SeniorenPage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">So einfach geht's</h2>
           <div className="grid sm:grid-cols-3 gap-5 mb-12">
             {[
-              { step: "1", title: "Objekt auswählen", desc: "Wählen Sie ein verfügbares Projekt auf dem Marktplatz. Ab 65.000 €, direkt beim Hersteller gekauft." },
+              { step: "1", title: "Objekt auswählen", desc: "Wählen Sie ein verfügbares Projekt auf dem Marktplatz. Ab 74.700 € netto, im Direktkauf bei TinyInvest." },
               { step: "2", title: "Entscheidung treffen", desc: "Vermieten mit lokale Partner (monatliche Auszahlung) — oder selbst einziehen mit Genehmigung am Wunschstandort." },
               { step: "3", title: "Genießen", desc: "Ob Einnahmen auf dem Konto oder das Gefühl, in der Natur zu wohnen — Sie genießen, wir kümmern uns um den Rest." },
             ].map((item) => (

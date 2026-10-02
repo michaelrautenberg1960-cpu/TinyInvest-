@@ -44,7 +44,7 @@ const paths = [
 const timeline = [
   { phase: "Woche 1", title: "Erstberatung & Factsheet", desc: "Kostenfreies Gespräch · Steuer-Factsheet für deinen Steuerberater", icon: "💬" },
   { phase: "Woche 2–4", title: "IAB-Bildung & Freigabe", desc: "Steuerberater prüft und bildet den IAB · Finanzamt-Rückzahlung initiiert", icon: "📋" },
-  { phase: "Woche 4–6", title: "Kaufvertrag & Anzahlung", desc: "Direkt mit dem Hersteller · TinyInvest vermittelt, verwaltet, betreut", icon: "✍️" },
+  { phase: "Woche 4–6", title: "Kaufvertrag & Anzahlung", desc: "Direktkauf bei TinyInvest · wir begleiten, verwalten, betreuen", icon: "✍️" },
   { phase: "Woche 8–16", title: "Produktion & Lieferung", desc: "Individuelle Konfiguration · Vlemmix-Trailer-Zertifizierung · Übergabe EU-weit", icon: "🏗️" },
   { phase: "Ab Lieferung", title: "Betrieb & Auszahlung", desc: "lokale Partner übernimmt Hosting · 40 % monatlich automatisch ausgezahlt", icon: "💶" },
 ];
