@@ -421,6 +421,7 @@ export default function MemorandumModal() {
                         <option>Ja, für 2023</option>
                         <option>Ja, für 2024</option>
                         <option>Ja, für 2025</option>
+                        <option>Ja, für 2026 / geplant</option>
                         <option>Weiß ich nicht / mit Steuerberater klären</option>
                       </select>
                     </div>

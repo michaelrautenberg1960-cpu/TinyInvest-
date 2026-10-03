@@ -260,7 +260,7 @@ Wer im Formular „Host-Bewerbung (Standort / Grundstück)“ wählt, bekommt st
 
 Jede Anfrage schickt eine Mail an `RESEND_TO` (Popup: nach Schritt 1 und nach Schritt 2). Sie enthält Kontaktdaten, Modell, Standort, Anzahl Häuser und die IAB-Angabe.
 
-**IAB-Frage (§ 7g):** Popup-Schritt 2 fragt, ob und für welches Jahr bereits ein Investitionsabzugsbetrag gebildet wurde. Die Investitionsfrist (31.12. des dritten Folgejahres) wird berechnet und in Admin-Mail und Lead-Nachricht gespeichert. Läuft die Frist im aktuellen Jahr ab, zeigt die Admin-Mail einen gelben Hinweis „zuerst anrufen“. Die Jahresauswahl (aktuell 2023–2025) muss jährlich nachgezogen werden.
+**IAB-Frage (§ 7g):** Popup-Schritt 2 fragt, ob und für welches Jahr bereits ein Investitionsabzugsbetrag gebildet wurde. Die Investitionsfrist (31.12. des dritten Folgejahres) wird berechnet und in Admin-Mail und Lead-Nachricht gespeichert. Läuft die Frist im aktuellen Jahr ab, zeigt die Admin-Mail einen gelben Hinweis „zuerst anrufen“. Die Jahresauswahl (aktuell 2023–2026) muss jährlich nachgezogen werden.
 
 ### Preise & Texte pflegen
 
