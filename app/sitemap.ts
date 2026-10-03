@@ -72,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/tiny-house-als-kapitalanlage`,
-      lastModified: "2026-05-15",
+      lastModified: "2026-10-03",
       changeFrequency: "monthly",
       priority: 1.0,
     },

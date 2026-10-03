@@ -7,11 +7,11 @@ import Script from "next/script";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Tiny House kaufen als Investment 2026: So funktioniert es | TinyInvest",
+  title: "Tiny House als Kapitalanlage & Investment 2026: Rendite & §7g | TinyInvest",
   description:
-    "Tiny House als Investment kaufen: Schritt-für-Schritt-Anleitung, Investor-Profile, 4-Schritte-Prozess und Rechenbeispiel. Ab 65.000 €, §7g-optimiert, über lokale Partner bewirtschaftet.",
+    "Tiny House als Kapitalanlage: ab 74.700 € netto, ~14 % Mietrendite, §7g-Steuervorteil und Bewirtschaftung über lokale Partner. Ablauf, Rechenbeispiel & Risiken.",
   keywords:
-    "tiny house kaufen investment, tiny house investieren 2026, tiny house als rendite objekt, ferienhaus investment kaufen, tiny house investor werden, §7g investment",
+    "tiny house kapitalanlage, tiny house als kapitalanlage, tiny house investment, tiny house kaufen investment, tiny house investieren 2026, tiny house investor werden, §7g investment",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: {
     canonical: "https://tinyhouse.investments/tiny-house-als-kapitalanlage",
@@ -19,9 +19,9 @@ export const metadata = {
   openGraph: {
     ...BASE_OG,
     type: "article",
-    title: "Tiny House als Investment kaufen 2026 – Der Praxis-Guide",
+    title: "Tiny House als Kapitalanlage 2026 – Der Investment-Guide",
     description:
-      "Wie kauft man ein Tiny House als Investment? Investor-Profile, 4-Schritte-Prozess und Rechenbeispiel. über lokale Partner bewirtschaftet.",
+      "Lohnt sich ein Tiny House als Kapitalanlage? Preise, Rendite, §7g-Steuereffekt, 4-Schritte-Prozess und Risiken. Über lokale Partner bewirtschaftet.",
     url: "https://tinyhouse.investments/tiny-house-als-kapitalanlage",
   },
 };
@@ -45,7 +45,7 @@ const faqItems = [
   {
     question: "Welche steuerlichen Vorteile gibt es?",
     answer:
-      "Da Tiny Houses auf zertifizierten Trailern als bewegliche Wirtschaftsgüter gelten, greift §7g EStG: IAB (50 % im Vorjahr), Sonder-AfA (40 %) + degressive AfA (30 %) im Kaufjahr. Angestellte können über eine einfache Nebengewerbe-Anmeldung ebenfalls den IAB nutzen. Bei 80.000 € Investment und 42 % Steuersatz: bis zu ~33.000 € Liquiditätsvorteil im Jahr 1.",
+      "Da Tiny Houses auf zertifizierten Trailern als bewegliche Wirtschaftsgüter gelten, greift §7g EStG: IAB (50 % im Vorjahr), Sonder-AfA (40 %) + degressive AfA (30 %) auf den Restwert im Kaufjahr. Angestellte können über eine einfache Nebengewerbe-Anmeldung ebenfalls den IAB nutzen. Beim On-Grid-Modell (74.700 € netto) und 42 % Steuersatz: rund 26.700 € Steuerersparnis in Vorjahr und Kaufjahr (IAB ≈ 15.700 € + AfA ≈ 11.000 €).",
   },
   {
     question: "Für wen lohnt sich das Investment am meisten?",
@@ -55,7 +55,22 @@ const faqItems = [
   {
     question: "Kann ich mehrere Tiny Houses kaufen?",
     answer:
-      "Ja. Da der Einstiegspreis ab 65.000 € liegt, können Investoren mit dem Kapital einer einzigen Eigentumswohnung (300.000–500.000 €) 4–7 Tiny Houses kaufen und ihr Risiko auf mehrere Standorte und Betreiber verteilen. Jedes Objekt hat einen eigenen §7g-Effekt und generiert eigenständige Mieteinnahmen.",
+      "Ja. Da der Einstiegspreis bei 74.700 € netto liegt, können Investoren mit dem Kapital einer einzigen Eigentumswohnung (300.000–500.000 €) 4–6 Tiny Houses kaufen und ihr Risiko auf mehrere Standorte und Betreiber verteilen. Jedes Objekt hat einen eigenen §7g-Effekt und generiert eigenständige Mieteinnahmen.",
+  },
+  {
+    question: "Was kostet ein Tiny House als Kapitalanlage?",
+    answer:
+      "Das Escape 660 kostet als On-Grid-Modell 74.700 € netto (88.893 € brutto) und als Off-Grid-Modell 83.400 € netto (99.246 € brutto). Der Komplettpreis enthält das voll ausgestattete Haus, Transport ab Werk zum Standort, Innenausstattung sowie Grundstücksvorbereitung und Aufstellung vor Ort. Grundstückskauf, Grunderwerbsteuer und Notarkosten fallen nicht an.",
+  },
+  {
+    question: "Ist ein Tiny House eine sichere Kapitalanlage?",
+    answer:
+      "Ein Tiny House ist ein Sachwert in deinem Eigentum – kein Fondsanteil und kein Nachrangdarlehen. Es kann versetzt, verkauft oder neu betrieben werden. Risikofrei ist es trotzdem nicht: Belegung, Betreiberqualität, Wiederverkaufswert und mögliche Änderungen im Steuerrecht beeinflussen die Rendite. Wer mehrere Häuser an verschiedenen Standorten kauft, streut dieses Risiko.",
+  },
+  {
+    question: "Kann ich ein Tiny House als Kapitalanlage finanzieren?",
+    answer:
+      "Ja. Viele Investoren kombinieren Eigenkapital mit einem Investitions- oder Ratenkredit. Die IAB-Steuererstattung aus dem Vorjahr kann dabei als zusätzliches Eigenkapital dienen, die monatlichen Mieteinnahmen decken einen Teil der Rate. Die passende Struktur hängt von Einkommen und Steuersituation ab und sollte mit Bank und Steuerberater abgestimmt werden.",
   },
 ];
 
@@ -73,11 +88,11 @@ export default function TinyHouseKapitalanlagePage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Tiny House als Kapitalanlage 2026: Lohnt es sich?",
+    headline: "Tiny House als Kapitalanlage: Lohnt es sich wirklich?",
     author: { "@type": "Person", name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     publisher: { "@type": "Organization", name: "TinyInvest", logo: { "@type": "ImageObject", url: "https://tinyhouse.investments/logo1.png" } },
     datePublished: "2026-04-13",
-    dateModified: "2026-05-15",
+    dateModified: "2026-10-03",
     image: { "@type": "ImageObject", url: "https://tinyhouse.investments/images/outside/tiny-house-investor-aussen.webp" },
   };
 
@@ -119,14 +134,14 @@ export default function TinyHouseKapitalanlagePage() {
               <span>·</span>
               <span>TinyInvest Redaktion</span>
               <span>·</span>
-              <time dateTime="2026-05-15">15. Mai 2026</time>
+              <time dateTime="2026-10-03">Aktualisiert am 3. Oktober 2026</time>
             </div>
           </div>
 
           {/* Key stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
             {[
-              { value: "Ab 65.000 €", label: "Einstieg" },
+              { value: "Ab 74.700 €", label: "Einstieg (netto)" },
               { value: "12–14 %", label: "IRR p.a." },
               { value: "40 %", label: "Investor-Anteil" },
               { value: "0 €", label: "Kaufnebenkosten" },
@@ -139,8 +154,8 @@ export default function TinyHouseKapitalanlagePage() {
           </div>
 
           <p className="text-gray-500 text-[15px] leading-relaxed mb-6 max-w-2xl">
-            In ein Tiny House investieren heißt: Du kaufst ein physisches Objekt – kein Fondsanteil. Ein Betreiber vermietet es für dich.
-            Du erhältst 40 % der Einnahmen monatlich und sparst im ersten Jahr bis zu 33.000 € Steuern über §7g EStG.
+            Ein Tiny House als Kapitalanlage heißt: Du kaufst ein physisches Objekt – keinen Fondsanteil. Ein lokaler Partner vermietet es für dich.
+            Du erhältst 40 % der Einnahmen monatlich und sparst über §7g EStG in Vorjahr und Kaufjahr rund 26.700 € Steuern (On-Grid, 42 % Steuersatz).
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -177,7 +192,7 @@ export default function TinyHouseKapitalanlagePage() {
             <Link href="/wissen/kapitalanlage" className="text-green-700 font-semibold hover:underline">detaillierten Kapitalanlage-Guide →</Link>
           </p>
           <p className="text-gray-700 text-base leading-relaxed">
-            Auf dieser Seite geht es um die praktische Seite: Wer kauft, wie läuft der Prozess ab, was passiert nach dem Kauf — und warum sind die laufenden Kosten für den Investor so niedrig? Das Modell funktioniert nur, weil drei Parteien klar definierte Interessen haben: Du als Eigentümer willst Rendite. Der Host will ein Haus mit Gästen. lokale Partner will eine funktionierende Plattform. Wenn alle drei gewinnen, hält das System.
+            Auf dieser Seite geht es um die praktische Seite: Wer kauft, wie läuft der Prozess ab, was passiert nach dem Kauf — und warum sind die laufenden Kosten für den Investor so niedrig? Das Modell funktioniert nur, weil drei Parteien klar definierte Interessen haben: Du als Eigentümer willst Rendite. Der Host will ein Haus mit Gästen. TinyInvest will eine funktionierende Plattform. Wenn alle drei gewinnen, hält das System.
           </p>
         </div>
       </section>
@@ -216,11 +231,11 @@ export default function TinyHouseKapitalanlagePage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50">
                   {[
-                    ["Einstiegspreis", "300.000–500.000 €", "ab 65.000 €"],
+                    ["Einstiegspreis", "300.000–500.000 €", "ab 74.700 € netto"],
                     ["Kaufnebenkosten", "10–15 % (Notar, GrESt, Makler)", "Keine"],
                     ["Mietrendite brutto", "3–5 % p.a.", "12–14 % IRR p.a."],
                     ["Abschreibung", "2 % über 50 Jahre", "§7g: bis 70 % im Kaufjahr"],
-                    ["Bewirtschaftung", "Eigenregie / Hausverwaltung", "Betrieb über lokale Partner (lokale Partner)"],
+                    ["Bewirtschaftung", "Eigenregie / Hausverwaltung", "Betrieb über lokale Partner"],
                     ["Flexibilität", "Ortsgebunden", "EU-weit versetzbar"],
                   ].map(([m, etw, tiny]) => (
                     <tr key={m} className="hover:bg-gray-50/50">
@@ -242,7 +257,7 @@ export default function TinyHouseKapitalanlagePage() {
 
           <div className="mt-10 space-y-4 text-gray-700 text-[15px] leading-relaxed">
             <p>
-              Was die Tabelle nicht zeigt: Der echte Vorteil liegt nicht in der Brutto-Mietrendite, sondern im <strong className="text-gray-900">Zusammenspiel aus Sofortabschreibung und laufendem Cashflow</strong>. Bei einer Eigentumswohnung schreibst du das Gebäude mit 2 % über 50 Jahre ab — steuerlich kaum relevant für den aktiven Investor. Beim Tiny House werden im Kaufjahr bis zu 70 % des Kaufpreises steuerlich wirksam. Das bedeutet: Wer 80.000 € investiert und 42 % Einkommensteuer zahlt, bekommt im ersten Jahr rund 23.000 € vom Finanzamt zurück — zusätzlich zu den laufenden Mieteinnahmen.
+              Was die Tabelle nicht zeigt: Der echte Vorteil liegt nicht in der Brutto-Mietrendite, sondern im <strong className="text-gray-900">Zusammenspiel aus Sofortabschreibung und laufendem Cashflow</strong>. Bei einer Eigentumswohnung schreibst du das Gebäude mit 2 % über 50 Jahre ab — steuerlich kaum relevant für den aktiven Investor. Beim Tiny House wirken IAB (50 % im Vorjahr) sowie Sonder-AfA und degressive AfA auf den Restwert im Kaufjahr zusammen. Das bedeutet: Wer ein On-Grid-Modell für 74.700 € netto kauft und 42 % Einkommensteuer zahlt, bekommt in Vorjahr und Kaufjahr rund 26.700 € vom Finanzamt zurück — zusätzlich zu den laufenden Mieteinnahmen.
             </p>
             <p>
               Hinzu kommt ein Faktor, den klassische Immobilienkäufer oft vergessen: <strong className="text-gray-900">keine Kaufnebenkosten</strong>. Grunderwerbsteuer (3,5–6,5 %), Notargebühren (~1,5 %), Grundbucheintrag (~0,5 %) und oft Makler (~3,57 %) summieren sich bei einer 300.000 €-ETW auf 25.000–35.000 € — Kapital, das sofort verloren ist und nie Rendite bringt. Beim Tiny House entfällt das vollständig.
@@ -264,20 +279,20 @@ export default function TinyHouseKapitalanlagePage() {
               {
                 icon: "💰",
                 title: "Niedriger Einstieg",
-                kpi: "Ab 65.000 €",
-                desc: "Kein Grundstück, keine Grunderwerbsteuer, kein Notar. Die Kaufnebenkosten einer Berliner ETW (~50.000 €) reichen für ein komplettes Tiny House.",
+                kpi: "Ab 74.700 €",
+                desc: "Kein Grundstück, keine Grunderwerbsteuer, kein Notar. Der Komplettpreis enthält Transport, Aufstellung und Innenausstattung – allein die Kaufnebenkosten einer Berliner ETW liegen bei ~50.000 €.",
               },
               {
                 icon: "🏛️",
                 title: "§7g Steuerbonus",
-                kpi: "≈ 33.000 € Jahr 1",
-                desc: "IAB (50 % Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %): bis zu 70 % im Kaufjahr absetzbar. Senkt deinen effektiven Kapitaleinsatz drastisch.",
+                kpi: "≈ 26.700 €",
+                desc: "IAB (50 % Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %) auf den Restwert im Kaufjahr. Senkt deinen effektiven Kapitaleinsatz auf rund 48.000 € (On-Grid, 42 % Steuersatz).",
               },
               {
                 icon: "📈",
                 title: "Passiver Cashflow",
                 kpi: "~875 €/Monat",
-                desc: "Du erhältst 40 % aller Mieteinnahmen monatlich. lokale Partner übernimmt alles: Buchung, Gäste, Reinigung, Check-in – du musst nichts tun.",
+                desc: "Du erhältst 40 % aller Mieteinnahmen monatlich. Lokale Partner übernehmen alles: Buchung, Gäste, Reinigung, Check-in – du musst nichts tun.",
               },
             ].map((item) => (
               <div key={item.title} className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
@@ -420,7 +435,7 @@ export default function TinyHouseKapitalanlagePage() {
               {
                 step: "04",
                 title: "Auszahlung startet",
-                desc: "lokale Partner und/oder ein lokaler Partner übernimmt Betrieb, Buchungen, Gäste und Wartung. Du erhältst monatlich 40 % der Nettomieteinnahmen.",
+                desc: "Ein lokaler Partner übernimmt Betrieb, Buchungen, Gäste und Wartung. Du erhältst monatlich 40 % der Nettomieteinnahmen.",
               },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-5 bg-white">
@@ -456,7 +471,7 @@ export default function TinyHouseKapitalanlagePage() {
           <div className="text-center mb-8">
             <span className="text-green-400 font-semibold text-xs uppercase tracking-widest">Rechenbeispiel</span>
             <h2 className="text-2xl font-black text-white mt-2 tracking-tight">
-              TinyInvest Escape · 79.000 € · 60 % Belegung
+              Escape 660 On-Grid · 74.700 € netto · 60 % Belegung
             </h2>
           </div>
 
@@ -466,8 +481,8 @@ export default function TinyHouseKapitalanlagePage() {
               { label: "Host-Anteil (45 %)", value: "– 986 €", bold: false },
               { label: "Plattform-Fee (15 %)", value: "– 329 €", bold: false },
               { label: "💰 Investor-Auszahlung (40 %)", value: "875 €/Monat", bold: true },
-              { label: "Rendite auf Kaufpreis (vor Steuer)", value: "~13,3 % p.a.", bold: false },
-              { label: "Effektive Rendite (mit §7g)", value: "~14–16 % p.a.", bold: true },
+              { label: "Rendite auf Kaufpreis (vor Steuer)", value: "~14,1 % p.a.", bold: false },
+              { label: "§7g-Steuereffekt (Vorjahr + Kaufjahr, 42 %)", value: "≈ 26.700 €", bold: true },
             ].map((row) => (
               <div key={row.label} className={`flex justify-between py-3 border-b border-white/10 ${row.bold ? "text-green-400 font-bold text-base" : "text-gray-300 text-[13px]"}`}>
                 <span>{row.label}</span>
@@ -479,11 +494,11 @@ export default function TinyHouseKapitalanlagePage() {
           <div className="grid grid-cols-3 gap-3 mb-8">
             <div className="bg-white/10 rounded-xl p-4 text-center">
               <p className="text-gray-400 text-[10px] mb-1">Kaufpreis</p>
-              <p className="font-data text-xl font-black text-white">79.000 €</p>
+              <p className="font-data text-xl font-black text-white">74.700 €</p>
             </div>
             <div className="bg-white/10 rounded-xl p-4 text-center">
               <p className="text-gray-400 text-[10px] mb-1">Effektiv nach IAB</p>
-              <p className="font-data text-xl font-black text-green-400">≈ 62.000 €</p>
+              <p className="font-data text-xl font-black text-green-400">≈ 59.000 €</p>
             </div>
             <div className="bg-green-600 rounded-xl p-4 text-center">
               <p className="text-green-200 text-[10px] mb-1">IRR p.a.</p>
@@ -493,6 +508,66 @@ export default function TinyHouseKapitalanlagePage() {
 
           <p className="text-[11px] text-gray-500 text-center">
             ⚠ Projektion auf Basis historischer Daten – keine Garantie. Steuerberater konsultieren.
+          </p>
+        </div>
+      </section>
+
+      {/* ── ON-GRID VS. OFF-GRID ── */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Preise 2026</span>
+          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-3 tracking-tight">
+            On-Grid oder Off-Grid: Welche Variante als Kapitalanlage?
+          </h2>
+          <p className="text-gray-500 text-sm mb-8 max-w-2xl">
+            Das Escape 660 gibt es in zwei Varianten. Beide sind §7g-fähig und werden zum Festpreis inklusive Transport und Aufstellung geliefert.
+          </p>
+
+          <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm mb-6">
+            <div className="overflow-x-auto">
+              <table className="w-full text-[13px]">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-100">
+                    <th className="text-left p-4 font-semibold text-gray-400 text-[11px] uppercase">Modell</th>
+                    <th className="p-4 font-semibold text-gray-400 text-[11px] uppercase text-right">Netto</th>
+                    <th className="p-4 font-semibold text-gray-400 text-[11px] uppercase text-right">MwSt.</th>
+                    <th className="p-4 font-semibold text-gray-400 text-[11px] uppercase text-right">Brutto</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-50">
+                  {[
+                    ["Escape 660 On-Grid", "74.700 €", "14.193 €", "88.893 €"],
+                    ["Escape 660 Off-Grid", "83.400 €", "15.846 €", "99.246 €"],
+                  ].map(([modell, netto, mwst, brutto]) => (
+                    <tr key={modell}>
+                      <td className="p-4 font-medium text-gray-700">{modell}</td>
+                      <td className="p-4 text-right font-data font-bold text-green-700">{netto}</td>
+                      <td className="p-4 text-right font-data text-gray-500">{mwst}</td>
+                      <td className="p-4 text-right font-data text-gray-500">{brutto}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+            <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+              <h3 className="font-black text-gray-900 text-[15px] mb-2">On-Grid</h3>
+              <p className="text-gray-500 text-[13px] leading-relaxed">
+                Günstigster Einstieg mit der höchsten Rendite auf den Kaufpreis. Setzt einen vorhandenen Netzanschluss am Standort voraus – das prüfen wir pro Grundstück vor der Bestellung.
+              </p>
+            </div>
+            <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+              <h3 className="font-black text-gray-900 text-[15px] mb-2">Off-Grid</h3>
+              <p className="text-gray-500 text-[13px] leading-relaxed">
+                Solarbetrieb. Off-Grid-Modelle sind flexibler in der Standortwahl – sinnvoll, wenn der Wunschstandort keinen Netzanschluss hat oder du dir spätere Standortwechsel offenhalten willst.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-gray-700 text-[15px] leading-relaxed">
+            <strong className="text-gray-900">Im Komplettpreis enthalten:</strong> voll ausgestattetes Haus mit Klimaanlage und Kassettentoilette, Transport ab Werk zum Standort, Innenausstattung (Bettwäsche, Geschirr, Wechselwäsche), Schlafsofa, Tisch und Stühle sowie Grundstücksvorbereitung und Vor-Ort-Service (Wasser- und Abwasseranschluss, Aufstellung, Bodenanpassung).
           </p>
         </div>
       </section>
@@ -519,11 +594,13 @@ export default function TinyHouseKapitalanlagePage() {
           <h2 className="text-2xl font-black text-gray-900 mt-2 mb-6 tracking-tight">
             Risiken – ehrlich genannt
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { icon: "📉", title: "Leerstand", desc: "Belegung kann schwanken. Wirtschaftliche Abschwünge oder Standortprobleme beeinflussen die Einnahmen." },
               { icon: "⚖️", title: "Steuerrechtsänderung", desc: "§7g EStG kann geändert werden. Die aktuelle Förderung gilt bis auf Weiteres – keine Garantie." },
-              { icon: "🚛", title: "Betreiberrisiko", desc: "Die Rendite hängt von lokale Partner ab. Als Eigentümer kannst du das Haus im Notfall herausverlangen." },
+              { icon: "🚛", title: "Betreiberrisiko", desc: "Die Rendite hängt von der Arbeit des lokalen Partners ab. Als Eigentümer kannst du das Haus im Notfall herausverlangen." },
+              { icon: "🏷️", title: "Wiederverkaufswert", desc: "Ein Tiny House verliert über die Jahre an Wert. Der Verkaufspreis hängt von Zustand, Nachfrage und Markt ab – eine Wertsteigerung wie bei Grundstücken ist nicht zu erwarten." },
+              { icon: "📍", title: "Standort & Genehmigung", desc: "Ob und wie lange ein Haus an einem Standort vermietet werden darf, regeln Gemeinde und Bauordnung. Ändert sich das, muss das Haus versetzt werden." },
             ].map((r) => (
               <div key={r.title} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
                 <span className="text-2xl mb-3 block">{r.icon}</span>
@@ -531,6 +608,18 @@ export default function TinyHouseKapitalanlagePage() {
                 <p className="text-gray-500 text-[13px] leading-relaxed">{r.desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="flex flex-wrap gap-x-6 gap-y-2 mt-6 text-[13px]">
+            <Link href="/wissen/tiny-house-genehmigung" className="text-green-700 font-semibold hover:underline">
+              → Genehmigung & Standortrecht
+            </Link>
+            <Link href="/wissen/tiny-house-steuer-risiken" className="text-green-700 font-semibold hover:underline">
+              → Steuerliche Risiken im Detail
+            </Link>
+            <Link href="/wissen/tiny-house-finanzierung" className="text-green-700 font-semibold hover:underline">
+              → Tiny House finanzieren
+            </Link>
           </div>
         </div>
       </section>
