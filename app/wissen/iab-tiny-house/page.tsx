@@ -339,10 +339,10 @@ export default function IabTinyHousePage() {
             ))}
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
-            <h3 className="text-xl font-black mb-3">IAB-Analyse für deine Steuersituation</h3>
-            <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">Wir stellen dir das IAB-Factsheet zusammen, das dein Steuerberater für die Beantragung braucht – kostenlos und unverbindlich.</p>
+            <h3 className="text-xl font-black mb-3">Tiny House mit IAB kaufen: Unterlagen & Liefertermin</h3>
+            <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">Wir senden dir Produktunterlagen, Preise und unser allgemeines Steuer-Factsheet zum Escape 660, das du mit deinem Steuerberater besprechen kannst – kostenlos und unverbindlich. Ob und wie der IAB in deinem Fall greift, prüft dein Steuerberater.</p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">IAB-Factsheet anfordern →</ModalButton>
+              <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">Unterlagen anfordern →</ModalButton>
               <Link href="/rechner/iab" className="border border-white/20 text-white hover:border-green-400 hover:text-green-400 font-semibold px-6 py-3.5 rounded-full text-sm transition-all">IAB-Rechner →</Link>
             </div>
           </div>

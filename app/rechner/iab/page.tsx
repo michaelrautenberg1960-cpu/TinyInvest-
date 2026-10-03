@@ -132,7 +132,7 @@ export default function IABRechnerPage() {
               {
                 num: "01",
                 title: "Kaufpreis eingeben",
-                desc: "Gib den geplanten Kaufpreis deines Tiny Houses ein (ab 65.000 € für das Comfort-Modell).",
+                desc: "Gib den geplanten Kaufpreis deines Tiny Houses ein (z. B. 74.700 € netto für das Escape 660 On-Grid).",
               },
               {
                 num: "02",
@@ -191,13 +191,13 @@ export default function IABRechnerPage() {
 
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
             <p className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold mb-3">Nächster Schritt</p>
-            <h3 className="text-xl font-black mb-3">Persönliche §7g-Analyse anfordern</h3>
+            <h3 className="text-xl font-black mb-3">Unterlagen für das Gespräch mit deinem Steuerberater</h3>
             <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">
-              Wir stellen dir das Steuer-Factsheet zusammen, das dein Steuerberater braucht – kostenlos.
+              Wir senden dir Produktunterlagen, Preise und unser allgemeines Steuer-Factsheet zum Escape 660 – kostenlos. Ob und wie §7g in deinem Fall greift, klärt dein Steuerberater.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">
-                🔐 Steuer-Factsheet anfordern →
+                🔐 Unterlagen anfordern →
               </ModalButton>
               <Link href="/marktplatz" className="border border-white/20 text-white hover:border-green-400 hover:text-green-400 font-semibold px-6 py-3.5 rounded-full text-sm transition-all">
                 Projekte ansehen →
