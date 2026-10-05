@@ -1,24 +1,43 @@
 import { MetadataRoute } from "next";
+import { supabase } from "@/app/lib/supabase";
 
 const BASE_URL = "https://tinyhouse.investments";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Regenerate hourly so new marketplace listings show up without a redeploy.
+export const revalidate = 3600;
+
+async function listingEntries(): Promise<MetadataRoute.Sitemap> {
+  try {
+    const { data, error } = await supabase.from("listings").select("id");
+    if (error) throw error;
+    return (data ?? []).map((l) => ({
+      url: `${BASE_URL}/marktplatz/${l.id}`,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    }));
+  } catch (err) {
+    console.error("[sitemap] listings", err);
+    return [];
+  }
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
       url: BASE_URL,
-      lastModified: "2026-05-14",
+      lastModified: "2026-10-03",
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/marktplatz`,
-      lastModified: "2026-06-09",
+      lastModified: "2026-10-02",
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/so-funktioniert-es`,
-      lastModified: "2026-03-01",
+      lastModified: "2026-10-02",
       changeFrequency: "monthly",
       priority: 0.8,
     },
@@ -30,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/steuervorteil`,
-      lastModified: "2026-04-13",
+      lastModified: "2026-06-10",
       changeFrequency: "monthly",
       priority: 0.8,
     },
@@ -48,13 +67,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/impressum`,
-      lastModified: "2026-03-01",
+      lastModified: "2026-09-03",
       changeFrequency: "yearly",
       priority: 0.2,
     },
     {
       url: `${BASE_URL}/datenschutz`,
-      lastModified: "2026-03-01",
+      lastModified: "2026-06-25",
       changeFrequency: "yearly",
       priority: 0.2,
     },
@@ -66,7 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/wissen`,
-      lastModified: "2026-04-14",
+      lastModified: "2026-10-03",
       changeFrequency: "weekly",
       priority: 0.8,
     },
@@ -120,13 +139,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/konfigurator`,
-      lastModified: "2026-04-13",
+      lastModified: "2026-09-29",
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/rechner/iab`,
-      lastModified: "2026-04-13",
+      lastModified: "2026-10-03",
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -180,19 +199,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/wissen/iab-tiny-house`,
-      lastModified: "2026-06-13",
+      lastModified: "2026-10-03",
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/wissen/investitionsabzugsbetrag-tiny-house`,
-      lastModified: "2026-05-28",
+      lastModified: "2026-10-02",
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/wissen/tiny-house-steuern-sparen`,
-      lastModified: "2026-04-15",
+      lastModified: "2026-10-02",
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -222,7 +241,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/wissen/tiny-house-kaufen`,
-      lastModified: "2026-04-29",
+      lastModified: "2026-10-02",
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -240,7 +259,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/wissen/senioren`,
-      lastModified: "2026-05-15",
+      lastModified: "2026-10-02",
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -298,5 +317,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
+    ...(await listingEntries()),
   ];
 }
