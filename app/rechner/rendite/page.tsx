@@ -29,7 +29,7 @@ const faqItems = [
   {
     question: "Was berechnet der Tiny House Rendite-Rechner?",
     answer:
-      "Der Rechner berechnet deinen monatlichen Cashflow (40 % der Mieteinnahmen), den jährlichen Ertrag und die IRR (Internal Rate of Return) über 5 Jahre – inklusive §7g Steuereffekten. Du kannst Kaufpreis, Belegungsquote, Nächtigungspreis und Steuersatz anpassen.",
+      "Der Rechner zeigt die vollständige Aufschlüsselung: Umsatz, Abzug der Stellplatzpacht (2.500 €/Jahr), Host-Anteil (45 %), Plattform (15 %) und deine Auszahlung (40 % vom Rest). Dazu kommen jährlicher Ertrag, Rendite vor Steuern und der §7g-Steuereffekt. Du kannst Modell, Belegungsquote, Nachtpreis und Steuersatz anpassen.",
   },
   {
     question: "Was bedeutet IRR bei einem Tiny House Investment?",
@@ -106,7 +106,7 @@ export default function RenditeRechnerPage() {
             <strong className="text-gray-700">§7g Steuereffekte</strong> in Echtzeit.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mb-2">
-            {["12–14 % IRR p.a.", "40 % Investor-Anteil", "§7g-Steuereffekt", "5-Jahres-Cashflow", "Kostenlos"].map((tag) => (
+            {["~12,7 % vor Steuern", "40 % nach Pacht", "§7g-Steuereffekt", "Volle Aufschlüsselung", "Kostenlos"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">
                 {tag}
               </span>
@@ -120,9 +120,9 @@ export default function RenditeRechnerPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
-              { value: "40 %", label: "Investor-Anteil Mieteinnahmen" },
-              { value: "12–14 %", label: "IRR p.a. (projiziert)" },
-              { value: "≈ 720 €", label: "Cashflow/Monat (Basis)" },
+              { value: "40 %", label: "Investor-Anteil nach Pacht" },
+              { value: "~12,7 %", label: "Rendite p.a. vor Steuern" },
+              { value: "≈ 793 €", label: "Auszahlung/Monat (Basis)" },
               { value: "3–5 J.", label: "Break-even inkl. §7g" },
             ].map((s) => (
               <div key={s.label}>
@@ -160,8 +160,8 @@ export default function RenditeRechnerPage() {
                 <tbody className="divide-y divide-gray-50">
                   {[
                     ["Einstiegspreis", "300.000–500.000 €", "ab 65.000 €"],
-                    ["Brutto-Mietrendite", "3–5 % p.a.", "12–14 % IRR p.a."],
-                    ["Monatlicher Cashflow", "800–1.500 €", "≈ 720 € (bei 60 % Auslastung)"],
+                    ["Rendite auf Kaufpreis", "3–5 % brutto p.a.", "~12,7 % vor Steuern"],
+                    ["Monatlicher Cashflow", "800–1.500 €", "≈ 793 € (bei 60 % Auslastung)"],
                     ["Steuerabschreibung", "2 % / 50 Jahre", "§7g: bis 70 % im Kaufjahr"],
                     ["Break-even", "12–15 Jahre", "3–5 Jahre (inkl. §7g)"],
                     ["Zeitaufwand", "20–50 Std./Jahr", "~0 Std. (mit geringem Aufwand über lokale Partner)"],
@@ -178,8 +178,8 @@ export default function RenditeRechnerPage() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Link href="/wissen/kapitalanlage" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">
-              Kapitalanlage-Guide →
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">
+              Tiny House als Kapitalanlage →
             </Link>
             <Link href="/rechner/iab" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">
               IAB-Rechner →

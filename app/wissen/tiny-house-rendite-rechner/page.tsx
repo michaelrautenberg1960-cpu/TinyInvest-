@@ -26,23 +26,23 @@ export const metadata = {
 const faqItems = [
   {
     question: "Was ist der Unterschied zwischen IRR und einfacher Rendite?",
-    answer: "Die einfache Rendite (Mieteinnahmen / Kaufpreis) ignoriert den Zeitwert des Geldes und Steuereffekte. Der IRR (Internal Rate of Return) berücksichtigt alle Cashflows über die gesamte Haltedauer – inklusive Steuererstattungen im Jahr 1 und einem möglichen Verkaufserlös am Ende. Beim Tiny House Investment liegt die einfache Cash-Rendite bei ca. 10 % p.a., der IRR inkl. Steuereffekt bei 12–18 % p.a.",
+    answer: "Die einfache Rendite (Mieteinnahmen / Kaufpreis) ignoriert den Zeitwert des Geldes und Steuereffekte. Der IRR (Internal Rate of Return) berücksichtigt alle Cashflows über die gesamte Haltedauer – inklusive Steuererstattungen im Jahr 1 und einem möglichen Verkaufserlös am Ende. Beim Tiny House Investment liegt die einfache Rendite in der Beispielrechnung bei ca. 12,7 % p.a. vor Steuern. Der IRR inkl. Steuereffekt und 20 % Restwert nach 8 Jahren liegt bei rund 15 % p.a. (42 % Steuersatz, vor Steuern auf die Mieteinnahmen).",
   },
   {
     question: "Welche Belegungsquote wird beim Renditemodell angesetzt?",
-    answer: "Das Basismodell rechnet mit 60 % Belegung (ca. 219 Nächte/Jahr) bei einem Durchschnittspreis von 100 €/Nacht. Das ergibt Bruttomieteinnahmen von 21.900 €/Jahr. Der Investor erhält 40 % davon = 8.760 € netto/Jahr (730 €/Monat). lokale Partner verwendet diese Zahlen auf Basis historischer Belegungsdaten.",
+    answer: "Das Basismodell rechnet mit 60 % Belegung (ca. 219 Nächte/Jahr) bei einem Durchschnittspreis von 120 €/Nacht. Das ergibt einen Umsatz von 26.280 €/Jahr. Davon wird die Stellplatzpacht (2.500 €) abgezogen, vom Rest erhält der Investor 40 % = 9.512 €/Jahr (793 €/Monat). lokale Partner verwendet diese Zahlen auf Basis historischer Belegungsdaten.",
   },
   {
     question: "Wie wirkt sich die Steuerersparnis auf die Rendite aus?",
-    answer: "Die Steuererstattung im Jahr 1 (bis zu 34.000 € bei 80.000 € Kaufpreis und 42 % Steuersatz) wirkt wie eine sofortige Rendite von bis zu 42 % auf das eingesetzte Kapital. Dadurch steigt der IRR von ca. 10 % auf 14–18 % p.a. – je nach individueller Steuersituation.",
+    answer: "Der Steuereffekt in Vorjahr und Kaufjahr (rund 26.700 € bei 74.700 € Kaufpreis und 42 % Steuersatz) senkt das gebundene Kapital auf rund 48.000 €. Dadurch steigt der IRR von ca. 12,7 % auf rund 12–16 % p.a. – je nach Steuersatz und Restwert.",
   },
   {
     question: "Was ist der NPV und warum ist er relevant?",
-    answer: "Der NPV (Net Present Value / Kapitalwert) zeigt, wie viel ein Investment in heutigen Euro wert ist – abgezinst mit einem Kalkulationszinssatz (typischerweise 5–8 %). Ein positiver NPV bedeutet: Das Investment schlägt die Alternativanlage. Beim 80.000 € Tiny House mit 8 % Diskontierungssatz liegt der NPV bei ca. +12.000 bis +25.000 €.",
+    answer: "Der NPV (Net Present Value / Kapitalwert) zeigt, wie viel ein Investment in heutigen Euro wert ist – abgezinst mit einem Kalkulationszinssatz (typischerweise 5–8 %). Ein positiver NPV bedeutet: Das Investment schlägt die Alternativanlage. Beim 74.700 € Tiny House mit 8 % Diskontierungssatz liegt der NPV über 8 Jahre bei ca. +15.000 € (42 % Steuersatz, 20 % Restwert).",
   },
   {
     question: "Wie berechne ich den Break-even meines Tiny House Investments?",
-    answer: "Break-even = (Kaufpreis − Steuererstattung) / (Jährliche Nettomieteinnahmen). Bei 80.000 € Kaufpreis, 30.000 € Steuererstattung und 8.760 €/Jahr Nettomiete: (80.000 − 30.000) / 8.760 = ca. 5,7 Jahre. Das heißt: nach etwa 5–6 Jahren ist dein effektives Kapital wieder drin – und der Rest ist purer Gewinn.",
+    answer: "Break-even = (Kaufpreis − Steuererstattung) / (Jährliche Nettomieteinnahmen). Bei 74.700 € Kaufpreis, 26.700 € Steuereffekt und 9.512 €/Jahr Auszahlung: (74.700 − 26.700) / 9.512 = ca. 5,0 Jahre. Das heißt: nach etwa 5 Jahren ist dein gebundenes Kapital wieder drin (vor Steuern auf die Einnahmen).",
   },
   {
     question: "Rechnet der Renditerechner auch den Wiederverkaufswert ein?",
@@ -52,11 +52,11 @@ const faqItems = [
 
 const jahre = [1, 2, 3, 4, 5, 6, 7, 8];
 const cashflowData = [
-  { jahr: 1, mieteinnahmen: 8760, steuer: 30240, netto: 39000 },
-  { jahr: 2, mieteinnahmen: 8760, steuer: 0, netto: 8760 },
-  { jahr: 3, mieteinnahmen: 8760, steuer: 0, netto: 8760 },
-  { jahr: 4, mieteinnahmen: 8760, steuer: 0, netto: 8760 },
-  { jahr: 5, mieteinnahmen: 8760, steuer: 0, netto: 8760 },
+  { jahr: 1, mieteinnahmen: 9512, steuer: 26700, netto: 36212 },
+  { jahr: 2, mieteinnahmen: 9512, steuer: 0, netto: 9512 },
+  { jahr: 3, mieteinnahmen: 9512, steuer: 0, netto: 9512 },
+  { jahr: 4, mieteinnahmen: 9512, steuer: 0, netto: 9512 },
+  { jahr: 5, mieteinnahmen: 9512, steuer: 0, netto: 9512 },
 ];
 
 export default function TinyHouseRenditeRechnerPage() {
@@ -136,7 +136,7 @@ export default function TinyHouseRenditeRechnerPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["12–18 % IRR p.a.", "60 % Belegung", "730 €/Monat netto", "Break-even ~5,7 Jahre", "NPV positiv"].map((tag) => (
+            {["~12,7 % vor Steuern", "60 % Belegung", "793 €/Monat nach Pacht", "Break-even ~5 Jahre", "NPV positiv"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -155,21 +155,21 @@ export default function TinyHouseRenditeRechnerPage() {
                 {
                   kz: "Cashflow-Rendite",
                   formel: "Jährliche Nettomieteinnahmen ÷ Kaufpreis",
-                  wert: "~10 % p.a.",
+                  wert: "~12,7 % p.a.",
                   color: "bg-gray-50 border-gray-100",
                   desc: "Die einfachste Kennzahl. Zeigt, wie viel Mieteinnahmen du jährlich relativ zum Kaufpreis erhältst. Ignoriert Steuereffekte und den Zeitwert des Geldes.",
                 },
                 {
                   kz: "IRR (inkl. Steuer)",
                   formel: "Interner Zinsfuß aller Cashflows inkl. Steuererstattung",
-                  wert: "12–18 % p.a.",
+                  wert: "~15 % p.a.",
                   color: "bg-green-50 border-green-100",
                   desc: "Die wichtigste Kennzahl. Berücksichtigt Steuererstattungen im Jahr 1, laufende Mieteinnahmen und einen möglichen Restwert. Hier ist der Tiny House Vorteil am deutlichsten.",
                 },
                 {
                   kz: "NPV (Kapitalwert)",
                   formel: "Summe aller diskontierten Cashflows − Kaufpreis",
-                  wert: "+12.000–25.000 €",
+                  wert: "≈ +15.000 €",
                   color: "bg-gray-50 border-gray-100",
                   desc: "Zeigt den absoluten Mehrwert gegenüber einer Alternativanlage (z.B. Tagesgeld mit 4 %). Ein positiver NPV bedeutet: Das Tiny House schlägt die Alternative.",
                 },
@@ -186,13 +186,13 @@ export default function TinyHouseRenditeRechnerPage() {
 
           {/* 5-Jahres Cashflow */}
           <div className="mb-14">
-            <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">5-Jahres-Cashflow: 80.000 € Investment · 42 % Steuersatz</h2>
+            <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">5-Jahres-Cashflow: 74.700 € Investment · 42 % Steuersatz</h2>
             <div className="bg-gray-900 rounded-2xl p-8 text-white overflow-x-auto">
               <table className="w-full text-[13px]">
                 <thead>
                   <tr className="border-b border-white/10">
                     <th className="text-left py-2 text-[11px] text-gray-400 font-bold uppercase">Jahr</th>
-                    <th className="text-right py-2 text-[11px] text-gray-400 font-bold uppercase">Mieteinnahmen netto</th>
+                    <th className="text-right py-2 text-[11px] text-gray-400 font-bold uppercase">Auszahlung (40 % nach Pacht)</th>
                     <th className="text-right py-2 text-[11px] text-gray-400 font-bold uppercase">Steuererstattung</th>
                     <th className="text-right py-2 text-[11px] text-gray-400 font-bold uppercase">Gesamt-Cashflow</th>
                   </tr>
@@ -208,16 +208,16 @@ export default function TinyHouseRenditeRechnerPage() {
                   ))}
                   <tr className="text-gray-400 text-[12px]">
                     <td className="py-2 pt-4" colSpan={3}>Jahre 6–8 (nur Mieteinnahmen)</td>
-                    <td className="py-2 pt-4 text-right">je 8.760 €</td>
+                    <td className="py-2 pt-4 text-right">je 9.512 €</td>
                   </tr>
                 </tbody>
               </table>
               <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { label: "Gesamt-Cashflow 8J", value: "99.840 €" },
-                  { label: "Steuererstattung J1", value: "30.240 €" },
+                  { label: "Gesamt-Cashflow 8J", value: "102.796 €" },
+                  { label: "Steuereffekt VJ + J1", value: "26.700 €" },
                   { label: "IRR (inkl. Steuer)", value: "~15 % p.a." },
-                  { label: "Break-even", value: "~5,7 Jahre" },
+                  { label: "Break-even", value: "~5,0 Jahre" },
                 ].map((s) => (
                   <div key={s.label} className="bg-white/10 rounded-xl p-3 text-center">
                     <p className="text-gray-400 text-[9px] mb-1 uppercase tracking-widest">{s.label}</p>
@@ -226,7 +226,7 @@ export default function TinyHouseRenditeRechnerPage() {
                 ))}
               </div>
             </div>
-            <p className="text-[11px] text-gray-400 mt-3">Basis: 60 % Belegung · 100 €/Nacht · 40 % Investor-Anteil · 42 % Grenzsteuersatz. Keine Garantie zukünftiger Erträge.</p>
+            <p className="text-[11px] text-gray-400 mt-3">Basis: 60 % Belegung · 120 €/Nacht · Stellplatzpacht 2.500 €/Jahr vor Aufteilung · 40 % Investor-Anteil · 42 % Grenzsteuersatz · IRR mit 20 % Restwert nach 8 Jahren. Vor Steuern auf die Einnahmen, keine Garantie.</p>
           </div>
 
           {/* Image Break */}
@@ -248,9 +248,9 @@ export default function TinyHouseRenditeRechnerPage() {
               </div>
               <div className="space-y-3">
                 {[
-                  { satz: "35 %", erstattung: "22.400 €", breakeven: "~6,6 Jahre", irr: "12 %" },
-                  { satz: "42 %", erstattung: "30.240 €", breakeven: "~5,7 Jahre", irr: "15 %" },
-                  { satz: "45 %", erstattung: "33.000 €", breakeven: "~5,3 Jahre", irr: "18 %" },
+                  { satz: "35 %", erstattung: "22.200 €", breakeven: "~5,5 Jahre", irr: "12 %" },
+                  { satz: "42 %", erstattung: "26.700 €", breakeven: "~5,0 Jahre", irr: "15 %" },
+                  { satz: "45 %", erstattung: "28.600 €", breakeven: "~4,8 Jahre", irr: "16 %" },
                 ].map((row) => (
                   <div key={row.satz} className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-xl p-4 text-[13px]">
                     <span className="font-bold text-gray-700">{row.satz} Steuersatz</span>
@@ -276,9 +276,8 @@ export default function TinyHouseRenditeRechnerPage() {
           {/* Nav */}
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
             <Link href="/wissen/tiny-house-als-rendite" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Ertragsmodell →</Link>
-            <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage →</Link>
             <Link href="/wissen/7g-tiny-house-investment" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Leitfaden →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

@@ -22,7 +22,7 @@ const NAV_GROUPS = [
     label: "Steuern & Rendite",
     items: [
       { label: "§7g Steuervorteile", href: "/steuervorteil", desc: "IAB, Sonder-AfA und degressive AfA" },
-      { label: "Renditemodell", href: "/renditemodell", desc: "12–14 % IRR p.a. transparent erklärt" },
+      { label: "Renditemodell", href: "/renditemodell", desc: "Auszahlung & Rendite transparent erklärt" },
     ],
   },
   {

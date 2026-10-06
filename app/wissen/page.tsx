@@ -24,7 +24,7 @@ export const metadata = {
 };
 
 const featured = {
-  href: "/wissen/kapitalanlage",
+  href: "/tiny-house-als-kapitalanlage",
   badge: "Flagship-Guide",
   badgeColor: "bg-green-100 text-green-700",
   title: "Tiny House als Kapitalanlage 2026",
@@ -75,8 +75,8 @@ const articles = [
     badge: "Für Hosts",
     badgeColor: "bg-amber-100 text-amber-700",
     title: "Host werden: Tiny House auf deinem Grundstück",
-    desc: "Kein Eigenkapital nötig: Standort-Voraussetzungen, Verdienst bis 45 % und der komplette Bewerbungsprozess.",
-    tags: ["Host", "Grundstück", "bis 45 %", "Bewerbung"],
+    desc: "Kein Eigenkapital nötig: Standort-Voraussetzungen, Verdienst 45 % nach Pacht und der komplette Bewerbungsprozess.",
+    tags: ["Host", "Grundstück", "45 %", "Bewerbung"],
     img: "/images/outside/tiny-house-naturlage-gruen.webp",
   },
   {
@@ -265,7 +265,7 @@ const glossarItems = [
   { term: "AfA", def: "Absetzung für Abnutzung. Die steuerliche Abschreibung eines Wirtschaftsguts über seine Nutzungsdauer." },
   { term: "Belegungsquote", def: "Prozentualer Anteil der gebuchten Nächte an allen verfügbaren Nächten im Jahr. Typisch für Tiny Houses: 60–70 %." },
   { term: "Bewegliches Wirtschaftsgut", def: "Steuerrechtliche Kategorie für nicht fest mit dem Boden verbundene Vermögensgegenstände. Tiny Houses auf Vlemmix Trailern fallen darunter." },
-  { term: "Cashflow", def: "Tatsächlicher Geldzufluss aus dem Investment. Bei TinyInvest: 40 % der Mieteinnahmen monatlich an den Investor." },
+  { term: "Cashflow", def: "Tatsächlicher Geldzufluss aus dem Investment. Bei TinyInvest: 40 % der Mieteinnahmen nach Pacht monatlich an den Investor." },
   { term: "Chassis", def: "Das Fahrgestell des Vlemmix Trailers, auf dem das Tiny House aufgebaut ist. Straßenzugelassen, mit eigener VIN/FIN." },
   { term: "Degressive AfA", def: "Abschreibungsmethode, bei der ein fester Prozentsatz (30 %) vom jeweiligen Restbuchwert abgeschrieben wird. Besonders hoch im ersten Jahr." },
   { term: "Direktinvestment", def: "Investitionsform, bei der der Anleger das Wirtschaftsgut direkt ins Eigentum übernimmt – ohne Intermediär, ohne Fonds, ohne Darlehen. Bei TinyInvest erhältst du Kaufvertrag und Fahrzeugbrief auf deinen Namen." },
@@ -288,7 +288,7 @@ const glossarItems = [
   { term: "Übereignung", def: "Rechtlicher Vorgang der Eigentumsübertragung eines beweglichen Wirtschaftsguts. Bei TinyInvest: Übergabe des Fahrzeugbriefs (Vlemmix Trailer) an den Investor als Nachweis des vollständigen Eigentumsübergangs." },
   { term: "VIN", def: "Vehicle Identification Number. Einzelne Seriennummer jedes Vlemmix Trailers. Fundamental für die steuerrechtliche Einordnung als bewegliches Wirtschaftsgut (statt Immobilie)." },
   { term: "Vlemmix Trailer", def: "Niederländischer Fahrzeuganhänger, auf dem TinyInvest-Häuser aufgebaut werden. Straßenzugelassen, CE-zertifiziert, mit eigener VIN/FIN. Ermöglicht die steuerliche Klassifizierung als bewegliches Wirtschaftsgut." },
-  { term: "Win-Win-Win", def: "Das TinyInvest-Prinzip: Investor (40 % Einnahmen), Host (bis 45 %), Plattform (15 %) – alle drei Parteien haben einen klaren finanziellen Anreiz." },
+  { term: "Win-Win-Win", def: "Das TinyInvest-Prinzip: Investor (40 % Einnahmen), Host (45 %), Plattform (15 %) – alle drei Parteien haben einen klaren finanziellen Anreiz." },
   { term: "§7g EStG", def: "Paragraph im Einkommensteuergesetz, der den Investitionsabzugsbetrag (IAB) und die Sonder-AfA für bewegliche Wirtschaftsgüter regelt. Kernstück des TinyInvest-Steuermodells." },
   { term: "§34 BauGB", def: "Regelung im Baugesetzbuch über die Zulässigkeit von Bauvorhaben im unbeplanten Innenbereich. Relevant für Stellplatzgenehmigungen von Tiny Houses." },
 ];

@@ -30,12 +30,12 @@ const faqItems = [
   {
     question: "Wie verlässlich ist der monatliche Cashflow aus einem Tiny House?",
     answer:
-      "Der Cashflow basiert auf der Belegungsquote des Tiny Houses im lokale Partner Netzwerk. Historisch lag die durchschnittliche Belegung bei 60–70 %. Bei 60 % Belegung und 100 €/Nacht ergibt das rund 720 € monatlich für den Investor. Standort, Saison und Ausstattung beeinflussen die Auslastung. Eine Garantie kann nicht gegeben werden — wir empfehlen die konservative Kalkulation mit 50 % Belegung für die Planung.",
+      "Der Cashflow basiert auf der Belegungsquote des Tiny Houses im lokale Partner Netzwerk. Historisch lag die durchschnittliche Belegung bei 60–70 %. Bei 60 % Belegung und 120 €/Nacht ergibt das nach Abzug von Stellplatzpacht, Host und Plattform rund 793 € monatlich für den Investor. Standort, Saison und Ausstattung beeinflussen die Auslastung. Eine Garantie kann nicht gegeben werden — wir empfehlen die konservative Kalkulation mit 50 % Belegung für die Planung.",
   },
   {
     question: "Wie viel muss ich investieren, um 800 € monatlich zu erhalten?",
     answer:
-      "Bei 60 % Belegung und 100 €/Nacht erhalten Sie pro 79.000 € Investition rund 720 € monatlich. Um 800 € monatlich zu erzielen, benötigen Sie entweder ein etwas höheres Modell (ab ca. 88.000 €) oder eine leicht höhere Belegungsquote. Unser Renditerechner zeigt die genauen Zahlen für Ihre Situation.",
+      "Bei 60 % Belegung und 120 €/Nacht erhalten Sie mit einem On-Grid-Modell (74.700 € netto) nach Abzug der Stellplatzpacht rund 793 € monatlich – also fast genau 800 €. Für deutlich mehr brauchen Sie eine höhere Belegung oder ein zweites Haus. Unser Renditerechner zeigt die genauen Zahlen für Ihre Situation.",
   },
   {
     question: "Was passiert, wenn die Belegungsquote sinkt?",
@@ -89,10 +89,10 @@ export default function RentenluckeSchliessen() {
   };
 
   const lueckeRows = [
-    ["500 €", "55.000 € (Comfort-Modell)", "50 %", "~500 €"],
-    ["700 €", "79.000 € (Escape-Modell)", "60 %", "~720 €"],
-    ["1.000 €", "ca. 110.000 €", "60 %", "~1.000 €"],
-    ["1.200 €", "ca. 130.000 €", "60 %", "~1.190 €"],
+    ["500 €", "74.700 € (1 Haus On-Grid)", "45 %", "~574 €"],
+    ["800 €", "74.700 € (1 Haus On-Grid)", "60 %", "~793 €"],
+    ["1.000 €", "74.700 € (1 Haus On-Grid)", "75 %", "~1.012 €"],
+    ["1.500 €", "149.400 € (2 Häuser On-Grid)", "60 %", "~1.586 €"],
   ];
 
   return (
@@ -136,7 +136,7 @@ export default function RentenluckeSchliessen() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["Ab 65.000 €", "~720 €/Monat", "40 % Investor-Anteil", "mit geringem Aufwand über lokale Partner", "Kein Aufwand"].map((tag) => (
+            {["Ab 74.700 €", "~793 €/Monat", "40 % nach Pacht", "mit geringem Aufwand über lokale Partner", "Kein Aufwand"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -150,7 +150,7 @@ export default function RentenluckeSchliessen() {
               Laut Deutschem Institut für Wirtschaftsforschung (DIW) beträgt die durchschnittliche Versorgungslücke im Ruhestand rund 700 bis 1.200 € pro Monat — die Differenz zwischen dem letzten Nettolohn und dem, was Rente, Riester und Betriebsrente zusammen ausschütten. Diese Lücke wächst: Durch sinkende Rentenniveaus, steigende Lebenshaltungskosten und lange Rentenbezugsdauern wird das Problem größer, nicht kleiner.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Ein Tiny House über TinyInvest bietet einen strukturell anderen Ansatz: Statt Jahrzehnte zu sparen und auf eine Versicherungsleistung zu warten, kaufen Sie einen physischen Sachwert, der Ihnen ab dem ersten Monat 40 % der Mieteinnahmen auszahlt — über lokale Partner bewirtschaftet durch das lokale Partnernetzwerknetzwerk.
+              Ein Tiny House über TinyInvest bietet einen strukturell anderen Ansatz: Statt Jahrzehnte zu sparen und auf eine Versicherungsleistung zu warten, kaufen Sie einen physischen Sachwert, der Ihnen ab dem ersten Monat 40 % der Mieteinnahmen nach Pacht auszahlt — über lokale Partner bewirtschaftet durch das lokale Partnernetzwerknetzwerk.
             </p>
           </div>
 
@@ -178,21 +178,22 @@ export default function RentenluckeSchliessen() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Tiny House als Baustein: 40 % der Mieteinnahmen monatlich</h2>
+          <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Tiny House als Baustein: 40 % der Mieteinnahmen nach Pacht monatlich</h2>
           <div className="max-w-3xl mb-5">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
               Das Grundprinzip ist einfach: Sie kaufen ein Tiny House, lokale Partner betreibt es als Ferienunterkunft auf einem verifizierten Stellplatz, und Sie erhalten 40 % der Netto-Mieteinnahmen monatlich ausgezahlt. Kein Gäste-Check-in, keine Reinigung, keine Kommunikation mit Vermietern — alles läuft ohne Ihr Zutun.
             </p>
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white mb-10">
-            <p className="text-[11px] text-gray-400 uppercase tracking-widest mb-4">Rechenbeispiel: Escape 79.000 € · 60 % Belegung · 100 €/Nacht</p>
+            <p className="text-[11px] text-gray-400 uppercase tracking-widest mb-4">Rechenbeispiel: Escape 660 On-Grid 74.700 € · 60 % Belegung · 120 €/Nacht</p>
             <div className="space-y-2.5">
               {[
                 { label: "Nächte/Jahr (60 % von 365)", value: "219 Nächte" },
-                { label: "Brutto-Umsatz", value: "21.900 €/Jahr" },
-                { label: "Host-Anteil (45 %)", value: "– 9.855 €" },
-                { label: "Plattform-Fee (15 %)", value: "– 3.285 €" },
-                { label: "💰 Investor-Anteil (40 %)", value: "8.760 €/Jahr · 730 €/Monat", highlight: true },
+                { label: "Brutto-Umsatz", value: "26.280 €/Jahr" },
+                { label: "Stellplatzpacht", value: "– 2.500 €" },
+                { label: "Host-Anteil (45 % vom Rest)", value: "– 10.701 €" },
+                { label: "Plattform-Fee (15 % vom Rest)", value: "– 3.567 €" },
+                { label: "💰 Investor-Anteil (40 % vom Rest)", value: "9.512 €/Jahr · 793 €/Monat", highlight: true },
               ].map((row) => (
                 <div key={row.label} className={`flex justify-between py-2 border-b border-white/10 text-[13px] ${row.highlight ? "text-green-400 font-black" : "text-gray-300"}`}>
                   <span>{row.label}</span>
@@ -248,7 +249,7 @@ export default function RentenluckeSchliessen() {
             <Link href="/wissen/tiny-house-altersvorsorge" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Altersvorsorge Vergleich →</Link>
             <Link href="/wissen/tiny-house-als-rendite" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Renditemodell erklärt →</Link>
             <Link href="/wissen/ferienimmobilie-steuer" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Ferienimmobilie Steuer →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

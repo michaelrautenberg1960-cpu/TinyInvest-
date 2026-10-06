@@ -38,7 +38,7 @@ const faqItems = [
   {
     question: "Kann ich ein Tiny House mit Grundstück auch als Kapitalanlage kaufen?",
     answer:
-      "Ja – das Paketmodell von TinyInvest ist explizit für Investoren konzipiert. Du kaufst Tiny House und Grundstück, lokale Partner betreibt das Haus als Ferienunterkunft. Du erhältst 40 % der Nettomieteinnahmen monatlich. Das Tiny House auf Trailer ist als bewegliches Wirtschaftsgut §7g-fähig – das Grundstück selbst nicht, aber es ergänzt das Investment als Sachanlage.",
+      "Ja – das Paketmodell von TinyInvest ist explizit für Investoren konzipiert. Du kaufst Tiny House und Grundstück, lokale Partner betreibt das Haus als Ferienunterkunft. Du erhältst 40 % der Mieteinnahmen nach Pacht monatlich. Das Tiny House auf Trailer ist als bewegliches Wirtschaftsgut §7g-fähig – das Grundstück selbst nicht, aber es ergänzt das Investment als Sachanlage.",
   },
   {
     question: "Welche Standorte gibt es für Tiny Houses mit Grundstück?",
@@ -165,7 +165,7 @@ export default function TinyHouseKaufenMitGrundstueckPage() {
                     ["§7g IAB auf Haus", "âœ… Ja", "âœ… Ja"],
                     ["Eigennutzung möglich", "âœ… Ja", "Eingeschränkt"],
                     ["Operative Aufwand", "Mittel", "âœ… Minimal"],
-                    ["Renditehebel (IRR)", "8–12 %", "13–15 %"],
+                    ["Rendite p.a. (Beispiel)", "8–12 %", "~12,7 % vor Steuern"],
                   ].map(([k, a, b]) => (
                     <tr key={k} className="hover:bg-gray-50/50">
                       <td className="p-4 font-medium text-gray-700">{k}</td>

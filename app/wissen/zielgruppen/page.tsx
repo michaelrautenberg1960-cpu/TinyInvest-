@@ -85,7 +85,7 @@ const commonSteps = [
   {
     step: "3",
     title: "Cashflow kassieren",
-    desc: "40 % der Nettomieteinnahmen monatlich. lokale Partner übernehmen alles: Buchungen, Reinigung, Wartung, Abrechnung. Kein aktiver Aufwand.",
+    desc: "40 % der Mieteinnahmen nach Pacht monatlich. lokale Partner übernehmen alles: Buchungen, Reinigung, Wartung, Abrechnung. Kein aktiver Aufwand.",
   },
 ];
 

@@ -260,7 +260,7 @@ export default function AfaAbschreibungPage() {
               {[
                 { icon: "📋", phase: "Vorjahr (z.B. 2025)", title: "IAB bilden", desc: "Dein Steuerberater trägt in der Steuererklärung 2025 einen IAB von 50 % des geplanten Kaufpreises ein. Bei 80.000 € Haus = 40.000 € IAB. Das reduziert deinen zu versteuernden Gewinn 2025 um 40.000 €. Bei 42 % Steuersatz: ~16.800 € Erstattung vom Finanzamt." },
                 { icon: "🏠", phase: "Kaufjahr (2026)", title: "Haus kaufen & IAB auflösen", desc: "Du kaufst das Tiny House. Der IAB wird aufgelöst – aber: Im selben Jahr greift die Sonder-AfA (40 %) + degressive AfA (30 %) auf den reduzierten Restwert. Per Saldo bleibt ein erheblicher Steuereffekt." },
-                { icon: "💶", phase: "Jahresende", title: "Steuererklärung & Erstattung", desc: "In der Steuererklärung 2026 werden alle AfA-Positionen geltend gemacht. Das Finanzamt erstattet – netto verbleibt deutlich weniger effektiver Kaufpreis. Ab jetzt fließen monatlich 40 % der Mieteinnahmen." },
+                { icon: "💶", phase: "Jahresende", title: "Steuererklärung & Erstattung", desc: "In der Steuererklärung 2026 werden alle AfA-Positionen geltend gemacht. Das Finanzamt erstattet – netto verbleibt deutlich weniger effektiver Kaufpreis. Ab jetzt fließen monatlich 40 % der Mieteinnahmen nach Pacht." },
               ].map((step, i) => (
                 <div key={i} className="flex gap-5 items-start bg-gray-50 border border-gray-100 rounded-2xl p-5">
                   <div className="shrink-0 w-14 h-14 rounded-full bg-white border-2 border-green-100 flex items-center justify-center text-2xl shadow-sm">{step.icon}</div>
@@ -309,10 +309,10 @@ export default function AfaAbschreibungPage() {
                   </thead>
                   <tbody className="divide-y divide-white/5">
                     {[
-                      { pos: "IAB (50 % × 80.000 €, Vorjahr)", betrag: "40.000 €", steuer: "16.800 €", highlight: false },
-                      { pos: "Sonder-AfA 40 % (Kaufjahr)", betrag: "16.000 €", steuer: "6.720 €", highlight: false },
-                      { pos: "Degressive AfA 30 % (Kaufjahr)", betrag: "24.000 €", steuer: "10.080 €", highlight: false },
-                      { pos: "Gesamt Steuerersparnis", betrag: "80.000 €", steuer: "≈ 33.600 €", highlight: true },
+                      { pos: "IAB (50 % × 74.700 €, Vorjahr)", betrag: "37.350 €", steuer: "15.687 €", highlight: false },
+                      { pos: "Sonder-AfA 40 % auf 37.350 € (Kaufjahr)", betrag: "14.940 €", steuer: "6.275 €", highlight: false },
+                      { pos: "Degressive AfA 30 % auf 37.350 € (Kaufjahr)", betrag: "11.205 €", steuer: "4.706 €", highlight: false },
+                      { pos: "Gesamt Steuereffekt", betrag: "63.495 €", steuer: "≈ 26.700 €", highlight: true },
                     ].map((row) => (
                       <tr key={row.pos} className={row.highlight ? "text-green-400 font-bold" : "text-gray-300"}>
                         <td className="py-3 text-[12px]">{row.pos}</td>
@@ -326,13 +326,13 @@ export default function AfaAbschreibungPage() {
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white/10 rounded-xl p-4">
                   <p className="text-gray-400 text-[10px] mb-1">Effektiver Netto-Investitionspreis</p>
-                  <p className="text-xl font-black text-white">≈ 46.400 €</p>
-                  <p className="text-gray-500 text-[10px] mt-0.5">80.000 € minus ~33.600 € Steuerersparnis</p>
+                  <p className="text-xl font-black text-white">≈ 48.000 €</p>
+                  <p className="text-gray-500 text-[10px] mt-0.5">74.700 € minus ~26.700 € Steuereffekt</p>
                 </div>
                 <div className="bg-green-600 rounded-xl p-4">
-                  <p className="text-green-200 text-[10px] mb-1">Rendite auf effektiven Einsatz</p>
-                  <p className="text-xl font-black text-white">~18–22 % p.a.</p>
-                  <p className="text-green-300 text-[10px] mt-0.5">bei 720 €/Monat Mietauszahlung</p>
+                  <p className="text-green-200 text-[10px] mb-1">Rendite auf gebundenes Kapital</p>
+                  <p className="text-xl font-black text-white">~19,8 % p.a.</p>
+                  <p className="text-green-300 text-[10px] mt-0.5">bei 793 €/Monat Auszahlung nach Pacht, vor Steuern</p>
                 </div>
               </div>
             </div>
@@ -359,10 +359,9 @@ export default function AfaAbschreibungPage() {
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
             <Link href="/steuervorteil" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Interaktiver §7g-Rechner →</Link>
             <Link href="/wissen/investitionsabzugsbetrag-tiny-house" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Investitionsabzugsbetrag Guide →</Link>
-            <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen/steuerberater-finden" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Steuerberater finden →</Link>
             <Link href="/wissen/7g-tiny-house-investment" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Leitfaden →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

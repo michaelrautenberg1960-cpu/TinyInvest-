@@ -147,12 +147,12 @@ export default function TinyHouseAirbnbPage() {
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Was ein Tiny House auf Airbnb wirklich einbringt</h2>
           <div className="bg-gray-900 rounded-2xl p-8 text-white mb-10">
-            <p className="text-[11px] text-gray-400 uppercase tracking-widest mb-4">Szenario: 65.000 € Comfort · Waldlage · 100 €/Nacht</p>
+            <p className="text-[11px] text-gray-400 uppercase tracking-widest mb-4">Szenario: Escape 660 On-Grid 74.700 € · 120 €/Nacht</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
               {[
-                { label: "40 % Belegung", nights: "12 Nächte", umsatz: "1.200 €", investor: "480 €/Mo." },
-                { label: "60 % Belegung", nights: "18 Nächte", umsatz: "1.800 €", investor: "720 €/Mo." },
-                { label: "75 % Belegung", nights: "22 Nächte", umsatz: "2.200 €", investor: "880 €/Mo." },
+                { label: "40 % Belegung", nights: "12 Nächte", umsatz: "1.460 €", investor: "501 €/Mo." },
+                { label: "60 % Belegung", nights: "18 Nächte", umsatz: "2.190 €", investor: "793 €/Mo." },
+                { label: "75 % Belegung", nights: "23 Nächte", umsatz: "2.738 €", investor: "1.012 €/Mo." },
               ].map((s) => (
                 <div key={s.label} className={`rounded-xl p-4 ${s.label === "60 % Belegung" ? "bg-green-600" : "bg-white/10"}`}>
                   <p className="text-[10px] font-bold uppercase mb-2 text-green-200">{s.label}</p>
@@ -161,7 +161,7 @@ export default function TinyHouseAirbnbPage() {
                 </div>
               ))}
             </div>
-            <p className="text-[11px] text-gray-500">* Investor erhält 40 % der Netto-Einnahmen · Airbnb-Gebühren und Betriebskosten bereits abgezogen</p>
+            <p className="text-[11px] text-gray-500">* Vom Umsatz wird die Stellplatzpacht (2.500 €/Jahr) abgezogen, vom Rest erhält der Investor 40 % (Host 45 %, Plattform 15 %)</p>
           </div>
 
           <div className="relative rounded-2xl overflow-hidden mb-12" style={{ aspectRatio: "16/7" }}>
@@ -242,10 +242,9 @@ export default function TinyHouseAirbnbPage() {
 
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
             <Link href="/rechner/rendite" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Rendite selbst berechnen →</Link>
-            <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage-Guide →</Link>
             <Link href="/wissen/tiny-house-standorte" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Beste Standorte →</Link>
             <Link href="/wissen/7g-tiny-house-investment" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Leitfaden →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

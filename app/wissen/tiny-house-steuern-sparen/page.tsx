@@ -216,7 +216,7 @@ export default function TinyHouseSteuernSparenPage() {
                     { kriterium: "IAB möglich", tiny: "Ja (50 %)", etw: "Nein", pv: "Ja (50 %)" },
                     { kriterium: "Sonder-AfA (40 %)", tiny: "Ja", etw: "Nein", pv: "Nein" },
                     { kriterium: "Sofortabschreibung", tiny: "Bis 70 %", etw: "Nein", pv: "Bis 50 %" },
-                    { kriterium: "Passives Einkommen", tiny: "720 €/Monat", etw: "Miete − Kosten", pv: "Einspeisevergütung" },
+                    { kriterium: "Passives Einkommen", tiny: "793 €/Monat", etw: "Miete − Kosten", pv: "Einspeisevergütung" },
                     { kriterium: "Verwaltungsaufwand", tiny: "Vollständig ausgelagert", etw: "Hoch", pv: "Gering" },
                   ].map((row) => (
                     <tr key={row.kriterium} className="hover:bg-gray-50">
@@ -349,7 +349,7 @@ export default function TinyHouseSteuernSparenPage() {
                 {
                   nr: "04", title: "Sonder-AfA + degressive AfA im Kaufjahr",
                   desc: "Im selben Jahr: Sonder-AfA (40 %) auf den um den IAB reduzierten Kaufpreis plus degressive AfA (30 %). In der Summe über 70 % Sofortabschreibung im Kaufjahr. Ab dem Folgejahr fließen die Mieteinnahmen.",
-                  tip: "Mieteinnahmen versteuern: 40 % der Nettomieteinnahmen müssen als Einkünfte aus V&V angegeben werden",
+                  tip: "Mieteinnahmen versteuern: 40 % der Mieteinnahmen nach Pacht müssen als Einkünfte aus V&V angegeben werden",
                 },
               ].map((step) => (
                 <div key={step.nr} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
@@ -392,7 +392,7 @@ export default function TinyHouseSteuernSparenPage() {
             <Link href="/wissen/iab-tiny-house" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">IAB Tiny House beantragen →</Link>
             <Link href="/wissen/steuerberater-finden" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Steuerberater finden →</Link>
             <Link href="/wissen/7g-tiny-house-investment" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Leitfaden →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

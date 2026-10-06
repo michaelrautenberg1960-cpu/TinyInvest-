@@ -91,15 +91,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/tiny-house-als-kapitalanlage`,
-      lastModified: "2026-10-03",
+      lastModified: "2026-10-06",
       changeFrequency: "monthly",
       priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/wissen/kapitalanlage`,
-      lastModified: "2026-05-15",
-      changeFrequency: "monthly",
-      priority: 0.9,
     },
     {
       url: `${BASE_URL}/wissen/afa-abschreibung`,

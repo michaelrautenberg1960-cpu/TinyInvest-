@@ -40,7 +40,7 @@ const faqItems = [
   {
     question: "Kann ich ein Tiny House als Altersvorsorge mit meiner gesetzlichen Rente kombinieren?",
     answer:
-      "Ja, und genau dafür ist es konzipiert. Die monatlichen Mieteinnahmen (40 % der Netto-Einnahmen) ergänzen die gesetzliche Rente direkt. Bei 60 % Belegung und 100 € Durchschnittspreis/Nacht sind das rund 720 € monatlich – ein messbarer Aufschlag auf die typische Rentenlücke von 800–1.200 €.",
+      "Ja, und genau dafür ist es konzipiert. Die monatlichen Auszahlungen (40 % der Einnahmen nach Stellplatzpacht) ergänzen die gesetzliche Rente direkt. Bei 60 % Belegung und 120 € Durchschnittspreis/Nacht sind das rund 793 € monatlich – ein messbarer Aufschlag auf die typische Rentenlücke von 800–1.200 €.",
   },
   {
     question: "Kann ich das Tiny House später selbst bewohnen?",
@@ -174,7 +174,7 @@ export default function TinyHouseAltersvorsorge() {
             {[
               { step: "01", title: "Objekt auswählen", desc: "Wählen Sie aus verfügbaren Tiny Houses ab 65.000 €. TinyInvest vermittelt Stellplatz, Genehmigung und Betrieb." },
               { step: "02", title: "lokale Partner übernehmen", desc: "Buchungen, Gästebetreuung, Reinigung, Wartung — alles wird mit geringem Aufwand über lokale Partner durch das lokale Partnernetzwerknetzwerk abgewickelt." },
-              { step: "03", title: "Monatlich kassieren", desc: "40 % der Netto-Mieteinnahmen werden automatisch ausgezahlt. Bei 60 % Belegung sind das rund 720 € pro Monat." },
+              { step: "03", title: "Monatlich kassieren", desc: "40 % der Mieteinnahmen nach Stellplatzpacht werden automatisch ausgezahlt. Bei 60 % Belegung sind das rund 793 € pro Monat." },
             ].map((item) => (
               <div key={item.step} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                 <span className="text-green-700 font-black text-2xl">{item.step}</span>
@@ -229,7 +229,7 @@ export default function TinyHouseAltersvorsorge() {
             <Link href="/wissen/rentenlucke-schliessen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Rentenlücke schließen →</Link>
             <Link href="/wissen/tiny-house-vs-etf-altersvorsorge" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House vs. ETF →</Link>
             <Link href="/wissen/tiny-house-als-rendite" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Renditemodell erklärt →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House Kapitalanlage 2026 →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

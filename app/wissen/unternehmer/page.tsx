@@ -48,7 +48,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. lokale Partner übernehmen Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Nettomieteinnahmen. Kein Aufwand neben dem Unternehmen — das Tiny House läuft als Einnahmequelle mit geringem Aufwand über lokale Partner.",
+      "Nein. lokale Partner übernehmen Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Mieteinnahmen nach Pacht. Kein Aufwand neben dem Unternehmen — das Tiny House läuft als Einnahmequelle mit geringem Aufwand über lokale Partner.",
   },
 ];
 
@@ -231,7 +231,7 @@ export default function UnternehmerPage() {
             {[
               { step: "1", title: "IAB bilden", desc: "Bis zu 50 % des geplanten Kaufpreises im Jahr VOR dem Kauf steuerlich abziehen. Steuererstattung vor der Lieferung des Hauses." },
               { step: "2", title: "Tiny House kaufen", desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr. Maximaler Abschreibungshebel in zwei aufeinanderfolgenden Steuerjahren." },
-              { step: "3", title: "Cashflow kassieren", desc: "40 % der Nettomieteinnahmen monatlich. lokale Partner verwaltet alles — kein Aufwand neben dem laufenden Betrieb." },
+              { step: "3", title: "Cashflow kassieren", desc: "40 % der Mieteinnahmen nach Pacht monatlich. lokale Partner verwaltet alles — kein Aufwand neben dem laufenden Betrieb." },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-6 bg-white">
                 <div className="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-black text-sm mb-4">{item.step}</div>
@@ -284,7 +284,7 @@ export default function UnternehmerPage() {
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
                     ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 39.500 € im Vorjahr"],
-                    ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "12–18 % IRR nach Steuer"],
+                    ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "~12,7 % vor Steuern + §7g"],
                     ["Aufwand", "Keiner", "Monitoring nötig", "Keiner (vollverwaltet)"],
                     ["§7g IAB nutzbar", "❌ Nein", "❌ Nein", "✅ Ja (Einzelunternehmer)"],
                     ["Sachwert / Privatvermögen", "❌ Nein", "❌ Nein", "✅ Ja"],

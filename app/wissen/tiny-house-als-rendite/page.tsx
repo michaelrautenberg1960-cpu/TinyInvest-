@@ -21,7 +21,7 @@ export const metadata = {
     type: "article",
     title: "Tiny House als Renditeobjekt – Cashflow & Ertragsmodell 2026",
     description:
-      "40 % der Mieteinnahmen für den Investor, 60 % Belegung, 12–18 % IRR: So funktioniert das Tiny House Renditemodell.",
+      "Umsatz minus Stellplatzpacht, dann 45 % Host, 15 % Plattform, 40 % Investor: So funktioniert das Tiny House Renditemodell – ~12,7 % vor Steuern.",
     url: "https://tinyhouse.investments/wissen/tiny-house-als-rendite",
   },
 };
@@ -29,11 +29,11 @@ export const metadata = {
 const faqItems = [
   {
     question: "Wie hoch ist die Rendite eines Tiny Houses bei TinyInvest?",
-    answer: "Bei 60 % Belegung und einem Durchschnittspreis von 100 € pro Nacht erhält der Investor 40 % der Netto-Einnahmen – rund 720 € monatlich bzw. 8.760 € jährlich auf ein 79.000 € Objekt. Das entspricht ca. 11 % Cash-on-Cash-Rendite. Inklusive §7g-Steuervorteilen (IAB, Sonder-AfA) liegt der IRR über 5 Jahre bei 13–15 % p.a.",
+    answer: "Bei 60 % Belegung und einem Durchschnittspreis von 120 € pro Nacht liegt der Umsatz bei 2.190 € im Monat. Davon wird zuerst die Stellplatzpacht (2.500 €/Jahr, 208 €/Monat) abgezogen, vom Rest erhält der Investor 40 % – rund 793 € monatlich bzw. 9.512 € jährlich auf ein 74.700 € Objekt (On-Grid). Das entspricht ca. 12,7 % Rendite vor Steuern. Der §7g-Steuereffekt (rund 26.700 € bei 42 %) kommt separat hinzu.",
   },
   {
     question: "Was bekomme ich als Investor ausgezahlt?",
-    answer: "Du erhältst monatlich 40 % der Netto-Mieteinnahmen. Die übrigen 60 % gehen an den Host (Stellplatzinhaber) und lokale Partner (Betrieb, Gästebetreuung, Reinigung). Die Auszahlung erfolgt automatisch – du hast keinen operativen Aufwand.",
+    answer: "Von den Mieteinnahmen wird zuerst die Stellplatzpacht (max. 2.500 €/Jahr) abgezogen. Vom Rest erhältst du monatlich 40 %, 45 % gehen an den Host (Betrieb, Gästebetreuung, Reinigung) und 15 % an die Plattform. Die Auszahlung erfolgt automatisch – du hast keinen operativen Aufwand.",
   },
   {
     question: "Wie hoch muss die Belegungsquote sein damit sich das Investment lohnt?",
@@ -41,19 +41,19 @@ const faqItems = [
   },
   {
     question: "Was passiert nach 5 Jahren mit dem Tiny House?",
-    answer: "Das Tiny House hat nach 5 Jahren einen Restwert von ca. 55.000 € (auf Basis aktueller Marktdaten für gebrauchte Vlemmix-Einheiten). Du kannst es weiter vermieten, auf einem anderen Standort aufstellen oder verkaufen. Die Mobilität des Objekts ist dabei ein wesentlicher Vorteil gegenüber Immobilien.",
+    answer: "Das Tiny House hat nach 5 Jahren noch einen Restwert, der von Zustand, Nachfrage und Markt abhängt – eine Garantie dafür gibt es nicht. Du kannst es weiter vermieten, auf einem anderen Standort aufstellen oder verkaufen. Die Mobilität des Objekts ist dabei ein wesentlicher Vorteil gegenüber Immobilien.",
   },
   {
     question: "Wie unterscheidet sich die Tiny House Rendite von klassischen Immobilien?",
-    answer: "Klassische Immobilien erzielen 3–5 % Bruttomietrendite, vor AfA und Steuern. Ein Tiny House bringt 11 % Cash-on-Cash plus signifikante Steuervorteile durch §7g IAB und Sonder-AfA. Der entscheidende Unterschied: Das Tiny House ist als bewegliches Wirtschaftsgut vollständig absetzbar – eine Eigentumswohnung nicht.",
+    answer: "Klassische Immobilien erzielen 3–5 % Bruttomietrendite, vor AfA und Steuern. Ein Tiny House bringt in der Beispielrechnung ~12,7 % vor Steuern plus signifikante Steuervorteile durch §7g IAB und Sonder-AfA. Der entscheidende Unterschied: Das Tiny House ist als bewegliches Wirtschaftsgut vollständig absetzbar – eine Eigentumswohnung nicht.",
   },
   {
     question: "Wie viel kann ich mit einem Tiny House vermieten und verdienen?",
-    answer: "Bei 60 % Belegung und 100 €/Nacht erzielen Investoren rund 730 € monatlich aus der Tiny House Vermietung – das sind ca. 8.760 € Einnahmen pro Jahr. Mit tiny house vermieten geld verdienen ist also durchaus realistisch: Auf Basis der lokale Partner-Daten liegen viele Objekte bei 60–70 % Auslastung. Die Tiny House Vermietung Einnahmen fließen automatisch, ohne eigenen operativen Aufwand.",
+    answer: "Bei 60 % Belegung und 120 €/Nacht erzielen Investoren nach Abzug von Stellplatzpacht, Host und Plattform rund 793 € monatlich aus der Tiny House Vermietung – das sind ca. 9.512 € Einnahmen pro Jahr. Mit tiny house vermieten geld verdienen ist also durchaus realistisch: Auf Basis der lokale Partner-Daten liegen viele Objekte bei 60–70 % Auslastung. Die Tiny House Vermietung Einnahmen fließen automatisch, ohne eigenen operativen Aufwand.",
   },
   {
     question: "Ist ein Tiny House wirklich passives Einkommen?",
-    answer: "Ja – durch das Betreibermodell lokaler Partner generiert ein Tiny House echtes passives Einkommen: Du kaufst das Haus, der Betreiber übernimmt Standort, Gästebetreuung, Buchungen und Reinigung. Das tiny house passive einkommen fließt monatlich als 40 % der Netto-Mieteinnahmen auf dein Konto – ohne Zeitaufwand. Im Vergleich zu einer klassischen Eigentumswohnung (50 Std./Jahr Aufwand) ist das ein grundlegend anderes Modell.",
+    answer: "Ja – durch das Betreibermodell lokaler Partner generiert ein Tiny House echtes passives Einkommen: Du kaufst das Haus, der Betreiber übernimmt Standort, Gästebetreuung, Buchungen und Reinigung. Das tiny house passive einkommen fließt monatlich als 40 % der Mieteinnahmen nach Pacht auf dein Konto – ohne Zeitaufwand. Im Vergleich zu einer klassischen Eigentumswohnung (50 Std./Jahr Aufwand) ist das ein grundlegend anderes Modell.",
   },
 ];
 
@@ -132,7 +132,7 @@ export default function TinyHouseAlsRenditePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["40 % Investor-Anteil", "60–70 % Belegung", "12–18 % IRR p.a.", "Monatliche Auszahlung"].map((tag) => (
+            {["40 % nach Pacht", "60 % Belegung", "~12,7 % vor Steuern", "Monatliche Auszahlung"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -188,9 +188,9 @@ export default function TinyHouseAlsRenditePage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Die 3-Wege-Aufteilung der Mieteinnahmen</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             {[
-              { icon: "🏡", party: "Host", percent: "bis 45 %", color: "bg-amber-50 border-amber-200 text-amber-800", textColor: "text-amber-700", desc: "Reinigung, Check-in, Grundstück, Gästebetreuung vor Ort." },
+              { icon: "🏡", party: "Host", percent: "45 %", color: "bg-amber-50 border-amber-200 text-amber-800", textColor: "text-amber-700", desc: "Reinigung, Check-in, Grundstück, Gästebetreuung vor Ort." },
               { icon: "💼", party: "Investor", percent: "40 %", color: "bg-green-50 border-green-200 text-green-800", textColor: "text-green-700", desc: "Stellt das Kapital. Bekommt 40 % passiv – monatlich ausgezahlt." },
-              { icon: "⚙️", party: "TinyInvest", percent: "~15 %", color: "bg-gray-50 border-gray-200 text-gray-800", textColor: "text-gray-600", desc: "Buchungsplattform, Marketing, Zahlungsabwicklung, Qualität." },
+              { icon: "⚙️", party: "TinyInvest", percent: "15 %", color: "bg-gray-50 border-gray-200 text-gray-800", textColor: "text-gray-600", desc: "Buchungsplattform, Marketing, Zahlungsabwicklung, Qualität." },
             ].map((item) => (
               <div key={item.party} className={`rounded-3xl border p-6 text-center ${item.color}`}>
                 <div className="text-4xl mb-3">{item.icon}</div>
@@ -221,15 +221,15 @@ export default function TinyHouseAlsRenditePage() {
                     <th className="p-4 font-semibold text-gray-500 text-[12px] text-center">Belegung</th>
                     <th className="p-4 font-semibold text-gray-500 text-[12px] text-center">Nächte/Jahr</th>
                     <th className="p-4 font-semibold text-gray-500 text-[12px] text-center">Umsatz/Jahr</th>
-                    <th className="p-4 font-black text-green-700 text-[12px] text-center bg-green-50">Investor (40 %)</th>
+                    <th className="p-4 font-black text-green-700 text-[12px] text-center bg-green-50">Investor (40 % nach Pacht)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
-                    ["Konservativ", "50 %", "182", "18.250 €", "7.300 €"],
-                    ["Realistisch ✓", "60 %", "219", "21.900 €", "8.760 €"],
-                    ["Optimistisch", "70 %", "255", "25.500 €", "10.200 €"],
-                    ["Peak Season", "80 %", "292", "29.200 €", "11.680 €"],
+                    ["Konservativ", "50 %", "183", "21.900 €", "7.760 €"],
+                    ["Realistisch ✓", "60 %", "219", "26.280 €", "9.512 €"],
+                    ["Optimistisch", "70 %", "256", "30.660 €", "11.264 €"],
+                    ["Peak Season", "80 %", "292", "35.040 €", "13.016 €"],
                   ].map(([szen, bel, naechte, umsatz, investor], i) => (
                     <tr key={szen} className={i === 1 ? "bg-green-50/50 font-semibold" : "hover:bg-gray-50/50"}>
                       <td className="p-4 text-gray-700">{szen}</td>
@@ -242,19 +242,20 @@ export default function TinyHouseAlsRenditePage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-[10px] text-gray-400 p-4 border-t border-gray-100">* Basis: 100 €/Nacht Durchschnittspreis. lokale Partner historisch: 60–70 % Belegung.</p>
+            <p className="text-[10px] text-gray-400 p-4 border-t border-gray-100">* Basis: 120 €/Nacht Durchschnittspreis, Stellplatzpacht 2.500 €/Jahr vor der Aufteilung abgezogen, Investor 40 % vom Rest.</p>
           </div>
 
-          <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Monatlicher Cashflow: TinyInvest Escape (79.000 €)</h2>
+          <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Monatlicher Cashflow: Escape 660 On-Grid (74.700 €)</h2>
           <div className="bg-gray-900 rounded-2xl p-8 text-white mb-8">
             <div className="space-y-2.5 mb-6">
               {[
-                { label: "Umsatz/Monat (219 Nächte ÷ 12 × 100 €)", value: "1.825 €", highlight: false },
-                { label: "Host-Anteil (45 %)", value: "– 821 €", highlight: false },
-                { label: "Plattform-Fee TinyInvest (15 %)", value: "– 274 €", highlight: false },
-                { label: "💰 Investor-Auszahlung (40 %)", value: "730 €/Monat", highlight: true },
-                { label: "Rendite auf Kaufpreis (ohne Steuer)", value: "~11,1 % p.a.", highlight: false },
-                { label: "Effektive Rendite (mit §7g Steuereffekt)", value: "~16–18 % p.a.", highlight: true },
+                { label: "Umsatz/Monat (219 Nächte ÷ 12 × 120 €)", value: "2.190 €", highlight: false },
+                { label: "Stellplatzpacht (2.500 €/Jahr ÷ 12)", value: "– 208 €", highlight: false },
+                { label: "Host-Anteil (45 % vom Rest)", value: "– 892 €", highlight: false },
+                { label: "Plattform-Fee TinyInvest (15 % vom Rest)", value: "– 297 €", highlight: false },
+                { label: "💰 Investor-Auszahlung (40 % vom Rest)", value: "793 €/Monat", highlight: true },
+                { label: "Rendite auf Kaufpreis (vor Steuer)", value: "~12,7 % p.a.", highlight: true },
+                { label: "Nach Versicherung (~650 €/Jahr)", value: "~11,9 % p.a.", highlight: false },
               ].map((row) => (
                 <div key={row.label} className={`flex justify-between py-2 border-b border-white/10 ${row.highlight ? "text-green-400 font-bold" : "text-gray-300 text-[13px]"}`}>
                   <span>{row.label}</span>
@@ -265,11 +266,11 @@ export default function TinyHouseAlsRenditePage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/10 rounded-xl p-4 text-center">
                 <p className="text-gray-400 text-[10px] mb-1">Monatliche Auszahlung</p>
-                <p className="font-data text-2xl font-black text-white">730 €</p>
+                <p className="font-data text-2xl font-black text-white">793 €</p>
               </div>
               <div className="bg-green-600 rounded-xl p-4 text-center">
-                <p className="text-green-200 text-[10px] mb-1">Effektive Rendite p.a.</p>
-                <p className="font-data text-2xl font-black text-white">16–18 %</p>
+                <p className="text-green-200 text-[10px] mb-1">Rendite p.a. vor Steuern</p>
+                <p className="font-data text-2xl font-black text-white">~12,7 %</p>
               </div>
             </div>
           </div>
@@ -278,15 +279,15 @@ export default function TinyHouseAlsRenditePage() {
             <Image src="/images/inside/tiny-house-innen-kueche.webp" alt="Tiny House Küche und Wohnbereich" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
 
-          <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">5-Jahres-Cashflow: TinyInvest Escape 79.000 €</h2>
+          <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">5-Jahres-Cashflow: Escape 660 On-Grid 74.700 €</h2>
           <div className="space-y-3 mb-8">
             {[
-              { jahr: "Jahr 0", event: "Kauf", cashflow: "– 79.000 €", steuer: "+ 16.380 € (IAB)", kumuliert: "– 62.620 €", highlight: false },
-              { jahr: "Jahr 1", event: "IAB-Auflösung + AfA + Miete", cashflow: "+ 8.760 €", steuer: "+ 14.448 € (Sonder-AfA + deg. AfA)", kumuliert: "– 39.412 €", highlight: false },
-              { jahr: "Jahr 2", event: "Mieteinnahmen", cashflow: "+ 8.760 €", steuer: "+ 1.800 € (lineare AfA)", kumuliert: "– 28.852 €", highlight: false },
-              { jahr: "Jahr 3", event: "Mieteinnahmen", cashflow: "+ 8.760 €", steuer: "+ 1.800 €", kumuliert: "– 18.292 €", highlight: false },
-              { jahr: "Jahr 4", event: "Mieteinnahmen", cashflow: "+ 8.760 €", steuer: "+ 1.800 €", kumuliert: "– 7.732 €", highlight: false },
-              { jahr: "Jahr 5", event: "Mieteinnahmen + Restwert ~55k", cashflow: "+ 8.760 €", steuer: "+ 1.800 €", kumuliert: "+ 57.828 €", highlight: true },
+              { jahr: "Jahr 0", event: "Kauf + IAB (Vorjahr)", cashflow: "– 74.700 €", steuer: "+ 15.700 € (IAB)", kumuliert: "– 59.000 €", highlight: false },
+              { jahr: "Jahr 1", event: "Auszahlung nach Versicherung + AfA", cashflow: "+ 8.862 €", steuer: "+ 11.000 € (Sonder-AfA + deg. AfA)", kumuliert: "– 39.138 €", highlight: false },
+              { jahr: "Jahr 2", event: "Auszahlung nach Versicherung", cashflow: "+ 8.862 €", steuer: "—", kumuliert: "– 30.276 €", highlight: false },
+              { jahr: "Jahr 3", event: "Auszahlung nach Versicherung", cashflow: "+ 8.862 €", steuer: "—", kumuliert: "– 21.414 €", highlight: false },
+              { jahr: "Jahr 4", event: "Auszahlung nach Versicherung", cashflow: "+ 8.862 €", steuer: "—", kumuliert: "– 12.552 €", highlight: false },
+              { jahr: "Jahr 5", event: "Auszahlung + Haus mit Restwert", cashflow: "+ 8.862 €", steuer: "—", kumuliert: "– 3.690 € + Restwert", highlight: true },
             ].map((row) => (
               <div key={row.jahr} className={`rounded-xl p-5 border ${row.highlight ? "bg-green-50 border-green-200" : "bg-white border-gray-100"}`}>
                 <div className="flex flex-wrap items-center justify-between gap-4">
@@ -305,9 +306,9 @@ export default function TinyHouseAlsRenditePage() {
           </div>
 
           <div className="bg-green-700 rounded-2xl p-6 text-white mb-10">
-            <p className="font-black text-base mb-2">📊 IRR über 5 Jahre: ~13–15 % p.a.</p>
+            <p className="font-black text-base mb-2">📊 Nach 5 Jahren: ~95 % des Kaufpreises zurück – plus Restwert</p>
             <p className="text-green-100 text-[13px] leading-relaxed">
-              Der IRR berücksichtigt den Zeitwert des Geldes und alle Cashflows über 5 Jahre. Durch den kombinierten Effekt aus Mieteinnahmen, Steuererstattungen und Restwert ergibt sich eine effektive Jahresrendite von 13–15 % – deutlich über klassischen Immobilien (3–4 %) oder Anleihen.
+              Auszahlungen nach Versicherung und der §7g-Steuereffekt holen in fünf Jahren rund 71.000 € der 74.700 € wieder herein. Das Haus gehört dir weiterhin und hat einen Restwert. Vor Steuern auf die Mieteinnahmen; ein großer Teil des Steuereffekts ist eine Steuerstundung.
             </p>
           </div>
 
@@ -316,7 +317,7 @@ export default function TinyHouseAlsRenditePage() {
             <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Tiny House vermieten und Geld verdienen</h2>
             <div className="max-w-3xl">
               <p className="text-gray-700 text-base leading-relaxed mb-5">
-                Mit einem Tiny House vermieten und Geld verdienen funktioniert über das 40/45/15-Aufteilungsmodell: 40 % der Netto-Mieteinnahmen fließen monatlich an den Investor, 45 % an den Host vor Ort, 15 % an die Plattform. Bei realistischen 60 % Belegung bedeutet das rund 730 € monatliche Tiny House Vermietung Einnahmen – mit geringem Aufwand über lokale Partner, ohne eigenen Aufwand.
+                Mit einem Tiny House vermieten und Geld verdienen funktioniert über das 40/45/15-Aufteilungsmodell: Nach Abzug der Stellplatzpacht fließen 40 % monatlich an den Investor, 45 % an den Host vor Ort, 15 % an die Plattform. Bei realistischen 60 % Belegung bedeutet das rund 793 € monatliche Tiny House Vermietung Einnahmen – mit geringem Aufwand über lokale Partner, ohne eigenen Aufwand.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
                 Das tiny house passive einkommen ist damit eines der wenigen echten Passiv-Einkommensmodelle im Sachwertbereich: Du besitzt das physische Objekt, trägst alle steuerlichen Vorteile nach §7g, und lässt den operativen Betrieb vollständig delegieren. Verglichen mit einer ETW, bei der Vermieter oft 20–50 Stunden Aufwand pro Jahr rechnen müssen, ist das ein fundamentaler Unterschied.

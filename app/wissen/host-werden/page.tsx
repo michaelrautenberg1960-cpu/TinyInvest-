@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Host werden: Tiny House auf eigenem Grundstück | TinyInvest",
   description:
-    "Wie wirst du TinyInvest Host? Voraussetzungen, Verdienst (bis 45 %), Standortanforderungen und der komplette Bewerbungsprozess erklärt.",
+    "Wie wirst du TinyInvest Host? Voraussetzungen, Verdienst (45 % nach Pacht), Standortanforderungen und der komplette Bewerbungsprozess erklärt.",
   keywords:
     "tiny house host werden, grundstück tiny house vermieten, airbnb host tiny house, lokale Partner host, tiny house betreiber werden",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -54,7 +54,7 @@ export default function HostWerdenPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Host werden: Tiny House auf deinem Grundstück betreiben 2026",
-    "description": "Wie wirst du TinyInvest Host? Voraussetzungen, Verdienst (bis 45 %), Standortanforderungen und der komplette Bewerbungsprozess erklärt.",
+    "description": "Wie wirst du TinyInvest Host? Voraussetzungen, Verdienst (45 % nach Pacht), Standortanforderungen und der komplette Bewerbungsprozess erklärt.",
     "url": "https://tinyhouse.investments/wissen/host-werden",
     "datePublished": "2026-04-14",
     "dateModified": "2026-04-14",
@@ -176,7 +176,7 @@ export default function HostWerdenPage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Was kannst du als Host verdienen?</h2>
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Auf Basis eines TinyInvest Escape (79.000 €) bei 60 % Belegung ergibt sich folgendes Bild: Die monatlichen Gesamtmieteinnahmen liegen bei rund 1.825 €. Davon fließen bis zu 45 % – also bis zu 821 € pro Monat – an dich als Host. Über das Jahr summiert sich das auf bis zu 9.852 €. Der Investor erhält 730 € monatlich passiv, ohne eigene Tätigkeit vor Ort.
+              Auf Basis eines Escape 660 bei 60 % Belegung und 120 €/Nacht ergibt sich folgendes Bild: Die monatlichen Gesamtmieteinnahmen liegen bei rund 2.190 €. Nach Abzug der Stellplatzpacht (208 €) fließen 45 % – also rund 892 € pro Monat – an dich als Host. Über das Jahr summiert sich das auf rund 10.700 €. Der Investor erhält 793 € monatlich passiv, ohne eigene Tätigkeit vor Ort.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Dein Anteil ist nicht vertraglich fixiert, sondern leistungsbasiert. Exzellente Gäste-Bewertungen, schnelle Reaktionszeiten und eine gepflegte Ausstattung werden mit dem vollen 45 %-Anteil belohnt. Das setzt einen klaren Anreiz – und sichert dem Investor gleichzeitig maximale Belegungsquoten. Hosts, die konsequent Top-Ratings sammeln, erreichen nach wenigen Saisons eine verlässliche Nebeneinkommen-Basis ohne eigenes Kapital eingesetzt zu haben.
@@ -213,7 +213,7 @@ export default function HostWerdenPage() {
             <Link href="/hosts" className="border border-amber-200 text-amber-700 hover:bg-amber-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Host-Seite →</Link>
             <Link href="/wissen/tiny-house-als-rendite" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Renditemodell für Investoren →</Link>
             <Link href="/wissen/7g-tiny-house-investment" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Leitfaden →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

@@ -84,7 +84,7 @@ const subGuides = [
     color: "bg-amber-100 text-amber-700",
   },
   {
-    href: "/wissen/kapitalanlage",
+    href: "/tiny-house-als-kapitalanlage",
     title: "Tiny House als Kapitalanlage 2026",
     desc: "Vergleich Tiny House vs. ETW, die 3 Renditesäulen und vollständiges 5-Jahres-Modell.",
     badge: "Flagship-Guide",
@@ -114,7 +114,7 @@ const subGuides = [
   {
     href: "/wissen/tiny-house-als-rendite",
     title: "Tiny House als Renditeobjekt: Cashflow erklärt",
-    desc: "40 % Investor-Anteil, 60–70 % Belegung, 12–18 % IRR — das vollständige Modell.",
+    desc: "Pacht, 45/15/40-Aufteilung, ~12,7 % vor Steuern — das vollständige Modell.",
     badge: "Cashflow",
     color: "bg-green-100 text-green-700",
   },
@@ -417,9 +417,8 @@ export default function PillarPage() {
           <div className="flex flex-wrap gap-3 pt-8 mt-8 border-t border-gray-100">
             <Link href="/steuervorteil" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Steuerrechner →</Link>
             <Link href="/wissen/iab-tiny-house" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">IAB Tiny House →</Link>
-            <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage-Guide →</Link>
             <Link href="/wissen/steuerberater-finden" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Steuerberater finden →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
 

@@ -41,10 +41,10 @@ export default function RenditeModellPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "40 %", label: "Investor-Anteil", sub: "Netto-Einnahmen monatlich" },
-              { value: "12–15 %", label: "IRR p.a.*", sub: "*Erfahrungswerte, standortabhängig, keine Garantie" },
-              { value: "≈ 720 €", label: "Monatl. Mieteinnahmen", sub: "Bei 60 % Belegung · 100 €/Nacht (Erfahrungswert)" },
-              { value: "≈ 33 K€", label: "Liquidität Jahr 1", sub: "Inkl. Steuererstattung (Einzelfall, abhängig von Steuersatz)" },
+              { value: "40 %", label: "Investor-Anteil", sub: "der Einnahmen nach Stellplatzpacht" },
+              { value: "~12,7 %", label: "Rendite p.a.*", sub: "*vor Steuern, Beispielrechnung, keine Garantie" },
+              { value: "≈ 793 €", label: "Monatl. Auszahlung", sub: "Bei 60 % Belegung · 120 €/Nacht (Beispiel)" },
+              { value: "≈ 26,7 K€", label: "§7g-Steuereffekt", sub: "Vorjahr + Kaufjahr bei 42 % (Einzelfall, abhängig von Steuersatz)" },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <p className="font-data text-2xl font-black text-green-400">{s.value}</p>
@@ -87,7 +87,7 @@ export default function RenditeModellPage() {
           <div className="bg-gray-900 rounded-2xl p-8 md:p-10 text-white">
             <div className="text-center mb-8">
               <p className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold mb-2">Beispielrechnung</p>
-              <h3 className="text-xl font-black">80.000 € Haus · 100 €/Nacht · 60 % Auslastung</h3>
+              <h3 className="text-xl font-black">Escape 660 On-Grid 74.700 € · 120 €/Nacht · 60 % Auslastung</h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -95,10 +95,11 @@ export default function RenditeModellPage() {
                 <h4 className="text-green-400 font-bold mb-4 text-[11px] uppercase tracking-wider">Monatlicher Umsatz</h4>
                 <div className="space-y-2.5">
                   {[
-                    { label: "18 Nächte × 100 €",  value: "1.800 €",  bold: false },
-                    { label: "Host (bis 45 %)",     value: "− 810 €",  bold: false },
-                    { label: "Plattform (~15 %)",   value: "− 270 €",  bold: false },
-                    { label: "Investor (40 %)",     value: "= 720 €",  bold: true },
+                    { label: "18 Nächte × 120 €",            value: "2.190 €",  bold: false },
+                    { label: "Stellplatzpacht (2.500 €/Jahr)", value: "− 208 €",  bold: false },
+                    { label: "Host (45 % vom Rest)",          value: "− 892 €",  bold: false },
+                    { label: "Plattform (15 % vom Rest)",     value: "− 297 €",  bold: false },
+                    { label: "Investor (40 % vom Rest)",      value: "= 793 €",  bold: true },
                   ].map((row) => (
                     <div key={row.label} className={`flex justify-between py-2 border-b border-white/10 ${row.bold ? "text-green-400 font-bold text-base" : "text-gray-300 text-[13px]"}`}>
                       <span>{row.label}</span>
@@ -108,13 +109,13 @@ export default function RenditeModellPage() {
                 </div>
               </div>
               <div>
-                <h4 className="text-green-400 font-bold mb-4 text-[11px] uppercase tracking-wider">Jahr 1 Liquidität</h4>
+                <h4 className="text-green-400 font-bold mb-4 text-[11px] uppercase tracking-wider">Vorjahr + Kaufjahr</h4>
                 <div className="space-y-2.5">
                   {[
-                    { label: "Mietauszahlung (p.a.)", value: "+ 8.640 €",  bold: false },
-                    { label: "IAB-Erstattung",         value: "+ 16.800 €", bold: false },
-                    { label: "Sonder-AfA + AfA",       value: "+ 7.728 €",  bold: false },
-                    { label: "Gesamt Liquidität",      value: "≈ 33.168 €", bold: true },
+                    { label: "Mietauszahlung (p.a.)", value: "+ 9.512 €",  bold: false },
+                    { label: "IAB (Vorjahr)",          value: "+ 15.700 €", bold: false },
+                    { label: "Sonder-AfA + deg. AfA",  value: "+ 11.000 €", bold: false },
+                    { label: "Gesamt Liquidität",      value: "≈ 36.200 €", bold: true },
                   ].map((row) => (
                     <div key={row.label} className={`flex justify-between py-2 border-b border-white/10 ${row.bold ? "text-green-400 font-bold text-base" : "text-gray-300 text-[13px]"}`}>
                       <span>{row.label}</span>
@@ -128,15 +129,15 @@ export default function RenditeModellPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
               <div className="bg-white/10 rounded-2xl p-5">
                 <p className="text-gray-400 text-[10px] mb-1">Investiert</p>
-                <p className="font-data text-2xl font-black text-white">80.000 €</p>
+                <p className="font-data text-2xl font-black text-white">74.700 €</p>
               </div>
               <div className="bg-white/10 rounded-2xl p-5">
                 <p className="text-gray-400 text-[10px] mb-1">Effektiv nach Steuer</p>
-                <p className="font-data text-2xl font-black text-green-400">≈ 55.500 €</p>
+                <p className="font-data text-2xl font-black text-green-400">≈ 48.000 €</p>
               </div>
               <div className="bg-green-600 rounded-2xl p-5">
-                <p className="text-green-200 text-[10px] mb-1">IRR p.a. (projiziert)</p>
-                <p className="font-data text-2xl font-black text-white">12–15 %</p>
+                <p className="text-green-200 text-[10px] mb-1">Rendite vor Steuern</p>
+                <p className="font-data text-2xl font-black text-white">~12,7 %</p>
               </div>
             </div>
           </div>
@@ -160,10 +161,10 @@ export default function RenditeModellPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Tiny House als Quelle für passives Einkommen</h2>
           <p className="text-gray-700 text-base leading-relaxed mb-5">
-            Ein Tiny House ist eine der wenigen Sachwertanlagen, die echtes tiny house passive einkommen generieren – ohne operativen Aufwand. Durch das Betreibermodell lokaler Partner von lokale Partner übernimmt ein professioneller Betreiber alle Aufgaben: Standortvermittlung, Buchungsmanagement, Gästebetreuung und Instandhaltung. Der Investor erhält seine 40 % monatlich ausgezahlt.
+            Ein Tiny House ist eine der wenigen Sachwertanlagen, die echtes tiny house passive einkommen generieren – ohne operativen Aufwand. Durch das Betreibermodell lokaler Partner von lokale Partner übernimmt ein professioneller Betreiber alle Aufgaben: Standortvermittlung, Buchungsmanagement, Gästebetreuung und Instandhaltung. Von den Einnahmen wird zuerst die Stellplatzpacht (max. 2.500 €/Jahr) abgezogen, vom Rest erhält der Investor 40 % monatlich ausgezahlt.
           </p>
           <p className="text-gray-700 text-base leading-relaxed">
-            Wer ein Tiny House vermieten und Geld verdienen möchte, profitiert dabei von zwei Hebeln gleichzeitig: dem laufenden Cashflow aus der Vermietung und dem §7g-Steuereffekt, der in Jahr 1 den effektiven Kapitaleinsatz um bis zu 33.000 € reduziert. Das Ergebnis ist ein IRR von 12–15 % p.a. – deutlich über dem, was klassische Immobilien oder REITs realistisch erzielen.
+            Wer ein Tiny House vermieten und Geld verdienen möchte, profitiert dabei von zwei Hebeln gleichzeitig: dem laufenden Cashflow aus der Vermietung und dem §7g-Steuereffekt, der in Vorjahr und Kaufjahr das gebundene Kapital um rund 26.700 € reduziert (On-Grid, 42 % Steuersatz). Die laufende Rendite liegt in der Beispielrechnung bei rund 12,7 % p.a. vor Steuern – deutlich über dem, was klassische Immobilien oder REITs realistisch erzielen.
           </p>
         </div>
       </section>
@@ -200,7 +201,7 @@ export default function RenditeModellPage() {
           </div>
           <div className="mt-8 border-t border-gray-100 pt-8">
             <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-4">Weiterführende Artikel</p>
-            <Link href="/wissen/kapitalanlage" className="group flex items-center gap-4 bg-white border border-gray-100 rounded-2xl p-4 hover:border-green-200 hover:shadow-sm transition-all text-left mb-3">
+            <Link href="/tiny-house-als-kapitalanlage" className="group flex items-center gap-4 bg-white border border-gray-100 rounded-2xl p-4 hover:border-green-200 hover:shadow-sm transition-all text-left mb-3">
               <div className="relative w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
                 <Image src="/images/outside/tiny-house-escape-hero.webp" alt="Kapitalanlage" fill className="object-cover group-hover:scale-105 transition-transform duration-300" priority sizes="(max-width: 768px) 100vw, 896px" />
               </div>

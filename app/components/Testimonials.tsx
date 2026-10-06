@@ -54,7 +54,7 @@ export default function Testimonials() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             {[
               { value: "2022", label: "Gegründet · wachsendes Volumen" },
-              { value: "12–14 %*", label: "p.a. (Erfahrungswerte, standortabh.)" },
+              { value: "~12,7 %*", label: "p.a. vor Steuern (Beispiel, standortabh.)" },
               { value: "100 %", label: "Eigentumsübertragung" },
             ].map((item) => (
               <div key={item.label}>

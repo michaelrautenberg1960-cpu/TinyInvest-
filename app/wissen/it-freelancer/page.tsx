@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. lokale Partner übernehmen Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Nettomieteinnahmen — remote, ohne Aufwand, egal ob Sie gerade im Sprint sind oder auf Workation.",
+      "Nein. lokale Partner übernehmen Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Mieteinnahmen nach Pacht — remote, ohne Aufwand, egal ob Sie gerade im Sprint sind oder auf Workation.",
   },
   {
     question: "Kann ich das Tiny House nach ein paar Jahren verkaufen?",
@@ -233,7 +233,7 @@ export default function ItFreelancerPage() {
             {[
               { step: "1", title: "IAB bilden", desc: "50 % des Kaufpreises im Vorjahr in der Steuererklärung abziehen. Steuererstattung vor der Lieferung — Kapital kommt zurück, bevor das Haus ankommt." },
               { step: "2", title: "Kaufen & abschreiben", desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr. Maximaler Steuerhebel in zwei aufeinanderfolgenden Jahren." },
-              { step: "3", title: "Cashflow kassieren", desc: "40 % der Nettomieteinnahmen monatlich. Alles verwaltet lokaler Partner — du kriegst eine Überweisung, sonst nichts." },
+              { step: "3", title: "Cashflow kassieren", desc: "40 % der Mieteinnahmen nach Pacht monatlich. Alles verwaltet lokaler Partner — du kriegst eine Überweisung, sonst nichts." },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-6 bg-white">
                 <div className="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-black text-sm mb-4">{item.step}</div>
@@ -286,7 +286,7 @@ export default function ItFreelancerPage() {
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
                     ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 39.500 € im Vorjahr"],
-                    ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "12–18 % IRR nach Steuer"],
+                    ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "~12,7 % vor Steuern + §7g"],
                     ["Aufwand", "Keiner", "Gelegentliches Rebalancing", "Keiner (vollverwaltet)"],
                     ["§7g IAB nutzbar", "❌ Nein", "❌ Nein", "✅ Ja"],
                     ["Remote nutzbar", "✅ Ja", "✅ Ja", "✅ Ja"],

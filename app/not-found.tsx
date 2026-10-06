@@ -43,7 +43,7 @@ export default function NotFound() {
               { href: "/so-funktioniert-es", label: "So funktioniert es" },
               { href: "/rechner/iab", label: "IAB-Rechner" },
               { href: "/konfigurator", label: "Konfigurator" },
-              { href: "/wissen/kapitalanlage", label: "Kapitalanlage-Guide" },
+              { href: "/tiny-house-als-kapitalanlage", label: "Tiny House als Kapitalanlage" },
             ].map((l) => (
               <Link
                 key={l.href}

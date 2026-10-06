@@ -21,11 +21,11 @@ const paths = [
   {
     id: "rendite",
     label: "📈 Rendite-Investor",
-    subtitle: "Passiver Cashflow · 40 % der Einnahmen monatlich",
+    subtitle: "Passiver Cashflow · 40 % der Einnahmen nach Pacht monatlich",
     steps: [
       { num: "01", title: "Modell & Standort wählen", desc: "Wähle dein Modell und deinen Wunschstandort – ob Deutschland, Österreich, Rumänien oder Kroatien. Wir beraten dich bei der Standortwahl." },
       { num: "02", title: "Host & Lieferung", desc: "Wir vermitteln dir einen verifizierten Host vor Ort, der Reinigung, Check-in und Pflege übernimmt. Dein Haus wird geliefert und aufgestellt." },
-      { num: "03", title: "Monatliche Auszahlung", desc: "Los geht's: Dein Haus ist buchbar. Du erhältst 40 % der Einnahmen monatlich ausgezahlt – transparent und vollständig passiv." },
+      { num: "03", title: "Monatliche Auszahlung", desc: "Los geht's: Dein Haus ist buchbar. Du erhältst 40 % der Einnahmen nach Pacht monatlich ausgezahlt – transparent und vollständig passiv." },
     ],
   },
   {

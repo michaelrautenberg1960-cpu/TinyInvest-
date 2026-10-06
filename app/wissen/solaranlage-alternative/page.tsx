@@ -132,7 +132,7 @@ export default function SolaranlageAlternativePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["§7g IAB", "Solaranlage Alternative", "12–18 % Rendite", "Bewegliches Wirtschaftsgut", "Kein eigenes Dach"].map((tag) => (
+            {["§7g IAB", "Solaranlage Alternative", "~12,7 % Rendite vor Steuern", "Bewegliches Wirtschaftsgut", "Kein eigenes Dach"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -201,7 +201,7 @@ export default function SolaranlageAlternativePage() {
                   {[
                     ["IAB nutzbar", "âœ… Ja", "âœ… Ja"],
                     ["AfA-Laufzeit", "20 Jahre (5 % p.a.)", "8 Jahre (~12,5 % p.a.)"],
-                    ["Netto-Rendite", "4–7 %", "12–18 %"],
+                    ["Rendite p.a.", "4–7 %", "~12,7 % vor Steuern"],
                     ["Einkommensquelle", "Einspeisevergütung", "Ferientourismus"],
                     ["Technologierisiko", "âš  Degradation, Wechselrichter", "âœ… Niedrig"],
                     ["Politisches Risiko", "âš  Einspeisevergütung gesetzlich", "âœ… Niedrig"],
@@ -248,7 +248,7 @@ export default function SolaranlageAlternativePage() {
             <Link href="/rechner/iab" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">IAB-Rechner →</Link>
             <Link href="/wissen/7g-tiny-house-investment" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Leitfaden →</Link>
             <Link href="/wissen/iab-tiny-house" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">IAB Tiny House →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House Kapitalanlage 2026 →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

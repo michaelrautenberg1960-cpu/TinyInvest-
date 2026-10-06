@@ -62,8 +62,8 @@ const modelle = [
   {
     rang: "1",
     titel: "Tiny House Investment",
-    einstieg: "ab 65.000 €",
-    rendite: "12–14 % IRR p.a.",
+    einstieg: "ab 74.700 €",
+    rendite: "~12,7 % p.a. vor Steuern",
     zeitaufwand: "~0 Std.",
     eigentuemer: "âœ… Ja",
     fazit: "Niedrigster Einstieg, höchste Rendite, mit geringem Aufwand über lokale Partnerer Betrieb.",
@@ -74,7 +74,7 @@ const modelle = [
 const faqItems = [
   {
     question: "Welche Immobilieninvestition liefert die höchsten passiven Einnahmen?",
-    answer: "Unter Berücksichtigung von Zeitaufwand, Einstiegskapital und Steuereffekten schneidet das Tiny House Investment 2026 am besten ab: 12–14 % IRR, ~0 Std. Zeitaufwand und §7g macht bis zu 40 % des Kaufpreises im ersten Jahr steuerlich absetzbar. REITs sind liquider aber steuerlich nicht optimierbar.",
+    answer: "Unter Berücksichtigung von Zeitaufwand, Einstiegskapital und Steuereffekten schneidet das Tiny House Investment 2026 am besten ab: ~12,7 % p.a. vor Steuern, ~0 Std. Zeitaufwand und §7g macht bis zu 40 % des Kaufpreises im ersten Jahr steuerlich absetzbar. REITs sind liquider aber steuerlich nicht optimierbar.",
   },
   {
     question: "Sind REITs wirklich passiv?",
@@ -292,7 +292,7 @@ export default function PassiveEinnahmenPage() {
 
             <h3 className="text-lg font-black text-gray-900 mb-3">Warum die Rendite so hoch ist</h3>
             <p className="text-gray-700 text-base leading-relaxed mb-8">
-              Mit einer projizierten Rendite von 12–14&nbsp;% IRR schlägt das Tiny House die klassischen Modelle um Längen. Dies liegt vor allem an der Kombination aus moderner Modulbauweise, hoher Nachfrage nach nachhaltigem Wohnraum und einem vollautomatisierten Betreibermodell. Der Anleger erwirbt echtes Eigentum (das Haus), während sich ein Management-Service um die Vermietung und Instandhaltung kümmert.
+              Mit einer Rendite von rund 12,7&nbsp;% p.a. vor Steuern (Beispielrechnung nach Stellplatzpacht) schlägt das Tiny House die klassischen Modelle um Längen. Dies liegt vor allem an der Kombination aus moderner Modulbauweise, hoher Nachfrage nach nachhaltigem Wohnraum und einem vollautomatisierten Betreibermodell. Der Anleger erwirbt echtes Eigentum (das Haus), während sich ein Management-Service um die Vermietung und Instandhaltung kümmert.
             </p>
 
             <h3 className="text-lg font-black text-gray-900 mb-3">Der steuerliche â€žCheat-Code": §&nbsp;7g EStG</h3>

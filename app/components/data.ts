@@ -15,7 +15,7 @@ export const navLinks = [
 
 export const stats = [
   { value: "70 %", label: "Im Kaufjahr absetzbar" },
-  { value: "10–14 %*", label: "Rendite p.a." },
+  { value: "~12,7 %*", label: "Rendite p.a. vor Steuern" },
   { value: "47–58 %", label: "Ø Belegung (Erfahrungswerte)" },
   { value: "100 %", label: "Mobiles Wirtschaftsgut" },
 ];
@@ -96,11 +96,11 @@ export const winWinModel = [
   {
     icon: "🏡",
     party: "Der Host",
-    percent: "bis 45 %",
+    percent: "45 %",
     color: "bg-amber-50 border-amber-200",
     textColor: "text-amber-700",
     role: "Kümmert sich vor Ort um Reinigung, Check-in und Pflege des Grundstücks.",
-    motivation: "Je besser seine Gäste-Bewertung auf der Plattform, desto höher sein Anteil.",
+    motivation: "Je besser seine Gäste-Bewertungen, desto mehr Buchungen – und desto höher seine Einnahmen.",
   },
   {
     icon: "💼",
@@ -114,7 +114,7 @@ export const winWinModel = [
   {
     icon: "⚙️",
     party: "TinyInvest (Plattform)",
-    percent: "~15 %",
+    percent: "15 %",
     color: "bg-gray-50 border-gray-200",
     textColor: "text-gray-700",
     role: "Betreibt die Buchungsplattform, Marketing, Zahlungsabwicklung und Qualitätskontrolle.",
@@ -185,7 +185,7 @@ export const steuerCards = [
 ];
 
 export const vergleichRows = [
-  ["Durchschnittlicher Kaufpreis (70 m²)", "~308.000 € (DE-Schnitt)", "60.000 – 95.000 € 💚"],
+  ["Durchschnittlicher Kaufpreis (70 m²)", "~308.000 € (DE-Schnitt)", "74.700 – 83.400 € netto 💚"],
   ["Kaufnebenkosten (Notar, Steuer, Makler)", "~30.000–48.000 € extra (10–12 %)", "Keine – Direktkauf ohne Notar"],
   ["Grunderwerbsteuer", "3,5–6,5 % des Kaufpreises", "❌ Keine (kein Grundstückskauf)"],
   ["Eigenkapital-Bedarf Real", "~50.000–70.000 € nur für Nebenkosten", "IAB-Erstattung = Ihr Eigenkapital ✅"],
@@ -193,12 +193,12 @@ export const vergleichRows = [
   ["Hausgeld + Instandhaltungsrücklage", "+100–300 €/Monat extra", "Im Management-Fee enthalten ✅"],
   ["Sanierungsrisiko", "Hoch (+20.000–40.000 € Sonderumlage)", "Keins – Neubau & mobil 🏗️"],
   ["Abschreibungsdauer", "33–50 Jahre", "8–10 Jahre ⚡"],
-  ["Steuer-Vorteil Jahr 1", "~1.000 €", "~24.500 € 🎯"],
+  ["Steuer-Vorteil Vorjahr + Kaufjahr", "~1.000 €", "~26.700 € 🎯"],
   ["IAB nutzbar", "❌ Nein", "✅ Ja (50 % vorab)"],
   ["Sonder-AfA (40 %)", "❌ Nein", "✅ Ja (2024)"],
   ["Standortflexibilität", "Fest (Immobil)", "Mobil – EU-weit 🚛"],
   ["Management", "Eigenregie / Hausverwaltung", "Betrieb über lokale Partner möglich"],
-  ["Rendite p.a.", "3–4 % (nach Kosten)", "10–14 %* (standortabhängig) 🚀"],
+  ["Rendite p.a.", "3–4 % (nach Kosten)", "~12,7 %* vor Steuern, nach Pacht 🚀"],
 ];
 
 export const testimonials = [

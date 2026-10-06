@@ -108,7 +108,7 @@ export default function Betreiber() {
                 { label: "Ø Belegung", value: "47–58 %", note: "Erfahrungswerte, standortabhängig" },
                 { label: "Ø Nachtrate", value: "120–180 €", note: "Je nach Standort & Saison" },
                 { label: "Investor-Anteil", value: "40 %", note: "Der Brutto-Einnahmen monatlich" },
-                { label: "Host-Anteil", value: "bis 45 %", note: "Performance-basiert (Anreizmodell)" },
+                { label: "Host-Anteil", value: "45 %", note: "der Einnahmen nach Stellplatzpacht" },
               ].map((s) => (
                 <div key={s.label} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
                   <div className="flex items-end justify-between mb-0.5">

@@ -90,7 +90,7 @@ export default function TinyHouseVsEtfAltersvorsorge() {
 
   const vergleichRows = [
     ["Rendite p.a.", "6–8 % (brutto, historisch MSCI World)", "11–16 % (Cash-on-Cash + §7g-Effekt)"],
-    ["Monatlicher Cashflow", "Nein (Entnahmeplan nötig)", "Ja – ab Monat 1 (40 % der Mieteinnahmen)"],
+    ["Monatlicher Cashflow", "Nein (Entnahmeplan nötig)", "Ja – ab Monat 1 (40 % der Mieteinnahmen nach Pacht)"],
     ["Marktabhängigkeit", "Hoch (Kursrisiko kurz vor Rente)", "Gering (Mietmarkt, nicht Börse)"],
     ["Sachwert / Inflationsschutz", "Nein (Papiervermögen)", "Ja (physisches Gut mit Restwert)"],
     ["Aufwand", "Gering (rebalancing)", "Keiner (vollverwaltet durch lokale Partner)"],
@@ -153,7 +153,7 @@ export default function TinyHouseVsEtfAltersvorsorge() {
               ETF-Sparpläne auf den MSCI World haben historisch 6–8 % Rendite pro Jahr geliefert. Das ist beeindruckend — aber für Altersvorsorge gibt es eine wichtige Einschränkung: ETFs liefern keinen automatischen monatlichen Cashflow. Wer im Ruhestand von ETF-Erträgen leben will, muss selbst einen Entnahmeplan aufstellen und dabei das größte Risiko managen, das Anleger kurz vor und nach dem Rentenbeginn kennen: das Sequence-of-Returns-Risiko.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Ein Tiny House funktioniert anders: Es zahlt 40 % der Mieteinnahmen monatlich aus — unabhängig von Börsenkursen, Zinsniveaus oder wirtschaftlichen Zyklen. Dieser Vergleich zeigt, wann welches Instrument die bessere Wahl ist.
+              Ein Tiny House funktioniert anders: Es zahlt 40 % der Mieteinnahmen nach Pacht monatlich aus — unabhängig von Börsenkursen, Zinsniveaus oder wirtschaftlichen Zyklen. Dieser Vergleich zeigt, wann welches Instrument die bessere Wahl ist.
             </p>
           </div>
 
@@ -219,8 +219,7 @@ export default function TinyHouseVsEtfAltersvorsorge() {
             <Link href="/wissen/senioren" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Senioren & Rentner →</Link>
             <Link href="/wissen/tiny-house-altersvorsorge" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Altersvorsorge Guide →</Link>
             <Link href="/wissen/rentenlucke-schliessen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Rentenlücke schließen →</Link>
-            <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage-Guide →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

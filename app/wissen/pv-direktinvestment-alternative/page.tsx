@@ -68,7 +68,7 @@ const vergleichRows = [
   ["Politisches Risiko", "Hoch (EEG-Änderungen)", "Gering"],
   ["Einkommensquelle", "Einspeisevergütung (staatlich)", "Mietmarkt (marktbasiert)"],
   ["Monatlicher Cashflow", "Nein (Jahresabrechnung)", "Ja (40 % der Nettomiete)"],
-  ["IRR nach Steuereffekt", "4–8 %", "16–18 % p.a."],
+  ["Rendite p.a.", "4–8 %", "~12,7 % vor Steuern + §7g-Effekt"],
   ["Wiederverkauf möglich", "Kaum (fest verbaut)", "Ja (mobil, kein Notar)"],
 ];
 
@@ -157,7 +157,7 @@ export default function PvDirektinvestmentAlternativePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["§7g IAB voll nutzbar", "Ab 79.000 €", "Kein Netzanschluss", "16–18 % IRR p.a.", "Monatlicher Cashflow"].map((tag) => (
+            {["§7g IAB voll nutzbar", "Ab 74.700 €", "Off-Grid möglich", "~12,7 % vor Steuern", "Monatlicher Cashflow"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -202,7 +202,7 @@ export default function PvDirektinvestmentAlternativePage() {
               Der steuerliche Mechanismus ist identisch mit dem eines PV-Direktinvestments – nur mit klarerem Rechtsrahmen und niedrigerer Einstiegsschwelle. Bei einem Tiny House für 79.000 € kannst du im Vorjahr des Kaufs einen IAB von bis zu 39.500 € (50 % der Anschaffungskosten) bilden. Bei einem Grenzsteuersatz von 42 % entspricht das einer Steuererstattung von rund 16.590 € – noch bevor das Haus geliefert wird. Im Kaufjahr selbst greift die Sonder-AfA von 40 % und die degressive AfA von 30 % auf den verbleibenden Buchwert. Der kombinierte Liquiditätsvorteil in den ersten beiden Jahren liegt regelmäßig über 30.000 €.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Auf der Einnahmeseite unterscheidet sich das Tiny House grundlegend von einer PV-Anlage. Statt staatlich festgelegter Einspeisevergütung generiert das Haus Mieteinnahmen über den Ferientourismus – marktbasiert, monatlich, nicht an politische Entscheidungen gebunden. TinyInvest zahlt 40 % der Netto-Mieteinnahmen monatlich an den Investor aus. Bei 60 % Belegung und einem Durchschnittspreis von 100 € pro Nacht sind das rund 730 € im Monat. Der IRR liegt nach vollständiger §7g-Nutzung bei 16 bis 18 % p.a.
+              Auf der Einnahmeseite unterscheidet sich das Tiny House grundlegend von einer PV-Anlage. Statt staatlich festgelegter Einspeisevergütung generiert das Haus Mieteinnahmen über den Ferientourismus – marktbasiert, monatlich, nicht an politische Entscheidungen gebunden. Nach Abzug der Stellplatzpacht zahlt TinyInvest 40 % der Mieteinnahmen nach Pacht monatlich an den Investor aus. Bei 60 % Belegung und einem Durchschnittspreis von 120 € pro Nacht sind das rund 793 € im Monat – rund 12,7 % p.a. vor Steuern. Der §7g-Steuereffekt kommt separat hinzu.
             </p>
           </div>
 
@@ -275,7 +275,7 @@ export default function PvDirektinvestmentAlternativePage() {
             <Link href="/wissen/iab-tiny-house" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">IAB Tiny House Guide →</Link>
             <Link href="/wissen/afa-abschreibung" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g AfA erklärt →</Link>
             <Link href="/wissen/tiny-house-finanzierung" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Finanzierung →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

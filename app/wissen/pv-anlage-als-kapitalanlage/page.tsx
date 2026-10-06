@@ -35,7 +35,7 @@ const faqItems = [
   {
     question: "Wie hoch ist die Rendite einer PV-Anlage im Vergleich zu einem Tiny House?",
     answer:
-      "Eine 10-kWp-Anlage produziert ca. 9.000 kWh/Jahr. Bei der aktuellen Einspeisevergütung von ~8 ct/kWh sind das rund 720 € Jahresertrag auf ~20.000 € Investition – also ca. 3,6 % brutto, vor Degradation und Wartungskosten. Ein Tiny House über TinyInvest bringt bei 60 % Belegung rund 8.760 € Jahresauszahlung auf 79.000 € Investment (11 % Cash-on-Cash) – zuzüglich des IAB-Steuereffekts von bis zu 16.000 € im Vorjahr, der die effektive Rendite auf 16–18 % IRR hebt.",
+      "Eine 10-kWp-Anlage produziert ca. 9.000 kWh/Jahr. Bei der aktuellen Einspeisevergütung von ~8 ct/kWh sind das rund 720 € Jahresertrag auf ~20.000 € Investition – also ca. 3,6 % brutto, vor Degradation und Wartungskosten. Ein Tiny House über TinyInvest bringt bei 60 % Belegung nach Stellplatzpacht rund 9.512 € Jahresauszahlung auf 74.700 € Investment (~12,7 % vor Steuern) – zuzüglich eines §7g-Steuereffekts von rund 26.700 € in Vorjahr und Kaufjahr (42 % Steuersatz).",
   },
   {
     question: "Was ist das größte Risiko bei der PV-Anlage als Investition?",
@@ -64,7 +64,7 @@ const vergleichRows = [
   ["Jährliche Rendite (netto)", "3–5 % (Einspeisevergütung)", "11–14 % Cash-on-Cash"],
   ["IAB (§7g EStG) nutzbar", "Eingeschränkt / meist nein", "Ja – vollständig"],
   ["Sonder-AfA (40 %) nutzbar", "Eingeschränkt", "Ja"],
-  ["Effektive Rendite nach Steuerhebel", "3–5 %", "16–18 % IRR p.a."],
+  ["Rendite p.a.", "3–5 %", "~12,7 % vor Steuern + §7g-Effekt"],
   ["Einkommensquelle", "Einspeisevergütung (staatlich)", "Mietmarkt (marktbasiert)"],
   ["Technologierisiko", "Hoch (Degradation, Wechselrichter)", "Gering"],
   ["Politisches Risiko", "Hoch (Vergütung rückläufig)", "Gering"],
@@ -162,7 +162,7 @@ export default function PvAnlageAlsKapitalanlagePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["IAB voll nutzbar", "16–18 % IRR p.a.", "Monatlicher Cashflow", "Kein Technologierisiko"].map((tag) => (
+            {["IAB voll nutzbar", "~12,7 % vor Steuern", "Monatlicher Cashflow", "Kein Technologierisiko"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -275,8 +275,7 @@ export default function PvAnlageAlsKapitalanlagePage() {
             <Link href="/wissen/afa-abschreibung" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g AfA erklärt →</Link>
             <Link href="/wissen/iab-tiny-house" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">IAB Tiny House Guide →</Link>
             <Link href="/wissen/tiny-house-steuern-sparen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Steuern sparen Anleitung →</Link>
-            <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage-Guide →</Link>
-            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House Kapitalanlage 2026 →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
         </div>

@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Kann ich ein Tiny House als Kapitalanlage kaufen statt selbst einzuziehen?",
     answer:
-      "Ja – und das ist für viele Käufer die wirtschaftlich bessere Option. Als Kapitalanlage wird das Tiny House lokaler Partner als Ferienunterkunft betrieben. Du erhältst 40 % der Mieteinnahmen monatlich und kannst über §7g EStG bis zu 33.000 € Steuern im ersten Jahr sparen. Der Kauf als Investitionsobjekt ist steuerlich deutlich vorteilhafter als Eigennutzung.",
+      "Ja – und das ist für viele Käufer die wirtschaftlich bessere Option. Als Kapitalanlage wird das Tiny House lokaler Partner als Ferienunterkunft betrieben. Du erhältst 40 % der Mieteinnahmen nach Pacht monatlich und kannst über §7g EStG bis zu 33.000 € Steuern im ersten Jahr sparen. Der Kauf als Investitionsobjekt ist steuerlich deutlich vorteilhafter als Eigennutzung.",
   },
   {
     question: "Tiny House kaufen: neu oder gebraucht?",
@@ -246,7 +246,7 @@ export default function TinyHouseKaufenPage() {
               Bei Eigennutzung sparst du Mietkosten und hast maximale Freiheit über den Standort. Steuerlich bringt das jedoch wenig: Da keine betriebliche Nutzung mit Gewinnerzielungsabsicht vorliegt, entfällt der §7g-Steuerhebel komplett. Das Haus ist ein Konsumgut, keine Kapitalanlage.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Wer ein Tiny House als Kapitalanlage kaufen möchte, kauft ein betriebliches Wirtschaftsgut. lokale Partner betreibt es als Ferienunterkunft, du erhältst 40 % der Nettomieteinnahmen monatlich – ca. 720 € bei 60 % Belegung. Dazu kommt der §7g-Steuervorteil: Im ersten Jahr lassen sich bis zu 33.000 € Steuern sparen. Das macht die effektive Einstiegsrendite deutlich attraktiver als Eigennutzung oder klassische Immobilien.
+              Wer ein Tiny House als Kapitalanlage kaufen möchte, kauft ein betriebliches Wirtschaftsgut. lokale Partner betreibt es als Ferienunterkunft, du erhältst nach Abzug der Stellplatzpacht 40 % der Mieteinnahmen nach Pacht monatlich – ca. 793 € bei 60 % Belegung. Dazu kommt der §7g-Steuereffekt: In Vorjahr und Kaufjahr rund 26.700 € (On-Grid, 42 % Steuersatz). Das macht die effektive Einstiegsrendite deutlich attraktiver als Eigennutzung oder klassische Immobilien.
             </p>
           </div>
 
@@ -254,9 +254,9 @@ export default function TinyHouseKaufenPage() {
             <p className="font-black text-gray-900 text-base mb-2">Rechenbeispiel: Cabin 8400 für 79.000 €, 42 % Steuersatz</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 text-[13px]">
               {[
-                { label: "Steuererstattung Jahr 1", value: "bis 33.000 €", sub: "IAB + Sonder-AfA" },
-                { label: "Monatliche Auszahlung", value: "ca. 720 €", sub: "bei 60 % Belegung" },
-                { label: "IRR über 5 Jahre", value: "13–15 %", sub: "inkl. Steuereffekt" },
+                { label: "Steuereffekt VJ + Kaufjahr", value: "≈ 26.700 €", sub: "IAB + Sonder-AfA + deg. AfA" },
+                { label: "Monatliche Auszahlung", value: "ca. 793 €", sub: "bei 60 % Belegung, nach Pacht" },
+                { label: "Rendite p.a.", value: "~12,7 %", sub: "vor Steuern" },
               ].map((k) => (
                 <div key={k.label} className="bg-white rounded-xl p-4 border border-green-100">
                   <p className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">{k.label}</p>

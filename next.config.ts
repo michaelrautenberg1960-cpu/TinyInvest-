@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/wissen/kapitalanlage",
+        destination: "/tiny-house-als-kapitalanlage",
+        permanent: true,
+      },
+      {
         source: "/projekte",
         destination: "/marktplatz",
         permanent: true,

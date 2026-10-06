@@ -60,7 +60,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-4 text-sm uppercase tracking-wide">Wissen & Hosts</h4>
             <ul className="space-y-2">
-              <li><Link href="/wissen/kapitalanlage" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Kapitalanlage-Guide</Link></li>
+              <li><Link href="/tiny-house-als-kapitalanlage" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Tiny House als Kapitalanlage</Link></li>
               <li><Link href="/wissen/7g-tiny-house-investment" className="text-gray-400 hover:text-green-400 text-sm transition-colors">§7g Leitfaden</Link></li>
               <li><Link href="/wissen/iab-tiny-house" className="text-gray-400 hover:text-green-400 text-sm transition-colors">IAB Tiny House</Link></li>
               <li><Link href="/wissen/afa-abschreibung" className="text-gray-400 hover:text-green-400 text-sm transition-colors">§7g AfA erklärt</Link></li>

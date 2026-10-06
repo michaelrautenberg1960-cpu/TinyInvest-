@@ -28,7 +28,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. Bei der Kapitalanlage-Variante übernimmt lokale Partner die vollständige Bewirtschaftung: Buchungen, Reinigung, Gästebetreuung, Wartung. Sie erhalten monatlich 40 % der Mieteinnahmen auf Ihr Konto — ohne eigenen Aufwand.",
+      "Nein. Bei der Kapitalanlage-Variante übernimmt lokale Partner die vollständige Bewirtschaftung: Buchungen, Reinigung, Gästebetreuung, Wartung. Sie erhalten monatlich 40 % der Mieteinnahmen nach Pacht auf Ihr Konto — ohne eigenen Aufwand.",
   },
   {
     question: "Kann ich auch selbst darin wohnen?",
@@ -177,10 +177,10 @@ export default function SeniorenPage() {
               <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center mb-4 text-xl">💰</div>
               <h3 className="font-black text-gray-900 text-lg mb-2">Als Kapitalanlage</h3>
               <p className="text-gray-500 text-[13px] leading-relaxed mb-4">
-                Sie kaufen das Tiny House — lokale Partner übernehmen alles. Buchungen, Gäste, Reinigung, Wartung. Sie erhalten monatlich 40 % der Mieteinnahmen auf Ihr Konto. Kein Aufwand, echtes Einkommen.
+                Sie kaufen das Tiny House — lokale Partner übernehmen alles. Buchungen, Gäste, Reinigung, Wartung. Sie erhalten monatlich 40 % der Mieteinnahmen nach Pacht auf Ihr Konto. Kein Aufwand, echtes Einkommen.
               </p>
               <ul className="space-y-2 text-[13px] text-gray-600">
-                {["12–14 % IRR p.a.", "Monatliche Auszahlung", "über lokale Partner bewirtschaftet", "Kein Verwaltungsaufwand"].map((b) => (
+                {["~12,7 % p.a. vor Steuern", "Monatliche Auszahlung", "über lokale Partner bewirtschaftet", "Kein Verwaltungsaufwand"].map((b) => (
                   <li key={b} className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span>{b}</li>
                 ))}
               </ul>
@@ -216,7 +216,7 @@ export default function SeniorenPage() {
             <div className="bg-green-50 border-l-4 border-green-600 rounded-r-2xl p-5">
               <p className="font-black text-gray-900 text-[14px] mb-1">Als renditestarke Kapitalanlage</p>
               <p className="text-gray-600 text-[13px] leading-relaxed">
-                Sie erwerben das Tiny House als physisches Eigentum, während Profis den Rest erledigen. Über Partner wie lokale Partner wird das Objekt über lokale Partner bewirtschaftet – von der Buchung über die Reinigung bis zur Wartung. Sie profitieren von einer prognostizierten Rendite von 12–14 % p.a. und erhalten monatlich 40 % der Mieteinnahmen direkt auf Ihr Konto. Es ist passives Einkommen im besten Sinne: kein Verwaltungsaufwand, kein Mieterstress, volle Transparenz.
+                Sie erwerben das Tiny House als physisches Eigentum, während Profis den Rest erledigen. Über Partner wie lokale Partner wird das Objekt über lokale Partner bewirtschaftet – von der Buchung über die Reinigung bis zur Wartung. Sie profitieren von einer Rendite von rund 12,7 % p.a. vor Steuern (Beispielrechnung) und erhalten monatlich 40 % der Mieteinnahmen nach Stellplatzpacht direkt auf Ihr Konto. Es ist passives Einkommen im besten Sinne: kein Verwaltungsaufwand, kein Mieterstress, volle Transparenz.
               </p>
             </div>
             <div className="bg-gray-50 border-l-4 border-gray-300 rounded-r-2xl p-5">
@@ -286,7 +286,7 @@ export default function SeniorenPage() {
           <div className="grid sm:grid-cols-3 gap-5 mb-12">
             {[
               { num: "01", title: "Echter Sachwert", desc: "Kein Papier, kein Versprechen. Das Tiny House gehört Ihnen physisch — mit einem Restwert, der nicht von Bankbilanzen abhängt." },
-              { num: "02", title: "Einkommen oder niedrige Kosten", desc: "Als Kapitalanlage: 40 % der Mieteinnahmen monatlich. Als Wohnlösung: Heizung, Strom und Versicherung kosten einen Bruchteil eines normalen Hauses." },
+              { num: "02", title: "Einkommen oder niedrige Kosten", desc: "Als Kapitalanlage: 40 % der Mieteinnahmen nach Pacht monatlich. Als Wohnlösung: Heizung, Strom und Versicherung kosten einen Bruchteil eines normalen Hauses." },
               { num: "03", title: "Kein Aufwand", desc: "Bei der Vermietung übernimmt lokale Partner alles. Bei der Eigennutzung ist nichts zu verwalten — kein Mieter, kein Makler, kein Verwalter." },
             ].map((item) => (
               <div key={item.num} className="bg-green-700 rounded-2xl p-6 text-white">
@@ -304,7 +304,7 @@ export default function SeniorenPage() {
               <strong className="text-gray-900">Das Rentner-Paar mit zu großem Haus:</strong> Sie haben jahrzehntelang in Ihr Eigenheim investiert. Die Kinder sind längst ausgezogen, aber das Haus steht noch — groß, teuer und aufwändig. Der Verkauf würde Kapital freisetzen, das Sie bisher nicht wissen, wohin es soll. Statt es auf dem Tagesgeldkonto parken, kaufen Sie ein oder zwei Tiny Houses als Kapitalanlage: monatliche Einnahmen, keine Verwaltungsarbeit, ein echter Sachwert. Das freigesetzte Kapital arbeitet für Sie — nicht umgekehrt.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              <strong className="text-gray-900">Der oder die Alleinstehende mit Rentenlücke:</strong> Wer allein von der gesetzlichen Rente lebt, kennt die monatliche Rechnung. Eine zusätzliche Einnahmequelle — auch wenn sie überschaubar beginnt — kann den Unterschied machen. 40 % der Mieteinnahmen eines gut gebuchten Tiny Houses bedeuten je nach Auslastung 500–800 € monatlich zusätzlich. Das ist kein Luxus — das ist finanzielle Luft zum Atmen.
+              <strong className="text-gray-900">Der oder die Alleinstehende mit Rentenlücke:</strong> Wer allein von der gesetzlichen Rente lebt, kennt die monatliche Rechnung. Eine zusätzliche Einnahmequelle — auch wenn sie überschaubar beginnt — kann den Unterschied machen. 40 % der Mieteinnahmen nach Pacht eines gut gebuchten Tiny Houses bedeuten je nach Auslastung 500–800 € monatlich zusätzlich. Das ist kein Luxus — das ist finanzielle Luft zum Atmen.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               <strong className="text-gray-900">Wer einen neuen Lebensabschnitt aktiv gestalten möchte:</strong> Manche Senioren wollen nicht nur Kapital anlegen — sie wollen auch wohnen. Raus aus der Stadt, rein in die Natur, runter mit den Fixkosten. Ein Tiny House kann beides sein: der eigene Rückzugsort heute und eine renditestarke Anlage morgen. Wer heute einzieht und das Objekt nach ein paar Jahren nicht mehr selbst nutzen möchte, kann jederzeit in die Vermietungsvariante wechseln oder das Tiny House verkaufen. Keine Entscheidung ist endgültig.
@@ -353,7 +353,7 @@ export default function SeniorenPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
-                    ["Rendite p.a.", "~0–2 %", "~5–8 % (schwankend)", "12–14 % IRR"],
+                    ["Rendite p.a.", "~0–2 %", "~5–8 % (schwankend)", "~12,7 % vor Steuern"],
                     ["Kapitalbindung", "Jederzeit", "Jederzeit (mit Verlustrisiko)", "Empfohlen 5+ Jahre"],
                     ["Eigener Aufwand", "Keiner", "Monitoring nötig", "Keiner (bei Vermietung)"],
                     ["Anfassbar / real", "❌ Nein", "❌ Nein", "✅ Ja"],
@@ -395,7 +395,7 @@ export default function SeniorenPage() {
           {/* Internal links */}
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
             <Link href="/marktplatz" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Projekte ansehen →</Link>
-            <Link href="/wissen/kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Kapitalanlage-Guide →</Link>
+            <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
             <Link href="/wissen/tiny-house-als-rendite" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Mieteinnahmen erklärt →</Link>
             <Link href="/wissen/ferienimmobilie-steuer" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">vs. Ferienimmobilie →</Link>
           </div>

@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. lokale Partner übernehmen Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Nettomieteinnahmen — ohne eigenen Aufwand. Neben einem vollen Auftragsbuch bleibt Ihnen damit keinerlei Verwaltungslast.",
+      "Nein. lokale Partner übernehmen Buchungen, Gästebetreuung, Reinigung und Wartung vollständig. Sie erhalten monatlich 40 % der Mieteinnahmen nach Pacht — ohne eigenen Aufwand. Neben einem vollen Auftragsbuch bleibt Ihnen damit keinerlei Verwaltungslast.",
   },
   {
     question: "Was ist der Unterschied zum Kauf einer Eigentumswohnung?",
@@ -234,7 +234,7 @@ export default function FreiberuflerPage() {
             {[
               { step: "1", title: "IAB bilden", desc: "Bis zu 50 % des Kaufpreises im Jahr VOR dem Kauf in der Steuererklärung abziehen. Steuererstattung noch vor Lieferung des Hauses." },
               { step: "2", title: "Tiny House kaufen", desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr. Maximaler Abschreibungshebel — vollständig legal nach §7g EStG." },
-              { step: "3", title: "Einnahmen kassieren", desc: "40 % der Nettomieteinnahmen monatlich. lokale Partner verwaltet vollständig — kein Aufwand neben Ihrer Haupttätigkeit." },
+              { step: "3", title: "Einnahmen kassieren", desc: "40 % der Mieteinnahmen nach Pacht monatlich. lokale Partner verwaltet vollständig — kein Aufwand neben Ihrer Haupttätigkeit." },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-6 bg-white">
                 <div className="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-black text-sm mb-4">{item.step}</div>
@@ -260,7 +260,7 @@ export default function FreiberuflerPage() {
           <div className="grid sm:grid-cols-3 gap-5 mb-12">
             {[
               { num: "01", title: "Steuervorteil im Vorjahr", desc: "Der IAB senkt die Steuerlast schon vor dem Kauf. Keine andere Anlageform bietet diesen Vorzieheffekt — legal, klar geregelt in §7g EStG." },
-              { num: "02", title: "Mieteinnahmen als Eigentümer", desc: "40 % der Nettomieteinnahmen monatlich — unabhängig von Auftragslage, Mandantenzahl oder Urlaubszeiten." },
+              { num: "02", title: "Mieteinnahmen als Eigentümer", desc: "40 % der Mieteinnahmen nach Pacht monatlich — unabhängig von Auftragslage, Mandantenzahl oder Urlaubszeiten." },
               { num: "03", title: "Sachwert mit Restwert", desc: "Kein Papierwert. Das Tiny House ist physisches Eigentum mit Fahrzeugidentifikationsnummer — mobil, verkaufbar, inflationsresistent." },
             ].map((item) => (
               <div key={item.num} className="bg-green-700 rounded-2xl p-6 text-white">
@@ -287,7 +287,7 @@ export default function FreiberuflerPage() {
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
                     ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 39.500 € im Vorjahr"],
-                    ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "12–18 % IRR nach Steuer"],
+                    ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "~12,7 % vor Steuern + §7g"],
                     ["Aufwand", "Keiner", "Monitoring nötig", "Keiner (vollverwaltet)"],
                     ["§7g IAB nutzbar", "❌ Nein", "❌ Nein", "✅ Ja"],
                     ["Sachwert", "❌ Nein", "❌ Nein", "✅ Ja (bewegliches Gut)"],

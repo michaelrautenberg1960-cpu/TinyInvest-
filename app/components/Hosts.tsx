@@ -58,7 +58,7 @@ const hostSteps = [
   {
     num: "5",
     title: "Monatlich verdienen",
-    desc: "Du erhältst monatlich bis zu 45 % der Netto-Mieteinnahmen auf dein Konto. Transparent, pünktlich, leistungsbasiert.",
+    desc: "Du erhältst monatlich 45 % der Mieteinnahmen nach Stellplatzpacht auf dein Konto. Transparent, pünktlich, leistungsbasiert.",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function Hosts() {
           <div className="bg-amber-50 border border-amber-200 rounded-3xl p-8 text-center">
             <div className="text-5xl mb-4">🏡</div>
             <h3 className="text-xl font-black text-amber-800 mb-2">Du als Host</h3>
-            <p className="text-amber-700 font-bold text-3xl mb-1">bis 45 %</p>
+            <p className="text-amber-700 font-bold text-3xl mb-1">45 %</p>
             <p className="text-amber-600 text-sm">der monatlichen Einnahmen</p>
             <ul className="text-left mt-4 space-y-2 text-[13px] text-amber-700">
               <li className="flex gap-2"><span>✓</span> Grundstück bereitstellen</li>
@@ -113,7 +113,7 @@ export default function Hosts() {
           <div className="bg-gray-100 border border-gray-200 rounded-3xl p-8 text-center">
             <div className="text-5xl mb-4">⚙️</div>
             <h3 className="text-xl font-black text-gray-800 mb-2">TinyInvest</h3>
-            <p className="text-gray-600 font-bold text-3xl mb-1">~15 %</p>
+            <p className="text-gray-600 font-bold text-3xl mb-1">15 %</p>
             <p className="text-gray-500 text-sm">Plattform-Fee</p>
             <ul className="text-left mt-4 space-y-2 text-[13px] text-gray-600">
               <li className="flex gap-2"><span>✓</span> Buchungsplattform</li>

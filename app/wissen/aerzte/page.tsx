@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Muss ich das Tiny House selbst verwalten?",
     answer:
-      "Nein. lokale Partner übernehmen die vollständige Bewirtschaftung: Buchungsmanagement, Gästebetreuung, Reinigung, Wartung und Abrechnung. Sie erhalten monatlich 40 % der Nettomieteinnahmen auf Ihr Konto. Der Aufwand neben einer vollen Arztpraxis ist damit gleich null.",
+      "Nein. lokale Partner übernehmen die vollständige Bewirtschaftung: Buchungsmanagement, Gästebetreuung, Reinigung, Wartung und Abrechnung. Sie erhalten monatlich 40 % der Mieteinnahmen nach Pacht auf Ihr Konto. Der Aufwand neben einer vollen Arztpraxis ist damit gleich null.",
   },
   {
     question: "Was passiert steuerlich, wenn ich das Tiny House nach 5 Jahren verkaufe?",
@@ -235,7 +235,7 @@ export default function AerztePage() {
             {[
               { step: "1", title: "IAB bilden", desc: "Bis zu 50 % des geplanten Kaufpreises im Jahr VOR dem Kauf steuerlich abziehen. Die Steuerrückerstattung kommt noch vor der Lieferung des Hauses." },
               { step: "2", title: "Tiny House kaufen", desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr on top. Maximaler Abschreibungshebel in Jahr 1 — vollständig legal nach §7g EStG." },
-              { step: "3", title: "Einnahmen kassieren", desc: "40 % der Nettomieteinnahmen monatlich, über lokale Partner betrieben durch lokale Partner. Kein Aufwand neben der Praxis — echter Mieteinnahmen als Eigentümer." },
+              { step: "3", title: "Einnahmen kassieren", desc: "40 % der Mieteinnahmen nach Pacht monatlich, über lokale Partner betrieben durch lokale Partner. Kein Aufwand neben der Praxis — echter Mieteinnahmen als Eigentümer." },
             ].map((item) => (
               <div key={item.step} className="border border-gray-100 rounded-2xl p-6 bg-white">
                 <div className="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-black text-sm mb-4">{item.step}</div>
@@ -261,7 +261,7 @@ export default function AerztePage() {
           <div className="grid sm:grid-cols-3 gap-5 mb-12">
             {[
               { num: "01", title: "Steuervorteil jetzt", desc: "Der IAB senkt die Steuerlast im aktuellen Jahr — bevor das Haus überhaupt geliefert wird. Kein anderes Investitionsinstrument bietet diesen Vorzieheffekt." },
-              { num: "02", title: "Monatlicher Cashflow", desc: "40 % der Nettomieteinnahmen, unabhängig von der Praxis. Ein zweites Einkommensstandbein, das nicht von Patientenzahlen oder KV-Honoraren abhängt." },
+              { num: "02", title: "Monatlicher Cashflow", desc: "40 % der Mieteinnahmen nach Pacht, unabhängig von der Praxis. Ein zweites Einkommensstandbein, das nicht von Patientenzahlen oder KV-Honoraren abhängt." },
               { num: "03", title: "Sachwert statt Papiergeld", desc: "Ein physisches Wirtschaftsgut mit Restwert — inflationsresistent, nicht von Bankbilanzen abhängig, jederzeit wiederverkaufbar." },
             ].map((item) => (
               <div key={item.num} className="bg-green-700 rounded-2xl p-6 text-white">
@@ -288,7 +288,7 @@ export default function AerztePage() {
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
                     ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 39.500 € im Vorjahr"],
-                    ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "12–18 % IRR nach Steuer"],
+                    ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "~12,7 % vor Steuern + §7g"],
                     ["Aufwand", "Keiner", "Monitoring nötig", "Keiner (vollverwaltet)"],
                     ["Sachwert", "❌ Nein", "❌ Nein", "✅ Ja (bewegliches Gut)"],
                     ["§7g IAB nutzbar", "❌ Nein", "❌ Nein", "✅ Ja"],
