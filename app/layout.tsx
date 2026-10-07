@@ -4,7 +4,7 @@ import "./globals.css";
 import CookieBanner from "./components/CookieBanner";
 import { ModalProvider } from "./components/ModalContext";
 import MemorandumModalLazy from "./components/MemorandumModalLazy";
-import Script from "next/script";
+import Analytics from "./components/Analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -86,18 +86,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} antialiased`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-1726HDFQK1"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-1726HDFQK1');
-          `}
-        </Script>
+        <Analytics />
         <ModalProvider>
           {children}
           <MemorandumModalLazy />

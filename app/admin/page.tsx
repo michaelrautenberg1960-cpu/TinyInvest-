@@ -73,7 +73,7 @@ const STATUS_COLORS = {
   email_gesendet: "bg-blue-100 text-blue-700 border-blue-200",
   kontaktiert:    "bg-yellow-100 text-yellow-700 border-yellow-200",
   wiedervorlage:  "bg-orange-100 text-orange-700 border-orange-200",
-  abgeschlossen:  "bg-indigo-100 text-indigo-700 border-indigo-200",
+  abgeschlossen:  "bg-amber-100 text-amber-700 border-amber-200",
   nicht_weiter:   "bg-gray-100 text-gray-600 border-gray-200",
   abgeben:        "bg-pink-100 text-pink-700 border-pink-200",
 };
@@ -82,7 +82,7 @@ const STATUS_LABELS = {
   email_gesendet: "📧 Email gesendet",
   kontaktiert:    "🟡 Kontaktiert",
   wiedervorlage:  "🔔 Wiedervorlage",
-  abgeschlossen:  "🔵 Abgeschlossen",
+  abgeschlossen:  "🔥 Kaufbereit",
   nicht_weiter:   "⚪ Geht nicht weiter",
   abgeben:        "🤝 Abgeben",
 };
@@ -174,11 +174,14 @@ const FOLLOWUP_STYLES: Record<FollowupState, { border: string; text: string }> =
 
 const FOLLOWUP_RANK: Record<FollowupState, number> = { overdue: 0, today: 1, upcoming: 2, none: 3 };
 
-/** Dringlichste zuerst; innerhalb einer Gruppe nach Datum aufsteigend. */
+/** Dringlichste zuerst; innerhalb einer Gruppe „abgeschlossen" (kaufbereit) vorn, dann nach Datum aufsteigend. */
 function byUrgency(a: Lead, b: Lead): number {
   const ra = FOLLOWUP_RANK[followupState(a.next_followup_at)];
   const rb = FOLLOWUP_RANK[followupState(b.next_followup_at)];
   if (ra !== rb) return ra - rb;
+  const ha = a.status === "abgeschlossen" ? 0 : 1;
+  const hb = b.status === "abgeschlossen" ? 0 : 1;
+  if (ha !== hb) return ha - hb;
   if (!a.next_followup_at || !b.next_followup_at) {
     return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
   }
@@ -911,9 +914,48 @@ export default function AdminPage() {
     abgeben:        leads.filter((l) => l.status === "abgeben").length,
   };
 
-  // ── Follow-up Board ── (erledigte, ausgestiegene und abzugebende Leads brauchen kein Nachfassen)
+  // ── Leads: CSV-Export (aktuelle Filter; Semikolon + BOM, damit deutsches Excel es direkt öffnet) ──
+  const exportLeadsCsv = () => {
+    const columns: [string, (l: Lead) => string | null][] = [
+      ["Erstellt am",        (l) => new Date(l.created_at).toLocaleString("de-DE")],
+      ["Vorname",            (l) => l.vorname],
+      ["Nachname",           (l) => l.nachname],
+      ["E-Mail",             (l) => l.email],
+      ["Telefon",            (l) => l.telefon],
+      ["Interesse",          (l) => l.interesse],
+      ["Budget",             (l) => l.budget],
+      ["Investment-Volumen", (l) => l.investment_volumen],
+      ["Kontaktzeit",        (l) => l.kontakt_zeit],
+      ["Nachricht",          (l) => l.nachricht],
+      ["Status",             (l) => STATUS_LABELS[l.status]?.replace(/^\S+\s/, "") ?? l.status],
+      ["Zugewiesen an",      (l) => l.assigned_to],
+      ["Wartet auf",         (l) => (l.blocked_on_owner ? BLOCKED_LABELS[l.blocked_on_owner].replace(/^\S+\s/, "") : null)],
+      ["Wartet-Notiz",       (l) => l.blocked_on_note],
+      ["Nächstes Follow-up", (l) => l.next_followup_at],
+      ["Zuletzt kontaktiert", (l) => (l.last_contacted_at ? new Date(l.last_contacted_at).toLocaleString("de-DE") : null)],
+    ];
+    const esc = (v: string | null) => {
+      let s = v ?? "";
+      if (/^(=|@|[+\-](?![\d\s]))/.test(s)) s = `'${s}`; // keine Formel-Injection in Excel (Telefonnummern wie +49… bleiben)
+      return /[";\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+    };
+    const rows = [
+      columns.map(([h]) => esc(h)).join(";"),
+      ...filtered.map((l) => columns.map(([, get]) => esc(get(l))).join(";")),
+    ];
+    const blob = new Blob(["﻿" + rows.join("\r\n")], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `leads-${todayISO()}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // ── Follow-up Board ── (ausgestiegene und abzugebende Leads brauchen kein Nachfassen;
+  // „abgeschlossen" heißt noch NICHT gekauft – das sind die heißesten Leads und bleiben drin)
   const followupPool = leads.filter(
-    (l) => !["abgeschlossen", "nicht_weiter", "abgeben"].includes(l.status) && l.blocked_on_owner !== "none"
+    (l) => !["nicht_weiter", "abgeben"].includes(l.status) && l.blocked_on_owner !== "none"
   );
   const waitingOnUs       = followupPool.filter((l) => l.blocked_on_owner !== "customer").sort(byUrgency);
   const waitingOnCustomer = followupPool.filter((l) => l.blocked_on_owner === "customer").sort(byUrgency);
@@ -1147,6 +1189,13 @@ export default function AdminPage() {
                   <button key={p.key} onClick={() => setPhoneFilter(p.key)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${phoneFilter === p.key ? "bg-blue-700 text-white border-blue-500" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>{p.label}</button>
                 ))}
               </div>
+              <button
+                onClick={exportLeadsCsv}
+                disabled={filtered.length === 0}
+                className="ml-auto text-xs font-bold px-4 py-1.5 rounded-full border bg-green-700/30 text-green-300 border-green-500/30 hover:bg-green-700/50 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                ⬇️ Leads exportieren ({filtered.length})
+              </button>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 mb-8">
               {[
@@ -1155,7 +1204,7 @@ export default function AdminPage() {
                 { key: "email_gesendet", label: "Email gesendet", color: "bg-blue-900/30 border-blue-500/30",      icon: "📧" },
                 { key: "kontaktiert",    label: "Kontaktiert",    color: "bg-yellow-900/30 border-yellow-500/30",  icon: "🟡" },
                 { key: "wiedervorlage",  label: "Wiedervorlage",  color: "bg-orange-900/30 border-orange-500/30",  icon: "🔔" },
-                { key: "abgeschlossen",  label: "Abgeschlossen",  color: "bg-indigo-900/30 border-indigo-500/30",  icon: "🔵" },
+                { key: "abgeschlossen",  label: "Kaufbereit",     color: "bg-amber-900/30 border-amber-500/30",    icon: "🔥" },
                 { key: "nicht_weiter",   label: "Geht nicht weiter", color: "bg-gray-800/40 border-gray-500/30",   icon: "⚪" },
                 { key: "abgeben",        label: "Abgeben",        color: "bg-pink-900/30 border-pink-500/30",      icon: "🤝" },
               ].map((s) => (

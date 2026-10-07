@@ -2,20 +2,49 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+export const OPEN_COOKIE_SETTINGS = "open-cookie-settings";
+
+// Entfernt Google-Analytics-Cookies (_ga, _ga_*) für die aktuelle Domain und ihre Elterndomain.
+function deleteAnalyticsCookies() {
+  const host = window.location.hostname;
+  const domains = ["", host, `.${host}`, `.${host.split(".").slice(-2).join(".")}`];
+  document.cookie.split(";").forEach((c) => {
+    const name = c.split("=")[0].trim();
+    if (name === "_ga" || name.startsWith("_ga_") || name === "_gid") {
+      domains.forEach((d) => {
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${d ? `; domain=${d}` : ""}`;
+      });
+    }
+  });
+}
+
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent");
+    let consent: string | null = null;
+    try {
+      consent = localStorage.getItem("cookie-consent");
+    } catch {}
+    let timer: ReturnType<typeof setTimeout> | undefined;
     if (!consent) {
       // Small delay so banner animates in after page load
-      const timer = setTimeout(() => setVisible(true), 800);
-      return () => clearTimeout(timer);
+      timer = setTimeout(() => setVisible(true), 800);
     }
+    const open = () => setVisible(true);
+    window.addEventListener(OPEN_COOKIE_SETTINGS, open);
+    return () => {
+      if (timer) clearTimeout(timer);
+      window.removeEventListener(OPEN_COOKIE_SETTINGS, open);
+    };
   }, []);
 
   const accept = (type: "all" | "necessary") => {
-    localStorage.setItem("cookie-consent", type);
+    try {
+      localStorage.setItem("cookie-consent", type);
+    } catch {}
+    if (type === "necessary") deleteAnalyticsCookies();
+    window.dispatchEvent(new Event("cookie-consent"));
     setVisible(false);
   };
 
@@ -36,10 +65,11 @@ export default function CookieBanner() {
               <p className="font-bold text-white text-sm">Datenschutz & Cookies</p>
             </div>
             <p className="text-gray-400 text-xs leading-relaxed">
-              Diese Website verwendet ausschließlich{" "}
-              <strong className="text-gray-300">technisch notwendige Cookies</strong>, um den sicheren Betrieb zu gewährleisten.
-              Für die interaktiven Rechner werden keine personenbezogenen Daten gespeichert.
-              Weitere Informationen finden Sie in unserer{" "}
+              Wir verwenden <strong className="text-gray-300">technisch notwendige Speicherungen</strong>, damit die Website funktioniert.
+              Mit Ihrer Einwilligung nutzen wir zusätzlich <strong className="text-gray-300">Google Analytics</strong>, um anonymisierte
+              Besucherstatistiken zu erstellen und unser Angebot zu verbessern. Dabei werden Cookies gesetzt und Daten an Google
+              übermittelt, ggf. auch in die USA. Ihre Einwilligung können Sie jederzeit über „Cookie-Einstellungen“ im Footer widerrufen.
+              Mehr dazu in unserer{" "}
               <Link
                 href="/datenschutz"
                 className="text-green-400 hover:text-green-300 underline transition-colors"
@@ -56,7 +86,7 @@ export default function CookieBanner() {
               onClick={() => accept("all")}
               className="flex-1 sm:flex-none bg-green-600 hover:bg-green-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors whitespace-nowrap"
             >
-              Alles akzeptieren
+              Alle akzeptieren
             </button>
             <button
               onClick={() => accept("necessary")}
@@ -69,7 +99,7 @@ export default function CookieBanner() {
 
         {/* Legal badge */}
         <p className="text-gray-600 text-xs mt-3 pt-3 border-t border-gray-800">
-          🛡️ DSGVO-konform · Kein Tracking · Kein Analytics · Stand: März 2026
+          🛡️ Google Analytics nur mit Einwilligung · Einwilligung jederzeit widerrufbar · Stand: Oktober 2026
         </p>
       </div>
     </div>

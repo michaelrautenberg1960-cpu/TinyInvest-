@@ -7,27 +7,30 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House abschreiben: 34.000 € Steuervorteil | TinyInvest",
-  description: "Wie du ein Tiny House in 8 Jahren vollständig abschreibst – statt 50 Jahre wie bei einer Wohnung. IAB, Sonder-AfA und degressive AfA kombiniert erklärt.",
-  keywords: "tiny house abschreiben, tiny house steuern sparen, tiny house steuervorteile 2026, investitionsabzugsbetrag tiny house, tiny house kapitalanlage steuer",
+  title: "Abschreibung Tiny House 2026: AfA, IAB & Sonder-AfA mit Rechenbeispiel | TinyInvest",
+  description: "Tiny House abschreiben: 8 statt 50 Jahre, bis zu 70 % im Kaufjahr. Beispiel 74.700 € → rund 26.700 € Steuereffekt. IAB, Sonder-AfA & degressive AfA erklärt.",
+  keywords: "abschreibung tiny house, tiny house abschreibung, tiny house abschreiben, tiny house steuern sparen, tiny house steuervorteile 2026, investitionsabzugsbetrag tiny house, tiny house kapitalanlage steuer",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/afa-abschreibung" },
   openGraph: {
     ...BASE_OG,
     type: "article",
-    title: "Tiny House abschreiben: Bis zu 34.000 € Steuervorteil im ersten Jahr",
-    description: "Wie du ein Tiny House in 8 Jahren vollständig abschreibst – statt 50 Jahre wie bei einer Wohnung. IAB, Sonder-AfA und degressive AfA kombiniert erklärt.",
+    title: "Abschreibung Tiny House 2026: 70 % im Kaufjahr statt 2 % pro Jahr",
+    description: "Tiny House abschreiben: 8 statt 50 Jahre, bis zu 70 % im Kaufjahr. Beispiel 74.700 € → rund 26.700 € Steuereffekt. IAB, Sonder-AfA & degressive AfA erklärt.",
     url: "https://tinyhouse.investments/wissen/afa-abschreibung",
   },
 };
 
 const faqItems = [
-  { question: "Wie lange schreibt man ein Tiny House steuerlich ab?", answer: "Ein Tiny House auf Vlemmix Trailer gilt als bewegliches Wirtschaftsgut. Die amtliche AfA-Nutzungsdauer beträgt üblicherweise 8 Jahre (lineare AfA von 12,5 % p.a.). In Kombination mit §7g Sonder-AfA (40 %) und degressiver AfA (30 %) ist das Wirtschaftsgut jedoch oft bereits nach 3–5 Jahren steuerlich vollständig abgeschrieben." },
+  { question: "Wie lange schreibt man ein Tiny House steuerlich ab?", answer: "Ein Tiny House auf Vlemmix Trailer gilt als bewegliches Wirtschaftsgut. Die AfA-Nutzungsdauer beträgt üblicherweise 8 Jahre (lineare AfA von 12,5 % p.a.). In Kombination mit §7g Sonder-AfA (40 %) und degressiver AfA (30 %) sind schon im Kaufjahr 70 % und nach drei Jahren rund 85 % des Kaufpreises abgeschrieben. Der Rest verteilt sich auf die übrige Nutzungsdauer." },
   { question: "Was ist der Unterschied zwischen IAB und Sonder-AfA?", answer: "Der Investitionsabzugsbetrag (IAB) ist ein Vorzieheffekt: Du setzt 50 % des geplanten Kaufpreises bereits im Jahr VOR dem Kauf als Betriebsausgabe ab (§7g Abs. 1 EStG). Die Sonder-AfA (40 %) greift dann im Kaufjahr selbst – zusätzlich zur regulären Jahres-AfA. Zusammen mit der degressiven AfA (30 %) kannst du im Kaufjahr bis zu 70 % des Restwerts abschreiben." },
   { question: "Muss ich zwingend einen IAB bilden, um von der Sonder-AfA zu profitieren?", answer: "Nein. IAB und Sonder-AfA sind unabhängig voneinander. Du kannst direkt im Kaufjahr Sonder-AfA (40 %) + degressive AfA (30 %) = 70 % Sofortabschreibung in Anspruch nehmen, ohne vorher einen IAB gebildet zu haben. Der IAB ist dann sinnvoll, wenn du im Vorjahr einen sehr hohen Gewinn hattest." },
-  { question: "Gilt §7g nur für Unternehmer oder auch für Arbeitnehmer?", answer: "§7g EStG gilt für alle, die das Tiny House im Rahmen einer Einkunftsart (Vermietung und Verpachtung, Gewerbetrieb, Freiberufler) nutzen. Wer das Tiny House über lokale Partner vermietet, erzielt Einkünfte aus Vermietung – und kann damit §7g anwenden, unabhängig vom Hauptberuf." },
+  { question: "Gilt §7g nur für Unternehmer oder auch für Arbeitnehmer?", answer: "§7g EStG setzt einen Betrieb voraus – also Einkünfte aus Gewerbebetrieb, selbstständiger Arbeit oder Land- und Forstwirtschaft. Reine Einkünfte aus Vermietung und Verpachtung reichen nicht. Arbeitnehmer können aber ein Nebengewerbe anmelden (z. B. „Vermietung beweglicher Wirtschaftsgüter“) und damit IAB, Sonder-AfA und degressive AfA nutzen. Die Gewinngrenze für den IAB liegt bei 200.000 €. Ob das in deinem Fall passt, klärt dein Steuerberater." },
+  { question: "Wie viel kann ich bei einem Tiny House abschreiben?", answer: "Abschreiben kannst du den gesamten Netto-Kaufpreis – beim Escape 660 On-Grid also 74.700 €. Mit IAB (50 % im Vorjahr), Sonder-AfA (40 %) und degressiver AfA (30 %) auf den Restwert sind bis zum Ende des Kaufjahres rund 63.500 € steuerlich wirksam. Bei 42 % Grenzsteuersatz entspricht das einem Steuereffekt von rund 26.700 €." },
+  { question: "Kann ich ein Tiny House als Privatperson abschreiben?", answer: "Nur wenn es zur Erzielung von Einkünften dient. Ein selbst genutztes Tiny House kann nicht abgeschrieben werden. Wird es vermietet, ist die normale AfA über 8 Jahre möglich. Für IAB und Sonder-AfA nach §7g brauchst du zusätzlich einen Betrieb, etwa ein Nebengewerbe." },
+  { question: "Was passiert mit der Abschreibung beim Verkauf?", answer: "Verkaufst du das Tiny House, ist der Erlös über dem Restbuchwert als Gewinn steuerpflichtig. Wer stark abgeschrieben hat, versteuert beim Verkauf also einen größeren Teil des Erlöses. Außerdem muss das Haus im Kaufjahr und im Folgejahr (fast) ausschließlich betrieblich genutzt werden, sonst wird die Sonder-AfA rückgängig gemacht. Ein IAB, auf den keine Investition innerhalb von drei Jahren folgt, wird rückwirkend aufgelöst." },
   { question: "Kann ich die Abschreibung auch rückwirkend geltend machen?", answer: "Den IAB kann dein Steuerberater unter Umständen noch rückwirkend für das Vorjahr bilden, sofern der Steuerbescheid noch nicht bestandskräftig ist. Die Sonder-AfA und degressive AfA gelten ab dem Jahr der Anschaffung. Eine Beratung durch deinen Steuerberater ist hier unverzichtbar." },
-  { question: "Kann ich ein Tiny House steuerlich absetzen?", answer: "Ja – ein Tiny House auf Vlemmix Trailer lässt sich als bewegliches Wirtschaftsgut vollständig steuerlich absetzen. Die Abschreibung erfolgt über 8 Jahre (12,5 % p.a.). In Kombination mit IAB (50 % im Vorjahr) und Sonder-AfA (40 % im Kaufjahr) kannst du den Großteil des Kaufpreises in den ersten 1–2 Jahren steuerlich absetzen. Technisch spricht man von der Absetzung für Abnutzung (AfA) – bei einem Tiny House auf 8 statt 50 Jahre beschleunigt wie bei klassischen Gebäuden." },
+  { question: "Kann ich ein Tiny House steuerlich absetzen?", answer: "Ja – ein Tiny House auf Vlemmix Trailer lässt sich als bewegliches Wirtschaftsgut vollständig steuerlich absetzen. Die Abschreibung erfolgt über 8 Jahre (12,5 % p.a.). In Kombination mit IAB (50 % im Vorjahr), Sonder-AfA (40 %) und degressiver AfA (30 %) im Kaufjahr kannst du den Großteil des Kaufpreises in den ersten 1–2 Jahren steuerlich absetzen. Voraussetzung für die §7g-Instrumente ist ein Betrieb, z. B. ein Nebengewerbe. Technisch spricht man von der Absetzung für Abnutzung (AfA) – bei einem Tiny House auf 8 statt 50 Jahre beschleunigt wie bei klassischen Gebäuden." },
   { question: "Was ist die Tiny House Sonderabschreibung?", answer: "Die Tiny House Sonderabschreibung beträgt 40 % des Kaufpreises und greift im Jahr der Anschaffung – zusätzlich zur regulären Jahres-AfA. Sie ist in §7g Abs. 5 EStG geregelt und gilt für bewegliche Wirtschaftsgüter wie ein Tiny House auf Vlemmix Trailer. Kombiniert mit der degressiven AfA (30 %) ergibt sich im Kaufjahr eine Sofortabschreibung von bis zu 70 % des Kaufpreises." },
 ];
 
@@ -35,11 +38,11 @@ export default function AfaAbschreibungPage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Tiny House §7g IAB & AfA: So sparst du Steuern 2026",
+    "headline": "Abschreibung Tiny House 2026: 70 % im Kaufjahr statt 2 % pro Jahr",
     "description": "IAB (50 %), Sonder-AfA (40 %), degressive AfA (30 %) für Tiny Houses erklärt. Rechenbeispiele für 42 % Steuersatz. §7g EStG Guide 2026.",
     "url": "https://tinyhouse.investments/wissen/afa-abschreibung",
     "datePublished": "2026-04-14",
-    "dateModified": "2026-04-14",
+    "dateModified": "2026-10-06",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
     "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/articles/7g%20AfA%20%26%20Sonder-Abschreibung%20Tiny%20House%20Steuer-Guide%202026.png" },
@@ -84,7 +87,7 @@ export default function AfaAbschreibungPage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Steuer-Guide · §7g EStG · 2026</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            Tiny House abschreiben: Bis zu 34.000 € Steuervorteil im ersten Jahr
+            Abschreibung Tiny House 2026: 70 % im Kaufjahr statt 2 % pro Jahr
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -93,17 +96,35 @@ export default function AfaAbschreibungPage() {
               <span>·</span>
               <span>TinyInvest Redaktion</span>
               <span>·</span>
-              <time dateTime="2026-04-15">15. April 2026</time>
+              <time dateTime="2026-10-06">Aktualisiert am 6. Oktober 2026</time>
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl mb-8">
             Eine Eigentumswohnung schreibt man 50 Jahre ab. Ein Tiny House auf Vlemmix Trailer in 8 Jahren – mit IAB,
             Sonder-AfA und degressiver AfA bis zu 70 % des Kaufpreises bereits im ersten Jahr.
           </p>
+          <div className="bg-green-50 border border-green-100 rounded-2xl p-6 max-w-3xl mb-8">
+            <h2 className="text-lg font-black text-gray-900 mb-3 tracking-tight">Abschreibung Tiny House auf einen Blick</h2>
+            <ul className="space-y-2">
+              {[
+                ["Nutzungsdauer", "8 Jahre als bewegliches Wirtschaftsgut (12,5 % p.a.) statt 50 Jahre wie bei Gebäuden"],
+                ["IAB", "bis zu 50 % der Kosten schon im Jahr vor dem Kauf absetzbar (§7g Abs. 1 EStG)"],
+                ["Sonder-AfA", "40 % im Kaufjahr zusätzlich (§7g Abs. 5 EStG)"],
+                ["Degressive AfA", "30 % für Anschaffungen von Juli 2025 bis Ende 2027 (§7 Abs. 2 EStG)"],
+                ["Beispiel", "74.700 € Kaufpreis, 42 % Steuersatz → rund 26.700 € Steuereffekt in Vorjahr und Kaufjahr"],
+                ["Voraussetzung", "für die §7g-Instrumente ein Betrieb, z. B. ein Nebengewerbe"],
+              ].map(([k, v]) => (
+                <li key={k} className="flex items-start gap-2 text-[14px] text-gray-700 leading-relaxed">
+                  <span className="text-green-600 font-bold shrink-0 mt-0.5">✓</span>
+                  <span><strong className="text-gray-900">{k}:</strong> {v}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/Tiny House abschreiben Bis zu 34.000 € Steuervorteil im ersten Jahr.webp" alt="Tiny House abschreiben – bis zu 34.000 € Steuervorteil im ersten Jahr" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+            <Image src="/images/outside/Tiny House abschreiben Bis zu 34.000 € Steuervorteil im ersten Jahr.webp" alt="Abschreibung Tiny House – bis zu 70 % im Kaufjahr abschreiben" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -173,46 +194,46 @@ export default function AfaAbschreibungPage() {
 
           {/* Die 4 AfA-Varianten */}
           <div className="mb-14">
-            <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Die 4 AfA-Varianten für dein Tiny House</h2>
+            <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Die 3 Abschreibungs-Varianten für dein Tiny House</h2>
             <div className="max-w-3xl mb-8">
               <p className="text-gray-700 text-base leading-relaxed">
-                Nicht jede Abschreibungsstrategie ist gleich effizient. Je nach persönlicher Steuersituation und dem Zeitpunkt des Kaufs lohnt sich eine andere Kombination. Hier sind alle vier Optionen mit konkreten Zahlen für ein 100.000 € Haus:
+                Nicht jede Abschreibungsstrategie ist gleich effizient. Je nach persönlicher Steuersituation und dem Zeitpunkt des Kaufs lohnt sich eine andere Kombination. Hier sind alle drei Optionen mit konkreten Zahlen für das Escape 660 On-Grid (74.700 € netto):
               </p>
             </div>
             <div className="space-y-5">
               {[
                 {
-                  label: "Variante 1", badge: "Altes Recht", badgeColor: "bg-gray-100 text-gray-600",
+                  label: "Variante 1", badge: "Standard", badgeColor: "bg-gray-100 text-gray-600",
                   title: "Lineare AfA", subtitle: "12,5 % p.a. über 8 Jahre",
-                  desc: "Die Basis-Abschreibung: Gleichmäßig 12,5 % des Kaufpreises pro Jahr über 8 Jahre. Ohne §7g-Kombination – der langsamste Weg. Heute kaum noch empfehlenswert.",
+                  desc: "Die Basis-Abschreibung: gleichmäßig 12,5 % des Kaufpreises pro Jahr über 8 Jahre. Funktioniert auch ohne Betrieb, z. B. bei reiner Vermietung – ist aber der langsamste Weg.",
                   table: [
-                    { jahr: "Jahr 1", afa: "12.500 €", kumuliert: "12.500 €", highlight: false },
-                    { jahr: "Jahr 2", afa: "12.500 €", kumuliert: "25.000 €", highlight: false },
-                    { jahr: "Jahr 8", afa: "12.500 €", kumuliert: "100.000 €", highlight: false },
+                    { jahr: "Jahr 1", afa: "9.338 €", kumuliert: "9.338 €", highlight: false },
+                    { jahr: "Jahr 2", afa: "9.338 €", kumuliert: "18.675 €", highlight: false },
+                    { jahr: "Jahr 8", afa: "9.338 €", kumuliert: "74.700 €", highlight: false },
                   ],
                   result: { label: "3 Jahre kumuliert", value: "37,5 %", color: "text-gray-500" },
                 },
                 {
                   label: "Variante 2", badge: "Empfohlen", badgeColor: "bg-green-100 text-green-700",
                   title: "Sonder-AfA + Degressive AfA", subtitle: "40 % + 30 % im Kaufjahr = 70 % Sofortabschreibung",
-                  desc: "Die neue Power-Kombination ab 2023: Im Kaufjahr kannst du 40 % (Sonder-AfA §7g Abs. 5) plus 30 % (degressive AfA §7 Abs. 2) vom Buchwert abschreiben – macht 70 % im Jahr 1.",
+                  desc: "Die Kombination für Anschaffungen von Juli 2025 bis Ende 2027: Im Kaufjahr kannst du 40 % Sonder-AfA (§7g Abs. 5, seit 2024) plus 30 % degressive AfA (§7 Abs. 2) abschreiben – macht 70 % im Jahr 1. Voraussetzung ist ein Betrieb.",
                   table: [
-                    { jahr: "Jahr 1 (Kaufjahr)", afa: "70.000 €", kumuliert: "70.000 €", highlight: true },
-                    { jahr: "Jahr 2", afa: "9.000 €", kumuliert: "79.000 €", highlight: false },
-                    { jahr: "Jahr 3", afa: "6.300 €", kumuliert: "85.300 €", highlight: false },
+                    { jahr: "Jahr 1 (Kaufjahr)", afa: "52.290 €", kumuliert: "52.290 €", highlight: true },
+                    { jahr: "Jahr 2", afa: "6.723 €", kumuliert: "59.013 €", highlight: false },
+                    { jahr: "Jahr 3", afa: "4.706 €", kumuliert: "63.719 €", highlight: false },
                   ],
                   result: { label: "3 Jahre kumuliert", value: "85,3 %", color: "text-green-700" },
                 },
                 {
                   label: "Variante 3", badge: "Maximum-Hebel", badgeColor: "bg-amber-100 text-amber-700",
                   title: "IAB + Sonder-AfA + Degressive AfA", subtitle: "IAB im Vorjahr + voller Booster im Kaufjahr",
-                  desc: "Der maximale Steuer-Hebel: Bilde im Vorjahr den IAB (50 % des geplanten Kaufpreises als Steuerersparnis), löse ihn im Kaufjahr auf und kombiniere mit Sonder-AfA + degressiver AfA.",
+                  desc: "Der maximale Steuer-Hebel: Bilde im Vorjahr den IAB (50 % des geplanten Kaufpreises). Im Kaufjahr wird er hinzugerechnet und die Anschaffungskosten um denselben Betrag gemindert – auf die restlichen 37.350 € wirken dann Sonder-AfA + degressive AfA.",
                   table: [
-                    { jahr: "Vorjahr (IAB)", afa: "– 50.000 € Steuerbasis", kumuliert: "", highlight: false },
-                    { jahr: "Kaufjahr", afa: "– 20.000 € Steuerbasis", kumuliert: "", highlight: true },
-                    { jahr: "Jahr 2", afa: "– 9.000 € Steuerbasis", kumuliert: "", highlight: false },
+                    { jahr: "Vorjahr (IAB)", afa: "– 37.350 € Gewinn", kumuliert: "37.350 €", highlight: false },
+                    { jahr: "Kaufjahr (70 % von 37.350 €)", afa: "– 26.145 € Gewinn", kumuliert: "63.495 €", highlight: true },
+                    { jahr: "Jahr 2", afa: "– 3.362 € Gewinn", kumuliert: "66.857 €", highlight: false },
                   ],
-                  result: { label: "Gesamteffekt", value: "Max. Hebel", color: "text-amber-700" },
+                  result: { label: "Bis Ende Kaufjahr", value: "85 %", color: "text-amber-700" },
                 },
               ].map((v) => (
                 <div key={v.label} className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
@@ -258,7 +279,7 @@ export default function AfaAbschreibungPage() {
             </div>
             <div className="space-y-4 mb-8">
               {[
-                { icon: "📋", phase: "Vorjahr (z.B. 2025)", title: "IAB bilden", desc: "Dein Steuerberater trägt in der Steuererklärung 2025 einen IAB von 50 % des geplanten Kaufpreises ein. Bei 80.000 € Haus = 40.000 € IAB. Das reduziert deinen zu versteuernden Gewinn 2025 um 40.000 €. Bei 42 % Steuersatz: ~16.800 € Erstattung vom Finanzamt." },
+                { icon: "📋", phase: "Vorjahr (z.B. 2025)", title: "IAB bilden", desc: "Dein Steuerberater trägt in der Steuererklärung 2025 einen IAB von 50 % des geplanten Kaufpreises ein. Bei 74.700 € Haus = 37.350 € IAB. Das reduziert deinen zu versteuernden Gewinn 2025 um 37.350 €. Bei 42 % Steuersatz: ~15.700 € Erstattung vom Finanzamt." },
                 { icon: "🏠", phase: "Kaufjahr (2026)", title: "Haus kaufen & IAB auflösen", desc: "Du kaufst das Tiny House. Der IAB wird aufgelöst – aber: Im selben Jahr greift die Sonder-AfA (40 %) + degressive AfA (30 %) auf den reduzierten Restwert. Per Saldo bleibt ein erheblicher Steuereffekt." },
                 { icon: "💶", phase: "Jahresende", title: "Steuererklärung & Erstattung", desc: "In der Steuererklärung 2026 werden alle AfA-Positionen geltend gemacht. Das Finanzamt erstattet – netto verbleibt deutlich weniger effektiver Kaufpreis. Ab jetzt fließen monatlich 40 % der Mieteinnahmen nach Pacht." },
               ].map((step, i) => (
@@ -280,17 +301,17 @@ export default function AfaAbschreibungPage() {
             </div>
             <p className="mt-4 text-sm">
               <Link href="/wissen/iab-tiny-house" className="text-green-700 font-semibold hover:underline">
-                → Schritt-für-Schritt-Anleitung: IAB für Tiny Houses beantragen und 30.000 € sparen
+                → Schritt-für-Schritt-Anleitung: IAB für Tiny Houses beantragen
               </Link>
             </p>
           </div>
 
           {/* Beispielrechnung */}
           <div className="mb-14">
-            <h2 className="text-2xl font-black text-gray-900 mb-8 tracking-tight">Konkrete Zahlen: 80.000 € Tiny House · 42 % Steuersatz</h2>
+            <h2 className="text-2xl font-black text-gray-900 mb-8 tracking-tight">Konkrete Zahlen: 74.700 € Tiny House · 42 % Steuersatz</h2>
             <div className="bg-gray-900 rounded-2xl p-8 text-white mb-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                {[{ label: "Kaufpreis", value: "80.000 €", sub: "Tiny House + Trailer" }, { label: "Grenzsteuersatz", value: "42 %", sub: "Beispiel-Investor" }, { label: "AfA-Nutzungsdauer", value: "8 Jahre", sub: "Bewegliches Wirtschaftsgut" }].map((s) => (
+                {[{ label: "Kaufpreis", value: "74.700 €", sub: "Escape 660 On-Grid, netto" }, { label: "Grenzsteuersatz", value: "42 %", sub: "Beispiel-Investor" }, { label: "AfA-Nutzungsdauer", value: "8 Jahre", sub: "Bewegliches Wirtschaftsgut" }].map((s) => (
                   <div key={s.label} className="bg-white/10 rounded-xl p-4 text-center">
                     <p className="text-gray-400 text-[10px] mb-1">{s.label}</p>
                     <p className="text-xl font-black text-white">{s.value}</p>
@@ -342,6 +363,19 @@ export default function AfaAbschreibungPage() {
             </div>
           </div>
 
+          {/* Verkauf */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Was passiert mit der Abschreibung beim Verkauf?</h2>
+            <div className="max-w-3xl space-y-4 text-gray-700 text-base leading-relaxed">
+              <p>
+                Eine hohe Abschreibung in den ersten Jahren senkt den Buchwert des Tiny Houses schnell. Verkaufst du es später, ist der Erlös oberhalb des Restbuchwerts als Gewinn steuerpflichtig. Ein Teil der Steuerersparnis aus den Anfangsjahren wird beim Verkauf also wieder eingeholt – die Abschreibung ist zu einem guten Teil eine Steuerstundung. Lohnend bleibt sie trotzdem, wenn dein Steuersatz heute höher ist als zum Zeitpunkt des Verkaufs, und weil du die Liquidität früher zur Verfügung hast.
+              </p>
+              <p>
+                Zwei Fristen solltest du kennen: Für die Sonder-AfA muss das Haus im Kaufjahr und im Folgejahr in deinem Betrieb verbleiben und (fast) ausschließlich betrieblich genutzt werden – private Nutzung über 10 % oder ein zu früher Verkauf führen zur Rückgängigmachung. Und ein IAB, auf den nicht innerhalb von drei Jahren die Investition folgt, wird rückwirkend aufgelöst, inklusive Zinsen auf die nachzuzahlende Steuer.
+              </p>
+            </div>
+          </div>
+
           {/* Steuerlich absetzen */}
           <div className="mb-12">
             <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Tiny House steuerlich absetzen — was ist absetzbar?</h2>
@@ -358,7 +392,7 @@ export default function AfaAbschreibungPage() {
           {/* Nav */}
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
             <Link href="/steuervorteil" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Interaktiver §7g-Rechner →</Link>
-            <Link href="/wissen/investitionsabzugsbetrag-tiny-house" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Investitionsabzugsbetrag Guide →</Link>
+            <Link href="/wissen/iab-tiny-house" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Investitionsabzugsbetrag Guide →</Link>
             <Link href="/wissen/steuerberater-finden" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Steuerberater finden →</Link>
             <Link href="/wissen/7g-tiny-house-investment" className="border border-green-200 text-green-700 hover:bg-green-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">§7g Leitfaden →</Link>
             <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">Tiny House als Kapitalanlage →</Link>
@@ -370,7 +404,7 @@ export default function AfaAbschreibungPage() {
       {/* FAQ */}
       <section className="py-16 bg-gray-50 border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-black text-gray-900 mb-8 tracking-tight">FAQ: §7g AfA & Abschreibung</h2>
+          <h2 className="text-xl font-black text-gray-900 mb-8 tracking-tight">FAQ: Abschreibung Tiny House</h2>
           <div className="space-y-4 mb-10">
             {faqItems.map((item, i) => (
               <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6">

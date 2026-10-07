@@ -349,7 +349,7 @@ export default function TinyHouseSteuernSparenPage() {
                 {
                   nr: "04", title: "Sonder-AfA + degressive AfA im Kaufjahr",
                   desc: "Im selben Jahr: Sonder-AfA (40 %) auf den um den IAB reduzierten Kaufpreis plus degressive AfA (30 %). In der Summe über 70 % Sofortabschreibung im Kaufjahr. Ab dem Folgejahr fließen die Mieteinnahmen.",
-                  tip: "Mieteinnahmen versteuern: 40 % der Mieteinnahmen nach Pacht müssen als Einkünfte aus V&V angegeben werden",
+                  tip: "Mieteinnahmen versteuern: Die Auszahlungen (40 % der Mieteinnahmen nach Pacht) sind als Betriebseinnahmen deines Gewerbes zu versteuern",
                 },
               ].map((step) => (
                 <div key={step.nr} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">

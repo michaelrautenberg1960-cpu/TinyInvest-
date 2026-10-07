@@ -32,7 +32,7 @@ export default function DatenschutzPage() {
               ← Zurück zur Startseite
             </Link>
             <h1 className="text-4xl font-black text-white mt-4 mb-2">Datenschutzerklärung</h1>
-            <p className="text-gray-400 text-sm">Stand: März 2026 · Gemäß DSGVO, BDSG und TTDSG</p>
+            <p className="text-gray-400 text-sm">Stand: Oktober 2026 · Gemäß DSGVO, BDSG und TDDDG</p>
           </div>
 
           <div className="space-y-10 text-gray-300 text-sm leading-relaxed">
@@ -124,13 +124,36 @@ export default function DatenschutzPage() {
             <section>
               <h2 className="text-lg font-bold text-white mb-3">7. Cookies und Tracking</h2>
               <p>
-                Unsere Website verwendet ausschließlich technisch notwendige Cookies, die für den sicheren Betrieb
-                der Website erforderlich sind. Diese Cookies require keine gesonderte Einwilligung nach § 25 Abs. 2 Nr. 2 TTDSG.
+                <strong className="text-white">Technisch notwendige Speicherungen:</strong> Unsere Website speichert in Ihrem
+                Browser (Local Storage) Ihre Auswahl im Cookie-Banner, damit der Banner nicht bei jedem Seitenaufruf erneut
+                erscheint. Diese Speicherung ist für die Bereitstellung der Website unbedingt erforderlich und bedarf keiner
+                Einwilligung (§ 25 Abs. 2 Nr. 2 TDDDG).
               </p>
               <p className="mt-3">
-                Wir verwenden derzeit <strong className="text-white">keine Analyse-, Marketing- oder Tracking-Tools</strong>{" "}
-                (wie Google Analytics, Meta Pixel o. Ä.). Sollte sich dies ändern, werden wir Sie vorab durch eine
-                Cookie-Einwilligung informieren.
+                <strong className="text-white">Google Analytics (nur mit Einwilligung):</strong> Wenn Sie im Cookie-Banner
+                „Alle akzeptieren“ wählen, nutzen wir Google Analytics 4, einen Webanalysedienst der Google Ireland Limited,
+                Gordon House, Barrow Street, Dublin 4, Irland („Google“). Google Analytics erstellt Statistiken darüber, wie
+                Besucher unsere Website nutzen (z. B. aufgerufene Seiten, Verweildauer, Herkunft des Besuchs, Gerät und Browser,
+                abgeschickte Formulare). Dazu werden Cookies (<code>_ga</code>, <code>_ga_*</code>) mit einer Speicherdauer von
+                bis zu 14 Monaten gesetzt. IP-Adressen werden von Google Analytics 4 nicht gespeichert. Google Signals und
+                Werbefunktionen sind deaktiviert. Ohne Ihre Einwilligung wird Google Analytics nicht geladen.
+              </p>
+              <p className="mt-3">
+                Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Dabei können Daten
+                an Google LLC in den USA übermittelt werden. Google ist unter dem EU-US Data Privacy Framework zertifiziert, auf
+                dessen Grundlage die EU-Kommission ein angemessenes Datenschutzniveau festgestellt hat (Art. 45 DSGVO).
+              </p>
+              <p className="mt-3">
+                <strong className="text-white">Widerruf:</strong> Sie können Ihre Einwilligung jederzeit mit Wirkung für die
+                Zukunft widerrufen, indem Sie unten auf der Seite „Cookie-Einstellungen“ öffnen und „Nur notwendige“ wählen.
+                Bereits gesetzte Google-Analytics-Cookies werden dabei gelöscht. Weitere Informationen:{" "}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">
+                  Datenschutzerklärung von Google
+                </a>
+                .
+              </p>
+              <p className="mt-3">
+                Weitere Analyse-, Marketing- oder Tracking-Tools (z. B. Meta Pixel) setzen wir nicht ein.
               </p>
             </section>
 

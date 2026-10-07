@@ -6,9 +6,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Tiny House als Kapitalanlage 2026: Rendite, IAB & Rechenbeispiel | TinyInvest",
+  title: "Tiny House als Kapitalanlage & Investment 2026: Rendite & IAB | TinyInvest",
   description:
-    "Tiny House als Kapitalanlage ab 74.700 € netto: Beispielrechnung ~12,7 % vor Steuern, IAB & Sonder-AfA erklärt, laufende Kosten offen gelegt, Risiken ehrlich genannt.",
+    "Tiny House als Investment ab 74.700 €: ~793 €/Monat Beispiel-Auszahlung, ~12,7 % vor Steuern, §7g-Steuereffekt ~26.700 €. Kosten, Risiken & Rechenbeispiel.",
   keywords:
     "tiny house kapitalanlage, tiny house als kapitalanlage, tiny house investment, tiny house kaufen investment, tiny house investieren 2026, tiny house investor werden, §7g investment",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -213,7 +213,7 @@ export default function TinyHouseKapitalanlagePage() {
           <h2 className="text-2xl font-black text-gray-900 mt-12 mb-4 tracking-tight">Was bedeutet „Tiny House als Kapitalanlage“?</h2>
           <div className="space-y-4 text-gray-700 text-[15px] leading-relaxed">
             <p>
-              Wer ein Tiny House als Kapitalanlage kauft, wird Eigentümer eines kleinen, vollständig ausgestatteten Ferienhauses auf einem zugelassenen Trailer. Das Haus wird nicht selbst bewohnt, sondern an Feriengäste vermietet. Ein Betreiber vor Ort kümmert sich um Buchungen, Reinigung und Gäste, der Eigentümer erhält einen festen Anteil der Einnahmen. Wirtschaftlich ist das näher an einer Ferienwohnung als an einer klassischen Mietwohnung – mit dem Unterschied, dass weder Grundstück noch Grundbuch im Spiel sind.
+              Wer ein Tiny House als Kapitalanlage oder Investment kauft, wird Eigentümer eines kleinen, vollständig ausgestatteten Ferienhauses auf einem zugelassenen Trailer. Das Haus wird nicht selbst bewohnt, sondern an Feriengäste vermietet. Ein Betreiber vor Ort kümmert sich um Buchungen, Reinigung und Gäste, der Eigentümer erhält einen festen Anteil der Einnahmen. Wirtschaftlich ist das näher an einer Ferienwohnung als an einer klassischen Mietwohnung – mit dem Unterschied, dass weder Grundstück noch Grundbuch im Spiel sind.
             </p>
             <p>
               Genau dieser Punkt macht das Modell steuerlich interessant. Weil das Haus nicht fest mit dem Boden verbunden ist, gilt es nicht als Immobilie, sondern als bewegliches Wirtschaftsgut – vergleichbar mit einem Wohnmobil oder einer Maschine. Statt einer Gebäudeabschreibung über 50 Jahre gilt eine Nutzungsdauer von 8 Jahren, und bei betrieblicher Nutzung kommen die Instrumente aus §7g EStG in Frage: Investitionsabzugsbetrag, Sonder-AfA und degressive AfA.

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { navLinks } from "./data";
+import CookieSettingsLink from "./CookieSettingsLink";
 
 export default function Footer() {
   return (
@@ -82,6 +83,9 @@ export default function Footer() {
                 <Link href="/datenschutz" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Datenschutz</Link>
               </li>
               <li>
+                <CookieSettingsLink className="text-gray-400 hover:text-green-400 text-sm transition-colors" />
+              </li>
+              <li>
                 <Link href="/agb" className="text-gray-400 hover:text-green-400 text-sm transition-colors">AGB</Link>
               </li>
               <li>
@@ -113,6 +117,7 @@ export default function Footer() {
               <Link href="/impressum" className="text-gray-600 hover:text-green-400 transition-colors">Impressum</Link>
               <Link href="/datenschutz" className="text-gray-600 hover:text-green-400 transition-colors">Datenschutz</Link>
               <Link href="/agb" className="text-gray-600 hover:text-green-400 transition-colors">AGB</Link>
+              <CookieSettingsLink className="text-gray-600 hover:text-green-400 transition-colors" />
             </div>
           </div>
           <p className="text-gray-600 text-xs text-center sm:text-left">

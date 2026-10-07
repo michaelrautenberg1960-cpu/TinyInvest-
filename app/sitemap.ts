@@ -97,7 +97,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/afa-abschreibung`,
-      lastModified: "2026-04-13",
+      lastModified: "2026-10-06",
       changeFrequency: "monthly",
       priority: 0.9,
     },
