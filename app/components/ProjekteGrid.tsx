@@ -2,16 +2,23 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { Listing } from "./ModelleCarousel";
+import { useConsent } from "../lib/consent";
 
 const MAP_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
 const MAP_BG = `https://maps.googleapis.com/maps/api/staticmap?center=51.0,10.5&zoom=5&size=400x80&maptype=roadmap&style=feature:all|element:labels|visibility:off&style=feature:water|color:0xc9e8f5&style=feature:landscape|color:0xf0f4f0&key=${MAP_KEY}`;
 
 function MapButton({ onOpenMap }: { onOpenMap: () => void }) {
+  // Statische Google-Karte nur mit Einwilligung in "Funktional", sonst neutraler Verlauf.
+  const mapsAllowed = useConsent("funktional");
   return (
     <button
       onClick={onOpenMap}
       className="ml-auto relative overflow-hidden rounded-full h-9 px-4 flex items-center gap-1.5 text-[12px] font-semibold text-white shadow-sm hover:shadow-md transition-all"
-      style={{ backgroundImage: `url('${MAP_BG}')`, backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{
+        backgroundImage: mapsAllowed ? `url('${MAP_BG}')` : "linear-gradient(135deg, #9fd3e8, #cfe6cf)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       <span className="absolute inset-0 bg-black/40" />
       <span className="relative flex items-center gap-1.5">🗺 Kartenansicht</span>

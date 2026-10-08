@@ -9,7 +9,7 @@ import {
 } from "react-simple-maps";
 
 const GEO_URL =
-  "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
+  "/geo/countries-50m.json";
 
 type Location = {
   name: string;

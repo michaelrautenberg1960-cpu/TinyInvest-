@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import ConsentGate from "./ConsentGate";
 
 const tabs = ["📋 Steuer-Investor", "📈 Rendite-Investor", "🏡 Finanzierungs-Käufer"];
 
@@ -103,13 +104,15 @@ export default function Prozess() {
           </div>
           <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: "56.25%" }}>
             {videoLoaded ? (
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/CTZJA2tUlZg?start=20&rel=0&modestbranding=1&autoplay=1"
-                title="TinyInvest – Das Konzept"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
+              <ConsentGate service="YouTube" className="absolute inset-0">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/CTZJA2tUlZg?start=20&rel=0&modestbranding=1&autoplay=1"
+                  title="TinyInvest – Das Konzept"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </ConsentGate>
             ) : (
               <button
                 onClick={() => setVideoLoaded(true)}
@@ -117,7 +120,7 @@ export default function Prozess() {
                 aria-label="Video abspielen"
               >
                 <img
-                  src="https://img.youtube.com/vi/CTZJA2tUlZg/maxresdefault.jpg"
+                  src="/video/konzept-thumb.jpg"
                   alt="TinyInvest Video Vorschau"
                   className="w-full h-full object-cover"
                   loading="lazy"

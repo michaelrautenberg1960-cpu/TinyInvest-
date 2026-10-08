@@ -1,6 +1,7 @@
 ﻿'use client'
 
 import { Section, LockedRow } from './shared'
+import ConsentGate from '../ConsentGate'
 import { useIsUnlocked } from './ListingAccessGate'
 import type { Listing } from '../ModelleCarousel'
 
@@ -44,14 +45,16 @@ export function ListingDetailSections({ listing }: { listing: Listing }) {
       </Section>
       {!locked && listing.address && (
         <div className="mb-5 rounded-xl overflow-hidden border border-gray-200 shadow-sm">
-          <iframe
-            src={`https://maps.google.com/maps?q=${encodeURIComponent(listing.address)}&output=embed`}
-            width="100%"
-            height="260"
-            style={{ border: 0, display: 'block' }}
-            loading="lazy"
-            allowFullScreen
-          />
+          <ConsentGate service="Google Maps" className="h-65">
+            <iframe
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(listing.address)}&output=embed`}
+              width="100%"
+              height="260"
+              style={{ border: 0, display: 'block' }}
+              loading="lazy"
+              allowFullScreen
+            />
+          </ConsentGate>
         </div>
       )}
 

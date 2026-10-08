@@ -1,6 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic'
 import type { MapListing } from './ProjekteGoogleMap'
+import ConsentGate from './ConsentGate'
 
 const ProjekteGoogleMap = dynamic(() => import('./ProjekteGoogleMap'), {
   ssr: false,
@@ -20,11 +21,13 @@ interface Props {
 
 export default function MarktplatzMap({ listings, hoveredId, onHoverPin, fullHeight }: Props) {
   return (
-    <ProjekteGoogleMap
-      listings={listings}
-      hoveredId={hoveredId}
-      onHoverPin={onHoverPin}
-      fullHeight={fullHeight}
-    />
+    <ConsentGate service="Google Maps" className={fullHeight ? 'h-full' : 'h-115 rounded-2xl border border-gray-200'}>
+      <ProjekteGoogleMap
+        listings={listings}
+        hoveredId={hoveredId}
+        onHoverPin={onHoverPin}
+        fullHeight={fullHeight}
+      />
+    </ConsentGate>
   )
 }
