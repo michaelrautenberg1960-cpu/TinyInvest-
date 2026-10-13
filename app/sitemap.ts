@@ -187,13 +187,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/7g-tiny-house-investment`,
-      lastModified: "2026-04-15",
+      lastModified: "2026-10-13",
       changeFrequency: "monthly",
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/wissen/iab-tiny-house`,
-      lastModified: "2026-10-03",
+      lastModified: "2026-10-13",
       changeFrequency: "monthly",
       priority: 0.9,
     },

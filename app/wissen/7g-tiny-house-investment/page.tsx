@@ -64,7 +64,7 @@ const faqItems = [
   {
     question: "Wie hoch ist die Tiny House Sonderabschreibung?",
     answer:
-      "Die Tiny House Sonderabschreibung beträgt 40 % des Kaufpreises (nach IAB-Auflösung) und greift im Kaufjahr zusätzlich zur regulären AfA. Sie ist in §7g Abs. 5 EStG geregelt und gilt bis 31.12.2027. Kombiniert mit der degressiven AfA (30 %) ergibt sich im Kaufjahr eine Sofortabschreibung von 70 % auf den Restwert nach IAB. Das ist bei keiner anderen vergleichbaren Assetklasse möglich.",
+      "Die Tiny House Sonderabschreibung beträgt 40 % des Kaufpreises (nach IAB-Auflösung) und greift im Kaufjahr zusätzlich zur regulären AfA. Sie ist in §7g Abs. 5 EStG geregelt und gilt in dieser Höhe für Anschaffungen ab 2024. Kombiniert mit der degressiven AfA (30 %, für Anschaffungen vom 01.07.2025 bis 31.12.2027) ergibt sich im Kaufjahr eine Sofortabschreibung von 70 % auf den Restwert nach IAB. Das ist bei keiner anderen vergleichbaren Assetklasse möglich.",
   },
 ];
 
@@ -192,7 +192,7 @@ export default function PillarPage() {
         "@type": "HowToStep",
         "position": 2,
         "name": "IAB in der Steuererklärung bilden",
-        "text": "Dein Steuerberater trägt den IAB in Anlage EÜR (Zeile 97–99) oder der Bilanz ein. Der Abzugsbetrag kann bis zu 50 % der geplanten Investitionssumme betragen, maximal 200.000 €.",
+        "text": "Dein Steuerberater trägt den IAB in der Anlage EÜR (Abschnitt Investitionsabzugsbeträge) bzw. bei Bilanzierern per elektronischer Übermittlung ein. Der Abzugsbetrag kann bis zu 50 % der geplanten Investitionssumme betragen, maximal 200.000 €.",
       },
       {
         "@type": "HowToStep",
@@ -319,7 +319,7 @@ export default function PillarPage() {
                 Über den <strong className="text-gray-900">Investitionsabzugsbetrag (IAB)</strong> können bis zu 50 Prozent der voraussichtlichen Anschaffungskosten steuerlich vorweggenommen werden — sogar schon im Jahr vor der eigentlichen Anschaffung. Das führt zu einer sofortigen, massiven Reduzierung der persönlichen Steuerlast, ohne dass das Kapital bereits gebunden ist.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Zusätzlich lässt sich nach der Anschaffung eine <strong className="text-gray-900">Sonderabschreibung (Sonder-AfA) von bis zu 40 Prozent</strong> geltend machen — durch das Wachstumschancengesetz 2024 auf diesen Höchstwert angehoben und bis 31.12.2027 befristet. Der verbleibende Restwert wird anschließend über die reguläre Nutzungsdauer von acht Jahren linear oder degressiv abgeschrieben.
+                Zusätzlich lässt sich nach der Anschaffung eine <strong className="text-gray-900">Sonderabschreibung (Sonder-AfA) von bis zu 40 Prozent</strong> geltend machen — durch das Wachstumschancengesetz für Anschaffungen ab 2024 von 20 % auf 40 % angehoben. Der verbleibende Restwert wird über die reguläre Nutzungsdauer abgeschrieben – degressiv mit bis zu 30 % nur bei Anschaffung vom 01.07.2025 bis 31.12.2027, sonst linear.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
                 Im direkten Vergleich zu einer klassischen Eigentumswohnung, deren Abschreibung sich über 50 Jahre erstreckt, ermöglicht das Tiny House eine extrem beschleunigte Aufzehrung der Anschaffungskosten. In den ersten Jahren fallen dadurch kaum steuerpflichtige Gewinne aus der Vermietung an.
@@ -400,9 +400,9 @@ export default function PillarPage() {
           {/* CTA */}
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
             <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Jetzt starten</p>
-            <h2 className="font-black text-2xl mb-3">§7g nutzen – bevor das Steuerfenster 2027 schließt</h2>
+            <h2 className="font-black text-2xl mb-3">§7g nutzen – solange die degressive AfA gilt</h2>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-lg mx-auto">
-              Die erhöhte Sonder-AfA (40 %) gilt nur bis 31.12.2027. Wer jetzt kauft, sichert sich den historisch besten Abschreibungshebel für Tiny House Investments.
+              Die degressive AfA (30 %) gilt nur für Anschaffungen bis 31.12.2027. Zusammen mit IAB und Sonder-AfA (40 %) ist das der stärkste Abschreibungshebel, den §7g und §7 derzeit bieten.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">

@@ -4,12 +4,23 @@ import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
+import {
+  IAB_DEFINITION,
+  IAB_TINY_HOUSE_DEFINITION,
+  IAB_FACTS,
+  IAB_GLOSSAR,
+  IAB_FAQ,
+  IAB_BEISPIEL as B,
+  IAB_FACTS_STAND,
+  IAB_FACTS_STAND_DE,
+  eur,
+  pct,
+} from "@/app/lib/iab-facts";
 
 export const metadata = {
-  title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – Voraussetzungen & Beispiel | TinyInvest",
+  title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – Voraussetzungen, Zahlen & Beispiel | TinyInvest",
   description:
-    "IAB Tiny House: Mit §7g EStG bis zu 16.800 € Steuererstattung erhalten – bevor du auch nur einen Euro ausgibst. Voraussetzungen, Fristen & Rechenbeispiel.",
+    "IAB Tiny House nach §7g EStG: bis zu 50 % des Kaufpreises bis zu 3 Jahre vor dem Kauf abziehen. Gewinngrenze, Fristen, Sonder-AfA, degressive AfA & Rechenbeispiel – Stand 2026.",
   keywords:
     "IAB tiny house, iab tiny house 2026, investitionsabzugsbetrag tiny house, IAB beantragen anleitung, IAB erfahrungen, tiny house steuer vorziehen",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -17,62 +28,31 @@ export const metadata = {
   openGraph: {
     ...BASE_OG,
     type: "article",
-    title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – bis zu 30.000 € Steuern sparen",
+    title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – Zahlen, Fristen & Beispiel",
     description:
-      "Bis zu 30.000 € Steuern sparen: IAB (50 % im Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %). Voraussetzungen, Fristen & Rechenbeispiel für Tiny Houses.",
+      "IAB (50 % vorab) + Sonder-AfA (40 %) + degressive AfA (30 %, bis 2027): Voraussetzungen, Fristen & Rechenbeispiel für Tiny Houses – inkl. Steuerstundungs-Effekt.",
     url: "https://tinyhouse.investments/wissen/iab-tiny-house",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IAB Tiny House: §7g EStG – bis zu 30.000 € Steuern sparen",
-    description: "IAB (50 % im Vorjahr) + Sonder-AfA (40 %) + degressive AfA (30 %): bis zu 30.000 € Steuervorteil. Voraussetzungen & Rechenbeispiel.",
+    title: "IAB Tiny House: §7g EStG – Zahlen, Fristen & Beispiel",
+    description: "IAB (50 % vorab) + Sonder-AfA (40 %) + degressive AfA (30 %, bis 2027): Voraussetzungen & Rechenbeispiel.",
   },
 };
 
-const faqItems = [
-  {
-    question: "Was ist der Investitionsabzugsbetrag beim Tiny House genau?",
-    answer: "Der Investitionsabzugsbetrag Tiny House ist ein Steuerinstrument nach §7g EStG, das es Investoren erlaubt, bis zu 50 % des geplanten Kaufpreises bereits im Jahr vor dem Kauf vom zu versteuernden Einkommen abzuziehen. Bei einem Tiny House für 80.000 € bedeutet das maximal 40.000 € Investitionsabzugsbetrag – und bei 42 % Grenzsteuersatz sofort rund 16.800 € Steuererstattung. Der Investitionsabzugsbetrag wird im Kaufjahr aufgelöst und mit der Sonder-AfA (40 %) kombiniert.",
-  },
-  {
-    question: "Wer darf den IAB für ein Tiny House bilden?",
-    answer: "Jeder, der das Tiny House im Rahmen einer betrieblichen oder Vermietungseinkunftsart nutzt. Das schließt Selbstständige, Unternehmer, Freiberufler und Arbeitnehmer mit Vermietungseinkünften ein. Voraussetzung: Der Gewinn darf im Vorjahr 200.000 € (Einzelunternehmen/Freiberufler) nicht übersteigen.",
-  },
-  {
-    question: "Wie viele Jahre vor dem Kauf kann ich den IAB bilden?",
-    answer: "Du kannst den IAB bis zu drei Jahre vor der tatsächlichen Anschaffung bilden. Das bedeutet: Planst du den Kauf für 2026, kannst du bereits in der Steuererklärung 2023, 2024 oder 2025 einen IAB bilden – und so Steuern in Jahren mit hohem Gewinn sparen.",
-  },
-  {
-    question: "Was passiert, wenn ich das Tiny House nach dem IAB nicht kaufe?",
-    answer: "Wird die Investition nicht wie geplant durchgeführt, muss der IAB aufgelöst werden. Das Finanzamt verzinst den nachzuzahlenden Betrag dann mit 1,8 % p.a. (§ 233a AO). Deshalb sollte der IAB nur gebildet werden, wenn der Kaufentschluss konkret ist.",
-  },
-  {
-    question: "Kann ich IAB und Sonder-AfA kombinieren?",
-    answer: "Ja – das ist sogar die empfohlene Strategie. IAB im Vorjahr reduziert die Steuerbasis, Sonder-AfA (40 %) im Kaufjahr schreibt den Restwert ab. Zusammen mit degressiver AfA (30 %) ergibt sich im Kaufjahr eine Sofortabschreibung auf über 70 % des ursprünglichen Kaufpreises.",
-  },
-  {
-    question: "Muss das Tiny House nach dem IAB-Kauf sofort vermietet werden?",
-    answer: "Das Wirtschaftsgut muss im Jahr der Anschaffung und im Folgejahr in einer inländischen Betriebsstätte genutzt werden (§7g Abs. 4 EStG). Bei Vermietung über lokale Partner ist diese Voraussetzung erfüllt – der Standort in Deutschland gilt als Betriebsstätte.",
-  },
-  {
-    question: "Wie hoch ist die maximale IAB-Summe?",
-    answer: "Bis zu 50 % des voraussichtlichen Nettokaufpreises, maximal 200.000 € je Betrieb (§7g Abs. 1 EStG). Bei einem Tiny House für 80.000 € sind das maximal 40.000 € IAB – was bei 42 % Grenzsteuersatz rund 16.800 € sofortige Steuererstattung bedeutet.",
-  },
-  {
-    question: "Kann ich den IAB für ein Tiny House auch 2026 noch nutzen?",
-    answer: "Ja, §7g EStG ist 2026 unverändert in Kraft. Das IAB Tiny House Modell ist sogar attraktiver als je zuvor: Seit 2024 kann die degressive AfA (30 %) erstmals mit IAB und Sonder-AfA (40 %) kombiniert werden – zusammen über 70 % Sofortabschreibung im Kaufjahr. Wer 2026 investiert, kann außerdem prüfen ob der IAB rückwirkend noch für 2025 möglich ist, sofern der Steuerbescheid 2025 noch nicht bestandskräftig ist.",
-  },
-];
+const faqItems = IAB_FAQ;
 
 export default function IabTinyHousePage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "IAB Tiny House: Investitionsabzugsbetrag §7g EStG beantragen & bis zu 30.000 € sparen",
-    "description": "Wie du den IAB für ein Tiny House nutzt: Voraussetzungen, Fristen, Beantragung beim Finanzamt und typische Erfahrungen.",
+    "headline": "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – Voraussetzungen, Zahlen & Beispiel",
+    "description": "Wie der IAB nach §7g EStG bei einem Tiny House funktioniert: Definition, Kennzahlen mit Rechtsgrundlage, Fristen, Kombination mit Sonder-AfA und degressiver AfA, Rechenbeispiel.",
     "url": "https://tinyhouse.investments/wissen/iab-tiny-house",
     "datePublished": "2026-04-15",
-    "dateModified": "2026-06-13",
+    "dateModified": IAB_FACTS_STAND,
+    "inLanguage": "de-DE",
+    "about": { "@type": "DefinedTerm", "name": "Investitionsabzugsbetrag", "alternateName": "IAB" },
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
     "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/IAB Tiny House 2026 So sparst du bis zu 30.000 € vor dem Kauf.webp" },
@@ -98,47 +78,60 @@ export default function IabTinyHousePage() {
     })),
   };
 
+  const glossarSchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "name": "Glossar: Investitionsabzugsbetrag & Abschreibung (§7g EStG)",
+    "url": "https://tinyhouse.investments/wissen/iab-tiny-house#glossar",
+    "hasDefinedTerm": IAB_GLOSSAR.map((g) => ({
+      "@type": "DefinedTerm",
+      name: g.term,
+      description: g.definition,
+    })),
+  };
+
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "IAB für Tiny House beantragen: Schritt für Schritt",
-    "description": "So bildest du den Investitionsabzugsbetrag (§7g) für ein Tiny House, erhältst die Steuererstattung und setzt Sonder-AfA im Kaufjahr ab.",
-    "totalTime": "P1Y",
+    "name": "IAB für ein Tiny House bilden: Schritt für Schritt",
+    "description": "So wird der Investitionsabzugsbetrag (§7g EStG) für ein Tiny House gebildet, im Kaufjahr aufgelöst und mit Sonder-AfA und degressiver AfA kombiniert.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Steuererklärung einreichen & IAB bilden",
-        "text": "Du oder dein Steuerberater trägt in der Anlage EÜR oder Bilanz den IAB ein (Zeile 97–99). Kein gesonderter Antrag beim Finanzamt nötig – der IAB wird automatisch bei der Steuerveranlagung berücksichtigt.",
+        "name": "IAB in der Steuererklärung bilden",
+        "text": "Der IAB wird in der Steuererklärung angegeben (Anlage EÜR, Abschnitt Investitionsabzugsbeträge, bzw. elektronische Übermittlung bei Bilanzierern). Ein gesonderter Antrag beim Finanzamt ist nicht nötig. Voraussetzung: Betrieb mit max. 200.000 € Gewinn im Bildungsjahr.",
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Steuererstattung erhalten",
-        "text": "Das Finanzamt erstattet die Mehrsteuer durch den IAB. Bei 40.000 € IAB und 42 % Grenzsteuersatz: ca. 16.800 € Erstattung innerhalb von 3–6 Monaten nach Veranlagung.",
+        "name": "Steuerentlastung im Bildungsjahr",
+        "text": `Der IAB mindert den Gewinn des Bildungsjahres. Beispiel: ${eur(B.iab)} IAB bei ${pct(B.steuersatz)} Grenzsteuersatz entsprechen rund ${eur(B.steuereffektIab)} weniger Einkommensteuer (zzgl. Soli/Kirchensteuer, falls anfallend).`,
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "Tiny House kaufen (innerhalb 3 Jahre)",
-        "text": "Du kaufst das Tiny House innerhalb von 3 Jahren nach IAB-Bildung. Im Kaufjahr wird der IAB aufgelöst und mit dem Kaufpreis verrechnet. Belege: Kaufvertrag im Direktkauf bei TinyInvest (Tiny House auf Vlemmix-Trailer).",
+        "name": "Tiny House innerhalb von 3 Jahren kaufen",
+        "text": "Die Anschaffung muss bis zum Ende des dritten Wirtschaftsjahres nach der IAB-Bildung erfolgen. Im Kaufjahr wird der IAB dem Gewinn hinzugerechnet und die Anschaffungskosten werden um denselben Betrag gemindert (§7g Abs. 2 EStG).",
       },
       {
         "@type": "HowToStep",
         "position": 4,
-        "name": "Sonder-AfA & degressive AfA im Kaufjahr absetzen",
-        "text": "Im selben Steuerjahr greift die Sonder-AfA (40 %) auf den Restkaufpreis. Zusätzlich kann die degressive AfA (30 %) angewendet werden. In der Summe: bis zu 70 % Sofortabschreibung im Kaufjahr.",
+        "name": "Sonder-AfA und degressive AfA im Kaufjahr",
+        "text": "Auf die geminderte Basis sind bis zu 40 % Sonder-AfA (§7g Abs. 5) und – für Anschaffungen vom 01.07.2025 bis 31.12.2027 – bis zu 30 % degressive AfA (§7 Abs. 2) möglich. Danach mindestens zwei Jahre (Kauf- und Folgejahr) zu mind. 90 % betrieblich nutzen oder vermieten.",
       },
     ],
   };
 
+  const jsonLd = [articleSchema, breadcrumbSchema, faqSchema, glossarSchema, howToSchema];
+
   return (
     <main className="bg-white min-h-screen">
       <Navbar variant="sub" />
-      <Script id="article-schema-iab" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <Script id="breadcrumb-schema-iab" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <Script id="faq-schema-iab" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="howto-schema-iab" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      {/* Plain <script> statt next/script: JSON-LD muss im Server-HTML stehen, KI-Crawler führen kein JS aus. */}
+      {jsonLd.map((schema, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      ))}
 
       {/* Hero */}
       <section className="pt-32 pb-10 bg-white">
@@ -152,7 +145,7 @@ export default function IabTinyHousePage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Steuer-Guide · IAB · §7g EStG</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            IAB Tiny House: bis zu 30.000 € Steuern sparen – IAB, Sonder-AfA & degressive AfA
+            IAB Tiny House: Investitionsabzugsbetrag nach §7g EStG – Voraussetzungen, Zahlen & Beispiel
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -162,59 +155,94 @@ export default function IabTinyHousePage() {
               <span>TinyInvest Redaktion</span>
               <span>·</span>
               <time dateTime="2026-04-15">15. April 2026</time>
+              <span>·</span>
+              <span>Stand: <time dateTime={IAB_FACTS_STAND}>{IAB_FACTS_STAND_DE}</time></span>
             </div>
           </div>
+
+          {/* Definition – bewusst eigenständig formuliert, damit sie ohne Kontext zitierbar ist */}
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-6">
+            <p className="text-green-700 font-bold text-xs uppercase tracking-widest mb-2">Definition: Investitionsabzugsbetrag (IAB)</p>
+            <p className="text-gray-800 text-[15px] leading-relaxed mb-3">{IAB_DEFINITION}</p>
+            <p className="text-gray-700 text-[14px] leading-relaxed">{IAB_TINY_HOUSE_DEFINITION}</p>
+          </div>
+
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl mb-6">
-            Das IAB Tiny House Modell ist das mächtigste Steuerinstrument im deutschen Steuerrecht für Investoren –
-            du sparst Steuern, bevor du auch nur einen Euro ausgegeben hast. 2026 ist die Kombination aus IAB, Sonder-AfA und degressiver AfA so effektiv wie nie zuvor.
+            Kombiniert mit Sonder-AfA (40 %) und – für Anschaffungen bis 31.12.2027 – degressiver AfA (30 %) lassen sich beim
+            Escape 660 On-Grid ({eur(B.kaufpreis)} netto) bis Ende des Kaufjahres rund {Math.round((B.abzugBisKaufjahr / B.kaufpreis) * 100)} % des Kaufpreises
+            steuerlich geltend machen. Das ist vor allem ein Liquiditätsvorteil: Die Steuer wird überwiegend in spätere Jahre verschoben.
           </p>
-          <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-5">
-            <p className="text-green-700 font-bold text-xs uppercase tracking-widest mb-2">IAB Tiny House – kurz erklärt</p>
-            <p className="text-gray-700 text-[14px] leading-relaxed">
-              Mit dem <strong>IAB Tiny House</strong>-Modell (§7g EStG) setzt du bis zu 50 % des geplanten Kaufpreises schon im Vorjahr steuerlich ab –
-              ohne das Haus bereits zu besitzen. Bei 80.000 € Kaufpreis und 42 % Steuersatz bedeutet das bis zu <strong>16.800 € Sofort-Erstattung</strong>.
-              Im Kaufjahr folgt die Sonder-AfA (40 %), seit 2024 kombinierbar mit degressiver AfA (30 %) – zusammen über 70 % Sofortabschreibung.
-            </p>
+
+          {/* Kennzahlen */}
+          <h2 className="text-xl font-black text-gray-900 mb-3 tracking-tight">IAB auf einen Blick</h2>
+          <div className="border border-gray-100 rounded-2xl overflow-x-auto mb-8">
+            <table className="w-full text-[13px] text-left">
+              <thead className="bg-gray-50 text-[11px] uppercase tracking-widest text-gray-500">
+                <tr>
+                  <th scope="col" className="px-4 py-2 font-bold">Kennzahl</th>
+                  <th scope="col" className="px-4 py-2 font-bold">Wert</th>
+                  <th scope="col" className="px-4 py-2 font-bold whitespace-nowrap">Rechtsgrundlage</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {IAB_FACTS.map((f) => (
+                  <tr key={f.label}>
+                    <th scope="row" className="px-4 py-3 font-semibold text-gray-800 align-top whitespace-nowrap">{f.label}</th>
+                    <td className="px-4 py-3 text-gray-600 align-top">{f.value}</td>
+                    <td className="px-4 py-3 text-gray-400 align-top whitespace-nowrap">{f.basis}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <div className="border border-gray-100 rounded-2xl overflow-hidden mb-8 text-[13px]">
-            <div className="bg-gray-50 px-4 py-2 border-b border-gray-100">
-              <p className="font-bold text-gray-500 text-[11px] uppercase tracking-widest">Rechenbeispiel: 80.000 € Kaufpreis · Spitzensteuersatz (45 %)</p>
-            </div>
-            <div className="divide-y divide-gray-100">
-              <div className="flex justify-between px-4 py-3">
-                <div>
-                  <span className="font-semibold text-gray-800">IAB §7g Abs.1</span>
-                  <span className="text-gray-400 ml-2">40.000 € Abzug im Vorjahr</span>
-                </div>
-                <span className="font-bold text-green-700">≈ 18.000 €</span>
-              </div>
-              <div className="flex justify-between px-4 py-3">
-                <div>
-                  <span className="font-semibold text-gray-800">Sonder-AfA (40 %)</span>
-                  <span className="text-gray-400 ml-2">16.000 € auf AfA-Basis 40k im Kaufjahr</span>
-                </div>
-                <span className="font-bold text-green-700">≈ 7.200 €</span>
-              </div>
-              <div className="flex justify-between px-4 py-3">
-                <div>
-                  <span className="font-semibold text-gray-800">Degressive AfA (30 %)</span>
-                  <span className="text-gray-400 ml-2">12.000 € auf AfA-Basis 40k im Kaufjahr</span>
-                </div>
-                <span className="font-bold text-green-700">≈ 5.400 €</span>
-              </div>
-              <div className="flex justify-between px-4 py-3 bg-green-50">
-                <span className="font-black text-gray-900">Gesamt Steuervorteil</span>
-                <span className="font-black text-green-700">≈ 30.600 €</span>
-              </div>
-            </div>
+
+          {/* Rechenbeispiel */}
+          <h2 className="text-xl font-black text-gray-900 mb-3 tracking-tight">Rechenbeispiel: Escape 660 On-Grid</h2>
+          <div className="border border-gray-100 rounded-2xl overflow-x-auto mb-8">
+            <table className="w-full text-[13px] text-left">
+              <caption className="sr-only">IAB-Rechenbeispiel für {eur(B.kaufpreis)} Netto-Kaufpreis bei {pct(B.steuersatz)} Grenzsteuersatz</caption>
+              <thead className="bg-gray-50 text-[11px] uppercase tracking-widest text-gray-500">
+                <tr>
+                  <th scope="col" className="px-4 py-2 font-bold">Schritt</th>
+                  <th scope="col" className="px-4 py-2 font-bold text-right">Abzug</th>
+                  <th scope="col" className="px-4 py-2 font-bold text-right whitespace-nowrap">Steuereffekt ({pct(B.steuersatz)})</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr>
+                  <th scope="row" className="px-4 py-3 font-semibold text-gray-800">IAB (50 %) im Jahr vor dem Kauf</th>
+                  <td className="px-4 py-3 text-right text-gray-600">{eur(B.iab)}</td>
+                  <td className="px-4 py-3 text-right font-bold text-green-700">≈ {eur(B.steuereffektIab)}</td>
+                </tr>
+                <tr>
+                  <th scope="row" className="px-4 py-3 font-semibold text-gray-800">Sonder-AfA (40 % von {eur(B.afaBasis)}) im Kaufjahr</th>
+                  <td className="px-4 py-3 text-right text-gray-600">{eur(B.sonderAfa)}</td>
+                  <td className="px-4 py-3 text-right font-bold text-green-700">≈ {eur(B.steuereffektSonderAfa)}</td>
+                </tr>
+                <tr>
+                  <th scope="row" className="px-4 py-3 font-semibold text-gray-800">Degressive AfA (30 % von {eur(B.afaBasis)}) im Kaufjahr</th>
+                  <td className="px-4 py-3 text-right text-gray-600">{eur(B.degressiveAfa)}</td>
+                  <td className="px-4 py-3 text-right font-bold text-green-700">≈ {eur(B.steuereffektDegressiv)}</td>
+                </tr>
+                <tr className="bg-green-50">
+                  <th scope="row" className="px-4 py-3 font-black text-gray-900">Summe bis Ende Kaufjahr</th>
+                  <td className="px-4 py-3 text-right font-black text-gray-900">{eur(B.abzugBisKaufjahr)}</td>
+                  <td className="px-4 py-3 text-right font-black text-green-700">≈ {eur(B.steuereffektGesamt)}</td>
+                </tr>
+              </tbody>
+            </table>
             <div className="px-4 py-2 bg-gray-50 border-t border-gray-100">
-              <p className="text-gray-400 text-[11px]">§7g Abs.2 EStG: IAB mindert die AfA-Bemessungsgrundlage im Kaufjahr (80k − 40k = 40k). Individuelle Steuerersparnis abhängig vom persönlichen Grenzsteuersatz.</p>
+              <p className="text-gray-400 text-[11px]">
+                Unverbindliche Beispielrechnung, keine Steuerberatung. Annahmen: Kauf im Januar (degressive AfA ist im Kaufjahr zeitanteilig), Anschaffung zwischen 01.07.2025 und 31.12.2027,
+                ohne Soli/Kirchensteuer. Im Kaufjahr gleichen sich Hinzurechnung des IAB und Herabsetzung der Anschaffungskosten aus (§7g Abs. 2 EStG).
+                Der Steuereffekt ist überwiegend eine Stundung: In den Folgejahren bleibt entsprechend weniger Abschreibung.
+              </p>
             </div>
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "16/9" }}>
-            <Image src="/images/outside/IAB Tiny House 2026 So sparst du bis zu 30.000 € vor dem Kauf.webp" alt="IAB Tiny House 2026 – So sparst du bis zu 30.000 € vor dem Kauf" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+            <Image src="/images/outside/IAB Tiny House 2026 So sparst du bis zu 30.000 € vor dem Kauf.webp" alt="IAB Tiny House 2026 – Investitionsabzugsbetrag vor dem Kauf nutzen" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -234,16 +262,16 @@ export default function IabTinyHousePage() {
           <div className="max-w-3xl mb-14">
             <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">IAB Tiny House 2026: Was ist neu?</h2>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Das IAB Tiny House Modell ist 2026 attraktiver als je zuvor. Seit 2024 gilt die wiedereingeführte degressive AfA (30 %) – in Kombination mit IAB (50 % vorab) und Sonder-AfA (40 % im Kaufjahr) ergibt sich erstmals eine dreigliedrige Abschreibungsstruktur, die im Kaufjahr über 70 % des Kaufpreises steuerlich wirksam macht. Diese Kombination war vor 2024 nicht möglich.
+              Seit 2024 beträgt die Sonder-AfA nach §7g Abs. 5 EStG 40 % statt zuvor 20 % (Wachstumschancengesetz). Für Anschaffungen vom 01.07.2025 bis 31.12.2027 ist zusätzlich die degressive AfA mit bis zu 30 % wieder zulässig (Investitionssofortprogramm). Zusammen mit dem IAB (50 % vorab) lassen sich damit bis Ende des Kaufjahres rund 85 % der Anschaffungskosten geltend machen. Das Zeitfenster für die degressive AfA endet mit Anschaffungen bis 31.12.2027.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-6">
-              Für Investoren, die 2026 planen: Die Lieferverfügbarkeit unserer Modelle auf Vlemmix-Trailer liegt aktuell bei 8–12 Wochen, was eine planbare Investition ermöglicht. Wer außerdem noch keinen IAB für 2025 gebildet hat, kann prüfen lassen ob das rückwirkend noch möglich ist – solange der Steuerbescheid 2025 noch nicht bestandskräftig ist.
+              Für Investoren, die 2026 planen: Die Lieferverfügbarkeit unserer Modelle auf Vlemmix-Trailer liegt aktuell bei 8–12 Wochen, was eine planbare Investition ermöglicht. Wer außerdem noch keinen IAB für 2025 gebildet hat, kann prüfen lassen ob das rückwirkend noch möglich ist – solange der Steuerbescheid 2025 noch änderbar ist.
             </p>
             <div className="grid grid-cols-3 gap-4">
               {[
                 { label: "IAB §7g", pct: "50 %", desc: "bis zu 3 Jahre vorab" },
-                { label: "Sonder-AfA", pct: "40 %", desc: "neu: kombinierbar mit deg. AfA" },
-                { label: "Deg. AfA", pct: "30 %", desc: "seit 2024 wieder nutzbar" },
+                { label: "Sonder-AfA", pct: "40 %", desc: "seit 2024 (vorher 20 %)" },
+                { label: "Deg. AfA", pct: "30 %", desc: "Kauf 07/2025 – 12/2027" },
               ].map((h) => (
                 <div key={h.label} className="bg-green-50 border border-green-100 rounded-2xl p-4 text-center">
                   <p className="text-[10px] font-bold text-green-700 uppercase tracking-widest mb-1">{h.label}</p>
@@ -260,14 +288,14 @@ export default function IabTinyHousePage() {
             <div>
               <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Was ist der IAB beim Tiny House?</h2>
               <p className="text-gray-700 text-base leading-relaxed">
-                Das IAB Tiny House ist ein Steuerinstrument nach § 7g des Einkommensteuergesetzes (EStG), das Investoren erlaubt, bis zu 50 % des geplanten Kaufpreises im Vorjahr des Kaufs steuerlich abzuziehen – bevor das Haus auch nur existiert. Ursprünglich zur Förderung kleiner und mittlerer Unternehmen gedacht, entfaltet dieses Werkzeug in Kombination mit mobilen Tiny Houses eine enorme Hebelwirkung für private und geschäftliche Investoren. Da ein Tiny House auf einem zertifizierten Trailer rechtlich als bewegliches Wirtschaftsgut eingestuft wird, können Anleger hiermit legal und hocheffizient Steuerzahlungen in privates Vermögen umwandeln.
+                Der Investitionsabzugsbetrag ist ein Steuerinstrument nach § 7g des Einkommensteuergesetzes (EStG), das Betrieben erlaubt, bis zu 50 % des geplanten Kaufpreises bis zu drei Jahre vor dem Kauf gewinnmindernd abzuziehen. Er wurde zur Förderung kleiner und mittlerer Betriebe geschaffen, daher die Gewinngrenze von 200.000 €. Ein Tiny House auf einem zugelassenen Trailer ohne feste Bodenverbindung kann als bewegliches Wirtschaftsgut gelten und ist dann IAB-fähig – vorausgesetzt, es gehört zu einem Betrieb mit Gewinneinkünften, etwa einer gewerblichen Ferienvermietung. Reine Arbeitnehmer oder private Vermieter nach § 21 EStG können den IAB nicht nutzen.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Funktionsweise: Steuern sparen, bevor das Haus gebaut ist</h2>
+              <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Funktionsweise: Steuerentlastung, bevor das Haus geliefert ist</h2>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Das Besondere am Investitionsabzugsbetrag ist der zeitliche Vorwegeffekt. Investoren müssen nicht warten, bis das Tiny House fertiggestellt oder geliefert ist, um von den steuerlichen Vorteilen zu profitieren. Der IAB erlaubt es, bis zu 50 Prozent der voraussichtlichen Anschaffungs- und Herstellungskosten bereits in der Steuererklärung des aktuellen oder sogar des vorangegangenen Jahres gewinnmindernd geltend zu machen.
+                Das Besondere am Investitionsabzugsbetrag ist der zeitliche Vorwegeffekt. Investoren müssen nicht warten, bis das Tiny House fertiggestellt oder geliefert ist, um von den steuerlichen Vorteilen zu profitieren. Der IAB erlaubt es, bis zu 50 Prozent der voraussichtlichen Anschaffungs- und Herstellungskosten bereits in der Steuererklärung eines der drei Jahre vor dem Kauf gewinnmindernd geltend zu machen.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
                 Planen Sie beispielsweise den Kauf eines Tiny Houses für 80.000 Euro, können Sie über den IAB bis zu 40.000 Euro direkt vom zu versteuernden Einkommen abziehen. Bei einem hohen persönlichen Steuersatz führt dies sofort zu einer Steuererstattung oder einer massiven Senkung der Steuerschuld. Nach der Festsetzung des IAB verbleibt ein großzügiger gesetzlicher Zeitraum von bis zu drei Jahren, um die tatsächliche Investition zu tätigen und das Tiny House zu erwerben.
@@ -277,7 +305,7 @@ export default function IabTinyHousePage() {
             <div>
               <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Der Liquiditätseffekt: Staatliche Co-Finanzierung</h2>
               <p className="text-gray-700 text-base leading-relaxed">
-                Aus wirtschaftlicher Sicht wirkt der IAB wie ein zinsloses Darlehen vom Finanzamt oder eine direkte staatliche Co-Finanzierung. Die Steuerersparnis, die durch den Abzug der 40.000 Euro entsteht (bei Spitzensteuersatz inklusive Solidaritätszuschlag oft weit über 15.000 Euro), fließt dem Investor als liquide Mittel zu. Dieses Geld steht sofort zur Verfügung und kann direkt als Eigenkapital für den Kauf des Tiny Houses genutzt oder anderweitig wertsteigernd angelegt werden. Der reale finanzielle Eigenanteil am Investment sinkt dadurch drastisch, während der Investor von den vollen Mieteinnahmen und der vollen Rendite des Objekts profitiert.
+                Aus wirtschaftlicher Sicht wirkt der IAB wie ein zinsloses Darlehen vom Finanzamt oder eine direkte staatliche Co-Finanzierung. Die Steuerentlastung aus dem Abzug (beim Escape 660 On-Grid {eur(B.iab)} IAB, bei {pct(B.steuersatz)} Grenzsteuersatz rund {eur(B.steuereffektIab)}) fließt dem Investor als liquide Mittel zu. Dieses Geld steht sofort zur Verfügung und kann direkt als Eigenkapital für den Kauf des Tiny Houses genutzt oder anderweitig wertsteigernd angelegt werden. Weil in den Folgejahren entsprechend weniger Abschreibung übrig bleibt, wird die Steuer überwiegend verschoben, nicht erlassen – der Vorteil liegt in der früheren Liquidität und gegebenenfalls in einem niedrigeren Steuersatz in späteren Jahren.
               </p>
             </div>
 
@@ -287,7 +315,7 @@ export default function IabTinyHousePage() {
                 Um den IAB erfolgreich nutzen zu können, müssen bestimmte steuerliche Rahmenbedingungen erfüllt sein. Die wichtigste Grenze betrifft den Gewinn des Investors: Der steuerliche Gewinn darf im Jahr der IAB-Bildung die Grenze von 200.000 Euro nicht überschreiten. Zudem muss das Tiny House im Jahr der Anschaffung und im darauffolgenden Jahr nachweislich zu mindestens 90 Prozent betrieblich bzw. zur gewerblichen Vermietung genutzt werden. Eine private Eigennutzung ist in diesem Zeitraum nahezu vollständig ausgeschlossen.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
-                Der Steuerhebel endet jedoch nicht mit dem IAB. Im Jahr der tatsächlichen Anschaffung wird der zuvor gebildete IAB gewinnerhöhend aufgelöst, während gleichzeitig die Anschaffungskosten des Tiny Houses um genau diesen Betrag gemindert werden. Auf Basis dieses reduzierten Restwertes kann der Investor sofort eine <strong className="text-gray-900">Sonderabschreibung (Sonder-AfA) von bis zu 40 Prozent</strong> geltend machen — durch das Wachstumschancengesetz 2024 auf diesen Höchstwert angehoben und bis 31.12.2027 befristet. Der verbleibende Betrag wird anschließend linear über die reguläre Nutzungsdauer von acht Jahren abgeschrieben.
+                Der Steuerhebel endet jedoch nicht mit dem IAB. Im Jahr der tatsächlichen Anschaffung wird der zuvor gebildete IAB gewinnerhöhend aufgelöst, während gleichzeitig die Anschaffungskosten des Tiny Houses um genau diesen Betrag gemindert werden. Auf Basis dieses reduzierten Restwertes kann der Investor sofort eine <strong className="text-gray-900">Sonderabschreibung (Sonder-AfA) von bis zu 40 Prozent</strong> geltend machen — durch das Wachstumschancengesetz für Anschaffungen ab 2024 von 20 % auf 40 % angehoben. Daneben läuft die reguläre AfA: für Anschaffungen vom 01.07.2025 bis 31.12.2027 wahlweise degressiv mit bis zu 30 %, sonst linear über die Nutzungsdauer.
               </p>
             </div>
 
@@ -328,6 +356,16 @@ export default function IabTinyHousePage() {
       {/* FAQ */}
       <section className="py-16 bg-gray-50 border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="glossar" className="text-xl font-black text-gray-900 mb-6 tracking-tight">Glossar: IAB & Abschreibung</h2>
+          <dl className="bg-white border border-gray-100 rounded-2xl divide-y divide-gray-100 mb-14">
+            {IAB_GLOSSAR.map((g) => (
+              <div key={g.term} className="p-5">
+                <dt className="font-black text-gray-900 text-[14px] mb-1">{g.term}</dt>
+                <dd className="text-gray-600 text-[13px] leading-relaxed">{g.definition}</dd>
+              </div>
+            ))}
+          </dl>
+
           <h2 className="text-xl font-black text-gray-900 mb-8 tracking-tight">FAQ: IAB für Tiny Houses</h2>
           <div className="space-y-4 mb-10">
             {faqItems.map((item, i) => (

@@ -178,7 +178,7 @@ export const steuerCards = [
     icon: "📉",
     label: "Degressive AfA · §7 Abs.2",
     title: "30 % degressiv – ab dem ersten Tag",
-    desc: "Ab 01.07.2025 gilt zusätzlich zur Sonder-AfA die degressive Abschreibung: 30 % des vollen Kaufpreises im Kaufjahr. Kombiniert mit der Sonder-AfA sind so 70 % sofort absetzbar.",
+    desc: "Für Anschaffungen vom 01.07.2025 bis 31.12.2027 gilt zusätzlich zur Sonder-AfA die degressive Abschreibung mit bis zu 30 % der (ggf. um den IAB geminderten) Anschaffungskosten. Zusammen mit der Sonder-AfA sind so im Kaufjahr bis zu 70 % dieser Basis absetzbar.",
     tag: "30 % degressiv",
     tagColor: "bg-purple-100 text-purple-700",
   },
