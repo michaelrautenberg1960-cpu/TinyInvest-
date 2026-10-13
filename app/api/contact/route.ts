@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAdminClient } from "@/app/lib/supabase";
 import { sendWelcomeEmail, sendHostWelcomeEmail, markWelcomeEmailSent } from "@/app/lib/sendWelcomeEmail";
 import { Resend } from "resend";
+import { isValidPhone } from "@/app/lib/phone";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -55,6 +56,10 @@ export async function POST(req: NextRequest) {
       }
 
       return NextResponse.json({ success: true, leadId });
+    }
+
+    if (!isValidPhone(telefon)) {
+      return NextResponse.json({ error: "Telefonnummer fehlt" }, { status: 400 });
     }
 
     const isHost = interesse === "Host-Bewerbung (Standort / Grundstück)";

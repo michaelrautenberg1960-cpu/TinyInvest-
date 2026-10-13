@@ -1,5 +1,6 @@
 ﻿"use client";
 import { useState } from "react";
+import { isValidPhone, sanitizePhone } from "@/app/lib/phone";
 
 export default function Kontakt() {
   const [form, setForm] = useState({
@@ -36,6 +37,10 @@ export default function Kontakt() {
     e.preventDefault();
     if (!form.vorname || !form.nachname || !form.email) {
       setError("Bitte fülle alle Pflichtfelder aus.");
+      return;
+    }
+    if (!isValidPhone(form.telefon)) {
+      setError("Bitte gib eine gültige Telefonnummer für den Rückruf an.");
       return;
     }
     setLoading(true);
@@ -94,7 +99,7 @@ export default function Kontakt() {
             Investitionsunterlagen anfordern
           </h2>
           <p className="text-white/55 text-base max-w-xl mx-auto leading-relaxed">
-            Sie erhalten das vollständige Investor-Paket: §7g-Steueranalyse, lokale Partner Betreiberkonzept,
+            Sie erhalten die vollständigen Unterlagen: §7g-Steueranalyse, lokale Partner Betreiberkonzept,
             Asset-Kennzahlen und individuelle Beratung – kostenfrei und unverbindlich.
           </p>
         </div>
@@ -109,8 +114,11 @@ export default function Kontakt() {
                 <div className="text-5xl mb-4">✅</div>
                 <h3 className="text-xl font-black text-gray-900 mb-3">Unterlagen angefordert</h3>
                 <p className="text-gray-500 text-sm max-w-sm leading-relaxed">
-                  Ihre Anfrage ist eingegangen. Wir prüfen Ihre Angaben und senden Ihnen
-                  das Investor-Paket innerhalb von 24&nbsp;Stunden persönlich zu.
+                  Ihre Anfrage ist eingegangen. Wir melden uns innerhalb von 24&nbsp;Stunden
+                  telefonisch bei Ihnen.
+                </p>
+                <p className="text-gray-700 text-sm font-semibold max-w-sm leading-relaxed mt-3">
+                  📩 In Ihrem Postfach wartet bereits eine E-Mail mit den ersten Infos.
                 </p>
                 <p className="text-[11px] text-gray-400 mt-4">Bitte auch Spam-Ordner prüfen.</p>
               </div>
@@ -176,17 +184,22 @@ export default function Kontakt() {
                 {/* Phone */}
                 <div className="mb-4">
                   <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
-                    Telefon{" "}
-                    <span className="text-gray-300 font-normal normal-case">(optional)</span>
+                    Telefon *{" "}
+                    <span className="text-gray-300 font-normal normal-case">(für Rückruf innerhalb 24 h)</span>
                   </label>
                   <input
                     type="tel"
                     name="telefon"
                     value={form.telefon}
-                    onChange={handleChange}
+                    onChange={(e) => setForm((prev) => ({ ...prev, telefon: sanitizePhone(e.target.value) }))}
                     placeholder="+49 ..."
+                    autoComplete="tel"
+                    required
                     className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-300"
                   />
+                  <p className="text-[11px] text-gray-400 mt-1">
+                    Nur für einen kurzen Rückruf zu Ihrer Anfrage – keine Werbeanrufe, keine Weitergabe.
+                  </p>
                 </div>
 
                 {/* Interesse */}
@@ -428,7 +441,7 @@ export default function Kontakt() {
             {/* What you get */}
             <div className="bg-white/8 backdrop-blur-sm border border-white/15 rounded-2xl p-6">
               <h4 className="text-white font-black text-sm mb-4 uppercase tracking-wide">
-                Im Investor-Paket enthalten
+                In den Unterlagen enthalten
               </h4>
               <ul className="space-y-2.5">
                 {[

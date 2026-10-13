@@ -219,7 +219,9 @@ public/
 |---|---|---|
 | Unterlagen-Popup (`MemorandumModal`) | nach Schritt 2 – oder wenn das Popup in Schritt 2 geschlossen wird | Käufer bzw. Host |
 | Kontaktformular (`Kontakt`) | direkt nach dem Absenden | Käufer bzw. Host |
-| Projekt-Freischaltung (`gate-register`) | direkt nach dem Absenden | Käufer (Telefon ist Pflicht) |
+| Projekt-Freischaltung (`gate-register`) | direkt nach dem Absenden | Käufer |
+
+Telefon ist in allen drei Formularen Pflicht (mind. 6 Ziffern, `app/lib/phone.ts`); `/api/contact` lehnt Anfragen ohne gültige Nummer mit 400 ab. Die Danke-Seiten weisen auf die Erstmail im Postfach hin – im Popup wird sie deshalb schon beim Klick auf „Überspringen“ verschickt, nicht erst beim Schließen.
 
 Nach Popup-Schritt 1 allein geht noch keine Mail an den Kunden, erst in Schritt 2 steht fest, ob Käufer oder Host-Bewerber. Wer den Browser-Tab nach Schritt 1 schließt, bleibt im Admin auf Status `neu` und muss manuell nachgefasst werden.
 
@@ -240,7 +242,7 @@ Im CRM (`/admin` → Listings → Projekt bearbeiten) unter „📄 Exposé-PDF�
 ### Käufer-Erstmail (`app/lib/sendWelcomeEmail.ts`)
 
 - **Mit Telefonnummer:** kündigt einen Rückruf innerhalb von 24 Stunden (werktags) an.
-- **Ohne Telefonnummer:** bittet um eine kurze Antwort oder die Telefonnummer.
+- **Ohne Telefonnummer:** bittet um eine kurze Antwort oder die Telefonnummer (nur noch für Altleads aus der Zeit vor der Telefon-Pflicht).
 - **Anhänge:** Erstinformation + persönliches Angebots-PDF.
 - Anrede mit dem eingetragenen Vornamen; Finanzierung über die EthikBank eG wird nur erwähnt, deren PDF ist bis zu einem neuen Rechenbeispiel deaktiviert (`WELCOME_ATTACHMENTS`).
 

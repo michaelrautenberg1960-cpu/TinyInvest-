@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useModal } from "./ModalContext";
+import { isValidPhone, sanitizePhone } from "@/app/lib/phone";
 
 const MODELS = [
   { key: "Escape 660 On-Grid",  label: "On-Grid",  preis: "74.700 € netto" },
@@ -79,8 +80,8 @@ export default function MemorandumModal() {
 
   const handleStep1 = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.vorname || !form.email) {
-      setError("Bitte Vorname und E-Mail ausfüllen.");
+    if (!form.vorname || !form.email || !isValidPhone(form.telefon)) {
+      setError("Bitte Vorname, E-Mail und eine gültige Telefonnummer ausfüllen.");
       return;
     }
     setLoading(true);
@@ -158,27 +159,64 @@ export default function MemorandumModal() {
 
           {/* ── SUCCESS STATE ──────────────────────────── */}
           {submitted ? (
-            <div className="text-center py-10">
-              <div className="text-6xl mb-5">✅</div>
-              <h3 className="text-2xl font-black text-gray-900 mb-3">Vielen Dank, {form.vorname}!</h3>
-              <p className="text-gray-600 text-sm max-w-sm mx-auto leading-relaxed mb-3">
-                Ihre Anfrage ist bei uns eingegangen – wir freuen uns wirklich über Ihr Interesse!
-              </p>
-              <p className="text-gray-500 text-sm max-w-sm mx-auto leading-relaxed mb-8">
-                Wir melden uns persönlich innerhalb von <strong className="text-gray-700">24 Stunden</strong> bei Ihnen –
-                mit dem vollständigen Investor-Paket und allen Unterlagen, die Sie brauchen.
-              </p>
-              <div className="flex items-center justify-center gap-6 mb-8 text-[11px] text-gray-400">
-                <span className="flex items-center gap-1.5"><span>🔒</span> DSGVO-konform</span>
-                <span className="flex items-center gap-1.5"><span>⏱</span> Antwort in 24h</span>
-                <span className="flex items-center gap-1.5"><span>📋</span> Keine Anlageberatung</span>
+            <div className="py-4 animate-in fade-in zoom-in-95 duration-300">
+              {/* Header */}
+              <div className="text-center mb-7">
+                <div className="relative mx-auto mb-5 w-20 h-20">
+                  <span className="absolute inset-0 rounded-full bg-green-400/30 animate-ping [animation-iteration-count:2]" />
+                  <div className="relative w-20 h-20 rounded-full bg-linear-to-br from-green-500 to-green-700 flex items-center justify-center shadow-lg shadow-green-900/25 ring-8 ring-green-50">
+                    <svg viewBox="0 0 24 24" className="w-10 h-10 text-white" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M5 12.5l4.5 4.5L19 7.5" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-black text-gray-900 tracking-tight mb-2">Vielen Dank, {form.vorname}!</h3>
+                <p className="text-gray-500 text-sm max-w-xs mx-auto leading-relaxed">
+                  Ihre Anfrage ist bei uns eingegangen – wir freuen uns über Ihr Interesse.
+                </p>
               </div>
+
+              {/* So geht es weiter */}
+              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-3">So geht es weiter</p>
+              <ol className="space-y-2.5 mb-7">
+                <li className="flex items-start gap-3.5 rounded-2xl border border-green-200 bg-linear-to-br from-green-50 to-white p-4">
+                  <span className="shrink-0 w-9 h-9 rounded-xl bg-white border border-green-200 shadow-sm flex items-center justify-center text-lg">📩</span>
+                  <div className="text-left">
+                    <p className="text-sm font-black text-gray-900 flex items-center gap-2">
+                      E-Mail im Postfach
+                      <span className="text-[10px] font-bold text-green-700 bg-white border border-green-200 px-2 py-0.5 rounded-full">Jetzt</span>
+                    </p>
+                    <p className="text-[12px] text-gray-600 leading-relaxed mt-0.5">
+                      Eine E-Mail mit den ersten Infos wartet bereits auf Sie. Bitte auch den Spam-Ordner prüfen.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3.5 rounded-2xl border border-sky-100 bg-linear-to-br from-sky-50 to-white p-4">
+                  <span className="shrink-0 w-9 h-9 rounded-xl bg-white border border-sky-200 shadow-sm flex items-center justify-center text-lg">📞</span>
+                  <div className="text-left">
+                    <p className="text-sm font-black text-gray-900 flex items-center gap-2">
+                      Persönlicher Rückruf
+                      <span className="text-[10px] font-bold text-sky-700 bg-white border border-sky-200 px-2 py-0.5 rounded-full">innerhalb 24 h</span>
+                    </p>
+                    <p className="text-[12px] text-gray-600 leading-relaxed mt-0.5">
+                      Wir rufen Sie{form.telefon && <> unter <strong className="text-gray-800 whitespace-nowrap">{form.telefon}</strong></>} an
+                      und schicken Ihnen danach die vollständigen Unterlagen.
+                    </p>
+                  </div>
+                </li>
+              </ol>
+
               <button
                 onClick={closeModal}
-                className="bg-green-700 hover:bg-green-800 text-white font-bold px-10 py-3.5 rounded-full text-sm transition-all shadow-md shadow-green-900/20"
+                className="w-full bg-green-700 hover:bg-green-800 text-white font-black py-3.5 rounded-xl text-sm transition-all shadow-md shadow-green-900/20"
               >
                 Bis gleich! 👋
               </button>
+
+              <div className="flex items-center justify-center gap-5 mt-4 text-[11px] text-gray-400">
+                <span className="flex items-center gap-1.5"><span>🔒</span> DSGVO-konform</span>
+                <span className="flex items-center gap-1.5"><span>📋</span> Keine Anlageberatung</span>
+              </div>
             </div>
 
           /* ── STEP 1: MINIMAL FORM ────────────────────── */
@@ -224,13 +262,17 @@ export default function MemorandumModal() {
 
                 <div>
                   <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1.5">
-                    Telefon <span className="text-gray-400 font-normal normal-case">(optional – für Rückruf)</span>
+                    Telefon * <span className="text-gray-400 font-normal normal-case">(für Rückruf innerhalb 24 h)</span>
                   </label>
                   <input
-                    type="tel" name="telefon" value={form.telefon} onChange={handleChange}
-                    placeholder="+49 ..."
+                    type="tel" name="telefon" value={form.telefon}
+                    onChange={(e) => setForm((prev) => ({ ...prev, telefon: sanitizePhone(e.target.value) }))}
+                    placeholder="+49 ..." autoComplete="tel" required
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-300"
                   />
+                  <p className="text-[11px] text-gray-400 mt-1">
+                    Nur für einen kurzen Rückruf zu Ihrer Anfrage – keine Werbeanrufe, keine Weitergabe.
+                  </p>
                 </div>
 
                 {error && <p className="text-red-500 text-sm text-center">{error}</p>}
@@ -458,7 +500,7 @@ export default function MemorandumModal() {
                 <div className="flex gap-2">
                   <button
                     type="button"
-                    onClick={() => setSubmitted(true)}
+                    onClick={() => { skipStep2(); setSubmitted(true); }}
                     className="flex-1 border border-gray-200 text-gray-500 hover:bg-gray-50 font-semibold py-3 rounded-xl text-sm transition-all"
                   >
                     Überspringen
