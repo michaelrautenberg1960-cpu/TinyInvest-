@@ -5,7 +5,7 @@ import { CONSENT_EVENT, hasConsent } from "../lib/consent";
 
 export const GA_ID = "G-1726HDFQK1";
 
-// Lädt Google Analytics erst, nachdem der Besucher im Cookie-Banner der Kategorie "Statistik" zugestimmt hat.
+// Lädt Google Analytics erst, nachdem der Besucher im Cookie-Banner der Kategorie "Statistiken" zugestimmt hat.
 export default function Analytics() {
   const [enabled, setEnabled] = useState(false);
 

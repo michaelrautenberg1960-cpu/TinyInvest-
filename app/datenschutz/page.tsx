@@ -141,9 +141,9 @@ export default function DatenschutzPage() {
                 Services sind in Kategorien eingeteilt:
               </p>
               <ul className="list-disc list-inside mt-3 space-y-1 text-gray-400">
-                <li><strong className="text-gray-300">Essenziell</strong> – technisch notwendige Speicherungen (immer aktiv, keine Einwilligung erforderlich)</li>
-                <li><strong className="text-gray-300">Statistik</strong> – Google Analytics (Abschnitt 8), nur mit Einwilligung</li>
-                <li><strong className="text-gray-300">Funktional</strong> – Google Maps (Abschnitt 9) und YouTube (Abschnitt 10), nur mit Einwilligung</li>
+                <li><strong className="text-gray-300">Notwendig</strong> – technisch notwendige Speicherungen (immer aktiv, keine Einwilligung erforderlich)</li>
+                <li><strong className="text-gray-300">Statistiken</strong> – Google Analytics (Abschnitt 8), nur mit Einwilligung</li>
+                <li><strong className="text-gray-300">Externe Medien</strong> – Google Maps (Abschnitt 9) und YouTube (Abschnitt 10), nur mit Einwilligung</li>
               </ul>
               <p className="mt-3">
                 Ihre Auswahl speichern wir im Local Storage Ihres Browsers („cookie-consent“), damit das Banner nicht bei
@@ -153,7 +153,7 @@ export default function DatenschutzPage() {
               <p className="mt-3">
                 <strong className="text-white">Widerruf:</strong> Sie können Ihre Einwilligung jederzeit mit Wirkung für die
                 Zukunft ändern oder widerrufen, indem Sie unten auf der Seite „Cookie-Einstellungen“ öffnen. Wählen Sie
-                „Statistik“ ab, werden bereits gesetzte Google-Analytics-Cookies gelöscht.
+                „Statistiken“ ab, werden bereits gesetzte Google-Analytics-Cookies gelöscht.
               </p>
               <p className="mt-3">
                 Weitere Analyse-, Marketing- oder Tracking-Tools (z. B. Meta Pixel) setzen wir nicht ein.
@@ -161,9 +161,9 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-white mb-3">8. Google Analytics (Kategorie „Statistik“)</h2>
+              <h2 className="text-lg font-bold text-white mb-3">8. Google Analytics (Kategorie „Statistiken“)</h2>
               <p>
-                Wenn Sie der Kategorie „Statistik“ zustimmen, nutzen wir Google Analytics 4, einen Webanalysedienst der
+                Wenn Sie der Kategorie „Statistiken“ zustimmen, nutzen wir Google Analytics 4, einen Webanalysedienst der
                 Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google“). Google Analytics erstellt
                 Statistiken darüber, wie Besucher unsere Website nutzen (z. B. aufgerufene Seiten, Verweildauer, Herkunft des
                 Besuchs, Gerät und Browser, abgeschickte Formulare). Dazu werden Cookies (<code>_ga</code>, <code>_ga_*</code>)
@@ -182,10 +182,10 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-white mb-3">9. Google Maps (Kategorie „Funktional“)</h2>
+              <h2 className="text-lg font-bold text-white mb-3">9. Google Maps (Kategorie „Externe Medien“)</h2>
               <p>
                 Auf dem Marktplatz und in den Inseraten zeigen wir Standorte auf Karten von Google Maps (Google Ireland
-                Limited, Anschrift s. o.). Die Karten werden erst geladen, wenn Sie der Kategorie „Funktional“ zugestimmt oder
+                Limited, Anschrift s. o.). Die Karten werden erst geladen, wenn Sie der Kategorie „Externe Medien“ zugestimmt oder
                 im Platzhalter „Einmal laden“ gewählt haben. Beim Laden werden u. a. Ihre IP-Adresse, die aufgerufene Seite
                 und Browserdaten an Google übertragen; Google kann dabei Cookies oder ähnliche Speicherungen verwenden.
               </p>
@@ -195,11 +195,11 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-white mb-3">10. YouTube (Kategorie „Funktional“)</h2>
+              <h2 className="text-lg font-bold text-white mb-3">10. YouTube (Kategorie „Externe Medien“)</h2>
               <p>
                 Unser Erklärvideo binden wir im erweiterten Datenschutzmodus über youtube-nocookie.com ein (Google Ireland
                 Limited, Anschrift s. o.). Das Vorschaubild liegt auf unserem eigenen Server. Eine Verbindung zu YouTube
-                entsteht erst, wenn Sie das Video starten und der Kategorie „Funktional“ zugestimmt oder „Einmal laden“
+                entsteht erst, wenn Sie das Video starten und der Kategorie „Externe Medien“ zugestimmt oder „Einmal laden“
                 gewählt haben. Dabei werden u. a. Ihre IP-Adresse und Informationen zur Wiedergabe an YouTube übertragen;
                 YouTube kann Speicherungen in Ihrem Browser vornehmen.
               </p>

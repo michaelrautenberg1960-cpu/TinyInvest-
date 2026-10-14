@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { CATEGORIES, getConsent, setConsent, type CategoryInfo, type ConsentCategory } from "../lib/consent";
 
@@ -21,13 +22,66 @@ function deleteAnalyticsCookies() {
 
 type Choice = Record<ConsentCategory, boolean>;
 type View = "hidden" | "banner" | "settings";
+type Tab = "zustimmung" | "details" | "ueber";
 
-const btnPrimary =
-  "bg-green-600 hover:bg-green-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors";
+const TABS: { id: Tab; label: string }[] = [
+  { id: "zustimmung", label: "Zustimmung" },
+  { id: "details", label: "Details" },
+  { id: "ueber", label: "Über Cookies" },
+];
+
+const ALL: Choice = { statistik: true, funktional: true };
+const NONE: Choice = { statistik: false, funktional: false };
+
+const btnAccept =
+  "w-full bg-green-500 hover:bg-green-600 text-white font-bold text-base px-6 py-4 rounded transition-colors";
+const btnText =
+  "w-full text-green-900 hover:text-green-700 font-semibold text-base px-6 py-3 rounded transition-colors";
+
+function Chevron({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.2" className={`h-4 w-4 ${className}`} aria-hidden="true">
+      <path d="M7 4l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+// logo1.png ist quadratisch mit viel leerem Rand: Ausschnitt auf den Schriftzug zuschneiden und schwarz einfärben.
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <div className={`relative aspect-[37/13] overflow-hidden ${className}`}>
+      <Image
+        src="/logo1.png"
+        alt="TinyInvest"
+        width={500}
+        height={500}
+        className="absolute max-w-none brightness-0"
+        style={{ width: "135.1%", left: "-17.8%", top: "-138.4%" }}
+      />
+    </div>
+  );
+}
+
+const consentText = (
+  <>
+    <p>
+      Wir verwenden Cookies und ähnliche Technologien, um Zugriffe auf unsere Website zu analysieren und Inhalte von
+      Drittanbietern wie Karten und Videos einzubinden. Dabei werden personenbezogene Daten (z. B. Ihre IP-Adresse) auch
+      an Google übermittelt, das wir in den Details benennen.
+    </p>
+    <p>
+      Die Verarbeitung erfolgt nur mit Ihrer Einwilligung, soweit sie nicht technisch notwendig ist. Sie können Ihre
+      Auswahl jederzeit über „Cookie-Einstellungen“ im Footer ändern oder widerrufen. Mehr in unserer{" "}
+      <Link href="/datenschutz" className="text-green-900 font-semibold underline">Datenschutzerklärung</Link>.
+    </p>
+  </>
+);
 
 export default function CookieBanner() {
   const [view, setView] = useState<View>("hidden");
-  const [choice, setChoice] = useState<Choice>({ statistik: false, funktional: false });
+  const [tab, setTab] = useState<Tab>("zustimmung");
+  const [choice, setChoice] = useState<Choice>(NONE);
+  const [hasStored, setHasStored] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,7 +92,9 @@ export default function CookieBanner() {
     }
     const open = () => {
       const c = getConsent();
+      setHasStored(!!c);
       setChoice({ statistik: c?.statistik ?? false, funktional: c?.funktional ?? false });
+      setTab("details");
       setView("settings");
     };
     window.addEventListener(OPEN_COOKIE_SETTINGS, open);
@@ -83,59 +139,47 @@ export default function CookieBanner() {
     setView("hidden");
   };
 
-  if (view === "hidden") return null;
+  const openSettings = () => {
+    setTab("details");
+    setView("settings");
+  };
 
-  const legalLinks = (
-    <p className="text-gray-500 text-xs">
-      <Link href="/datenschutz" className="hover:text-gray-300 underline">Datenschutzerklärung</Link>
-      {" · "}
-      <Link href="/impressum" className="hover:text-gray-300 underline">Impressum</Link>
-    </p>
-  );
+  if (view === "hidden") return null;
 
   if (view === "banner") {
     return (
       <div
         ref={dialogRef}
-        className="fixed bottom-0 left-0 right-0 z-[9999] p-4 sm:p-6 animate-fadeInUp"
+        className="fixed bottom-0 left-0 right-0 z-[9999] bg-white text-gray-900 shadow-[0_-8px_30px_rgba(0,0,0,0.18)] animate-fadeInUp max-h-[85vh] overflow-y-auto"
         role="dialog"
         aria-modal="false"
         aria-labelledby="cookie-title"
       >
-        <div className="max-w-4xl mx-auto bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl p-5 sm:p-6 max-h-[85vh] overflow-y-auto">
-          <p id="cookie-title" className="font-bold text-white text-base mb-3">Privatsphäre-Einstellungen</p>
-          <div className="text-gray-400 text-xs leading-relaxed space-y-2">
-            <p>
-              Wir verwenden Cookies und ähnliche Technologien auf unserer Website und verarbeiten personenbezogene Daten
-              (z. B. IP-Adresse), um Zugriffe auf unsere Website zu analysieren und Inhalte von Drittanbietern wie
-              Karten und Videos einzubinden. Die Datenverarbeitung kann auch erst in Folge gesetzter Cookies stattfinden.
-              Wir teilen diese Daten mit Dritten, die wir in den Privatsphäre-Einstellungen benennen.
-            </p>
-            <p>
-              Die Datenverarbeitung erfolgt nur mit Ihrer Einwilligung, soweit sie nicht technisch notwendig ist. Sie
-              haben das Recht, nicht einzuwilligen und Ihre Einwilligung zu einem späteren Zeitpunkt über
-              „Cookie-Einstellungen“ im Footer zu ändern oder zu widerrufen. Der Widerruf wird sofort wirksam, hat
-              jedoch keine Auswirkungen auf bereits verarbeitete Daten. Weitere Informationen finden Sie in unserer{" "}
-              <Link href="/datenschutz" className="text-green-400 hover:text-green-300 underline">Datenschutzerklärung</Link>.
-            </p>
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12">
+          <Logo className="hidden lg:block shrink-0 w-52" />
+
+          <div className="flex-1 min-w-0">
+            <p id="cookie-title" className="font-bold text-base sm:text-lg mb-3">Diese Webseite verwendet Cookies</p>
+            <div className="text-gray-700 text-sm sm:text-base leading-relaxed space-y-2">{consentText}</div>
+            <button
+              type="button"
+              onClick={openSettings}
+              className="mt-5 inline-flex items-center gap-2 text-green-900 hover:text-green-700 font-semibold text-base"
+            >
+              Details zeigen <Chevron />
+            </button>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-2 mt-5">
-            <button onClick={() => save({ statistik: true, funktional: true })} className={`${btnPrimary} flex-1`}>
-              Alle akzeptieren
+          <div className="w-full lg:w-80 shrink-0 flex flex-col items-stretch gap-1">
+            <button type="button" onClick={() => save(ALL)} className={btnAccept}>
+              Alle zulassen
             </button>
-            <button onClick={() => save({ statistik: false, funktional: false })} className={`${btnPrimary} flex-1`}>
-              Nur essenzielle akzeptieren
+            <button type="button" onClick={openSettings} className={`${btnText} inline-flex items-center justify-center gap-2`}>
+              Anpassen <Chevron />
             </button>
-          </div>
-          <div className="flex flex-wrap items-center justify-between gap-2 mt-4">
-            <button
-              onClick={() => setView("settings")}
-              className="text-green-400 hover:text-green-300 text-sm underline"
-            >
-              Individuelle Privatsphäre-Einstellungen
+            <button type="button" onClick={() => save(NONE)} className={btnText}>
+              Ablehnen
             </button>
-            {legalLinks}
           </div>
         </div>
       </div>
@@ -143,61 +187,99 @@ export default function CookieBanner() {
   }
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/60 flex items-end sm:items-center justify-center p-0 sm:p-6">
+    <div className="fixed inset-0 z-[9999] bg-black/50 flex items-end sm:items-center justify-center p-0 sm:p-6">
       <div
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="cookie-settings-title"
-        className="w-full max-w-3xl bg-gray-900 border border-gray-700 sm:rounded-2xl rounded-t-2xl shadow-2xl flex flex-col max-h-[92vh]"
+        className="w-full max-w-4xl bg-white text-gray-900 sm:rounded-lg rounded-t-lg shadow-2xl flex flex-col max-h-[75vh]"
       >
-        <div className="p-5 sm:p-6 overflow-y-auto">
-          <p id="cookie-settings-title" className="font-bold text-white text-base mb-3">
-            Individuelle Privatsphäre-Einstellungen
-          </p>
-          <p className="text-gray-400 text-xs leading-relaxed mb-5">
-            Im Folgenden finden Sie eine Übersicht über alle Services, die von dieser Website genutzt werden. Sie können
-            sich detaillierte Informationen zu jedem Service ansehen und ihm einzeln zustimmen. Ihre Einwilligung können
-            Sie jederzeit über „Cookie-Einstellungen“ im Footer ändern oder widerrufen.
-          </p>
-
-          <div className="space-y-3">
-            {CATEGORIES.map((cat) => (
-              <CategoryRow
-                key={cat.id}
-                cat={cat}
-                checked={cat.id === "essenziell" ? true : choice[cat.id]}
-                onChange={
-                  cat.id === "essenziell"
-                    ? undefined
-                    : (v) => setChoice((prev) => ({ ...prev, [cat.id]: v }))
-                }
-              />
-            ))}
-          </div>
+        <div className="flex items-center justify-between px-5 sm:px-7 py-2 border-b border-gray-200">
+          <Logo className="w-40 sm:w-48" />
+          <p id="cookie-settings-title" className="sr-only">Privatsphäre-Einstellungen</p>
+          {hasStored && (
+            <button
+              type="button"
+              onClick={() => setView("hidden")}
+              aria-label="Schließen ohne Änderung"
+              className="text-gray-500 hover:text-gray-900 text-3xl leading-none px-2"
+            >
+              ×
+            </button>
+          )}
         </div>
 
-        <div className="border-t border-gray-800 p-4 sm:p-5 flex flex-col gap-3">
-          <div className="flex flex-col sm:flex-row gap-2">
-            <button onClick={() => save({ statistik: true, funktional: true })} className={`${btnPrimary} flex-1`}>
-              Alle akzeptieren
+        <div role="tablist" className="grid grid-cols-3 border-b border-gray-200">
+          {TABS.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              role="tab"
+              aria-selected={tab === t.id}
+              onClick={() => setTab(t.id)}
+              className={`py-3 text-sm sm:text-base font-bold border-b-[3px] transition-colors ${
+                tab === t.id ? "text-green-900 border-green-900" : "text-gray-900 border-transparent hover:text-green-900"
+              }`}
+            >
+              {t.label}
             </button>
-            <button onClick={() => save(choice)} className={`${btnPrimary} flex-1`}>
-              Individuelle Auswahl speichern
-            </button>
-          </div>
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            {getConsent() ? (
-              <button onClick={() => setView("hidden")} className="text-gray-400 hover:text-gray-200 text-sm underline">
-                Schließen ohne Änderung
-              </button>
-            ) : (
-              <button onClick={() => setView("banner")} className="text-gray-400 hover:text-gray-200 text-sm underline">
-                Zurück
-              </button>
-            )}
-            {legalLinks}
-          </div>
+          ))}
+        </div>
+
+        <div className="flex-1 overflow-y-auto px-5 sm:px-7 py-5" role="tabpanel">
+          {tab === "zustimmung" && (
+            <div className="text-gray-700 text-sm sm:text-base leading-relaxed space-y-3">{consentText}</div>
+          )}
+
+          {tab === "details" && (
+            <div className="divide-y divide-gray-200">
+              {CATEGORIES.map((cat) => (
+                <CategoryRow
+                  key={cat.id}
+                  cat={cat}
+                  checked={cat.id === "essenziell" ? true : choice[cat.id]}
+                  onChange={
+                    cat.id === "essenziell"
+                      ? undefined
+                      : (v) => setChoice((prev) => ({ ...prev, [cat.id]: v }))
+                  }
+                />
+              ))}
+            </div>
+          )}
+
+          {tab === "ueber" && (
+            <div className="text-gray-700 text-sm sm:text-base leading-relaxed space-y-3">
+              <p>
+                Cookies sind kleine Textdateien, die von Websites in Ihrem Browser gespeichert werden. Ähnliche
+                Technologien wie der Local Storage funktionieren vergleichbar. Sie dienen dazu, eine Website nutzbar zu
+                machen, Inhalte von Drittanbietern einzubinden oder die Nutzung statistisch auszuwerten.
+              </p>
+              <p>
+                Technisch notwendige Speicherungen dürfen wir ohne Ihre Einwilligung vornehmen. Für alle anderen benötigen
+                wir Ihre Erlaubnis. Welche Services wir einsetzen, sehen Sie im Reiter „Details“.
+              </p>
+              <p>
+                Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft über „Cookie-Einstellungen“ im Footer
+                ändern oder widerrufen. Verantwortlich ist die Rautenberg Professional Solutions GmbH, siehe{" "}
+                <Link href="/impressum" className="text-green-900 font-semibold underline">Impressum</Link> und{" "}
+                <Link href="/datenschutz" className="text-green-900 font-semibold underline">Datenschutzerklärung</Link>.
+              </p>
+            </div>
+          )}
+        </div>
+
+        <div className="border-t border-gray-200 px-5 sm:px-7 py-3 flex flex-col-reverse sm:flex-row gap-1 sm:gap-4">
+          <button type="button" onClick={() => save(NONE)} className={`${btnText} sm:flex-1`}>
+            Ablehnen
+          </button>
+          <button type="button" onClick={() => save(choice)} className={`${btnText} sm:flex-1`}>
+            Auswahl erlauben
+          </button>
+          <button type="button" onClick={() => save(ALL)} className={`${btnAccept} sm:flex-1`}>
+            Alle zulassen
+          </button>
         </div>
       </div>
     </div>
@@ -215,55 +297,62 @@ function CategoryRow({
 }) {
   const [open, setOpen] = useState(false);
   const locked = !onChange;
-  const inputId = `consent-${cat.id}`;
+  const labelId = `consent-${cat.id}`;
 
   return (
-    <div className="rounded-xl border border-gray-700 bg-gray-950/50 p-4">
-      <div className="flex items-start gap-3">
-        <input
-          id={inputId}
-          type="checkbox"
-          checked={checked}
+    <div className="py-4">
+      <div className="flex items-center gap-3">
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+          aria-label={open ? "Service-Informationen ausblenden" : "Service-Informationen anzeigen"}
+          className="text-gray-900 hover:text-green-900 p-1 -ml-1"
+        >
+          <Chevron className={`transition-transform ${open ? "-rotate-90" : "rotate-90"}`} />
+        </button>
+        <span id={labelId} className="font-bold text-base">{cat.title}</span>
+        <span className="text-xs font-semibold bg-gray-200 text-gray-800 rounded-full px-2 py-0.5">
+          {cat.services.length}
+        </span>
+        <button
+          type="button"
+          role="switch"
+          aria-checked={checked}
+          aria-labelledby={labelId}
           disabled={locked}
-          onChange={(e) => onChange?.(e.target.checked)}
-          className="mt-0.5 h-4 w-4 accent-green-600 disabled:opacity-60 shrink-0"
-        />
-        <div className="min-w-0">
-          <label htmlFor={inputId} className="font-semibold text-white text-sm cursor-pointer">
-            {cat.title} ({cat.services.length})
-          </label>
-          <p className="text-gray-400 text-xs leading-relaxed mt-1">
-            {cat.description}
-            {"  •  "}
-            <button
-              type="button"
-              onClick={() => setOpen((o) => !o)}
-              aria-expanded={open}
-              className="text-green-400 hover:text-green-300 underline"
-            >
-              {open ? "Service-Informationen ausblenden" : "Service-Informationen anzeigen"}
-            </button>
-          </p>
-        </div>
+          onClick={() => onChange?.(!checked)}
+          className={`ml-auto relative inline-flex h-9 w-16 shrink-0 items-center rounded-full transition-colors disabled:cursor-not-allowed ${
+            checked ? "bg-green-900" : "bg-gray-900"
+          }`}
+        >
+          <span
+            className={`inline-block h-7 w-7 rounded-full bg-white shadow transition-transform ${
+              checked ? "translate-x-8" : "translate-x-1"
+            }`}
+          />
+        </button>
       </div>
 
+      <p className="text-gray-700 text-sm sm:text-base leading-relaxed mt-3 pl-8">{cat.description}</p>
+
       {open && (
-        <div className="mt-3 space-y-3 pl-7">
+        <div className="mt-4 space-y-3 pl-8">
           {cat.services.map((s) => (
-            <dl key={s.name} className="rounded-lg bg-gray-900 border border-gray-800 p-3 text-xs grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
-              <dt className="col-span-2 font-semibold text-gray-200 mb-1">{s.name}</dt>
+            <dl key={s.name} className="rounded border border-gray-200 bg-gray-50 p-3 text-xs sm:text-sm grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+              <dt className="col-span-2 font-semibold text-gray-900 mb-1">{s.name}</dt>
               <dt className="text-gray-500">Anbieter</dt>
-              <dd className="text-gray-300">{s.anbieter}</dd>
+              <dd className="text-gray-800">{s.anbieter}</dd>
               <dt className="text-gray-500">Zweck</dt>
-              <dd className="text-gray-300">{s.zweck}</dd>
+              <dd className="text-gray-800">{s.zweck}</dd>
               <dt className="text-gray-500">Speicherung</dt>
-              <dd className="text-gray-300">{s.speicherung}</dd>
+              <dd className="text-gray-800">{s.speicherung}</dd>
               <dt className="text-gray-500">Rechtsgrundlage</dt>
-              <dd className="text-gray-300">{s.rechtsgrundlage}</dd>
+              <dd className="text-gray-800">{s.rechtsgrundlage}</dd>
               {s.drittland && (
                 <>
                   <dt className="text-gray-500">Drittland</dt>
-                  <dd className="text-gray-300">{s.drittland}</dd>
+                  <dd className="text-gray-800">{s.drittland}</dd>
                 </>
               )}
             </dl>

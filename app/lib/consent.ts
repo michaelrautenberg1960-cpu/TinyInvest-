@@ -80,9 +80,9 @@ export type CategoryInfo = {
 export const CATEGORIES: CategoryInfo[] = [
   {
     id: "essenziell",
-    title: "Essenziell",
+    title: "Notwendig",
     description:
-      "Essenzielle Services sind für die grundlegende Funktionalität der Website erforderlich. Sie enthalten nur technisch notwendige Services. Diesen Services kann nicht widersprochen werden.",
+      "Notwendige Services machen die Website nutzbar, indem sie Grundfunktionen wie die Speicherung Ihrer Cookie-Auswahl, das Absenden von Formularen und den Login im Investoren-Bereich ermöglichen. Die Website kann ohne diese Services nicht richtig funktionieren.",
     services: [
       {
         name: "Einwilligungs-Speicher",
@@ -111,9 +111,9 @@ export const CATEGORIES: CategoryInfo[] = [
   },
   {
     id: "statistik",
-    title: "Statistik",
+    title: "Statistiken",
     description:
-      "Statistik-Services werden benötigt, um anonymisierte Daten über die Nutzung der Website zu sammeln. So können wir besser verstehen, wie Besucher unsere Website nutzen, und unser Angebot verbessern.",
+      "Statistik-Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem Informationen gesammelt und ausgewertet werden. So können wir unser Angebot verbessern.",
     services: [
       {
         name: "Google Analytics 4",
@@ -127,9 +127,9 @@ export const CATEGORIES: CategoryInfo[] = [
   },
   {
     id: "funktional",
-    title: "Funktional",
+    title: "Externe Medien",
     description:
-      "Funktionale Services sind notwendig, um über die wesentliche Funktionalität hinausgehende Features wie interaktive Karten oder Videowiedergabe bereitzustellen. Inhalte von Karten- und Videoplattformen sind standardmäßig gesperrt und können erlaubt werden. Wenn dem Service zugestimmt wird, werden diese Inhalte automatisch ohne weitere manuelle Einwilligung geladen.",
+      "Inhalte von Karten- und Videoplattformen wie interaktive Karten oder unser Erklärvideo sind standardmäßig gesperrt. Wenn Sie externe Medien zulassen, werden diese Inhalte automatisch ohne weitere manuelle Einwilligung geladen.",
     services: [
       {
         name: "Google Maps",

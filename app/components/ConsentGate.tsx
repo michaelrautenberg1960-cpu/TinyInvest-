@@ -3,7 +3,7 @@ import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { getConsent, setConsent, useConsent } from "../lib/consent";
 
-// Zeigt Inhalte von Drittanbietern (Karten, Videos) erst nach Einwilligung in die Kategorie "Funktional".
+// Zeigt Inhalte von Drittanbietern (Karten, Videos) erst nach Einwilligung in die Kategorie "Externe Medien".
 export default function ConsentGate({
   service,
   className = "rounded-2xl border border-gray-200",
