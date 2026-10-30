@@ -7,6 +7,10 @@ import type { Variant } from "@/app/konfigurator/konfigurator-data";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Automatische Mails an Leads pausiert (Michaels Nummer ist nicht mehr erreichbar).
+// Interne Benachrichtigungen an RESEND_TO laufen weiter. Zum Reaktivieren auf false setzen.
+const CLIENT_EMAILS_PAUSED = true;
+
 // Anhänge der Erstmail. Das EthikBank-Finanzierungsbeispiel wieder aufnehmen,
 // sobald die Bank ein neues Beispiel mit den aktuellen Preisen liefert:
 // { filename: "EB_Plakat_Finanzierungsbeispiel_tinyEscape660.pdf", file: "public/EB_Plakat_Finanzierungsbeispiel_tinyEscape660.pdf" },
@@ -51,7 +55,7 @@ function buildEmailHtml(vorname: string, bodyHtml: string) {
               <p style="margin:0 0 16px;">Michael Rautenberg</p>
               <img src="https://tinyhouse.investments/logo8.png" alt="TinyInvest" width="120" style="display:block;width:120px;max-width:120px;height:auto;margin:0 0 12px;" />
               <p style="margin:0;font-size:13px;line-height:1.7;color:#444444;">
-                Michael Rautenberg &middot; +49 151 68957104<br/>
+                Michael Rautenberg<br/>
                 <a href="mailto:info@tinyhouse.investments" style="color:#444444;">info@tinyhouse.investments</a> &middot; <a href="https://tinyhouse.investments" style="color:#444444;">tinyhouse.investments</a><br/>
                 Baslerstraße 3, 61325 Bad Homburg v.d.Höhe
               </p>
@@ -109,7 +113,9 @@ export async function sendWelcomeEmail(
   email: string,
   telefon?: string | null,
   modell?: string | null
-) {
+): Promise<boolean> {
+  if (CLIENT_EMAILS_PAUSED) return false;
+
   const variant: Variant = modell?.includes("Off-Grid") ? "offgrid" : "ongrid";
 
   const attachments = WELCOME_ATTACHMENTS.map(({ filename, file }) => ({
@@ -137,15 +143,19 @@ export async function sendWelcomeEmail(
     html: buildWelcomeHtml(vorname, Boolean(telefon?.trim()), variant, personalized),
     attachments,
   });
+  return true;
 }
 
-export async function sendHostWelcomeEmail(vorname: string, email: string) {
+export async function sendHostWelcomeEmail(vorname: string, email: string): Promise<boolean> {
+  if (CLIENT_EMAILS_PAUSED) return false;
+
   await resend.emails.send({
     from: "Michael Rautenberg <info@tinyhouse.investments>",
     to: email,
     subject: "Ihre Standort-Bewerbung bei TinyInvest",
     html: buildHostWelcomeHtml(vorname),
   });
+  return true;
 }
 
 // Nach erfolgreichem Versand der Welcome-Mail den Lead auf "Email gesendet" setzen.

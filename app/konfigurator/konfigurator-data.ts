@@ -305,7 +305,6 @@ export const LOCATION_NOTE =
 export const COMPANY_INFO = {
   name: "Rautenberg Professional Solutions GmbH",
   address: "Baslerstraße 3, 61325 Bad Homburg v.d.Höhe",
-  phone: "+49 151 68957104",
   email: "info@tinyhouse.investments",
   vatId: "USt-IdNr.: DE324447673",
   bank: "Frankfurter Sparkasse · IBAN DE03 5005 0201 0200 7832 97 · BIC HELADEF1822",

@@ -142,8 +142,9 @@ export async function POST(req: NextRequest) {
 
     // Send welcome email to the lead themselves
     try {
-      await sendWelcomeEmail(name, email, phone);
-      await markWelcomeEmailSent(newLeadId);
+      if (await sendWelcomeEmail(name, email, phone)) {
+        await markWelcomeEmailSent(newLeadId);
+      }
     } catch (welcomeErr) {
       console.error("Welcome email error (non-fatal):", welcomeErr);
     }

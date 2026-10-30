@@ -48,8 +48,9 @@ export async function POST(req: NextRequest) {
 
       if (lead.status === "neu") {
         try {
-          await sendWelcomeEmail(lead.vorname, lead.email, lead.telefon, lead.budget);
-          await markWelcomeEmailSent(leadId);
+          if (await sendWelcomeEmail(lead.vorname, lead.email, lead.telefon, lead.budget)) {
+            await markWelcomeEmailSent(leadId);
+          }
         } catch (welcomeErr) {
           console.error("Welcome email error (non-fatal):", welcomeErr);
         }
@@ -280,12 +281,10 @@ export async function POST(req: NextRequest) {
     //    (Memorandum Schritt 2 or the Kontakt form, which sends no schritt)
     if (schritt !== "Schnell-Anfrage (Schritt 1)") {
       try {
-        if (isHost) {
-          await sendHostWelcomeEmail(vorname, email);
-        } else {
-          await sendWelcomeEmail(vorname, email, telefon, isHost ? null : budget);
-        }
-        await markWelcomeEmailSent(resultLeadId);
+        const sent = isHost
+          ? await sendHostWelcomeEmail(vorname, email)
+          : await sendWelcomeEmail(vorname, email, telefon, budget);
+        if (sent) await markWelcomeEmailSent(resultLeadId);
       } catch (welcomeErr) {
         console.error("Welcome email error (non-fatal):", welcomeErr);
       }
