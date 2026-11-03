@@ -6,7 +6,7 @@ import ConsentGate from "./ConsentGate";
 const tabs = ["📋 Steuer-Investor", "📈 Rendite-Investor", "🏡 Finanzierungs-Käufer"];
 
 const steuerSteps = [
-  { num: "01", title: "Steuerberater konsultieren", desc: "Sie nehmen unser Steuer-Factsheet mit und lassen prüfen, ob IAB und Sonder-AfA für Sie anwendbar sind. (Spoiler: Fast immer ja.)" },
+  { num: "01", title: "Steuerberater konsultieren", desc: "Sie nehmen unser Steuer-Factsheet mit und lassen prüfen, ob IAB und Sonder-AfA für Sie anwendbar sind." },
   { num: "02", title: "IAB bilden", desc: "Ihr Steuerberater bildet den Investitionsabzugsbetrag (50 %) – oft noch rückwirkend für das Vorjahr. Das Finanzamt erstattet einen Teil der Steuer zurück (Einzelfall, abhängig von Steuersatz und Kaufpreis – Steuerberater konsultieren).", link: { href: "/wissen/iab-tiny-house", label: "IAB beantragen: Schritt-für-Schritt-Anleitung →" } },
   { num: "03", title: "Haus kaufen & liefern", desc: "Sie wählen Ihr TinyInvest-Modell, wir produzieren es und liefern es auf den vereinbarten Standort in Deutschland oder der EU." },
   { num: "04", title: "Vermietung & Steuer genießen", desc: "Ihr Haus geht sofort in den Betrieb. Sonder-AfA und AfA werden in der Steuererklärung geltend gemacht. Monatliche Mieteinnahmen fließen." },

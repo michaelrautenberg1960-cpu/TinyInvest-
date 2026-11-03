@@ -110,7 +110,7 @@ export default function GaleriePage() {
           <p className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold mb-3">Bereit zu investieren?</p>
           <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Investitionsunterlagen anfordern</h3>
           <p className="text-gray-500 text-sm mb-6">
-            Erhalten Sie das vollständige Investor-Paket: §7g-Analyse, Asset-Kennzahlen und individuelle Beratung.
+            Erhalten Sie das vollständige Investor-Paket: Produktunterlagen, allgemeines §7g-Factsheet und Asset-Kennzahlen.
           </p>
           <ModalButton className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-sm">
             🔐 Unterlagen anfordern →

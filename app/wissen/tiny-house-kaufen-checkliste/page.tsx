@@ -152,7 +152,7 @@ export default function ChecklistePage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Phase 2 – Modell & Beratung</h2>
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed">
-              Wähle das passende Modell: Das Comfort-Modell (ab 65.000 €) eignet sich für den Einstieg, das Premium-Modell (ab 80.000 €) bietet höhere Ausstattung und in der Regel bessere Belegungsquoten. Fordere die Investor-Unterlagen an – das §7g-Factsheet und die Renditeprognose sind die Grundlage jeder Entscheidung. Nutze den Rendite-Rechner unter /rechner/rendite für eigene Szenarien. Besprich den Standort mit TinyInvest: Deutschland, Österreich und die Schweiz kommen infrage. Wer möchte, kann Referenzstandorte besuchen, bevor die endgültige Entscheidung fällt.
+              Wähle das passende Modell: On-Grid (74.700 € netto) eignet sich für Standorte mit vorhandenem Netzanschluss, Off-Grid (83.400 € netto) ist flexibler in der Standortwahl. Fordere die Investor-Unterlagen an – das §7g-Factsheet und die Renditeprognose sind die Grundlage jeder Entscheidung. Nutze den Rendite-Rechner unter /rechner/rendite für eigene Szenarien. Besprich den Standort mit TinyInvest: Deutschland, Österreich und die Schweiz kommen infrage. Wer möchte, kann Referenzstandorte besuchen, bevor die endgültige Entscheidung fällt.
             </p>
           </div>
 
@@ -198,7 +198,7 @@ export default function ChecklistePage() {
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
             <h3 className="text-xl font-black mb-3">Bereit? Starte jetzt.</h3>
-            <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">Investor-Paket anfordern – §7g-Analyse, Renditeprognose und Beratung in einem.</p>
+            <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">Investor-Paket anfordern – Produktunterlagen, §7g-Factsheet und Beispielrechnung in einem.</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">🔐 Jetzt starten →</ModalButton>
               <Link href="/marktplatz" className="border border-white/20 text-white hover:border-green-400 hover:text-green-400 font-semibold px-6 py-3.5 rounded-full text-sm transition-all">Projekte ansehen →</Link>

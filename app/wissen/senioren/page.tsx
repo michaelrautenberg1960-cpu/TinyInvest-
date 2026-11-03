@@ -244,7 +244,7 @@ export default function SeniorenPage() {
               Klassische Vorsorgeinstrumente schließen diese Lücke kaum noch. Riester-Verträge galten einmal als Hoffnungsträger — heute kämpfen viele Anbieter mit strukturellen Problemen, und die Renditen enttäuschen. Sparbücher und Tagesgeldkonten bieten zwar Sicherheit, verlieren aber bei anhaltender Inflation real an Kaufkraft. ETFs und Aktien schwanken stark: Wer mit 65 einen Kurseinbruch erlebt, hat keine Zeit mehr zum Warten. Sachwertalternativen wie Betongold — also Immobilien — sind für viele schlicht zu teuer oder zu aufwändig in der Verwaltung.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Ein Tiny House schlägt eine neue Brücke: als echter, greifbarer Sachwert mit überschaubarem Kapitaleinsatz (ab 65.000 €), der entweder monatliche Einnahmen generiert oder die eigenen Wohnkosten drastisch senkt — und damit die Rentenlücke von zwei Seiten gleichzeitig angreift.
+              Ein Tiny House schlägt eine neue Brücke: als echter, greifbarer Sachwert mit überschaubarem Kapitaleinsatz (ab 74.700 €), der entweder monatliche Einnahmen generiert oder die eigenen Wohnkosten drastisch senkt — und damit die Rentenlücke von zwei Seiten gleichzeitig angreift.
             </p>
           </div>
 
@@ -382,7 +382,7 @@ export default function SeniorenPage() {
               Bei der Kapitalanlage-Variante trägt lokale Partner sämtliche Betriebskosten für das laufende Geschäft (Reinigung, Plattformgebühren, Wartung). Aus Ihrer 40-%-Auszahlung sind keine Abzüge mehr für Verwaltung zu erwarten — das ist bereits im Auszahlungsmodell berücksichtigt. Die größten Kostenblöcke, die Sie kennen sollten: Bei Bedarf anfallende Reparaturen oder Instandhaltungen werden vorab kommuniziert und gemeinsam besprochen. Kein böses Erwachen nach einem Brief vom Verwalter.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Wichtig: Der Kaufpreis des Tiny Houses (ab 65.000 €) ist keine laufende Ausgabe, sondern eine einmalige Investition in Ihr Eigentum — ein Vermögenswert, der Ihnen physisch gehört und jederzeit weiterverkauft werden kann. Anders als bei einer Rentenversicherung oder einem Sparplan bleibt Ihr Kapital greifbar.
+              Wichtig: Der Kaufpreis des Tiny Houses (ab 74.700 €) ist keine laufende Ausgabe, sondern eine einmalige Investition in Ihr Eigentum — ein Vermögenswert, der Ihnen physisch gehört und jederzeit weiterverkauft werden kann. Anders als bei einer Rentenversicherung oder einem Sparplan bleibt Ihr Kapital greifbar.
             </p>
           </div>
 

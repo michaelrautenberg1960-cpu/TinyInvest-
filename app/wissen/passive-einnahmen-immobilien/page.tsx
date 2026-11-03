@@ -47,7 +47,7 @@ const modelle = [
     einstieg: "300.000–500.000 €",
     rendite: "3–5 % brutto",
     zeitaufwand: "20–50 Std./Jahr",
-    eigentuemer: "âœ… Ja",
+    eigentuemer: "✅ Ja",
     fazit: "Bewährt, aber kapitalintensiv und hoher Aufwand.",
   },
   {
@@ -56,7 +56,7 @@ const modelle = [
     einstieg: "200.000–400.000 €",
     rendite: "5–9 % brutto",
     zeitaufwand: "30–80 Std./Jahr",
-    eigentuemer: "âœ… Ja",
+    eigentuemer: "✅ Ja",
     fazit: "Höhere Rendite als ETW, aber hoher Aufwand und Kapital.",
   },
   {
@@ -65,7 +65,7 @@ const modelle = [
     einstieg: "ab 74.700 €",
     rendite: "~12,7 % p.a. vor Steuern",
     zeitaufwand: "~0 Std.",
-    eigentuemer: "âœ… Ja",
+    eigentuemer: "✅ Ja",
     fazit: "Niedrigster Einstieg, höchste Rendite, mit geringem Aufwand über lokale Partnerer Betrieb.",
     highlight: true,
   },
@@ -184,7 +184,7 @@ export default function PassiveEinnahmenPage() {
           {/* Intro */}
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Der Traum vom â€žGeldverdienen im Schlaf" ist im Immobilienbereich oft ein Trugschluss. Wer klassisch eine Eigentumswohnung vermietet, stellt schnell fest, dass Mietersuche, Instandhaltung und Eigentümerversammlungen alles andere als passiv sind. Im Jahr 2026 hat sich der Markt jedoch gewandelt: Neue Anlageformen und steuerliche Hebel wie der §&nbsp;7g EStG (Investitionsabzugsbetrag) rücken Modelle in den Fokus, die früher als Nischenprodukte galten.
+              Der Traum vom „Geldverdienen im Schlaf" ist im Immobilienbereich oft ein Trugschluss. Wer klassisch eine Eigentumswohnung vermietet, stellt schnell fest, dass Mietersuche, Instandhaltung und Eigentümerversammlungen alles andere als passiv sind. Im Jahr 2026 hat sich der Markt jedoch gewandelt: Neue Anlageformen und steuerliche Hebel wie der §&nbsp;7g EStG (Investitionsabzugsbetrag) rücken Modelle in den Fokus, die früher als Nischenprodukte galten.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Doch welches Modell liefert den besten Mix aus Rendite, Sicherheit durch echtes Eigentum und minimalem Zeitaufwand? Ein tiefer Blick in den direkten Vergleich.
@@ -194,7 +194,7 @@ export default function PassiveEinnahmenPage() {
           {/* Section 1: REITs und Crowdinvesting */}
           <div className="max-w-3xl mb-12">
             <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">
-              Die klassischen â€žPapier-Immobilien": REITs und Crowdinvesting
+              Die klassischen „Papier-Immobilien": REITs und Crowdinvesting
             </h2>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
               Für Einsteiger mit geringem Kapital scheinen REITs (Real Estate Investment Trusts) und Crowdinvesting attraktiv.
@@ -287,7 +287,7 @@ export default function PassiveEinnahmenPage() {
               Der Gewinner 2026: Das Tiny House Investment
             </h2>
             <p className="text-gray-700 text-base leading-relaxed mb-8">
-              Ãœberraschend, aber datenbasiert setzt sich das Tiny House Investment (oft als â€žTinyInvest" geführt) an die Spitze. Mit einem Einstieg ab ca. 65.000&nbsp;€ ist die Barriere deutlich niedriger als bei einer Wohnung.
+              Überraschend, aber datenbasiert setzt sich das Tiny House Investment (oft als „TinyInvest" geführt) an die Spitze. Mit einem Einstieg ab 74.700&nbsp;€ ist die Barriere deutlich niedriger als bei einer Wohnung.
             </p>
 
             <h3 className="text-lg font-black text-gray-900 mb-3">Warum die Rendite so hoch ist</h3>
@@ -295,7 +295,7 @@ export default function PassiveEinnahmenPage() {
               Mit einer Rendite von rund 12,7&nbsp;% p.a. vor Steuern (Beispielrechnung nach Stellplatzpacht) schlägt das Tiny House die klassischen Modelle um Längen. Dies liegt vor allem an der Kombination aus moderner Modulbauweise, hoher Nachfrage nach nachhaltigem Wohnraum und einem vollautomatisierten Betreibermodell. Der Anleger erwirbt echtes Eigentum (das Haus), während sich ein Management-Service um die Vermietung und Instandhaltung kümmert.
             </p>
 
-            <h3 className="text-lg font-black text-gray-900 mb-3">Der steuerliche â€žCheat-Code": §&nbsp;7g EStG</h3>
+            <h3 className="text-lg font-black text-gray-900 mb-3">Der steuerliche „Cheat-Code": §&nbsp;7g EStG</h3>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
               Der entscheidende Vorteil ist jedoch steuerlicher Natur. Da Tiny Houses unter bestimmten Voraussetzungen als bewegliche Wirtschaftsgüter gelten, können Investoren den Investitionsabzugsbetrag (IAB) nutzen.
             </p>
@@ -364,9 +364,9 @@ export default function PassiveEinnahmenPage() {
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
             <h3 className="text-xl font-black mb-3">Das Modell mit dem besten Passiv-Einkommen</h3>
-            <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">Investor-Paket anfordern: Renditemodell, §7g-Analyse und Standort-Ãœbersicht.</p>
+            <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">Investor-Paket anfordern: Renditemodell, §7g-Factsheet und Standort-Übersicht.</p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">ðŸ” Unterlagen anfordern →</ModalButton>
+              <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">🔐 Unterlagen anfordern →</ModalButton>
               <Link href="/marktplatz" className="border border-white/20 text-white hover:border-green-400 hover:text-green-400 font-semibold px-6 py-3.5 rounded-full text-sm transition-all">Projekte ansehen →</Link>
             </div>
           </div>

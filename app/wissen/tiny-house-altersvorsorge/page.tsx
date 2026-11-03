@@ -21,7 +21,7 @@ export const metadata = {
     type: "article",
     title: "Tiny House als Altersvorsorge 2026: Sachwert statt Riester",
     description:
-      "Monatlicher Cashflow statt Rentenpunkte: Wie ein über lokale Partner betriebenes Tiny House die Rentenlücke schließt – ab 65.000 €, kein Aufwand.",
+      "Monatlicher Cashflow statt Rentenpunkte: Wie ein über lokale Partner betriebenes Tiny House die Rentenlücke schließt – ab 74.700 €, kein Aufwand.",
     url: "https://tinyhouse.investments/wissen/tiny-house-altersvorsorge",
   },
 };
@@ -50,7 +50,7 @@ const faqItems = [
   {
     question: "Wie hoch ist der Mindestbetrag für ein Tiny House Investment?",
     answer:
-      "Der Einstieg beginnt bei 65.000 € für das Comfort-Modell. Das Escape-Modell liegt bei 79.000 €. Durch den IAB-Effekt (bis zu 50 % Vorabsteuerabzug im Jahr vor dem Kauf) reduziert sich die effektive Liquiditätsbelastung für Investoren mit gewerblichen Einkünften auf ca. 48.000–51.000 €.",
+      "Der Einstieg beginnt bei 74.700 € netto (Escape 660 On-Grid), das Off-Grid-Modell kostet 83.400 € netto. Durch IAB, Sonder-AfA und degressive AfA sinkt die gebundene Liquidität für Investoren mit gewerblichen Einkünften im Beispiel (42 % Steuersatz) auf rund 48.000 €.",
   },
 ];
 
@@ -138,7 +138,7 @@ export default function TinyHouseAltersvorsorge() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["Monatlicher Cashflow", "Echter Sachwert", "Ab 65.000 €", "mit geringem Aufwand über lokale Partner", "Vererbbar"].map((tag) => (
+            {["Monatlicher Cashflow", "Echter Sachwert", "Ab 74.700 €", "mit geringem Aufwand über lokale Partner", "Vererbbar"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -172,7 +172,7 @@ export default function TinyHouseAltersvorsorge() {
           <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Wie das Tiny House-Modell für Senioren funktioniert</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
             {[
-              { step: "01", title: "Objekt auswählen", desc: "Wählen Sie aus verfügbaren Tiny Houses ab 65.000 €. TinyInvest vermittelt Stellplatz, Genehmigung und Betrieb." },
+              { step: "01", title: "Objekt auswählen", desc: "Wählen Sie aus verfügbaren Tiny Houses ab 74.700 €. TinyInvest vermittelt Stellplatz, Genehmigung und Betrieb." },
               { step: "02", title: "lokale Partner übernehmen", desc: "Buchungen, Gästebetreuung, Reinigung, Wartung — alles wird mit geringem Aufwand über lokale Partner durch das lokale Partnernetzwerknetzwerk abgewickelt." },
               { step: "03", title: "Monatlich kassieren", desc: "40 % der Mieteinnahmen nach Stellplatzpacht werden automatisch ausgezahlt. Bei 60 % Belegung sind das rund 793 € pro Monat." },
             ].map((item) => (

@@ -292,7 +292,7 @@ export default function DirektinvestmentPage() {
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-green-100 hidden md:block" />
             <div className="space-y-4">
               {[
-                { step: "1", title: "Erstgespräch & Auswahl", desc: "Du wählst ein Modell und besichtigst optional einen bestehenden Standort. Wir erstellen deine persönliche Steueranalyse.", detail: "1–2 Wochen" },
+                { step: "1", title: "Erstgespräch & Auswahl", desc: "Du wählst ein Modell und besichtigst optional einen bestehenden Standort. Du erhältst Produktunterlagen und das allgemeine §7g-Factsheet für deinen Steuerberater.", detail: "1–2 Wochen" },
                 { step: "2", title: "Kaufvertrag & Zahlungsplan", desc: "Unterzeichnung des Kaufvertrags. Das Tiny House wird auf deinen Namen übergeeignet. Einmalzahlung oder Ratenzahlung möglich.", detail: "Rechtssicher & dokumentiert" },
                 { step: "3", title: "Übergabe & Dokumentation", desc: "Du erhältst: Kaufvertrag, Fahrzeugbrief, CE-Zertifikat, Versicherungsunterlagen und die vollständige §7g-Dokumentation für deinen Steuerberater.", detail: "Tax-Compliance-Paket" },
                 { step: "4", title: "Aufstellung durch lokale Partner", desc: "lokale Partner vermittelt Host und Stellplatz. Das Haus wird aufgebaut, angeschlossen und buchungsbereit gemacht.", detail: "Betrieb über lokale Partner ab Übergabe" },
@@ -338,7 +338,7 @@ export default function DirektinvestmentPage() {
             <p className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold mb-3">Bereit, Eigentümer zu werden?</p>
             <h3 className="text-xl font-black mb-3">Jetzt Investor-Paket anfordern</h3>
             <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">
-              Kaufvertrag-Muster, §7g-Analyse und Besichtigungstermine – kostenlos und unverbindlich.
+              Kaufvertrag-Muster, allgemeines §7g-Factsheet und Besichtigungstermine – kostenlos und unverbindlich.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">

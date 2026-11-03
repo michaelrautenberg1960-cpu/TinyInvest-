@@ -10,7 +10,7 @@ import { steuerCards, vergleichRows } from "../components/data";
 
 export const metadata = {
   title: "Tiny House §7g Steuervorteile: IAB & AfA erklärt | TinyInvest",
-  description: "§7g IAB, 40 % Sonder-AfA, 30 % degressive AfA — bis zu 33.000 € Liquiditätsvorteil im Kaufjahr. Für Selbstständige & GmbHs. §7g Rechner inklusive.",
+  description: "§7g IAB, 40 % Sonder-AfA, 30 % degressive AfA — im Beispiel rund 26.700 € Steuereffekt (74.700 €, 42 %). Für Selbstständige & GmbHs. §7g Rechner inklusive.",
   keywords: "§7g EStG tiny house, Investitionsabzugsbetrag IAB, Sonder-AfA Tiny House, tiny house IAB steuervorteil, §7g Rechner 2026",
   alternates: {
     canonical: "https://tinyhouse.investments/steuervorteil",
@@ -18,8 +18,8 @@ export const metadata = {
   openGraph: {
     ...BASE_OG,
     type: "website",
-    title: "§7g Steuervorteil – Bis zu 40 % Erstattung | TinyInvest",
-    description: "IAB, Sonder-AfA, lineare AfA. Im Jahr 1 bis zu 40 % des Kaufpreises zurück.",
+    title: "§7g Steuervorteil für Tiny Houses: IAB & AfA erklärt | TinyInvest",
+    description: "IAB, Sonder-AfA und degressive AfA: im Beispiel rund 26.700 € Steuereffekt bei 74.700 € Kaufpreis und 42 % Grenzsteuersatz.",
     url: "https://tinyhouse.investments/steuervorteil",
   },
 };
@@ -74,7 +74,7 @@ export default function SteuerVorteilPage() {
               { value: "70 %", label: "Sofortabschreibung im Kaufjahr", sub: "Sonder-AfA + deg. AfA kombiniert" },
               { value: "50 %", label: "IAB im Vorjahr absetzbar", sub: "§7g Abs. 1 EStG" },
               { value: "42 %", label: "Grenzsteuersatz-Beispiel", sub: "Gutverdienende Arbeitnehmer" },
-              { value: "≈ 33 K€", label: "Liquiditätsvorteil Jahr 1", sub: "Bei 80.000 € Investition" },
+              { value: "≈ 26,7 K€", label: "Steuereffekt Vorjahr + Kaufjahr", sub: "Bei 74.700 € Investition, 42 %" },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <p className="font-data text-2xl font-black text-green-400">{s.value}</p>
@@ -202,9 +202,9 @@ export default function SteuerVorteilPage() {
               <div className="space-y-2 mb-4">
                 {[
                   { jahr: "2025 (Vorjahr)", steuer: "–50.000 €", highlight: false },
-                  { jahr: "2026 (Kaufjahr)", steuer: "–20.000 €", highlight: true },
-                  { jahr: "2027",            steuer: "–9.000 €",  highlight: false },
-                  { jahr: "2028",            steuer: "–6.300 €",  highlight: false },
+                  { jahr: "2026 (Kaufjahr)", steuer: "–35.000 €", highlight: true },
+                  { jahr: "2027",            steuer: "–4.500 €",  highlight: false },
+                  { jahr: "2028",            steuer: "–3.150 €",  highlight: false },
                 ].map((r) => (
                   <div key={r.jahr} className={`flex justify-between text-[12px] border-b pb-2 ${r.highlight ? "border-green-400/40" : "border-green-600"}`}>
                     <span className="text-green-200/70">{r.jahr}</span>
@@ -277,7 +277,7 @@ export default function SteuerVorteilPage() {
                 <p className="text-green-100 text-[13px] leading-relaxed">
                   Eine 70 m² Wohnung in Berlin kostet <strong className="text-white">~440.000 €</strong>.
                   Davon gehen <strong className="text-white">~44.000 € direkt an Notar, Makler und Finanzamt</strong> — noch bevor du einen Euro tilgst.
-                  Das ist mehr als der halbe Kaufpreis eines <strong className="text-white">vollwertigen TinyInvest Comfort (60.000 €)</strong>.
+                  Das ist mehr als der halbe Kaufpreis eines <strong className="text-white">Escape 660 On-Grid (74.700 € netto)</strong>.
                 </p>
                 <p className="text-green-200 text-[12px] mt-3 font-semibold">
                   → Mit TinyInvest kaufst du ein vollständiges Haus zum Preis der Kaufnebenkosten einer Berliner Wohnung.
@@ -307,7 +307,7 @@ export default function SteuerVorteilPage() {
           <p className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold mb-3">Bereit zum nächsten Schritt?</p>
           <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Investitionsunterlagen anfordern</h3>
           <p className="text-gray-500 text-sm mb-6">
-            Erhalten Sie die vollständige §7g-Analyse für Ihre persönliche Steuersituation plus individuelle Beratung.
+            Erhalten Sie Produktunterlagen und unser allgemeines §7g-Factsheet für Ihr Gespräch mit dem Steuerberater – plus ein persönliches Gespräch zu Modell und Liefertermin.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <ModalButton className="bg-green-700 hover:bg-green-800 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-sm">

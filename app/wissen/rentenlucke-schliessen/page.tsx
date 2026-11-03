@@ -21,7 +21,7 @@ export const metadata = {
     type: "article",
     title: "Rentenlücke schließen 2026: Monatlicher Cashflow mit Tiny House",
     description:
-      "Wie ein über lokale Partner betriebenes Tiny House die Rentenlücke mit monatlichem Cashflow schließt — ab 65.000 €, kein aktiver Aufwand.",
+      "Wie ein über lokale Partner betriebenes Tiny House die Rentenlücke mit monatlichem Cashflow schließt — ab 74.700 €, kein aktiver Aufwand.",
     url: "https://tinyhouse.investments/wissen/rentenlucke-schliessen",
   },
 };

@@ -159,7 +159,7 @@ export default function RenditeRechnerPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50">
                   {[
-                    ["Einstiegspreis", "300.000–500.000 €", "ab 65.000 €"],
+                    ["Einstiegspreis", "300.000–500.000 €", "ab 74.700 € netto"],
                     ["Rendite auf Kaufpreis", "3–5 % brutto p.a.", "~12,7 % vor Steuern"],
                     ["Monatlicher Cashflow", "800–1.500 €", "≈ 793 € (bei 60 % Auslastung)"],
                     ["Steuerabschreibung", "2 % / 50 Jahre", "§7g: bis 70 % im Kaufjahr"],

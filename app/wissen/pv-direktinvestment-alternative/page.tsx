@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "PV-Direktinvestment Alternative: §7g IAB | TinyInvest",
   description:
-    "Du suchst eine Alternative zum Photovoltaik-Direktinvestment? Wie du mit Tiny Houses den §7g IAB & Sonder-AfA mit kleinerem Budget optimal nutzt – ab 79.000 €.",
+    "Du suchst eine Alternative zum Photovoltaik-Direktinvestment? Wie du mit Tiny Houses den §7g IAB & Sonder-AfA mit kleinerem Budget optimal nutzt – ab 74.700 €.",
   keywords:
     "pv direktinvestment alternative, photovoltaik direktinvestment mindestanlage, solar direktinvestment einstiegssumme, iab bewegliche wirtschaftsgüter liste, tiny house statt solar direktinvestment, pv direktinvestment sinnvoll, alternative zu solar investment, kapitalanlage unter 100000 euro, §7g iab bewegliches wirtschaftsgut, solarpark direktinvestment alternative",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -20,7 +20,7 @@ export const metadata = {
     type: "article",
     title: "PV-Direktinvestment Alternative: §7g IAB unter 100.000 € nutzen",
     description:
-      "PV-Direktinvestments starten oft erst ab 100.000 – 250.000 €. Das Tiny House bietet denselben §7g-Steuerhebel – ab 79.000 €, ohne Netzanschluss-Bürokratie.",
+      "PV-Direktinvestments starten oft erst ab 100.000 – 250.000 €. Das Tiny House bietet denselben §7g-Steuerhebel – ab 74.700 €, ohne Netzanschluss-Bürokratie.",
     url: "https://tinyhouse.investments/wissen/pv-direktinvestment-alternative",
   },
 };
@@ -59,7 +59,7 @@ const faqItems = [
 ];
 
 const vergleichRows = [
-  ["Typische Mindestinvestition", "100.000 – 250.000 €", "ab 79.000 €"],
+  ["Typische Mindestinvestition", "100.000 – 250.000 €", "ab 74.700 €"],
   ["§7g IAB nutzbar", "Oft eingeschränkt (Fondsstruktur)", "Ja – vollständig, eindeutig"],
   ["Sonder-AfA (40 %) nutzbar", "Eingeschränkt / komplex", "Ja"],
   ["Netzanschlusszusage erforderlich", "Ja (12–24 Monate Wartezeit)", "Nein"],
@@ -130,7 +130,7 @@ export default function PvDirektinvestmentAlternativePage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">§7g IAB · Direktinvestment · 2026</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            PV-Direktinvestment Alternative: §7g IAB nutzen – ab 79.000 € statt 250.000 €
+            PV-Direktinvestment Alternative: §7g IAB nutzen – ab 74.700 € statt 250.000 €
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -143,7 +143,7 @@ export default function PvDirektinvestmentAlternativePage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Photovoltaik-Direktinvestments versprechen §7g IAB, Sonder-AfA und passives Einkommen – klingen ideal. Bis man die Mindestinvestition sieht: 100.000 bis 250.000 € für ein seriöses Produkt mit echter Eigentumsübertragung. Dieser Guide zeigt, wie du denselben Steuerhebel mit einem Tiny House ab 79.000 € nutzt – ohne Netzanschluss-Bürokratie, ohne 20-jährige Kapitalbindung.
+            Photovoltaik-Direktinvestments versprechen §7g IAB, Sonder-AfA und passives Einkommen – klingen ideal. Bis man die Mindestinvestition sieht: 100.000 bis 250.000 € für ein seriöses Produkt mit echter Eigentumsübertragung. Dieser Guide zeigt, wie du denselben Steuerhebel mit einem Tiny House ab 74.700 € nutzt – ohne Netzanschluss-Bürokratie, ohne 20-jährige Kapitalbindung.
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
@@ -193,7 +193,7 @@ export default function PvDirektinvestmentAlternativePage() {
           </div>
 
           {/* H2: Das demokratisierte IAB-Investment */}
-          <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Das „demokratisierte IAB-Investment" – Tiny House ab 79.000 €</h2>
+          <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Das „demokratisierte IAB-Investment" – Tiny House ab 74.700 €</h2>
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
               Ein Tiny House auf einem Vlemmix-Trailer ist steuerrechtlich eindeutig als bewegliches Wirtschaftsgut klassifiziert: straßenzugelassen, mit eigener Fahrzeugidentifikationsnummer, nicht dauerhaft mit dem Boden verbunden. Diese Klassifizierung ist kein Graubereich – sie ist der Normalfall für §7g EStG. Es gibt keinen Auslegungsspielraum, keine Netzanschlusszusage, keine behördliche Prüfung im Vorfeld. Du kaufst ein reales, greifbares Wirtschaftsgut und erwirbst direktes Eigentum daran.
@@ -295,9 +295,9 @@ export default function PvDirektinvestmentAlternativePage() {
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
             <p className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold mb-3">Bereit für den nächsten Schritt?</p>
-            <h3 className="text-xl font-black mb-3">§7g-Analyse für deine Steuersituation</h3>
+            <h3 className="text-xl font-black mb-3">§7g-Factsheet für deinen Steuerberater</h3>
             <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">
-              Wir zeigen dir konkret, wie hoch dein IAB-Vorteil im ersten Jahr wäre – auf Basis deines Grenzsteuersatzes und Investitionsvolumens. Kostenlos und unverbindlich.
+              Fordere Produktunterlagen und unser allgemeines §7g-Factsheet an. Was davon in deinem Fall greift, klärt dein Steuerberater. Kostenlos und unverbindlich.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">

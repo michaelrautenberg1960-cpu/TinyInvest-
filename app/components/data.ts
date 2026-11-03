@@ -145,7 +145,7 @@ export const faqs = [
   },
   {
     q: "Brauche ich viel Eigenkapital für den Kauf?",
-    a: "Der Einstieg beginnt bei 65.000 € (Comfort-Modell). Durch die Steuererstattung im Vorjahr – ca. 16.000–17.000 € bei 42 % Steuersatz – reduziert sich die effektive Liquiditätsbelastung erheblich. Diesen Betrag nutzen viele Investoren als Eigenkapital bei der Bank; der Restkredit wird durch die monatlichen Mieteinnahmen gedeckt – oft mit positivem Cashflow.",
+    a: "Der Einstieg beginnt bei 74.700 € netto (Escape 660 On-Grid). Durch den IAB im Vorjahr – rechnerisch ca. 15.700 € bei 42 % Steuersatz – reduziert sich die effektive Liquiditätsbelastung erheblich. Diesen Betrag nutzen viele Investoren als Eigenkapital bei der Bank; der Restkredit wird durch die monatlichen Mieteinnahmen gedeckt – oft mit positivem Cashflow.",
   },
   {
     q: "Muss die Vermietung gewerblich sein?",

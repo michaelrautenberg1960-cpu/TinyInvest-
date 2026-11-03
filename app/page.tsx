@@ -17,7 +17,7 @@ import Footer from "./components/Footer";
 export const metadata: Metadata = {
   title: "Tiny House kaufen & vermieten | Steuern sparen | TinyInvest",
   description:
-    "Tiny House kaufen, vermieten und im ersten Jahr bis zu 33.000 € Steuern sparen. Ab 65.000 € · 10–14 % p.a.* · Betrieb aus einer Hand über unser Partner-Netzwerk.",
+    "Tiny House kaufen und vermieten: ab 74.700 € netto, im Beispiel ~793 €/Monat (~12,7 % p.a. vor Steuern) plus §7g-Steuereffekt. Betrieb aus einer Hand über lokale Partner.",
   keywords:
     "tiny house kaufen vermieten, tiny house investment, tiny house steuern sparen, tiny house rendite, tiny house als kapitalanlage",
   alternates: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Tiny House kaufen & vermieten | Steuern sparen | TinyInvest",
     description:
-      "Tiny House kaufen, vermieten und im ersten Jahr bis zu 33.000 € Steuern sparen. Ab 65.000 € · 10–14 % p.a.* · Betrieb aus einer Hand über unser Partner-Netzwerk.",
+      "Tiny House kaufen und vermieten: ab 74.700 € netto, im Beispiel ~793 €/Monat (~12,7 % p.a. vor Steuern) plus §7g-Steuereffekt. Betrieb aus einer Hand über lokale Partner.",
     url: "https://tinyhouse.investments",
   },
 };

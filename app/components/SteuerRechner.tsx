@@ -4,7 +4,7 @@ import ModalButton from "./ModalButton";
 import { useTrackOnce } from "@/app/lib/track";
 
 export default function SteuerRechner() {
-  const [kaufpreis, setKaufpreis] = useState(79000);
+  const [kaufpreis, setKaufpreis] = useState(74700);
   const [steuersatz, setSteuersatz] = useState(42);
   const [mitIAB, setMitIAB] = useState(true);
 
@@ -52,7 +52,7 @@ export default function SteuerRechner() {
           </label>
           <div className="text-3xl font-black text-green-700 mb-3">{fmt(kaufpreis)} €</div>
           <input
-            type="range" min={60000} max={120000} step={1000} value={kaufpreis}
+            type="range" min={60000} max={120000} step={100} value={kaufpreis}
             onChange={(e) => setKaufpreis(Number(e.target.value))}
             className="w-full"
           />

@@ -133,7 +133,7 @@ export default function AerztePage() {
             Niedergelassene Ärzte und Freiberufler zahlen bis zu 45 % Einkommensteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzusetzen — ohne Bürokratie, ohne aktiven Aufwand. Das Tiny House generiert danach monatlichen Cashflow, über lokale Partner betrieben.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 79.000 €", "Kein Aufwand neben der Praxis"].map((tag) => (
+            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "Kein Aufwand neben der Praxis"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>

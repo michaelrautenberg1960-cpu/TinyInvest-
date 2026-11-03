@@ -133,7 +133,7 @@ export default function ItFreelancerPage() {
             IT-Freelancer mit 800–1.500 € Tagessatz zahlen effektiv 40–45 % Steuern auf ihren Gewinn. Der §7g IAB erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf abzuziehen — Steuererstattung vor Lieferung. Das Tiny House läuft danach mit geringem Aufwand über lokale Partner: kein Aufwand neben dem Projekt.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 79.000 €", "Remote-kompatibel"].map((tag) => (
+            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "Remote-kompatibel"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>

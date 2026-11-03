@@ -94,7 +94,7 @@ export default function TinyHouseVsEtfAltersvorsorge() {
     ["Marktabhängigkeit", "Hoch (Kursrisiko kurz vor Rente)", "Gering (Mietmarkt, nicht Börse)"],
     ["Sachwert / Inflationsschutz", "Nein (Papiervermögen)", "Ja (physisches Gut mit Restwert)"],
     ["Aufwand", "Gering (rebalancing)", "Keiner (vollverwaltet durch lokale Partner)"],
-    ["Einstieg", "Ab 50 €/Monat (Sparplan)", "Ab 65.000 € (einmalig)"],
+    ["Einstieg", "Ab 50 €/Monat (Sparplan)", "Ab 74.700 € (einmalig)"],
     ["§7g IAB nutzbar", "Nein", "Ja (bei gewerblichen Einkünften)"],
   ];
 

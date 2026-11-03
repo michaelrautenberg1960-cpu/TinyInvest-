@@ -64,7 +64,7 @@ export default function Hero({ heroImage }: { heroImage: string }) {
             </h1>
 
             <p className="text-white/75 text-base leading-relaxed mb-7 max-w-lg">
-              Wir vermitteln Tiny Houses zum Direktkauf als steueroptimiertes Wirtschaftsgut – auf Wunsch fertig aufgestellt und vollständig verwaltet durch unser Netzwerk erfahrener lokaler Partner, mit monatlichem Cashflow ab dem ersten Monat. Ab 65.000 €, 10–14 % p.a. Alles aus einer Hand.
+              Wir vermitteln Tiny Houses zum Direktkauf als steueroptimiertes Wirtschaftsgut – auf Wunsch fertig aufgestellt und vollständig verwaltet durch unser Netzwerk erfahrener lokaler Partner, mit monatlichem Cashflow ab dem ersten Monat. Ab 74.700 € netto, im Beispiel ~12,7 % p.a. vor Steuern. Alles aus einer Hand.
             </p>
 
             {/* Platform stats grid */}

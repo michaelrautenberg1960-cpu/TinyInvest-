@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Tiny House mit Grundstück kaufen 2026: Preise | TinyInvest",
   description:
-    "Tiny House mit Grundstück kaufen: Paketangebote ab 65.000 €, Standorte Bayern & Ostsee. Mit Genehmigungsinfo und Investment-Alternative ohne eigenes Land.",
+    "Tiny House mit Grundstück kaufen: Paketangebote ab 74.700 €, Standorte Bayern & Ostsee. Mit Genehmigungsinfo und Investment-Alternative ohne eigenes Land.",
   keywords:
     "tiny house kaufen mit grundstück, tiny house mit grundstück kaufen, tiny house mit grundstück kaufen ostsee, tiny house bayern kaufen mit grundstück, tiny house mit grundstück kaufen preise, mobiles tiny house mit grundstück",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
     ...BASE_OG,
     type: "article",
     title: "Tiny House mit Grundstück kaufen 2026: Paket, Preise & Standorte",
-    description: "Paketangebote ab 65.000 €, Standorte & Genehmigungsinfo – oder als Investment ohne eigenes Land.",
+    description: "Paketangebote ab 74.700 €, Standorte & Genehmigungsinfo – oder als Investment ohne eigenes Land.",
     url: "https://tinyhouse.investments/wissen/tiny-house-kaufen-mit-grundstueck",
   },
 };
@@ -28,7 +28,7 @@ const faqItems = [
   {
     question: "Was kostet ein Tiny House mit Grundstück als Paket?",
     answer:
-      "Der Preis hängt stark vom Standort ab. Das Tiny House selbst kostet bei TinyInvest ab 65.000 €. Je nach Region und Grundstücksgröße kommen 30.000–120.000 € für das Grundstück hinzu. In touristisch attraktiven Lagen (Ostsee, Bayern, Schwarzwald) liegt der Grundstücksanteil höher – bringt aber auch eine bessere Auslastung als Ferienunterkunft.",
+      "Der Preis hängt stark vom Standort ab. Das Tiny House selbst kostet bei TinyInvest ab 74.700 €. Je nach Region und Grundstücksgröße kommen 30.000–120.000 € für das Grundstück hinzu. In touristisch attraktiven Lagen (Ostsee, Bayern, Schwarzwald) liegt der Grundstücksanteil höher – bringt aber auch eine bessere Auslastung als Ferienunterkunft.",
   },
   {
     question: "Brauche ich eine Genehmigung für ein Tiny House auf eigenem Grundstück?",

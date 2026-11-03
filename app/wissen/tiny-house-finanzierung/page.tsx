@@ -45,7 +45,7 @@ const faqItems = [
   {
     question: "Was ist der Mindestbetrag für ein Tiny House Investment bei TinyInvest?",
     answer:
-      "Der Einstieg beginnt bei 65.000 € für das Comfort-Modell. Nach Berücksichtigung der IAB-Steuererstattung (bei 42 % Grenzsteuersatz ~13.000–14.000 €) reduziert sich die effektive Liquiditätsbelastung auf ca. 51.000–52.000 €.",
+      "Der Einstieg beginnt bei 74.700 € netto (Escape 660 On-Grid). Nach Berücksichtigung der IAB-Steuererstattung (bei 42 % Grenzsteuersatz rechnerisch ~15.700 €) reduziert sich die effektive Liquiditätsbelastung auf ca. 59.000 €.",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function TinyHouseFinanzierungPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["Kredit vs. Cash", "§7g Effekt", "Leasing", "Steuererstattung", "65.000 € Einstieg"].map((tag) => (
+            {["Kredit vs. Cash", "§7g Effekt", "Leasing", "Steuererstattung", "74.700 € Einstieg"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -148,7 +148,7 @@ export default function TinyHouseFinanzierungPage() {
               Wer ein Tiny House direkt aus Eigenkapital kauft, hat im ersten Jahr einen entscheidenden Vorteil: Den vollen §7g-Steuereffekt ohne Abzug. Durch Investitionsabzugsbetrag (IAB), Sonder-AfA und degressive AfA summiert sich der steuerliche Rückfluss auf bis zu 40 % des Kaufpreises – bei einem 80.000-€-Objekt und 42 % Grenzsteuersatz entspricht das rund 33.600 €. Hinzu kommen kein Zinsaufwand, sofortiger Eigentumsübergang und keine Bankkonditionsverhandlung.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Der einzige echte Nachteil der Barzahlung ist der Liquiditätsbedarf: Der Einstieg beginnt bei 65.000 €. Wer dieses Kapital nicht vollständig binden möchte, kann nach dem Kaufjahr mit der Steuererstattung einen Teil zurückgewinnen – effektiv ist die Nettoliquiditätsbelastung nach dem ersten Steuerjahr deutlich niedriger als der nominale Kaufpreis.
+              Der einzige echte Nachteil der Barzahlung ist der Liquiditätsbedarf: Der Einstieg beginnt bei 74.700 € netto. Wer dieses Kapital nicht vollständig binden möchte, kann nach dem Kaufjahr mit der Steuererstattung einen Teil zurückgewinnen – effektiv ist die Nettoliquiditätsbelastung nach dem ersten Steuerjahr deutlich niedriger als der nominale Kaufpreis.
             </p>
           </div>
 
@@ -239,7 +239,7 @@ export default function TinyHouseFinanzierungPage() {
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
             <h3 className="text-xl font-black mb-3">Investor-Paket & persönliche Beratung</h3>
-            <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">§7g-Analyse, Finanzierungsvergleich und unverbindliches Erstgespräch – kostenlos.</p>
+            <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">§7g-Factsheet, Finanzierungsvergleich und unverbindliches Erstgespräch – kostenlos.</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">🔐 Unterlagen anfordern →</ModalButton>
               <Link href="/marktplatz" className="border border-white/20 text-white hover:border-green-400 hover:text-green-400 font-semibold px-6 py-3.5 rounded-full text-sm transition-all">Projekte ansehen →</Link>

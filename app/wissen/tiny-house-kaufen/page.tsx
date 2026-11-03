@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Kann ich ein Tiny House als Kapitalanlage kaufen statt selbst einzuziehen?",
     answer:
-      "Ja – und das ist für viele Käufer die wirtschaftlich bessere Option. Als Kapitalanlage wird das Tiny House lokaler Partner als Ferienunterkunft betrieben. Du erhältst 40 % der Mieteinnahmen nach Pacht monatlich und kannst über §7g EStG bis zu 33.000 € Steuern im ersten Jahr sparen. Der Kauf als Investitionsobjekt ist steuerlich deutlich vorteilhafter als Eigennutzung.",
+      "Ja – und das ist für viele Käufer die wirtschaftlich bessere Option. Als Kapitalanlage wird das Tiny House lokaler Partner als Ferienunterkunft betrieben. Du erhältst 40 % der Mieteinnahmen nach Pacht monatlich und kannst über §7g EStG im Beispiel (On-Grid, 42 % Steuersatz) einen Steuereffekt von rund 26.700 € in Vorjahr und Kaufjahr erzielen. Der Kauf als Investitionsobjekt ist steuerlich deutlich vorteilhafter als Eigennutzung.",
   },
   {
     question: "Tiny House kaufen: neu oder gebraucht?",
@@ -208,7 +208,7 @@ export default function TinyHouseKaufenPage() {
               Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf die Dämmstärke achten. Unsere Modelle verwenden Mineralwolle mit entsprechender Stärke für den Einsatz bei Temperaturen bis -20 °C. Die Fußbodenheizung sorgt für gleichmäßige Wärmeverteilung auf kleiner Fläche. Gäste buchen diese Häuser ebenso im Winter wie im Sommer – die Auslastung ist das ganze Jahr über stabil.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Im Premium-Modell des Cabin 8400 sind zusätzlich eine vollausgestattete Küche, ein Bad mit Dusche und Komposttoilette sowie Designmöbel aus Naturholz enthalten. Die Innenausstattung entspricht einem gehobenen Ferienstudio und ist auf die Erwartungen von Airbnb- und lokale Partner-Gästen ausgerichtet.
+              Zur Ausstattung des Escape 660 gehören eine komplette Küche, ein Bad mit Dusche und Kassettentoilette sowie Bett, Schlafsofa, Tisch und Stühle. Die Innenausstattung ist auf die Erwartungen von Feriengästen ausgerichtet.
             </p>
           </div>
 
@@ -251,7 +251,7 @@ export default function TinyHouseKaufenPage() {
           </div>
 
           <div className="bg-green-50 border border-green-100 rounded-2xl p-6 mb-12">
-            <p className="font-black text-gray-900 text-base mb-2">Rechenbeispiel: Cabin 8400 für 79.000 €, 42 % Steuersatz</p>
+            <p className="font-black text-gray-900 text-base mb-2">Rechenbeispiel: Escape 660 On-Grid für 74.700 € netto, 42 % Steuersatz</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 text-[13px]">
               {[
                 { label: "Steuereffekt VJ + Kaufjahr", value: "≈ 26.700 €", sub: "IAB + Sonder-AfA + deg. AfA" },

@@ -12,8 +12,8 @@ const paths = [
     label: "📋 Steuer-Investor",
     subtitle: "IAB + Sonder-AfA · Steuervorteil im Vordergrund",
     steps: [
-      { num: "01", title: "Steuerberater konsultieren", desc: "Du nimmst unser Steuer-Factsheet mit und lässt prüfen, ob IAB und Sonder-AfA für dich anwendbar sind. (Spoiler: Fast immer ja.)" },
-      { num: "02", title: "IAB bilden", desc: "Dein Steuerberater bildet den Investitionsabzugsbetrag (50 %) – oft noch rückwirkend für das Vorjahr. Das Finanzamt überweist ca. 16.000–17.000 € zurück." },
+      { num: "01", title: "Steuerberater konsultieren", desc: "Du nimmst unser Steuer-Factsheet mit und lässt prüfen, ob IAB und Sonder-AfA für dich anwendbar sind." },
+      { num: "02", title: "IAB bilden", desc: "Dein Steuerberater bildet den Investitionsabzugsbetrag (50 %) – oft noch rückwirkend für das Vorjahr. Im Beispiel (74.700 € netto, 42 % Steuersatz) sinkt die Steuer dadurch rechnerisch um rund 15.700 €." },
       { num: "03", title: "Haus kaufen & liefern", desc: "Du wählst dein TinyInvest-Modell, wir produzieren es und liefern es auf den vereinbarten Standort in Deutschland oder der EU." },
       { num: "04", title: "Vermietung & Steuer genießen", desc: "Dein Haus geht sofort in den Betrieb. Sonder-AfA und AfA werden in der Steuererklärung geltend gemacht. Monatliche Mieteinnahmen fließen." },
     ],

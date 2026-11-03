@@ -266,10 +266,10 @@ export default function SolaranlageAlternativePage() {
             ))}
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
-            <p className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold mb-3">§7g-Steueranalyse anfordern</p>
+            <p className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold mb-3">§7g-Factsheet anfordern</p>
             <h3 className="text-xl font-black mb-3">Wie hoch ist dein Steuervorteil statt PV?</h3>
             <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">
-              Kostenlose Vergleichsrechnung: Tiny House vs. PV-Anlage auf Basis deines Grenzsteuersatzes und Investitionsvolumens.
+              Produktunterlagen und allgemeines §7g-Factsheet zum Vergleich Tiny House vs. PV-Anlage. Was in deinem Fall greift, klärt dein Steuerberater.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">

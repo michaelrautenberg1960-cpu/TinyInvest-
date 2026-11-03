@@ -133,7 +133,7 @@ export default function FreiberuflerPage() {
             Rechtsanwälte, Architekten, Berater, Steuerberater — wer freiberuflich tätig ist, zahlt bis zu 45 % Einkommensteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzuziehen. Kein Aufwand neben dem Mandantenbetrieb — lokale Partner verwaltet vollständig.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 79.000 €", "Kein Verwaltungsaufwand"].map((tag) => (
+            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "Kein Verwaltungsaufwand"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>

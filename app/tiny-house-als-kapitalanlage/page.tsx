@@ -824,8 +824,8 @@ export default function TinyHouseKapitalanlagePage() {
             {[
               {
                 step: "01",
-                title: "Beratung & §7g-Check",
-                desc: "Kostenloses Gespräch. Wir prüfen, welcher §7g-Hebel für deine Einkommensart optimal ist und welche Projekte verfügbar sind.",
+                title: "Erstgespräch & Unterlagen",
+                desc: "Kostenloses Gespräch zu Modell, Standort und Liefertermin. Du erhältst Produktunterlagen und das allgemeine §7g-Factsheet für deinen Steuerberater.",
               },
               {
                 step: "02",
@@ -1047,7 +1047,7 @@ export default function TinyHouseKapitalanlagePage() {
             Bereit für den nächsten Schritt?
           </h3>
           <p className="text-gray-500 text-sm mb-6">
-            §7g-Analyse, Rendite-Prognose und persönliche Beratung – kostenlos und unverbindlich.
+            Produktunterlagen, allgemeines §7g-Factsheet und Beispielrechnung – kostenlos und unverbindlich.
           </p>
           <div className="flex flex-wrap gap-3 justify-center mb-8">
             <ModalButton className="bg-green-700 hover:bg-green-800 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-sm">

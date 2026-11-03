@@ -29,7 +29,7 @@ function fmt(n: number) {
 
 export default function HeroCalculator() {
   const { openModal } = useModal();
-  const [kaufpreis, setKaufpreis]         = useState(79000);
+  const [kaufpreis, setKaufpreis]         = useState(74700);
   const [steuersatzIdx, setSteuersatzIdx] = useState(1); // 42 %
 
   const steuersatz = steuersatzOptions[steuersatzIdx].value;
@@ -64,7 +64,7 @@ export default function HeroCalculator() {
           type="range"
           min={60000}
           max={95000}
-          step={1000}
+          step={100}
           value={kaufpreis}
           aria-label="Kaufpreis des Assets"
           aria-valuemin={60000}
@@ -75,7 +75,7 @@ export default function HeroCalculator() {
           className="w-full"
         />
         <div className="flex justify-between text-[10px] text-gray-400 mt-0.5 font-data">
-          <span>60.000 € (Comfort)</span>
+          <span>60.000 €</span>
           <span>95.000 € (Elite)</span>
         </div>
       </div>

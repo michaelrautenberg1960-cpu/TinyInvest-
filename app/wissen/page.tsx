@@ -210,7 +210,7 @@ const articles = [
     badge: "Steuer & Rendite",
     badgeColor: "bg-green-100 text-green-700",
     title: "PV-Direktinvestment Alternative: §7g IAB unter 100.000 €",
-    desc: "Seriöse PV-Direktinvestments starten oft ab 100.000 – 250.000 €. Das Tiny House bietet denselben §7g-Hebel – ab 79.000 €, ohne Netzanschluss-Bürokratie.",
+    desc: "Seriöse PV-Direktinvestments starten oft ab 100.000 – 250.000 €. Das Tiny House bietet denselben §7g-Hebel – ab 74.700 €, ohne Netzanschluss-Bürokratie.",
     tags: ["IAB §7g", "Direktinvestment", "Solar Alternative"],
     img: "/images/outside/pv-direktinvestment-alternative.webp",
   },
@@ -219,7 +219,7 @@ const articles = [
     badge: "Kaufguide",
     badgeColor: "bg-green-100 text-green-700",
     title: "Tiny House kaufen 2026: Preise, Modelle & Investment-Option",
-    desc: "Preise ab 65.000 €, Modellvergleich, Genehmigung – und warum viele Käufer ihr Tiny House als Kapitalanlage vermieten statt selbst einzuziehen.",
+    desc: "Preise ab 74.700 €, Modellvergleich, Genehmigung – und warum viele Käufer ihr Tiny House als Kapitalanlage vermieten statt selbst einzuziehen.",
     tags: ["Kaufen", "Preise", "Modelle", "Investment"],
     img: "/images/outside/tiny-house-investor-aussen.webp",
   },
@@ -246,7 +246,7 @@ const articles = [
     badge: "Altersvorsorge",
     badgeColor: "bg-blue-50 text-blue-700",
     title: "Tiny House als Altersvorsorge: Sachwert statt Riester",
-    desc: "Riester, ETF oder Tiny House? Monatlicher Cashflow statt Rentenpunkte – über lokale Partner betrieben, ab 65.000 €.",
+    desc: "Riester, ETF oder Tiny House? Monatlicher Cashflow statt Rentenpunkte – über lokale Partner betrieben, ab 74.700 €.",
     tags: ["Altersvorsorge", "Sachwert", "Riester Alternative", "Monatliche Auszahlung"],
     img: "/images/outside/tiny-house-naturlage-gruen.webp",
   },
@@ -496,7 +496,7 @@ export default function WissenPage() {
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Bereit zum ersten Schritt?</span>
           <h3 className="text-2xl font-black text-gray-900 mt-3 mb-4 tracking-tight">Jetzt Investor-Paket anfordern</h3>
           <p className="text-gray-500 text-sm mb-6">
-            §7g-Analyse, Asset-Kennzahlen und persönliche Beratung – kostenlos und unverbindlich.
+            Produktunterlagen, allgemeines §7g-Factsheet und Asset-Kennzahlen – kostenlos und unverbindlich.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link

@@ -155,7 +155,7 @@ export default function ZielgruppenPage() {
             Ob Arzt, Rechtsanwalt, Softwareentwickler oder Einzelunternehmer — wer betriebliche Einkünfte hat, kann den §7g Investitionsabzugsbetrag nutzen. Das bedeutet: bis zu 39.500 € Steuerabzug im Jahr vor dem Kauf, Sonder-AfA 40 % im Kaufjahr, und monatlicher Cashflow ohne aktiven Aufwand. Welches Profil passt zu dir?
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 79.000 €", "4 Berufsgruppen"].map((tag) => (
+            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "4 Berufsgruppen"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>

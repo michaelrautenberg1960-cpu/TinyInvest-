@@ -50,7 +50,7 @@ const faqItems = [
   {
     question: "Brauche ich viel Eigenkapital für ein Tiny House Investment?",
     answer:
-      "Der Einstieg beginnt bei 65.000 € (Comfort-Modell). Durch den IAB-Effekt – der im Vorjahr die Steuerlast senkt – reduziert sich die effektive Liquiditätsbelastung auf ca. 48.000–51.000 € (bei 42 % Steuersatz). Das ist deutlich weniger als der Eigenkapitalanteil, den eine klassische Immobilie oder eine Gewerbeimmobilie erfordern würde.",
+      "Der Einstieg beginnt bei 74.700 € netto (Escape 660 On-Grid). Durch IAB, Sonder-AfA und degressive AfA sinkt die gebundene Liquidität im Beispiel (42 % Steuersatz) auf rund 48.000 €. Das ist deutlich weniger als der Eigenkapitalanteil, den eine klassische Immobilie oder eine Gewerbeimmobilie erfordern würde.",
   },
   {
     question: "Kann ich ein Tiny House auch als Alternative zur Photovoltaik auf Fremdgrundstück betreiben?",
@@ -263,7 +263,7 @@ export default function PvAnlageAlsKapitalanlagePage() {
               Eine PV-Anlage ist das richtige Instrument für jemanden, der sein Eigenheim langfristig aufwerten will, einen Teil des Eigenverbrauchs decken möchte und Unabhängigkeit von Strompreisschwankungen sucht. Als reine Kapitalanlage – mit dem Ziel, Rendite zu maximieren und Steuern zu optimieren – ist sie strukturell begrenzt.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Ein Tiny House über TinyInvest ist das richtige Instrument für Anleger mit gewerblichem oder freiberuflichem Einkommen, die einen IAB bilden können, ein Objekt suchen, das vollständig fremdverwaltet ist, und die einen monatlichen Cashflow einem jährlichen Einspeiseerlös vorziehen. Der Einstieg beginnt bei 65.000 Euro – weniger als die Kaufnebenkosten einer durchschnittlichen Eigentumswohnung in einer deutschen Großstadt.
+              Ein Tiny House über TinyInvest ist das richtige Instrument für Anleger mit gewerblichem oder freiberuflichem Einkommen, die einen IAB bilden können, ein Objekt suchen, das vollständig fremdverwaltet ist, und die einen monatlichen Cashflow einem jährlichen Einspeiseerlös vorziehen. Der Einstieg beginnt bei 74.700 Euro netto – ohne Grunderwerbsteuer, Notar- und Maklerkosten.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Wer beide Strategien kennt, erkennt: PV und Tiny House schließen sich nicht gegenseitig aus. Aber wer nur eines wählen kann – oder wer fragt, womit er seinen Grenzsteuersatz von 42 Prozent am effektivsten senkt –, dem liefert das Tiny House die stärkeren Argumente. Nicht weil Solarenergie schlecht ist, sondern weil der steuerliche und renditetechnische Hebel beim beweglichen Wirtschaftsgut schlicht größer ist.
@@ -299,9 +299,9 @@ export default function PvAnlageAlsKapitalanlagePage() {
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 text-white text-center">
             <p className="text-[11px] text-gray-400 uppercase tracking-widest font-semibold mb-3">Bereit für den nächsten Schritt?</p>
-            <h3 className="text-xl font-black mb-3">§7g-Analyse für deine Steuersituation</h3>
+            <h3 className="text-xl font-black mb-3">§7g-Factsheet für deinen Steuerberater</h3>
             <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">
-              Wir zeigen dir anhand deiner Einkommenssituation, wie hoch dein IAB-Vorteil im ersten Jahr wäre – konkret und unverbindlich.
+              Fordere Produktunterlagen und unser allgemeines §7g-Factsheet an. Was davon in deinem Fall greift, klärt dein Steuerberater.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <ModalButton className="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all">
