@@ -124,7 +124,7 @@ export default function AfaAbschreibungPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "21/9" }}>
-            <Image src="/images/outside/Tiny House abschreiben Bis zu 34.000 € Steuervorteil im ersten Jahr.webp" alt="Abschreibung Tiny House – bis zu 70 % im Kaufjahr abschreiben" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+            <Image src="/images/outside/tiny-house-wald-naturstandort.webp" alt="Abschreibung Tiny House – bis zu 70 % im Kaufjahr abschreiben" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">

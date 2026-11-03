@@ -151,7 +151,7 @@ export default function FerienimmobilieSteuerPage() {
                 <strong className="text-gray-900">Tiny House (auf Trailern):</strong> Ein Tiny House auf einem Fahrgestell (z. B. einem Vlemmix Trailer) gilt steuerlich als bewegliches Wirtschaftsgut. Dies öffnet Tür und Tor für den Paragraphen § 7g EStG — ein Steuerwerkzeug, von dem Besitzer klassischer Immobilien nicht einmal träumen dürfen.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
-                Durch den Investitionsabzugsbetrag (IAB) und Sonderabschreibungen können Sie bis zu 70 % der Anschaffungskosten direkt im Kaufjahr steuerlich anrechnen lassen. Bei einem 80.000 € teuren Tiny House generieren Sie so im Handumdrehen bis zu 56.000 € an absetzbaren Kosten in nur 12 Monaten. Ihr zu versteuerndes Einkommen sinkt massiv, und Sie holen sich Liquidität sofort vom Finanzamt zurück, statt 50 Jahre darauf zu warten.
+                Durch den Investitionsabzugsbetrag (IAB) und Sonderabschreibungen können Sie bis zu 70 % der Anschaffungskosten direkt im Kaufjahr steuerlich anrechnen lassen. Beim Escape 660 On-Grid (74.700 € netto) sind das bis zu rund 52.300 € Abschreibung im Kaufjahr. Ihr zu versteuerndes Einkommen sinkt massiv, und Sie holen sich Liquidität sofort vom Finanzamt zurück, statt 50 Jahre darauf zu warten.
               </p>
             </div>
 

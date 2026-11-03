@@ -192,6 +192,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
+      url: `${BASE_URL}/wissen/tiny-house-vs-eigentumswohnung`,
+      lastModified: "2026-11-03",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/wissen/iab-2026-jahresende`,
       lastModified: "2026-11-03",
       changeFrequency: "monthly",

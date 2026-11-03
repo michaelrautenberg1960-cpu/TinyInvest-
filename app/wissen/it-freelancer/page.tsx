@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Steuern sparen als IT-Freelancer 2026: §7g IAB | TinyInvest",
   description:
-    "Als IT-Freelancer bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage: mit geringem Aufwand über lokale Partner neben dem Projekt.",
+    "Als IT-Freelancer bis zu 37.350 € Gewinn vorab abziehen – §7g IAB nutzen. Tiny House als Kapitalanlage: mit geringem Aufwand über lokale Partner neben dem Projekt.",
   keywords:
     "steuern sparen it freelancer, kapitalanlage entwickler, §7g software entwickler, it freelancer investment, freelancer steuern deutschland, entwickler kapitalanlage 2026",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
     type: "article",
     title: "Steuern sparen als IT-Freelancer 2026: §7g IAB | TinyInvest",
     description:
-      "Bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage: Mieteinnahmen als Eigentümer – mit geringem Aufwand, kein Aufwand neben dem Projekt.",
+      "Bis zu 37.350 € Gewinn vorab abziehen – §7g IAB nutzen. Tiny House als Kapitalanlage: Mieteinnahmen als Eigentümer – mit geringem Aufwand, kein Aufwand neben dem Projekt.",
     url: "https://tinyhouse.investments/wissen/it-freelancer",
   },
 };
@@ -33,7 +33,7 @@ const faqItems = [
   {
     question: "Wie hoch ist der Steuervorteil bei einem Tagessatz von 800–1.200 €?",
     answer:
-      "Bei einem Jahresgewinn von 100.000–150.000 € liegt der Grenzsteuersatz bei 42–45 %. Ein IAB von 39.500 € (50 % eines 79.000 €-Tiny-House) spart ca. 16.590–17.775 € Steuern — noch vor dem Kauf. Im Kaufjahr kommen Sonder-AfA (40 %) und degressive AfA (30 %) hinzu. Gesamtvorteil in zwei Jahren: bis zu 25.000–30.000 €. Alle Angaben sind Richtwerte.",
+      "Bei einem Jahresgewinn von 100.000–150.000 € liegt der Grenzsteuersatz bei 42–45 %. Ein IAB von 37.350 € (50 % des Escape 660 On-Grid für 74.700 € netto) senkt die Steuer rechnerisch um ca. 15.700–16.800 € — noch vor dem Kauf. Im Kaufjahr kommen Sonder-AfA (40 %) und degressive AfA (30 %) auf die geminderte Basis hinzu. Steuereffekt in Vorjahr und Kaufjahr: rund 26.700–28.600 €, überwiegend als Steuerstundung. Alle Angaben sind Richtwerte.",
   },
   {
     question: "Ich bin zwischen Projekten — kann ich den IAB trotzdem bilden?",
@@ -58,7 +58,7 @@ export default function ItFreelancerPage() {
     "@type": "Article",
     headline: "Steuern sparen als IT-Freelancer 2026: §7g IAB | TinyInvest",
     description:
-      "Als IT-Freelancer bis zu 39.500 € Steuerlast reduzieren – §7g IAB nutzen. Tiny House als Kapitalanlage, über lokale Partner betrieben.",
+      "Als IT-Freelancer bis zu 37.350 € Gewinn vorab abziehen – §7g IAB nutzen. Tiny House als Kapitalanlage, über lokale Partner betrieben.",
     url: "https://tinyhouse.investments/wissen/it-freelancer",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
@@ -117,7 +117,7 @@ export default function ItFreelancerPage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Steuerstrategie · IT-Freelancer & Entwickler</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            Steuern sparen als IT-Freelancer: §7g IAB + Tiny House — bis zu 39.500 € Steuervorteil
+            Steuern sparen als IT-Freelancer: §7g IAB + Tiny House — Rechenbeispiel mit Escape 660
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -130,10 +130,10 @@ export default function ItFreelancerPage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            IT-Freelancer mit 800–1.500 € Tagessatz zahlen effektiv 40–45 % Steuern auf ihren Gewinn. Der §7g IAB erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf abzuziehen — Steuererstattung vor Lieferung. Das Tiny House läuft danach mit geringem Aufwand über lokale Partner: kein Aufwand neben dem Projekt.
+            IT-Freelancer mit 800–1.500 € Tagessatz zahlen effektiv 40–45 % Steuern auf ihren Gewinn. Der §7g IAB erlaubt es, beim Escape 660 On-Grid bis zu 37.350 € im Jahr vor dem Kauf vom Gewinn abzuziehen — Steuererstattung vor Lieferung. Das Tiny House läuft danach mit geringem Aufwand über lokale Partner: kein Aufwand neben dem Projekt.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "Remote-kompatibel"].map((tag) => (
+            {["§7g IAB nutzbar", "~26.700 € Steuereffekt (Beispiel)", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "Remote-kompatibel"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -142,7 +142,7 @@ export default function ItFreelancerPage() {
           <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
             <Image
               src="/images/outside/it-freelancer-steuern-sparen-iab.webp"
-              alt="Steuern sparen als IT-Freelancer: §7g IAB und Tiny House als Kapitalanlage – bis zu 39.500 € Steuervorteil"
+              alt="Steuern sparen als IT-Freelancer: §7g IAB und Tiny House als Kapitalanlage – Rechenbeispiel mit Escape 660"
               fill
               className="object-cover"
               priority
@@ -197,9 +197,9 @@ export default function ItFreelancerPage() {
             <div className="bg-green-50 border-l-4 border-green-600 rounded-r-2xl p-5">
               <p className="font-black text-gray-900 text-[14px] mb-2">Beispielrechnung: 100 €/h × 1.000h = 100.000 € Gewinn, 42 % Grenzsteuersatz</p>
               <ul className="text-gray-600 text-[13px] space-y-1 leading-relaxed">
-                <li>IAB Vorjahr: 39.500 € → <strong>Steuerersparnis ~16.590 €</strong> (noch vor Lieferung)</li>
-                <li>Kaufjahr Sonder-AfA (40 %): 31.600 € → weitere ~13.272 € gespart</li>
-                <li>Kaufjahr degressive AfA (30 %): 23.700 € → weitere ~9.954 € gespart</li>
+                <li>IAB Vorjahr: 37.350 € → <strong>ca. 15.700 € weniger Steuer</strong> (noch vor Lieferung)</li>
+                <li>Kaufjahr Sonder-AfA (40 % von 37.350 €): 14.940 € → weitere ~6.275 €</li>
+                <li>Kaufjahr degressive AfA (30 % von 37.350 €): 11.205 € → weitere ~4.706 €</li>
                 <li className="font-bold text-gray-900">Gesamtvorteil Jahre 1+2: bis zu ~29.000 €</li>
               </ul>
             </div>
@@ -285,7 +285,7 @@ export default function ItFreelancerPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
-                    ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 39.500 € im Vorjahr"],
+                    ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 37.350 € IAB-Abzug im Vorjahr"],
                     ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "~12,7 % vor Steuern + §7g"],
                     ["Aufwand", "Keiner", "Gelegentliches Rebalancing", "Keiner (vollverwaltet)"],
                     ["§7g IAB nutzbar", "❌ Nein", "❌ Nein", "✅ Ja"],

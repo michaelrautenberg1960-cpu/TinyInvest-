@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Steuern sparen als Freiberufler 2026: §7g IAB | TinyInvest",
   description:
-    "Als Freiberufler bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. über lokale Partner betriebenes Tiny House als Kapitalanlage. Kein Zeitaufwand.",
+    "Als Freiberufler bis zu 37.350 € Gewinn vorab abziehen – §7g IAB vor dem Kauf nutzen. über lokale Partner betriebenes Tiny House als Kapitalanlage. Kein Zeitaufwand.",
   keywords:
     "steuern sparen freiberufler, kapitalanlage freiberufler, §7g freiberufler, iab freiberufler steuervorteil, anwalt steuern sparen, architekt kapitalanlage, berater investment",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
     type: "article",
     title: "Steuern sparen als Freiberufler 2026: §7g IAB | TinyInvest",
     description:
-      "Bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. über lokale Partner betriebenes Tiny House. Kein Zeitaufwand neben Mandanten & Projekten.",
+      "Bis zu 37.350 € Gewinn vorab abziehen – §7g IAB vor dem Kauf nutzen. über lokale Partner betriebenes Tiny House. Kein Zeitaufwand neben Mandanten & Projekten.",
     url: "https://tinyhouse.investments/wissen/freiberufler",
   },
 };
@@ -38,7 +38,7 @@ const faqItems = [
   {
     question: "Wie hoch ist der Steuervorteil konkret?",
     answer:
-      "Bei einem Tiny House für 79.000 € können Sie bis zu 50 % = 39.500 € als IAB im Vorjahr abziehen. Bei 42 % Grenzsteuersatz ergibt das eine Steuerersparnis von ca. 16.590 € — noch vor der Lieferung. Im Kaufjahr kommen Sonder-AfA (40 %) und degressive AfA (30 %) hinzu. Der Gesamtvorteil in den ersten zwei Jahren kann 20.000–30.000 € übersteigen. Alle Angaben sind Richtwerte; die individuelle Ersparnis hängt von Ihrer Steuersituation ab.",
+      "Beim Escape 660 On-Grid (74.700 € netto) können bis zu 50 % = 37.350 € als IAB im Vorjahr abgezogen werden. Bei 42 % Grenzsteuersatz senkt das die Steuer rechnerisch um ca. 15.700 € — noch bevor das Haus geliefert wird. Im Kaufjahr kommen Sonder-AfA (40 % = 14.940 €) und degressive AfA (30 % = 11.205 €) auf die um den IAB geminderte Basis hinzu. Der Steuereffekt in Vorjahr und Kaufjahr liegt damit bei rund 26.700 €, überwiegend als Steuerstundung. Alle Angaben sind Richtwerte; die individuelle Ersparnis hängt von Ihrer Steuersituation ab.",
   },
   {
     question: "Muss ich das Tiny House selbst verwalten?",
@@ -58,7 +58,7 @@ export default function FreiberuflerPage() {
     "@type": "Article",
     headline: "Steuern sparen als Freiberufler 2026: §7g IAB | TinyInvest",
     description:
-      "Als Freiberufler bis zu 39.500 € Steuerlast senken – §7g IAB vor dem Kauf nutzen. über lokale Partner betriebenes Tiny House als Kapitalanlage.",
+      "Als Freiberufler bis zu 37.350 € Gewinn vorab abziehen – §7g IAB vor dem Kauf nutzen. über lokale Partner betriebenes Tiny House als Kapitalanlage.",
     url: "https://tinyhouse.investments/wissen/freiberufler",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
@@ -117,7 +117,7 @@ export default function FreiberuflerPage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Steuerstrategie · Freiberufler & Selbstständige</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            Steuern sparen als Freiberufler: §7g IAB + Tiny House — bis zu 39.500 € Steuervorteil im Vorjahr
+            Steuern sparen als Freiberufler: §7g IAB + Tiny House — 37.350 € IAB-Abzug im Vorjahr
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -130,10 +130,10 @@ export default function FreiberuflerPage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Rechtsanwälte, Architekten, Berater, Steuerberater — wer freiberuflich tätig ist, zahlt bis zu 45 % Einkommensteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzuziehen. Kein Aufwand neben dem Mandantenbetrieb — lokale Partner verwaltet vollständig.
+            Rechtsanwälte, Architekten, Berater, Steuerberater — wer freiberuflich tätig ist, zahlt bis zu 45 % Einkommensteuer. Der §7g Investitionsabzugsbetrag erlaubt es, beim Escape 660 On-Grid bis zu 37.350 € im Jahr vor dem Kauf vom Gewinn abzuziehen. Kein Aufwand neben dem Mandantenbetrieb — lokale Partner verwaltet vollständig.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "Kein Verwaltungsaufwand"].map((tag) => (
+            {["§7g IAB nutzbar", "~26.700 € Steuereffekt (Beispiel)", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "Kein Verwaltungsaufwand"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -198,9 +198,9 @@ export default function FreiberuflerPage() {
               Der Investitionsabzugsbetrag nach §7g EStG erlaubt es, bis zu 50 % des geplanten Kaufpreises im Jahr <strong>vor</strong> dem Kauf steuerlich abzuziehen. Das bedeutet: Sie bilden den IAB in Ihrer Steuererklärung für 2025, erhalten die Steuererstattung im Frühjahr 2026 — und kaufen das Tiny House danach. Im Kaufjahr folgen Sonder-AfA (40 %) und degressive AfA (30 %) auf den verbleibenden Buchwert.
             </p>
             <div className="bg-green-50 border-l-4 border-green-600 rounded-r-2xl p-5">
-              <p className="font-black text-gray-900 text-[14px] mb-1">Rechenbeispiel: €79.000 Tiny House, 42 % Grenzsteuersatz</p>
+              <p className="font-black text-gray-900 text-[14px] mb-1">Rechenbeispiel: Escape 660 On-Grid (74.700 € netto), 42 % Grenzsteuersatz</p>
               <p className="text-gray-600 text-[13px] leading-relaxed">
-                IAB Vorjahr: 39.500 € → Steuerersparnis ~16.590 €. Kaufjahr Sonder-AfA: 31.600 € + degressive AfA: 23.700 €. Gesamter Steuervorteil in Jahr 1 und 2: bis zu 25.000–30.000 €. Dazu monatliche Mieteinnahmen (40 % der Nettomiete) ab Betriebsaufnahme — ohne eigenen Aufwand.
+                IAB im Vorjahr: 50 % × 74.700 € = 37.350 € → rechnerisch ca. 15.700 € weniger Steuer. Im Kaufjahr: Sonder-AfA 40 % (14.940 €) + degressive AfA 30 % (11.205 €) auf die geminderte Basis von 37.350 € → weitere ca. 11.000 €. Steuereffekt Vorjahr und Kaufjahr: rund 26.700 €. Dazu monatliche Mieteinnahmen (40 % der Nettomiete) ab Betriebsaufnahme — ohne eigenen Aufwand.
               </p>
             </div>
             <h2 className="text-2xl font-black text-gray-900 tracking-tight pt-2">Bewegliches Wirtschaftsgut — der entscheidende Unterschied</h2>
@@ -286,7 +286,7 @@ export default function FreiberuflerPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
-                    ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 39.500 € im Vorjahr"],
+                    ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 37.350 € IAB-Abzug im Vorjahr"],
                     ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "~12,7 % vor Steuern + §7g"],
                     ["Aufwand", "Keiner", "Monitoring nötig", "Keiner (vollverwaltet)"],
                     ["§7g IAB nutzbar", "❌ Nein", "❌ Nein", "✅ Ja"],

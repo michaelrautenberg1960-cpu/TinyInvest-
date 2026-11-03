@@ -128,7 +128,7 @@ export default function SteuerVorteilPage() {
       <section className="py-20 bg-gray-50 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Steuerberater-Analyse · Stand 2026</span>
+            <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Beispielrechnung · Stand 2026</span>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2 tracking-tight">
               Steuerbooster 2026: Drei-Varianten-Vergleich
             </h2>
@@ -222,10 +222,10 @@ export default function SteuerVorteilPage() {
 
           {/* Fazit */}
           <div className="bg-white border border-gray-100 rounded-2xl p-6">
-            <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-4">Fazit vom Steuerberater</p>
+            <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-4">Fazit</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-[13px]">
               {[
-                { icon: "🪦", text: <><strong className="text-gray-900">Altes Recht ist praktisch tot.</strong> 37,5 % nach 3 Jahren vs. 85,3 % – kein seriöser Steuerberater empfiehlt heute noch die lineare AfA allein.</> },
+                { icon: "🪦", text: <><strong className="text-gray-900">Lineare AfA allein fällt deutlich ab.</strong> 37,5 % nach 3 Jahren vs. 85,3 % mit Sonder-AfA und degressiver AfA (für Anschaffungen bis 31.12.2027).</> },
                 { icon: "⚡", text: <><strong className="text-gray-900">Der Booster ohne IAB ist bereits extrem stark.</strong> 40 % Sonder-AfA + 30 % degressiv = 70 % Sofortabschreibung im Kaufjahr.</> },
                 { icon: "🎯", text: <><strong className="text-gray-900">IAB ist ein Timing-Instrument.</strong> Sinnvoll bei hohem Gewinn im Vorjahr – um Progressionsspitzen zu glätten.</> },
               ].map((f, i) => (

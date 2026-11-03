@@ -38,7 +38,7 @@ const faqItems = [
   {
     question: "Wie hoch ist der Steuervorteil für Einzelunternehmer?",
     answer:
-      "Bei einem Tiny House für 79.000 € beträgt der maximale IAB 39.500 € (50 %). Bei einem Grenzsteuersatz von 42 % ergibt das eine Steuerersparnis von ca. 16.590 € im Vorjahr. Im Kaufjahr kommen Sonder-AfA (40 % = 31.600 €) und degressive AfA (30 % = 23.700 €) hinzu. Der Gesamtvorteil in den ersten zwei Jahren kann 25.000–30.000 € übersteigen. Alle Angaben sind Richtwerte.",
+      "Beim Escape 660 On-Grid (74.700 € netto) können bis zu 50 % = 37.350 € als IAB im Vorjahr abgezogen werden. Bei 42 % Grenzsteuersatz senkt das die Steuer rechnerisch um ca. 15.700 € — noch bevor das Haus geliefert wird. Im Kaufjahr kommen Sonder-AfA (40 % = 14.940 €) und degressive AfA (30 % = 11.205 €) auf die um den IAB geminderte Basis hinzu. Der Steuereffekt in Vorjahr und Kaufjahr liegt damit bei rund 26.700 €, überwiegend als Steuerstundung. Alle Angaben sind Richtwerte.",
   },
   {
     question: "Was bedeutet die Gewinngrenze von 200.000 € für den IAB?",
@@ -130,10 +130,10 @@ export default function UnternehmerPage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Einzelunternehmer und Gewerbetreibende mit hohen Jahresgewinnen zahlen bis zu 45 % Einkommensteuer plus Gewerbesteuer. Der §7g Investitionsabzugsbetrag erlaubt es, bis zu 39.500 € im Jahr vor dem Kauf steuerlich abzuziehen — und schafft gleichzeitig eine Einnahmequelle mit geringem Aufwand über lokale Partner neben dem Betrieb.
+            Einzelunternehmer und Gewerbetreibende mit hohen Jahresgewinnen zahlen bis zu 45 % Einkommensteuer plus Gewerbesteuer. Der §7g Investitionsabzugsbetrag erlaubt es, beim Escape 660 On-Grid bis zu 37.350 € im Jahr vor dem Kauf vom Gewinn abzuziehen — und schafft gleichzeitig eine Einnahmequelle mit geringem Aufwand über lokale Partner neben dem Betrieb.
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "Kein Aufwand neben dem Betrieb"].map((tag) => (
+            {["§7g IAB nutzbar", "~26.700 € Steuereffekt (Beispiel)", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "Kein Aufwand neben dem Betrieb"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -195,9 +195,9 @@ export default function UnternehmerPage() {
             </p>
             <h2 className="text-2xl font-black text-gray-900 tracking-tight pt-2">§7g: Steuervorteil und Vermögensaufbau gleichzeitig</h2>
             <div className="bg-green-50 border-l-4 border-green-600 rounded-r-2xl p-5">
-              <p className="font-black text-gray-900 text-[14px] mb-1">Rechenbeispiel: €79.000 Tiny House, Einzelunternehmer mit 42 % Grenzsteuersatz</p>
+              <p className="font-black text-gray-900 text-[14px] mb-1">Rechenbeispiel: Escape 660 On-Grid (74.700 € netto), Einzelunternehmer mit 42 % Grenzsteuersatz</p>
               <p className="text-gray-600 text-[13px] leading-relaxed">
-                IAB Vorjahr: 39.500 € → Steuerersparnis ~16.590 €. Kaufjahr Sonder-AfA (40 %): ~13.272 € gespart. Degressive AfA (30 %): ~9.954 € gespart. Gesamtvorteil Jahre 1+2: bis zu ~29.000 €. Plus monatlicher Cashflow ab Betriebsaufnahme — ohne eigenen Aufwand.
+                IAB Vorjahr: 37.350 € → ca. 15.700 € weniger Steuer. Kaufjahr Sonder-AfA (40 % von 37.350 €): ~6.275 €. Degressive AfA (30 % von 37.350 €): ~4.706 €. Steuereffekt Vorjahr und Kaufjahr: rund 26.700 €, überwiegend als Steuerstundung. Plus monatlicher Cashflow ab Betriebsaufnahme — ohne eigenen Aufwand.
               </p>
             </div>
             <h2 className="text-2xl font-black text-gray-900 tracking-tight pt-2">Warum das Tiny House §7g-qualifiziert ist</h2>
@@ -283,7 +283,7 @@ export default function UnternehmerPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50 text-[13px]">
                   {[
-                    ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 39.500 € im Vorjahr"],
+                    ["Sofortige Steuerersparnis", "Keine", "Keine", "Bis zu 37.350 € IAB-Abzug im Vorjahr"],
                     ["Rendite p.a.", "~2–3 %", "~6–8 % (brutto)", "~12,7 % vor Steuern + §7g"],
                     ["Aufwand", "Keiner", "Monitoring nötig", "Keiner (vollverwaltet)"],
                     ["§7g IAB nutzbar", "❌ Nein", "❌ Nein", "✅ Ja (Einzelunternehmer)"],

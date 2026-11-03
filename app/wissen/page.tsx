@@ -35,6 +35,15 @@ const featured = {
 
 const articles = [
   {
+    href: "/wissen/tiny-house-vs-eigentumswohnung",
+    badge: "Vergleich",
+    badgeColor: "bg-blue-100 text-blue-700",
+    title: "Tiny House vs. Eigentumswohnung als Kapitalanlage",
+    desc: "Kaufpreis, Nebenkosten, Rendite, Abschreibung, Aufwand und Risiken im ehrlichen Vergleich – mit Rechenbeispiel 2026.",
+    tags: ["ETW-Vergleich", "Rendite", "AfA", "Risiken"],
+    img: "/images/outside/Tiny House vs. Eigentumswohnung als Kapitalanlage Rendite, Steuer & Aufwand im Vergleich 2026.webp",
+  },
+  {
     href: "/wissen/iab-2026-jahresende",
     badge: "Neu · Jahresende",
     badgeColor: "bg-red-100 text-red-700",
@@ -50,7 +59,7 @@ const articles = [
     title: "§7g AfA & Sonder-Abschreibung erklärt",
     desc: "IAB, Sonder-AfA (40 %), degressive AfA (30 %): Warum Tiny Houses steuerlich keine Immobilien sind.",
     tags: ["§7g EStG", "IAB", "Sonder-AfA", "Steuer"],
-    img: "/images/outside/Tiny House abschreiben Bis zu 34.000 € Steuervorteil im ersten Jahr.webp",
+    img: "/images/outside/tiny-house-wald-naturstandort.webp",
   },
   {
     href: "/wissen/direktinvestment",
@@ -167,7 +176,7 @@ const articles = [
     title: "Investitionsabzugsbetrag (IAB) für Tiny Houses",
     desc: "Voraussetzungen, Schritt-für-Schritt-Anleitung, Rechenbeispiel und häufige Fehler beim IAB für Tiny House Investoren.",
     tags: ["IAB", "§7g", "Betriebsausgaben", "Vorjahr"],
-    img: "/images/outside/IAB Tiny House 2026 So sparst du bis zu 30.000 € vor dem Kauf.webp",
+    img: "/images/outside/tiny-house-steuermodell-finanzamt.webp",
   },
   {
     href: "/wissen/tiny-house-steuern-sparen",

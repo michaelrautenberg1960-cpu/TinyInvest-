@@ -33,7 +33,7 @@ const faqItems = [
   {
     question: "Ist ein Tiny House ganzjährig bewohnbar kaufen sinnvoll?",
     answer:
-      "Ja – die Tiny Houses von TinyInvest sind vollständig winterfest gebaut. Holzständerwerk mit Mineralwolldämmung, Fußbodenheizung, Wärmerückgewinnung und optional Solar- und Off-Grid-Ausstattung ermöglichen einen Betrieb bei Temperaturen bis -20 °C. Sie werden ganzjährig als Ferienunterkunft gebucht, auch im Winter.",
+      "Ja – die Tiny Houses von TinyInvest sind vollständig winterfest gebaut. Holzofen SG50, Klimaanlage (GREE 9000BTU, Inverter), doppelt verglaste LOW-E-Fenster und eine Holzkonstruktion mit Thermowood-Außenverkleidung sind serienmäßig. Damit lässt sich das Haus auch im Winter als Ferienunterkunft betreiben.",
   },
   {
     question: "Brauche ich ein eigenes Grundstück um ein Tiny House zu kaufen?",
@@ -202,10 +202,10 @@ export default function TinyHouseKaufenPage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Ausstattung & Off-Grid: Was beim Tiny House kaufen enthalten ist</h2>
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Ein zentrales Kaufargument für ein mobiles Tiny House ist die flexible Standortwahl. Off-Grid-Modelle sind flexibler in der Standortwahl: Photovoltaik-Anlage auf dem Dach, Wassertank mit Filtersystem, Holzofen als Primärheizung und Wärmerückgewinnung für die Belüftung. Damit ist das Tiny House auch auf Grundstücken ohne Netzanschluss betreibbar – ein erheblicher Vorteil für abgelegene Ferienstandorte.
+              Ein zentrales Kaufargument für ein mobiles Tiny House ist die flexible Standortwahl. Off-Grid-Modelle sind flexibler in der Standortwahl: Solaranlage (Victron-System), Frisch- und Grauwassertank sowie Holzofen und Klimaanlage. Damit ist das Tiny House auch auf Grundstücken ohne Netzanschluss betreibbar – ein erheblicher Vorteil für abgelegene Ferienstandorte.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf die Dämmstärke achten. Unsere Modelle verwenden Mineralwolle mit entsprechender Stärke für den Einsatz bei Temperaturen bis -20 °C. Die Fußbodenheizung sorgt für gleichmäßige Wärmeverteilung auf kleiner Fläche. Gäste buchen diese Häuser ebenso im Winter wie im Sommer – die Auslastung ist das ganze Jahr über stabil.
+              Wer ein Tiny House ganzjährig vermieten möchte, sollte auf Heizung und Fenster achten. Das Escape 660 hat serienmäßig einen Holzofen und eine Klimaanlage mit Inverter sowie doppelt verglaste LOW-E-Fenster. Wie gut ein Haus im Winter gebucht wird, hängt vor allem vom Standort ab.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Zur Ausstattung des Escape 660 gehören eine komplette Küche, ein Bad mit Dusche und Kassettentoilette sowie Bett, Schlafsofa, Tisch und Stühle. Die Innenausstattung ist auf die Erwartungen von Feriengästen ausgerichtet.
@@ -293,7 +293,7 @@ export default function TinyHouseKaufenPage() {
             <div className="space-y-4">
               {[
                 { nr: "01", title: "COC-Homologation & Fahrzeugbrief", desc: "Ein Tiny House kaufen ohne COC ist ein rechtliches Risiko. Nur mit gültigem Fahrzeugbrief (VIN/FIN) ist legaler Straßentransport, Kfz-Versicherung und §7g-Nutzung möglich. Unsere Häuser auf Vlemmix verfügen standardmäßig über EU-weite COC-Homologation." },
-                { nr: "02", title: "Winterfestigkeit & Ganzjahresbetrieb", desc: "Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf Mineralwolldämmung, Fußbodenheizung und Wärmerückgewinnung bestehen. Unsere Modelle sind für -20 °C ausgelegt und ganzjährig als Ferienunterkunft betreibbar." },
+                { nr: "02", title: "Winterfestigkeit & Ganzjahresbetrieb", desc: "Wer ein Tiny House ganzjährig bewohnbar kaufen möchte, sollte auf Heizung, Fenster und Dämmung achten. Das Escape 660 hat serienmäßig Holzofen, Klimaanlage und doppelt verglaste LOW-E-Fenster." },
                 { nr: "03", title: "Genehmigung am Standort", desc: "Die Genehmigungspflicht hängt vom Bundesland und Nutzungszweck ab. Als mobiles Fahrzeug auf privatem Grund sind Tiny Houses auf Trailer oft genehmigungsfrei. Für gewerbliche Feriennutzung ist in den meisten Bundesländern eine Nutzungsänderung erforderlich. TinyInvest begleitet diesen Prozess." },
                 { nr: "04", title: "Betriebskonzept bei Investment", desc: "Wer das Tiny House kaufen und vermieten möchte, braucht ein professionelles Betriebskonzept: Buchungsplattform, Gästebetreuung, Reinigung, Check-in-Prozess. TinyInvest vermittelt das vollständig über lokale Partner – du hast nach dem Kauf keinen operativen Aufwand." },
               ].map((step) => (

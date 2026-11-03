@@ -8,7 +8,7 @@ import Script from "next/script";
 export const metadata = {
   title: "§7g Tiny House Investment: Leitfaden 2026 | TinyInvest",
   description:
-    "§7g EStG für Tiny Houses: IAB (50 %), Sonder-AfA (40 %), degressive AfA (30 %) — bis zu 33.000 € Steuerersparnis im Kaufjahr. Der komplette Guide für Investoren.",
+    "§7g EStG für Tiny Houses: IAB (50 %), Sonder-AfA (40 %), degressive AfA (30 %) — im Beispiel rund 26.700 € Steuereffekt in Vorjahr und Kaufjahr. Der komplette Guide für Investoren.",
   keywords:
     "§7g tiny house investment, IAB investitionsabzugsbetrag tiny house, sonder-afa tiny house, bewegliches wirtschaftsgut abschreiben, tiny house steuern sparen 2026",
   alternates: {
@@ -20,7 +20,7 @@ export const metadata = {
     type: "article",
     title: "§7g Tiny House Investment – Vollständiger Leitfaden 2026",
     description:
-      "IAB, Sonder-AfA, degressive AfA: So sparst du 22.000–33.000 € Steuern im Kaufjahr. Der umfassendste §7g-Guide für Tiny House Investoren.",
+      "IAB, Sonder-AfA, degressive AfA: Im Beispiel rund 26.700 € Steuereffekt in Vorjahr und Kaufjahr. Der umfassendste §7g-Guide für Tiny House Investoren.",
     url: "https://tinyhouse.investments/wissen/7g-tiny-house-investment",
   },
 };
@@ -34,7 +34,7 @@ const faqItems = [
   {
     question: "Wie hoch ist die maximale Steuerersparnis durch §7g bei einem Tiny House?",
     answer:
-      "Bei einem 80.000 € Investment und 42 % Grenzsteuersatz: IAB (50 % = 40.000 €) im Vorjahr → ca. 16.800 € Steuerersparnis. Im Kaufjahr: Sonder-AfA (40 % = 32.000 €) + degressive AfA (30 % = 24.000 €) auf Restwert. Gesamteffekt Jahr 0–1: ca. 22.000–33.000 € Liquiditätsvorteil. Das ist in keinem anderen Asset-Modell mit vergleichbarem Kaufpreis erreichbar.",
+      "Beim Escape 660 On-Grid (74.700 € netto) und 42 % Grenzsteuersatz: IAB (50 % = 37.350 €) im Vorjahr → rechnerisch ca. 15.700 € weniger Steuer. Im Kaufjahr: Sonder-AfA (40 % = 14.940 €) + degressive AfA (30 % = 11.205 €) auf die um den IAB geminderte Basis von 37.350 € → weitere ca. 11.000 €. Gesamteffekt Vorjahr und Kaufjahr: rund 26.700 €. Ein großer Teil davon ist eine Steuerstundung, weil später weniger Abschreibung übrig bleibt.",
   },
   {
     question: "Muss ich ein Gewerbe anmelden, um §7g nutzen zu können?",
@@ -59,7 +59,7 @@ const faqItems = [
   {
     question: "Was ist der Investitionsabzugsbetrag Tiny House?",
     answer:
-      "Der Investitionsabzugsbetrag (IAB) für ein Tiny House ist eine steuerliche Begünstigung nach §7g Abs. 1 EStG: Du setzt bis zu 50 % des geplanten Kaufpreises gewinnmindernd ab – noch bevor du das Haus kaufst. Bei einem Tiny House für 80.000 € sind das bis zu 40.000 € IAB, was bei 42 % Grenzsteuersatz etwa 16.800 € sofortige Steuererstattung bedeutet. Der Investitionsabzugsbetrag Tiny House ist deshalb so wirkungsvoll, weil er mit Sonder-AfA und degressiver AfA im Kaufjahr kombiniert werden kann.",
+      "Der Investitionsabzugsbetrag (IAB) für ein Tiny House ist eine steuerliche Begünstigung nach §7g Abs. 1 EStG: Du setzt bis zu 50 % des geplanten Kaufpreises gewinnmindernd ab – noch bevor du das Haus kaufst. Beim Escape 660 On-Grid für 74.700 € netto sind das bis zu 37.350 € IAB, was bei 42 % Grenzsteuersatz die Steuer rechnerisch um etwa 15.700 € senkt. Der Investitionsabzugsbetrag Tiny House ist deshalb so wirkungsvoll, weil er mit Sonder-AfA und degressiver AfA im Kaufjahr kombiniert werden kann.",
   },
   {
     question: "Wie hoch ist die Tiny House Sonderabschreibung?",
@@ -72,7 +72,7 @@ const subGuides = [
   {
     href: "/wissen/investitionsabzugsbetrag-tiny-house",
     title: "Investitionsabzugsbetrag Tiny House: Vollständiger Guide",
-    desc: "Voraussetzungen, Berechnung und optimale Kombination mit Sonder-AfA. Bis zu 39.500 € Steuerersparnis.",
+    desc: "Voraussetzungen, Berechnung und Kombination mit Sonder-AfA. Im Beispiel 37.350 € IAB-Abzug.",
     badge: "IAB Deep-Dive",
     color: "bg-green-100 text-green-700",
   },
@@ -146,7 +146,7 @@ export default function PillarPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "§7g Tiny House Investment: Der vollständige Leitfaden 2026",
-    "description": "§7g EStG für Tiny Houses: IAB (50 %), Sonder-AfA (40 %), degressive AfA (30 %) — bis zu 33.000 € Steuerersparnis im Kaufjahr.",
+    "description": "§7g EStG für Tiny Houses: IAB (50 %), Sonder-AfA (40 %), degressive AfA (30 %) — im Beispiel rund 26.700 € Steuereffekt in Vorjahr und Kaufjahr.",
     "url": "https://tinyhouse.investments/wissen/7g-tiny-house-investment",
     "datePublished": "2026-04-15",
     "dateModified": "2026-05-06",
@@ -260,7 +260,7 @@ export default function PillarPage() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["§7g EStG", "IAB 50 %", "Sonder-AfA 40 %", "Deg. AfA 30 %", "Bewegliches Wirtschaftsgut", "22.000–33.000 € Steuervorteil"].map((tag) => (
+            {["§7g EStG", "IAB 50 %", "Sonder-AfA 40 %", "Deg. AfA 30 %", "Bewegliches Wirtschaftsgut", "~26.700 € Steuereffekt (Beispiel)"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -275,7 +275,7 @@ export default function PillarPage() {
             {[
               { value: "70 %", label: "Sofortabschreibung", sub: "Sonder-AfA + deg. AfA kombiniert" },
               { value: "50 %", label: "IAB im Vorjahr", sub: "§7g Abs. 1 EStG" },
-              { value: "≈ 33 K€", label: "Liquiditätsvorteil", sub: "Bei 80.000 € Investition, 42 % Steuersatz" },
+              { value: "≈ 26,7 K€", label: "Steuereffekt Vorjahr + Kaufjahr", sub: "Bei 74.700 € Investition, 42 % Steuersatz" },
               { value: "8 Jahre", label: "AfA-Laufzeit", sub: "Statt 50 Jahre bei Immobilien" },
             ].map((s) => (
               <div key={s.label}>
@@ -329,7 +329,7 @@ export default function PillarPage() {
             <div>
               <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Konkreter Liquiditätseffekt und Zielgruppen</h2>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Die steuerliche Hebelwirkung transformiert sich direkt in liquides Kapital. Bei einer Investitionssumme von 80.000 Euro und einem persönlichen Spitzensteuersatz von 42 Prozent führt der Steuerbonus im ersten Jahr zu einem <strong className="text-gray-900">Liquiditätsvorteil von bis zu 33.000 Euro</strong>. Der reale Netto-Kapitaleinsatz reduziert sich damit effektiv auf rund 47.000 Euro — während die Rendite auf Basis der vollen Einnahmen berechnet wird.
+                Die steuerliche Hebelwirkung transformiert sich direkt in liquides Kapital. Bei einer Investitionssumme von 74.700 Euro und einem Grenzsteuersatz von 42 Prozent ergibt sich in Vorjahr und Kaufjahr ein <strong className="text-gray-900">Steuereffekt von rund 26.700 Euro</strong>. Das gebundene Kapital sinkt damit rechnerisch auf rund 48.000 Euro — während die Rendite auf Basis der vollen Einnahmen berechnet wird.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
                 <strong className="text-gray-900">Gutverdienende Angestellte</strong> können ab einem Grenzsteuersatz von etwa 35 Prozent erhebliche Summen einsparen — ganz ohne eigenes Gewerbe, allein über die Einkünfte aus Vermietung und Verpachtung. <strong className="text-gray-900">Selbstständige und Freiberufler</strong> nutzen den IAB primär, um stark schwankende Einnahmen oder außergewöhnliche Spitzenjahre steuerlich auszugleichen. Für <strong className="text-gray-900">GmbH-Gesellschafter und Unternehmer</strong> bietet die Aktivierung im Betriebsvermögen zusätzlich die Option, Körperschaft- und Gewerbesteueraufwand effektiv zu senken.

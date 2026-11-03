@@ -199,7 +199,7 @@ export default function PvAnlageAlsKapitalanlagePage() {
               Das Tiny House auf einem Vlemmix Trailer wird steuerrechtlich als bewegliches Wirtschaftsgut eingestuft – straßenzugelassen, mit eigener Fahrzeugidentifikationsnummer, nicht fest mit dem Boden verbunden. Diese Klassifizierung ist der Schlüssel zu einem Steuerinstrument, das klassische Immobilien und Dach-PV-Anlagen nicht bieten können: dem Investitionsabzugsbetrag nach §7g EStG.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Der IAB erlaubt es Unternehmern und Freiberuflern, bis zu 50 Prozent der geplanten Anschaffungskosten bereits im Jahr vor dem Kauf steuerlich abzuziehen. Bei einem Tiny House für 80.000 Euro sind das 40.000 Euro, die das zu versteuernde Einkommen im Vorjahr reduzieren. Bei einem Grenzsteuersatz von 42 Prozent entspricht das einer Steuererstattung von rund 16.800 Euro – noch bevor das Haus überhaupt geliefert wird. Im Kaufjahr selbst greift dann die Sonder-AfA von 40 Prozent und die degressive AfA von 30 Prozent auf den verbleibenden Buchwert. Der kombinierte steuerliche Effekt im ersten und zweiten Jahr liegt bei bis zu 33.000 Euro Liquiditätsvorteil.
+              Der IAB erlaubt es Unternehmern und Freiberuflern, bis zu 50 Prozent der geplanten Anschaffungskosten bereits im Jahr vor dem Kauf steuerlich abzuziehen. Beim Escape 660 On-Grid für 74.700 Euro netto sind das 37.350 Euro, die den Gewinn im Vorjahr reduzieren. Bei einem Grenzsteuersatz von 42 Prozent senkt das die Steuer rechnerisch um rund 15.700 Euro – noch bevor das Haus überhaupt geliefert wird. Im Kaufjahr selbst greift dann die Sonder-AfA von 40 Prozent und die degressive AfA von 30 Prozent auf den verbleibenden Buchwert. Der kombinierte Steuereffekt in Vorjahr und Kaufjahr liegt im Beispiel bei rund 26.700 Euro, überwiegend als Steuerstundung.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Das ist kein Trick und keine Steuervermeidung – es ist die reguläre Förderlogik des deutschen Steuerrechts für betriebliche Investitionen in bewegliche Wirtschaftsgüter. Wer heute in Solaranlagen auf dem eigenen Dach investiert, verzichtet auf genau diesen Hebel. Wer in ein Tiny House investiert, nutzt ihn vollständig.
@@ -208,7 +208,7 @@ export default function PvAnlageAlsKapitalanlagePage() {
 
           <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Rendite im direkten Vergleich</h2>
           <p className="text-gray-500 text-sm mb-8 leading-relaxed max-w-3xl">
-            Die folgende Tabelle vergleicht eine typische 10-kWp-PV-Anlage (Volleinspeisung) mit einem TinyInvest Escape 660 (79.000 €) auf Basis realistischer Annahmen für 2026.
+            Die folgende Tabelle vergleicht eine typische 10-kWp-PV-Anlage (Volleinspeisung) mit einem TinyInvest Escape 660 On-Grid (74.700 € netto) auf Basis realistischer Annahmen für 2026.
           </p>
           <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm mb-12">
             <div className="overflow-x-auto">

@@ -741,8 +741,12 @@ export default function TinyHouseKapitalanlagePage() {
           </div>
 
           <div className="text-center">
+            <Link href="/wissen/tiny-house-vs-eigentumswohnung" className="text-green-700 font-semibold text-[13px] hover:underline">
+              → Ausführlicher Vergleich: Tiny House vs. Eigentumswohnung
+            </Link>
+            <span className="text-gray-300 mx-3">·</span>
             <Link href="/steuervorteil" className="text-green-700 font-semibold text-[13px] hover:underline">
-              → Vollständige §7g-Steueranalyse mit interaktivem Rechner
+              §7g-Steuervorteile mit Rechner →
             </Link>
           </div>
 

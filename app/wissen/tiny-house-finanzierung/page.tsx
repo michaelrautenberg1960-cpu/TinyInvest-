@@ -138,14 +138,14 @@ export default function TinyHouseFinanzierungPage() {
               Wer ein Tiny House als Kapitalanlage kauft, steht vor einer ungewohnten Entscheidung: Eigenkapital oder Kredit? Die Antwort überrascht viele Investoren – und läuft gegen die klassische Immobilienlogik. Bei einem Haus, das 300.000 € oder mehr kostet, macht Fremdkapitalhebel oft Sinn. Bei einem Tiny House mit 65.000 € Einstiegspreis verändert §7g EStG die Rechnung fundamental.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Die Erklärung: Im Kaufjahr bekommst du durch Investitionsabzugsbetrag, Sonder-AfA und degressive AfA bis zu 40 % des Kaufpreises als Steuervorteil zurück – das entspricht einer sofortigen Nettorendite auf das eingesetzte Kapital, die jeden Kreditzins übertrifft. Wer mit 6 % Zinsen auf 80.000 € finanziert, zahlt 4.800 € Zinsen im ersten Jahr – bekommt aber mit §7g rund 33.600 € zurück. Cash schlägt Kredit deutlich.
+              Die Erklärung: Im Kaufjahr bekommst du durch Investitionsabzugsbetrag, Sonder-AfA und degressive AfA im Beispiel rund 36 % des Kaufpreises als Steuereffekt zurück – das entspricht einer sofortigen Nettorendite auf das eingesetzte Kapital, die jeden Kreditzins übertrifft. Wer 74.700 € mit 6 % Zinsen finanziert, zahlt rund 4.480 € Zinsen im ersten Jahr – der §7g-Effekt liegt im Beispiel bei rund 26.700 €. Cash schlägt Kredit deutlich.
             </p>
           </div>
 
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Barzahlung – warum Cash beim Tiny House fast immer gewinnt</h2>
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Wer ein Tiny House direkt aus Eigenkapital kauft, hat im ersten Jahr einen entscheidenden Vorteil: Den vollen §7g-Steuereffekt ohne Abzug. Durch Investitionsabzugsbetrag (IAB), Sonder-AfA und degressive AfA summiert sich der steuerliche Rückfluss auf bis zu 40 % des Kaufpreises – bei einem 80.000-€-Objekt und 42 % Grenzsteuersatz entspricht das rund 33.600 €. Hinzu kommen kein Zinsaufwand, sofortiger Eigentumsübergang und keine Bankkonditionsverhandlung.
+              Wer ein Tiny House direkt aus Eigenkapital kauft, hat im ersten Jahr einen entscheidenden Vorteil: Den vollen §7g-Steuereffekt ohne Abzug. Durch Investitionsabzugsbetrag (IAB), Sonder-AfA und degressive AfA summiert sich der steuerliche Effekt in Vorjahr und Kaufjahr im Beispiel auf rund 36 % des Kaufpreises – beim Escape 660 On-Grid (74.700 € netto) und 42 % Grenzsteuersatz rund 26.700 €. Hinzu kommen kein Zinsaufwand, sofortiger Eigentumsübergang und keine Bankkonditionsverhandlung.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Der einzige echte Nachteil der Barzahlung ist der Liquiditätsbedarf: Der Einstieg beginnt bei 74.700 € netto. Wer dieses Kapital nicht vollständig binden möchte, kann nach dem Kaufjahr mit der Steuererstattung einen Teil zurückgewinnen – effektiv ist die Nettoliquiditätsbelastung nach dem ersten Steuerjahr deutlich niedriger als der nominale Kaufpreis.
@@ -158,7 +158,7 @@ export default function TinyHouseFinanzierungPage() {
               Kredite für Tiny Houses sind möglich – typischerweise über Volksbanken und Sparkassen als Konsumentenkredit oder Gewerbedarlehen für bewegliche Wirtschaftsgüter. Ein klassisches Immobiliendarlehen mit Grundbucheintragung scheidet aus, da das Tiny House auf einem Vlemmix-Trailer als bewegliches Wirtschaftsgut gilt und kein Grundstück involviert ist.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
-              Die Zinslast bei 6 % auf 80.000 € beträgt über fünf Jahre rund 12.800 €. Zwar sind Zinsen als Betriebsausgaben steuerlich absetzbar, dennoch liegt das Netto-Ergebnis über fünf Jahre mit Kredit bei etwa 64.000 € gegenüber rund 76.800 € bei Barzahlung – ein Unterschied von fast 13.000 €. Kredit lohnt sich nur dann, wenn das frei gehaltene Kapital anderweitig eine höhere Rendite erzielt als die Kreditzinsen.
+              Die Zinslast bei 6 % auf 74.700 € beträgt bei laufender Tilgung über fünf Jahre rund 12.000 €. Zwar sind Zinsen als Betriebsausgaben steuerlich absetzbar, dennoch liegt das Ergebnis über fünf Jahre mit Kredit bei etwa 62.300 € gegenüber rund 74.300 € bei Barzahlung – ein Unterschied von rund 12.000 € (vor Steuern auf die Mieteinnahmen). Kredit lohnt sich nur dann, wenn das frei gehaltene Kapital anderweitig eine höhere Rendite erzielt als die Kreditzinsen.
             </p>
           </div>
 
@@ -172,7 +172,7 @@ export default function TinyHouseFinanzierungPage() {
           <h2 className="text-2xl font-black text-gray-900 mb-6 tracking-tight">Warum §7g die Finanzierungsentscheidung dominiert</h2>
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Bei klassischen Immobilien macht Fremdkapitalhebel oft Sinn – wegen langer AfA-Laufzeiten, Inflationsschutz und niedrigen Eigenkapitalquoten. Bei Tiny Houses dreht §7g die Logik um. Der Steuereffekt im Kaufjahr ist so dominant, dass er sämtliche Zinsvorteile übertrifft. Konkret: Wer 80.000 € bar zahlt, erzielt bei 42 % Grenzsteuersatz über fünf Jahre rund 76.800 € Netto-Ergebnis aus Steuererstattung und Mieteinnahmen. Mit Kredit (6 % p.a.) sinkt dieses Ergebnis auf etwa 64.000 €.
+              Bei klassischen Immobilien macht Fremdkapitalhebel oft Sinn – wegen langer AfA-Laufzeiten, Inflationsschutz und niedrigen Eigenkapitalquoten. Bei Tiny Houses dreht §7g die Logik um. Der Steuereffekt im Kaufjahr ist so dominant, dass er sämtliche Zinsvorteile übertrifft. Konkret: Wer 74.700 € bar zahlt, erzielt bei 42 % Grenzsteuersatz über fünf Jahre rund 74.300 € aus Steuereffekt (~26.700 €) und Auszahlungen (5 × ~9.512 €), vor Steuern auf die Mieteinnahmen. Mit Kredit (6 % p.a.) sinkt dieses Ergebnis auf etwa 62.300 €.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Das bedeutet nicht, dass Kredit grundsätzlich falsch ist. Wer mehrere Objekte staffeln möchte oder das Eigenkapital in einem anderen Asset mit höherer Rendite arbeiten lässt, kann einen Kredit rechtfertigen. Für den typischen Einzelinvestor mit einem §7g-optimierten Einstieg ist Cash jedoch die überlegene Wahl – sowohl steuerlich als auch strukturell.

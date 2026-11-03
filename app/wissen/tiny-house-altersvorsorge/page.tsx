@@ -90,7 +90,7 @@ export default function TinyHouseAltersvorsorge() {
 
   const vergleichRows = [
     ["Rendite p.a.", "1–2 % (bei Riester-Rentenfaktor)", "6–8 % (brutto, MSCI World historisch)", "11–16 % (Cash-on-Cash + §7g)"],
-    ["Staatliche Förderung", "175 €/Jahr Zulage", "Keine", "§7g IAB – bis zu 39.500 € Sofortabzug"],
+    ["Staatliche Förderung", "175 €/Jahr Zulage", "Keine", "§7g IAB – bis zu 37.350 € Abzug (Beispiel)"],
     ["Monatlicher Cashflow", "Nein (Auszahlung erst ab Rentenalter)", "Nein (Entnahmeplan nötig)", "Ja – ab Monat 1"],
     ["Sachwert", "Nein (Versicherungsanspruch)", "Nein (Papiervermögen)", "Ja (physisches Gut)"],
     ["Flexibilität", "Gering (Kündigung mit Verlusten)", "Hoch (Börsenabhängig)", "Mittel (Wiederverkauf möglich)"],
@@ -162,7 +162,7 @@ export default function TinyHouseAltersvorsorge() {
               Riester-Verträge sind staatlich gefördert, aber strukturell begrenzt. Der Grundzuschuss beträgt 175 € pro Jahr, Kinderzulagen kommen hinzu. Das klingt nach einem Vorteil — bis man die Kosten der Versicherungsprodukte, die langen Laufzeiten und die geringe Flexibilität einrechnet.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Fondspolicen im Riester-Mantel müssen 100 % des eingezahlten Kapitals zum Rentenbeginn garantieren. Das erzwingt eine konservative Anlage — und drückt die Rendite. Wer 30 Jahre lang monatlich 200 € einzahlt, erhält mit Zulagen im besten Fall eine monatliche Zusatzrente von 300–400 €. Auf einen Schlag 65.000 € in einen Sachwert zu investieren, der 720 € monatlich auszahlt, ist eine strukturell überlegene Alternative.
+              Fondspolicen im Riester-Mantel müssen 100 % des eingezahlten Kapitals zum Rentenbeginn garantieren. Das erzwingt eine konservative Anlage — und drückt die Rendite. Wer 30 Jahre lang monatlich 200 € einzahlt, erhält mit Zulagen im besten Fall eine monatliche Zusatzrente von 300–400 €. Einmalig 74.700 € netto in einen Sachwert zu investieren, der im Beispiel rund 793 € monatlich auszahlt, ist eine strukturell überlegene Alternative.
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Der entscheidende Unterschied: Ein Tiny House ist kein Versicherungsversprechen. Es ist ein physisches Wirtschaftsgut, das Sie besitzen, das Einnahmen generiert und das Sie jederzeit verkaufen, vererben oder selbst nutzen können.

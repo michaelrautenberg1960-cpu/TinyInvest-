@@ -147,7 +147,7 @@ export default function TinyHouseAlsRenditePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <p className="text-gray-700 text-base leading-relaxed mb-5">
-              Das Modell ist einfach zu verstehen, aber erstaunlich leistungsfähig: Du kaufst ein Tiny House, lokale Partner betreibt es als Ferienunterkunft, und du erhältst monatlich 40 Prozent der Netto-Einnahmen ausgezahlt – ohne selbst tätig werden zu müssen. Bei 60 Prozent Belegung und einem Durchschnittspreis von 100 Euro pro Nacht sind das rund 720 Euro monatlich für ein 79.000 Euro Objekt.
+              Das Modell ist einfach zu verstehen, aber erstaunlich leistungsfähig: Du kaufst ein Tiny House, lokale Partner betreibt es als Ferienunterkunft, und du erhältst monatlich 40 Prozent der Netto-Einnahmen ausgezahlt – ohne selbst tätig werden zu müssen. Bei 60 Prozent Belegung und einem Durchschnittspreis von 120 Euro pro Nacht sind das nach Abzug der Stellplatzpacht rund 793 Euro monatlich für ein Objekt mit 74.700 Euro netto (On-Grid).
             </p>
             <p className="text-gray-700 text-base leading-relaxed">
               Was das Modell gegenüber klassischen Mietimmobilien überlegen macht, ist nicht allein die Rendite der Mieteinnahmen. Es ist die Kombination: Die 40-Prozent-Auszahlung bildet die Basis. Der §7g-Steuereffekt – Investitionsabzugsbetrag, Sonder-AfA und degressive AfA – verdoppelt in den ersten zwei Jahren die Gesamtrendite. Und der Restwert des Hauses sichert die Investition gegen einen Totalverlust ab.

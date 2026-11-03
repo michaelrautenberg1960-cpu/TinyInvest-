@@ -55,7 +55,7 @@ export default function IabTinyHousePage() {
     "about": { "@type": "DefinedTerm", "name": "Investitionsabzugsbetrag", "alternateName": "IAB" },
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
-    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/IAB Tiny House 2026 So sparst du bis zu 30.000 € vor dem Kauf.webp" },
+    "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-steuermodell-finanzamt.webp" },
   };
 
   const breadcrumbSchema = {
@@ -242,12 +242,12 @@ export default function IabTinyHousePage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: "16/9" }}>
-            <Image src="/images/outside/IAB Tiny House 2026 So sparst du bis zu 30.000 € vor dem Kauf.webp" alt="IAB Tiny House 2026 – Investitionsabzugsbetrag vor dem Kauf nutzen" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
+            <Image src="/images/outside/tiny-house-steuermodell-finanzamt.webp" alt="IAB Tiny House 2026 – Investitionsabzugsbetrag vor dem Kauf nutzen" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 896px" />
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["IAB 50 %", "Bis zu 40.000 € vorziehen", "3 Jahre vor Kauf", "§7g Abs. 1 EStG", "Bewegliches Wirtschaftsgut"].map((tag) => (
+            {["IAB 50 %", "Bis zu 50 % vorziehen", "3 Jahre vor Kauf", "§7g Abs. 1 EStG", "Bewegliches Wirtschaftsgut"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -325,7 +325,7 @@ export default function IabTinyHousePage() {
                 Das Besondere am Investitionsabzugsbetrag ist der zeitliche Vorwegeffekt. Investoren müssen nicht warten, bis das Tiny House fertiggestellt oder geliefert ist, um von den steuerlichen Vorteilen zu profitieren. Der IAB erlaubt es, bis zu 50 Prozent der voraussichtlichen Anschaffungs- und Herstellungskosten bereits in der Steuererklärung eines der drei Jahre vor dem Kauf gewinnmindernd geltend zu machen.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
-                Planen Sie beispielsweise den Kauf eines Tiny Houses für 80.000 Euro, können Sie über den IAB bis zu 40.000 Euro direkt vom zu versteuernden Einkommen abziehen. Bei einem hohen persönlichen Steuersatz führt dies sofort zu einer Steuererstattung oder einer massiven Senkung der Steuerschuld. Nach der Festsetzung des IAB verbleibt ein großzügiger gesetzlicher Zeitraum von bis zu drei Jahren, um die tatsächliche Investition zu tätigen und das Tiny House zu erwerben.
+                Planen Sie beispielsweise den Kauf eines Escape 660 On-Grid für 74.700 Euro netto, können Sie über den IAB bis zu 37.350 Euro vom Gewinn abziehen. Bei einem hohen persönlichen Steuersatz führt dies sofort zu einer Steuererstattung oder einer massiven Senkung der Steuerschuld. Nach der Festsetzung des IAB verbleibt ein großzügiger gesetzlicher Zeitraum von bis zu drei Jahren, um die tatsächliche Investition zu tätigen und das Tiny House zu erwerben.
               </p>
             </div>
 

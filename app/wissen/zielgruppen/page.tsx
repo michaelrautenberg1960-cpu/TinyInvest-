@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "§7g IAB: Welche Berufsgruppe profitiert? | TinyInvest",
   description:
-    "Ärzte, Freiberufler, IT-Freelancer oder Unternehmer: So nutzt du den §7g IAB für ein Tiny House. Bis zu 39.500 € Steuervorteil – für jeden Berufsstand erklärt.",
+    "Ärzte, Freiberufler, IT-Freelancer oder Unternehmer: So nutzt du den §7g IAB für ein Tiny House. Rechenbeispiel mit Escape 660 – für jeden Berufsstand erklärt.",
   keywords:
     "§7g iab selbstständige, kapitalanlage freiberufler, steuern sparen arzt, it freelancer investment, unternehmer kapitalanlage, iab berufsgruppen, tiny house steuervorteil selbstständige",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
     type: "article",
     title: "§7g IAB für Selbstständige: Ärzte, Freiberufler, IT, Unternehmer | TinyInvest",
     description:
-      "Bis zu 39.500 € Steuervorteil im Vorjahr – für Ärzte, Freiberufler, IT-Freelancer und Unternehmer. Welches Profil passt zu dir?",
+      "Bis zu 37.350 € IAB-Abzug im Vorjahr – für Ärzte, Freiberufler, IT-Freelancer und Unternehmer. Welches Profil passt zu dir?",
     url: "https://tinyhouse.investments/wissen/zielgruppen",
   },
 };
@@ -31,7 +31,7 @@ const profiles = [
     label: "Für Ärzte",
     headline: "Niedergelassene Ärzte & Freiberufler",
     desc: "Bis zu 45 % Spitzensteuersatz, kein Arbeitgeber der investiert, keine Zeit für aktives Portfolio-Management. Der §7g IAB ist das passende Instrument.",
-    tags: ["§18 EStG direkt", "Bis zu 39.500 € IAB", "Praxisnebentätigkeit"],
+    tags: ["§18 EStG direkt", "Bis zu 37.350 € IAB", "Praxisnebentätigkeit"],
     cta: "Für Ärzte →",
     border: "border-green-200",
     tagColor: "bg-green-50 text-green-700",
@@ -75,7 +75,7 @@ const commonSteps = [
   {
     step: "1",
     title: "IAB bilden",
-    desc: "Bis zu 50 % des geplanten Kaufpreises im Jahr VOR dem Kauf steuerlich abziehen. Bei einem 79.000 €-Objekt = 39.500 € Sofortabzug.",
+    desc: "Bis zu 50 % des geplanten Kaufpreises im Jahr VOR dem Kauf steuerlich abziehen. Beim Escape 660 On-Grid (74.700 € netto) = 37.350 € Abzug.",
   },
   {
     step: "2",
@@ -105,7 +105,7 @@ export default function ZielgruppenPage() {
     "@type": "Article",
     headline: "§7g IAB für Selbstständige: Welche Berufsgruppe profitiert vom Tiny House Investment?",
     description:
-      "Ärzte, Freiberufler, IT-Freelancer und Unternehmer nutzen den §7g IAB für bis zu 39.500 € Steuervorteil. Übersicht aller Berufsgruppen.",
+      "Ärzte, Freiberufler, IT-Freelancer und Unternehmer nutzen den §7g IAB – Rechenbeispiele für alle Profile. Übersicht aller Berufsgruppen.",
     url: "https://tinyhouse.investments/wissen/zielgruppen",
     datePublished: "2026-05-22",
     dateModified: "2026-05-22",
@@ -152,10 +152,10 @@ export default function ZielgruppenPage() {
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Ob Arzt, Rechtsanwalt, Softwareentwickler oder Einzelunternehmer — wer betriebliche Einkünfte hat, kann den §7g Investitionsabzugsbetrag nutzen. Das bedeutet: bis zu 39.500 € Steuerabzug im Jahr vor dem Kauf, Sonder-AfA 40 % im Kaufjahr, und monatlicher Cashflow ohne aktiven Aufwand. Welches Profil passt zu dir?
+            Ob Arzt, Rechtsanwalt, Softwareentwickler oder Einzelunternehmer — wer betriebliche Einkünfte hat, kann den §7g Investitionsabzugsbetrag nutzen. Das bedeutet: beim Escape 660 On-Grid bis zu 37.350 € Abzug vom Gewinn im Jahr vor dem Kauf, Sonder-AfA 40 % im Kaufjahr, und monatlicher Cashflow ohne aktiven Aufwand. Welches Profil passt zu dir?
           </p>
           <div className="flex flex-wrap gap-2 text-[11px] mt-5">
-            {["§7g IAB nutzbar", "Bis zu 39.500 € Steuervorteil", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "4 Berufsgruppen"].map((tag) => (
+            {["§7g IAB nutzbar", "~26.700 € Steuereffekt (Beispiel)", "mit geringem Aufwand über lokale Partner", "Ab 74.700 €", "4 Berufsgruppen"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -213,9 +213,9 @@ export default function ZielgruppenPage() {
             Alle vier Gruppen — Ärzte, Freiberufler, IT-Freelancer und Unternehmer — nutzen denselben Steuerhebel: den §7g Investitionsabzugsbetrag. Das Tiny House auf einem Vlemmix-Trailer ist ein <strong>bewegliches Wirtschaftsgut</strong> mit Fahrzeugidentifikationsnummer — damit eindeutig §7g-fähig. Kein anderes Investitionsprodukt in dieser Preisklasse bietet denselben Vorzieheffekt.
           </p>
           <div className="bg-green-50 border border-green-100 rounded-2xl p-6 mb-10">
-            <p className="font-black text-gray-900 text-[14px] mb-2">Rechenbeispiel: €79.000 Tiny House, 42 % Grenzsteuersatz</p>
+            <p className="font-black text-gray-900 text-[14px] mb-2">Rechenbeispiel: Escape 660 On-Grid (74.700 € netto), 42 % Grenzsteuersatz</p>
             <p className="text-gray-600 text-[13px] leading-relaxed">
-              IAB im Vorjahr: 50 % × 79.000 € = 39.500 € Abzug → ca. 16.590 € Steuerersparnis noch vor Lieferung. Im Kaufjahr: Sonder-AfA 40 % (31.600 €) + degressive AfA 30 % (23.700 €). Gesamtsteuervorteil in Jahr 1 und 2: bis zu 25.000–30.000 € — dazu monatliche Mieteinnahmen ab Betriebsaufnahme.
+              IAB im Vorjahr: 50 % × 74.700 € = 37.350 € → rechnerisch ca. 15.700 € weniger Steuer. Im Kaufjahr: Sonder-AfA 40 % (14.940 €) + degressive AfA 30 % (11.205 €) auf die geminderte Basis von 37.350 € → weitere ca. 11.000 €. Steuereffekt Vorjahr und Kaufjahr: rund 26.700 € — dazu monatliche Mieteinnahmen ab Betriebsaufnahme.
             </p>
           </div>
 

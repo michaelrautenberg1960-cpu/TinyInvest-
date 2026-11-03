@@ -9,7 +9,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Tiny House Steuern sparen: Die vollständige Anleitung | TinyInvest",
   description:
-    "Wie du mit einem Tiny House bis zu 34.000 € Steuern sparst: IAB, Sonder-AfA, degressive AfA – Schritt für Schritt erklärt für Selbstständige und Unternehmer.",
+    "Tiny House Steuern sparen: IAB, Sonder-AfA und degressive AfA – im Beispiel rund 26.700 € Steuereffekt. Schritt für Schritt erklärt für Selbstständige und Unternehmer.",
   keywords:
     "tiny house steuern sparen, tiny house steuervorteile anleitung, tiny house kapitalanlage steuern, steuern sparen selbstständige tiny house, tiny house steueroptimierung",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -18,7 +18,7 @@ export const metadata = {
     ...BASE_OG,
     type: "article",
     title: "Tiny House Steuern sparen: Die vollständige Anleitung",
-    description: "IAB, Sonder-AfA, degressive AfA: So sparst du bis zu 34.000 € im ersten Jahr. Schritt-für-Schritt für Selbstständige und Unternehmer.",
+    description: "IAB, Sonder-AfA, degressive AfA: im Beispiel rund 26.700 € Steuereffekt in Vorjahr und Kaufjahr. Schritt für Schritt für Selbstständige und Unternehmer.",
     url: "https://tinyhouse.investments/wissen/tiny-house-steuern-sparen",
   },
 };
@@ -26,11 +26,11 @@ export const metadata = {
 const faqItems = [
   {
     question: "Wie viel Steuern kann ich mit einem Tiny House wirklich sparen?",
-    answer: "Bei einem Kaufpreis von 80.000 € und einem Grenzsteuersatz von 42 % sind Steuerersparnisse von 22.000–34.000 € im ersten Jahr realistisch – je nachdem ob du IAB im Vorjahr, Sonder-AfA und degressive AfA kombinierst. Bei 35 % Steuersatz sind es entsprechend weniger.",
+    answer: "Beim Escape 660 On-Grid (74.700 € netto) und 42 % Grenzsteuersatz ergibt sich mit IAB im Vorjahr plus Sonder-AfA und degressiver AfA im Kaufjahr ein Steuereffekt von rund 26.700 €. Ohne IAB (nur Sonder-AfA und degressive AfA im Kaufjahr) sind es rund 22.000 €. Bei 35 % Steuersatz entsprechend weniger. Ein großer Teil ist eine Steuerstundung.",
   },
   {
     question: "Brauche ich zwingend ein Gewerbe, um Steuern zu sparen?",
-    answer: "Nein. Du kannst das Tiny House auch im Rahmen von Einkünften aus Vermietung und Verpachtung (§ 21 EStG) abschreiben. Ein Gewerbe ist nicht erforderlich. Wichtig ist, dass du das Tiny House entgeltlich vermietest – was über lokale Partner automatisch gewährleistet ist.",
+    answer: "Für IAB und Sonder-AfA nach § 7g EStG ja: Beide setzen einen Betrieb mit Gewinneinkünften voraus (Gewerbe, freiberufliche Tätigkeit oder Land- und Forstwirtschaft). Reine private Vermietung reicht dafür nicht. Ob deine bestehende Tätigkeit genügt oder ein Gewerbe angemeldet werden sollte, klärt dein Steuerberater.",
   },
   {
     question: "Ab welchem Steuersatz lohnt sich das Investment besonders?",
@@ -55,7 +55,7 @@ export default function TinyHouseSteuernSparenPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Tiny House Steuern sparen: Die vollständige Anleitung",
-    "description": "Wie du mit einem Tiny House bis zu 34.000 € Steuern sparst: IAB, Sonder-AfA, degressive AfA – Schritt für Schritt erklärt.",
+    "description": "Tiny House Steuern sparen: IAB, Sonder-AfA, degressive AfA – im Beispiel rund 26.700 € Steuereffekt, Schritt für Schritt erklärt.",
     "url": "https://tinyhouse.investments/wissen/tiny-house-steuern-sparen",
     "datePublished": "2026-04-15",
     "dateModified": "2026-05-06",
@@ -88,7 +88,7 @@ export default function TinyHouseSteuernSparenPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Mit Tiny House Steuern sparen: Die optimale Steuerstrategie in 4 Schritten",
-    "description": "So nutzt du IAB, Sonder-AfA und degressive AfA für ein Tiny House Investment und sparst bis zu 34.000 € Steuern im ersten Jahr.",
+    "description": "So nutzt du IAB, Sonder-AfA und degressive AfA für ein Tiny House Investment – im Beispiel rund 26.700 € Steuereffekt in Vorjahr und Kaufjahr.",
     "totalTime": "P1Y",
     "step": [
       {
@@ -101,7 +101,7 @@ export default function TinyHouseSteuernSparenPage() {
         "@type": "HowToStep",
         "position": 2,
         "name": "IAB im Vorjahr bilden",
-        "text": "Dein Steuerberater trägt in der Anlage EÜR oder Bilanz den IAB ein. Bei 80.000 € geplantem Kaufpreis sind das bis zu 40.000 € IAB – was bei 42 % Steuersatz ca. 16.800 € Soforterstattung ergibt.",
+        "text": "Dein Steuerberater trägt in der Anlage EÜR oder Bilanz den IAB ein. Beim Escape 660 On-Grid (74.700 € netto) sind das bis zu 37.350 € IAB – was bei 42 % Steuersatz die Steuer rechnerisch um ca. 15.700 € senkt.",
       },
       {
         "@type": "HowToStep",
@@ -162,7 +162,7 @@ export default function TinyHouseSteuernSparenPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
           <div className="flex flex-wrap gap-2 text-[11px]">
-            {["Bis zu 34.000 € sparen", "IAB + Sonder-AfA", "Kein Gewerbe nötig", "Ab 35 % Steuersatz", "Bewegliches Wirtschaftsgut"].map((tag) => (
+            {["~26.700 € Steuereffekt (Beispiel)", "IAB + Sonder-AfA", "Für Betriebe", "Ab 35 % Steuersatz", "Bewegliches Wirtschaftsgut"].map((tag) => (
               <span key={tag} className="bg-green-50 border border-green-100 text-green-700 font-semibold px-3 py-1 rounded-full">{tag}</span>
             ))}
           </div>
@@ -258,7 +258,7 @@ export default function TinyHouseSteuernSparenPage() {
                 Der Investitionsabzugsbetrag (IAB) nach § 7g EStG ist das mächtigste Instrument der kleinen und mittleren Steueroptimierung in Deutschland – und es ist für jeden zugänglich, der plant, ein abnutzbares Wirtschaftsgut anzuschaffen. Die Mechanik ist bestechend einfach: Du kannst bis zu 50 % der voraussichtlichen Anschaffungskosten <strong>bereits im Jahr vor dem Kauf</strong> als steuerlichen Abzug geltend machen. Du kaufst also noch nichts, reduzierst aber jetzt schon deinen zu versteuernden Gewinn oder deine zu versteuernden Einkünfte.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Bei einem geplanten Tiny-House-Kaufpreis von 80.000 € sind das bis zu 40.000 € IAB. Bei einem Grenzsteuersatz von 42 % ergibt das eine direkte Steuererstattung von rund 16.800 € – noch im Jahr vor dem eigentlichen Kauf. Wer einen außergewöhnlich hohen Gewinn in einem bestimmten Jahr erwartet (Unternehmensverkauf, starkes Geschäftsjahr, hohe Bonuszahlungen), kann den IAB gezielt in diesem Jahr einsetzen und so die Steuerlast auf den Spitzengewinn senken.
+                Beim Escape 660 On-Grid für 74.700 € netto sind das bis zu 37.350 € IAB. Bei einem Grenzsteuersatz von 42 % senkt das die Steuer rechnerisch um rund 15.700 € – noch im Jahr vor dem eigentlichen Kauf. Wer einen außergewöhnlich hohen Gewinn in einem bestimmten Jahr erwartet (Unternehmensverkauf, starkes Geschäftsjahr, hohe Bonuszahlungen), kann den IAB gezielt in diesem Jahr einsetzen und so die Steuerlast auf den Spitzengewinn senken.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
                 Die Voraussetzungen für den IAB sind überschaubar: Dein Gewinn (bei Gewerbetreibenden und Selbstständigen) darf 200.000 € nicht übersteigen, das Wirtschaftsgut muss zu mehr als 90 % betrieblich genutzt werden, und du musst die Investitionsabsicht glaubhaft machen. Für Investoren, die das Tiny House über Vermietungs- und Verpachtungseinkünfte (§ 21 EStG) abbilden – also ohne eigenes Gewerbe – ist die 200.000-€-Grenze in der Praxis kein reales Problem, da Vermietungseinkünfte selten diesen Bereich erreichen. Wichtig: Wer den IAB bildet, muss das Tiny House auch tatsächlich kaufen. Wird die Investition nicht umgesetzt, muss der IAB rückwirkend aufgelöst werden – inklusive Nachzahlungszinsen von derzeit 1,8 % pro Jahr.
@@ -271,10 +271,10 @@ export default function TinyHouseSteuernSparenPage() {
                 Parallel zum IAB existiert die Sonderabschreibung nach § 7g Abs. 5 EStG. Sie erlaubt, zusätzlich zur regulären AfA eine Sonder-AfA von bis zu 40 % der Anschaffungskosten im Kaufjahr anzusetzen. Entscheidend: Die Sonder-AfA wird auf die um den IAB <strong>bereits geminderten</strong> Anschaffungskosten berechnet. Das klingt zunächst nach weniger – ist aber in der Gesamtrechnung deutlich mehr, weil der IAB bereits im Vorjahr die Steuerlast gesenkt hat.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Konkret am Beispiel: Du kaufst ein Tiny House für 80.000 €. Im Vorjahr hast du einen IAB von 40.000 € gebildet. Im Kaufjahr sind die steuerlichen Anschaffungskosten damit auf 40.000 € gemindert. Darauf setzt du die Sonder-AfA von 40 % an – also 16.000 €. Zusätzlich kannst du im Kaufjahr die degressive AfA von 30 % auf den um den IAB geminderten Buchwert (ebenfalls 40.000 €) geltend machen – das sind weitere 12.000 €. Im Kaufjahr allein machst du also 28.000 € an Abschreibungen geltend, was bei 42 % Grenzsteuersatz einer weiteren Steuerersparnis von rund 11.760 € entspricht.
+                Konkret am Beispiel: Du kaufst ein Escape 660 On-Grid für 74.700 € netto. Im Vorjahr hast du einen IAB von 37.350 € gebildet. Im Kaufjahr sind die steuerlichen Anschaffungskosten damit auf 37.350 € gemindert. Darauf setzt du die Sonder-AfA von 40 % an – also 14.940 €. Zusätzlich kannst du im Kaufjahr die degressive AfA von 30 % auf den um den IAB geminderten Buchwert (ebenfalls 37.350 €) geltend machen – das sind weitere 11.205 €. Im Kaufjahr machst du also 26.145 € an Abschreibungen geltend, was bei 42 % Grenzsteuersatz die Steuer rechnerisch um weitere rund 11.000 € senkt.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
-                In der Summe über beide Jahre ergibt sich bei diesem Beispiel eine Gesamtsteuerersparnis von rund 28.500 € – ohne Solidaritätszuschlag und Kirchensteuer, die den Effekt weiter erhöhen. Und das bei einem Kaufpreis von 80.000 €, der nicht verloren ist, sondern in einem Sachwert steckt, der laufende Mieteinnahmen generiert.
+                In der Summe über beide Jahre ergibt sich bei diesem Beispiel ein Steuereffekt von rund 26.700 € – ohne Solidaritätszuschlag und Kirchensteuer, die den Effekt weiter erhöhen. Ein großer Teil davon ist eine Steuerstundung, weil in den Folgejahren weniger Abschreibung übrig bleibt. Der Kaufpreis von 74.700 € steckt dabei in einem Sachwert, der laufende Mieteinnahmen erzielt.
               </p>
             </div>
 
@@ -291,10 +291,10 @@ export default function TinyHouseSteuernSparenPage() {
             <div>
               <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Laufende Mieteinnahmen: Was steuerpflichtig ist</h2>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Die Abschreibungen drücken den steuerlichen Gewinn in den ersten Jahren auf null oder sogar in negatives Terrain. Gleichzeitig fließen aus dem lokale Partner Vermietungskonzept laufend Mieteinnahmen – typisch rund 720 € netto pro Monat, also 8.640 € im Jahr. Diese Einnahmen sind steuerpflichtig und werden als Einkünfte aus Vermietung und Verpachtung (§ 21 EStG) behandelt.
+                Die Abschreibungen drücken den steuerlichen Gewinn in den ersten Jahren auf null oder sogar in negatives Terrain. Gleichzeitig fließen aus dem lokale Partner Vermietungskonzept laufend Mieteinnahmen – im Beispiel (60 % Belegung, 120 €/Nacht, nach Pacht) rund 793 € pro Monat, also rund 9.512 € im Jahr. Diese Einnahmen sind steuerpflichtig und gehören bei Nutzung von IAB und Sonder-AfA zu den Einkünften deines Betriebs.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Da die Abschreibungen im Kaufjahr die Mieteinnahmen deutlich übersteigen, entsteht ein steuerlicher Verlust aus Vermietung und Verpachtung. Dieser Verlust kann mit anderen positiven Einkünften – zum Beispiel aus selbstständiger Arbeit oder Gewerbebetrieb – verrechnet werden und senkt so die Gesamtsteuerlast. Das ist der eigentliche Steuereffekt: keine Steuervermeidung, sondern ein zeitliches Vorziehen von Betriebsausgaben, die ohnehin entstehen.
+                Da die Abschreibungen im Kaufjahr die Mieteinnahmen deutlich übersteigen, entsteht ein steuerlicher Verlust. Dieser Verlust kann – im Rahmen der gesetzlichen Regeln – mit anderen positiven Einkünften – zum Beispiel aus selbstständiger Arbeit oder Gewerbebetrieb – verrechnet werden und senkt so die Gesamtsteuerlast. Das ist der eigentliche Steuereffekt: keine Steuervermeidung, sondern ein zeitliches Vorziehen von Betriebsausgaben, die ohnehin entstehen.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
                 Ab dem Jahr, in dem das Tiny House vollständig abgeschrieben ist (Buchwert = 0), sind die Mieteinnahmen in voller Höhe steuerpflichtig – ohne dämpfende Abschreibung. Wer langfristig plant, kauft zu diesem Zeitpunkt ein weiteres Objekt und nutzt den IAB erneut. Portfolioinvestoren mit mehreren Tiny Houses können so jedes Jahr Steuerersparnisse generieren und das Prinzip dauerhaft skalieren.
@@ -307,7 +307,7 @@ export default function TinyHouseSteuernSparenPage() {
                 Für Selbstständige und Unternehmer stellt sich die Frage, ob das Tiny House ins Privat- oder Betriebsvermögen gehört. Beide Varianten sind steuerlich möglich und haben unterschiedliche Konsequenzen.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Im <strong>Privatvermögen</strong> (§ 21 EStG) gehört das Tiny House dir persönlich. Mieteinnahmen werden als Einkünfte aus Vermietung und Verpachtung behandelt. IAB und Sonder-AfA sind nach aktuellem Stand weiterhin anwendbar. Der Vorteil: kein Gewerbe erforderlich, keine Gewerbesteuer, einfachere steuerliche Struktur. Diese Variante ist für die meisten Privatinvestoren die attraktivste.
+                Im <strong>Privatvermögen</strong> gehört das Tiny House dir persönlich, ohne Betrieb. Die Struktur ist einfacher, aber IAB und Sonder-AfA nach § 7g EStG sind dann <strong>nicht</strong> möglich – sie setzen einen Betrieb mit Gewinneinkünften voraus. Wer den §7g-Effekt nutzen will, braucht daher die betriebliche Variante.
               </p>
               <p className="text-gray-700 text-base leading-relaxed">
                 Im <strong>Betriebsvermögen</strong> wird das Tiny House als Betriebsanlage eingebucht. Abschreibungen mindern direkt den Betriebsgewinn. Bei GmbH-Strukturen greift Körperschaftsteuer und Gewerbesteuer statt des persönlichen Einkommensteuersatzes – was je nach Situation günstiger oder ungünstiger sein kann. Bei einem Verkauf nach vollständiger Abschreibung ist der Veräußerungsgewinn ebenfalls betrieblich zu versteuern. Welche Variante im Einzelfall besser passt, hängt von deinem persönlichen Einkommensteuersatz, der Unternehmensstruktur und der geplanten Haltedauer ab – das ist eine Frage für deinen Steuerberater.
@@ -338,7 +338,7 @@ export default function TinyHouseSteuernSparenPage() {
                 },
                 {
                   nr: "02", title: "IAB im Vorjahr bilden",
-                  desc: "Dein Steuerberater trägt in der Anlage EÜR oder Bilanz den IAB ein. Bei 80.000 € geplantem Kaufpreis sind das bis zu 40.000 € IAB – was bei 42 % Steuersatz ca. 16.800 € Soforterstattung ergibt.",
+                  desc: "Dein Steuerberater trägt in der Anlage EÜR oder Bilanz den IAB ein. Beim Escape 660 On-Grid (74.700 € netto) sind das bis zu 37.350 € IAB – was bei 42 % Steuersatz die Steuer rechnerisch um ca. 15.700 € senkt.",
                   tip: "Frist: Die Steuererklärung muss eingereicht werden, bevor der Steuerbescheid bestandskräftig wird",
                 },
                 {
@@ -375,7 +375,7 @@ export default function TinyHouseSteuernSparenPage() {
               {[
                 { gruppe: "Selbstständige & Freiberufler", desc: "Hohe Gewinne, schwankende Einnahmen – der IAB gleicht Spitzenjahre aus und spart genau dann, wenn der Grenzsteuersatz am höchsten ist." },
                 { gruppe: "GmbH-Gesellschafter & Unternehmer", desc: "Im Betriebsvermögen abgeschrieben reduziert das Tiny House den Körperschaftsteuer- und Gewerbesteueraufwand zusätzlich." },
-                { gruppe: "Gut verdienende Angestellte", desc: "Ab 35 % Grenzsteuersatz (ab ca. 62.000 € zvE für Ledige) ist der Steuereffekt relevant – auch ohne eigenes Gewerbe über Vermietungseinkünfte." },
+                { gruppe: "Gut verdienende Angestellte", desc: "Ab 35 % Grenzsteuersatz (ab ca. 62.000 € zvE für Ledige) ist der Steuereffekt relevant – für IAB und Sonder-AfA ist allerdings ein Betrieb (z. B. ein angemeldetes Gewerbe) nötig; das klärt der Steuerberater." },
                 { gruppe: "Portfolioinvestoren", desc: "Wer mehrere Tiny Houses kauft, kann IAB und AfA gestaffelt einsetzen und so jedes Jahr Steuerersparnisse erzielen." },
               ].map((item) => (
                 <div key={item.gruppe} className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
