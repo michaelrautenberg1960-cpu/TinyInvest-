@@ -7,7 +7,7 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Abschreibung Tiny House 2026: AfA, IAB & Sonder-AfA mit Rechenbeispiel | TinyInvest",
+  title: "Tiny House Abschreibung 2026: AfA & Sonder-AfA | TinyInvest",
   description: "Tiny House abschreiben: 8 statt 50 Jahre, bis zu 70 % im Kaufjahr. Beispiel 74.700 € → rund 26.700 € Steuereffekt. IAB, Sonder-AfA & degressive AfA erklärt.",
   keywords: "abschreibung tiny house, tiny house abschreibung, tiny house abschreiben, tiny house steuern sparen, tiny house steuervorteile 2026, investitionsabzugsbetrag tiny house, tiny house kapitalanlage steuer",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],

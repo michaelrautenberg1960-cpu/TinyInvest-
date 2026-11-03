@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { BASE_OG } from "@/app/lib/og";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
@@ -41,51 +40,9 @@ export const dynamic = "force-static";
 // Static hero background — no DB lookup needed
 const HERO_IMAGE = "/images/outside/tiny-house-escape-hero.webp";
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "TinyInvest",
-  "url": "https://tinyhouse.investments",
-  "logo": "https://tinyhouse.investments/logo1.png",
-  "description": "Tiny House §7g-Kapitalanlage ab 65.000 €. Sachwert-Investment mit bis zu 70 % Steuerabschreibung im Kaufjahr, Betrieb aus einer Hand über unser Partner-Netzwerk.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Marie-Curie-Straße 1",
-    "addressLocality": "Hanau",
-    "postalCode": "63457",
-    "addressCountry": "DE",
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+49-69-4321-8700",
-    "contactType": "customer service",
-    "email": "info@tinyhouse.investments",
-    "availableLanguage": "German",
-  },
-  "sameAs": [],
-};
-
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "TinyInvest",
-  "url": "https://tinyhouse.investments",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://tinyhouse.investments/marktplatz?q={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
-  },
-};
-
 export default function Home() {
   return (
     <main className="font-sans antialiased text-gray-800 bg-white">
-      <Script id="org-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      <Script id="website-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <Navbar />
       <Hero heroImage={HERO_IMAGE} />
       <TrustBar />

@@ -17,10 +17,10 @@ export default function Vertriebspartner() {
           <span className="text-green-700 font-semibold text-sm uppercase tracking-widest">
             Vertriebspartner werden
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-5">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-5">
             Verdiene mit TinyInvest –{" "}
             <span className="text-green-700">auch als Quereinsteiger</span>
-          </h2>
+          </h1>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
             Werden Sie Experte für nachhaltige Sachwerte und bauen Sie sich ein passives Einkommen auf –
             mit einem Produkt, das sich dank IAB &amp; Sonder-AfA quasi selbst erklärt.

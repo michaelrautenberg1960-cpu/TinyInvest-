@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://tinyhouse.investments"),
   title: "TinyInvest – Tiny House Investment Plattform",
   description:
-    "Tiny House kaufen und vermieten. Steueroptimierte Direktkäufe ab 65.000 €. §7g EStG · Betrieb auf Wunsch über lokale Partner.",
+    "Tiny House kaufen und vermieten. Steueroptimierte Direktkäufe ab 74.700 € netto. §7g EStG · Betrieb auf Wunsch über lokale Partner.",
   icons: {
     icon: "/favicon1.png",
     shortcut: "/favicon1.png",
@@ -25,12 +25,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TinyInvest – Tiny House Investment Plattform",
     description:
-      "Tiny House kaufen und vermieten. Steueroptimierte Direktkäufe ab 65.000 €. §7g EStG · Betrieb auf Wunsch über lokale Partner.",
+      "Tiny House kaufen und vermieten. Steueroptimierte Direktkäufe ab 74.700 € netto. §7g EStG · Betrieb auf Wunsch über lokale Partner.",
     url: "https://tinyhouse.investments",
     siteName: "TinyInvest",
     images: [
       {
-        url: "https://tinyhouse.investments/images/Gemini_Generated_Image_e2327ae2327ae232.png",
+        url: "https://tinyhouse.investments/images/og-tinyinvest.jpg",
         width: 1200,
         height: 630,
         alt: "TinyInvest – Tiny House Investment Plattform",
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TinyInvest – Mobile Asset Investment",
     description:
-      "Tiny House kaufen und vermieten. Steueroptimierte Direktkäufe ab 65.000 €. §7g EStG · Betrieb auf Wunsch über lokale Partner.",
+      "Tiny House kaufen und vermieten. Steueroptimierte Direktkäufe ab 74.700 € netto. §7g EStG · Betrieb auf Wunsch über lokale Partner.",
     images: [
-      "https://tinyhouse.investments/images/Gemini_Generated_Image_e2327ae2327ae232.png",
+      "https://tinyhouse.investments/images/og-tinyinvest.jpg",
     ],
   },
 };
@@ -60,11 +60,6 @@ export default function RootLayout({
     "@type": "WebSite",
     "name": "TinyInvest",
     "url": "https://tinyhouse.investments",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://tinyhouse.investments/wissen?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
   };
 
   const organizationSchema = {
@@ -73,10 +68,14 @@ export default function RootLayout({
     "name": "TinyInvest",
     "url": "https://tinyhouse.investments",
     "logo": "https://tinyhouse.investments/logo1.png",
+    "legalName": "Rautenberg Professional Solutions GmbH",
+    "email": "info@tinyhouse.investments",
     "description": "Tiny House Investments mit §7g Steueroptimierung – bewegliche Wirtschaftsgüter als Kapitalanlage",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Hanau",
+      "streetAddress": "Baslerstraße 3",
+      "addressLocality": "Bad Homburg v.d.Höhe",
+      "postalCode": "61325",
       "addressCountry": "DE",
     },
   };

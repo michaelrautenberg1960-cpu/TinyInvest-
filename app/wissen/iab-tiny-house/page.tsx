@@ -18,7 +18,7 @@ import {
 } from "@/app/lib/iab-facts";
 
 export const metadata = {
-  title: "IAB Tiny House: Investitionsabzugsbetrag §7g EStG – Voraussetzungen, Zahlen & Beispiel | TinyInvest",
+  title: "IAB Tiny House: §7g Investitionsabzugsbetrag 2026 | TinyInvest",
   description:
     "IAB Tiny House nach §7g EStG: bis zu 50 % des Kaufpreises bis zu 3 Jahre vor dem Kauf abziehen. Gewinngrenze, Fristen, Sonder-AfA, degressive AfA & Rechenbeispiel – Stand 2026.",
   keywords:

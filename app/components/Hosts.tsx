@@ -72,11 +72,11 @@ export default function Hosts() {
           <span className="text-amber-600 font-semibold text-sm uppercase tracking-widest">
             Für Hosts & Grundstückseigentümer
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-5">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-5">
             Dein Grundstück.{" "}
             <span className="text-amber-600">Unser Tiny House.</span>{" "}
             Gemeinsam verdienen.
-          </h2>
+          </h1>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
             Du hast ein Grundstück, einen freien Stellplatz oder ein Stück Land?
             Wir bringen das Tiny House – vollfinanziert vom Investor. Du verdienst bis zu 45 % der Mieteinnahmen,

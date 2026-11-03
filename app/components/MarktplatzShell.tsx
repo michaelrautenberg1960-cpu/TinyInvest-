@@ -45,9 +45,9 @@ function MarktplatzShellInner({ listings, mapListings }: Props) {
           <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">
             Investment-Projekte
           </p>
-          <h2 className="text-2xl font-black text-gray-900 tracking-tight">
-            Wählen Sie Ihr Projekt
-          </h2>
+          <h1 className="text-2xl font-black text-gray-900 tracking-tight">
+            Tiny House Investments kaufen: Wählen Sie Ihr Projekt
+          </h1>
           <p className="text-gray-500 text-sm mt-1">
             Alle Projekte werden mit geringem Aufwand über lokale Partner durch lokale Partner bewirtschaftet – Sie investieren, wir machen den Rest.
           </p>

@@ -24,10 +24,40 @@ export const metadata = {
   },
 };
 
+const pageSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Tiny House §7g Steuervorteile: IAB, Sonder-AfA & degressive AfA erklärt",
+    "description": "IAB, Sonder-AfA und degressive AfA für Tiny Houses als bewegliche Wirtschaftsgüter – allgemein erklärt mit Rechenbeispiel.",
+    "url": "https://tinyhouse.investments/steuervorteil",
+    "inLanguage": "de-DE",
+    "dateModified": "2026-11-03",
+    "author": { "@type": "Organization", "name": "TinyInvest", "url": "https://tinyhouse.investments" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TinyInvest",
+      "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" },
+    },
+    "image": "https://tinyhouse.investments/images/og-tinyinvest.jpg",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tinyhouse.investments" },
+      { "@type": "ListItem", "position": 2, "name": "§7g Steuervorteil", "item": "https://tinyhouse.investments/steuervorteil" },
+    ],
+  },
+];
+
 export default function SteuerVorteilPage() {
   return (
     <main className="bg-white min-h-screen">
       <Navbar variant="sub" />
+      {pageSchemas.map((schema, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      ))}
 
       <SubPageHeader
         badge="§7g EStG · Steuer-Analyse 2026"
