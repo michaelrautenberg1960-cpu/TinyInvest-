@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import ModalButton from "./ModalButton";
+import { useTrackOnce } from "@/app/lib/track";
 
 const MODELLE = [
   { label: "On-Grid", preis: 74700 },
@@ -34,10 +36,14 @@ export default function RenditeRechner() {
   const rendite = (investorAnteil / effektivesKapital) * 100;
 
   const fmt = (n: number) => Math.round(n).toLocaleString("de-DE");
-
+  const trackUse = useTrackOnce("calculator_use", { calculator: "rendite" });
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 max-w-3xl mx-auto">
+    <div
+      className="bg-white rounded-3xl shadow-xl p-8 md:p-12 max-w-3xl mx-auto"
+      onChangeCapture={trackUse}
+      onClickCapture={trackUse}
+    >
 
       {/* Schieberegler */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -165,6 +171,13 @@ export default function RenditeRechner() {
         <strong className="text-gray-500">Unverbindliche Beispielrechnung · keine Garantie · keine Steuerberatung</strong><br />
         * Stellplatzpacht ({fmt(PACHT_JAHR)} €/Jahr) wird vor der Aufteilung abgezogen. Steuereffekt: IAB (50 %) im Vorjahr, Sonder-AfA (40 %) und degressive AfA (30 %) auf die um den IAB geminderte Basis im Kaufjahr, bei {steuersatz} % Grenzsteuersatz. Ein großer Teil davon ist eine Steuerstundung. Ohne Versicherung und Steuern auf die Einnahmen. Stand: § 7g EStG, § 7 Abs. 2 EStG (2026).
       </p>
+
+      <div className="mt-6 text-center">
+        <ModalButton className="inline-flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white font-bold px-7 py-3.5 rounded-full text-sm transition-all shadow-md">
+          Produktunterlagen &amp; Angebot anfordern →
+        </ModalButton>
+        <p className="text-xs text-gray-400 mt-2">Kostenlos · unverbindlich · per E-Mail</p>
+      </div>
     </div>
   );
 }

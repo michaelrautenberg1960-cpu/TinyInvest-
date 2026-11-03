@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
+import { track } from "@/app/lib/track";
 
 interface ModalContextType {
   isOpen: boolean;
@@ -18,6 +19,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
 
   const openModal  = useCallback(() => {
     setIsOpen(true);
+    track("modal_open");
     document.body.style.overflow = "hidden";
   }, []);
 

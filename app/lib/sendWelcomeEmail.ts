@@ -146,6 +146,39 @@ export async function sendWelcomeEmail(
   return true;
 }
 
+// Konfigurator: Angebot mit der gewählten Konfiguration plus Erstinformation per Mail
+export async function sendKonfiguratorOfferEmail(
+  vorname: string,
+  email: string,
+  variant: Variant,
+  config: { units: number; extraIds: string[]; address?: string; salesAgent?: string }
+): Promise<boolean> {
+  if (CLIENT_EMAILS_PAUSED) return false;
+
+  const attachments = WELCOME_ATTACHMENTS.map(({ filename, file }) => ({
+    filename,
+    content: fs.readFileSync(path.join(process.cwd(), file)),
+  }));
+  attachments.push(await buildOfferPdf(variant, vorname, config));
+
+  await resend.emails.send({
+    from: "Michael Rautenberg <info@tinyhouse.investments>",
+    to: email,
+    subject: "Ihr TinyInvest-Angebot aus dem Konfigurator",
+    html: buildEmailHtml(
+      vorname,
+      `
+              <p ${P}>vielen Dank für Ihre Konfiguration!</p>
+              <p ${P}>Anbei finden Sie Ihr Angebot für das Escape 660 (${OFFER_TEXT[variant]} je Einheit, ${config.units} ${config.units === 1 ? "Einheit" : "Einheiten"}) sowie unsere Erstinformation.</p>
+              <p ${P}>Eine Finanzierung über unsere Partnerbank, die EthikBank eG, ist ebenfalls möglich. Sprechen Sie mich gerne darauf an.</p>
+              <p ${P}><strong>Haben Sie Fragen zum Angebot oder zum Liefertermin? Antworten Sie einfach auf diese Mail.</strong></p>
+      `
+    ),
+    attachments,
+  });
+  return true;
+}
+
 export async function sendHostWelcomeEmail(vorname: string, email: string): Promise<boolean> {
   if (CLIENT_EMAILS_PAUSED) return false;
 

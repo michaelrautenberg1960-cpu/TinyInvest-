@@ -51,6 +51,8 @@ export default function Footer() {
               <li><Link href="/konfigurator" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Konfigurator</Link></li>
               <li><Link href="/renditemodell" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Renditemodell</Link></li>
               <li><Link href="/steuervorteil" className="text-gray-400 hover:text-green-400 text-sm transition-colors">§7g Steuervorteil</Link></li>
+              <li><Link href="/rechner/iab" className="text-gray-400 hover:text-green-400 text-sm transition-colors">IAB-Rechner</Link></li>
+              <li><Link href="/rechner/rendite" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Rendite-Rechner</Link></li>
               <li><Link href="/so-funktioniert-es" className="text-gray-400 hover:text-green-400 text-sm transition-colors">So funktioniert es</Link></li>
               <li><Link href="/galerie" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Galerie</Link></li>
               <li><Link href="/wissen/senioren" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Für Senioren</Link></li>

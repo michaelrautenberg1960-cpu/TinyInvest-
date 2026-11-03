@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ModalButton from "../components/ModalButton";
+import ExitIntent from "../components/ExitIntent";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -1047,6 +1048,7 @@ export default function TinyHouseKapitalanlagePage() {
       </section>
 
       <Footer />
+      <ExitIntent />
     </main>
   );
 }

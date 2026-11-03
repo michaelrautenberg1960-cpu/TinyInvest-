@@ -23,6 +23,8 @@ const NAV_GROUPS = [
     items: [
       { label: "§7g Steuervorteile", href: "/steuervorteil", desc: "IAB, Sonder-AfA und degressive AfA" },
       { label: "Renditemodell", href: "/renditemodell", desc: "Auszahlung & Rendite transparent erklärt" },
+      { label: "IAB-Rechner", href: "/rechner/iab", desc: "§7g-Steuereffekt in 30 Sekunden schätzen" },
+      { label: "Rendite-Rechner", href: "/rechner/rendite", desc: "Monatliche Auszahlung & Rendite berechnen" },
     ],
   },
   {

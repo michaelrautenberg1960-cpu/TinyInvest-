@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import ModalButton from "./ModalButton";
+import { useTrackOnce } from "@/app/lib/track";
 
 export default function SteuerRechner() {
   const [kaufpreis, setKaufpreis] = useState(79000);
@@ -34,9 +36,14 @@ export default function SteuerRechner() {
   const effektiverPreis = kaufpreis - gesamtSteuer;
 
   const fmt = (n: number) => Math.round(n).toLocaleString("de-DE");
+  const trackUse = useTrackOnce("calculator_use", { calculator: "iab" });
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl p-8 md:p-10 max-w-3xl mx-auto">
+    <div
+      className="bg-white rounded-3xl shadow-xl p-8 md:p-10 max-w-3xl mx-auto"
+      onChangeCapture={trackUse}
+      onClickCapture={trackUse}
+    >
       {/* Slider */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div>
@@ -160,6 +167,13 @@ export default function SteuerRechner() {
         <strong className="text-gray-500">Unverbindliche Schätzung · ersetzt keine steuerliche Beratung · Steuerberater konsultieren</strong><br />
         * Stand 2026: § 7g EStG (IAB + Sonder-AfA 40 %) und § 7 Abs. 2 EStG (degressive AfA 30 %, ab 01.07.2025 gültig). Sonder-AfA und degressive AfA sind im Kaufjahr kombinierbar.
       </p>
+
+      <div className="mt-6 text-center">
+        <ModalButton className="inline-flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white font-bold px-7 py-3.5 rounded-full text-sm transition-all shadow-md">
+          Produktunterlagen &amp; Angebot anfordern →
+        </ModalButton>
+        <p className="text-xs text-gray-400 mt-2">Kostenlos · unverbindlich · per E-Mail</p>
+      </div>
     </div>
   );
 }

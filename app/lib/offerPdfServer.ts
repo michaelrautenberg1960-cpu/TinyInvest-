@@ -12,8 +12,13 @@ const serverLoadImage: ImageLoader = async (src, mime) => {
   return { base64, ratio: width / height };
 };
 
-// Persönliches Angebot (1 Einheit, ohne Extras) für die Erstmail
-export async function buildOfferPdf(variant: Variant, name: string) {
+// Persönliches Angebot für die Erstmail (Standard: 1 Einheit, ohne Extras)
+// bzw. mit der Auswahl aus dem Konfigurator
+export async function buildOfferPdf(
+  variant: Variant,
+  name: string,
+  config: { units?: number; extraIds?: string[]; address?: string; salesAgent?: string } = {}
+) {
   const date = new Date().toLocaleDateString("de-DE", {
     day: "2-digit",
     month: "2-digit",
@@ -24,9 +29,9 @@ export async function buildOfferPdf(variant: Variant, name: string) {
   const doc = await buildOfferDoc(
     {
       variant,
-      units: 1,
-      extraIds: [],
-      clientInfo: { name, address: "", salesAgent: "", date },
+      units: config.units ?? 1,
+      extraIds: config.extraIds ?? [],
+      clientInfo: { name, address: config.address ?? "", salesAgent: config.salesAgent ?? "", date },
     },
     serverLoadImage
   );

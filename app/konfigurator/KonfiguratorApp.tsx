@@ -24,6 +24,8 @@ const EUR = (n: number) =>
     maximumFractionDigits: 0,
   }).format(n);
 
+const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+
 const today = () => {
   const d = new Date();
   return `${String(d.getDate()).padStart(2, "0")}.${String(d.getMonth() + 1).padStart(2, "0")}.${d.getFullYear()}`;
@@ -32,6 +34,7 @@ const today = () => {
 // ─── Types ─────────────────────────────────────────────────────────────────
 interface ClientInfo {
   name: string;
+  email: string;
   address: string;
   salesAgent: string;
   date: string;
@@ -432,6 +435,27 @@ function Step2({
         </div>
 
         <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">
+            E-Mail-Adresse *
+          </label>
+          <input
+            type="email"
+            value={clientInfo.email}
+            onChange={(e) => update("email", e.target.value)}
+            placeholder="name@beispiel.de"
+            autoComplete="email"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
+          <p className="text-xs text-gray-400 mt-1">
+            Sie erhalten das Angebot zusätzlich per E-Mail. Hinweise zur Verarbeitung Ihrer Daten in der{" "}
+            <a href="/datenschutz" target="_blank" className="underline hover:text-gray-600">
+              Datenschutzerklärung
+            </a>
+            .
+          </p>
+        </div>
+
+        <div>
           <label className="block text-sm font-semibold text-gray-700 mb-1">Adresse</label>
           <textarea
             value={clientInfo.address}
@@ -476,7 +500,7 @@ function Step2({
         </button>
         <button
           onClick={onNext}
-          disabled={!clientInfo.name.trim()}
+          disabled={!clientInfo.name.trim() || !isValidEmail(clientInfo.email)}
           className="px-8 py-3 bg-green-700 text-white rounded-full font-semibold hover:bg-green-800 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
         >
           Weiter → Zusammenfassung
@@ -510,6 +534,22 @@ function Step3({
     try {
       await generatePDF({ variant, units, extraIds, clientInfo });
       setDone(true);
+      // Lead nur einmal pro Konfiguration melden; ein Fehler darf den Download nicht stören
+      if (!done) {
+        fetch("/api/konfigurator-lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ variant, units, extraIds, ...clientInfo }),
+        }).catch((err) => console.error("Konfigurator lead error:", err));
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).gtag?.("event", "generate_lead", {
+          form_type: "konfigurator_pdf",
+          variant,
+          units,
+          value: calc.totalNet,
+          currency: "EUR",
+        });
+      }
     } catch (err) {
       console.error("PDF error:", err);
       alert("Fehler beim PDF-Export. Bitte erneut versuchen.");
@@ -644,6 +684,7 @@ export default function KonfiguratorApp() {
   const [extraIds, setExtraIds] = useState<string[]>([]);
   const [clientInfo, setClientInfo] = useState<ClientInfo>({
     name: "",
+    email: "",
     address: "",
     salesAgent: "",
     date: today(),

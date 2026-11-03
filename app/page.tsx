@@ -94,6 +94,23 @@ export default function Home() {
       {/* Internal pillar links — helps Google discover key product pages from the homepage */}
       <section className="py-8 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-4">Jetzt durchrechnen</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+            {[
+              { href: "/rechner/iab", title: "IAB-Rechner", desc: "§7g-Steuereffekt für dein Tiny House schätzen" },
+              { href: "/rechner/rendite", title: "Rendite-Rechner", desc: "Monatliche Auszahlung & Rendite berechnen" },
+              { href: "/konfigurator", title: "Konfigurator", desc: "Komplettpaket wählen & Angebot als PDF" },
+            ].map((t) => (
+              <Link
+                key={t.href}
+                href={t.href}
+                className="group border border-green-200 bg-green-50 hover:bg-green-100 hover:border-green-300 rounded-2xl px-5 py-4 transition-all"
+              >
+                <p className="font-bold text-green-800 text-sm">{t.title} →</p>
+                <p className="text-xs text-gray-500 mt-1">{t.desc}</p>
+              </Link>
+            ))}
+          </div>
           <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-4">Mehr erfahren</p>
           <div className="flex flex-wrap gap-3">
             <Link href="/tiny-house-als-kapitalanlage" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all bg-white">

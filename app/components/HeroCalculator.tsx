@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useModal } from "./ModalContext";
+import { useTrackOnce } from "@/app/lib/track";
 
 const steuersatzOptions = [
   { label: "32 %", value: 0.32 },
@@ -33,9 +34,14 @@ export default function HeroCalculator() {
 
   const steuersatz = steuersatzOptions[steuersatzIdx].value;
   const { iab, sonderAfa, total } = calcResults(kaufpreis, steuersatz);
+  const trackUse = useTrackOnce("calculator_use", { calculator: "hero" });
 
   return (
-    <div className="bg-white rounded-3xl shadow-2xl p-5 w-full lg:max-w-sm lg:mt-10">
+    <div
+      className="bg-white rounded-3xl shadow-2xl p-5 w-full lg:max-w-sm lg:mt-10"
+      onChangeCapture={trackUse}
+      onClickCapture={trackUse}
+    >
 
       <div className="flex items-center justify-between mb-3">
         <div>
