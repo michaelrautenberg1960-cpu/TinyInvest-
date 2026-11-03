@@ -35,6 +35,15 @@ const featured = {
 
 const articles = [
   {
+    href: "/wissen/iab-2026-jahresende",
+    badge: "Neu · Jahresende",
+    badgeColor: "bg-red-100 text-red-700",
+    title: "IAB 2026 noch nutzen: Was bis zum Jahresende zählt",
+    desc: "Warum der IAB erst in der Steuererklärung gebildet wird, wann ein Tiny House als angeschafft gilt und was bis 31.12. wichtig ist – mit Checkliste.",
+    tags: ["IAB 2026", "§7g", "Fristen", "Checkliste"],
+    img: "/images/outside/tiny-house-winter-ganzjahresbetrieb.webp",
+  },
+  {
     href: "/wissen/afa-abschreibung",
     badge: "Steuer-Deep-Dive",
     badgeColor: "bg-amber-100 text-amber-700",

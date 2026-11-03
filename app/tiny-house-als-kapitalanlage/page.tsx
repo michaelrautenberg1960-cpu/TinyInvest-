@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Tiny House als Kapitalanlage & Investment 2026: Rendite & IAB | TinyInvest",
+  title: "Tiny House als Kapitalanlage 2026: Rendite, Kosten & IAB | TinyInvest",
   description:
     "Tiny House als Investment ab 74.700 €: ~793 €/Monat Beispiel-Auszahlung, ~12,7 % vor Steuern, §7g-Steuereffekt ~26.700 €. Kosten, Risiken & Rechenbeispiel.",
   keywords:
@@ -98,7 +98,7 @@ export default function TinyHouseKapitalanlagePage() {
     author: { "@type": "Person", name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     publisher: { "@type": "Organization", name: "TinyInvest", logo: { "@type": "ImageObject", url: "https://tinyhouse.investments/logo1.png" } },
     datePublished: "2026-04-13",
-    dateModified: "2026-10-06",
+    dateModified: "2026-11-03",
     image: { "@type": "ImageObject", url: "https://tinyhouse.investments/images/outside/tiny-house-investor-aussen.webp" },
   };
 
@@ -140,7 +140,7 @@ export default function TinyHouseKapitalanlagePage() {
               <span>·</span>
               <span>TinyInvest Redaktion</span>
               <span>·</span>
-              <time dateTime="2026-10-06">Aktualisiert am 6. Oktober 2026</time>
+              <time dateTime="2026-11-03">Aktualisiert am 3. November 2026</time>
             </div>
           </div>
 
@@ -211,6 +211,29 @@ export default function TinyHouseKapitalanlagePage() {
             </ul>
           </div>
 
+          <nav aria-label="Inhaltsverzeichnis" className="mt-8 border border-gray-200 rounded-2xl p-6 sm:p-8">
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Inhalt</p>
+            <ol className="list-decimal pl-5 space-y-1.5 text-[14px]">
+              {[
+                ["kosten", "Was kostet ein Tiny House als Kapitalanlage?"],
+                ["laufende-kosten", "Laufende Kosten: Was nach dem Kauf anfällt"],
+                ["rendite", "Welche Rendite bringt ein Tiny House?"],
+                ["5-jahres-rechnung", "5-Jahres-Rechnung: Was nach fünf Jahren übrig bleibt"],
+                ["steuervorteile", "Steuervorteile: IAB, Sonder-AfA & Abschreibung"],
+                ["fuer-wen", "Für wen lohnt sich ein Tiny House als Kapitalanlage?"],
+                ["vs-eigentumswohnung", "Tiny House vs. Eigentumswohnung als Kapitalanlage"],
+                ["betreibermodell", "Wie funktioniert das Betreibermodell?"],
+                ["risiken", "Welche Risiken gibt es?"],
+                ["fazit", "Lohnt sich ein Tiny House als Kapitalanlage 2026?"],
+                ["faq", "FAQ: Tiny House als Kapitalanlage"],
+              ].map(([id, label]) => (
+                <li key={id}>
+                  <a href={`#${id}`} className="text-green-700 hover:text-green-800 hover:underline">{label}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+
           <h2 className="text-2xl font-black text-gray-900 mt-12 mb-4 tracking-tight">Was bedeutet „Tiny House als Kapitalanlage“?</h2>
           <div className="space-y-4 text-gray-700 text-[15px] leading-relaxed">
             <p>
@@ -233,7 +256,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-16 bg-gray-50 border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Preise 2026</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-3 tracking-tight">
+          <h2 id="kosten" className="text-2xl font-black text-gray-900 mt-2 mb-3 tracking-tight scroll-mt-24">
             Was kostet ein Tiny House als Kapitalanlage?
           </h2>
           <p className="text-gray-500 text-sm mb-8 max-w-2xl">
@@ -308,7 +331,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Kostentransparenz</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-3 tracking-tight">
+          <h2 id="laufende-kosten" className="text-2xl font-black text-gray-900 mt-2 mb-3 tracking-tight scroll-mt-24">
             Laufende Kosten: Was nach dem Kauf anfällt
           </h2>
           <p className="text-gray-500 text-sm mb-8 max-w-2xl">
@@ -369,7 +392,7 @@ export default function TinyHouseKapitalanlagePage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <span className="text-green-400 font-semibold text-xs uppercase tracking-widest">Rechenbeispiel</span>
-            <h2 className="text-2xl font-black text-white mt-2 tracking-tight">
+            <h2 id="rendite" className="text-2xl font-black text-white mt-2 tracking-tight scroll-mt-24">
               Welche Rendite bringt ein Tiny House?
             </h2>
             <p className="text-gray-400 text-sm mt-2">Escape 660 On-Grid · 74.700 € netto · 60 % Belegung · ~120 €/Nacht</p>
@@ -479,7 +502,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-16 bg-gray-50 border-b border-gray-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Langfristig gerechnet</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-3 tracking-tight">
+          <h2 id="5-jahres-rechnung" className="text-2xl font-black text-gray-900 mt-2 mb-3 tracking-tight scroll-mt-24">
             5-Jahres-Rechnung: Was nach fünf Jahren übrig bleibt
           </h2>
           <p className="text-gray-500 text-sm mb-8">
@@ -517,7 +540,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-14 bg-gray-50 border-b border-gray-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">§7g EStG</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 tracking-tight">Steuervorteile: IAB, Sonder-AfA &amp; Abschreibung</h2>
+          <h2 id="steuervorteile" className="text-2xl font-black text-gray-900 mt-2 tracking-tight scroll-mt-24">Steuervorteile: IAB, Sonder-AfA &amp; Abschreibung</h2>
           <p className="text-gray-700 text-base leading-relaxed">
             Nicht jedes Investment passt zu jedem Investor. Ein Tiny House als Kapitalanlage ist besonders attraktiv für Steuerpflichtige, die aktiv Steuern optimieren wollen — Freiberufler, Selbstständige und GmbH-Inhaber, die den <strong className="text-gray-900">Investitionsabzugsbetrag (IAB)</strong> nutzen können, profitieren von bis zu 50 % Vorzieheffekt bereits im Jahr vor dem Kauf. Angestellte können über ein Nebengewerbe dieselben Instrumente nutzen.
           </p>
@@ -580,7 +603,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Investor-Profile</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-3 tracking-tight">
+          <h2 id="fuer-wen" className="text-2xl font-black text-gray-900 mt-2 mb-3 tracking-tight scroll-mt-24">
             Für wen lohnt sich ein Tiny House als Kapitalanlage?
           </h2>
           <p className="text-gray-500 text-sm mb-8 max-w-2xl">
@@ -666,7 +689,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-16 bg-gray-50 border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Die Mathematik</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-8 tracking-tight">
+          <h2 id="vs-eigentumswohnung" className="text-2xl font-black text-gray-900 mt-2 mb-8 tracking-tight scroll-mt-24">
             Tiny House vs. Eigentumswohnung als Kapitalanlage
           </h2>
 
@@ -793,7 +816,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-16 bg-gray-50 border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">So funktioniert's</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-8 tracking-tight">
+          <h2 id="betreibermodell" className="text-2xl font-black text-gray-900 mt-2 mb-8 tracking-tight scroll-mt-24">
             Wie funktioniert das Betreibermodell?
           </h2>
 
@@ -924,7 +947,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-16 bg-gray-50 border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Transparenz</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-6 tracking-tight">
+          <h2 id="risiken" className="text-2xl font-black text-gray-900 mt-2 mb-6 tracking-tight scroll-mt-24">
             Welche Risiken gibt es?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -977,7 +1000,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Fazit</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-6 tracking-tight">
+          <h2 id="fazit" className="text-2xl font-black text-gray-900 mt-2 mb-6 tracking-tight scroll-mt-24">
             Lohnt sich ein Tiny House als Kapitalanlage 2026?
           </h2>
           <div className="space-y-4 text-gray-700 text-[15px] leading-relaxed">
@@ -998,7 +1021,7 @@ export default function TinyHouseKapitalanlagePage() {
       <section className="py-16 bg-gray-50 border-b border-gray-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Häufige Fragen</span>
-          <h2 className="text-2xl font-black text-gray-900 mt-2 mb-6 tracking-tight">FAQ: Tiny House als Kapitalanlage</h2>
+          <h2 id="faq" className="text-2xl font-black text-gray-900 mt-2 mb-6 tracking-tight scroll-mt-24">FAQ: Tiny House als Kapitalanlage</h2>
           <div className="space-y-3">
             {faqItems.map((item, i) => (
               <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6">

@@ -293,6 +293,33 @@ export default function IabTinyHousePage() {
             </div>
 
             <div>
+              <h2 id="iab-faehig" className="text-2xl font-black text-gray-900 mb-4 tracking-tight scroll-mt-24">Ist ein Tiny House IAB-fähig? Die Voraussetzungen</h2>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                Ein Tiny House ist nicht automatisch IAB-fähig. Entscheidend ist, ob es steuerlich als bewegliches Wirtschaftsgut
+                zu einem Betrieb gehört. Nach § 7g EStG müssen diese Punkte zusammenkommen:
+              </p>
+              <ul className="space-y-2.5 mb-4">
+                {[
+                  ["Bewegliches Wirtschaftsgut", "Das Haus steht auf einem zugelassenen Trailer und ist nicht fest mit dem Boden verbunden (kein Fundament, kein Gebäude)."],
+                  ["Betrieb mit Gewinneinkünften", "Der Käufer erzielt Einkünfte aus Gewerbebetrieb, selbstständiger Arbeit oder Land- und Forstwirtschaft, z. B. über eine gewerbliche Ferienvermietung. Private Vermietung nach § 21 EStG reicht nicht."],
+                  ["Gewinngrenze", "Der Gewinn im Jahr der IAB-Bildung liegt bei höchstens 200.000 € (ohne IAB gerechnet)."],
+                  ["90 % betriebliche Nutzung", "Im Anschaffungs- und im Folgejahr wird das Haus zu mindestens 90 % betrieblich genutzt bzw. vermietet, in einer inländischen Betriebsstätte."],
+                  ["Investitionsfrist", "Die Anschaffung erfolgt bis zum Ende des dritten Wirtschaftsjahres nach der IAB-Bildung, sonst wird der Abzug rückwirkend aufgehoben."],
+                ].map(([k, v]) => (
+                  <li key={k} className="flex items-start gap-2 text-[15px] text-gray-700 leading-relaxed">
+                    <span className="text-green-600 font-bold shrink-0 mt-0.5">✓</span>
+                    <span><strong className="text-gray-900">{k}:</strong> {v}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Diese Übersicht ist eine allgemeine Information und keine Steuerberatung. Ob die Voraussetzungen in deinem Fall
+                erfüllt sind, prüft dein Steuerberater. Was zum Jahresende zu beachten ist, steht in{" "}
+                <Link href="/wissen/iab-2026-jahresende" className="text-green-700 font-semibold underline underline-offset-2">IAB 2026 noch nutzen</Link>.
+              </p>
+            </div>
+
+            <div>
               <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">Funktionsweise: Steuerentlastung, bevor das Haus geliefert ist</h2>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
                 Das Besondere am Investitionsabzugsbetrag ist der zeitliche Vorwegeffekt. Investoren müssen nicht warten, bis das Tiny House fertiggestellt oder geliefert ist, um von den steuerlichen Vorteilen zu profitieren. Der IAB erlaubt es, bis zu 50 Prozent der voraussichtlichen Anschaffungs- und Herstellungskosten bereits in der Steuererklärung eines der drei Jahre vor dem Kauf gewinnmindernd geltend zu machen.

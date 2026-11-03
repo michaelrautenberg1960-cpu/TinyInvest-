@@ -7,9 +7,9 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Tiny House als Renditeobjekt: Cashflow 2026 | TinyInvest",
+  title: "Tiny House vermieten: Rendite 2026 mit Rechenbeispiel | TinyInvest",
   description:
-    "Wie funktioniert die Rendite eines Tiny Houses? Mieteinnahmen, Cashflow-Analyse, 40 % Investor-Anteil, Belegungsquote und 5-Jahres-Modell erklärt.",
+    "Tiny House vermieten: Welche Rendite ist realistisch? Rechenbeispiel mit 60 % Belegung, Pacht-Abzug und ~793 €/Monat Auszahlung (~12,7 % vor Steuern).",
   keywords:
     "tiny house rendite, tiny house cashflow, tiny house mieteinnahmen, rendite ferienimmobilien 2026, tiny house investment rendite berechnen",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     ...BASE_OG,
     type: "article",
-    title: "Tiny House als Renditeobjekt – Cashflow & Ertragsmodell 2026",
+    title: "Tiny House vermieten: Rendite 2026 mit Rechenbeispiel",
     description:
       "Umsatz minus Stellplatzpacht, dann 45 % Host, 15 % Plattform, 40 % Investor: So funktioniert das Tiny House Renditemodell – ~12,7 % vor Steuern.",
     url: "https://tinyhouse.investments/wissen/tiny-house-als-rendite",
@@ -61,11 +61,11 @@ export default function TinyHouseAlsRenditePage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Tiny House als Renditeobjekt: Cashflow & Ertragsmodell 2026",
+    "headline": "Tiny House vermieten: Rendite 2026 mit Rechenbeispiel",
     "description": "Wie funktioniert die Rendite eines Tiny Houses? Mieteinnahmen, Cashflow-Analyse, 40 % Investor-Anteil, Belegungsquote und vollständiges 5-Jahres-Modell erklärt.",
     "url": "https://tinyhouse.investments/wissen/tiny-house-als-rendite",
     "datePublished": "2026-04-14",
-    "dateModified": "2026-04-14",
+    "dateModified": "2026-11-03",
     "author": { "@type": "Person", "name": "Noah Stein", "url": "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     "publisher": { "@type": "Organization", "name": "TinyInvest", "logo": { "@type": "ImageObject", "url": "https://tinyhouse.investments/logo1.png" } },
     "image": { "@type": "ImageObject", "url": "https://tinyhouse.investments/images/outside/tiny-house-renditeobjekt-aussen.webp" },
@@ -109,7 +109,7 @@ export default function TinyHouseAlsRenditePage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Cashflow · Ertragsmodell · 2026</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            Tiny House als Renditeobjekt: Cashflow & Ertragsmodell erklärt
+            Tiny House vermieten: Rendite 2026 mit Rechenbeispiel
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -118,11 +118,15 @@ export default function TinyHouseAlsRenditePage() {
               <span>·</span>
               <span>TinyInvest Redaktion</span>
               <span>·</span>
-              <time dateTime="2026-04-15">15. April 2026</time>
+              <time dateTime="2026-11-03">Aktualisiert am 3. November 2026</time>
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
-            Wie entsteht die Rendite bei einem Tiny House Investment? Dieser Guide erklärt das gesamte Ertragsmodell – von der Belegungsquote über die 3-Wege-Aufteilung bis zum vollständigen 5-Jahres-Cashflow.
+            Wie viel Rendite bringt es, ein Tiny House zu vermieten? Im Beispiel (On-Grid, 74.700 € netto, 60 % Belegung, 120 €/Nacht) bleiben nach Abzug der Stellplatzpacht (2.500 €/Jahr) und der Anteile von Host und Plattform rund <strong className="text-gray-700">793 € pro Monat</strong> für dich als Eigentümer – etwa 12,7 % p.a. vor Steuern. Dieser Guide erklärt das gesamte Ertragsmodell, von der Belegungsquote über die 3-Wege-Aufteilung bis zum 5-Jahres-Cashflow.
+          </p>
+          <p className="text-gray-500 text-sm leading-relaxed max-w-2xl mt-3">
+            Eigene Werte durchrechnen:{" "}
+            <Link href="/rechner/rendite" className="text-green-700 font-semibold underline underline-offset-2">Tiny House Rendite-Rechner →</Link>
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">

@@ -82,6 +82,9 @@ export default function Home() {
             <Link href="/wissen/iab-tiny-house" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all bg-white">
               IAB Tiny House →
             </Link>
+            <Link href="/wissen/iab-2026-jahresende" className="border border-red-200 text-red-700 hover:border-red-300 hover:bg-red-50 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all bg-white">
+              Neu: IAB 2026 zum Jahresende →
+            </Link>
           </div>
         </div>
       </section>
