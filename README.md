@@ -232,8 +232,9 @@ Nach dem Versand wird der Lead von `neu` auf `email_gesendet` gesetzt (`markWelc
 `neu` → `email_gesendet` → `kontaktiert` → `wiedervorlage` → `abgeschlossen`, außerdem:
 - `nicht_weiter` (⚪ Geht nicht weiter) – Lead ist ausgestiegen / kein Interesse mehr
 - `abgeben` (🤝 Abgeben) – Lead soll an einen Partner oder Kollegen abgegeben werden
+- `abgegeben` (✅ Abgegeben) – Lead wurde bereits übergeben; eigener Tab „✅ Abgegeben“
 
-`abgeschlossen`, `nicht_weiter` und `abgeben` erscheinen nicht im Follow-up-Board.
+`nicht_weiter`, `abgeben` und `abgegeben` erscheinen nicht im Follow-up-Board. `abgeschlossen` (🔥 Kaufbereit) heißt noch nicht gekauft und bleibt drin.
 
 ### Exposé-PDF pro Projekt
 

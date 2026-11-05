@@ -14,7 +14,7 @@ type Lead = {
   investment_volumen: string | null;
   kontakt_zeit: string | null;
   nachricht: string | null;
-  status: "neu" | "email_gesendet" | "kontaktiert" | "wiedervorlage" | "abgeschlossen" | "nicht_weiter" | "abgeben";
+  status: "neu" | "email_gesendet" | "kontaktiert" | "wiedervorlage" | "abgeschlossen" | "nicht_weiter" | "abgeben" | "abgegeben";
   assigned_to: string | null;
   blocked_on_owner: BlockedOwner | null;
   blocked_on_note: string | null;
@@ -76,6 +76,7 @@ const STATUS_COLORS = {
   abgeschlossen:  "bg-amber-100 text-amber-700 border-amber-200",
   nicht_weiter:   "bg-gray-100 text-gray-600 border-gray-200",
   abgeben:        "bg-pink-100 text-pink-700 border-pink-200",
+  abgegeben:      "bg-teal-100 text-teal-700 border-teal-200",
 };
 const STATUS_LABELS = {
   neu:            "🟢 Neu",
@@ -85,6 +86,7 @@ const STATUS_LABELS = {
   abgeschlossen:  "🔥 Kaufbereit",
   nicht_weiter:   "⚪ Geht nicht weiter",
   abgeben:        "🤝 Abgeben",
+  abgegeben:      "✅ Abgegeben",
 };
 const hasPhone = (l: Lead) => Boolean(l.telefon?.trim());
 const BLOCKED_OWNERS: BlockedOwner[] = ["us", "customer", "none"];
@@ -601,7 +603,7 @@ export default function AdminPage() {
     typeof window !== "undefined" ? (sessionStorage.getItem("admin_pw") ?? "") : ""
   );
   const [authed, setAuthed]     = useState(false);
-  const [tab, setTab]           = useState<"leads" | "followups" | "listings" | "investors" | "settings">("leads");
+  const [tab, setTab]           = useState<"leads" | "followups" | "abgegeben" | "listings" | "investors" | "settings">("leads");
 
   // Leads
   const [leads, setLeads]                   = useState<Lead[]>([]);
@@ -912,6 +914,7 @@ export default function AdminPage() {
     abgeschlossen:  leads.filter((l) => l.status === "abgeschlossen").length,
     nicht_weiter:   leads.filter((l) => l.status === "nicht_weiter").length,
     abgeben:        leads.filter((l) => l.status === "abgeben").length,
+    abgegeben:      leads.filter((l) => l.status === "abgegeben").length,
   };
 
   // ── Leads: CSV-Export (aktuelle Filter; Semikolon + BOM, damit deutsches Excel es direkt öffnet) ──
@@ -955,7 +958,7 @@ export default function AdminPage() {
   // ── Follow-up Board ── (ausgestiegene und abzugebende Leads brauchen kein Nachfassen;
   // „abgeschlossen" heißt noch NICHT gekauft – das sind die heißesten Leads und bleiben drin)
   const followupPool = leads.filter(
-    (l) => !["nicht_weiter", "abgeben"].includes(l.status) && l.blocked_on_owner !== "none"
+    (l) => !["nicht_weiter", "abgeben", "abgegeben"].includes(l.status) && l.blocked_on_owner !== "none"
   );
   const waitingOnUs       = followupPool.filter((l) => l.blocked_on_owner !== "customer").sort(byUrgency);
   const waitingOnCustomer = followupPool.filter((l) => l.blocked_on_owner === "customer").sort(byUrgency);
@@ -1149,10 +1152,11 @@ export default function AdminPage() {
       {/* Tabs */}
       <div className="border-b border-white/10 bg-gray-900/50 px-6">
         <div className="flex gap-1">
-          {(["leads", "followups", "listings", "investors", "settings"] as const).map((t) => (
+          {(["leads", "followups", "abgegeben", "listings", "investors", "settings"] as const).map((t) => (
             <button key={t} onClick={() => setTab(t)} className={`px-5 py-3 text-sm font-semibold border-b-2 transition-all ${tab === t ? "border-green-400 text-green-400" : "border-transparent text-gray-400 hover:text-white"}`}>
               {t === "leads" ? `📋 Leads (${leads.length})`
                 : t === "followups" ? <>⏳ Wiedervorlage {dueCount > 0 && <span className="ml-1 bg-red-600 text-white rounded-full px-2 py-0.5 text-xs">{dueCount}</span>}</>
+                : t === "abgegeben" ? `✅ Abgegeben (${counts.abgegeben})`
                 : t === "listings" ? `🏷️ Projekte (${listings.length})`
                 : t === "investors" ? `👥 Investoren (${investorPending.length})`
                 : "⚙️ Einstellungen"}
@@ -1259,7 +1263,7 @@ export default function AdminPage() {
                         <div className="mb-4">
                           <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Status ändern</p>
                           <div className="flex flex-wrap gap-2">
-                            {(["neu", "email_gesendet", "kontaktiert", "wiedervorlage", "abgeschlossen", "nicht_weiter", "abgeben"] as const).map((s) => (
+                            {(["neu", "email_gesendet", "kontaktiert", "wiedervorlage", "abgeschlossen", "nicht_weiter", "abgeben", "abgegeben"] as const).map((s) => (
                               <button key={s} onClick={() => updateStatus(lead.id, s)} className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all ${lead.status === s ? STATUS_COLORS[s] + " ring-2 ring-offset-1 ring-offset-gray-900 ring-green-400" : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30"}`}>
                                 {STATUS_LABELS[s]}
                               </button>
@@ -1470,6 +1474,53 @@ export default function AdminPage() {
         )}
 
         {/* ════ LISTINGS TAB ════ */}
+        {/* ════ ABGEGEBEN TAB ════ */}
+        {tab === "abgegeben" && (() => {
+          const handedOver = leads
+            .filter((l) => l.status === "abgegeben")
+            .sort((a, b) => (b.last_contacted_at ?? b.created_at).localeCompare(a.last_contacted_at ?? a.created_at));
+          return (
+            <div>
+              <div className="mb-4">
+                <h2 className="text-lg font-black flex items-center gap-2">
+                  ✅ Bereits abgegeben <span className="text-sm font-bold text-gray-400">({handedOver.length})</span>
+                </h2>
+                <p className="text-xs text-gray-500 mt-1">Leads, die schon an einen Partner oder Kollegen übergeben wurden. Erscheinen nicht mehr in der Wiedervorlage.</p>
+              </div>
+              {handedOver.length === 0 ? (
+                <div className="text-center py-16 text-gray-500 bg-white/5 border border-white/10 rounded-2xl">
+                  <div className="text-4xl mb-3">📭</div><p className="text-sm">Noch keine Leads abgegeben. Status im Lead auf „✅ Abgegeben“ setzen.</p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 gap-3">
+                  {handedOver.map((lead) => (
+                    <div key={lead.id} className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+                      <div className="flex-grow min-w-0">
+                        <button
+                          onClick={() => { setTab("leads"); setFilter("all"); setMemberFilter("all"); setSelected(lead); if (!leadNotizen[lead.id]) fetchNotizen(lead.id); }}
+                          className="font-bold text-white hover:text-green-400 transition-colors text-left"
+                        >
+                          {lead.vorname} {lead.nachname} →
+                        </button>
+                        <div className="text-sm text-gray-400 flex flex-wrap gap-3 mt-1">
+                          <a href={`mailto:${lead.email}`} className="text-green-400 hover:text-green-300">✉️ {lead.email}</a>
+                          {lead.telefon && <a href={`tel:${lead.telefon}`} className="text-blue-400 hover:text-blue-300">📞 {lead.telefon}</a>}
+                          {lead.assigned_to && <span className="text-purple-300">👤 {lead.assigned_to}</span>}
+                        </div>
+                        {lead.blocked_on_note && <p className="text-xs text-gray-500 mt-1">📝 {lead.blocked_on_note}</p>}
+                      </div>
+                      <div className="text-right flex-shrink-0">
+                        <p className="text-xs text-gray-500">Anfrage vom {new Date(lead.created_at).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" })}</p>
+                        <p className="text-xs text-gray-400 mt-1 max-w-[220px] truncate">{lead.interesse}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })()}
+
         {tab === "listings" && (
           <>
             {/* Tab header */}
