@@ -268,9 +268,6 @@ export default function CookieBanner() {
         </div>
 
         <div className="border-t border-gray-200 px-5 sm:px-7 py-3 flex flex-col-reverse sm:flex-row gap-1 sm:gap-4">
-          <button type="button" onClick={() => save(NONE)} className={`${btnText} sm:flex-1`}>
-            Ablehnen
-          </button>
           <button type="button" onClick={() => save(choice)} className={`${btnText} sm:flex-1`}>
             Auswahl erlauben
           </button>
