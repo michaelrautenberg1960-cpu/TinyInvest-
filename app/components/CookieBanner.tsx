@@ -177,9 +177,6 @@ export default function CookieBanner() {
             <button type="button" onClick={openSettings} className={`${btnText} inline-flex items-center justify-center gap-2`}>
               Anpassen <Chevron />
             </button>
-            <button type="button" onClick={() => save(NONE)} className={btnText}>
-              Ablehnen
-            </button>
           </div>
         </div>
       </div>
