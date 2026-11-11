@@ -91,7 +91,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/tiny-house-als-kapitalanlage`,
-      lastModified: "2026-11-03",
+      lastModified: "2026-11-11",
       changeFrequency: "monthly",
       priority: 1.0,
     },

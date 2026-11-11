@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/wissen/kapitalanlage",
-        destination: "/wissen/tiny-house-vs-eigentumswohnung",
+        destination: "/tiny-house-als-kapitalanlage",
         permanent: true,
       },
       {

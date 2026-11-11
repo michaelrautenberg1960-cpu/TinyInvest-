@@ -98,7 +98,7 @@ export default function TinyHouseKapitalanlagePage() {
     author: { "@type": "Person", name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" },
     publisher: { "@type": "Organization", name: "TinyInvest", logo: { "@type": "ImageObject", url: "https://tinyhouse.investments/logo1.png" } },
     datePublished: "2026-04-13",
-    dateModified: "2026-11-03",
+    dateModified: "2026-11-11",
     image: { "@type": "ImageObject", url: "https://tinyhouse.investments/images/outside/tiny-house-investor-aussen.webp" },
   };
 
@@ -140,7 +140,7 @@ export default function TinyHouseKapitalanlagePage() {
               <span>·</span>
               <span>TinyInvest Redaktion</span>
               <span>·</span>
-              <time dateTime="2026-11-03">Aktualisiert am 3. November 2026</time>
+              <time dateTime="2026-11-11">Aktualisiert am 11. November 2026</time>
             </div>
           </div>
 
@@ -160,7 +160,7 @@ export default function TinyHouseKapitalanlagePage() {
           </div>
 
           <p className="text-gray-500 text-[15px] leading-relaxed mb-6 max-w-2xl">
-            Ein Tiny House als Kapitalanlage heißt: Du kaufst ein physisches Objekt – keinen Fondsanteil. Ein lokaler Partner vermietet es für dich.
+            Ein Tiny House als Kapitalanlage oder Investment heißt: Du kaufst ein physisches Objekt – keinen Fondsanteil. Ein lokaler Partner vermietet es für dich.
             Du erhältst monatlich 40 % der Einnahmen nach Abzug der Stellplatzpacht. Über §7g EStG ergibt sich in Vorjahr und Kaufjahr rechnerisch ein Steuereffekt von rund 26.700 € (On-Grid, 42 % Steuersatz, Beispielrechnung).
           </p>
 
@@ -1005,7 +1005,7 @@ export default function TinyHouseKapitalanlagePage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Fazit</span>
           <h2 id="fazit" className="text-2xl font-black text-gray-900 mt-2 mb-6 tracking-tight scroll-mt-24">
-            Lohnt sich ein Tiny House als Kapitalanlage 2026?
+            Lohnt sich ein Tiny House als Investment 2026?
           </h2>
           <div className="space-y-4 text-gray-700 text-[15px] leading-relaxed">
             <p>

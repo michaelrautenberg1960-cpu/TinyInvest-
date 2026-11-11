@@ -29,7 +29,7 @@ const ETW_AFA = ETW_GEBAEUDE * 0.02;
 const rund = (n: number) => eur(Math.round(n / 100) * 100);
 
 export const metadata = {
-  title: "Tiny House vs. Eigentumswohnung: Kapitalanlage im Vergleich | TinyInvest",
+  title: "Tiny House vs. Eigentumswohnung 2026: Rendite & Steuer im Vergleich | TinyInvest",
   description:
     `Tiny House oder Eigentumswohnung als Kapitalanlage? Kaufpreis, Nebenkosten, Rendite, Abschreibung, Aufwand und Risiken im ehrlichen Vergleich – mit Rechenbeispiel 2026.`,
   keywords:
