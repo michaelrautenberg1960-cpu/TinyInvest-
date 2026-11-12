@@ -53,6 +53,15 @@ const articles = [
     img: "/images/outside/tiny-house-winter-ganzjahresbetrieb.webp",
   },
   {
+    href: "/wissen/investitionsabzugsbetrag-immobilien",
+    badge: "Neu · Steuer",
+    badgeColor: "bg-green-100 text-green-700",
+    title: "Investitionsabzugsbetrag für Immobilien: Geht das?",
+    desc: "Warum Gebäude und Eigentumswohnungen nicht IAB-fähig sind, welche AfA stattdessen gilt und welche Sachwerte unter §7g fallen.",
+    tags: ["IAB", "Immobilien", "§7g", "AfA"],
+    img: "/images/outside/tiny-house-stellplatz-standort.webp",
+  },
+  {
     href: "/wissen/afa-abschreibung",
     badge: "Steuer-Deep-Dive",
     badgeColor: "bg-amber-100 text-amber-700",

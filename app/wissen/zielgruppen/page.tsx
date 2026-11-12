@@ -4,20 +4,22 @@ import Footer from "../../components/Footer";
 import ModalButton from "../../components/ModalButton";
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
+import { IAB_BEISPIEL as B, eur } from "@/app/lib/iab-facts";
+
+const STAND = "2026-11-12";
 
 export const metadata = {
-  title: "§7g IAB: Welche Berufsgruppe profitiert? | TinyInvest",
+  title: "Steuern sparen als Selbstständiger 2026: 5 Wege & §7g IAB | TinyInvest",
   description:
-    "Ärzte, Freiberufler, IT-Freelancer oder Unternehmer: So nutzt du den §7g IAB für ein Tiny House. Rechenbeispiel mit Escape 660 – für jeden Berufsstand erklärt.",
+    "Steuern sparen als Selbstständiger: Betriebsausgaben, GWG, Basisrente, §7g IAB und Sonder-AfA. Beispiel 74.700 € → rund 26.700 € Steuereffekt. Für Ärzte, Freiberufler, IT und Unternehmer.",
   keywords:
-    "§7g iab selbstständige, kapitalanlage freiberufler, steuern sparen arzt, it freelancer investment, unternehmer kapitalanlage, iab berufsgruppen, tiny house steuervorteil selbstständige",
+    "steuern sparen selbstständige, steuern sparen als selbstständiger, §7g iab selbstständige, iab berufsgruppen, tiny house steuervorteil selbstständige, steuern sparen freiberufler unternehmer",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
   alternates: { canonical: "https://tinyhouse.investments/wissen/zielgruppen" },
   openGraph: {
     ...BASE_OG,
     type: "article",
-    title: "§7g IAB für Selbstständige: Ärzte, Freiberufler, IT, Unternehmer | TinyInvest",
+    title: "Steuern sparen als Selbstständiger 2026: 5 Wege & §7g IAB",
     description:
       "Bis zu 37.350 € IAB-Abzug im Vorjahr – für Ärzte, Freiberufler, IT-Freelancer und Unternehmer. Welches Profil passt zu dir?",
     url: "https://tinyhouse.investments/wissen/zielgruppen",
@@ -80,7 +82,7 @@ const commonSteps = [
   {
     step: "2",
     title: "Tiny House kaufen",
-    desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr on top. Das Tiny House ist ein bewegliches Wirtschaftsgut — §7g ist eindeutig anwendbar.",
+    desc: "Sonder-AfA 40 % + degressive AfA 30 % im Kaufjahr on top. Ein Tiny House auf zugelassenem Trailer kann als bewegliches Wirtschaftsgut gelten — dann ist §7g anwendbar.",
   },
   {
     step: "3",
@@ -103,12 +105,12 @@ export default function ZielgruppenPage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "§7g IAB für Selbstständige: Welche Berufsgruppe profitiert vom Tiny House Investment?",
+    headline: "Steuern sparen als Selbstständiger 2026: 5 Wege und der §7g IAB je Berufsgruppe",
     description:
-      "Ärzte, Freiberufler, IT-Freelancer und Unternehmer nutzen den §7g IAB – Rechenbeispiele für alle Profile. Übersicht aller Berufsgruppen.",
+      "Fünf Wege, wie Selbstständige Steuern sparen, und wie Ärzte, Freiberufler, IT-Freelancer und Unternehmer den §7g IAB nutzen – mit Rechenbeispiel.",
     url: "https://tinyhouse.investments/wissen/zielgruppen",
     datePublished: "2026-05-22",
-    dateModified: "2026-05-22",
+    dateModified: STAND,
     author: {
       "@type": "Person",
       name: "Noah Stein",
@@ -124,8 +126,9 @@ export default function ZielgruppenPage() {
   return (
     <main className="bg-white min-h-screen">
       <Navbar variant="sub" />
-      <Script id="breadcrumb-schema-zielgruppen" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <Script id="article-schema-zielgruppen" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {/* Plain <script> statt next/script: JSON-LD muss im Server-HTML stehen, KI-Crawler führen kein JS aus. */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       {/* Hero */}
       <section className="pt-32 pb-12 bg-white">
@@ -139,7 +142,7 @@ export default function ZielgruppenPage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">§7g IAB · Alle Berufsgruppen</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            Tiny House als Kapitalanlage für Selbstständige — §7g IAB für jeden Berufsstand
+            Steuern sparen als Selbstständiger 2026: 5 Wege und der §7g IAB für jeden Berufsstand
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
@@ -148,7 +151,7 @@ export default function ZielgruppenPage() {
               <span>·</span>
               <span>TinyInvest Redaktion</span>
               <span>·</span>
-              <time dateTime="2026-05-22">22. Mai 2026</time>
+              <time dateTime={STAND}>Aktualisiert am 12. November 2026</time>
             </div>
           </div>
           <p className="text-gray-500 text-base leading-relaxed max-w-2xl">
@@ -171,6 +174,38 @@ export default function ZielgruppenPage() {
               sizes="(max-width: 768px) 100vw, 896px"
             />
           </div>
+        </div>
+      </section>
+
+      {/* 5 Wege */}
+      <section className="py-14 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-2">Überblick</p>
+          <h2 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">5 Wege, wie Selbstständige Steuern sparen</h2>
+          <p className="text-gray-600 text-base leading-relaxed max-w-2xl mb-8">
+            Die ersten drei Wege kennen die meisten Selbstständigen. Die Wege 4 und 5 werden oft übersehen, weil sie eine
+            geplante Investition voraussetzen. Sie bringen dafür den größten Effekt in einem einzelnen Jahr.
+          </p>
+          <ol className="space-y-4">
+            {[
+              ["Betriebsausgaben vollständig ansetzen", "Arbeitszimmer, Fahrzeug, Fortbildung, Software, Fachliteratur und betriebliche Versicherungen mindern den Gewinn. Wer Belege laufend sammelt, verschenkt am Jahresende nichts."],
+              ["Geringwertige Wirtschaftsgüter sofort abschreiben", "Anschaffungen bis 800 € netto (z. B. Laptop, Bürostuhl) können im Jahr des Kaufs vollständig als Betriebsausgabe abgezogen werden."],
+              ["Altersvorsorge über die Basisrente", "Beiträge zur Basisrente (Rürup) sind bis zu einem jährlichen Höchstbetrag als Sonderausgaben abziehbar – für Selbstständige ohne gesetzliche Rentenversicherung oft der wichtigste Vorsorge-Baustein."],
+              ["Investitionen vorziehen mit dem §7g IAB", "Wer eine Investition in ein bewegliches Wirtschaftsgut plant, kann bis zu 50 % der Kosten bis zu drei Jahre vor dem Kauf vom Gewinn abziehen. Voraussetzung: Betrieb mit Gewinneinkünften und höchstens 200.000 € Gewinn."],
+              ["Sonder-AfA und degressive AfA im Kaufjahr", `Im Kaufjahr kommen bis zu 40 % Sonder-AfA und – bei Anschaffung bis 31.12.2027 – bis zu 30 % degressive AfA hinzu. Zusammen mit dem IAB sind so im Beispiel (${eur(B.kaufpreis)} netto) rund ${Math.round((B.abzugBisKaufjahr / B.kaufpreis) * 100)} % des Kaufpreises bis Ende des Kaufjahres abgezogen.`],
+            ].map(([k, v], i) => (
+              <li key={k} className="flex gap-4">
+                <span className="w-8 h-8 rounded-full bg-green-700 text-white text-sm font-black flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <span className="text-gray-600 text-[15px] leading-relaxed"><strong className="text-gray-900">{k}:</strong> {v}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="text-gray-500 text-sm leading-relaxed mt-6 max-w-2xl">
+            Wichtig: IAB und Abschreibungen sind überwiegend eine Steuerstundung. Insgesamt lässt sich nie mehr als der
+            Kaufpreis abschreiben; der Vorteil liegt in Liquidität, Zinseffekt und ggf. einem niedrigeren Steuersatz in
+            späteren Jahren. Wie das beim Tiny House konkret aussieht, zeigt der{" "}
+            <Link href="/wissen/iab-tiny-house" className="text-green-700 font-semibold underline underline-offset-2">IAB-Ratgeber für Tiny Houses</Link>.
+          </p>
         </div>
       </section>
 
@@ -210,7 +245,7 @@ export default function ZielgruppenPage() {
           <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-2">Das gemeinsame Modell</p>
           <h2 className="text-2xl font-black text-gray-900 mb-5 tracking-tight">Was alle Berufsgruppen verbindet</h2>
           <p className="text-gray-600 text-base leading-relaxed max-w-2xl mb-10">
-            Alle vier Gruppen — Ärzte, Freiberufler, IT-Freelancer und Unternehmer — nutzen denselben Steuerhebel: den §7g Investitionsabzugsbetrag. Das Tiny House auf einem Vlemmix-Trailer ist ein <strong>bewegliches Wirtschaftsgut</strong> mit Fahrzeugidentifikationsnummer — damit eindeutig §7g-fähig. Kein anderes Investitionsprodukt in dieser Preisklasse bietet denselben Vorzieheffekt.
+            Alle vier Gruppen — Ärzte, Freiberufler, IT-Freelancer und Unternehmer — nutzen denselben Steuerhebel: den §7g Investitionsabzugsbetrag. Das Tiny House auf einem Vlemmix-Trailer ist ein <strong>bewegliches Wirtschaftsgut</strong> mit Fahrzeugidentifikationsnummer — und kann damit §7g-fähig sein, wenn es zu einem Betrieb gehört. Kein anderes Investitionsprodukt in dieser Preisklasse bietet denselben Vorzieheffekt.
           </p>
           <div className="bg-green-50 border border-green-100 rounded-2xl p-6 mb-10">
             <p className="font-black text-gray-900 text-[14px] mb-2">Rechenbeispiel: Escape 660 On-Grid (74.700 € netto), 42 % Grenzsteuersatz</p>

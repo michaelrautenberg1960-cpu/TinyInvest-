@@ -289,7 +289,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/zielgruppen`,
-      lastModified: "2026-11-03",
+      lastModified: "2026-11-12",
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/wissen/investitionsabzugsbetrag-immobilien`,
+      lastModified: "2026-11-12",
       changeFrequency: "monthly",
       priority: 0.85,
     },
