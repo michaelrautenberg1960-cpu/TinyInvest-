@@ -128,7 +128,8 @@ export default function MemorandumModal() {
       pendingStep2LeadRef.current = null;
       setSubmitted(true);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any).gtag?.("event", "generate_lead", { form_type: "memorandum_step2", interesse: form.interesse });
+      // Kein zweites generate_lead: der Lead wurde schon in Schritt 1 gezählt
+      (window as any).gtag?.("event", "lead_details", { form_type: "memorandum_step2", interesse: form.interesse });
     } catch {
       setError("Fehler beim Senden.");
     } finally {
