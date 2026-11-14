@@ -1,5 +1,6 @@
 ﻿"use client";
 import { useState, useEffect, useCallback, useRef } from "react";
+import { describeLeadSource } from "@/app/lib/leadSourceFormat";
 
 // ──────────── Types ────────────
 type Lead = {
@@ -20,6 +21,11 @@ type Lead = {
   blocked_on_note: string | null;
   next_followup_at: string | null;   // YYYY-MM-DD
   last_contacted_at: string | null;  // ISO
+  // Lead-Quelle (Spalten optional, siehe lib/leadSource.ts)
+  landing_page?: string | null;
+  referrer?: string | null;
+  utm?: Record<string, string> | null;
+  conversion_page?: string | null;
 };
 
 type BlockedOwner = "us" | "customer" | "none";
@@ -936,6 +942,9 @@ export default function AdminPage() {
       ["Wartet-Notiz",       (l) => l.blocked_on_note],
       ["Nächstes Follow-up", (l) => l.next_followup_at],
       ["Zuletzt kontaktiert", (l) => (l.last_contacted_at ? new Date(l.last_contacted_at).toLocaleString("de-DE") : null)],
+      ["Quelle",             (l) => describeLeadSource(l)],
+      ["Einstiegsseite",     (l) => l.landing_page ?? null],
+      ["Formular-Seite",     (l) => l.conversion_page ?? null],
     ];
     const esc = (v: string | null) => {
       let s = v ?? "";
@@ -1259,6 +1268,7 @@ export default function AdminPage() {
                           {lead.investment_volumen && <div><p className="text-xs text-gray-500 uppercase tracking-wider mb-1">💰 Investitionsvolumen</p><p className="text-sm text-white font-semibold">{lead.investment_volumen}</p></div>}
                           {lead.kontakt_zeit && <div><p className="text-xs text-gray-500 uppercase tracking-wider mb-1">⏰ Erreichbar</p><p className="text-sm text-green-400 font-semibold">{lead.kontakt_zeit}</p></div>}
                           {lead.nachricht && <div className="sm:col-span-2"><p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Nachricht</p><p className="text-sm text-white bg-white/5 rounded-xl p-3">{lead.nachricht}</p></div>}
+                          {(lead.landing_page || lead.referrer || lead.utm) && <div className="sm:col-span-2"><p className="text-xs text-gray-500 uppercase tracking-wider mb-1">🧭 Quelle</p><p className="text-sm text-white break-all">{describeLeadSource(lead)}</p></div>}
                         </div>
                         <div className="mb-4">
                           <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Status ändern</p>

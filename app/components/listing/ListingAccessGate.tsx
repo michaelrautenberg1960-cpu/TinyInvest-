@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { getBrowserClient } from '@/app/lib/supabase'
+import { getLeadSource } from '@/app/lib/attribution'
 
 const LS_KEY = 'tinyinvest_unlocked'
 
@@ -57,7 +58,7 @@ export function ListingAccessGate({ listingId }: Props) {
       const res = await fetch('/api/gate-register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, email, listing_id: listingId }),
+        body: JSON.stringify({ name, phone, email, listing_id: listingId, source: getLeadSource() }),
       })
       if (!res.ok) throw new Error('Fehler beim Speichern')
       localStorage.setItem(LS_KEY, '1')

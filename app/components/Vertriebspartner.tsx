@@ -1,4 +1,5 @@
 import { partnerBenefits } from "./data";
+import ModalButton from "./ModalButton";
 
 export default function Vertriebspartner() {
   const checklist = [
@@ -60,12 +61,13 @@ export default function Vertriebspartner() {
               </p>
             </div>
 
-            <a
-              href="#kontakt"
-              className="block w-full bg-green-700 hover:bg-green-800 text-white font-bold py-4 rounded-full text-center text-base transition-colors shadow-md"
-            >
+            {/* /partner hat keinen #kontakt-Abschnitt – deshalb das globale Anfrage-Modal öffnen */}
+            <ModalButton className="block w-full bg-green-700 hover:bg-green-800 text-white font-bold py-4 rounded-full text-center text-base transition-colors shadow-md">
               Jetzt als Partner bewerben →
-            </a>
+            </ModalButton>
+            <p className="text-center text-xs text-gray-500 mt-2">
+              Im zweiten Schritt „Vertriebspartner werden“ auswählen.
+            </p>
             <p className="text-center text-xs text-gray-400 mt-3">
               Kostenlos & unverbindlich – kein Risiko, kein Vorschuss.
             </p>

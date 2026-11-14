@@ -15,6 +15,7 @@ import {
   type Variant,
 } from "./konfigurator-data";
 import { generatePDF } from "./generate-pdf";
+import { getLeadSource } from "@/app/lib/attribution";
 
 // ─── Helpers ───────────────────────────────────────────────────────────────
 const EUR = (n: number) =>
@@ -539,16 +540,21 @@ function Step3({
         fetch("/api/konfigurator-lead", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ variant, units, extraIds, ...clientInfo }),
-        }).catch((err) => console.error("Konfigurator lead error:", err));
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (window as any).gtag?.("event", "generate_lead", {
-          form_type: "konfigurator_pdf",
-          variant,
-          units,
-          value: calc.totalNet,
-          currency: "EUR",
-        });
+          body: JSON.stringify({ variant, units, extraIds, ...clientInfo, source: getLeadSource() }),
+        })
+          .then((res) => {
+            // Conversion nur zählen, wenn der Lead wirklich gespeichert wurde
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).gtag?.("event", "generate_lead", {
+              form_type: "konfigurator_pdf",
+              variant,
+              units,
+              value: calc.totalNet,
+              currency: "EUR",
+            });
+          })
+          .catch((err) => console.error("Konfigurator lead error:", err));
       }
     } catch (err) {
       console.error("PDF error:", err);

@@ -2,19 +2,22 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAdminClient } from "@/app/lib/supabase";
 import { sendWelcomeEmail, markWelcomeEmailSent } from "@/app/lib/sendWelcomeEmail";
 import { Resend } from "resend";
+import { parseLeadSource, insertLead, leadSourceHtml } from "@/app/lib/leadSource";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, phone, email, listing_id } = await req.json();
+    const body = await req.json();
+    const { name, phone, email, listing_id } = body;
+    const source = parseLeadSource(body.source);
     if (!name || !phone || !email) {
       return NextResponse.json({ error: "Fehlende Felder" }, { status: 400 });
     }
 
     const admin = getAdminClient();
 
-    const { data: inserted } = await admin.from("leads").insert([{
+    const { data: inserted } = await insertLead({
       vorname:   name,
       nachname:  null,
       email,
@@ -22,7 +25,7 @@ export async function POST(req: NextRequest) {
       interesse: `Projekt-Detail Freischaltung${listing_id ? ` #${listing_id}` : ""}`,
       budget:    null,
       status:    "neu",
-    }]).select("id");
+    }, source);
 
     const newLeadId: string | undefined = inserted?.[0]?.id;
 
@@ -54,6 +57,7 @@ export async function POST(req: NextRequest) {
             <p style="margin:0;font-size:11px;color:#93c5fd;letter-spacing:2px;text-transform:uppercase;font-weight:600;">TinyInvest</p>
             <h1 style="margin:8px 0 0;font-size:22px;font-weight:800;color:#ffffff;">🔓 Marktplatz-Freischaltung</h1>
             <p style="margin:6px 0 0;font-size:14px;color:#bfdbfe;">${name}${listing_id ? ` · Projekt #${listing_id}: ${listingTitle}` : ""}</p>
+            ${leadSourceHtml(source, "#93c5fd")}
           </td>
         </tr>
 

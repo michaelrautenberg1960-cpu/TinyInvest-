@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useModal } from "./ModalContext";
 import { isValidPhone, sanitizePhone } from "@/app/lib/phone";
+import { getLeadSource } from "@/app/lib/attribution";
 
 const MODELS = [
   { key: "Escape 660 On-Grid",  label: "On-Grid",  preis: "74.700 € netto" },
@@ -96,6 +97,7 @@ export default function MemorandumModal() {
             telefon: form.telefon,
             nachname: "",
             schritt: "Schnell-Anfrage (Schritt 1)",
+            source: getLeadSource(),
           }),
       });
       if (!res.ok) throw new Error();
@@ -120,7 +122,7 @@ export default function MemorandumModal() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, nachname: "", schritt: "Details (Schritt 2)", leadId }),
+        body: JSON.stringify({ ...form, nachname: "", schritt: "Details (Schritt 2)", leadId, source: getLeadSource() }),
       });
       if (!res.ok) throw new Error();
       pendingStep2LeadRef.current = null;
@@ -335,6 +337,7 @@ export default function MemorandumModal() {
                     <option>Rendite-Beratung (Mieteinnahmen als Eigentümer)</option>
                     <option>Kauf auf Raten / Finanzierungsberatung</option>
                     <option>Host-Bewerbung (Standort / Grundstück)</option>
+                    <option>Vertriebspartner werden</option>
                     <option>Allgemeine Erstinformation</option>
                   </select>
                 </div>

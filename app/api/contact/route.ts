@@ -3,6 +3,7 @@ import { getAdminClient } from "@/app/lib/supabase";
 import { sendWelcomeEmail, sendHostWelcomeEmail, markWelcomeEmailSent } from "@/app/lib/sendWelcomeEmail";
 import { Resend } from "resend";
 import { isValidPhone } from "@/app/lib/phone";
+import { parseLeadSource, insertLead, leadSourceHtml } from "@/app/lib/leadSource";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -30,6 +31,7 @@ export async function POST(req: NextRequest) {
       schritt,
       leadId,
     } = body;
+    const source = parseLeadSource(body.source);
 
     // Schritt 2 übersprungen: Lead aus Schritt 1 bleibt unverändert, nur die Erstmail wird verschickt
     if (schritt === "Schritt 2 übersprungen") {
@@ -107,10 +109,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "Datenbankfehler" }, { status: 500 });
       }
     } else {
-      const { data: inserted, error: dbError } = await getAdminClient()
-        .from("leads")
-        .insert([leadFields])
-        .select("id");
+      const { data: inserted, error: dbError } = await insertLead(leadFields, source);
 
       if (dbError) {
         console.error("Supabase error:", dbError);
@@ -140,6 +139,7 @@ export async function POST(req: NextRequest) {
             <p style="margin:0;font-size:11px;color:#93c5fd;letter-spacing:2px;text-transform:uppercase;font-weight:600;">TinyInvest</p>
             <h1 style="margin:8px 0 0;font-size:22px;font-weight:800;color:#ffffff;">🏡 Neue TinyInvest Anfrage</h1>
             <p style="margin:6px 0 0;font-size:14px;color:#bfdbfe;">${vorname} ${nachname || ""} · ${interesse}</p>
+            ${leadSourceHtml(source, "#93c5fd")}
           </td>
         </tr>
 

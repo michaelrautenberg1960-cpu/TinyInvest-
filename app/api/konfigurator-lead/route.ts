@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAdminClient } from "@/app/lib/supabase";
+import { parseLeadSource, insertLead, leadSourceHtml } from "@/app/lib/leadSource";
 import { sendKonfiguratorOfferEmail, markWelcomeEmailSent } from "@/app/lib/sendWelcomeEmail";
 import { EXTRAS, VARIANT_SHORT, calcOffer, type Variant } from "@/app/konfigurator/konfigurator-data";
 import { Resend } from "resend";
@@ -49,9 +49,8 @@ export async function POST(req: NextRequest) {
       salesAgent ? `🤝 Vertriebspartner: ${salesAgent}` : null,
     ].filter(Boolean).join("\n");
 
-    const { data: inserted, error: dbError } = await getAdminClient()
-      .from("leads")
-      .insert([{
+    const source = parseLeadSource(body.source);
+    const { data: inserted, error: dbError } = await insertLead({
         vorname: name,
         nachname: null,
         email,
@@ -61,8 +60,7 @@ export async function POST(req: NextRequest) {
         investment_volumen: String(calc.units),
         nachricht,
         status: "neu",
-      }])
-      .select("id");
+      }, source);
 
     if (dbError) {
       console.error("Supabase error:", dbError);
@@ -89,6 +87,7 @@ export async function POST(req: NextRequest) {
             <p style="margin:0;font-size:11px;color:#86efac;letter-spacing:2px;text-transform:uppercase;font-weight:600;">TinyInvest Konfigurator</p>
             <h1 style="margin:8px 0 0;font-size:22px;font-weight:800;color:#ffffff;">🧮 Angebot heruntergeladen</h1>
             <p style="margin:6px 0 0;font-size:14px;color:#bbf7d0;">${escapeHtml(name)} · ${calc.units} × ${modell}</p>
+            ${leadSourceHtml(source, "#86efac")}
           </td>
         </tr>
         <tr>

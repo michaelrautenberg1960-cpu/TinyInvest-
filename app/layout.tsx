@@ -5,6 +5,7 @@ import CookieBanner from "./components/CookieBanner";
 import { ModalProvider } from "./components/ModalContext";
 import MemorandumModalLazy from "./components/MemorandumModalLazy";
 import Analytics from "./components/Analytics";
+import AttributionCapture from "./components/AttributionCapture";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -86,6 +87,7 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <Analytics />
+        <AttributionCapture />
         <ModalProvider>
           {children}
           <MemorandumModalLazy />

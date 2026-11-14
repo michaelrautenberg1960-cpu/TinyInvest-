@@ -1,6 +1,7 @@
 ﻿"use client";
 import { useState } from "react";
 import { isValidPhone, sanitizePhone } from "@/app/lib/phone";
+import { getLeadSource } from "@/app/lib/attribution";
 
 export default function Kontakt() {
   const [form, setForm] = useState({
@@ -8,7 +9,7 @@ export default function Kontakt() {
     nachname: "",
     email: "",
     telefon: "",
-    interesse: "Investitionsunterlagen + §7g-Steueranalyse anfordern",
+    interesse: "Investitionsunterlagen + allgemeines §7g-Factsheet anfordern",
     budget: "Asset #TE-2026-02 · TinyInvest Escape (79.000 €)",
     investmentVolumen: "60.000 – 80.000 € (1 Asset)",
     kontaktZeit: "Jederzeit / flexibel",
@@ -49,7 +50,7 @@ export default function Kontakt() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, source: getLeadSource() }),
       });
       if (!res.ok) throw new Error("Fehler beim Senden");
       setSubmitted(true);
@@ -99,8 +100,8 @@ export default function Kontakt() {
             Investitionsunterlagen anfordern
           </h2>
           <p className="text-white/55 text-base max-w-xl mx-auto leading-relaxed">
-            Sie erhalten die vollständigen Unterlagen: §7g-Steueranalyse, lokale Partner Betreiberkonzept,
-            Asset-Kennzahlen und individuelle Beratung – kostenfrei und unverbindlich.
+            Sie erhalten die vollständigen Unterlagen: allgemeines §7g-Factsheet, Betreiberkonzept der lokalen Partner,
+            Asset-Kennzahlen und ein persönliches Gespräch – kostenfrei und unverbindlich.
           </p>
         </div>
 
@@ -213,11 +214,12 @@ export default function Kontakt() {
                     onChange={handleChange}
                     className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all bg-white"
                   >
-                    <option>Investitionsunterlagen + §7g-Steueranalyse anfordern</option>
+                    <option>Investitionsunterlagen + allgemeines §7g-Factsheet anfordern</option>
                     <option>Projektunterlagen zu einem spezifischen Asset</option>
                     <option>Rendite-Beratung (passives Einkommen)</option>
                     <option>Kauf auf Raten / Finanzierungsberatung</option>
                     <option>Host-Bewerbung (Standort / Grundstück)</option>
+                    <option>Vertriebspartner werden</option>
                     <option>Allgemeine Erstinformation</option>
                   </select>
                 </div>
@@ -445,7 +447,7 @@ export default function Kontakt() {
               </h4>
               <ul className="space-y-2.5">
                 {[
-                  "§7g-Steueranalyse (Steuerberater-geprüft)",
+                  "Allgemeines §7g-Factsheet (IAB, Sonder-AfA, degressive AfA)",
                   "lokale Partner Betreiberkonzept + Belegungsdaten",
                   "Asset-Kennzahlen: IRR, NPV, Cashflow-Plan",
                   "Vlemmix Trailer Technisches Datenblatt",

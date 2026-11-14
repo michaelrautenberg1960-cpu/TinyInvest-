@@ -114,6 +114,15 @@ export default function DatenschutzPage() {
                 Ihrer Anfrage. Die Daten werden nicht ohne Ihre Einwilligung an Dritte weitergegeben.
               </p>
               <p className="mt-3">
+                Mit einer Anfrage speichern wir zusätzlich, über welche Seite Sie auf unsere Website gekommen sind
+                (Einstiegsseite, verweisende Website, ggf. Kampagnen-Parameter wie <code>utm_source</code>) und auf welcher
+                Seite Sie das Formular abgeschickt haben. So erkennen wir, welche Inhalte für Interessenten hilfreich sind
+                (Art. 6 Abs. 1 lit. f DSGVO). Diese Angaben werden während Ihres Besuchs nur im Arbeitsspeicher des Browsers
+                gehalten; nur wenn Sie in die Kategorie „Statistiken“ eingewilligt haben, speichern wir sie bis zu 90 Tage im
+                Local Storage Ihres Browsers (<code>tinyinvest_first_touch</code>), damit auch eine Anfrage bei einem späteren
+                Besuch zugeordnet werden kann.
+              </p>
+              <p className="mt-3">
                 Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO
                 (berechtigte Interessen). Daten aus reinen Kontaktanfragen werden nach abschließender Bearbeitung gelöscht,
                 sofern keine gesetzlichen Aufbewahrungspflichten bestehen (in der Regel 6–10 Jahre gemäß HGB/AO).
