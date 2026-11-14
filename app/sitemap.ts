@@ -67,25 +67,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/impressum`,
-      lastModified: "2026-09-03",
+      lastModified: "2026-10-30",
       changeFrequency: "yearly",
       priority: 0.2,
     },
     {
       url: `${BASE_URL}/datenschutz`,
-      lastModified: "2026-06-25",
+      lastModified: "2026-11-14",
       changeFrequency: "yearly",
       priority: 0.2,
     },
     {
       url: `${BASE_URL}/agb`,
-      lastModified: "2026-03-01",
+      lastModified: "2026-07-05",
       changeFrequency: "yearly",
       priority: 0.2,
     },
     {
       url: `${BASE_URL}/wissen`,
-      lastModified: "2026-11-03",
+      lastModified: "2026-11-12",
       changeFrequency: "weekly",
       priority: 0.8,
     },
@@ -115,13 +115,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/steuerberater-finden`,
-      lastModified: "2026-04-26",
+      lastModified: "2026-10-06",
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${BASE_URL}/wissen/host-werden`,
-      lastModified: "2026-04-26",
+      lastModified: "2026-10-06",
       changeFrequency: "monthly",
       priority: 0.85,
     },
@@ -151,7 +151,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/tiny-house-genehmigung`,
-      lastModified: "2026-04-13",
+      lastModified: "2026-10-06",
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -163,13 +163,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/tiny-house-airbnb`,
-      lastModified: "2026-04-13",
+      lastModified: "2026-10-06",
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/wissen/tiny-house-standorte`,
-      lastModified: "2026-04-26",
+      lastModified: "2026-10-06",
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -193,7 +193,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/tiny-house-vs-eigentumswohnung`,
-      lastModified: "2026-11-03",
+      lastModified: "2026-11-11",
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -205,7 +205,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/iab-tiny-house`,
-      lastModified: "2026-11-03",
+      lastModified: "2026-11-14",
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -217,7 +217,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/tiny-house-rendite-rechner`,
-      lastModified: "2026-04-15",
+      lastModified: "2026-10-06",
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -253,7 +253,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen/tiny-house-steuer-risiken`,
-      lastModified: "2026-05-06",
+      lastModified: "2026-10-06",
       changeFrequency: "monthly",
       priority: 0.85,
     },
