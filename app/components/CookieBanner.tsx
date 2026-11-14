@@ -150,32 +150,33 @@ export default function CookieBanner() {
     return (
       <div
         ref={dialogRef}
-        className="fixed bottom-0 left-0 right-0 z-[9999] bg-white text-gray-900 shadow-[0_-8px_30px_rgba(0,0,0,0.18)] animate-fadeInUp max-h-[85vh] overflow-y-auto"
+        className="fixed bottom-0 left-0 right-0 z-[9999] bg-white text-gray-900 border-t border-gray-200 shadow-[0_-4px_16px_rgba(0,0,0,0.10)] animate-fadeInUp"
         role="dialog"
         aria-modal="false"
         aria-labelledby="cookie-title"
       >
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12">
-          <Logo className="hidden lg:block shrink-0 w-52" />
+        <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+          <p className="flex-1 min-w-0 text-gray-700 text-xs sm:text-sm leading-snug">
+            <span id="cookie-title" className="font-semibold text-gray-900">Cookies: </span>
+            Mit Ihrer Einwilligung nutzen wir Google Analytics und binden Karten/Videos ein (Datenübermittlung an Google).
+            Widerruf jederzeit über „Cookie-Einstellungen“ im Footer.{" "}
+            <Link href="/datenschutz" className="text-green-900 font-semibold underline">Datenschutz</Link>
+          </p>
 
-          <div className="flex-1 min-w-0">
-            <p id="cookie-title" className="font-bold text-base sm:text-lg mb-3">Diese Webseite verwendet Cookies</p>
-            <div className="text-gray-700 text-sm sm:text-base leading-relaxed space-y-2">{consentText}</div>
+          <div className="flex shrink-0 items-center gap-2">
             <button
               type="button"
               onClick={openSettings}
-              className="mt-5 inline-flex items-center gap-2 text-green-900 hover:text-green-700 font-semibold text-base"
+              className="flex-1 sm:flex-none text-green-900 hover:text-green-700 font-semibold text-sm px-4 py-2 rounded border border-gray-300 transition-colors"
             >
-              Details zeigen <Chevron />
+              Anpassen
             </button>
-          </div>
-
-          <div className="w-full lg:w-80 shrink-0 flex flex-col items-stretch gap-1">
-            <button type="button" onClick={() => save(ALL)} className={btnAccept}>
+            <button
+              type="button"
+              onClick={() => save(ALL)}
+              className="flex-1 sm:flex-none bg-green-500 hover:bg-green-600 text-white font-bold text-sm px-5 py-2 rounded transition-colors"
+            >
               Alle zulassen
-            </button>
-            <button type="button" onClick={openSettings} className={`${btnText} inline-flex items-center justify-center gap-2`}>
-              Anpassen <Chevron />
             </button>
           </div>
         </div>
