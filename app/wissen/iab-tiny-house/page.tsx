@@ -21,8 +21,8 @@ import {
 const IAB_EFFEKT_RUND = eur(Math.round(B.steuereffektIab / 100) * 100);
 
 export const metadata = {
-  title: "IAB Tiny House 2026: bis zu 50 % vor dem Kauf absetzen | TinyInvest",
-  description: `Beispiel Escape 660: ${eur(B.iab)} IAB vor dem Kauf ≈ ${IAB_EFFEKT_RUND} weniger Einkommensteuer (bei ${pct(B.steuersatz)}). Voraussetzungen, Fristen & Rechenbeispiel – Stand 2026.`,
+  title: `IAB Tiny House: ${IAB_EFFEKT_RUND} Steuererstattung vor dem Kauf (§7g) | TinyInvest`,
+  description: `IAB Tiny House: Mit §7g EStG rund ${IAB_EFFEKT_RUND} Steuererstattung erhalten – bevor du auch nur einen Euro ausgibst. Voraussetzungen, Fristen & Rechenbeispiel 2026.`,
   keywords:
     "IAB tiny house, iab tiny house 2026, investitionsabzugsbetrag tiny house, IAB beantragen anleitung, IAB erfahrungen, tiny house steuer vorziehen",
   authors: [{ name: "Noah Stein", url: "https://www.linkedin.com/in/noah-stein-a5b486182/" }],
@@ -30,14 +30,14 @@ export const metadata = {
   openGraph: {
     ...BASE_OG,
     type: "article",
-    title: `IAB Tiny House: bis zu 50 % vor dem Kauf absetzen – Beispiel ≈ ${IAB_EFFEKT_RUND} Steuerentlastung`,
+    title: `IAB Tiny House: rund ${IAB_EFFEKT_RUND} Steuererstattung – bevor du einen Euro ausgibst`,
     description: `${eur(B.iab)} IAB vorab, danach Sonder-AfA (40 %) und degressive AfA (30 %, bis 2027): Voraussetzungen, Fristen & Rechenbeispiel für Tiny Houses nach §7g EStG.`,
     url: "https://tinyhouse.investments/wissen/iab-tiny-house",
   },
   twitter: {
     card: "summary_large_image",
-    title: `IAB Tiny House: bis zu 50 % vor dem Kauf absetzen (§7g EStG)`,
-    description: `Beispiel Escape 660: ${eur(B.iab)} IAB ≈ ${IAB_EFFEKT_RUND} weniger Einkommensteuer im Jahr der Bildung. Voraussetzungen & Rechenbeispiel.`,
+    title: `IAB Tiny House: rund ${IAB_EFFEKT_RUND} Steuererstattung – bevor du einen Euro ausgibst`,
+    description: `IAB Tiny House: Mit §7g EStG rund ${IAB_EFFEKT_RUND} Steuererstattung erhalten – bevor du auch nur einen Euro ausgibst. Voraussetzungen, Fristen & Rechenbeispiel 2026.`,
   },
 };
 
@@ -146,7 +146,7 @@ export default function IabTinyHousePage() {
           </div>
           <span className="text-green-700 font-semibold text-xs uppercase tracking-widest">Steuer-Guide · IAB · §7g EStG</span>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight leading-tight">
-            IAB Tiny House (§7g EStG): bis zu 50 % vor dem Kauf absetzen – im Beispiel rund {IAB_EFFEKT_RUND} Steuerentlastung
+            IAB Tiny House: rund {IAB_EFFEKT_RUND} Steuererstattung – bevor du auch nur einen Euro ausgibst
           </h1>
           <div className="flex items-center gap-3 mt-3 mb-6">
             <div className="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-black text-xs shrink-0">NS</div>
