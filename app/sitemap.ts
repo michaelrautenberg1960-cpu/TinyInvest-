@@ -85,7 +85,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/wissen`,
-      lastModified: "2026-11-12",
+      lastModified: "2026-11-25",
       changeFrequency: "weekly",
       priority: 0.8,
     },
@@ -196,6 +196,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: "2026-11-11",
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/wissen/tiny-house-vs-festgeld`,
+      lastModified: "2026-11-25",
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/wissen/tiny-house-vs-ferienwohnung`,
+      lastModified: "2026-11-25",
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/wissen/container-direktinvestment-alternative`,
+      lastModified: "2026-11-25",
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/wissen/wohnmobil-vermieten-kapitalanlage`,
+      lastModified: "2026-11-25",
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
     {
       url: `${BASE_URL}/wissen/iab-2026-jahresende`,

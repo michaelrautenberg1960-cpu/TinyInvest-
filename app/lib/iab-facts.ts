@@ -130,6 +130,10 @@ const LLMS_PAGES: { title: string; path: string; desc: string }[] = [
   { title: "Steuerliche Risiken", path: "/wissen/tiny-house-steuer-risiken", desc: "Wann IAB und Sonder-AfA rückgängig gemacht werden und worauf zu achten ist." },
   { title: "Tiny House als Kapitalanlage", path: "/tiny-house-als-kapitalanlage", desc: "Betreibermodell, Einnahmenaufteilung, Standorte." },
   { title: "So funktioniert es", path: "/so-funktioniert-es", desc: "Ablauf vom Kauf bis zur Vermietung." },
+  { title: "Tiny House vs. Festgeld", path: "/wissen/tiny-house-vs-festgeld", desc: "Sicherheit, Ertrag, Inflation und Steuern von Festgeld und Tiny House im Vergleich." },
+  { title: "Tiny House vs. Ferienwohnung", path: "/wissen/tiny-house-vs-ferienwohnung", desc: "Kapitalbedarf, Rendite, Genehmigung und Abschreibung beider Ferienimmobilien." },
+  { title: "Container-Direktinvestment vs. Tiny House", path: "/wissen/container-direktinvestment-alternative", desc: "Zwei bewegliche Sachwerte: Rückmiete vs. Ferienvermietung, Risiken und §7g." },
+  { title: "Wohnmobil vermieten vs. Tiny House", path: "/wissen/wohnmobil-vermieten-kapitalanlage", desc: "Saison, Verschleiß, Aufwand und §7g bei Wohnmobil und Tiny House." },
   { title: "Wissens-Hub", path: "/wissen", desc: "Alle Ratgeber zu Steuern, Finanzierung und Zielgruppen." },
 ];
 
