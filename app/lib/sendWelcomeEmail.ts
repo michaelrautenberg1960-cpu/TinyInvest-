@@ -7,9 +7,9 @@ import type { Variant } from "@/app/konfigurator/konfigurator-data";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Automatische Mails an Leads pausiert (Michaels Nummer ist nicht mehr erreichbar).
-// Interne Benachrichtigungen an RESEND_TO laufen weiter. Zum Reaktivieren auf false setzen.
-const CLIENT_EMAILS_PAUSED = true;
+// Automatische Mails an Leads. Auf true setzen, um sie zu pausieren
+// (interne Benachrichtigungen an RESEND_TO laufen davon unabhängig weiter).
+const CLIENT_EMAILS_PAUSED = false;
 
 // Anhänge der Erstmail. Das EthikBank-Finanzierungsbeispiel wieder aufnehmen,
 // sobald die Bank ein neues Beispiel mit den aktuellen Preisen liefert:
@@ -55,7 +55,7 @@ function buildEmailHtml(vorname: string, bodyHtml: string) {
               <p style="margin:0 0 16px;">Michael Rautenberg</p>
               <img src="https://tinyhouse.investments/logo8.png" alt="TinyInvest" width="120" style="display:block;width:120px;max-width:120px;height:auto;margin:0 0 12px;" />
               <p style="margin:0;font-size:13px;line-height:1.7;color:#444444;">
-                Michael Rautenberg<br/>
+                Michael Rautenberg &middot; <a href="tel:+4915123922355" style="color:#444444;">+49 1512 3922355</a><br/>
                 <a href="mailto:info@tinyhouse.investments" style="color:#444444;">info@tinyhouse.investments</a> &middot; <a href="https://tinyhouse.investments" style="color:#444444;">tinyhouse.investments</a><br/>
                 Baslerstraße 3, 61325 Bad Homburg v.d.Höhe
               </p>

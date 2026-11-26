@@ -102,6 +102,9 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <a href="mailto:info@tinyhouse.investments" className="hover:text-green-400 transition-colors">info@tinyhouse.investments</a>
               </li>
+              <li className="flex items-center gap-2">
+                <a href="tel:+4915123922355" className="hover:text-green-400 transition-colors">+49 1512 3922355</a>
+              </li>
               <li>
                 <span>Baslerstraße 3, 61325 Bad Homburg von der Höhe</span>
               </li>

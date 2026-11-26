@@ -198,10 +198,11 @@ export async function buildOfferDoc(config: PdfConfig, loadImage: ImageLoader): 
   doc.setFontSize(8.5);
   doc.text(COMPANY_INFO.name, cx, y + 12);
   doc.text(COMPANY_INFO.address, cx, y + 17);
-  doc.text(COMPANY_INFO.email, cx, y + 22);
+  doc.text(`Tel: ${COMPANY_INFO.phone}`, cx, y + 22);
+  doc.text(COMPANY_INFO.email, cx, y + 27);
   if (clientInfo.salesAgent) {
     doc.setFont("helvetica", "italic");
-    doc.text(`Vertriebspartner: ${clientInfo.salesAgent}`, cx, y + 27);
+    doc.text(`Vertriebspartner: ${clientInfo.salesAgent}`, cx, y + 32);
   }
 
   y += boxH + 8;
