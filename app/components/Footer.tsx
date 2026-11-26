@@ -122,19 +122,6 @@ export default function Footer() {
           <p className="text-gray-600 text-xs text-center sm:text-left">
             Investitionen in Wirtschaftsgüter sind mit Risiken verbunden. Steuerliche Vorteile hängen von den individuellen Voraussetzungen ab. Bitte berücksichtigen Sie unsere Risikohinweise.
           </p>
-          {/* Backlink-Arena-Badge: bleibt im HTML, wird aber nicht angezeigt */}
-          <div className="hidden">
-            <a href="https://backlinkarena.com/p/bestbest-com" target="_blank" rel="noopener">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://backlinkarena.com/badge/featured.svg"
-                alt="Featured on Backlink Arena"
-                width={200}
-                height={54}
-                loading="lazy"
-              />
-            </a>
-          </div>
         </div>
       </div>
     </footer>
