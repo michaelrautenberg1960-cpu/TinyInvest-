@@ -305,6 +305,13 @@ export default function TinyHouseVsEtwPage() {
               Den vollständigen Investment-Guide mit 5-Jahres-Rechnung findest du unter{" "}
               <Link href="/tiny-house-als-kapitalanlage" className="text-green-700 font-semibold underline underline-offset-2">Tiny House als Kapitalanlage</Link>.
             </p>
+            <p className="mt-4">
+              Weitere Vergleiche:{" "}
+              <Link href="/wissen/tiny-house-vs-ferienwohnung" className="text-green-700 underline underline-offset-2">Tiny House vs. Ferienwohnung</Link>,{" "}
+              <Link href="/wissen/tiny-house-vs-festgeld" className="text-green-700 underline underline-offset-2">Tiny House vs. Festgeld</Link>,{" "}
+              <Link href="/wissen/container-direktinvestment-alternative" className="text-green-700 underline underline-offset-2">Container-Direktinvestment vs. Tiny House</Link> und{" "}
+              <Link href="/wissen/wohnmobil-vermieten-kapitalanlage" className="text-green-700 underline underline-offset-2">Wohnmobil vermieten als Kapitalanlage</Link>.
+            </p>
           </div>
 
           <div className="bg-gray-950 rounded-3xl p-8 text-center">

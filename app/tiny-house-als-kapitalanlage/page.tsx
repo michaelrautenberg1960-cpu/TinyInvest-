@@ -750,6 +750,19 @@ export default function TinyHouseKapitalanlagePage() {
             </Link>
           </div>
 
+          <div className="mt-6 text-center text-[13px] text-gray-500">
+            <span className="font-semibold text-gray-700">Weitere Vergleiche:</span>{" "}
+            <Link href="/wissen/tiny-house-vs-festgeld" className="text-green-700 hover:underline">Tiny House vs. Festgeld</Link>
+            <span className="text-gray-300 mx-2">·</span>
+            <Link href="/wissen/tiny-house-vs-ferienwohnung" className="text-green-700 hover:underline">Tiny House vs. Ferienwohnung</Link>
+            <span className="text-gray-300 mx-2">·</span>
+            <Link href="/wissen/container-direktinvestment-alternative" className="text-green-700 hover:underline">Container-Direktinvestment vs. Tiny House</Link>
+            <span className="text-gray-300 mx-2">·</span>
+            <Link href="/wissen/wohnmobil-vermieten-kapitalanlage" className="text-green-700 hover:underline">Wohnmobil vermieten vs. Tiny House</Link>
+            <span className="text-gray-300 mx-2">·</span>
+            <Link href="/wissen/tiny-house-vs-etf-altersvorsorge" className="text-green-700 hover:underline">Tiny House vs. ETF</Link>
+          </div>
+
           <div className="mt-10 space-y-4 text-gray-700 text-[15px] leading-relaxed">
             <p>
               Was die Tabelle nicht zeigt: Der echte Vorteil liegt nicht in der Brutto-Mietrendite, sondern im <strong className="text-gray-900">Zusammenspiel aus Sofortabschreibung und laufendem Cashflow</strong>. Bei einer Eigentumswohnung schreibst du das Gebäude mit 2 % über 50 Jahre ab — steuerlich kaum relevant für den aktiven Investor. Beim Tiny House wirken IAB (50 % im Vorjahr) sowie Sonder-AfA und degressive AfA auf den Restwert im Kaufjahr zusammen. Das bedeutet: Wer ein On-Grid-Modell für 74.700 € netto kauft und 42 % Einkommensteuer zahlt, hat in Vorjahr und Kaufjahr rechnerisch rund 26.700 € weniger Steuerlast — zusätzlich zu den laufenden Mieteinnahmen. Ein großer Teil davon ist eine Steuerstundung: Die Abschreibung wird vorgezogen und fehlt in den Folgejahren.

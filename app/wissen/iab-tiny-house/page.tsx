@@ -379,6 +379,18 @@ export default function IabTinyHousePage() {
             <Link href="/wissen/investitionsabzugsbetrag-immobilien" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">IAB für Immobilien? →</Link>
             <Link href="/wissen" className="border border-gray-200 text-gray-600 hover:border-green-300 hover:text-green-700 font-semibold px-5 py-2.5 rounded-full text-[13px] transition-all">← Wissens-Hub</Link>
           </div>
+          <p className="mt-5 text-[13px] text-gray-500">
+            <span className="font-semibold text-gray-700">Tiny House im Vergleich:</span>{" "}
+            <Link href="/wissen/tiny-house-vs-eigentumswohnung" className="text-green-700 hover:underline">vs. Eigentumswohnung</Link>
+            <span className="text-gray-300 mx-2">·</span>
+            <Link href="/wissen/tiny-house-vs-ferienwohnung" className="text-green-700 hover:underline">vs. Ferienwohnung</Link>
+            <span className="text-gray-300 mx-2">·</span>
+            <Link href="/wissen/tiny-house-vs-festgeld" className="text-green-700 hover:underline">vs. Festgeld</Link>
+            <span className="text-gray-300 mx-2">·</span>
+            <Link href="/wissen/container-direktinvestment-alternative" className="text-green-700 hover:underline">vs. Container-Direktinvestment</Link>
+            <span className="text-gray-300 mx-2">·</span>
+            <Link href="/wissen/wohnmobil-vermieten-kapitalanlage" className="text-green-700 hover:underline">vs. Wohnmobil-Vermietung</Link>
+          </p>
         </div>
       </article>
 

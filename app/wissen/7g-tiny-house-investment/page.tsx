@@ -70,7 +70,7 @@ const faqItems = [
 
 const subGuides = [
   {
-    href: "/wissen/investitionsabzugsbetrag-tiny-house",
+    href: "/wissen/iab-tiny-house",
     title: "Investitionsabzugsbetrag Tiny House: Vollständiger Guide",
     desc: "Voraussetzungen, Berechnung und Kombination mit Sonder-AfA. Im Beispiel 37.350 € IAB-Abzug.",
     badge: "IAB Deep-Dive",
